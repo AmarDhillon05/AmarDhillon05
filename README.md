@@ -1,7 +1,8 @@
 <!-- Banner -->
 <p align="center">
-  <img src="https://via.placeholder.com/800x200/1E3A8A/FFFFFF?text=Welcome+to+my+GitHub!" alt="Banner" />
+  <img src="https://fakeimg.pl/800x200/1E3A8A/FFFFFF/?text=Welcome+to+my+GitHub&font=raleway" alt="Banner" />
 </p>
+
 
 <h1 align="center">Hi, I'm Amar!</h1>
 <p align="center">
