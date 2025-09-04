@@ -1,7 +1,8 @@
 <!-- Banner -->
 <p align="center">
-  <img src="https://fakeimg.pl/800x200/1E3A8A/FFFFFF/?text=Welcome+to+my+GitHub&font=raleway" alt="Banner" />
+  <img src="https://img.shields.io/badge/Welcome_to_my_GitHub-1E3A8A?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Banner" />
 </p>
+
 
 
 <h1 align="center">Hi, I'm Amar!</h1>
@@ -21,20 +22,20 @@ Hi, I'm Amar, a current CS + Stat student at UMD. I'm passionate about software 
 
 <p align="center">
   <!-- Languages -->
-  <img src="https://img.shields.io/badge/Languages-Python%20%7C%20JavaScript%20%7C%20C%2B%2B%20%7C%20Rust-2563EB?style=for-the-badge&logoColor=white" />
+  <img src="https://img.shields.io/badge/Languages-Python%20%7C%20JavaScript%20%7C%20C%2B%2B%20%7C%20Rust-2563EB?style=for-the-badge&logoColor=white" /> <br>
 
   <!-- Backend Development -->
-  <img src="https://img.shields.io/badge/Backend-Express%20%7C%20Django%20%7C%20Node.js-1E40AF?style=for-the-badge&logoColor=white" />
+  <img src="https://img.shields.io/badge/Backend-Express%20%7C%20Django%20%7C%20Node.js-1E40AF?style=for-the-badge&logoColor=white" /> <br>
 
   <!-- Frontend / App Dev -->
-  <img src="https://img.shields.io/badge/Frontend-React%20%7C%20Next.js%20%7C%20Vue-3B82F6?style=for-the-badge&logoColor=white" />
+  <img src="https://img.shields.io/badge/Frontend-React%20%7C%20Next.js%20%7C%20Vue-3B82F6?style=for-the-badge&logoColor=white" /> <br>
 
   <!-- Data Science / Machine Learning -->
-  <img src="https://img.shields.io/badge/Data%20Science-Pandas%20%7C%20NumPy%20%7C%20Tableau-1E3A8A?style=for-the-badge&logoColor=white" />
-  <img src="https://img.shields.io/badge/Machine%20Learning-TensorFlow%20%7C%20PyTorch%20%7C%20Scikit--Learn-2563EB?style=for-the-badge&logoColor=white" />
+  <img src="https://img.shields.io/badge/Data%20Science-Pandas%20%7C%20NumPy%20%7C%20Tableau-1E3A8A?style=for-the-badge&logoColor=white" /> <br>
+  <img src="https://img.shields.io/badge/Machine%20Learning-TensorFlow%20%7C%20PyTorch%20%7C%20Scikit--Learn-2563EB?style=for-the-badge&logoColor=white" /> <br>
 
   <!-- Cloud & DevOps -->
-  <img src="https://img.shields.io/badge/Cloud%20%26%20DevOps-AWS%20%7C%20Docker%20%7C%20Kubernetes-1D4ED8?style=for-the-badge&logoColor=white" />
+  <img src="https://img.shields.io/badge/Cloud%20%26%20DevOps-AWS%20%7C%20Docker%20%7C%20Kubernetes-1D4ED8?style=for-the-badge&logoColor=white" /> <br>
 </p>
 
 
