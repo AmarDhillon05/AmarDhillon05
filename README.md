@@ -1,13 +1,10 @@
 <!-- Banner -->
-<p align="center">
-  <img src="https://img.shields.io/badge/Welcome_to_my_GitHub-1E3A8A?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Banner" />
-</p>
 
 
 
 <h1 align="center">Hi, I'm Amar!</h1>
 <p align="center">
-   CS/ML + Stat @ UMD | AI/ML, App Dev, Cloud + DevOps, Embedded + Electrical eng, and more!
+  <img src="https://img.shields.io/badge/CS/ML + Stat @ UMD | AI/ML, App Dev, Cloud + DevOps, Embedded + Electrical eng, and more!1E3A8A?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Banner" />
 </p>
 
 ---
