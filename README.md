@@ -74,7 +74,7 @@ I've also been looking to learn more about fields like embedded and electrical e
 
 ## 🔹 Projects
 
-### <img src="https://img.shields.io/badge/PianoAI-Light%20Purple%2FWhite-9D7EDB?style=for-the-badge&logoColor=white" />
+### <img src="https://img.shields.io/badge/PianoAI-White-9D7EDB?style=for-the-badge&logoColor=white" />
 *Music composition app with features that use a trained model to generate music notes.  
 Refining the model for Lambda deployment and improving the UI.*
 
@@ -82,7 +82,7 @@ Refining the model for Lambda deployment and improving the UI.*
 
 ---
 
-### <img src="https://img.shields.io/badge/Echelon-Purple%2FGold-8B5CF6?style=for-the-badge&logoColor=white" />
+### <img src="https://img.shields.io/badge/Echelon-Gold-8B5CF6?style=for-the-badge&logoColor=white" />
 *App for competitive events with fast ELO matchmaking and project scrolling.  
 Can import from platforms like Devpost; beta testing soon.*
 
@@ -90,11 +90,12 @@ Can import from platforms like Devpost; beta testing soon.*
 
 ---
 
-### <img src="https://img.shields.io/badge/$hoes-Red%2FBlack-DC2626?style=for-the-badge&logoColor=white" />
+### <img src="https://img.shields.io/badge/$hoes-Black-DC2626?style=for-the-badge&logoColor=white" />
 *Scrapes and runs a regression model on shoe prices trained on StockX sales.  
 Currently offline; planning model compression and multi-feature relaunch.*
 
 [GitHub Link](https://github.com/AmarDhillon05/Shoes)
+
 
 
 ## 🔹 Contact Me
