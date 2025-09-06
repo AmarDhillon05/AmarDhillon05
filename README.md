@@ -56,7 +56,7 @@ I've also been looking to learn more about fields like embedded and electrical e
 
 ---
 
-### <img src="https://img.shields.io/badge/Robotics%20Researcher-Northrop%20Grumman-3B82F6?style=for-the-badge&logoColor=white" />  
+### <img src="https://img.shields.io/badge/Robotics%20Researcher-NGC%20Innovation%20Lab-3B82F6?style=for-the-badge&logoColor=white" />  
 *College Park, MD · Feb 2025 – July 2025*  
 - Developed **OpenCV pipeline** for drone-based ocean-mine detection (~70% accuracy).  
 - Integrated **QGroundControl + C++ flight scripts** for autonomous navigation & telemetry.  
