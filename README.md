@@ -20,20 +20,19 @@ I've also been looking to learn more about fields like embedded and electrical e
 
 <p>
   <!-- Languages -->
-  <img src="https://img.shields.io/badge/Languages-Python%20%7C%20JavaScript%20%7C%20C%2B%2B%20%7C%20Rust-60A5FA?style=for-the-badge&logoColor=white" /> <br>
+  <img src="https://img.shields.io/badge/Languages-Python%20%7C%20JavaScript%2FTypeScript%20%7C%20HTML%20%7C%20CSS%20%7C%20Java%20%7C%20C%20%7C%20C%2B%2B%20%7C%20C%23%20%7C%20R%20%7C%20Rust-60A5FA?style=for-the-badge&logoColor=white" /> <br>
 
-  <!-- Backend Development -->
-  <img src="https://img.shields.io/badge/Backend-Express%20%7C%20Django%20%7C%20Node.js-93C5FD?style=for-the-badge&logoColor=white" /> <br>
+  <!-- App Development -->
+  <img src="https://img.shields.io/badge/App%20Development-Express%20%7C%20Vue%20%7C%20Flask%20%7C%20Node.js%20%7C%20Django%20%7C%20React%2FNext-93C5FD?style=for-the-badge&logoColor=white" /> <br>
 
-  <!-- Frontend / App Dev -->
-  <img src="https://img.shields.io/badge/Frontend-React%20%7C%20Next.js%20%7C%20Vue-3B82F6?style=for-the-badge&logoColor=white" /> <br>
+  <!-- Data / Analytics -->
+  <img src="https://img.shields.io/badge/Data%20%2F%20Analytics-SQL%20%7C%20MongoDB%20%7C%20Firebase%20%7C%20Tableau%20%7C%20Pandas%20%7C%20NumPy%20%7C%20OpenCV%20%7C%20Hadoop%20%7C%20Spark-60A5FA?style=for-the-badge&logoColor=white" /> <br>
 
-  <!-- Data Science / Machine Learning -->
-  <img src="https://img.shields.io/badge/Data%20Science-Pandas%20%7C%20NumPy%20%7C%20Tableau-60A5FA?style=for-the-badge&logoColor=white" /> <br>
-  <img src="https://img.shields.io/badge/Machine%20Learning-TensorFlow%20%7C%20PyTorch%20%7C%20Scikit--Learn-93C5FD?style=for-the-badge&logoColor=white" /> <br>
+  <!-- Machine Learning -->
+  <img src="https://img.shields.io/badge/Machine%20Learning-Scikit--Learn%20%7C%20TensorFlow%20%7C%20PyTorch%20%7C%20HuggingFace%20%7C%20LangChain-93C5FD?style=for-the-badge&logoColor=white" /> <br>
 
   <!-- Cloud & DevOps -->
-  <img src="https://img.shields.io/badge/Cloud%20%26%20DevOps-AWS%20%7C%20Docker%20%7C%20Kubernetes-3B82F6?style=for-the-badge&logoColor=white" /> <br>
+  <img src="https://img.shields.io/badge/Cloud%20%26%20DevOps-AWS%20%7C%20GCP%20%7C%20Docker%20%7C%20Kubernetes%20%7C%20Git%2FGitHub-3B82F6?style=for-the-badge&logoColor=white" /> <br>
 </p>
 
 ---
