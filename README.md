@@ -55,6 +55,13 @@ I've also been looking to learn more about fields like embedded and electrical e
 
 ---
 
+### <img src="https://img.shields.io/badge/Machine%20Learning%20Co%20Founder-TerpLabs-93C5FD?style=for-the-badge&logoColor=white" />  
+*College Park, MD · June 2025 – Present*  
+- Co-founded UMD's first app dev club dedicated to **student products**
+- Aided in products like **Tortuga** that update dated UMD tooling
+- Organizing project and marketing teams for the **whole product lifestyle**
+
+---
 ### <img src="https://img.shields.io/badge/Robotics%20Researcher-NGC%20Innovation%20Lab-3B82F6?style=for-the-badge&logoColor=white" />  
 *College Park, MD · Feb 2025 – July 2025*  
 - Developed **OpenCV pipeline** for drone-based ocean-mine detection (~70% accuracy).  
