@@ -102,7 +102,7 @@ Currently offline; planning model compression and multi-feature relaunch.*
 
 [GitHub Link](https://github.com/AmarDhillon05/Shoes)
 
-### <img src="https://img.shields.io/badge/NEMO notebooks-7393B3?style=for-the-badge&logoColor=white" />
+### <img src="https://img.shields.io/badge/NEMO-7393B3?style=for-the-badge&logoColor=white" />
 *Helped out with some of the plotting and astropy integration features on NEMO, a 
 space visualization package developed at UMD*
 
