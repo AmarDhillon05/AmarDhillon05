@@ -86,7 +86,6 @@ Refining the model for Lambda deployment and improving the UI.*
 
 [GitHub Link](https://github.com/AmarDhillon05/PianoAi-v2)
 
----
 
 ### <img src="https://img.shields.io/badge/Echelon-8B5CF6?style=for-the-badge&logoColor=white" />
 *App for competitive events with fast ELO matchmaking and project scrolling.  
@@ -94,7 +93,6 @@ Can import from platforms like Devpost; beta testing soon.*
 
 [GitHub Link](https://github.com/AmarDhillon05/echelon)
 
----
 
 ### <img src="https://img.shields.io/badge/$hoes-DC2626?style=for-the-badge&logoColor=white" />
 *Scrapes and runs a regression model on shoe prices trained on StockX sales.  
@@ -102,9 +100,11 @@ Currently offline; planning model compression and multi-feature relaunch.*
 
 [GitHub Link](https://github.com/AmarDhillon05/Shoes)
 
+
 ### <img src="https://img.shields.io/badge/NEMO-7393B3?style=for-the-badge&logoColor=white" />
 *Helped out with some of the plotting and astropy integration features on NEMO, a 
 space visualization package developed at UMD*
+
 
 ### <img src="https://img.shields.io/badge/Data Science/ML notebooks-811331?style=for-the-badge&logoColor=white" />
 *I make a lot of these - both to practice as well as try out new models. Check some of them out over here*
@@ -112,6 +112,7 @@ space visualization package developed at UMD*
 - [CapNet](https://github.com/AmarDhillon05/CapNet)
 - [VIT architecture experments](https://github.com/AmarDhillon05/Vision-transformer-on-CIFAR-100)
 - [English to French](https://github.com/AmarDhillon05/English-to-French-transformer)
+
 
 ## 🔹 Contact Me
 
