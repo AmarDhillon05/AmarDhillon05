@@ -8,9 +8,9 @@
 ---
 
 ## 🔹 About Me
-Hi, I'm Amar, a current CS + Stat student at UMD. I'm passionate about software engineering, machine learning research, infrastructure and DevOps, and embedded systems and PCB design, as well as anything else interesting in tech.  
+Hi, I'm Amar, a current CS + Stat student at UMD. I'm passionate about software engineering, machine learning research, infrastructure and DevOps, and embedded systems, as well as anything else interesting in tech.  
 
-In the past, I've done projects to expand my skills and make some really cool things, as well as roles at startups and research where we work from the ground on software products and experimentation. I’m looking to get experience on **bigger, high-velocity projects** and continue to make strides in my knowledge! I'm planning a tech-focused career, but I've been looking at the intersection of it with other fields, especially aerospace, finance, and electrical engineering, while also catching up to the startup culture
+In the past, I've done projects to expand my skills and make some really cool things, as well as roles at startups and research where we work from the ground on software products and experimentation. I’m looking to get experience on **bigger, high-velocity projects** and continue to make strides in my knowledge! I'm planning a tech-focused career, but I've been looking at the intersection of it with other fields, especially aerospace, finance, and electrical engineering, while also being up to date with startup culture
 
 I've also been looking to learn more about fields like embedded and electrical engineering that I haven't done a big solo project on, as well as explore topics like quant-specific data science and low-level software. Besides that, I'm always building or researching something cool — feel free to reach out!
 
