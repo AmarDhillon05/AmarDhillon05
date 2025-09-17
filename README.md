@@ -109,6 +109,7 @@ space visualization package developed at UMD*
 ### <img src="https://img.shields.io/badge/Data Science/ML notebooks-811331?style=for-the-badge&logoColor=white" />
 *I make a lot of these - both to practice as well as try out new models. Check some of them out over here*
 - [Valkyrie Assessment](https://github.com/AmarDhillon05/Valkyrie-Assessment)
+- [Polymarket trader data EDA](https://github.com/AmarDhillon05/Sif-EDA)
 - [CapNet](https://github.com/AmarDhillon05/CapNet)
 - [VIT architecture experments](https://github.com/AmarDhillon05/Vision-transformer-on-CIFAR-100)
 - [English to French](https://github.com/AmarDhillon05/English-to-French-transformer)
