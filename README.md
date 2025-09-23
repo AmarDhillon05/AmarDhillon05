@@ -7,7 +7,7 @@
 
 I'm Amar, a CS + Stat student at UMD. I'm passionate about software engineering, machine learning research, infrastructure/DevOps, embedded systems, and anything else interesting in tech.  
 
-I’ve worked on projects at startups and in research, building products from the ground up. I’m aiming to gain experience on **bigger, high-velocity projects** and explore intersections with aerospace, finance, and electrical engineering.  
+I’ve worked on projects at startups and in research, building products from the ground up. I’m aiming to gain experience on bigger, high-velocity projects and explore intersections with aerospace, finance, and electrical engineering.  
 
 I’m also interested in embedded/electrical engineering, quant-style data science, and low-level software. Outside of school, I’m usually building or researching something new — feel free to reach out!
 
