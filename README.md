@@ -10,31 +10,11 @@ I’m also interested in embedded/electrical engineering, quant-style data scien
 ---
 
 ## 🔹 Experience
-
-**Software Development Intern – Narb (June 2025 – Present, College Park, MD)**  
-- Backend dev for a shoe collector’s app (React Native + Express).  
-- Built CLIP + YOLO shoe classifier (~82% accuracy).  
-- Deployed model APIs on EC2 & SageMaker with CloudWatch monitoring.  
-
-**Machine Learning Research Assistant – UMD (Feb 2025 – Present)**  
-- Enhanced LSTM-based wind forecasting in PyTorch (<5 MPH error).  
-- Designed Arduino PCBs + ESP32 telemetry feeding Flask servers.  
-- Built AR visualization (Unity + Mapbox) for model results.  
-
-**Co-Founder – TerpLabs (June 2025 – Present)**  
-- Founded UMD’s first student app dev club.  
-- Worked on tools like *Tortuga* to modernize UMD systems.  
-- Organized project + marketing teams across full product lifecycle.  
-
-**Robotics Researcher – NGC Innovation Lab (Feb 2025 – July 2025)**  
-- Drone-based mine detection with OpenCV (~70% accuracy).  
-- Integrated QGroundControl + C++ flight scripts for autonomy.  
-- Optimized PCB sensor layout, reducing UART error to ~0.03%.  
-
-**Software Engineer Intern – BuildUrFuture (May 2025 – Aug 2025, Dallas, TX)**  
-- Migrated DB into Pinecone for intelligent job search (~44% cost savings).  
-- Designed AWS backend infra for scaling + efficiency.  
-- Improved resume ETL pipeline speed by ~30%.  
+- **Software Development Intern – Narb (June 2025 – Present, College Park, MD)**: Backend dev for shoe collector’s app; built CLIP + YOLO classifier (~82% acc.); deployed APIs on EC2/SageMaker.  
+- **Machine Learning Research Assistant – UMD (Feb 2025 – Present)**: Improved LSTM wind forecasting (<5 MPH error); designed PCB + ESP32 telemetry; built AR visualization tool.  
+- **Co-Founder – TerpLabs (June 2025 – Present)**: Founded UMD’s first student app dev club; worked on Tortuga; organized product + marketing teams.  
+- **Robotics Researcher – NGC Innovation Lab (Feb 2025 – July 2025)**: Built drone-based mine detection pipeline (~70% acc.); integrated QGroundControl; optimized PCB UART error (~0.03%).  
+- **Software Engineer Intern – BuildUrFuture (May 2025 – Aug 2025, Dallas, TX)**: Migrated DB to Pinecone (~44% cost savings); designed AWS infra; sped up ETL pipeline by ~30%.  
 
 ---
 
