@@ -15,7 +15,7 @@ I’m also interested in embedded/electrical engineering, quant-style data scien
 
 ## ![](https://img.shields.io/badge/Experience-2563EB?style=flat-square)
 
-- **Software Development Intern — Narb (June 2025 – Present, College Park, MD)**  
+- **ML Engineer Intern — Narb (June 2025 – Present, College Park, MD)**  
   Backend development for a shoe collector’s app; built CLIP + YOLO classifier (~82% accuracy); deployed APIs on EC2/SageMaker.  
 
 - **Machine Learning Research Assistant — UMD (Feb 2025 – Present)**  
