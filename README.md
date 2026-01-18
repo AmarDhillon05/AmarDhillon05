@@ -51,4 +51,4 @@ I’m also interested in embedded/electrical engineering, quant-style data scien
 
 [Portfolio](https://site.adh05.com) • 
 [LinkedIn](https://www.linkedin.com/in/amar-dhillon-917537261/) • 
-[Email](mailto:adhillon053@gmail.com)
+[Email](mailto:amardhillon844@gmail.com)
