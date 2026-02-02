@@ -15,7 +15,7 @@
 ║ CONTACT                            ║ Co-Founder — TerpLabs                                  ║
 ║                                    ║ • Student-built app development                        ║
 ║ • site.adh05.com                   ║ • Team and project organization                        ║
-║ • linkedin.com/in/amar-...         ║                                                        ║
+║ • amar-dhillon-917537261 (linkedin)║                                                        ║
 ║ • amardhillon844@gmail.com         ║ Robotics Researcher — NGC Lab                          ║
 ║                                    ║ • Drone-based detection research                       ║
 ║                                    ║ • Control and testing workflows                        ║
