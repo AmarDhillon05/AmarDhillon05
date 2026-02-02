@@ -15,29 +15,21 @@
 ║ CONTACT                            ║ Co-Founder — TerpLabs                                  ║
 ║                                    ║ • Student-built app development                        ║
 ║ • site.adh05.com                   ║ • Team and project organization                        ║
-║ • amar-dhillon-917537261 (linkedin)║                                                        ║
+║ • in/amar-dhillon-917537261        ║                                                        ║
 ║ • amardhillon844@gmail.com         ║ Robotics Researcher — NGC Lab                          ║
 ║                                    ║ • Drone-based detection research                       ║
 ║                                    ║ • Control and testing workflows                        ║
 ║                                    ║                                                        ║
-║                                    ║ Software Engineer Intern — BuildUrFuture               ║
-║                                    ║ • Database migration project                           ║
-║                                    ║ • Data processing optimization                         ║
+║ ,-~~-.___.                         ║ Software Engineer Intern — BuildUrFuture               ║
+║ / |  '     \   Thanks for visiting ║ • Database migration project                           ║
+║(  )         0      my page!        ║ • Data processing optimization                         ║
+║ \_/-, ,----'                       ║                                                        ║
+║    ====           //               ║                                                        ║
+║   /  \-'~;    /~~~(O)              ║                                                        ║
+║  /  __/~|   /       |              ║                                                        ║
+║ =(  _____| (_________|             ║                                                        ║
 ╚════════════════════════════════════╩════════════════════════════════════════════════════════╝
 
 
-        █████████████████████
-        █  ████      ████  █
-        █  ████  ██  ████  █
-        █        ██        █
-        █  ████      ████  █
-        █  ████  ██  ████  █
-        █        ██        █
-        █████████████████████
-              ███████
-            ████     ████
-           ███  thanks for  ███
-           ███ visiting my ███
-            ███   site   ███
-              ███████████
+
 ```
