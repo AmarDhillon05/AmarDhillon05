@@ -3,7 +3,7 @@
 ║            AMAR DHILLON            ║                        EXPERIENCE                      ║
 ║        CS + Statistics @ UMD       ║                                                        ║
 ╠════════════════════════════════════╬════════════════════════════════════════════════════════╣
-║ INTERESTS                          ║ ML Engineer Intern — Narb                              ║
+║ INTERESTS                          ║ Engineer Intern — Narb                                 ║
 ║                                    ║ • Shoe image classifier for startup app                ║
 ║ • Software Engineering             ║ • Backend features and data pipelines                  ║
 ║ • Machine Learning                 ║                                                        ║
