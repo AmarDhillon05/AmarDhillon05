@@ -1,3 +1,4 @@
+```
 ╔══════════════════════════════════════╗
 ║            AMAR DHILLON              ║
 ║        CS + Statistics @ UMD          ║
@@ -47,3 +48,4 @@ CONTACT
 
 ────────────────────────────────────────
 “usually building something.”
+```
