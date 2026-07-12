@@ -21,15 +21,10 @@
 ||                                                              ||
 ||  --[ OFF THE CLOCK ]--                                       ||
 ||                                                              ||
-||   x=o  drums: four-limb independence is a lifelong boss      ||
-||        fight                                                 ||
+||   x=o  drums (funk + jazz fusion + metal)                    ||
+||   x=o  lifting + golf                                        || 
+||   x=o  building utilities + automations                      ||
 ||                                                              ||
 (o)===(o)===(o)===(o)===(o)===(o)===(o)===(o)===(o)===(o)===(o)===
-||                                                              ||
-||                     YOUR CUSTOM ART HERE                     ||
-||               (swap this panel for your piece)               ||
-||                                                              ||
-||                                                              ||
-||                                                              ||
-(o)===(o)===(o)===(o)===(o)===(o)===(o)===(o)===(o)===(o)===(o)===
+
 ```
