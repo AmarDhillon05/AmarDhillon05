@@ -1,0 +1,34 @@
+{
+  "tally": {
+    "new": 3,
+    "old": 2,
+    "tie": 0
+  },
+  "rows": [
+    {
+      "fact": "amazon_contract.leo_deploy",
+      "winner": "new",
+      "reason": "Names concrete users (public-policy team) and ownership (Leo engineers maintain it); A's 'adopted into Leo's ecosystem' is vague."
+    },
+    {
+      "fact": "aws_sde.redshift",
+      "winner": "new",
+      "reason": "A says what is tuned, for what purpose, and how it's validated; B is generic buzzwords with no specifics."
+    },
+    {
+      "fact": "capital_one.ui_overhaul",
+      "winner": "new",
+      "reason": "Essentially identical content; A is slightly tighter and more skimmable."
+    },
+    {
+      "fact": "iex.lsm_vs_btree",
+      "winner": "old",
+      "reason": "B maps each tool to the metric it measured, making the method clearer; A packs tools before purpose. Neither states a result."
+    },
+    {
+      "fact": "terplabs.tortuga",
+      "winner": "old",
+      "reason": "B frames load/latency reduction as intent rather than implying an unmeasured result, and separates the traffic metric cleanly."
+    }
+  ]
+}

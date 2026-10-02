@@ -24,9 +24,9 @@ Software Engineering Intern                                                     
    search/validation tools, guided by CloudWatch + OpenSearch latency logs
 UMD App Development Contracting (Client: Amazon)                                                      Jan 2026 – Present
 Software Engineer (Contract)                                                                           College Park, MD
- • Shipped a space-research tool now used by Amazon Leo’s public-policy team and maintained by Leo engineers; deployed
+ • Shipped a space-research tool used by Amazon Leo’s public-policy team, now maintained by Leo engineers; deployed on
 
-   on Docker + AWS Fargate via GitHub Actions with AWS CDK (TypeScript) IaC
+   Docker + AWS Fargate via GitHub Actions with AWS CDK (TypeScript) IaC
  • Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by moving it
 
    onto Kinesis streams feeding Lambda processors
@@ -47,7 +47,7 @@ TerpLabs                                                                        
 Co-Founder, Software Engineer                                                                          College Park, MD
  • Co-founded a 110+ member campus product studio that has shipped 5 live products, run with Jira and GitHub
 
- • Wrote Prisma SQL queries and Redis query caching to cut DB load and latency for Tortuga, our class scheduler, which
+ • Wrote Prisma SQL queries and Redis query caching to reduce DB load and latency for Tortuga, a class scheduler that
 
    drew 20,000+ visits in its first 30 days
  • Building a RAG meal-suggestion feature for the official UMD app (GPT-4o mini, ChromaDB + SentenceBERT search);
@@ -62,9 +62,9 @@ IEX Matching Engine Simulation | C++, STL, POSIX                                
  • Designed paginated hash-based order-book storage with an in-memory LFU cache for hot tickers during simulation,
 
    checked for drift against IEX historical book data
- • Created an rdtscp + Linux perf benchmark harness to compare a time-based adaptive LSM store against a B+ tree for
+ • Benchmarked a time-based adaptive LSM store against a B+ tree for simulation logs, measuring throughput and latency
 
-   simulation-log throughput, latency, and hardware utilization
+   via rdtscp and hardware utilization via Linux perf counters
 
 Technical Skills
 Languages: Python, Java, C++, C, TypeScript/JavaScript, SQL

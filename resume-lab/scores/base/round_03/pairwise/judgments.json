@@ -1,0 +1,7 @@
+[
+  {"id": "p01", "winner": "B", "reason": "Names concrete users (public-policy team) and ownership (Leo engineers maintain it); A's 'adopted into Leo's ecosystem' is vague.", "better_rewrite": "Shipped a space-research tool used by Amazon Leo's public-policy team, now maintained by Leo engineers; deployed on Docker + AWS Fargate via GitHub Actions with AWS CDK (TypeScript) IaC"},
+  {"id": "p02", "winner": "A", "reason": "A says what is tuned, for what purpose, and how it's validated; B is generic buzzwords with no specifics.", "better_rewrite": "Tuning Java-based bounds on EC2 capacity reserved for Amazon Redshift operations (e.g., patching), backtesting policies to balance availability against cost"},
+  {"id": "p03", "winner": "A", "reason": "Essentially identical content; A is slightly tighter and more skimmable.", "better_rewrite": ""},
+  {"id": "p04", "winner": "B", "reason": "B maps each tool to the metric it measured, making the method clearer; A packs tools before purpose. Neither states a result.", "better_rewrite": ""},
+  {"id": "p05", "winner": "B", "reason": "B frames load/latency reduction as intent rather than implying an unmeasured result, and separates the traffic metric cleanly.", "better_rewrite": "Wrote Prisma SQL queries and Redis query caching to reduce DB load and latency for Tortuga, a class scheduler that drew 20,000+ visits in its first 30 days"}
+]
