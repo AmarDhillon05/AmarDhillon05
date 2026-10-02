@@ -1,0 +1,54 @@
+{
+  "persona": "startup_quant_engineer",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28; AWS SDE intern, Capital One SWE intern, Amazon client contract work. Strong AWS/backend breadth, a startup-ish studio, and a C++ order-book project with no results.",
+  "scores": {
+    "impact_clarity": 7,
+    "quantification": 7,
+    "technical_depth": 8,
+    "concision_readability": 8,
+    "skim_test": 8,
+    "credibility": 7,
+    "ats_parseability": 9,
+    "visual_layout": 8,
+    "domain_fit": 8,
+    "overall": 8
+  },
+  "score_rationale": {
+    "impact_clarity": "Several bullets stop at the method: AWS bullet, Capital One index, IEX bullets, PhysTwin. No outcome, so I have to guess why it mattered.",
+    "quantification": "Good numbers at Capital One and the contract work, but the IEX benchmark names rdtscp/perf and reports no results. The 30% and 93% figures lack scope.",
+    "credibility": "A benchmark with no results reads like the work isn't finished. 'Researching and implementing' on AWS is vague, and the 34% latency claim needs a baseline."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "IEX project: the bullets describe measuring throughput and latency but report no results. Clarify: state the measured numbers (e.g., p50/p99 latency, ops/sec, LSM vs B+ tree outcome) or drop the measurement claim.",
+    "AWS bullet is a vague one-liner ('Researching and implementing'). Clarify what component or problem is concretely being optimized, without inventing outcomes."
+  ],
+  "bullets": [
+    {"quote": "Researching and implementing Java-based utilization optimizations for", "verdict": "add_context", "issue": "Vague and progressive-tense. No scope, mechanism, or what 'utilization' refers to.", "suggestion": "Implementing Java-based optimizations to improve [resource] utilization in Amazon Redshift's [component]. Clarify which component and resource you've actually touched."},
+    {"quote": "Rebuilt a legacy test-data workflow builder UI", "verdict": "keep"},
+    {"quote": "Built a precomputed tree-style search index over", "verdict": "add_context", "issue": "No result. Did query count or latency drop? 'Under access limits' is unclear.", "suggestion": "Built a precomputed tree-style search index (Python/SQLAlchemy, Redis cache) over popular workflows in a 270K+ row PostgreSQL table, minimizing DB queries under rate/access limits"},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "keep"},
+    {"quote": "Shipped a space-research tool for Amazon Leo,", "verdict": "tighten", "issue": "Deploy-stack detail crowds out the adoption outcome; 'so new engineers can contribute' is weak.", "suggestion": "Shipped a space-research tool for Amazon Leo, now adopted into Leo's ecosystem; deployed on Docker + AWS Fargate via GitHub Actions with AWS CDK (TypeScript) infrastructure-as-code"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "tighten", "issue": "No baseline: what was the architecture before Kinesis? I'd ask 'from what?' first.", "suggestion": "Reduced end-to-end latency 34% routing 6,000+ scraped research documents to inference by moving the pipeline from [prior design] to Kinesis streams feeding Lambda processors"},
+    {"quote": "Automated fine-tuning of an AWS Bedrock source-relevancy", "verdict": "keep"},
+    {"quote": "Developing automated training for PhysTwin, a physics-based", "verdict": "tighten", "issue": "'Developing automated training' is ambiguous: what does it automate, and what's your piece?", "suggestion": "Automating training runs for PhysTwin, a physics-based digital twin, on a PhD-led team targeting ICLR (clarify what you automate: sweeps, data gen, or eval)"},
+    {"quote": "Engineered a Python pipeline rendering AnyGrasp multi-camera", "verdict": "keep"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "tighten", "issue": "Two unrelated actions; profiling 'to find bottlenecks' has no stated finding.", "suggestion": "Cut research-environment setup time 30% via uv dependency pinning and Docker; added psutil time/memory profiling and Pytest suites"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "tighten", "issue": "'Run with Jira and GitHub' is filler.", "suggestion": "Co-founded a 110+ member campus product studio that has shipped 5 live products"},
+    {"quote": "Wrote Prisma SQL queries and Redis query", "verdict": "reframe", "issue": "Two clauses aren't connected. Unclear whether the 20K visits relate to the caching or are the product's reach.", "suggestion": "Built backend for the Tortuga class scheduler (20,000+ visits in first 30 days), writing Prisma SQL queries and Redis query caching to reduce database load"},
+    {"quote": "Building a RAG meal-suggestion feature for the", "verdict": "add_context", "issue": "93% from how many testers or meals? An unscoped percentage invites skepticism.", "suggestion": "Building a RAG meal-suggestion feature for the official UMD app (GPT-4o mini, ChromaDB + SentenceBERT retrieval); 93% of generated meals rated satisfactory by [N] internal testers"},
+    {"quote": "Implemented a C++ order-book simulator replaying historical", "verdict": "tighten", "issue": "'Contract-based plug-in interface... enforced correctness' is abstract; say what's pluggable.", "suggestion": "Implemented a C++ order-book simulator replaying historical IEX data, with a plug-in interface letting alternative matching/storage strategies swap in under enforced correctness checks"},
+    {"quote": "Designed paginated hash-based order-book storage with an", "verdict": "add_context", "issue": "Says it was checked for drift but not the result, and gives no rationale for choosing LFU.", "suggestion": "Designed paginated hash-based order-book storage with an in-memory LFU cache for hot tickers; validated zero/[X] drift against IEX historical book data (state actual result)"},
+    {"quote": "Benchmarked a time-based adaptive LSM store against", "verdict": "add_context", "issue": "Benchmark without results. Any quant interviewer asks 'and what did you find?' immediately.", "suggestion": "Benchmarked a time-based adaptive LSM store vs a B+ tree for simulation logs using rdtscp timing and Linux perf counters; [state winner and measured throughput/latency]"}
+  ],
+  "structure": [
+    {"key": "bold_anchor_iex", "change": "Once IEX results exist, bold one headline number in the project, as is done elsewhere.", "rationale": "The systems project is the most differentiated item for perf-minded HMs, but it has zero visual anchors right now."},
+    {"key": "aws_bullet_count", "change": "Keep the single AWS bullet but make it concrete; don't pad it to match other roles.", "rationale": "One specific line beats a vague one. A thin first entry under a top brand draws attention."}
+  ],
+  "top3": [
+    "Clarify: report the actual IEX benchmark and drift-check results. A benchmark with no numbers is the biggest credibility gap for systems/quant readers.",
+    "Clarify: make the AWS Redshift bullet concrete (which component/resource), since it is the first thing under Experience.",
+    "Close the outcome gaps: the Capital One search-index result, the 34% latency baseline, scope for the 93% and 30% figures, and tie the Tortuga 20K visits to your contribution."
+  ]
+}

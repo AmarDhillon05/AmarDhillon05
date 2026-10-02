@@ -4,12 +4,12 @@
   "bullets": [
     {
       "fact": "aws_sde.redshift",
-      "chars": 99,
-      "words": 11,
+      "chars": 165,
+      "words": 21,
       "n_bold": 0,
-      "n_lines": 1,
-      "last_fill": 1.0,
-      "text": "Researching and implementing Java-based utilization optimizations for Amazon Redshift (in progress)"
+      "n_lines": 2,
+      "last_fill": 0.45,
+      "text": "Tuning Java-based upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations like patching, backtesting policies to balance availability against cost"
     },
     {
       "fact": "capital_one.ui_overhaul",
@@ -40,12 +40,12 @@
     },
     {
       "fact": "amazon_contract.leo_deploy",
-      "chars": 182,
-      "words": 29,
+      "chars": 188,
+      "words": 30,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.63,
-      "text": "Shipped a space-research tool for Amazon Leo, now adopted into Leo's ecosystem; deployed on Docker + AWS Fargate via GitHub Actions, with AWS CDK (TypeScript) IaC for easy onboarding"
+      "last_fill": 0.68,
+      "text": "Shipped a space-research tool now used by Amazon Leo's public-policy team and maintained by Leo engineers; deployed on Docker + AWS Fargate via GitHub Actions with AWS CDK (TypeScript) IaC"
     },
     {
       "fact": "amazon_contract.kinesis_pipeline",
@@ -58,12 +58,12 @@
     },
     {
       "fact": "amazon_contract.bedrock_finetune",
-      "chars": 182,
+      "chars": 178,
       "words": 24,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.57,
-      "text": "Automated fine-tuning of a Bedrock source-relevancy model with EventBridge-scheduled runs and decision gates that skip redundant retraining, plus X-Ray tracing and SNS failure alerts"
+      "last_fill": 0.54,
+      "text": "Automated fine-tuning of an AWS Bedrock source-relevancy model via EventBridge cron, with decision gates skipping redundant retraining; added X-Ray tracing and SNS failure alerts"
     },
     {
       "fact": "umiacs.phystwin",
@@ -103,12 +103,12 @@
     },
     {
       "fact": "terplabs.tortuga",
-      "chars": 158,
-      "words": 27,
+      "chars": 156,
+      "words": 28,
       "n_bold": 1,
       "n_lines": 2,
       "last_fill": 0.34,
-      "text": "Wrote Prisma SQL queries and Redis query caching for Tortuga to reduce database load and latency; the class scheduler drew 20,000+ visits in its first 30 days"
+      "text": "Wrote Prisma SQL queries and Redis query caching to cut DB load and latency for Tortuga, our class scheduler, which drew 20,000+ visits in its first 30 days"
     },
     {
       "fact": "terplabs.rag_meal",
@@ -121,12 +121,12 @@
     },
     {
       "fact": "iex.order_book",
-      "chars": 177,
-      "words": 23,
+      "chars": 169,
+      "words": 22,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.54,
-      "text": "Implemented a C++ order-book simulator replaying historical IEX data, with a contract-based plug-in interface so alternative approaches swap in under enforced correctness checks"
+      "last_fill": 0.47,
+      "text": "Implemented a C++ order-book simulator replaying historical IEX data, with a contract-based plug-in interface so alternative approaches swap in with enforced correctness"
     },
     {
       "fact": "iex.lfu_storage",
@@ -150,12 +150,7 @@
   "issues": [
     {
       "level": "WARN",
-      "where": "Researching and implementing Java-based utilizatio",
-      "msg": "no metric or explicit outcome"
-    },
-    {
-      "level": "WARN",
-      "where": "Automated fine-tuning of a Bedrock source-relevanc",
+      "where": "Automated fine-tuning of an AWS Bedrock source-rel",
       "msg": "no metric or explicit outcome"
     },
     {
@@ -170,5 +165,5 @@
     }
   ],
   "errors": 0,
-  "warnings": 4
+  "warnings": 3
 }

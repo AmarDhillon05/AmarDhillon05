@@ -1,0 +1,59 @@
+{
+  "persona": "ats_specialist",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28, current AWS SDE intern, ex-Capital One SWE intern, Amazon-client contract work on AWS serverless; strong Python/Java/C++/TypeScript/AWS keyword coverage.",
+  "scores": {"impact_clarity": 8, "quantification": 7, "technical_depth": 8, "concision_readability": 8,
+             "skim_test": 8, "credibility": 8, "ats_parseability": 8, "visual_layout": 8, "domain_fit": 8, "overall": 8},
+  "score_rationale": {
+    "quantification": "Percentages (90%, 34%, 30%, 65%) mostly lack baseline or sample size; AWS and IEX sections have no outcome numbers at all."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "AWS bullet is a single generic present-tense line ('Researching and implementing...'); the top brand carries the weakest content — clarify: what component/approach and any stated result so far",
+    "clarify: baselines for '90% of surveyed users' (how many surveyed) and '30%' setup time (from what) so numbers survive a screener follow-up"
+  ],
+  "bullets": [
+    {"quote": "Researching and implementing Java-based utilization optimizations for", "verdict": "add_context",
+     "issue": "Vague, no method or outcome; weakest bullet under strongest brand. LLM screeners score this as filler.",
+     "suggestion": "Clarify with candidate which Redshift component and technique; keep present tense since internship is ongoing."},
+    {"quote": "Rebuilt a legacy test-data workflow builder UI", "verdict": "tighten",
+     "issue": "Tech list front-loaded; result arrives late. Survey sample size unstated.",
+     "suggestion": "Rebuilt a legacy test-data workflow builder (React/TypeScript/Electron, React-Flow editor, Jest-tested validation); 90% of surveyed users preferred it over the old tool"},
+    {"quote": "Built a precomputed tree-style search index over", "verdict": "add_context",
+     "issue": "Outcome is 'minimize DB queries' with no result; 'access limits' is ambiguous.",
+     "suggestion": "Built a precomputed tree-style search index over popular workflows in a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache), cutting DB queries to stay within access limits"},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "keep"},
+    {"quote": "Shipped a space-research tool for Amazon Leo,", "verdict": "tighten",
+     "issue": "Two ideas joined; 'so new engineers can contribute' is weak rationale for CDK.",
+     "suggestion": "Shipped a space-research tool now adopted into Amazon Leo's ecosystem; deployed on Docker + AWS Fargate via GitHub Actions with AWS CDK (TypeScript) infrastructure-as-code"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep"},
+    {"quote": "Automated fine-tuning of an AWS Bedrock source-relevancy", "verdict": "keep"},
+    {"quote": "Developing automated training for PhysTwin, a physics-based", "verdict": "add_context",
+     "issue": "Task only; no method or result. 'targeting ICLR' is fine but scope of candidate's work is unclear.",
+     "suggestion": "Clarify with candidate what 'automated training' involves (pipeline, tuning, infra) and phrase the specific technique."},
+    {"quote": "Engineered a Python pipeline rendering AnyGrasp multi-camera grasp", "verdict": "keep"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "keep"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep"},
+    {"quote": "Wrote Prisma SQL queries and Redis query caching", "verdict": "tighten",
+     "issue": "Engineering result (load/latency) unquantified; 20K visits is traffic, not caused by the caching.",
+     "suggestion": "Built Prisma SQL queries and Redis caching for Tortuga's class scheduler to cut database load under launch traffic of 20,000+ visits in 30 days"},
+    {"quote": "Building a RAG meal-suggestion feature for the", "verdict": "keep"},
+    {"quote": "Implemented a C++ order-book simulator replaying historical", "verdict": "keep"},
+    {"quote": "Designed paginated hash-based order-book storage with an", "verdict": "tighten",
+     "issue": "Dense; 'checked for drift' result is unstated.",
+     "suggestion": "Designed paginated hash-based order-book storage with an in-memory LFU cache for hot tickers, validated for drift against IEX historical book data"},
+    {"quote": "Benchmarked a time-based adaptive LSM store against", "verdict": "add_context",
+     "issue": "Says what was measured but not the finding; screeners and HMs want the conclusion.",
+     "suggestion": "Clarify with candidate which store won and under what workload; state that comparison outcome without inventing numbers."}
+  ],
+  "structure": [
+    {"key": "skills_keywords", "change": "Keep Skills as plain comma lists; consider adding 'Git' and 'REST APIs' only if candidate actually uses them", "rationale": "Common SWE JD keywords absent verbatim; GitHub/API Gateway imply them but literal matching ATS filters miss implications."},
+    {"key": "bullet_wrap_extraction", "change": "Check export so wrapped bullet lines don't emit blank lines between continuation lines", "rationale": "Extracted text splits each bullet with an empty line; some parsers treat continuations as new paragraphs."},
+    {"key": "cert_placement", "change": "Keep certification in Skills block; no change needed", "rationale": "Parses cleanly and the AWS keyword reinforces cloud coverage."}
+  ],
+  "top3": [
+    "clarify: expand the AWS Redshift bullet with the specific component/technique — the top brand currently has the thinnest content",
+    "clarify: add baselines/sample sizes for 90% survey and 30% setup-time claims, and state the LSM vs B+ tree benchmark finding",
+    "Tighten tech-first bullets (Capital One UI, Tortuga caching) to lead with action and end with the result"
+  ]
+}

@@ -39,8 +39,10 @@ roles:
     status: in_progress     # present tense OK
     bullets:
       redshift:
-        claim: Researching and implementing Java-based utilization optimizations for Amazon Redshift
-        core_techs: [Java, Amazon Redshift]
+        claim: Researching and implementing Java-based utilization optimizations for Amazon Redshift. Detail (Amar, Oct 2026) - tuning the upper and lower bounds of EC2 capacity reserved for Redshift operations such as patching, controlling the reservation envelope to keep availability without blowing up cost; policies backtested; ~2 weeks in, no shareable numbers
+        core_techs: [Java, Redshift]
+        optional_techs: [EC2, backtesting]
+        notes: backtest results intentionally omitted (preliminary / internal)
         required_numbers: []
 
   capital_one:
@@ -74,7 +76,7 @@ roles:
     status: in_progress
     bullets:
       leo_deploy:
-        claim: Deployed an Amazon Leo space-topic research utility that was adopted into Leo's ecosystem; Docker + AWS Fargate orchestration; GitHub Actions CI/CD; AWS CDK (TypeScript) infrastructure-as-code so engineers unfamiliar with the project could contribute
+        claim: Deployed an Amazon Leo space-topic research utility that was adopted into Leo's ecosystem (Amar, Oct 2026 - used by Leo's public-policy staff, maintained and rolled out by Leo engineers); Docker + AWS Fargate orchestration; GitHub Actions CI/CD; AWS CDK (TypeScript) infrastructure-as-code so engineers unfamiliar with the project could contribute
         core_techs: [Docker, AWS Fargate, AWS CDK]
         optional_techs: [GitHub Actions, TypeScript]
         required_numbers: []
