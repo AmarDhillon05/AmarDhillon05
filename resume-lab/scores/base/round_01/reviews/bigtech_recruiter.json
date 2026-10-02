@@ -1,0 +1,57 @@
+{
+  "persona": "bigtech_recruiter",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28, AWS SDE intern now, Capital One SWE intern, Amazon contract work, ML research, co-founded 110+ member studio. Strong brands; a bit busy.",
+  "scores": {
+    "impact_clarity": 7,
+    "quantification": 7,
+    "technical_depth": 8,
+    "concision_readability": 7,
+    "skim_test": 8,
+    "credibility": 7,
+    "ats_parseability": 8,
+    "visual_layout": 8,
+    "domain_fit": 8,
+    "overall": 8
+  },
+  "score_rationale": {
+    "impact_clarity": "Several bullets end on tech or method (AWS role, PhysTwin, IEX bullets) with no outcome; Amazon contract bullets lead with services over purpose.",
+    "quantification": "Satisfaction percentages (90%, 93%) lack sample size or rater; 34% and 30% lack baseline. Project section has no results at all.",
+    "concision_readability": "Most bullets wrap to full two lines with dense AWS service chains; Amazon contract section reads as service-name soup at skim speed.",
+    "credibility": "Four concurrent 'Present' roles overlapping a Redmond on-site internship raises questions; two Amazon entries may look double-counted; 'Claude skill' is unclear jargon."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "Clarify: which roles are actually active during the Sep–Dec 2026 Redmond AWS internship? Four College Park roles marked 'Present' alongside it reads as overcommitted or inflated.",
+    "Clarify: distinguish 'Amazon Web Services' (internship) from 'Amazon (via UMD App Development Contracting)' so it doesn't look like the same brand listed twice.",
+    "AWS internship has a single vague bullet ('Researching and implementing...'); it's your top brand and currently says the least."
+  ],
+  "bullets": [
+    {"quote": "Researching and implementing Java-based utilization optimizations for", "verdict": "add_context", "issue": "Top brand, one vague bullet; no scope or what kind of utilization.", "suggestion": "Implementing Java-based resource-utilization optimizations for Amazon Redshift (ongoing) — clarify which component/resource if you can state it."},
+    {"quote": "Rebuilt the legacy UI of a test-data", "verdict": "tighten", "issue": "Who rated 90% satisfaction and how many users? Outcome sits at end after tech list.", "suggestion": "Rebuilt a legacy test-data workflow builder UI (React, Electron, TypeScript) with a React-Flow editor and Jest-tested validation; rated 90% satisfaction vs. the old tool"},
+    {"quote": "Built a precomputed tree-style workflow search index", "verdict": "tighten", "issue": "Purpose is clear but no outcome; 'distilling' is vague.", "suggestion": "Built a precomputed tree-style search index over a 270K+ row PostgreSQL workflow table (Python/SQLAlchemy, Redis) to minimize DB queries under access limits"},
+    {"quote": "Cut workflow generation time 65% to under", "verdict": "reframe", "issue": "Strong metric; 'Claude skill using sub-skill decomposition' is opaque to recruiters.", "suggestion": "Cut workflow generation time 65% to under 15s by decomposing an LLM (Claude) agent into sub-tasks with Python search/validation tools, guided by CloudWatch + OpenSearch latency logs"},
+    {"quote": "Shipped an Amazon Leo space-research tool adopted", "verdict": "tighten", "issue": "Good 'adopted' signal buried under deployment stack; say what the tool does.", "suggestion": "Shipped a space-research tool adopted into Amazon Leo's ecosystem; deployed on Docker + AWS Fargate via GitHub Actions with AWS CDK (TypeScript) infra for easy onboarding"},
+    {"quote": "Sped up a pipeline routing 6,000+ scraped", "verdict": "tighten", "issue": "Metric good; baseline unclear (34% faster end-to-end latency? throughput?).", "suggestion": "Sped up a pipeline routing 6,000+ scraped research documents to inference by 34% (clarify: latency or throughput) using Kinesis streams feeding Lambda, exposed via API Gateway"},
+    {"quote": "Automated fine-tuning of an AWS Bedrock source-relevancy", "verdict": "add_context", "issue": "Reads as AWS service list; no outcome stated.", "suggestion": "Automated Bedrock source-relevancy model fine-tuning on EventBridge schedules with decision gates that skip redundant retraining; added X-Ray tracing and SNS failure alerts"},
+    {"quote": "Developing automated training for PhysTwin, a physics-based", "verdict": "add_context", "issue": "Says what, not how or result; ICLR mention is a nice credibility hook.", "suggestion": "Clarify what 'automated training' means (e.g., pipeline, hyperparameter search) using only what you actually built."},
+    {"quote": "Engineered a Python pipeline rendering AnyGrasp multi-camera", "verdict": "tighten", "issue": "Dense proper nouns; outcome is soft but present.", "suggestion": "Built a Python pipeline rendering AnyGrasp multi-camera grasp candidates as Open3D overlays for a Qwen3-VL-8B VLM, letting researchers isolate scene components"},
+    {"quote": "Reduced research-environment setup time 30% with uv", "verdict": "keep"},
+    {"quote": "Co-founded and scaled a 110+ member campus", "verdict": "keep"},
+    {"quote": "Developed Prisma-based SQL querying with Redis query", "verdict": "reframe", "issue": "Lead with the product and traffic; purpose clause dangles at end.", "suggestion": "Built the data layer for Tortuga, a class scheduler with 20,000+ visits in its first 30 days, using Prisma SQL queries and Redis caching to cut DB load and latency"},
+    {"quote": "Building a RAG meal-suggestion feature for the", "verdict": "tighten", "issue": "Honest WIP scoping is good; 93% needs tester count to be defensible.", "suggestion": "Building a RAG meal-suggestion feature for the official UMD app (GPT-4o mini, ChromaDB + SentenceBERT search); 93% satisfaction among internal testers (in progress)"},
+    {"quote": "Implemented a C++ order-book simulator on historical", "verdict": "tighten", "issue": "Design choice clear; no result or scale.", "suggestion": "Built a C++ order-book simulator on historical IEX data with a contract-based plug-in interface so alternative matching strategies swap in with enforced correctness"},
+    {"quote": "Designed paginated hash-based storage for live order-book", "verdict": "add_context", "issue": "'Evaluated for drift' but no finding reported.", "suggestion": "Clarify: what did the drift evaluation show? State the result if you have one; otherwise keep as design-focused."},
+    {"quote": "Benchmarked a time-based adaptive LSM store against", "verdict": "add_context", "issue": "Measured throughput/latency but reports no result; recruiters want the takeaway.", "suggestion": "Clarify: which store won and by how much, if measured. Otherwise trim to the method in one line."}
+  ],
+  "structure": [
+    {"key": "merge_or_label_amazon", "change": "Rename the contract entry to 'UMD App Development Contracting (client: Amazon Leo)' or similar.", "rationale": "Avoids appearing to list Amazon twice; makes the AWS internship the unambiguous headline brand."},
+    {"key": "fix_concurrent_dates", "change": "Update end dates for roles paused during the AWS internship (or mark part-time).", "rationale": "Five overlapping roles across two states invites a credibility question in the first screen."},
+    {"key": "trim_amazon_contract_stack", "change": "Cut one or two AWS service names per contract bullet; the Skills section already lists them.", "rationale": "Reduces buzzword density so the impact reads at skim speed."}
+  ],
+  "top3": [
+    "Clarify the AWS Redshift internship with a concrete second bullet or sharper scope — it's your strongest brand and currently your weakest bullet.",
+    "Clarify concurrent dates and the two Amazon entries so the timeline and brands read as credible in 7 seconds.",
+    "Lead bullets with purpose/outcome and move AWS service lists to the tail or Skills; add sample sizes/baselines for the 90%, 93%, and 34% claims."
+  ]
+}

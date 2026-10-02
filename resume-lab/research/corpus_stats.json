@@ -1,75 +1,87 @@
 {
   "overall": {
-    "n_bullets": 1442,
-    "n_resumes": 80,
+    "n_bullets": 1593,
+    "n_resumes": 101,
     "chars_q25_q50_q75": [
       105,
       132,
-      195
+      192
     ],
     "words_median": 19,
-    "pct_with_metric": 0.503,
-    "techs_per_bullet_mean": 1.912,
+    "pct_with_metric": 0.518,
+    "techs_per_bullet_mean": 1.901,
     "bold_per_bullet_mean": 0.678,
     "pct_bullets_with_any_bold": 0.334,
-    "bullets_per_resume_median": 16,
+    "bullets_per_resume_median": 15,
     "pct_has_context": 0.212,
     "pct_has_result": 0.339,
     "top_leading_verbs": [
       [
         "built",
-        346
+        364
       ],
       [
         "developed",
-        214
+        242
       ],
       [
         "designed",
-        178
+        202
       ],
       [
         "implemented",
-        150
+        170
       ],
       [
         "engineered",
-        94
+        98
       ],
       [
         "created",
-        84
+        97
       ],
       [
         "led",
-        74
+        81
       ],
       [
         "integrated",
-        68
+        74
       ],
       [
         "optimized",
-        52
+        59
       ],
       [
         "architected",
-        46
+        52
       ],
       [
         "wrote",
-        38
+        40
       ],
       [
         "automated",
-        34
+        35
+      ],
+      [
+        "reduced",
+        30
+      ],
+      [
+        "improved",
+        29
+      ],
+      [
+        "deployed",
+        29
       ],
       [
         "used",
         28
       ],
       [
-        "reduced",
+        "achieved",
         28
       ],
       [
@@ -77,20 +89,8 @@
         26
       ],
       [
-        "achieved",
-        26
-      ],
-      [
-        "improved",
-        24
-      ],
-      [
         "shipped",
         24
-      ],
-      [
-        "deployed",
-        22
       ],
       [
         "launched",
@@ -99,41 +99,41 @@
     ]
   },
   "top": {
-    "n_bullets": 1263,
-    "n_resumes": 68,
+    "n_bullets": 1282,
+    "n_resumes": 71,
     "chars_q25_q50_q75": [
       104,
       124,
       190
     ],
     "words_median": 18,
-    "pct_with_metric": 0.473,
-    "techs_per_bullet_mean": 1.895,
+    "pct_with_metric": 0.475,
+    "techs_per_bullet_mean": 1.896,
     "bold_per_bullet_mean": 0.614,
     "pct_bullets_with_any_bold": 0.301,
-    "bullets_per_resume_median": 17,
+    "bullets_per_resume_median": 16,
     "pct_has_context": 0.214,
     "pct_has_result": 0.322,
     "top_leading_verbs": [
       [
         "built",
-        288
+        290
       ],
       [
         "developed",
-        194
+        198
       ],
       [
         "designed",
-        152
+        154
       ],
       [
         "implemented",
-        138
+        139
       ],
       [
         "engineered",
-        82
+        84
       ],
       [
         "created",
@@ -141,7 +141,7 @@
       ],
       [
         "led",
-        64
+        66
       ],
       [
         "integrated",
@@ -161,7 +161,7 @@
       ],
       [
         "automated",
-        28
+        29
       ],
       [
         "used",
@@ -177,7 +177,7 @@
       ],
       [
         "improved",
-        22
+        23
       ],
       [
         "achieved",
@@ -297,9 +297,206 @@
         ]
       ]
     },
-    "outcome": {}
+    "outcome": {
+      "n_bullets": 151,
+      "n_resumes": 21,
+      "chars_q25_q50_q75": [
+        106,
+        134,
+        175
+      ],
+      "words_median": 20,
+      "pct_with_metric": 0.695,
+      "techs_per_bullet_mean": 1.77,
+      "bold_per_bullet_mean": null,
+      "pct_bullets_with_any_bold": null,
+      "bullets_per_resume_median": 7,
+      "pct_has_context": null,
+      "pct_has_result": null,
+      "top_leading_verbs": [
+        [
+          "developed",
+          28
+        ],
+        [
+          "designed",
+          24
+        ],
+        [
+          "implemented",
+          20
+        ],
+        [
+          "built",
+          18
+        ],
+        [
+          "created",
+          13
+        ],
+        [
+          "led",
+          7
+        ],
+        [
+          "optimized",
+          7
+        ],
+        [
+          "deployed",
+          7
+        ],
+        [
+          "configured",
+          6
+        ],
+        [
+          "architected",
+          6
+        ],
+        [
+          "integrated",
+          6
+        ],
+        [
+          "improved",
+          5
+        ],
+        [
+          "decreased",
+          4
+        ],
+        [
+          "engineered",
+          4
+        ],
+        [
+          "redesigned",
+          4
+        ],
+        [
+          "debugged",
+          4
+        ],
+        [
+          "discovered",
+          2
+        ],
+        [
+          "upgraded",
+          2
+        ],
+        [
+          "drove",
+          2
+        ],
+        [
+          "mentored",
+          2
+        ]
+      ]
+    }
   },
   "by_domain": {
+    "general_swe": {
+      "n_bullets": 357,
+      "n_resumes": 84,
+      "chars_q25_q50_q75": [
+        101,
+        110,
+        154
+      ],
+      "words_median": 16,
+      "pct_with_metric": 0.539,
+      "techs_per_bullet_mean": 1.759,
+      "bold_per_bullet_mean": 0.382,
+      "pct_bullets_with_any_bold": 0.232,
+      "bullets_per_resume_median": 3,
+      "pct_has_context": 0.147,
+      "pct_has_result": 0.279,
+      "top_leading_verbs": [
+        [
+          "developed",
+          56
+        ],
+        [
+          "implemented",
+          45
+        ],
+        [
+          "built",
+          34
+        ],
+        [
+          "designed",
+          23
+        ],
+        [
+          "optimized",
+          22
+        ],
+        [
+          "created",
+          17
+        ],
+        [
+          "led",
+          16
+        ],
+        [
+          "engineered",
+          14
+        ],
+        [
+          "architected",
+          14
+        ],
+        [
+          "integrated",
+          12
+        ],
+        [
+          "performed",
+          12
+        ],
+        [
+          "a",
+          10
+        ],
+        [
+          "reverse-engineered",
+          8
+        ],
+        [
+          "achieved",
+          8
+        ],
+        [
+          "launched",
+          8
+        ],
+        [
+          "started",
+          8
+        ],
+        [
+          "added",
+          7
+        ],
+        [
+          "resolved",
+          6
+        ],
+        [
+          "lead",
+          6
+        ],
+        [
+          "won",
+          6
+        ]
+      ]
+    },
     "ai_ml_engineering": {
       "n_bullets": 290,
       "n_resumes": 71,
@@ -399,116 +596,17 @@
         ]
       ]
     },
-    "general_swe": {
-      "n_bullets": 272,
-      "n_resumes": 72,
-      "chars_q25_q50_q75": [
-        99,
-        110,
-        139
-      ],
-      "words_median": 16,
-      "pct_with_metric": 0.515,
-      "techs_per_bullet_mean": 1.765,
-      "bold_per_bullet_mean": 0.382,
-      "pct_bullets_with_any_bold": 0.232,
-      "bullets_per_resume_median": 3,
-      "pct_has_context": 0.147,
-      "pct_has_result": 0.279,
-      "top_leading_verbs": [
-        [
-          "developed",
-          40
-        ],
-        [
-          "implemented",
-          36
-        ],
-        [
-          "built",
-          24
-        ],
-        [
-          "designed",
-          18
-        ],
-        [
-          "optimized",
-          16
-        ],
-        [
-          "performed",
-          12
-        ],
-        [
-          "led",
-          12
-        ],
-        [
-          "created",
-          12
-        ],
-        [
-          "integrated",
-          10
-        ],
-        [
-          "engineered",
-          10
-        ],
-        [
-          "a",
-          10
-        ],
-        [
-          "reverse-engineered",
-          8
-        ],
-        [
-          "architected",
-          8
-        ],
-        [
-          "achieved",
-          8
-        ],
-        [
-          "launched",
-          8
-        ],
-        [
-          "started",
-          8
-        ],
-        [
-          "resolved",
-          6
-        ],
-        [
-          "added",
-          6
-        ],
-        [
-          "lead",
-          6
-        ],
-        [
-          "won",
-          6
-        ]
-      ]
-    },
     "backend_distributed": {
-      "n_bullets": 209,
-      "n_resumes": 70,
+      "n_bullets": 258,
+      "n_resumes": 77,
       "chars_q25_q50_q75": [
         107,
-        162,
-        204
+        158,
+        202
       ],
       "words_median": 21,
-      "pct_with_metric": 0.541,
-      "techs_per_bullet_mean": 1.89,
+      "pct_with_metric": 0.56,
+      "techs_per_bullet_mean": 1.888,
       "bold_per_bullet_mean": 0.746,
       "pct_bullets_with_any_bold": 0.34,
       "bullets_per_resume_median": 3,
@@ -517,46 +615,54 @@
       "top_leading_verbs": [
         [
           "built",
-          58
+          63
         ],
         [
           "developed",
-          42
+          51
         ],
         [
           "designed",
-          30
+          36
         ],
         [
           "implemented",
-          28
+          31
         ],
         [
           "reduced",
           16
         ],
         [
+          "architected",
+          15
+        ],
+        [
+          "created",
+          15
+        ],
+        [
           "engineered",
           14
         ],
         [
-          "architected",
+          "optimized",
           12
         ],
         [
-          "optimized",
-          8
-        ],
-        [
           "improved",
-          8
+          11
         ],
         [
-          "created",
+          "led",
           8
         ],
         [
           "eliminated",
+          8
+        ],
+        [
+          "deployed",
           8
         ],
         [
@@ -566,6 +672,10 @@
         [
           "integrated",
           8
+        ],
+        [
+          "automated",
+          7
         ],
         [
           "migrated",
@@ -580,34 +690,22 @@
           6
         ],
         [
-          "led",
-          6
-        ],
-        [
-          "automated",
-          6
-        ],
-        [
           "spearheaded",
           6
-        ],
-        [
-          "re-architected",
-          4
         ]
       ]
     },
     "startup_fullstack": {
-      "n_bullets": 168,
-      "n_resumes": 59,
+      "n_bullets": 206,
+      "n_resumes": 64,
       "chars_q25_q50_q75": [
         109,
-        158,
-        201
+        155,
+        196
       ],
-      "words_median": 22,
-      "pct_with_metric": 0.518,
-      "techs_per_bullet_mean": 2.077,
+      "words_median": 21,
+      "pct_with_metric": 0.531,
+      "techs_per_bullet_mean": 2.008,
       "bold_per_bullet_mean": 0.875,
       "pct_bullets_with_any_bold": 0.411,
       "bullets_per_resume_median": 2,
@@ -616,35 +714,35 @@
       "top_leading_verbs": [
         [
           "built",
-          56
+          62
         ],
         [
           "developed",
-          30
+          34
         ],
         [
           "implemented",
-          16
+          22
         ],
         [
           "created",
-          16
-        ],
-        [
-          "designed",
-          12
+          19
         ],
         [
           "led",
-          12
+          14
+        ],
+        [
+          "designed",
+          13
         ],
         [
           "engineered",
-          10
+          12
         ],
         [
           "integrated",
-          10
+          12
         ],
         [
           "shipped",
@@ -655,19 +753,19 @@
           8
         ],
         [
+          "architected",
+          7
+        ],
+        [
           "launched",
           6
         ],
         [
-          "architected",
-          4
+          "added",
+          5
         ],
         [
           "grew",
-          4
-        ],
-        [
-          "added",
           4
         ],
         [
@@ -691,22 +789,22 @@
           4
         ],
         [
-          "initiated",
+          "spearheaded",
           4
         ]
       ]
     },
     "cloud_infra_sre": {
-      "n_bullets": 164,
-      "n_resumes": 59,
+      "n_bullets": 186,
+      "n_resumes": 62,
       "chars_q25_q50_q75": [
         108,
         145,
-        206
+        203
       ],
-      "words_median": 19,
-      "pct_with_metric": 0.543,
-      "techs_per_bullet_mean": 1.988,
+      "words_median": 20,
+      "pct_with_metric": 0.564,
+      "techs_per_bullet_mean": 1.989,
       "bold_per_bullet_mean": 0.921,
       "pct_bullets_with_any_bold": 0.384,
       "bullets_per_resume_median": 2,
@@ -715,27 +813,27 @@
       "top_leading_verbs": [
         [
           "built",
-          36
+          38
         ],
         [
           "designed",
-          24
+          26
         ],
         [
           "engineered",
           16
         ],
         [
-          "led",
+          "implemented",
           14
         ],
         [
-          "implemented",
-          12
+          "developed",
+          14
         ],
         [
-          "developed",
-          12
+          "led",
+          14
         ],
         [
           "automated",
@@ -747,6 +845,14 @@
         ],
         [
           "deployed",
+          10
+        ],
+        [
+          "created",
+          10
+        ],
+        [
+          "optimized",
           8
         ],
         [
@@ -758,7 +864,11 @@
           6
         ],
         [
-          "optimized",
+          "configured",
+          6
+        ],
+        [
+          "mentored",
           6
         ],
         [
@@ -770,42 +880,30 @@
           6
         ],
         [
-          "created",
-          6
+          "architected",
+          5
         ],
         [
           "contributed",
           4
         ],
         [
-          "configured",
-          4
-        ],
-        [
           "raised",
-          4
-        ],
-        [
-          "extended",
-          4
-        ],
-        [
-          "reduced",
           4
         ]
       ]
     },
     "ml_research_robotics": {
-      "n_bullets": 138,
-      "n_resumes": 51,
+      "n_bullets": 152,
+      "n_resumes": 53,
       "chars_q25_q50_q75": [
-        100,
-        117,
-        187
+        99,
+        119,
+        188
       ],
       "words_median": 17,
-      "pct_with_metric": 0.449,
-      "techs_per_bullet_mean": 2.087,
+      "pct_with_metric": 0.474,
+      "techs_per_bullet_mean": 2.072,
       "bold_per_bullet_mean": 0.362,
       "pct_bullets_with_any_bold": 0.232,
       "bullets_per_resume_median": 2,
@@ -814,26 +912,30 @@
       "top_leading_verbs": [
         [
           "developed",
-          26
+          28
         ],
         [
           "built",
-          24
+          26
         ],
         [
           "designed",
-          18
+          24
+        ],
+        [
+          "led",
+          14
         ],
         [
           "created",
           14
         ],
         [
-          "led",
-          12
+          "worked",
+          10
         ],
         [
-          "worked",
+          "implemented",
           10
         ],
         [
@@ -849,7 +951,7 @@
           6
         ],
         [
-          "implemented",
+          "integrated",
           6
         ],
         [
@@ -866,10 +968,6 @@
         ],
         [
           "conducted",
-          4
-        ],
-        [
-          "integrated",
           4
         ],
         [
@@ -895,60 +993,68 @@
       ]
     },
     "embedded_systems": {
-      "n_bullets": 81,
-      "n_resumes": 25,
+      "n_bullets": 146,
+      "n_resumes": 34,
       "chars_q25_q50_q75": [
         103,
-        126,
+        124,
         179
       ],
-      "words_median": 18,
-      "pct_with_metric": 0.309,
-      "techs_per_bullet_mean": 1.901,
+      "words_median": 19,
+      "pct_with_metric": 0.491,
+      "techs_per_bullet_mean": 1.852,
       "bold_per_bullet_mean": 0.259,
       "pct_bullets_with_any_bold": 0.185,
-      "bullets_per_resume_median": 1,
+      "bullets_per_resume_median": 3,
       "pct_has_context": 0.111,
       "pct_has_result": 0.198,
       "top_leading_verbs": [
         [
           "designed",
-          28
+          45
         ],
         [
           "developed",
-          14
+          28
         ],
         [
           "built",
-          14
-        ],
-        [
-          "wrote",
-          14
+          22
         ],
         [
           "implemented",
+          19
+        ],
+        [
+          "wrote",
+          16
+        ],
+        [
+          "created",
           8
+        ],
+        [
+          "debugged",
+          6
         ],
         [
           "owned",
           6
         ],
         [
-          "automated",
-          4
-        ],
-        [
-          "created",
-          4
+          "engineered",
+          6
         ],
         [
           "optimized",
-          4
+          5
         ],
         [
-          "engineered",
+          "led",
+          5
+        ],
+        [
+          "automated",
           4
         ],
         [
@@ -956,8 +1062,20 @@
           4
         ],
         [
+          "developing",
+          4
+        ],
+        [
           "creating",
           4
+        ],
+        [
+          "integrated",
+          4
+        ],
+        [
+          "decreased",
+          3
         ],
         [
           "authored",
@@ -970,25 +1088,104 @@
         [
           "validated",
           2
+        ]
+      ]
+    },
+    "quant_hft": {
+      "n_bullets": 65,
+      "n_resumes": 29,
+      "chars_q25_q50_q75": [
+        102,
+        112,
+        169
+      ],
+      "words_median": 15,
+      "pct_with_metric": 0.354,
+      "techs_per_bullet_mean": 1.554,
+      "bold_per_bullet_mean": 0.379,
+      "pct_bullets_with_any_bold": 0.224,
+      "bullets_per_resume_median": 2,
+      "pct_has_context": 0.172,
+      "pct_has_result": 0.207,
+      "top_leading_verbs": [
+        [
+          "built",
+          12
+        ],
+        [
+          "developed",
+          12
+        ],
+        [
+          "designed",
+          12
+        ],
+        [
+          "implemented",
+          8
+        ],
+        [
+          "architected",
+          6
+        ],
+        [
+          "led",
+          4
+        ],
+        [
+          "improved",
+          4
+        ],
+        [
+          "engineered",
+          4
+        ],
+        [
+          "one",
+          4
+        ],
+        [
+          "collaborated",
+          4
+        ],
+        [
+          "researched",
+          2
         ],
         [
           "migrated",
           2
         ],
         [
-          "taped",
+          "productionized",
           2
         ],
         [
-          "advanced",
+          "innovated",
           2
         ],
         [
-          "reverse",
+          "interned",
           2
         ],
         [
-          "debugged",
+          "mid",
+          2
+        ],
+        [
+          "selected",
+          2
+        ],
+        [
+          "mentored",
+          2
+        ],
+        [
+          "curated",
+          2
+        ],
+        [
+          "automated",
           2
         ]
       ]
@@ -1091,122 +1288,27 @@
           2
         ]
       ]
-    },
-    "quant_hft": {
-      "n_bullets": 58,
-      "n_resumes": 28,
-      "chars_q25_q50_q75": [
-        101,
-        110,
-        188
-      ],
-      "words_median": 15,
-      "pct_with_metric": 0.362,
-      "techs_per_bullet_mean": 1.517,
-      "bold_per_bullet_mean": 0.379,
-      "pct_bullets_with_any_bold": 0.224,
-      "bullets_per_resume_median": 1,
-      "pct_has_context": 0.172,
-      "pct_has_result": 0.207,
-      "top_leading_verbs": [
-        [
-          "built",
-          12
-        ],
-        [
-          "developed",
-          8
-        ],
-        [
-          "architected",
-          6
-        ],
-        [
-          "implemented",
-          6
-        ],
-        [
-          "designed",
-          6
-        ],
-        [
-          "led",
-          4
-        ],
-        [
-          "improved",
-          4
-        ],
-        [
-          "engineered",
-          4
-        ],
-        [
-          "one",
-          4
-        ],
-        [
-          "collaborated",
-          4
-        ],
-        [
-          "researched",
-          2
-        ],
-        [
-          "migrated",
-          2
-        ],
-        [
-          "productionized",
-          2
-        ],
-        [
-          "innovated",
-          2
-        ],
-        [
-          "interned",
-          2
-        ],
-        [
-          "mid",
-          2
-        ],
-        [
-          "selected",
-          2
-        ],
-        [
-          "mentored",
-          2
-        ],
-        [
-          "curated",
-          2
-        ],
-        [
-          "automated",
-          2
-        ]
-      ]
     }
   },
   "section_orders": [
     [
       "education > experience > projects > technical skil",
-      18
+      19
     ],
     [
       "education > experience > projects > skills",
-      14
+      17
     ],
     [
       "education > skills > experience > projects",
-      6
+      8
     ],
     [
       "education > professional e > projects > technical skil",
+      4
+    ],
+    [
+      "skills > experience > projects > education",
       4
     ],
     [
@@ -1235,10 +1337,6 @@
     ],
     [
       "education > technical skil > experience > open source > selected proje",
-      2
-    ],
-    [
-      "education > experience > projects & hac > skills & activ",
       2
     ]
   ],

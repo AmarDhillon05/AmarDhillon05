@@ -1,0 +1,53 @@
+{
+  "persona": "bs_detector",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28; AWS SDE intern, Capital One SWE intern, Amazon contract work; lots of AWS services and percentages; four simultaneous 'Present' roles.",
+  "scores": {"impact_clarity": 7, "quantification": 6, "technical_depth": 7, "concision_readability": 7,
+             "skim_test": 8, "credibility": 6, "ats_parseability": 8, "visual_layout": 7, "domain_fit": 8, "overall": 8},
+  "score_rationale": {
+    "impact_clarity": "Several bullets end on tech lists (X-Ray, SNS, API Gateway) instead of an outcome; AWS bullet has no result; IEX bullets lack findings.",
+    "quantification": "90% satisfaction, 34% speedup, 93% satisfaction lack baseline, metric definition, or sample size; 20K visits measures the product, not the caching work.",
+    "technical_depth": "Good design choices (precomputed index, LFU cache, LSM vs B+ tree), but Amazon contract bullets lean toward AWS service enumeration.",
+    "concision_readability": "Nearly every bullet runs a full two lines; dense tech-stacked phrasing; header contact line wraps.",
+    "credibility": "AWS intern in Redmond while three College Park roles read 'Present'; 'adopted into ecosystem', 'scaled', unanchored satisfaction percentages invite hard follow-ups.",
+    "visual_layout": "Clean and one page but dense; heavy italics on titles/locations; contact line wraps awkwardly to second line.",
+    "domain_fit": "Strong general-SWE evidence present; AWS role is the weakest-written yet top-listed entry."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "Clarify date overlaps: AWS internship in Redmond (Sep–Dec 2026) overlaps Amazon contract, UMIACS, and TerpLabs all marked 'Present'; mark paused/ended roles or change end dates honestly.",
+    "Clarify: what does '90% satisfaction vs. the old tool' measure, and how many users rated it?",
+    "Clarify: what metric improved 34% in the Kinesis/Lambda pipeline (throughput, end-to-end latency, cost)?",
+    "Clarify: what 'adopted into Leo's ecosystem' concretely means (which teams/users, internal vs production).",
+    "TerpLabs Tortuga bullet attributes 20,000+ visits to the product, not the caching work; state the caching result or decouple the two."
+  ],
+  "bullets": [
+    {"quote": "Researching and implementing Java-based utilization optimizations for", "verdict": "add_context", "issue": "Vague and generic; 'utilization' of what? No technique or scope; reads as placeholder.", "suggestion": "Name the component and resource being optimized (e.g., which Redshift subsystem and whether CPU/memory/storage), keeping it explicitly in-progress."},
+    {"quote": "Rebuilt the legacy UI of a test-data", "verdict": "tighten", "issue": "Tech list front-loaded; '90% satisfaction' has no rater count or definition.", "suggestion": "Rebuilt a legacy test-data workflow builder UI (React/TypeScript/Electron) with a React-Flow editor and Jest-tested validation; 90% of [N] users preferred it over the old tool"},
+    {"quote": "Built a precomputed tree-style workflow search index", "verdict": "add_context", "issue": "Good design decision, but no stated result; 'minimize DB queries' lacks what changed.", "suggestion": "Built a precomputed tree-style search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis) to stay within DB access limits"},
+    {"quote": "Cut workflow generation time 65% to under", "verdict": "reframe", "issue": "'Claude skill using sub-skill decomposition' is jargon a non-LLM interviewer won't parse; clarify generation of what.", "suggestion": "Cut LLM workflow generation time 65% to under 15s by decomposing a Claude agent into sub-tasks with Python search/validation tools, targeting stages flagged in CloudWatch/OpenSearch latency logs"},
+    {"quote": "Shipped an Amazon Leo space-research tool adopted", "verdict": "reframe", "issue": "'Adopted into ecosystem' is puffy; deployment stack listed but what the tool does is missing.", "suggestion": "Shipped [what the tool does] for Amazon Leo researchers on Docker + AWS Fargate with GitHub Actions CI and AWS CDK (TypeScript) infra-as-code for onboarding new engineers"},
+    {"quote": "Sped up a pipeline routing 6,000+ scraped", "verdict": "add_context", "issue": "34% of what metric? Tail clause 'exposed via API Gateway' adds nothing.", "suggestion": "Cut [latency/throughput metric] 34% for a pipeline routing 6,000+ scraped research documents to inference by moving to Kinesis streams feeding Lambda processors"},
+    {"quote": "Automated fine-tuning of an AWS Bedrock source-relevancy", "verdict": "tighten", "issue": "Strong decision (skip redundant retraining) buried under service enumeration; no outcome stated.", "suggestion": "Automated Bedrock relevancy-model fine-tuning on EventBridge schedules with decision gates that skip redundant retraining runs; added X-Ray tracing and SNS failure alerts"},
+    {"quote": "Developing automated training for PhysTwin, a physics-based", "verdict": "add_context", "issue": "Candidate's own contribution unclear; 'targeting ICLR' borrows team prestige.", "suggestion": "Developing automated training for PhysTwin (physics-based digital twin) — state the specific piece you own — with a PhD-led team targeting ICLR"},
+    {"quote": "Engineered a Python pipeline rendering AnyGrasp multi-camera", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Reduced research-environment setup time 30% with uv", "verdict": "tighten", "issue": "Two ideas stapled together; profiling/Pytest clause doesn't support the 30% claim.", "suggestion": "Cut research-environment setup time 30% with uv dependency pinning and Docker; added psutil time/memory profiling and Pytest suites to locate bottlenecks"},
+    {"quote": "Co-founded and scaled a 110+ member campus", "verdict": "tighten", "issue": "'Scaled' and 'run as agile teams' are filler; your role in shipping is unclear.", "suggestion": "Co-founded a 110+ member campus product studio that has shipped 5 live products"},
+    {"quote": "Developed Prisma-based SQL querying with Redis query", "verdict": "reframe", "issue": "20K visits is product traction, not the caching result; ordering makes cause/effect muddy.", "suggestion": "Built the data layer for Tortuga, a class scheduler with 20,000+ visits in its first 30 days, using Prisma and Redis query caching to reduce DB load and latency"},
+    {"quote": "Building a RAG meal-suggestion feature for the", "verdict": "add_context", "issue": "Honest WIP label is good, but 93% from unnamed number of internal testers is thin.", "suggestion": "Building a RAG meal-suggestion feature for the official UMD app (GPT-4o mini, ChromaDB + SentenceBERT search); in internal testing, 93% of [N] testers rated suggestions satisfactory"},
+    {"quote": "Implemented a C++ order-book simulator on historical", "verdict": "tighten", "issue": "'Contract-based plug-in design… correctness enforced' is abstract; say what is pluggable and how correctness is checked.", "suggestion": "Implemented a C++ order-book simulator replaying historical IEX data, with a plug-in interface for swapping matching strategies and [checks] enforcing correctness"},
+    {"quote": "Designed paginated hash-based storage for live order-book", "verdict": "add_context", "issue": "'Evaluated for drift' with no finding; 'live' data in a historical simulator is confusing.", "suggestion": "Designed paginated hash-based order-book storage with an in-memory LFU cache for hot tickers; validated reconstructed books against IEX historical data"},
+    {"quote": "Benchmarked a time-based adaptive LSM store against", "verdict": "add_context", "issue": "Benchmarks with no result; an interviewer will immediately ask which won and by how much.", "suggestion": "Benchmarked a time-based adaptive LSM store vs. a B+ tree for simulation logs (rdtscp latency, Linux perf), state the headline result if measured"}
+  ],
+  "structure": [
+    {"key": "fix_present_dates", "change": "Resolve overlapping 'Present' end dates across Amazon contract, UMIACS, and TerpLabs during the Redmond internship.", "rationale": "Four concurrent jobs plus a side project is the first thing a skeptical reader questions; it taxes every other claim."},
+    {"key": "aws_entry_weight", "change": "Keep AWS on top for brand, but give it one concrete bullet or mark it 'incoming/ongoing' clearly.", "rationale": "Top entry is the vaguest; skimmers land on a placeholder line."},
+    {"key": "contact_one_line", "change": "Shorten header contact (e.g., drop 'Metropolitan Area' or trim LinkedIn slug) so it fits one line.", "rationale": "Cleaner header, saves vertical space."},
+    {"key": "trim_skills_aws", "change": "Trim AWS skills row to services you can defend in depth.", "rationale": "Eleven AWS services reads as keyword stuffing next to a cert; invites quiz questions."}
+  ],
+  "top3": [
+    "Fix overlapping 'Present' dates so the timeline is believable alongside a full-time Redmond internship.",
+    "Clarify the unanchored metrics: define the 34% speedup metric, give rater counts for 90%/93% satisfaction, and separate Tortuga's 20K visits from the caching result.",
+    "Replace puffy/abstract phrasing ('adopted into Leo's ecosystem', 'scaled', 'sub-skill decomposition', 'evaluated for drift') with what the thing does and what you found."
+  ]
+}
