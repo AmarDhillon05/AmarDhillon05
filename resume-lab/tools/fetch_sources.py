@@ -188,7 +188,7 @@ def fetch_hn(url: str) -> tuple[str, str]:
         return out
 
     head = f"TITLE: {js.get('title')}\nDATE: {js.get('created_at', '')[:10]}\nPOINTS: {js.get('points')}\n"
-    return js.get("title", ""), head + "\n".join(walk(js))
+    return js.get("title") or "", head + "\n".join(walk(js))
 
 
 def _pdf_to_text(data: bytes) -> str:
@@ -241,8 +241,8 @@ def fetch_one(url: str, force: bool = False) -> dict:
     except Exception as e:  # network / parse errors are recorded, not raised
         status = f"error:{type(e).__name__}:{str(e)[:80]}"
     if text:
-        path.write_text(f"URL: {url}\nTITLE: {title}\nFETCHED: {time.strftime('%Y-%m-%d')}\n\n{text}\n")
-    rec = {"url": url, "hash": h, "status": status, "chars": len(text), "title": title[:200],
+        path.write_text(f"URL: {url}\nTITLE: {title or ''}\nFETCHED: {time.strftime('%Y-%m-%d')}\n\n{text}\n")
+    rec = {"url": url, "hash": h, "status": status, "chars": len(text), "title": (title or "")[:200],
            "path": str(path) if text else None}
     with open(CACHE / "index.jsonl", "a") as f:
         f.write(json.dumps(rec) + "\n")

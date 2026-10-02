@@ -69,18 +69,21 @@ def fetch(url: str, ext: str = "html", binary: bool = False, sleep: float = 1.0,
         mode = "rb" if binary else "r"
         with open(path, mode) as f:
             return f.read(), final
-    for attempt in range(3):
+    for attempt in range(5):
         try:
             r = _session.get(url, params=params, timeout=60)
         except requests.RequestException:
             time.sleep(2 * (attempt + 1))
             continue
-        if r.status_code == 429:
+        if r.status_code == 429 or r.status_code >= 500 or "Timeout" in r.text[:200]:
             time.sleep(5 * (attempt + 1))
             continue
         if r.status_code != 200:
             return None, r.url
         data = r.content if binary else r.text
+        if ext == "json" and '"error"' in data[:200] and '"data":null' in data[:200]:
+            time.sleep(5 * (attempt + 1))  # archive timeout ("slow down"); retry, don't cache
+            continue
         with open(path, "wb" if binary else "w") as f:
             f.write(data)
         with open(meta, "w") as f:
@@ -221,29 +224,44 @@ def arctic_posts(**params) -> list[dict]:
 
 def arctic_all(subreddit: str, after: str = "2024-01-01", **filters) -> list[dict]:
     """Paginate an archive query ascending by time."""
-    out, cursor = [], after
+    out, cursor, seen = [], after, set()
     while True:
         batch = arctic_posts(subreddit=subreddit, after=cursor, sort="asc", **filters)
-        out += batch
-        if len(batch) < 100:
+        # the archive may return fewer than `limit` rows per page even when more
+        # exist (filtered queries), so only stop on an empty page
+        batch = [b for b in batch if b["id"] not in seen]
+        if not batch:
             return out
-        cursor = str(batch[-1]["created_utc"] + 1)
+        seen.update(b["id"] for b in batch)
+        out += batch
+        cursor = str(int(max(b["created_utc"] for b in batch)) + 1)
+
+
+def _media_id(u: str) -> str:
+    m = re.search(r"/(?:[^/]*-)?([a-z0-9]{10,16})\.\w+", u)
+    return m.group(1) if m else u
 
 
 def _post_images(p: dict) -> list[str]:
+    """Image URLs for a post: full-res i.redd.it first, then signed previews as
+    fallbacks (i.redd.it serves a tiny placeholder once an image is removed,
+    while preview.redd.it links with their signature often still resolve)."""
     imgs = []
     for mid, mm in (p.get("media_metadata") or {}).items():
         mime = (mm.get("m") or "image/jpg").split("/")[-1].replace("jpeg", "jpg")
         imgs.append(f"https://i.redd.it/{mid}.{mime}")
+        if mm.get("s", {}).get("u"):
+            imgs.append(mm["s"]["u"])
     url = p.get("url") or ""
     if IMG_RE.match(url):
         imgs.append(url)
+    for im in (p.get("preview") or {}).get("images", []):
+        if im.get("source", {}).get("url"):
+            imgs.append(im["source"]["url"])
     imgs += IMG_RE.findall(p.get("selftext") or "")
     seen, res = set(), []
     for u in imgs:
         u = html.unescape(u)
-        if "preview.redd.it" in u:  # canonicalise to full-res i.redd.it
-            u = re.sub(r"https://preview\.redd\.it/(?:[^/]*-)?([a-z0-9]+\.\w+)\?.*", r"https://i.redd.it/\1", u)
         if u not in seen:
             seen.add(u)
             res.append(u)
@@ -321,18 +339,24 @@ def thread(url_or_id: str, max_comments: int = 40) -> Thread | None:
 
 
 def download_images(th: Thread, out_dir: str | None = None) -> list[str]:
+    """Download one image per media id (trying fallbacks in order)."""
     out_dir = out_dir or os.path.join(CACHE_DIR, "img", th.id)
     os.makedirs(out_dir, exist_ok=True)
+    groups: dict[str, list[str]] = {}
+    for u in th.image_links:
+        groups.setdefault(_media_id(u), []).append(u)
     paths = []
-    for i, u in enumerate(th.image_links):
-        data, _ = fetch(u, ext="bin", binary=True, sleep=0.3)
-        if not data or len(data) < 5000:  # skip 404 placeholders
-            continue
-        ext = "png" if data[:4] == b"\x89PNG" else ("gif" if data[:3] == b"GIF" else "jpg")
-        p = os.path.join(out_dir, f"{i}.{ext}")
-        with open(p, "wb") as f:
-            f.write(data)
-        paths.append(p)
+    for i, (mid, urls) in enumerate(groups.items()):
+        for u in urls:
+            data, _ = fetch(u, ext="bin", binary=True, sleep=0.3)
+            if not data or len(data) < 5000:  # 404 placeholder / removed image
+                continue
+            ext = "png" if data[:4] == b"\x89PNG" else ("gif" if data[:3] == b"GIF" else "jpg")
+            p = os.path.join(out_dir, f"{i}_{re.sub(r'[^A-Za-z0-9]', '', mid)[-16:]}.{ext}")
+            with open(p, "wb") as f:
+                f.write(data)
+            paths.append(p)
+            break
     return paths
 
 
