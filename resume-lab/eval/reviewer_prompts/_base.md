@@ -29,6 +29,7 @@ Do your review in character. Then write ONLY a JSON file to `{OUT}` with exactly
 ```
 
 Rules:
+- The phone number is redacted on purpose in this copy (it is real in the submitted version). Do not flag or score it.
 - Cover EVERY experience/project bullet in `bullets` (in page order).
 - Never suggest adding facts the candidate hasn't stated (no new metrics, tools, users, or outcomes). You may suggest cutting, merging, reordering, rephrasing, or asking the candidate to clarify (put clarifications in must_fix or top3 phrased as "clarify: ...").
 - Structural changes are welcome but should be justified; prefer conservative changes.

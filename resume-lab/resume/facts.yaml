@@ -47,7 +47,7 @@ roles:
     title: Software Engineering Intern
     org: Capital One
     location: Richmond, VA
-    dates: June 2026 -- August 2026
+    dates: Jun 2026 -- Aug 2026
     status: completed
     bullets:
       ui_overhaul:
@@ -115,7 +115,7 @@ roles:
     title: Co-Founder, Software Engineer
     org: TerpLabs
     location: College Park, MD
-    dates: June 2025 -- Present
+    dates: Jun 2025 -- Present
     status: in_progress
     bullets:
       studio:
@@ -181,7 +181,7 @@ projects:
   iex:
     title: IEX Matching Engine Simulation
     stack: [C++, STL, POSIX, Database internals]
-    dates: July 2026 -- August 2026
+    dates: Jul 2026 -- Aug 2026
     bullets:
       order_book:
         claim: C++ order-book simulation on historical IEX data; contract-based plug-and-play design to evaluate multiple approaches with enforced correctness

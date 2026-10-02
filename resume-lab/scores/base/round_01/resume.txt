@@ -1,0 +1,75 @@
+                                          Amar Dhillon
+          NYC Metropolitan Area | amardhillon844@gmail.com | (XXX) XXX-XXXX | linkedin.com/in/amar-dhillon-917537261 |
+                                                   github.com/AmarDhillon05
+
+Education
+University of Maryland, College Park                                                                                  May 2028
+B.S. in Computer Science, Minor in Statistics; GPA: 3.5                                                       College Park, MD
+Experience
+Amazon Web Services                                                                                        Sep 2026 – Dec 2026
+Software Development Engineer Intern                                                                             Redmond, WA
+ • Researching and implementing Java-based utilization optimizations for Amazon Redshift
+
+
+Capital One                                                                                           Jun 2026 – Aug 2026
+Software Engineering Intern                                                                                  Richmond, VA
+ • Rebuilt the legacy UI of a test-data workflow builder in React, Electron, and TypeScript, adding Jest-tested workflow
+
+   validation and a React-Flow editor; rated 90% satisfaction vs. the old tool
+ • Built a precomputed tree-style workflow search index to minimize DB queries under access limits, distilling popular
+
+   workflows from a 270K+ row PostgreSQL table via Python/SQLAlchemy and Redis
+ • Cut workflow generation time 65% to under 15s with a Claude skill using sub-skill decomposition and Python
+
+   search/validation tools, guided by CloudWatch + OpenSearch latency logs
+Amazon (via UMD App Development Contracting)                                                         Jan 2026 – Present
+Software Engineer (Contract)                                                                          College Park, MD
+ • Shipped an Amazon Leo space-research tool adopted into Leo’s ecosystem, deployed on Docker + AWS Fargate via
+
+   GitHub Actions, with AWS CDK (TypeScript) infra so new engineers can contribute
+ • Sped up a pipeline routing 6,000+ scraped research documents to inference by 34% with Kinesis streams feeding
+
+   Lambda processors, exposed to the app via API Gateway
+ • Automated fine-tuning of an AWS Bedrock source-relevancy model with EventBridge cron triggers and decision gates
+
+   that skip redundant retraining; added X-Ray tracing and SNS failure alerts
+UMD Institute for Advanced Computer Studies (UMIACS)                                                Dec 2025 – Present
+Machine Learning Research Intern                                                                     College Park, MD
+• Developing automated training for PhysTwin, a physics-based digital twin, with a PhD team targeting ICLR
+
+• Engineered a Python pipeline rendering AnyGrasp multi-camera grasp candidates as Open3D overlays for a
+
+  Qwen3-VL-8B vision-language model, letting researchers isolate scene components
+• Reduced research-environment setup time 30% with uv dependency pinning and Docker, plus psutil time/memory
+
+  profiling and Pytest suites to locate bottlenecks
+TerpLabs                                                                                             Jun 2025 – Present
+Co-Founder, Software Engineer                                                                         College Park, MD
+ • Co-founded and scaled a 110+ member campus product studio shipping 5 live products, run as agile teams
+
+ • Developed Prisma-based SQL querying with Redis query caching for Tortuga, a class scheduler that drew
+
+   20,000+ visits in its first 30 days, to reduce DB load and latency
+ • Building a RAG meal-suggestion feature for the official UMD app with GPT-4o mini over ChromaDB + SentenceBERT
+
+   recipe search; 93% meal satisfaction among internal testers (in progress)
+
+Projects
+IEX Matching Engine Simulation | C++, STL, POSIX                                                   Jul 2026 – Aug 2026
+ • Implemented a C++ order-book simulator on historical IEX data with a contract-based plug-in design, so alternative
+
+   approaches can be swapped in with correctness enforced
+ • Designed paginated hash-based storage for live order-book data with an in-memory LFU cache for hot tickers, evaluated
+
+   for drift against IEX historical book data
+ • Benchmarked a time-based adaptive LSM store against a B+ tree for simulation logs, measuring throughput and latency
+
+   with rdtscp and hardware utilization with Linux perf
+
+Technical Skills
+Languages: Python, Java, C++, C, TypeScript/JavaScript, SQL
+AWS: Lambda, Kinesis, Fargate/ECS, API Gateway, EventBridge, Bedrock, CDK, CloudWatch, X-Ray, SNS, IAM
+Backend & Data: Node.js, React, Electron, PostgreSQL, Redis, SQLAlchemy, Prisma, OpenSearch, ChromaDB
+AI/ML & Tools: PyTorch, Hugging Face, RAG, Open3D, Docker, GitHub Actions, Linux, Pytest, Jest, uv, perf
+Certification: AWS Certified Developer – Associate (Nov 2024 – Nov 2027)
+
