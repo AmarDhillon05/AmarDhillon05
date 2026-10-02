@@ -2,7 +2,7 @@
 """Deterministic resume gate: layout + bullet-style checks.
 
 usage: lint.py resume.tex [--pdf resume.pdf] [--json out.json]
-         [--max-lines 2] [--min-last-line 0.30] [--max-bold 3] [--pages 1]
+         [--max-lines N] [--min-last-line F] [--max-bold N] [--max-chars N] [--pages N]  (defaults: research/rubric.yaml)
 
 Checks
   layout  : page count; per-bullet rendered line count; last-line fill ("widows")
@@ -118,10 +118,16 @@ def main():
     ap.add_argument("tex")
     ap.add_argument("--pdf")
     ap.add_argument("--json")
-    ap.add_argument("--max-lines", type=int, default=2)
-    ap.add_argument("--min-last-line", type=float, default=0.30)
-    ap.add_argument("--max-bold", type=int, default=3)
-    ap.add_argument("--pages", type=int, default=1)
+    cfg = {}
+    rubric = Path(__file__).resolve().parent.parent / "research" / "rubric.yaml"
+    if rubric.exists():
+        import yaml
+        cfg = (yaml.safe_load(rubric.read_text()) or {}).get("lint", {})
+    ap.add_argument("--max-lines", type=int, default=cfg.get("max_rendered_lines", 2))
+    ap.add_argument("--min-last-line", type=float, default=cfg.get("min_last_line_fill", 0.30))
+    ap.add_argument("--max-bold", type=int, default=cfg.get("max_bold_per_bullet", 3))
+    ap.add_argument("--max-chars", type=int, default=cfg.get("max_chars_per_bullet", 10**6))
+    ap.add_argument("--pages", type=int, default=cfg.get("pages", 1))
     args = ap.parse_args()
 
     tex_path = Path(args.tex)
@@ -173,6 +179,8 @@ def main():
             if fl in seen_verbs:
                 add("WARN", where, f"leading verb '{first}' repeats (also: {seen_verbs[fl]})")
             seen_verbs.setdefault(fl, where)
+        if len(b.text) > args.max_chars:
+            add("ERROR", where, f"{len(b.text)} chars (max {args.max_chars})")
         if len(b.bold) > args.max_bold:
             add("ERROR", where, f"{len(b.bold)} bold phrases (max {args.max_bold})")
         if not re.search(r"\d", b.text) and not OUTCOME_WORDS.search(b.text):

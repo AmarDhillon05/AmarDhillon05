@@ -89,6 +89,26 @@ class _TextExtractor(HTMLParser):
             self.out.append(data)
 
 
+DATE_PATTERNS = [
+    r'"datePublished"\s*:\s*"([0-9]{4}-[0-9]{2}-[0-9]{2})',
+    r'article:published_time"?\s+content="([0-9]{4}-[0-9]{2}-[0-9]{2})',
+    r'content="([0-9]{4}-[0-9]{2}-[0-9]{2})[^"]*"\s+(?:property|name)="article:published_time',
+    r'"(?:dateCreated|uploadDate|pubDate|publishedAt|published_at)"\s*:\s*"([0-9]{4}-[0-9]{2}-[0-9]{2})',
+    r'<time[^>]+datetime="([0-9]{4}-[0-9]{2}-[0-9]{2})',
+    r'name="(?:date|publish-date|citation_date|DC.date)"\s+content="([0-9]{4}[-/][0-9]{2}[-/][0-9]{2})',
+    r'"dateModified"\s*:\s*"([0-9]{4}-[0-9]{2}-[0-9]{2})',
+]
+
+
+def extract_date(raw: str) -> str:
+    """Best-effort publication date from HTML metadata (YYYY-MM-DD) or ''."""
+    for pat in DATE_PATTERNS:
+        m = re.search(pat, raw)
+        if m:
+            return m.group(1).replace("/", "-")
+    return ""
+
+
 def html_to_text(raw: str) -> tuple[str, str]:
     p = _TextExtractor()
     try:
@@ -212,7 +232,7 @@ def fetch_one(url: str, force: bool = False) -> dict:
     path = CACHE / f"{h}.txt"
     if path.exists() and not force and path.stat().st_size > 200:
         return {"url": url, "hash": h, "status": "cached", "chars": path.stat().st_size, "path": str(path)}
-    title, text, status = "", "", "error"
+    title, text, status, pub = "", "", "error", ""
     host = urlparse(url).netloc
     try:
         if "reddit.com" in host:
@@ -237,12 +257,13 @@ def fetch_one(url: str, force: bool = False) -> dict:
                 status = "ok_pdf" if text else "pdf_unsupported"
             else:
                 title, text = html_to_text(r.text)
+                pub = extract_date(r.text)
                 status = "ok" if len(text) > 500 else "ok_thin"
     except Exception as e:  # network / parse errors are recorded, not raised
         status = f"error:{type(e).__name__}:{str(e)[:80]}"
     if text:
-        path.write_text(f"URL: {url}\nTITLE: {title or ''}\nFETCHED: {time.strftime('%Y-%m-%d')}\n\n{text}\n")
-    rec = {"url": url, "hash": h, "status": status, "chars": len(text), "title": (title or "")[:200],
+        path.write_text(f"URL: {url}\nTITLE: {title or ''}\nPUBLISHED: {pub}\nFETCHED: {time.strftime('%Y-%m-%d')}\n\n{text}\n")
+    rec = {"url": url, "hash": h, "status": status, "chars": len(text), "title": (title or "")[:200], "published": pub,
            "path": str(path) if text else None}
     with open(CACHE / "index.jsonl", "a") as f:
         f.write(json.dumps(rec) + "\n")

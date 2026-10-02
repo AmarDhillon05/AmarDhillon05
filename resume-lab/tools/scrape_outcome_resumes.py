@@ -123,6 +123,7 @@ class Thread:
     image_links: list[str] = field(default_factory=list)
     comments: list[Comment] = field(default_factory=list)
     source: str = "old.reddit"
+    author: str = ""
 
 
 def _iso(ts: int) -> str:
@@ -300,7 +301,8 @@ def arctic_thread(pid: str, max_comments: int = 40) -> Thread | None:
                   url="https://www.reddit.com" + p["permalink"], created_utc=int(p["created_utc"]),
                   date=_iso(int(p["created_utc"])), score=p.get("score"), flair=p.get("link_flair_text"),
                   author_flair=p.get("author_flair_text"), body=p.get("selftext") or "",
-                  image_links=_post_images(p), comments=keep, source="arctic-shift")
+                  image_links=_post_images(p), comments=keep, source="arctic-shift",
+                  author=p.get("author", ""))
 
 
 # ------------------------------------------------------------------ public API

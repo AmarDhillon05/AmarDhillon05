@@ -1,0 +1,2520 @@
+{
+ "claims": {
+  "accomplishments_not_duties": {
+   "category": "bullet_structure",
+   "domains": {
+    "general_swe": 4
+   },
+   "mean_cred_for": 6.8,
+   "n_against": 0,
+   "n_for": 4,
+   "sources_against": [],
+   "sources_for": [
+    "S007",
+    "S046",
+    "S047",
+    "S092"
+   ]
+  },
+  "action_verbs": {
+   "category": "tense_verbs",
+   "domains": {
+    "general_swe": 2
+   },
+   "mean_cred_for": 5.5,
+   "n_against": 0,
+   "n_for": 2,
+   "sources_against": [],
+   "sources_for": [
+    "S036",
+    "S039"
+   ]
+  },
+  "activity_metrics_weak": {
+   "category": "metrics",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 8.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S005"
+   ]
+  },
+  "ai_engineering_demand": {
+   "category": "domain_specific",
+   "domains": {
+    "ai_ml_engineering": 1
+   },
+   "mean_cred_for": 9.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S009"
+   ]
+  },
+  "ai_fabrication_bad": {
+   "category": "anti_pattern",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 9.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S016"
+   ]
+  },
+  "ai_native_skills": {
+   "category": "skills",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 8.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S010"
+   ]
+  },
+  "ai_product_engineer": {
+   "category": "domain_specific",
+   "domains": {
+    "ai_ml_engineering": 1
+   },
+   "mean_cred_for": 8.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S010"
+   ]
+  },
+  "ai_screening_prevalence": {
+   "category": "ats",
+   "domains": {
+    "general_swe": 2
+   },
+   "mean_cred_for": 6.0,
+   "n_against": 0,
+   "n_for": 2,
+   "sources_against": [],
+   "sources_for": [
+    "S024",
+    "S029"
+   ]
+  },
+  "ai_tools_listing": {
+   "category": "skills",
+   "domains": {
+    "ai_ml_engineering": 1,
+    "general_swe": 1
+   },
+   "mean_cred_for": 5.0,
+   "n_against": 1,
+   "n_for": 1,
+   "sources_against": [
+    "S060"
+   ],
+   "sources_for": [
+    "S060"
+   ]
+  },
+  "ai_use_refine_ok": {
+   "category": "other",
+   "domains": {
+    "general_swe": 2
+   },
+   "mean_cred_for": 8.0,
+   "n_against": 0,
+   "n_for": 2,
+   "sources_against": [],
+   "sources_for": [
+    "S016",
+    "S044"
+   ]
+  },
+  "ai_written_fatigue": {
+   "category": "anti_pattern",
+   "domains": {
+    "general_swe": 6
+   },
+   "mean_cred_for": 7.6,
+   "n_against": 1,
+   "n_for": 5,
+   "sources_against": [
+    "S040"
+   ],
+   "sources_for": [
+    "S009",
+    "S025",
+    "S041",
+    "S044",
+    "S052"
+   ]
+  },
+  "apply_as_engineer": {
+   "category": "domain_specific",
+   "domains": {
+    "ai_ml_engineering": 1
+   },
+   "mean_cred_for": 9.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S015"
+   ]
+  },
+  "ats_auto_reject_risk": {
+   "category": "ats",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 8.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S001"
+   ]
+  },
+  "ats_myth": {
+   "category": "ats",
+   "domains": {
+    "general_swe": 5
+   },
+   "mean_cred_for": 7.0,
+   "n_against": 0,
+   "n_for": 5,
+   "sources_against": [],
+   "sources_for": [
+    "S011",
+    "S026",
+    "S041",
+    "S044",
+    "S046"
+   ]
+  },
+  "ats_parse": {
+   "category": "ats",
+   "domains": {
+    "backend_distributed": 1,
+    "general_swe": 3
+   },
+   "mean_cred_for": 5.8,
+   "n_against": 0,
+   "n_for": 4,
+   "sources_against": [],
+   "sources_for": [
+    "S026",
+    "S049",
+    "S050",
+    "S084"
+   ]
+  },
+  "ats_score_noise": {
+   "category": "ats",
+   "domains": {
+    "general_swe": 4
+   },
+   "mean_cred_for": 8.0,
+   "n_against": 0,
+   "n_for": 4,
+   "sources_against": [],
+   "sources_for": [
+    "S002",
+    "S027",
+    "S042",
+    "S052"
+   ]
+  },
+  "awards_quantified": {
+   "category": "other",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 8.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S001"
+   ]
+  },
+  "backend_metrics": {
+   "category": "metrics",
+   "domains": {
+    "backend_distributed": 1
+   },
+   "mean_cred_for": 6.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S084"
+   ]
+  },
+  "backend_role_profile": {
+   "category": "domain_specific",
+   "domains": {
+    "backend_distributed": 1
+   },
+   "mean_cred_for": 6.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S084"
+   ]
+  },
+  "bold_keywords": {
+   "category": "bolding",
+   "domains": {
+    "general_swe": 2
+   },
+   "mean_cred_for": 8.0,
+   "n_against": 1,
+   "n_for": 1,
+   "sources_against": [
+    "S052"
+   ],
+   "sources_for": [
+    "S042"
+   ]
+  },
+  "bold_minimal": {
+   "category": "bolding",
+   "domains": {
+    "general_swe": 3
+   },
+   "mean_cred_for": 7.0,
+   "n_against": 0,
+   "n_for": 2,
+   "sources_against": [],
+   "sources_for": [
+    "S040",
+    "S051"
+   ]
+  },
+  "brands_matter": {
+   "category": "domain_specific",
+   "domains": {
+    "general_swe": 6,
+    "ml_research_robotics": 1,
+    "startup_fullstack": 1
+   },
+   "mean_cred_for": 7.3,
+   "n_against": 2,
+   "n_for": 4,
+   "sources_against": [
+    "S005",
+    "S085"
+   ],
+   "sources_for": [
+    "S002",
+    "S003",
+    "S006",
+    "S018",
+    "S039",
+    "S057"
+   ]
+  },
+  "brands_top_placement": {
+   "category": "section_order",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 8.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S003"
+   ]
+  },
+  "bullet_length": {
+   "category": "bullet_structure",
+   "domains": {
+    "general_swe": 2
+   },
+   "mean_cred_for": 8.0,
+   "n_against": 0,
+   "n_for": 2,
+   "sources_against": [],
+   "sources_for": [
+    "S040",
+    "S044"
+   ]
+  },
+  "bullet_no_widow": {
+   "category": "bullet_structure",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 6.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S039"
+   ]
+  },
+  "bullet_one_sentence": {
+   "category": "bullet_structure",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 6.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S039"
+   ]
+  },
+  "bullet_order_impressive_first": {
+   "category": "bullet_structure",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 6.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S039"
+   ]
+  },
+  "bullets_per_role": {
+   "category": "length",
+   "domains": {
+    "general_swe": 2
+   },
+   "mean_cred_for": 8.0,
+   "n_against": 0,
+   "n_for": 2,
+   "sources_against": [],
+   "sources_for": [
+    "S040",
+    "S043"
+   ]
+  },
+  "buzzword_avoid": {
+   "category": "anti_pattern",
+   "domains": {
+    "general_swe": 1,
+    "ml_research_robotics": 1
+   },
+   "mean_cred_for": 7.0,
+   "n_against": 0,
+   "n_for": 2,
+   "sources_against": [],
+   "sources_for": [
+    "S004",
+    "S085"
+   ]
+  },
+  "clean_code_signal": {
+   "category": "domain_specific",
+   "domains": {
+    "quant_hft": 1
+   },
+   "mean_cred_for": 7.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S020"
+   ]
+  },
+  "communication_signal": {
+   "category": "other",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 9.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S040"
+   ]
+  },
+  "company_context": {
+   "category": "bullet_structure",
+   "domains": {
+    "general_swe": 1,
+    "startup_fullstack": 1
+   },
+   "mean_cred_for": 7.0,
+   "n_against": 0,
+   "n_for": 2,
+   "sources_against": [],
+   "sources_for": [
+    "S004",
+    "S013"
+   ]
+  },
+  "competitions_signal": {
+   "category": "education",
+   "domains": {
+    "general_swe": 1,
+    "quant_hft": 1
+   },
+   "mean_cred_for": 6.5,
+   "n_against": 0,
+   "n_for": 2,
+   "sources_against": [],
+   "sources_for": [
+    "S004",
+    "S090"
+   ]
+  },
+  "concise_leave_talking_points": {
+   "category": "bullet_structure",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 6.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S059"
+   ]
+  },
+  "contact_basics": {
+   "category": "formatting",
+   "domains": {
+    "general_swe": 3
+   },
+   "mean_cred_for": 6.3,
+   "n_against": 0,
+   "n_for": 3,
+   "sources_against": [],
+   "sources_for": [
+    "S001",
+    "S039",
+    "S051"
+   ]
+  },
+  "coursework_low": {
+   "category": "education",
+   "domains": {
+    "general_swe": 3
+   },
+   "mean_cred_for": 7.7,
+   "n_against": 0,
+   "n_for": 3,
+   "sources_against": [],
+   "sources_for": [
+    "S039",
+    "S040",
+    "S046"
+   ]
+  },
+  "cpp_lowlatency": {
+   "category": "domain_specific",
+   "domains": {
+    "quant_hft": 1
+   },
+   "mean_cred_for": 5.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S090"
+   ]
+  },
+  "credentials_not_required": {
+   "category": "education",
+   "domains": {
+    "ml_research_robotics": 1
+   },
+   "mean_cred_for": 9.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S015"
+   ]
+  },
+  "dates_clear": {
+   "category": "formatting",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 9.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S040"
+   ]
+  },
+  "dates_format": {
+   "category": "formatting",
+   "domains": {
+    "general_swe": 3
+   },
+   "mean_cred_for": 7.7,
+   "n_against": 0,
+   "n_for": 3,
+   "sources_against": [],
+   "sources_for": [
+    "S001",
+    "S039",
+    "S040"
+   ]
+  },
+  "de_balance": {
+   "category": "projects",
+   "domains": {
+    "data_engineering": 1
+   },
+   "mean_cred_for": 6.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S088"
+   ]
+  },
+  "de_demos": {
+   "category": "projects",
+   "domains": {
+    "data_engineering": 1
+   },
+   "mean_cred_for": 5.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S079"
+   ]
+  },
+  "de_metrics": {
+   "category": "metrics",
+   "domains": {
+    "data_engineering": 1
+   },
+   "mean_cred_for": 6.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S088"
+   ]
+  },
+  "de_sql_core": {
+   "category": "tech_keywords",
+   "domains": {
+    "data_engineering": 1
+   },
+   "mean_cred_for": 6.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S078"
+   ]
+  },
+  "education_first_student": {
+   "category": "section_order",
+   "domains": {
+    "general_swe": 2,
+    "quant_hft": 1
+   },
+   "mean_cred_for": 6.3,
+   "n_against": 0,
+   "n_for": 3,
+   "sources_against": [],
+   "sources_for": [
+    "S001",
+    "S039",
+    "S090"
+   ]
+  },
+  "education_one_line": {
+   "category": "education",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 8.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S041"
+   ]
+  },
+  "embedded_domain_keywords": {
+   "category": "tech_keywords",
+   "domains": {
+    "embedded_systems": 1
+   },
+   "mean_cred_for": 5.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S068"
+   ]
+  },
+  "embedded_industry_parts": {
+   "category": "tech_keywords",
+   "domains": {
+    "embedded_systems": 1
+   },
+   "mean_cred_for": 5.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S066"
+   ]
+  },
+  "embedded_projects": {
+   "category": "projects",
+   "domains": {
+    "embedded_systems": 3
+   },
+   "mean_cred_for": 5.5,
+   "n_against": 1,
+   "n_for": 2,
+   "sources_against": [
+    "S067"
+   ],
+   "sources_for": [
+    "S065",
+    "S066"
+   ]
+  },
+  "embedded_scarcity": {
+   "category": "domain_specific",
+   "domains": {
+    "embedded_systems": 1
+   },
+   "mean_cred_for": 7.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S045"
+   ]
+  },
+  "embedded_sensitive": {
+   "category": "domain_specific",
+   "domains": {
+    "embedded_systems": 1
+   },
+   "mean_cred_for": 6.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S039"
+   ]
+  },
+  "experience_first": {
+   "category": "section_order",
+   "domains": {
+    "general_swe": 3
+   },
+   "mean_cred_for": 7.0,
+   "n_against": 0,
+   "n_for": 3,
+   "sources_against": [],
+   "sources_for": [
+    "S014",
+    "S040",
+    "S049"
+   ]
+  },
+  "extra_context_box": {
+   "category": "other",
+   "domains": {
+    "quant_hft": 1
+   },
+   "mean_cred_for": 8.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S017"
+   ]
+  },
+  "fake_applicants": {
+   "category": "anti_pattern",
+   "domains": {
+    "general_swe": 3
+   },
+   "mean_cred_for": 7.0,
+   "n_against": 0,
+   "n_for": 3,
+   "sources_against": [],
+   "sources_for": [
+    "S009",
+    "S024",
+    "S030"
+   ]
+  },
+  "file_types": {
+   "category": "ats",
+   "domains": {
+    "general_swe": 2
+   },
+   "mean_cred_for": 7.0,
+   "n_against": 0,
+   "n_for": 2,
+   "sources_against": [],
+   "sources_for": [
+    "S023",
+    "S041"
+   ]
+  },
+  "first_bullet_summary": {
+   "category": "bullet_structure",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 8.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S041"
+   ]
+  },
+  "font_standard_10pt": {
+   "category": "formatting",
+   "domains": {
+    "general_swe": 2
+   },
+   "mean_cred_for": 8.5,
+   "n_against": 0,
+   "n_for": 2,
+   "sources_against": [],
+   "sources_for": [
+    "S001",
+    "S040"
+   ]
+  },
+  "ghost_postings": {
+   "category": "other",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 6.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S056"
+   ]
+  },
+  "github_portfolio": {
+   "category": "projects",
+   "domains": {
+    "ml_research_robotics": 1
+   },
+   "mean_cred_for": 6.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S086"
+   ]
+  },
+  "github_readme": {
+   "category": "projects",
+   "domains": {
+    "ml_research_robotics": 2
+   },
+   "mean_cred_for": 5.5,
+   "n_against": 0,
+   "n_for": 2,
+   "sources_against": [],
+   "sources_for": [
+    "S080",
+    "S085"
+   ]
+  },
+  "gpa_declining": {
+   "category": "education",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 8.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S021"
+   ]
+  },
+  "gpa_matters": {
+   "category": "education",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 8.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S018"
+   ]
+  },
+  "gpa_threshold": {
+   "category": "education",
+   "domains": {
+    "general_swe": 4,
+    "ml_research_robotics": 1,
+    "quant_hft": 2
+   },
+   "mean_cred_for": 6.3,
+   "n_against": 0,
+   "n_for": 6,
+   "sources_against": [],
+   "sources_for": [
+    "S001",
+    "S004",
+    "S075",
+    "S089",
+    "S090",
+    "S092"
+   ]
+  },
+  "great_exp_bad_resume": {
+   "category": "bullet_structure",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 8.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S042"
+   ]
+  },
+  "homelab_projects": {
+   "category": "projects",
+   "domains": {
+    "cloud_infra_sre": 1
+   },
+   "mean_cred_for": 6.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S076"
+   ]
+  },
+  "honesty": {
+   "category": "anti_pattern",
+   "domains": {
+    "cloud_infra_sre": 1,
+    "general_swe": 2
+   },
+   "mean_cred_for": 7.0,
+   "n_against": 0,
+   "n_for": 3,
+   "sources_against": [],
+   "sources_for": [
+    "S025",
+    "S046",
+    "S076"
+   ]
+  },
+  "infra_code_not_ops": {
+   "category": "domain_specific",
+   "domains": {
+    "cloud_infra_sre": 1
+   },
+   "mean_cred_for": 5.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S087"
+   ]
+  },
+  "infra_keywords": {
+   "category": "tech_keywords",
+   "domains": {
+    "cloud_infra_sre": 1
+   },
+   "mean_cred_for": 5.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S087"
+   ]
+  },
+  "infra_metrics": {
+   "category": "metrics",
+   "domains": {
+    "cloud_infra_sre": 1
+   },
+   "mean_cred_for": 5.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S087"
+   ]
+  },
+  "infra_modern_sre": {
+   "category": "domain_specific",
+   "domains": {
+    "cloud_infra_sre": 1
+   },
+   "mean_cred_for": 5.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S087"
+   ]
+  },
+  "internship_signal": {
+   "category": "domain_specific",
+   "domains": {
+    "general_swe": 1,
+    "ml_research_robotics": 1
+   },
+   "mean_cred_for": 5.5,
+   "n_against": 0,
+   "n_for": 2,
+   "sources_against": [],
+   "sources_for": [
+    "S062",
+    "S086"
+   ]
+  },
+  "italics_avoid": {
+   "category": "formatting",
+   "domains": {
+    "general_swe": 2
+   },
+   "mean_cred_for": 7.5,
+   "n_against": 0,
+   "n_for": 2,
+   "sources_against": [],
+   "sources_for": [
+    "S039",
+    "S040"
+   ]
+  },
+  "keyword_stuffing_bad": {
+   "category": "anti_pattern",
+   "domains": {
+    "general_swe": 2
+   },
+   "mean_cred_for": 7.5,
+   "n_against": 0,
+   "n_for": 2,
+   "sources_against": [],
+   "sources_for": [
+    "S001",
+    "S043"
+   ]
+  },
+  "knockout_questions": {
+   "category": "ats",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 5.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S026"
+   ]
+  },
+  "latex_template_ok": {
+   "category": "formatting",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 5.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S058"
+   ]
+  },
+  "llm_bias": {
+   "category": "ats",
+   "domains": {
+    "general_swe": 5
+   },
+   "mean_cred_for": 6.8,
+   "n_against": 0,
+   "n_for": 5,
+   "sources_against": [],
+   "sources_for": [
+    "S005",
+    "S028",
+    "S031",
+    "S032",
+    "S033"
+   ]
+  },
+  "llm_screen_github": {
+   "category": "projects",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 8.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S027"
+   ]
+  },
+  "llm_semantic_matching": {
+   "category": "tech_keywords",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 5.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S029"
+   ]
+  },
+  "margins_half_inch": {
+   "category": "formatting",
+   "domains": {
+    "general_swe": 3
+   },
+   "mean_cred_for": 7.7,
+   "n_against": 0,
+   "n_for": 3,
+   "sources_against": [],
+   "sources_for": [
+    "S001",
+    "S039",
+    "S040"
+   ]
+  },
+  "margins_whitespace": {
+   "category": "formatting",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 6.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S047"
+   ]
+  },
+  "metrics": {
+   "category": "metrics",
+   "domains": {
+    "ai_ml_engineering": 1,
+    "cloud_infra_sre": 1,
+    "general_swe": 9,
+    "ml_research_robotics": 2,
+    "quant_hft": 2,
+    "startup_fullstack": 1
+   },
+   "mean_cred_for": 6.5,
+   "n_against": 2,
+   "n_for": 14,
+   "sources_against": [
+    "S003",
+    "S048"
+   ],
+   "sources_for": [
+    "S007",
+    "S013",
+    "S016",
+    "S039",
+    "S040",
+    "S042",
+    "S043",
+    "S054",
+    "S055",
+    "S072",
+    "S081",
+    "S082",
+    "S086",
+    "S089"
+   ]
+  },
+  "metrics_defensible": {
+   "category": "metrics",
+   "domains": {
+    "cloud_infra_sre": 1,
+    "general_swe": 1,
+    "quant_hft": 1
+   },
+   "mean_cred_for": 5.7,
+   "n_against": 0,
+   "n_for": 3,
+   "sources_against": [],
+   "sources_for": [
+    "S053",
+    "S054",
+    "S090"
+   ]
+  },
+  "metrics_fabrication": {
+   "category": "metrics",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 5.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S093"
+   ]
+  },
+  "metrics_not_always_applicable": {
+   "category": "metrics",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 7.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S053"
+   ]
+  },
+  "metrics_skepticism": {
+   "category": "metrics",
+   "domains": {
+    "general_swe": 3
+   },
+   "mean_cred_for": 6.3,
+   "n_against": 0,
+   "n_for": 3,
+   "sources_against": [],
+   "sources_for": [
+    "S053",
+    "S055",
+    "S056"
+   ]
+  },
+  "ml_papers": {
+   "category": "domain_specific",
+   "domains": {
+    "ml_research_robotics": 2
+   },
+   "mean_cred_for": 5.5,
+   "n_against": 0,
+   "n_for": 2,
+   "sources_against": [],
+   "sources_for": [
+    "S080",
+    "S081"
+   ]
+  },
+  "ml_production": {
+   "category": "domain_specific",
+   "domains": {
+    "ai_ml_engineering": 1
+   },
+   "mean_cred_for": 6.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S083"
+   ]
+  },
+  "ml_research_fit": {
+   "category": "domain_specific",
+   "domains": {
+    "ml_research_robotics": 1
+   },
+   "mean_cred_for": 5.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S074"
+   ]
+  },
+  "niche_skills_ml": {
+   "category": "domain_specific",
+   "domains": {
+    "ai_ml_engineering": 1
+   },
+   "mean_cred_for": 8.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S003"
+   ]
+  },
+  "no_external_images": {
+   "category": "formatting",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 6.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S023"
+   ]
+  },
+  "no_finance_needed": {
+   "category": "domain_specific",
+   "domains": {
+    "quant_hft": 2
+   },
+   "mean_cred_for": 7.5,
+   "n_against": 0,
+   "n_for": 2,
+   "sources_against": [],
+   "sources_for": [
+    "S017",
+    "S019"
+   ]
+  },
+  "no_first_person": {
+   "category": "tense_verbs",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 6.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S039"
+   ]
+  },
+  "no_graphics_logos": {
+   "category": "ats",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 9.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S040"
+   ]
+  },
+  "no_header_footer": {
+   "category": "ats",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 8.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S001"
+   ]
+  },
+  "no_ocaml_needed": {
+   "category": "tech_keywords",
+   "domains": {
+    "quant_hft": 1
+   },
+   "mean_cred_for": 8.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S017"
+   ]
+  },
+  "no_photo_personal": {
+   "category": "formatting",
+   "domains": {
+    "general_swe": 2
+   },
+   "mean_cred_for": 5.5,
+   "n_against": 0,
+   "n_for": 2,
+   "sources_against": [],
+   "sources_for": [
+    "S012",
+    "S092"
+   ]
+  },
+  "no_skill_ratings": {
+   "category": "skills",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 5.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S012"
+   ]
+  },
+  "no_sub_bullets": {
+   "category": "formatting",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 5.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S012"
+   ]
+  },
+  "no_text_boxes": {
+   "category": "ats",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 6.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S048"
+   ]
+  },
+  "one_page": {
+   "category": "length",
+   "domains": {
+    "general_swe": 8,
+    "quant_hft": 1
+   },
+   "mean_cred_for": 6.2,
+   "n_against": 0,
+   "n_for": 9,
+   "sources_against": [],
+   "sources_for": [
+    "S001",
+    "S014",
+    "S037",
+    "S038",
+    "S039",
+    "S040",
+    "S059",
+    "S090",
+    "S092"
+   ]
+  },
+  "online_presence": {
+   "category": "other",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 5.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S037"
+   ]
+  },
+  "open_source_upstream": {
+   "category": "projects",
+   "domains": {
+    "embedded_systems": 1
+   },
+   "mean_cred_for": 5.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S070"
+   ]
+  },
+  "pdf_text_selectable": {
+   "category": "ats",
+   "domains": {
+    "ai_ml_engineering": 1,
+    "general_swe": 2
+   },
+   "mean_cred_for": 6.3,
+   "n_against": 0,
+   "n_for": 3,
+   "sources_against": [],
+   "sources_for": [
+    "S001",
+    "S012",
+    "S083"
+   ]
+  },
+  "platform_framing": {
+   "category": "domain_specific",
+   "domains": {
+    "cloud_infra_sre": 2
+   },
+   "mean_cred_for": 5.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S077"
+   ]
+  },
+  "problem_solving_bullets": {
+   "category": "bullet_structure",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 5.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S038"
+   ]
+  },
+  "project_context": {
+   "category": "projects",
+   "domains": {
+    "general_swe": 1,
+    "ml_research_robotics": 1
+   },
+   "mean_cred_for": 7.0,
+   "n_against": 0,
+   "n_for": 2,
+   "sources_against": [],
+   "sources_for": [
+    "S046",
+    "S075"
+   ]
+  },
+  "projects_depth": {
+   "category": "projects",
+   "domains": {
+    "general_swe": 1,
+    "ml_research_robotics": 1
+   },
+   "mean_cred_for": 7.5,
+   "n_against": 0,
+   "n_for": 2,
+   "sources_against": [],
+   "sources_for": [
+    "S040",
+    "S086"
+   ]
+  },
+  "projects_explainable": {
+   "category": "projects",
+   "domains": {
+    "embedded_systems": 1,
+    "quant_hft": 2
+   },
+   "mean_cred_for": 5.0,
+   "n_against": 0,
+   "n_for": 3,
+   "sources_against": [],
+   "sources_for": [
+    "S069",
+    "S072",
+    "S073"
+   ]
+  },
+  "projects_first_intern": {
+   "category": "section_order",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 8.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S041"
+   ]
+  },
+  "projects_include": {
+   "category": "projects",
+   "domains": {
+    "general_swe": 3,
+    "quant_hft": 1
+   },
+   "mean_cred_for": 6.0,
+   "n_against": 0,
+   "n_for": 4,
+   "sources_against": [],
+   "sources_for": [
+    "S001",
+    "S038",
+    "S089",
+    "S092"
+   ]
+  },
+  "projects_not_experience": {
+   "category": "section_order",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 8.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S046"
+   ]
+  },
+  "projects_own_code": {
+   "category": "projects",
+   "domains": {
+    "embedded_systems": 1
+   },
+   "mean_cred_for": 6.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S065"
+   ]
+  },
+  "projects_skeptic": {
+   "category": "projects",
+   "domains": {
+    "embedded_systems": 1,
+    "general_swe": 2
+   },
+   "mean_cred_for": 7.0,
+   "n_against": 0,
+   "n_for": 3,
+   "sources_against": [],
+   "sources_for": [
+    "S003",
+    "S014",
+    "S045"
+   ]
+  },
+  "promotions_visible": {
+   "category": "formatting",
+   "domains": {
+    "general_swe": 2
+   },
+   "mean_cred_for": 6.5,
+   "n_against": 0,
+   "n_for": 2,
+   "sources_against": [],
+   "sources_for": [
+    "S004",
+    "S012"
+   ]
+  },
+  "prompt_injection_detection": {
+   "category": "anti_pattern",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 7.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S024"
+   ]
+  },
+  "proof_of_profit": {
+   "category": "bullet_structure",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 6.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S056"
+   ]
+  },
+  "purpose_interview": {
+   "category": "other",
+   "domains": {
+    "ai_ml_engineering": 1,
+    "general_swe": 1
+   },
+   "mean_cred_for": 5.0,
+   "n_against": 0,
+   "n_for": 2,
+   "sources_against": [],
+   "sources_for": [
+    "S037",
+    "S074"
+   ]
+  },
+  "quant_nda_metrics": {
+   "category": "metrics",
+   "domains": {
+    "quant_hft": 1
+   },
+   "mean_cred_for": 6.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S071"
+   ]
+  },
+  "reapply_avoid": {
+   "category": "other",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 8.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S042"
+   ]
+  },
+  "recruiter_noise": {
+   "category": "other",
+   "domains": {
+    "general_swe": 2
+   },
+   "mean_cred_for": 7.0,
+   "n_against": 0,
+   "n_for": 2,
+   "sources_against": [],
+   "sources_for": [
+    "S002",
+    "S058"
+   ]
+  },
+  "referrals_outreach": {
+   "category": "other",
+   "domains": {
+    "ai_ml_engineering": 1,
+    "general_swe": 8,
+    "ml_research_robotics": 1
+   },
+   "mean_cred_for": 7.2,
+   "n_against": 0,
+   "n_for": 7,
+   "sources_against": [],
+   "sources_for": [
+    "S002",
+    "S003",
+    "S006",
+    "S009",
+    "S010",
+    "S028",
+    "S040",
+    "S052",
+    "S080",
+    "S082"
+   ]
+  },
+  "relevance_prune": {
+   "category": "anti_pattern",
+   "domains": {
+    "general_swe": 1,
+    "startup_fullstack": 1
+   },
+   "mean_cred_for": 7.0,
+   "n_against": 0,
+   "n_for": 2,
+   "sources_against": [],
+   "sources_for": [
+    "S001",
+    "S013"
+   ]
+  },
+  "replication_analysis": {
+   "category": "projects",
+   "domains": {
+    "ml_research_robotics": 1
+   },
+   "mean_cred_for": 5.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S080"
+   ]
+  },
+  "research_oss_top": {
+   "category": "projects",
+   "domains": {
+    "ml_research_robotics": 2
+   },
+   "mean_cred_for": 7.0,
+   "n_against": 0,
+   "n_for": 2,
+   "sources_against": [],
+   "sources_for": [
+    "S015",
+    "S080"
+   ]
+  },
+  "research_sensibility": {
+   "category": "domain_specific",
+   "domains": {
+    "ml_research_robotics": 1
+   },
+   "mean_cred_for": 6.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S081"
+   ]
+  },
+  "robotics_software_demand": {
+   "category": "domain_specific",
+   "domains": {
+    "ml_research_robotics": 1
+   },
+   "mean_cred_for": 6.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S086"
+   ]
+  },
+  "robotics_stack": {
+   "category": "tech_keywords",
+   "domains": {
+    "ml_research_robotics": 2
+   },
+   "mean_cred_for": 6.0,
+   "n_against": 0,
+   "n_for": 2,
+   "sources_against": [],
+   "sources_for": [
+    "S075",
+    "S086"
+   ]
+  },
+  "role_match": {
+   "category": "tech_keywords",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 9.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S009"
+   ]
+  },
+  "screen_order": {
+   "category": "section_order",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 9.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S040"
+   ]
+  },
+  "screen_time": {
+   "category": "other",
+   "domains": {
+    "general_swe": 6,
+    "quant_hft": 1
+   },
+   "mean_cred_for": 6.7,
+   "n_against": 0,
+   "n_for": 6,
+   "sources_against": [],
+   "sources_for": [
+    "S002",
+    "S003",
+    "S008",
+    "S012",
+    "S040",
+    "S089",
+    "S092"
+   ]
+  },
+  "show_initiative": {
+   "category": "domain_specific",
+   "domains": {
+    "quant_hft": 1
+   },
+   "mean_cred_for": 7.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S019"
+   ]
+  },
+  "single_column_simple": {
+   "category": "formatting",
+   "domains": {
+    "general_swe": 5,
+    "quant_hft": 1
+   },
+   "mean_cred_for": 6.2,
+   "n_against": 0,
+   "n_for": 6,
+   "sources_against": [],
+   "sources_for": [
+    "S008",
+    "S012",
+    "S039",
+    "S041",
+    "S046",
+    "S090"
+   ]
+  },
+  "skills_checklist_stable": {
+   "category": "skills",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 8.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S027"
+   ]
+  },
+  "skills_compact": {
+   "category": "skills",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 9.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S040"
+   ]
+  },
+  "skills_concise": {
+   "category": "skills",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 8.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S041"
+   ]
+  },
+  "skills_defensible": {
+   "category": "skills",
+   "domains": {
+    "general_swe": 1,
+    "quant_hft": 1
+   },
+   "mean_cred_for": 5.5,
+   "n_against": 0,
+   "n_for": 2,
+   "sources_against": [],
+   "sources_for": [
+    "S089",
+    "S092"
+   ]
+  },
+  "skills_in_bullets": {
+   "category": "skills",
+   "domains": {
+    "ai_ml_engineering": 1,
+    "general_swe": 5,
+    "startup_fullstack": 1
+   },
+   "mean_cred_for": 6.1,
+   "n_against": 0,
+   "n_for": 6,
+   "sources_against": [],
+   "sources_for": [
+    "S013",
+    "S014",
+    "S036",
+    "S039",
+    "S040",
+    "S063",
+    "S083"
+   ]
+  },
+  "skills_section_format": {
+   "category": "skills",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 8.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S001"
+   ]
+  },
+  "skills_section_keep": {
+   "category": "skills",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 5.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S063"
+   ]
+  },
+  "skills_stated_vs_actual": {
+   "category": "skills",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 9.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S002"
+   ]
+  },
+  "skills_top": {
+   "category": "section_order",
+   "domains": {
+    "embedded_systems": 1,
+    "general_swe": 1
+   },
+   "mean_cred_for": 7.0,
+   "n_against": 0,
+   "n_for": 2,
+   "sources_against": [],
+   "sources_for": [
+    "S040",
+    "S064"
+   ]
+  },
+  "skills_with_examples": {
+   "category": "skills",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 8.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S021"
+   ]
+  },
+  "skimmable_headers": {
+   "category": "formatting",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 5.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S035"
+   ]
+  },
+  "soft_skills_avoid": {
+   "category": "anti_pattern",
+   "domains": {
+    "general_swe": 2
+   },
+   "mean_cred_for": 6.0,
+   "n_against": 0,
+   "n_for": 2,
+   "sources_against": [],
+   "sources_for": [
+    "S039",
+    "S092"
+   ]
+  },
+  "stack_focus": {
+   "category": "tech_keywords",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 8.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S041"
+   ]
+  },
+  "standard_headings": {
+   "category": "ats",
+   "domains": {
+    "ai_ml_engineering": 1,
+    "general_swe": 1
+   },
+   "mean_cred_for": 7.0,
+   "n_against": 0,
+   "n_for": 2,
+   "sources_against": [],
+   "sources_for": [
+    "S001",
+    "S083"
+   ]
+  },
+  "startup_initiative": {
+   "category": "domain_specific",
+   "domains": {
+    "startup_fullstack": 1
+   },
+   "mean_cred_for": 6.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S013"
+   ]
+  },
+  "startup_product_engineer": {
+   "category": "domain_specific",
+   "domains": {
+    "startup_fullstack": 1
+   },
+   "mean_cred_for": 9.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S009"
+   ]
+  },
+  "summary_skip": {
+   "category": "section_order",
+   "domains": {
+    "general_swe": 3
+   },
+   "mean_cred_for": 7.3,
+   "n_against": 0,
+   "n_for": 3,
+   "sources_against": [],
+   "sources_for": [
+    "S039",
+    "S041",
+    "S046"
+   ]
+  },
+  "summary_use": {
+   "category": "section_order",
+   "domains": {
+    "ai_ml_engineering": 1,
+    "backend_distributed": 1,
+    "data_engineering": 1,
+    "general_swe": 4
+   },
+   "mean_cred_for": 7.0,
+   "n_against": 0,
+   "n_for": 5,
+   "sources_against": [],
+   "sources_for": [
+    "S001",
+    "S004",
+    "S042",
+    "S043",
+    "S083",
+    "S084",
+    "S088"
+   ]
+  },
+  "tailor_cover_letter": {
+   "category": "other",
+   "domains": {
+    "ai_ml_engineering": 1
+   },
+   "mean_cred_for": 6.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S082"
+   ]
+  },
+  "tailor_keywords": {
+   "category": "tech_keywords",
+   "domains": {
+    "ai_ml_engineering": 1,
+    "data_engineering": 2,
+    "general_swe": 4
+   },
+   "mean_cred_for": 6.2,
+   "n_against": 0,
+   "n_for": 6,
+   "sources_against": [],
+   "sources_for": [
+    "S001",
+    "S035",
+    "S036",
+    "S041",
+    "S061",
+    "S088"
+   ]
+  },
+  "teamwork_problem_solving": {
+   "category": "other",
+   "domains": {
+    "general_swe": 2
+   },
+   "mean_cred_for": 7.5,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S021",
+    "S022"
+   ]
+  },
+  "tech_depth": {
+   "category": "bullet_structure",
+   "domains": {
+    "backend_distributed": 1
+   },
+   "mean_cred_for": 8.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S042"
+   ]
+  },
+  "technical_skills_valued": {
+   "category": "skills",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 7.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S022"
+   ]
+  },
+  "tense_past": {
+   "category": "tense_verbs",
+   "domains": {
+    "general_swe": 1
+   },
+   "mean_cred_for": 8.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S046"
+   ]
+  },
+  "title_accuracy": {
+   "category": "formatting",
+   "domains": {
+    "general_swe": 2
+   },
+   "mean_cred_for": 8.0,
+   "n_against": 0,
+   "n_for": 2,
+   "sources_against": [],
+   "sources_for": [
+    "S040",
+    "S043"
+   ]
+  },
+  "title_keyword_embedded": {
+   "category": "domain_specific",
+   "domains": {
+    "embedded_systems": 1
+   },
+   "mean_cred_for": 7.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S045"
+   ]
+  },
+  "two_pages_ok": {
+   "category": "length",
+   "domains": {
+    "general_swe": 3
+   },
+   "mean_cred_for": 7.3,
+   "n_against": 0,
+   "n_for": 3,
+   "sources_against": [],
+   "sources_for": [
+    "S012",
+    "S040",
+    "S042"
+   ]
+  },
+  "typos": {
+   "category": "anti_pattern",
+   "domains": {
+    "embedded_systems": 1,
+    "general_swe": 2,
+    "ml_research_robotics": 1
+   },
+   "mean_cred_for": 6.2,
+   "n_against": 0,
+   "n_for": 4,
+   "sources_against": [],
+   "sources_for": [
+    "S046",
+    "S068",
+    "S075",
+    "S092"
+   ]
+  },
+  "volume_flood": {
+   "category": "other",
+   "domains": {
+    "general_swe": 4
+   },
+   "mean_cred_for": 7.5,
+   "n_against": 0,
+   "n_for": 4,
+   "sources_against": [],
+   "sources_for": [
+    "S009",
+    "S030",
+    "S040",
+    "S052"
+   ]
+  },
+  "what_how_impact": {
+   "category": "bullet_structure",
+   "domains": {
+    "startup_fullstack": 1
+   },
+   "mean_cred_for": 6.0,
+   "n_against": 0,
+   "n_for": 1,
+   "sources_against": [],
+   "sources_for": [
+    "S013"
+   ]
+  },
+  "whitespace": {
+   "category": "formatting",
+   "domains": {
+    "embedded_systems": 1,
+    "general_swe": 1
+   },
+   "mean_cred_for": 7.0,
+   "n_against": 0,
+   "n_for": 2,
+   "sources_against": [],
+   "sources_for": [
+    "S040",
+    "S064"
+   ]
+  },
+  "work_auth": {
+   "category": "formatting",
+   "domains": {
+    "general_swe": 3
+   },
+   "mean_cred_for": 8.3,
+   "n_against": 0,
+   "n_for": 3,
+   "sources_against": [],
+   "sources_for": [
+    "S004",
+    "S040",
+    "S041"
+   ]
+  },
+  "xyz_formula": {
+   "category": "bullet_structure",
+   "domains": {
+    "general_swe": 3,
+    "quant_hft": 1
+   },
+   "mean_cred_for": 6.5,
+   "n_against": 0,
+   "n_for": 4,
+   "sources_against": [],
+   "sources_for": [
+    "S001",
+    "S007",
+    "S039",
+    "S090"
+   ]
+  }
+ },
+ "counts": {
+  "advice": 344,
+  "collected": 287,
+  "kept": 91,
+  "quotes_unverified": 8
+ },
+ "domain_coverage": {
+  "ai_ml_engineering": [
+   "S003",
+   "S009",
+   "S010",
+   "S015",
+   "S016",
+   "S041",
+   "S060",
+   "S074",
+   "S080",
+   "S081",
+   "S082",
+   "S083"
+  ],
+  "backend_distributed": [
+   "S001",
+   "S018",
+   "S042",
+   "S084"
+  ],
+  "cloud_infra_sre": [
+   "S054",
+   "S076",
+   "S077",
+   "S087"
+  ],
+  "data_engineering": [
+   "S041",
+   "S078",
+   "S079",
+   "S088"
+  ],
+  "embedded_systems": [
+   "S039",
+   "S045",
+   "S064",
+   "S065",
+   "S066",
+   "S067",
+   "S068",
+   "S069",
+   "S070",
+   "S086"
+  ],
+  "general_swe": [
+   "S001",
+   "S002",
+   "S003",
+   "S004",
+   "S005",
+   "S006",
+   "S007",
+   "S008",
+   "S009",
+   "S010",
+   "S011",
+   "S012",
+   "S013",
+   "S014",
+   "S015",
+   "S016",
+   "S018",
+   "S021",
+   "S022",
+   "S023",
+   "S024",
+   "S025",
+   "S026",
+   "S027",
+   "S028",
+   "S029",
+   "S030",
+   "S031",
+   "S032",
+   "S033",
+   "S035",
+   "S036",
+   "S037",
+   "S038",
+   "S039",
+   "S040",
+   "S041",
+   "S042",
+   "S043",
+   "S044",
+   "S046",
+   "S047",
+   "S048",
+   "S049",
+   "S050",
+   "S051",
+   "S052",
+   "S053",
+   "S054",
+   "S055",
+   "S056",
+   "S057",
+   "S058",
+   "S059",
+   "S060",
+   "S061",
+   "S062",
+   "S063",
+   "S092",
+   "S093"
+  ],
+  "ml_research_robotics": [
+   "S015",
+   "S016",
+   "S065",
+   "S074",
+   "S075",
+   "S080",
+   "S081",
+   "S085",
+   "S086"
+  ],
+  "quant_hft": [
+   "S017",
+   "S019",
+   "S020",
+   "S071",
+   "S072",
+   "S073",
+   "S089",
+   "S090"
+  ],
+  "startup_fullstack": [
+   "S009",
+   "S010",
+   "S013",
+   "S014",
+   "S040",
+   "S057",
+   "S085"
+  ]
+ }
+}

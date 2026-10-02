@@ -1,0 +1,91 @@
+# Scoring rubric for reviewer agents. Derived from research/findings.md.
+# Every dimension is scored 1-10 by each reviewer. Anchors describe 4 / 7 / 9.
+
+pass:
+  min_dim: 8            # every reviewer, every dimension
+  min_overall_mean: 8.5 # mean of `overall` across reviewers
+  consecutive_rounds: 2 # must hold on 2 consecutive rounds
+  max_rounds_base: 8
+  max_rounds_domain: 4
+
+dimensions:
+  impact_clarity:
+    what: Each bullet shows what was built and why (context), how (method/tech), and the result.
+    anchors:
+      4: Most bullets are task lists or tech lists; the why or result is missing or buried.
+      7: Most bullets have action + result; context is sometimes buried mid-sentence.
+      9: Every bullet reads What → How → Impact in one pass; nothing needs re-reading.
+  quantification:
+    what: Metrics are present where real, tied to the action, with a clear baseline and scope; no metric spam.
+    anchors:
+      4: Few numbers, or numbers that are vague or unanchored.
+      7: Good numbers on most key bullets; some lack a baseline or feel forced.
+      9: Each number is specific, attributable, defensible in an interview; non-metric bullets show a concrete outcome instead.
+  technical_depth:
+    what: Technologies are tied to engineering decisions and techniques (not name-dropped); demonstrates real engineering.
+    anchors:
+      4: Buzzword/tech soup; it's unclear what the candidate actually engineered.
+      7: Clear techs with some decisions; a few bullets are tech lists.
+      9: Every bullet shows a technique or design choice a HM would want to ask about.
+  concision_readability:
+    what: Bullets ≤2 lines (~120–180 chars), no widows, bold only as sparse anchors, plain language, no filler.
+    anchors:
+      4: Walls of text, 3-line bullets, heavy bolding, tiny font.
+      7: Mostly tight; a few long or dense bullets; bolding somewhat noisy.
+      9: Every line earns its space; the eye flows; bold guides rather than shouts.
+  skim_test:
+    what: In ~7 seconds a recruiter gets name, school, grad date, top brands, role titles, and 2–3 headline wins.
+    anchors:
+      4: Hard to tell who this is or what's impressive without reading.
+      7: Brands and roles are visible; headline wins take effort to find.
+      9: The 7-second takeaway is exactly the candidate's strongest story.
+  credibility:
+    what: Claims are plausible for the role and level, honestly scoped (WIP/internal/test), not inflated or LLM-generic.
+    anchors:
+      4: Several claims would collapse under one follow-up question; generic AI phrasing.
+      7: Mostly credible; a couple of puffed verbs or unanchored percentages.
+      9: Every claim is specific and verifiable; it reads like a real engineer wrote it.
+  ats_parseability:
+    what: Text extraction order, standard headings, consistent dates, contact info, role-relevant keywords present.
+    anchors:
+      4: Parsing problems or missing core keywords.
+      7: Parses fine; minor inconsistencies or keyword gaps.
+      9: Clean extraction, standard sections, keywords covered naturally (not stuffed).
+  visual_layout:
+    what: One page, consistent spacing/alignment, readable font size (≥ ~9.5–10pt body), balanced whitespace, minimal italics.
+    anchors:
+      4: Cramped, inconsistent spacing, tiny text.
+      7: Clean but dense or uneven.
+      9: Polished, balanced, easy on the eye at 100% zoom.
+  domain_fit:
+    what: How well the resume targets the panel's domain (see findings §4). For the base resume, the domain is general SWE intern/new-grad.
+    anchors:
+      4: Strongest domain-relevant evidence is hidden or missing.
+      7: Relevant, but ordering/emphasis isn't optimized for this domain.
+      9: A domain HM sees exactly the evidence they hire on, first.
+  overall:
+    what: Holistic likelihood this resume earns an interview for the target domain/level (2026–27 cycle).
+    anchors:
+      4: Likely filtered.
+      7: Solid; would get some interviews.
+      9: Top ~5% of the pile for this level.
+
+# Relative emphasis per domain (used to brief panels and weight the final scorecard)
+domain_weights:
+  general_swe:          {skim_test: 1.5, concision_readability: 1.3, impact_clarity: 1.2}
+  startup_fullstack:    {impact_clarity: 1.5, credibility: 1.2, domain_fit: 1.3}
+  backend_distributed:  {technical_depth: 1.5, quantification: 1.2, domain_fit: 1.3}
+  cloud_infra_sre:      {technical_depth: 1.4, quantification: 1.3, domain_fit: 1.3}
+  ai_ml_engineering:    {impact_clarity: 1.3, technical_depth: 1.3, domain_fit: 1.3}
+  ml_research_robotics: {technical_depth: 1.5, credibility: 1.3, domain_fit: 1.3}
+  quant_hft:            {technical_depth: 1.5, credibility: 1.5, concision_readability: 1.2, domain_fit: 1.3}
+  data_engineering:     {quantification: 1.3, technical_depth: 1.3, domain_fit: 1.3}
+  embedded_systems:     {technical_depth: 1.5, domain_fit: 1.5}
+
+# Deterministic thresholds enforced by tools/lint.py (must pass before any review)
+lint:
+  pages: 1
+  max_rendered_lines: 2
+  min_last_line_fill: 0.30
+  max_bold_per_bullet: 2
+  max_chars_per_bullet: 215

@@ -176,57 +176,112 @@
     {
       "level": "ERROR",
       "where": "Overhauled the legacy UI of a test data workflow c",
-      "msg": "5 bold phrases (max 3)"
+      "msg": "297 chars (max 215)"
+    },
+    {
+      "level": "ERROR",
+      "where": "Overhauled the legacy UI of a test data workflow c",
+      "msg": "5 bold phrases (max 2)"
     },
     {
       "level": "ERROR",
       "where": "Engineered a lightweight tree-style workflow searc",
-      "msg": "5 bold phrases (max 3)"
+      "msg": "356 chars (max 215)"
+    },
+    {
+      "level": "ERROR",
+      "where": "Engineered a lightweight tree-style workflow searc",
+      "msg": "5 bold phrases (max 2)"
     },
     {
       "level": "ERROR",
       "where": "Developed a Claude skill for workflow generation, ",
-      "msg": "6 bold phrases (max 3)"
+      "msg": "317 chars (max 215)"
+    },
+    {
+      "level": "ERROR",
+      "where": "Developed a Claude skill for workflow generation, ",
+      "msg": "6 bold phrases (max 2)"
     },
     {
       "level": "ERROR",
       "where": "Deployed an Amazon Leo space topic research utilit",
-      "msg": "4 bold phrases (max 3)"
+      "msg": "248 chars (max 215)"
+    },
+    {
+      "level": "ERROR",
+      "where": "Deployed an Amazon Leo space topic research utilit",
+      "msg": "4 bold phrases (max 2)"
     },
     {
       "level": "ERROR",
       "where": "Achieved a 34% speedup on a pipeline routing 6,000",
-      "msg": "5 bold phrases (max 3)"
+      "msg": "247 chars (max 215)"
+    },
+    {
+      "level": "ERROR",
+      "where": "Achieved a 34% speedup on a pipeline routing 6,000",
+      "msg": "5 bold phrases (max 2)"
     },
     {
       "level": "ERROR",
       "where": "Integrated automated fine-tuning of an AWS Bedrock",
-      "msg": "4 bold phrases (max 3)"
+      "msg": "324 chars (max 215)"
+    },
+    {
+      "level": "ERROR",
+      "where": "Integrated automated fine-tuning of an AWS Bedrock",
+      "msg": "4 bold phrases (max 2)"
+    },
+    {
+      "level": "ERROR",
+      "where": "Developing automated training for PhysTwin, a phys",
+      "msg": "3 bold phrases (max 2)"
     },
     {
       "level": "ERROR",
       "where": "Built a Python pipeline linking AnyGrasp multi-cam",
-      "msg": "4 bold phrases (max 3)"
+      "msg": "229 chars (max 215)"
+    },
+    {
+      "level": "ERROR",
+      "where": "Built a Python pipeline linking AnyGrasp multi-cam",
+      "msg": "4 bold phrases (max 2)"
     },
     {
       "level": "ERROR",
       "where": "Cut research-environment setup time 30% via UV dep",
-      "msg": "5 bold phrases (max 3)"
+      "msg": "228 chars (max 215)"
+    },
+    {
+      "level": "ERROR",
+      "where": "Cut research-environment setup time 30% via UV dep",
+      "msg": "5 bold phrases (max 2)"
     },
     {
       "level": "ERROR",
       "where": "Co-founded and scaled a 110+ member campus product",
-      "msg": "4 bold phrases (max 3)"
+      "msg": "4 bold phrases (max 2)"
     },
     {
       "level": "ERROR",
       "where": "Sustained 20,000+ site visits within the initial 3",
-      "msg": "4 bold phrases (max 3)"
+      "msg": "228 chars (max 215)"
+    },
+    {
+      "level": "ERROR",
+      "where": "Sustained 20,000+ site visits within the initial 3",
+      "msg": "4 bold phrases (max 2)"
     },
     {
       "level": "ERROR",
       "where": "Building a work-in-progress integration of a RAG m",
-      "msg": "5 bold phrases (max 3)"
+      "msg": "240 chars (max 215)"
+    },
+    {
+      "level": "ERROR",
+      "where": "Building a work-in-progress integration of a RAG m",
+      "msg": "5 bold phrases (max 2)"
     },
     {
       "level": "WARN",
@@ -241,9 +296,14 @@
     {
       "level": "ERROR",
       "where": "Designed and assessed the performance of a time-ba",
-      "msg": "4 bold phrases (max 3)"
+      "msg": "249 chars (max 215)"
+    },
+    {
+      "level": "ERROR",
+      "where": "Designed and assessed the performance of a time-ba",
+      "msg": "4 bold phrases (max 2)"
     }
   ],
-  "errors": 16,
+  "errors": 28,
   "warnings": 3
 }
