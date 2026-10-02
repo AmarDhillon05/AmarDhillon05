@@ -1,0 +1,49 @@
+{
+  "persona": "bs_detector",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28, AWS SDE intern now, Capital One SWE intern; heavy AWS/LLM backend work, research lab, campus studio. Strong brands, but lots of concurrent roles.",
+  "scores": {"impact_clarity": 7, "quantification": 7, "technical_depth": 8, "concision_readability": 7,
+             "skim_test": 7, "credibility": 6, "ats_parseability": 8, "visual_layout": 8, "domain_fit": 8, "overall": 8},
+  "score_rationale": {
+    "impact_clarity": "Several bullets stop at the method (Fargate/CDK deploy, PhysTwin, all IEX bullets) with no stated result or user-visible outcome.",
+    "quantification": "Percentages lack sample size or baseline (90% surveyed, 93% testers, 30% setup); Prisma/Redis caching claims reduced load with no number.",
+    "concision_readability": "Nearly every bullet runs a full two lines with stacked tech names; dense to read, few short wins break it up.",
+    "skim_test": "AWS and Capital One pop, but headline wins are buried mid-sentence; a one-line AWS bullet leads the section.",
+    "credibility": "Summer 2026 shows Capital One, IEX project, contract job and research lab concurrently; 'adopted into ecosystem' and 'enforced correctness' invite hard follow-ups."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "Clarify the overlap: Jun–Aug 2026 lists Capital One (Richmond) plus IEX project, UMD contracting and UMIACS (College Park) all active; an interviewer will ask how many hours each got.",
+    "Clarify: what does 'adopted into Leo's ecosystem' concretely mean (who uses it, in what capacity)? As written it reads as puffery.",
+    "Clarify: is Tortuga the class scheduler? The bullet pairs a caching change with a traffic number, implying causation that isn't there.",
+    "Clarify sample sizes for '90% of surveyed users' and '93% ... internal testers'; small-n percentages collapse under one question."
+  ],
+  "bullets": [
+    {"quote": "Researching and implementing Java-based utilization optimizations for", "verdict": "add_context", "issue": "Vague and generic; 'utilization optimizations' says nothing about what component or technique.", "suggestion": "Name the Redshift component or the kind of utilization (CPU, memory, storage) you're working on, if you're allowed to say."},
+    {"quote": "Rebuilt a legacy test-data workflow builder UI", "verdict": "tighten", "issue": "Tech list crowds the point; '90% preferred' needs survey size to be defensible.", "suggestion": "Rebuilt a legacy test-data workflow builder in React/TypeScript/Electron with a React-Flow editor; 90% of surveyed users (n=?) preferred it over the old tool"},
+    {"quote": "Built a precomputed tree-style search index over", "verdict": "add_context", "issue": "'Minimize DB queries under access limits' has no outcome; what did it enable or speed up?", "suggestion": "State what the index made possible (e.g., search served without hitting the rate-limited DB) using only facts you can defend."},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "keep", "suggestion": "Strong: baseline implied, concrete method. Consider 'Claude agent skill' only if that's the internal term; be ready to explain the decomposition."},
+    {"quote": "Shipped a space-research tool for Amazon Leo,", "verdict": "reframe", "issue": "'Adopted into Leo's ecosystem' is vague; 'so new engineers can contribute' is a weak why for CDK.", "suggestion": "Lead with what the tool does for whom, then deploy stack; replace 'adopted into ecosystem' with the concrete adoption fact."},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep", "suggestion": "Credible and specific. Be ready to state the baseline latency and what the previous architecture was."},
+    {"quote": "Automated fine-tuning of an AWS Bedrock source-relevancy", "verdict": "tighten", "issue": "Reads as AWS service checklist (EventBridge, X-Ray, SNS); decision gates are the interesting part.", "suggestion": "Automated Bedrock source-relevancy model fine-tuning on an EventBridge schedule, with decision gates that skip redundant retraining runs"},
+    {"quote": "Developing automated training for PhysTwin, a physics-based", "verdict": "add_context", "issue": "'Automated training' is unclear; 'targeting ICLR' borrows prestige without your contribution.", "suggestion": "Say what you automate (e.g., the training loop, parameter search, data pipeline) and keep ICLR only if you're on the author list."},
+    {"quote": "Engineered a Python pipeline rendering AnyGrasp multi-camera grasp", "verdict": "tighten", "issue": "Name-drop chain (AnyGrasp, Open3D, Qwen3-VL-8B) before the purpose; 'Engineered' is filler.", "suggestion": "Built a Python pipeline that renders multi-camera AnyGrasp grasp candidates as Open3D overlays for a VLM, so researchers can isolate scene components"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "add_context", "issue": "30% of what baseline? Profiling/Pytest clause is a second unrelated task.", "suggestion": "State setup time before/after if known; drop or split the profiling clause unless it found a bottleneck you can name."},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep", "issue": "", "suggestion": "Fine; 'run with Jira and GitHub' adds little and can be cut for space."},
+    {"quote": "Wrote Prisma SQL queries and Redis query", "verdict": "reframe", "issue": "Caching outcome unquantified; 20K visits is a product stat, not a result of your caching.", "suggestion": "Split cause and context: 'Built Redis query caching and Prisma queries for Tortuga, a class scheduler that drew 20,000+ visits in its first 30 days'"},
+    {"quote": "Building a RAG meal-suggestion feature for the", "verdict": "keep", "issue": "", "suggestion": "Honestly scoped (WIP, internal testers). Be ready to give tester count."},
+    {"quote": "Implemented a C++ order-book simulator replaying historical", "verdict": "tighten", "issue": "'Contract-based plug-in interface ... enforced correctness' is jargon-heavy and vague; no outcome.", "suggestion": "Implemented a C++ order-book simulator replaying historical IEX data, with a plug-in interface and correctness checks so alternative matching strategies can be swapped in"},
+    {"quote": "Designed paginated hash-based order-book storage with an", "verdict": "add_context", "issue": "Lists design but no result; 'checked for drift' doesn't say whether it matched.", "suggestion": "State the outcome of the drift check (e.g., matched IEX book data) if true; otherwise cut that clause."},
+    {"quote": "Benchmarked a time-based adaptive LSM store against", "verdict": "add_context", "issue": "Benchmark with no finding; 'time-based adaptive LSM' sounds invented without explanation.", "suggestion": "Add which structure won and on what workload, using your actual measured results; otherwise one follow-up sinks it."}
+  ],
+  "structure": [
+    {"key": "aws_bullet_strengthen_or_demote_visual", "change": "Keep AWS first, but its single vague bullet makes the top of the section weakest; expand it to a concrete line if allowed.", "rationale": "First experience entry sets credibility; a filler bullet under the biggest brand wastes the prime spot."},
+    {"key": "explain_concurrency", "change": "Mark the UMD contract and UMIACS roles as part-time, or adjust dates to reflect pauses during Capital One.", "rationale": "Four simultaneous roles in summer 2026 is the first thing a skeptical interviewer will probe."},
+    {"key": "trim_skills_dup", "change": "Trim skills entries that only appear as name-drops (API Gateway, perf) unless defensible.", "rationale": "Every listed tool is fair game in an interview."}
+  ],
+  "top3": [
+    "Clarify time commitments: label part-time roles or fix dates so summer 2026 doesn't show four concurrent jobs.",
+    "Replace vague claims with defensible ones: concrete meaning of 'adopted into Leo's ecosystem', sample sizes for 90%/93%, baseline for 30%.",
+    "Give results to method-only bullets (IEX benchmark/drift, AWS Redshift line, PhysTwin) and cut AWS-service checklists down to the design decision."
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "persona": "senior_swe_hm",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28, AWS SDE intern now, Capital One SWE intern prior; lots of AWS/serverless and LLM tooling; a few strong numbers (65%, 34%, 20K visits).",
+  "scores": {
+    "impact_clarity": 7,
+    "quantification": 6,
+    "technical_depth": 7,
+    "concision_readability": 7,
+    "skim_test": 8,
+    "credibility": 6,
+    "ats_parseability": 8,
+    "visual_layout": 8,
+    "domain_fit": 8,
+    "overall": 7
+  },
+  "score_rationale": {
+    "impact_clarity": "Several bullets stop at what was built (search index, Open3D pipeline, IEX project) with no outcome; AWS bullet is a vague task line.",
+    "quantification": "Strong 65%-to-15s bullet, but 34%, 30%, 90%, 93% lack baseline or sample size; caching and index bullets assert gains without numbers.",
+    "technical_depth": "Good decisions visible (Kinesis+Lambda, retrain gates, LFU cache), but some bullets are tech chains (CDK, X-Ray, SNS) without a why.",
+    "concision_readability": "Every bullet runs to two dense lines; jargon phrases like 'contract-based plug-in interface... enforced correctness' need re-reading; bolding uneven across roles.",
+    "credibility": "Four concurrent 'Present' roles plus a Redmond internship and an overlapping summer project invite overlap questions; several percentages unanchored."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "AWS bullet is a single vague present-tense task line on the top brand; say what component/problem in Redshift you own and the approach, even if results are pending.",
+    "Clarify overlapping timelines: UMD contracting, UMIACS and TerpLabs all 'Present' while interning on-site in Redmond, and the IEX project overlaps the Capital One summer. Mark paused roles or end dates.",
+    "Clarify baselines/sample sizes: 90% of how many surveyed users, 93% of how many testers, 34% latency from what prior architecture.",
+    "TerpLabs caching bullet pairs an unquantified optimization with 20,000+ visits that the caching did not cause; separate or reframe so the metric is attributable."
+  ],
+  "bullets": [
+    {"quote": "Researching and implementing Java-based utilization optimizations for Amazon", "verdict": "add_context", "issue": "Vague task on top brand; no component, technique, or scope. 'Researching' reads passive.", "suggestion": "Implementing Java-based [specific utilization optimization] in Amazon Redshift's [component] to [goal] (in progress)"},
+    {"quote": "Rebuilt a legacy test-data workflow builder UI", "verdict": "tighten", "issue": "Tech list front-loaded; survey size unknown so 90% is hard to weigh.", "suggestion": "Rebuilt a legacy test-data workflow builder as a React-Flow editor (React/TypeScript/Electron) with Jest-tested validation; 90% of surveyed users preferred it"},
+    {"quote": "Built a precomputed tree-style search index over popular", "verdict": "add_context", "issue": "Good design choice but no outcome; 'under access limits' unclear to outsiders.", "suggestion": "Built a precomputed tree-style index of popular workflows over a 270K+ row PostgreSQL table (SQLAlchemy, Redis cache) so lookups avoided rate-limited DB queries"},
+    {"quote": "Cut LLM workflow generation time 65% to under", "verdict": "keep"},
+    {"quote": "Shipped a space-research tool for Amazon Leo, now", "verdict": "reframe", "issue": "What the tool does is missing; 'so new engineers can contribute' is weak justification; reads as deploy-stack list.", "suggestion": "Shipped a space-research tool for Amazon Leo, now adopted into Leo's ecosystem; defined infra in AWS CDK and deployed to Fargate via GitHub Actions"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline routing", "verdict": "add_context", "issue": "Strong bullet; state what it moved from so the design change is clear.", "suggestion": "Cut end-to-end latency 34% for a pipeline routing 6,000+ scraped research docs to inference by moving it from [prior setup] to Kinesis streams feeding Lambda"},
+    {"quote": "Automated fine-tuning of an AWS Bedrock source-relevancy model", "verdict": "tighten", "issue": "Decision gates are the interesting part; X-Ray/SNS tail is tech name-drop.", "suggestion": "Automated Bedrock source-relevancy model fine-tuning on an EventBridge schedule, with decision gates that skip redundant retraining; added X-Ray tracing and SNS alerts"},
+    {"quote": "Developing automated training for PhysTwin, a physics-based digital", "verdict": "add_context", "issue": "'Automated training' is unspecific; your contribution vs. the team's is unclear.", "suggestion": "Building [specific part] of the automated training pipeline for PhysTwin, a physics-based digital twin, on a PhD-led team targeting ICLR"},
+    {"quote": "Engineered a Python pipeline rendering AnyGrasp multi-camera grasp", "verdict": "tighten", "issue": "Dense model-name chain; outcome soft. 'Engineered' is puffed.", "suggestion": "Built a Python pipeline that renders AnyGrasp multi-camera grasp candidates as Open3D overlays for Qwen3-VL-8B, letting researchers isolate scene components"},
+    {"quote": "Shortened research-environment setup time 30% with uv dependency", "verdict": "tighten", "issue": "Two unrelated actions; profiling half has no finding.", "suggestion": "Cut research-environment setup time 30% via uv dependency pinning and Docker; added psutil profiling and Pytest suites"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep"},
+    {"quote": "Wrote Prisma SQL queries and Redis query caching", "verdict": "reframe", "issue": "Metric not attributable to the caching work; 'reduce load and latency' unquantified.", "suggestion": "Built the data layer for Tortuga's class scheduler (Prisma queries, Redis caching), which served 20,000+ visits in its first 30 days"},
+    {"quote": "Building a RAG meal-suggestion feature for the official", "verdict": "add_context", "issue": "93% needs tester count/rating scale to be defensible.", "suggestion": "Building a RAG meal-suggestion feature for the official UMD app (GPT-4o mini, ChromaDB + SentenceBERT retrieval); 93% of meals rated satisfactory by N internal testers"},
+    {"quote": "Implemented a C++ order-book simulator replaying historical IEX", "verdict": "tighten", "issue": "'Contract-based plug-in interface... enforced correctness' is jargon; say what is pluggable and how correctness is checked.", "suggestion": "Implemented a C++ order-book simulator replaying historical IEX data, with a plug-in interface so alternative matching strategies swap in behind correctness checks"},
+    {"quote": "Designed paginated hash-based order-book storage with an in-memory", "verdict": "add_context", "issue": "Good design choice, but no result; 'checked for drift' result unstated.", "suggestion": "Designed paginated hash-based order-book storage with an LFU cache for hot tickers; validated against IEX historical book data for drift"},
+    {"quote": "Benchmarked a time-based adaptive LSM store against a", "verdict": "add_context", "issue": "Benchmark with no conclusion is the classic HM question bait left unanswered.", "suggestion": "Benchmarked an adaptive LSM store vs. a B+ tree for simulation logs (rdtscp latency, perf counters); state which won and why"}
+  ],
+  "structure": [
+    {"key": "aws_role_substance", "change": "Expand the AWS entry to 1–2 concrete bullets, or keep one but make it specific.", "rationale": "Top-of-page brand currently carries the weakest bullet; HMs read it first."},
+    {"key": "condense_concurrent_roles", "change": "Mark paused/part-time roles or trim UMIACS/TerpLabs to 2 bullets each.", "rationale": "Reduces overlap skepticism and frees space for outcome text on AWS and the IEX project."},
+    {"key": "consistent_bold", "change": "Bold one headline metric per role consistently (e.g., 65%, 34%) rather than mixed counts.", "rationale": "Guides the skim to strongest wins; current bolding is uneven across roles."}
+  ],
+  "top3": [
+    "Make the AWS Redshift bullet specific (component, approach, status) — it's the first thing every reader sees and currently says nothing.",
+    "Clarify: timeline overlaps (three 'Present' roles during a Redmond internship; IEX project during Capital One) and baselines/sample sizes for 34%, 90%, 93%.",
+    "Close the loop on outcome-less bullets (Capital One search index, Tortuga caching, IEX storage and LSM benchmark) with what was learned or achieved, without inventing numbers."
+  ]
+}
