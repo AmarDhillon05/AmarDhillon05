@@ -51,7 +51,7 @@ roles:
     status: completed
     bullets:
       ui_overhaul:
-        claim: Overhauled the legacy UI of a test-data workflow creator; TypeScript workflow/state validation tested with Jest on mock workflows; React-Flow improved editor fluidity; internal satisfaction 90% vs the legacy tool
+        claim: Overhauled the legacy UI of a test-data workflow creator; TypeScript workflow/state validation tested with Jest on mock workflows; React-Flow improved editor fluidity; in an internal survey, 90% of surveyed users preferred the new tool over the legacy one  # clarified by Amar, Oct 2026
         core_techs: [React, Electron, TypeScript]
         optional_techs: [Jest, React-Flow]
         required_numbers: ["90%"]
@@ -68,7 +68,7 @@ roles:
 
   amazon_contract:
     title: Software Engineer (Contract)
-    org: Amazon (via UMD App Development Contracting)
+    org: Amazon (via UMD App Development Contracting)  # may be shown as "UMD App Development Contracting (Client: Amazon)"
     location: College Park, MD
     dates: Jan 2026 -- Present
     status: in_progress
@@ -79,7 +79,7 @@ roles:
         optional_techs: [GitHub Actions, TypeScript]
         required_numbers: []
       kinesis_pipeline:
-        claim: 34% speedup on a pipeline routing 6,000+ scraped research documents for inference, via Kinesis streams feeding Lambda processors for processing/redirection; Lambda + API Gateway front it for app integration
+        claim: 34% end-to-end latency reduction (clarified by Amar, Oct 2026) on a pipeline routing 6,000+ scraped research documents for inference, via Kinesis streams feeding Lambda processors for processing/redirection; Lambda + API Gateway front it for app integration
         core_techs: [Kinesis, Lambda]
         optional_techs: [API Gateway]
         required_numbers: ["34%", "6,000+"]
@@ -128,7 +128,7 @@ roles:
         core_techs: [Prisma, SQL, Redis]
         required_numbers: ["20,000+", "30"]
       rag_meal:
-        claim: Building (work in progress) a RAG meal-suggestion integration into the official UMD app using GPT-4o mini over ChromaDB + SentenceBERT vector search on scraped recipe data; 93% generated-meal satisfaction among internal test users
+        claim: Building (work in progress) a RAG meal-suggestion integration into the official UMD app using GPT-4o mini over ChromaDB + SentenceBERT vector search on scraped recipe data; 93% of generated meal suggestions were rated satisfactory by internal testers (clarified by Amar, Oct 2026)
         core_techs: [RAG, GPT-4o mini, ChromaDB]
         optional_techs: [SentenceBERT]
         required_numbers: ["93%"]
@@ -188,7 +188,7 @@ projects:
         core_techs: [C++]
         required_numbers: []
       lfu_storage:
-        claim: Wrote and evaluated paginated hash-based storage for live order-book data with in-memory LFU caching for frequently requested tickers; evaluated for drift against IEX historical book data
+        claim: (no measured results exist for iex.*; never imply results) Wrote and evaluated paginated hash-based storage for live order-book data with in-memory LFU caching for frequently requested tickers; evaluated for drift against IEX historical book data
         core_techs: [LFU]
         required_numbers: []
       lsm_vs_btree:

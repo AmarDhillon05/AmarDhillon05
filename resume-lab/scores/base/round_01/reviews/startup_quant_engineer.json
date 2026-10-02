@@ -1,0 +1,148 @@
+{
+  "persona": "startup_quant_engineer",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28; AWS and Capital One SWE internships plus an Amazon contract role; heavy AWS serverless work; a C++ IEX order-book project; co-founded a 110-member campus studio.",
+  "scores": {
+    "impact_clarity": 7,
+    "quantification": 6,
+    "technical_depth": 7,
+    "concision_readability": 7,
+    "skim_test": 8,
+    "credibility": 6,
+    "ats_parseability": 8,
+    "visual_layout": 8,
+    "domain_fit": 7,
+    "overall": 8
+  },
+  "score_rationale": {
+    "impact_clarity": "Several bullets end on a tech list (Kinesis/Lambda/API Gateway, X-Ray/SNS) instead of an outcome; the AWS and IEX bullets describe activity without results.",
+    "quantification": "The 34%, 65% and 90% figures have no stated metric or baseline. The IEX benchmarks were measured but no numbers are reported, which is the worst miss for a systems reader.",
+    "technical_depth": "IEX and Capital One search-index bullets show real design choices; Amazon contract bullets lean toward AWS service enumeration over decisions.",
+    "concision_readability": "Most bullets run a full two lines; tech chains like 'Docker + AWS Fargate via GitHub Actions, with AWS CDK (TypeScript)' slow the read.",
+    "credibility": "Four roles run concurrently (AWS Redmond overlapping College Park contract, UMIACS, TerpLabs). Satisfaction percentages with unclear sample sizes invite skepticism.",
+    "domain_fit": "Strong for general SWE, but the AWS intern role, the biggest brand, has the weakest bullet, and backend wins are buried under service names."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "Clarify: the IEX project says throughput/latency were measured with rdtscp and perf but reports no result. State what the LSM vs B+ tree comparison found, or reframe the bullet so it doesn't promise a number.",
+    "Clarify: what the 34% speedup measures (end-to-end latency? throughput?) and what the 65% baseline was. Unlabeled percentages fall apart under one follow-up question.",
+    "Clarify the overlapping dates: an AWS Redmond internship (Sep–Dec 2026) running alongside 'Present' roles in College Park reads as a conflict. Mark the concurrent ones part-time/remote or end-date them.",
+    "Clarify: '90% satisfaction' and '93% meal satisfaction' need a scope (how many users/testers) or should be softened; otherwise they read as survey filler."
+  ],
+  "bullets": [
+    {
+      "quote": "Researching and implementing Java-based utilization optimizations for",
+      "verdict": "add_context",
+      "issue": "Your biggest brand gets one vague bullet; 'utilization' of what? No component, technique or status.",
+      "suggestion": "Name the Redshift subsystem and the kind of optimization (if disclosable); 'Researching and implementing' can stay since it's ongoing, but say what is being optimized."
+    },
+    {
+      "quote": "Rebuilt the legacy UI of a test-data workflow",
+      "verdict": "tighten",
+      "issue": "Three frameworks in the lead clause; '90% satisfaction vs. the old tool' has no scope or survey basis.",
+      "suggestion": "Rebuilt a legacy test-data workflow builder in React/Electron with a React-Flow editor and Jest-tested validation; users rated it 90% satisfaction vs. the old tool (clarify sample)."
+    },
+    {
+      "quote": "Built a precomputed tree-style workflow search index to",
+      "verdict": "reframe",
+      "issue": "Good design choice, but the 'why' (access limits) and outcome are buried; 'distilling popular workflows' is unclear.",
+      "suggestion": "To work within DB access limits, built a precomputed tree-structured search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis), minimizing live DB queries."
+    },
+    {
+      "quote": "Cut workflow generation time 65% to under 15s",
+      "verdict": "tighten",
+      "issue": "Strong result; 'Claude skill using sub-skill decomposition' is jargon a general HM may not parse.",
+      "suggestion": "Cut workflow generation time 65% to under 15s by decomposing an LLM agent (Claude) into sub-tasks with Python search/validation tools, guided by CloudWatch + OpenSearch latency logs."
+    },
+    {
+      "quote": "Shipped an Amazon Leo space-research tool adopted into",
+      "verdict": "tighten",
+      "issue": "'Adopted into Leo's ecosystem' is the win but vague; the deploy-stack chain dominates the line.",
+      "suggestion": "Shipped a space-research tool adopted into Amazon Leo's internal ecosystem; containerized on Fargate with CI/CD (GitHub Actions) and CDK infra-as-code so new engineers can onboard."
+    },
+    {
+      "quote": "Sped up a pipeline routing 6,000+ scraped research",
+      "verdict": "add_context",
+      "issue": "34% of what metric? Bullet ends on a service list instead of the design decision.",
+      "suggestion": "Cut [latency/throughput — clarify] 34% on a pipeline routing 6,000+ scraped research docs to inference by moving to Kinesis streams feeding Lambda processors, served via API Gateway."
+    },
+    {
+      "quote": "Automated fine-tuning of an AWS Bedrock source-relevancy model",
+      "verdict": "tighten",
+      "issue": "Decision gates skipping redundant retraining is the interesting part; lead with it, drop the service roll call.",
+      "suggestion": "Automated retraining of a Bedrock source-relevancy model on EventBridge schedules, with decision gates that skip redundant runs; added X-Ray tracing and SNS failure alerts."
+    },
+    {
+      "quote": "Developing automated training for PhysTwin, a physics-based",
+      "verdict": "add_context",
+      "issue": "'Automated training' of what, and what does your piece do? Venue target is the only concrete detail.",
+      "suggestion": "Clarify what was automated (parameter fitting? data pipeline?) and your specific contribution, keeping the ICLR-target context."
+    },
+    {
+      "quote": "Engineered a Python pipeline rendering AnyGrasp multi-camera grasp",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Reduced research-environment setup time 30% with uv",
+      "verdict": "tighten",
+      "issue": "Two separate ideas: setup time win and profiling/tests; the profiling clause has no result.",
+      "suggestion": "Cut research-environment setup time 30% via uv dependency pinning and Docker; added psutil time/memory profiling and Pytest suites to locate bottlenecks."
+    },
+    {
+      "quote": "Co-founded and scaled a 110+ member campus product",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Developed Prisma-based SQL querying with Redis query caching",
+      "verdict": "reframe",
+      "issue": "Lead with the product and traffic (the real user signal); the caching purpose dangles at the end.",
+      "suggestion": "Built the data layer for Tortuga, a class scheduler with 20,000+ visits in its first 30 days, using Prisma SQL queries with Redis caching to reduce DB load and latency."
+    },
+    {
+      "quote": "Building a RAG meal-suggestion feature for the official",
+      "verdict": "tighten",
+      "issue": "Honest 'in progress' scoping is good; 93% satisfaction needs tester count or should be softened.",
+      "suggestion": "Building (in progress) a RAG meal-suggestion feature for the official UMD app: GPT-4o mini over ChromaDB + SentenceBERT recipe search; 93% satisfaction among internal testers."
+    },
+    {
+      "quote": "Implemented a C++ order-book simulator on historical IEX",
+      "verdict": "tighten",
+      "issue": "'Contract-based plug-in design' is interesting but abstract; say what is pluggable (matching logic? book structure?).",
+      "suggestion": "Implemented a C++ order-book simulator replaying historical IEX data, with a plug-in interface for swappable [component — clarify] implementations and enforced correctness contracts."
+    },
+    {
+      "quote": "Designed paginated hash-based storage for live order-book data",
+      "verdict": "add_context",
+      "issue": "'Evaluated for drift' — what was the outcome? Why LFU for hot tickers? Missing the result.",
+      "suggestion": "State the drift evaluation result (e.g., matched IEX book within X) if you have it; otherwise say 'validated against IEX historical book data'."
+    },
+    {
+      "quote": "Benchmarked a time-based adaptive LSM store against a",
+      "verdict": "add_context",
+      "issue": "Measured but no findings reported. Rigorous methodology with no numbers reads as unfinished to a perf-minded reviewer.",
+      "suggestion": "Add which store won and by how much on throughput/latency (from your existing rdtscp/perf measurements); don't add numbers you didn't measure."
+    }
+  ],
+  "structure": [
+    {
+      "key": "aws_bullets",
+      "change": "Give the AWS internship a second bullet once there is concrete progress, or make the single bullet specific (component + technique).",
+      "rationale": "Top brand at the top of the page currently carries the least evidence; skimmers anchor on it."
+    },
+    {
+      "key": "concurrency_labels",
+      "change": "Mark the concurrent 'Present' roles as part-time/remote, or end-date roles paused during the Redmond internship.",
+      "rationale": "Removes an obvious credibility question before the interviewer raises it."
+    },
+    {
+      "key": "skills_trim",
+      "change": "Move RAG out of the skills list (it's a technique, not a tool) and consider merging the AWS line into Backend & Data to shorten the section.",
+      "rationale": "Skills read slightly keyword-stuffed; the bullets already show AWS depth."
+    }
+  ],
+  "top3": [
+    "Clarify and report results: what the 34% and 65% measure against, and what the IEX LSM vs B+ tree benchmarks actually found. Measurement with no number is a red flag.",
+    "Strengthen the AWS Redshift bullet with the specific component and technique, and resolve the overlapping-dates question with part-time/remote labels.",
+    "Rewrite the Amazon contract bullets around design decisions and outcomes instead of AWS service roll calls; lead Tortuga with its 20,000+ visits."
+  ]
+}

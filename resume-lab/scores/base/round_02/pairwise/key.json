@@ -1,0 +1,62 @@
+{
+  "p01": {
+    "fact": "amazon_contract.bedrock_finetune",
+    "new_is": "B"
+  },
+  "p02": {
+    "fact": "amazon_contract.kinesis_pipeline",
+    "new_is": "A"
+  },
+  "p03": {
+    "fact": "amazon_contract.leo_deploy",
+    "new_is": "A"
+  },
+  "p04": {
+    "fact": "aws_sde.redshift",
+    "new_is": "A"
+  },
+  "p05": {
+    "fact": "capital_one.claude_skill",
+    "new_is": "A"
+  },
+  "p06": {
+    "fact": "capital_one.search_index",
+    "new_is": "A"
+  },
+  "p07": {
+    "fact": "capital_one.ui_overhaul",
+    "new_is": "B"
+  },
+  "p08": {
+    "fact": "iex.lfu_storage",
+    "new_is": "A"
+  },
+  "p09": {
+    "fact": "iex.lsm_vs_btree",
+    "new_is": "B"
+  },
+  "p10": {
+    "fact": "iex.order_book",
+    "new_is": "B"
+  },
+  "p11": {
+    "fact": "terplabs.rag_meal",
+    "new_is": "A"
+  },
+  "p12": {
+    "fact": "terplabs.studio",
+    "new_is": "B"
+  },
+  "p13": {
+    "fact": "terplabs.tortuga",
+    "new_is": "B"
+  },
+  "p14": {
+    "fact": "umiacs.env_setup",
+    "new_is": "B"
+  },
+  "p15": {
+    "fact": "umiacs.phystwin",
+    "new_is": "B"
+  }
+}

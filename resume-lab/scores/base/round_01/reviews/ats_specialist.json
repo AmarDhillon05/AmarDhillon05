@@ -1,0 +1,61 @@
+{
+  "persona": "ats_specialist",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28; AWS SDE intern, Capital One SWE intern, Amazon contract work; heavy AWS/Python/TypeScript stack; C++ order-book project. Strong brands, dense page.",
+  "scores": {
+    "impact_clarity": 7,
+    "quantification": 7,
+    "technical_depth": 8,
+    "concision_readability": 7,
+    "skim_test": 7,
+    "credibility": 7,
+    "ats_parseability": 8,
+    "visual_layout": 7,
+    "domain_fit": 8,
+    "overall": 8
+  },
+  "score_rationale": {
+    "impact_clarity": "Several bullets end on tech lists or 'so engineers can contribute' instead of results; AWS bullet and in-progress items have no outcome.",
+    "quantification": "Percentages (90%, 34%, 65%, 30%, 93%) lack baselines or sample size; 93% is from internal testers on unfinished work.",
+    "concision_readability": "Nearly every bullet hits two full lines; header contact line wraps; dense tech strings slow reading.",
+    "skim_test": "Brands are visible but AWS role leads with a thin one-line bullet; headline wins buried mid-bullet.",
+    "credibility": "Four concurrent 'Present' roles plus Redmond internship invite timeline questions; 'Claude skill' and 'adopted into Leo's ecosystem' are vague.",
+    "visual_layout": "Clean LaTeX template but dense; contact line wraps to two lines; bottom whitespace slightly uneven."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "Clarify overlapping dates: Amazon contract, UMIACS, and TerpLabs all say 'Present' while AWS internship is in Redmond Sep–Dec 2026; LLM screeners flag 4 simultaneous roles. Confirm which are paused or remote.",
+    "Two separate 'Amazon' employer entries (Amazon Web Services and Amazon via UMD contracting) can be merged/deduped incorrectly by parsers; make the contracting employer name unambiguous.",
+    "Clarify: what 'Claude skill' means; non-standard term that ATS keyword matching and non-AI recruiters won't recognize (e.g., 'LLM agent workflow').",
+    "Contact line wraps onto a second line; keep it on one line so parsers capture GitHub as part of the header block."
+  ],
+  "bullets": [
+    {"quote": "Researching and implementing Java-based utilization optimizations for", "verdict": "add_context", "issue": "Only bullet for top brand; vague scope, no what/why; present-progressive with no outcome.", "suggestion": "Clarify which Redshift component and what kind of utilization (e.g., memory/CPU) you are optimizing, if shareable."},
+    {"quote": "Rebuilt the legacy UI of a test-data", "verdict": "tighten", "issue": "Tech list front-loaded; '90% satisfaction' lacks who rated it.", "suggestion": "Rebuilt a legacy test-data workflow builder UI (React/TypeScript/Electron) with a React-Flow editor and Jest-tested validation; rated 90% satisfaction vs. the old tool by [users]"},
+    {"quote": "Built a precomputed tree-style workflow search index", "verdict": "tighten", "issue": "Good design choice; 'under access limits' is ambiguous and result is unstated.", "suggestion": "Built a precomputed tree-style search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis) to minimize DB queries under rate limits"},
+    {"quote": "Cut workflow generation time 65% to under", "verdict": "reframe", "issue": "'Claude skill' / 'sub-skill decomposition' is jargon a parser and recruiter won't map.", "suggestion": "Cut workflow generation time 65% to under 15s by decomposing an LLM agent into sub-tasks with Python search/validation tools, guided by CloudWatch + OpenSearch latency logs"},
+    {"quote": "Shipped an Amazon Leo space-research tool adopted", "verdict": "tighten", "issue": "'Adopted into Leo's ecosystem' is vague; ends on contributor onboarding rather than impact.", "suggestion": "Shipped an Amazon Leo space-research tool adopted by the Leo team, deployed on Docker + AWS Fargate via GitHub Actions with AWS CDK (TypeScript) infra"},
+    {"quote": "Sped up a pipeline routing 6,000+ scraped", "verdict": "keep"},
+    {"quote": "Automated fine-tuning of an AWS Bedrock source-relevancy", "verdict": "tighten", "issue": "Strong technique; trailing 'added X-Ray tracing and SNS alerts' reads as a tech append.", "suggestion": "Automated fine-tuning of a Bedrock source-relevancy model via EventBridge cron triggers with decision gates that skip redundant retraining, plus X-Ray tracing and SNS failure alerts"},
+    {"quote": "Developing automated training for PhysTwin, a physics-based", "verdict": "add_context", "issue": "No method or outcome; 'targeting ICLR' is aspirational.", "suggestion": "Clarify what 'automated training' consists of (e.g., what you built) so the bullet shows your contribution."},
+    {"quote": "Engineered a Python pipeline rendering AnyGrasp multi-camera", "verdict": "keep"},
+    {"quote": "Reduced research-environment setup time 30% with uv", "verdict": "tighten", "issue": "Two ideas merged; profiling/Pytest part doesn't connect to the 30% result.", "suggestion": "Reduced research-environment setup time 30% via uv dependency pinning and Docker; added psutil time/memory profiling and Pytest suites to locate bottlenecks"},
+    {"quote": "Co-founded and scaled a 110+ member campus", "verdict": "keep"},
+    {"quote": "Developed Prisma-based SQL querying with Redis query", "verdict": "reframe", "issue": "Result (20K visits) is product reach, not tied to caching; purpose clause trails at end.", "suggestion": "Added Redis query caching over Prisma/SQL to cut DB load and latency for Tortuga, a class scheduler with 20,000+ visits in its first 30 days"},
+    {"quote": "Building a RAG meal-suggestion feature for the", "verdict": "tighten", "issue": "93% from internal testers on WIP feature is a soft metric; keep honest scope.", "suggestion": "Building a RAG meal-suggestion feature for the official UMD app (GPT-4o mini, ChromaDB + SentenceBERT search); 93% satisfaction in internal testing"},
+    {"quote": "Implemented a C++ order-book simulator on historical", "verdict": "keep"},
+    {"quote": "Designed paginated hash-based storage for live order-book", "verdict": "tighten", "issue": "'Evaluated for drift' has no result; reader can't tell what was learned.", "suggestion": "Designed paginated hash-based order-book storage with an in-memory LFU cache for hot tickers, validated for drift against IEX historical book data"},
+    {"quote": "Benchmarked a time-based adaptive LSM store against", "verdict": "add_context", "issue": "Benchmark without a finding; which won and why?", "suggestion": "Clarify the benchmark's conclusion (which store you chose and why) without inventing numbers."}
+  ],
+  "structure": [
+    {"key": "header_one_line", "change": "Shorten LinkedIn display or drop 'Metropolitan Area' so contact info fits on one line", "rationale": "Parsers read header as a block; wrapped lines sometimes get dropped or misassigned."},
+    {"key": "skills_recategorize", "change": "Move React/Electron out of 'Backend & Data' into a Frontend or Frameworks line", "rationale": "Miscategorized keywords confuse skills-taxonomy parsers and look careless to human screeners."},
+    {"key": "amazon_entry_naming", "change": "Rename contract entry to 'UMD App Development Contracting (client: Amazon Leo)'", "rationale": "Avoids duplicate-employer merging in Workday/Greenhouse and clarifies employment relationship."},
+    {"key": "aws_bullet_expand", "change": "Give the AWS internship 2 bullets once scope is shareable, or trim another role to balance", "rationale": "Top brand currently has the weakest content; screeners anchor on first entry."}
+  ],
+  "top3": [
+    "Clarify overlapping 'Present' dates across Amazon contract, UMIACS, TerpLabs and the Redmond AWS internship so LLM screeners don't flag inflated concurrency.",
+    "Strengthen the AWS Redshift bullet with concrete scope (what component, what kind of optimization) since it is the lead brand and currently a vague one-liner.",
+    "Replace non-standard jargon ('Claude skill', 'adopted into Leo's ecosystem') with standard terms and tie each metric to its baseline/rater."
+  ]
+}
