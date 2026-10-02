@@ -1,0 +1,21 @@
+{
+  "overall": {},
+  "top": {},
+  "by_source": {
+    "github": {},
+    "outcome": {}
+  },
+  "by_domain": {},
+  "section_orders": [],
+  "amar": {
+    "n_bullets": 16,
+    "chars_q25_q50_q75": [
+      212,
+      240,
+      297
+    ],
+    "bold_per_bullet_mean": 3.88,
+    "lines_per_bullet_mean": 2.12,
+    "pct_with_metric": 0.56
+  }
+}
