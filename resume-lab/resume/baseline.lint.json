@@ -1,0 +1,249 @@
+{
+  "tex": "/home/user/AmarDhillon05/resume-lab/resume/baseline.tex",
+  "n_bullets": 16,
+  "bullets": [
+    {
+      "fact": "aws_sde.redshift",
+      "chars": 85,
+      "words": 9,
+      "n_bold": 2,
+      "n_lines": 1,
+      "last_fill": 1.0,
+      "text": "Researching and implementing Java-based utilization optimizations for Amazon Redshift"
+    },
+    {
+      "fact": "capital_one.ui_overhaul",
+      "chars": 297,
+      "words": 45,
+      "n_bold": 5,
+      "n_lines": 3,
+      "last_fill": 0.32,
+      "text": "Overhauled the legacy UI of a test data workflow creator using React.js + Electron with TypeScript-aided workflow and state validation backed by Jest testing on mock workflows and improved editor fluidity via React-Flow, receiving an internal satisfaction report of 90% compared to the legacy tool"
+    },
+    {
+      "fact": "capital_one.search_index",
+      "chars": 356,
+      "words": 50,
+      "n_bold": 5,
+      "n_lines": 3,
+      "last_fill": 0.84,
+      "text": "Engineered a lightweight tree-style workflow search index to minimize database queries under access constraints, implementing a Python + SQLAlchemy pipeline that distilled popular workflows from a 270,000+ row PostgreSQL table into a precomputed search index, backed by Redis caching for full workflow retrieval and abstraction through a Node.js IPC module"
+    },
+    {
+      "fact": "capital_one.claude_skill",
+      "chars": 317,
+      "words": 44,
+      "n_bold": 6,
+      "n_lines": 3,
+      "last_fill": 0.54,
+      "text": "Developed a Claude skill for workflow generation, constraining open-ended model search via sub-skill decomposition and Python functions for workflow search and validation, and used AWS CloudWatch + OpenSearch latency logging to locate bottlenecks, cutting generation time 65% from previous tooling to under 15 seconds"
+    },
+    {
+      "fact": "amazon_contract.leo_deploy",
+      "chars": 248,
+      "words": 33,
+      "n_bold": 4,
+      "n_lines": 2,
+      "last_fill": 1.0,
+      "text": "Deployed an Amazon Leo space topic research utility adopted into Leo's ecosystem through Docker + AWS Fargate orchestration and GitHub Actions CI/CD, with AWS CDK (TypeScript)-defined infrastructure to allow contribution from non-familiar engineers"
+    },
+    {
+      "fact": "amazon_contract.kinesis_pipeline",
+      "chars": 247,
+      "words": 35,
+      "n_bold": 5,
+      "n_lines": 2,
+      "last_fill": 0.97,
+      "text": "Achieved a 34% speedup on a pipeline routing 6,000+ scraped research documents for inference by implementing Kinesis streams feeding Lambda processors handling data processing and redirection, with Lambda + API Gateway fronting for app integration"
+    },
+    {
+      "fact": "amazon_contract.bedrock_finetune",
+      "chars": 324,
+      "words": 42,
+      "n_bold": 4,
+      "n_lines": 3,
+      "last_fill": 0.6,
+      "text": "Integrated automated fine-tuning of an AWS Bedrock source relevancy inference model through AWS EventBridge cron triggers with decision gates to avoid redundant retraining, with CloudWatch + X-Ray application tracing for automated performance monitoring and metric-based SNS notifications to engineers on application failure"
+    },
+    {
+      "fact": "umiacs.phystwin",
+      "chars": 127,
+      "words": 18,
+      "n_bold": 3,
+      "n_lines": 1,
+      "last_fill": 1.0,
+      "text": "Developing automated training for PhysTwin, a physics-based digital twin, with a PhD research team targeting an ICLR submission"
+    },
+    {
+      "fact": "umiacs.grasp_vlm",
+      "chars": 229,
+      "words": 28,
+      "n_bold": 4,
+      "n_lines": 2,
+      "last_fill": 0.9,
+      "text": "Built a Python pipeline linking AnyGrasp multi-camera grasp candidates to Open3D-rendered overlay views consumed by a Qwen3-VL-8B-Instruct-FP8 VLM, enabling researchers to develop changes faster through isolating scene components"
+    },
+    {
+      "fact": "umiacs.env_setup",
+      "chars": 228,
+      "words": 31,
+      "n_bold": 5,
+      "n_lines": 2,
+      "last_fill": 0.78,
+      "text": "Cut research-environment setup time 30% via UV dependency pinning and Docker for ensuring identical setup, with psutil-based timing and memory monitoring across runtime and Pytest unit testing for quickly identifying bottlenecks"
+    },
+    {
+      "fact": "terplabs.studio",
+      "chars": 183,
+      "words": 27,
+      "n_bold": 4,
+      "n_lines": 2,
+      "last_fill": 0.44,
+      "text": "Co-founded and scaled a 110+ member campus product studio shipping 5 live products, utilizing Jira task management and GitHub code management to organize teams through agile practices"
+    },
+    {
+      "fact": "terplabs.tortuga",
+      "chars": 228,
+      "words": 32,
+      "n_bold": 4,
+      "n_lines": 2,
+      "last_fill": 0.77,
+      "text": "Sustained 20,000+ site visits within the initial 30-day launch period of Tortuga, an enhanced class scheduler, through developing Prisma-based SQL querying with Redis query caching to reduce database load and application latency"
+    },
+    {
+      "fact": "terplabs.rag_meal",
+      "chars": 240,
+      "words": 36,
+      "n_bold": 5,
+      "n_lines": 2,
+      "last_fill": 0.9,
+      "text": "Building a work-in-progress integration of a RAG meal suggestion into the official UMD app using GPT-4o mini over ChromaDB + SentenceBERT vector search on scraped recipe data, achieving 93% generated meal satisfaction on internal test users"
+    },
+    {
+      "fact": "iex.order_book",
+      "chars": 182,
+      "words": 24,
+      "n_bold": 1,
+      "n_lines": 2,
+      "last_fill": 0.42,
+      "text": "Implemented a C++-based order book simulation on historical IEX data, with a contract-based plug-and-play design to allow for evaluating multiple approaches with enforced correctness"
+    },
+    {
+      "fact": "iex.lfu_storage",
+      "chars": 212,
+      "words": 30,
+      "n_bold": 1,
+      "n_lines": 2,
+      "last_fill": 0.58,
+      "text": "Wrote and evaluated paginated hash-based data storage for live order book data with in-memory LFU caching for frequently requested tickers during simulation, evaluated for drift against IEX's historical book data"
+    },
+    {
+      "fact": "iex.lsm_vs_btree",
+      "chars": 249,
+      "words": 36,
+      "n_bold": 4,
+      "n_lines": 2,
+      "last_fill": 0.91,
+      "text": "Designed and assessed the performance of a time-based Adaptive LSM storage against a B+ tree storage for logs during simulation, testing for throughput and latency via rdtscp-based timing and hardware utilization via Linux's perf performance counter"
+    }
+  ],
+  "issues": [
+    {
+      "level": "ERROR",
+      "where": "Overhauled the legacy UI of a test data workflow c",
+      "msg": "3 rendered lines (max 2)"
+    },
+    {
+      "level": "ERROR",
+      "where": "Engineered a lightweight tree-style workflow searc",
+      "msg": "3 rendered lines (max 2)"
+    },
+    {
+      "level": "ERROR",
+      "where": "Developed a Claude skill for workflow generation, ",
+      "msg": "3 rendered lines (max 2)"
+    },
+    {
+      "level": "ERROR",
+      "where": "Integrated automated fine-tuning of an AWS Bedrock",
+      "msg": "3 rendered lines (max 2)"
+    },
+    {
+      "level": "WARN",
+      "where": "Researching and implementing Java-based utilizatio",
+      "msg": "no metric or explicit outcome"
+    },
+    {
+      "level": "ERROR",
+      "where": "Overhauled the legacy UI of a test data workflow c",
+      "msg": "5 bold phrases (max 3)"
+    },
+    {
+      "level": "ERROR",
+      "where": "Engineered a lightweight tree-style workflow searc",
+      "msg": "5 bold phrases (max 3)"
+    },
+    {
+      "level": "ERROR",
+      "where": "Developed a Claude skill for workflow generation, ",
+      "msg": "6 bold phrases (max 3)"
+    },
+    {
+      "level": "ERROR",
+      "where": "Deployed an Amazon Leo space topic research utilit",
+      "msg": "4 bold phrases (max 3)"
+    },
+    {
+      "level": "ERROR",
+      "where": "Achieved a 34% speedup on a pipeline routing 6,000",
+      "msg": "5 bold phrases (max 3)"
+    },
+    {
+      "level": "ERROR",
+      "where": "Integrated automated fine-tuning of an AWS Bedrock",
+      "msg": "4 bold phrases (max 3)"
+    },
+    {
+      "level": "ERROR",
+      "where": "Built a Python pipeline linking AnyGrasp multi-cam",
+      "msg": "4 bold phrases (max 3)"
+    },
+    {
+      "level": "ERROR",
+      "where": "Cut research-environment setup time 30% via UV dep",
+      "msg": "5 bold phrases (max 3)"
+    },
+    {
+      "level": "ERROR",
+      "where": "Co-founded and scaled a 110+ member campus product",
+      "msg": "4 bold phrases (max 3)"
+    },
+    {
+      "level": "ERROR",
+      "where": "Sustained 20,000+ site visits within the initial 3",
+      "msg": "4 bold phrases (max 3)"
+    },
+    {
+      "level": "ERROR",
+      "where": "Building a work-in-progress integration of a RAG m",
+      "msg": "5 bold phrases (max 3)"
+    },
+    {
+      "level": "WARN",
+      "where": "Implemented a C++-based order book simulation on h",
+      "msg": "no metric or explicit outcome"
+    },
+    {
+      "level": "WARN",
+      "where": "Wrote and evaluated paginated hash-based data stor",
+      "msg": "no metric or explicit outcome"
+    },
+    {
+      "level": "ERROR",
+      "where": "Designed and assessed the performance of a time-ba",
+      "msg": "4 bold phrases (max 3)"
+    }
+  ],
+  "errors": 16,
+  "warnings": 3
+}

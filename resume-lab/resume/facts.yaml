@@ -1,0 +1,209 @@
+# The "meaning contract". Every rewrite of every variant is checked against this
+# by tools/fact_check.py:
+#   - required_numbers: every number in a used bullet must appear verbatim
+#     (formatting-normalized), and NO number may appear in the resume that is not
+#     listed somewhere in this file (no invented metrics).
+#   - techs: the technologies the bullet claims. A rewrite may drop secondary techs
+#     (listed under optional_techs) for concision, but not core_techs.
+#   - claim: the plain-English meaning that must survive (checked by reviewers / judge).
+# A variant may OMIT a whole bullet/role/section (structural change); it may not
+# alter a fact or attach a fact to a different claim.
+
+header:
+  name: Amar Dhillon
+  location: NYC-Metropolitan Area
+  email: amardhillon844@gmail.com
+  phone: "(XXX) XXX-XXXX"   # placeholder in committed files
+  linkedin: linkedin.com/in/amar-dhillon-917537261
+  github: github.com/AmarDhillon05
+
+education:
+  school: University of Maryland, College Park
+  location: College Park, MD
+  degree: B.S. in Computer Science, Minor in Statistics
+  gpa: "3.5"
+  grad: May 2028
+  courses: [Object Oriented Programming I/II, Algorithms I/II, Computer Systems, Artificial Intelligence, Data Science, Applied Statistics I/II]
+
+certifications:
+  - name: AWS Certified Developer - Associate
+    dates: Nov 2024 -- Nov 2027
+    url: https://www.credly.com/badges/d2406a97-d937-47de-823b-724981159d3b/public_url
+
+roles:
+  aws_sde:
+    title: Software Development Engineer Intern
+    org: Amazon Web Services
+    location: Redmond, WA
+    dates: Sep 2026 -- Dec 2026
+    status: in_progress     # present tense OK
+    bullets:
+      redshift:
+        claim: Researching and implementing Java-based utilization optimizations for Amazon Redshift
+        core_techs: [Java, Amazon Redshift]
+        required_numbers: []
+
+  capital_one:
+    title: Software Engineering Intern
+    org: Capital One
+    location: Richmond, VA
+    dates: June 2026 -- August 2026
+    status: completed
+    bullets:
+      ui_overhaul:
+        claim: Overhauled the legacy UI of a test-data workflow creator; TypeScript workflow/state validation tested with Jest on mock workflows; React-Flow improved editor fluidity; internal satisfaction 90% vs the legacy tool
+        core_techs: [React, Electron, TypeScript]
+        optional_techs: [Jest, React-Flow]
+        required_numbers: ["90%"]
+      search_index:
+        claim: Built a lightweight tree-style workflow search index to minimize DB queries under access constraints; Python + SQLAlchemy pipeline distilled popular workflows from a 270,000+ row PostgreSQL table into a precomputed index; Redis caching for full workflow retrieval; exposed via a Node.js IPC module
+        core_techs: [Python, SQLAlchemy, PostgreSQL, Redis]
+        optional_techs: [Node.js, IPC]
+        required_numbers: ["270,000+"]
+      claude_skill:
+        claim: Developed a Claude skill for workflow generation; constrained open-ended model search via sub-skill decomposition and Python functions for workflow search/validation; used AWS CloudWatch + OpenSearch latency logging to find bottlenecks; cut generation time 65% vs previous tooling to under 15 seconds
+        core_techs: [Claude, Python]
+        optional_techs: [CloudWatch, OpenSearch, sub-skill decomposition]
+        required_numbers: ["65%", "15 seconds|15s|15 s"]
+
+  amazon_contract:
+    title: Software Engineer (Contract)
+    org: Amazon (via UMD App Development Contracting)
+    location: College Park, MD
+    dates: Jan 2026 -- Present
+    status: in_progress
+    bullets:
+      leo_deploy:
+        claim: Deployed an Amazon Leo space-topic research utility that was adopted into Leo's ecosystem; Docker + AWS Fargate orchestration; GitHub Actions CI/CD; AWS CDK (TypeScript) infrastructure-as-code so engineers unfamiliar with the project could contribute
+        core_techs: [Docker, AWS Fargate, AWS CDK]
+        optional_techs: [GitHub Actions, TypeScript]
+        required_numbers: []
+      kinesis_pipeline:
+        claim: 34% speedup on a pipeline routing 6,000+ scraped research documents for inference, via Kinesis streams feeding Lambda processors for processing/redirection; Lambda + API Gateway front it for app integration
+        core_techs: [Kinesis, Lambda]
+        optional_techs: [API Gateway]
+        required_numbers: ["34%", "6,000+"]
+      bedrock_finetune:
+        claim: Automated fine-tuning of an AWS Bedrock source-relevancy inference model via EventBridge cron triggers with decision gates that avoid redundant retraining; CloudWatch + X-Ray tracing for performance monitoring; metric-based SNS alerts to engineers on failure
+        core_techs: [AWS Bedrock, EventBridge]
+        optional_techs: [CloudWatch, X-Ray, SNS]
+        required_numbers: []
+
+  umiacs:
+    title: Machine Learning Research Intern
+    org: University of Maryland Institute for Advanced Computer Studies (UMIACS)
+    location: College Park, MD
+    dates: Dec 2025 -- Present
+    status: in_progress
+    bullets:
+      phystwin:
+        claim: Developing automated training for PhysTwin (a physics-based digital twin) with a PhD research team targeting an ICLR submission
+        core_techs: [PhysTwin]
+        required_numbers: []
+      grasp_vlm:
+        claim: Built a Python pipeline linking AnyGrasp multi-camera grasp candidates to Open3D-rendered overlay views consumed by a Qwen3-VL-8B-Instruct-FP8 VLM, letting researchers iterate faster by isolating scene components
+        core_techs: [Python, AnyGrasp, Open3D]
+        optional_techs: [Qwen3-VL-8B-Instruct-FP8, VLM]
+        required_numbers: []   # "8B" / "FP8" / "Qwen3" are model-name tokens, whitelisted below
+      env_setup:
+        claim: Cut research-environment setup time 30% via uv dependency pinning and Docker for identical setups; psutil-based timing/memory monitoring; Pytest unit tests to quickly identify bottlenecks
+        core_techs: [uv, Docker]
+        optional_techs: [psutil, Pytest]
+        required_numbers: ["30%"]
+
+  terplabs:
+    title: Co-Founder, Software Engineer
+    org: TerpLabs
+    location: College Park, MD
+    dates: June 2025 -- Present
+    status: in_progress
+    bullets:
+      studio:
+        claim: Co-founded and scaled a 110+ member campus product studio shipping 5 live products; organized teams with Jira and GitHub under agile practices
+        core_techs: []
+        optional_techs: [Jira, GitHub, agile]
+        required_numbers: ["110+", "5"]
+      tortuga:
+        claim: Tortuga (enhanced class scheduler) sustained 20,000+ site visits in its first 30 days after launch; built Prisma-based SQL querying with Redis query caching to reduce DB load and latency
+        core_techs: [Prisma, SQL, Redis]
+        required_numbers: ["20,000+", "30"]
+      rag_meal:
+        claim: Building (work in progress) a RAG meal-suggestion integration into the official UMD app using GPT-4o mini over ChromaDB + SentenceBERT vector search on scraped recipe data; 93% generated-meal satisfaction among internal test users
+        core_techs: [RAG, GPT-4o mini, ChromaDB]
+        optional_techs: [SentenceBERT]
+        required_numbers: ["93%"]
+        notes: must remain clearly in-progress and "internal test users"
+
+  # Hidden (\iffalse) in the original. Usable only in domain variants where relevant.
+  nanosat:
+    title: Systems Engineer
+    org: UMD Nano-Satellite Development Program
+    location: College Park, MD
+    dates: Dec 2025 -- Present
+    status: in_progress
+    hidden_in_original: true
+    bullets:
+      flight_apps:
+        claim: Developed mission-critical flight applications in Rust on the KubOS stack for command execution, payload control, fault-tolerant onboard operations
+        core_techs: [Rust, KubOS]
+        required_numbers: []
+      graphql_telemetry:
+        claim: GraphQL interfaces with KubOS services for real-time health monitoring and telemetry ingestion (CPU, memory, subsystem status); reduced communication latency 23%
+        core_techs: [GraphQL, KubOS]
+        required_numbers: ["23%"]
+      mission_env:
+        claim: Reduced mission environment setup time 34% with reproducible Docker + uv dependency management and automated Bash validation checks
+        core_techs: [Docker, uv, Bash]
+        required_numbers: ["34%"]
+
+  northrop:
+    title: Robotics Researcher
+    org: Northrop-Grumman Innovation Lab
+    location: College Park, MD
+    dates: Jan 2025 -- June 2025
+    status: completed
+    hidden_in_original: true
+    bullets:
+      mine_detection:
+        claim: OpenCV (C++) vision pipeline for ocean mine detection on drone-mounted MCUs, real-time processing, 74% detection accuracy on test footage
+        core_techs: [OpenCV, C++]
+        required_numbers: ["74%"]
+      drone_nav:
+        claim: Autonomous drone navigation and telemetry systems with custom C++ modules interfacing with QGroundControl for real-time decisions and sensor feedback
+        core_techs: [C++, QGroundControl]
+        required_numbers: []
+      pcb:
+        claim: Redesigned PCB input handling for Arduino consolidation, eliminating impedance issues, 0.03% packet error rate at 1 Mbps via signal-level tuning and custom control logic
+        core_techs: [PCB, Arduino]
+        required_numbers: ["0.03%", "1 Mbps"]
+
+projects:
+  iex:
+    title: IEX Matching Engine Simulation
+    stack: [C++, STL, POSIX, Database internals]
+    dates: July 2026 -- August 2026
+    bullets:
+      order_book:
+        claim: C++ order-book simulation on historical IEX data; contract-based plug-and-play design to evaluate multiple approaches with enforced correctness
+        core_techs: [C++]
+        required_numbers: []
+      lfu_storage:
+        claim: Wrote and evaluated paginated hash-based storage for live order-book data with in-memory LFU caching for frequently requested tickers; evaluated for drift against IEX historical book data
+        core_techs: [LFU]
+        required_numbers: []
+      lsm_vs_btree:
+        claim: Designed and benchmarked a time-based Adaptive LSM store vs a B+ tree store for simulation logs; throughput/latency via rdtscp timing and hardware utilization via Linux perf counters
+        core_techs: [LSM, B+ tree]
+        optional_techs: [rdtscp, perf]
+        required_numbers: []
+
+skills_pool:   # any subset may be shown; nothing outside this pool may be added
+  languages: [Python, C, C++, JavaScript, TypeScript, HTML, CSS, Java, Rust, CUDA, SQL, Bash]
+  web: [REST APIs, Express.js, Flask, FastAPI, Node.js, React.js, Next.js, Spring Boot, Electron, React-Flow, Prisma, GraphQL]
+  data_ml: [SQL, PostgreSQL, MongoDB, Redis, Pandas, NumPy, Scikit-learn, PyTorch, SQLAlchemy, ChromaDB, OpenSearch, Open3D, OpenCV]
+  cloud: [AWS, EC2, Lambda, ALB, ECS, EKS, Fargate, Kinesis, API Gateway, EventBridge, Bedrock, CloudFormation, CDK, CodeDeploy, IAM, VPC, CloudWatch, SQS, SNS, X-Ray, Redshift]
+  ai: [Claude, Cursor, Copilot, HuggingFace, Pinecone, FAISS, LangChain, LlamaIndex, RAG, SentenceBERT, GPT-4o mini, Qwen3-VL]
+  tooling: [Docker, Kubernetes, Git, GitHub, GitHub Actions, Bitbucket, Linux, Pytest, Jest, uv, psutil, perf, Jira, KubOS, QGroundControl, Arduino]
+
+# Number-like tokens that are allowed anywhere without being metrics
+number_whitelist: ["Qwen3", "8B", "FP8", "GPT-4o", "4o", "I/II", "2025", "2026", "2027", "2028", "2024", "3.5", "B+", "IEX"]
