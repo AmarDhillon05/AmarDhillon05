@@ -47,7 +47,8 @@ def main():
     verdicts = defaultdict(Counter)
     for r in reviews:
         for b in r.get("bullets", []):
-            verdicts[b.get("fact", "?")][b.get("verdict", "?")] += 1
+            key = b.get("fact") or " ".join(b.get("quote", "?").split()[:5])
+            verdicts[key][b.get("verdict", "?")] += 1
     structure = Counter()
     for r in reviews:
         for s in r.get("structure", []):

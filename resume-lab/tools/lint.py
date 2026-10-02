@@ -69,7 +69,7 @@ def pdf_bullets(pdf: Path):
     p = BBoxParser()
     p.feed(xml)
     groups = []
-    glyphs_set = ("•", "∙", "·")
+    glyphs_set = ("•", "∙", "·", "–", "◦")
     for lines in p.pages:
         right_edge = max(l["xMax"] for l in lines)
         # the bullet glyph is sometimes its own line/block: remember its position
@@ -97,7 +97,7 @@ def pdf_bullets(pdf: Path):
         full = g["right"] - g["text_x"]
         last = g["lines"][-1]
         words = [w["t"] for l in g["lines"] for w in l["words"]]
-        if words and words[0] in ("•", "∙", "·"):
+        if words and words[0] in glyphs_set:
             words = words[1:]
         out.append({"text": " ".join(words), "n_lines": len(g["lines"]),
                     "last_fill": round((last["xMax"] - g["text_x"]) / full, 2) if len(g["lines"]) > 1 else 1.0})

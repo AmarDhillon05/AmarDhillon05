@@ -1,0 +1,164 @@
+{
+  "persona": "senior_swe_hm",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28 with AWS SDE intern, Capital One SWE intern, Amazon contract work, and research; strong brands, but dense, heavily bolded AWS-service-heavy bullets.",
+  "scores": {
+    "impact_clarity": 6,
+    "quantification": 6,
+    "technical_depth": 7,
+    "concision_readability": 4,
+    "skim_test": 7,
+    "credibility": 5,
+    "ats_parseability": 7,
+    "visual_layout": 6,
+    "domain_fit": 7,
+    "overall": 7
+  },
+  "score_rationale": {
+    "impact_clarity": "Results arrive at the end of 3-line sentences after tech chains; several bullets (Amazon #1, #3, IEX all) have no outcome at all.",
+    "quantification": "90% satisfaction and 93% meal satisfaction lack sample/baseline; 34% speedup unclear vs what; IEX project has zero results.",
+    "technical_depth": "Real decisions exist (precomputed index, decision gates, LSM vs B+ tree) but buried under AWS service chains that read as name-dropping.",
+    "concision_readability": "Most bullets are 3 lines; 4-6 bold terms per bullet; 'with X + Y + Z' chaining makes every bullet a re-read.",
+    "skim_test": "Brands pop, but AWS intern has one vague line and headline wins are drowned out by bolded technology names.",
+    "credibility": "Five concurrent roles (AWS Redmond intern while contract/research/startup 'Present'); 'Engineered', 'Overhauled', 'scaled' puffery; satisfaction metrics unscoped.",
+    "ats_parseability": "Clean extraction and standard headings, but phone is placeholder (XXX) and date formats mix 'June 2026' vs 'Sep 2026'.",
+    "visual_layout": "One page and aligned, but dense, small type, bold noise everywhere, cramped spacing before EXPERIENCE heading.",
+    "domain_fit": "General SWE evidence is there; Certifications above Experience and the thin AWS entry waste prime real estate.",
+    "overall": "Brands will get interviews; the dense, bolded, tech-chain writing and overlapping 'Present' roles invite skepticism from a careful HM."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "Replace the placeholder phone number (XXX) XXX-XXXX with a real number or remove it.",
+    "Clarify: overlapping timelines — AWS intern in Redmond (Sep–Dec 2026) while Amazon contract, UMIACS research, and TerpLabs all show 'Present'; end-date or mark part-time/paused roles.",
+    "Clarify: the IEX project dates (Jul–Aug 2026) overlap the full-time Capital One internship; consider labeling it personal/side project.",
+    "Cut most of the bolding — currently 4–6 bold terms per bullet; keep at most 1–2 anchors (ideally the metric).",
+    "Bring every bullet to ≤2 lines; nearly every bullet currently wraps to 3.",
+    "Clarify: what the 90% and 93% satisfaction figures measure (survey of how many users, on what scale).",
+    "AWS intern entry has a single vague, present-tense bullet; either flesh it out with what you can state or acknowledge it as in progress."
+  ],
+  "bullets": [
+    {
+      "quote": "Researching and implementing Java-based utilization optimizations for Amazon",
+      "verdict": "add_context",
+      "issue": "Vague and thin for the top brand; what resource utilization, what approach?",
+      "suggestion": "Clarify the kind of utilization (e.g., which component) and the technique being implemented, using only facts you can share."
+    },
+    {
+      "quote": "Overhauled the legacy UI of a test data",
+      "verdict": "tighten",
+      "issue": "3 lines, tech chain buries result; '90% satisfaction report' lacks scope.",
+      "suggestion": "Rebuilt a legacy test-data workflow editor in React/Electron + TypeScript with React-Flow and Jest-tested state validation; 90% internal satisfaction vs. legacy tool."
+    },
+    {
+      "quote": "Engineered a lightweight tree-style workflow search index",
+      "verdict": "reframe",
+      "issue": "Good design decision, but no result; Redis + Node IPC tail is noise.",
+      "suggestion": "Built a precomputed tree-style search index over a 270K+ row PostgreSQL table (Python/SQLAlchemy) to minimize DB queries under access constraints, with Redis caching for full workflow retrieval."
+    },
+    {
+      "quote": "Developed a Claude skill for workflow generation,",
+      "verdict": "tighten",
+      "issue": "Strong metric buried at end of 3 lines; lead with the decision and result.",
+      "suggestion": "Cut workflow-generation time 65% (to <15s) by building a Claude skill with sub-skill decomposition and Python search/validation tools; located bottlenecks via CloudWatch/OpenSearch latency logs."
+    },
+    {
+      "quote": "Deployed an Amazon Leo space topic research",
+      "verdict": "reframe",
+      "issue": "Reads as deployment-tech list; what the utility does and who uses it is unclear.",
+      "suggestion": "Shipped a space-topic research tool adopted into Amazon Leo's ecosystem; defined infra in AWS CDK (TypeScript) with Fargate + GitHub Actions so unfamiliar engineers could contribute."
+    },
+    {
+      "quote": "Achieved a 34% speedup on a pipeline routing",
+      "verdict": "tighten",
+      "issue": "Speedup baseline unclear (throughput? latency? vs prior design?); trailing API Gateway clause is filler.",
+      "suggestion": "Sped up a 6,000+ document inference-routing pipeline 34% by moving processing to Kinesis streams feeding Lambda workers. (Clarify what was 34% faster and vs. what.)"
+    },
+    {
+      "quote": "Integrated automated fine-tuning of an AWS Bedrock",
+      "verdict": "reframe",
+      "issue": "AWS service soup with no outcome; the decision-gate idea is the interesting part.",
+      "suggestion": "Automated retraining of a Bedrock source-relevancy model via EventBridge triggers with decision gates to skip redundant runs; added X-Ray tracing and SNS failure alerts."
+    },
+    {
+      "quote": "Developing automated training for PhysTwin, a physics-based",
+      "verdict": "add_context",
+      "issue": "Task statement only; what did you build or automate?",
+      "suggestion": "Clarify your concrete contribution to PhysTwin training automation; keep the ICLR-targeted PhD team context."
+    },
+    {
+      "quote": "Built a Python pipeline linking AnyGrasp multi-camera grasp",
+      "verdict": "tighten",
+      "issue": "Model name string is noise; 'develop changes faster' is vague.",
+      "suggestion": "Built a Python pipeline feeding AnyGrasp multi-camera grasp candidates as Open3D overlay views into a Qwen3-VL model, letting researchers iterate on isolated scene components."
+    },
+    {
+      "quote": "Cut research-environment setup time 30% via UV",
+      "verdict": "tighten",
+      "issue": "Two unrelated ideas merged; psutil/Pytest tail dilutes the setup-time win.",
+      "suggestion": "Cut research-environment setup time 30% with uv dependency pinning and Docker for reproducible setups; added psutil timing/memory monitoring and Pytest tests."
+    },
+    {
+      "quote": "Co-founded and scaled a 110+ member campus",
+      "verdict": "tighten",
+      "issue": "'utilizing Jira/GitHub... agile' is filler; no HM cares about Jira.",
+      "suggestion": "Co-founded a 110+ member campus product studio that has shipped 5 live products; organize engineering teams with agile practices."
+    },
+    {
+      "quote": "Sustained 20,000+ site visits within the initial",
+      "verdict": "reframe",
+      "issue": "'Sustained' implies scaling work not shown; traffic is a product outcome, not your engineering result.",
+      "suggestion": "Built Tortuga, a UMD class scheduler with 20,000+ visits in its first 30 days; added Prisma SQL queries with Redis caching to cut database load and latency."
+    },
+    {
+      "quote": "Building a work-in-progress integration of a RAG meal",
+      "verdict": "tighten",
+      "issue": "Honest WIP framing is good; '93% satisfaction' needs sample size; 3 lines.",
+      "suggestion": "Building (WIP) a RAG meal-suggestion feature for the official UMD app: GPT-4o mini over ChromaDB + SentenceBERT recipe search; 93% satisfaction among internal testers."
+    },
+    {
+      "quote": "Implemented a C++-based order book simulation on",
+      "verdict": "tighten",
+      "issue": "'contract-based plug-and-play design... enforced correctness' is abstract; what was enforced?",
+      "suggestion": "Built a C++ order book simulator replaying historical IEX data, with a pluggable interface so storage/matching strategies could be swapped and checked for correctness."
+    },
+    {
+      "quote": "Wrote and evaluated paginated hash-based data storage for",
+      "verdict": "add_context",
+      "issue": "'Evaluated' twice with no result; what did drift evaluation show?",
+      "suggestion": "Clarify the outcome of the drift evaluation against IEX historical book data, if you have one; otherwise tighten to the design."
+    },
+    {
+      "quote": "Designed and assessed the performance of a time-based",
+      "verdict": "add_context",
+      "issue": "Great HM bait (LSM vs B+ tree, rdtscp, perf) but no finding stated.",
+      "suggestion": "State which structure won and under what workload, using your measured results; that conclusion is the interview hook."
+    }
+  ],
+  "structure": [
+    {
+      "key": "move_certifications_down",
+      "change": "Move the AWS certification below Experience or fold it into Technical Skills as one line.",
+      "rationale": "Certs are weak signal for SWE interns; it pushes your best content (AWS/Capital One) further down the page."
+    },
+    {
+      "key": "resolve_concurrent_roles",
+      "change": "End-date or label part-time the Amazon contract, UMIACS, and TerpLabs roles; consider labeling IEX as a personal project.",
+      "rationale": "Five overlapping 'Present' roles plus a full-time internship triggers immediate credibility questions."
+    },
+    {
+      "key": "debold",
+      "change": "Limit bold to the metric or one key term per bullet.",
+      "rationale": "Bolding every technology makes nothing stand out; the eye lands on tool names instead of wins."
+    },
+    {
+      "key": "trim_skills",
+      "change": "Trim Technical Skills to tools evidenced on the page; drop 'LLM tooling (Claude, Cursor, Copilot)' and SQS/SNS under 'Security & Monitoring'.",
+      "rationale": "Mis-categorized and unbacked entries read as keyword padding to a careful reader."
+    }
+  ],
+  "top3": [
+    "Rewrite every bullet to ≤2 lines in What → How → Result order, cutting trailing tech chains and reducing bold to 1–2 anchors per bullet.",
+    "Clarify: the overlapping 'Present' timelines (AWS Redmond intern vs. Amazon contract, UMIACS, TerpLabs, and the IEX project during Capital One) so the page survives HM scrutiny.",
+    "Give the outcome-less bullets (AWS intern, Amazon Leo deploy, Bedrock fine-tuning, PhysTwin, all IEX bullets) a concrete result or finding you can actually state, and scope the 90%/93% satisfaction metrics."
+  ]
+}

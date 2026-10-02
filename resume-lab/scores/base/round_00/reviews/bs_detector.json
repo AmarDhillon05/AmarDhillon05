@@ -1,0 +1,67 @@
+{
+  "persona": "bs_detector",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28 with AWS, Capital One, Amazon contract and UMIACS research — strong brands, but four concurrent 'Present' roles and a wall of bolded AWS service names.",
+  "scores": {
+    "impact_clarity": 6,
+    "quantification": 6,
+    "technical_depth": 6,
+    "concision_readability": 4,
+    "skim_test": 7,
+    "credibility": 5,
+    "ats_parseability": 7,
+    "visual_layout": 6,
+    "domain_fit": 7,
+    "overall": 7
+  },
+  "score_rationale": {
+    "impact_clarity": "Results often trail long tech chains; several bullets (Fine-tuning, Leo deploy, AWS intern) have no outcome at all, only plumbing.",
+    "quantification": "Numbers exist but baselines are fuzzy: '34% speedup' of what, '90% satisfaction report compared to legacy', '93%' of how many testers.",
+    "technical_depth": "Real techniques present (precomputed index, LSM vs B+ tree, rdtscp), but many bullets are AWS service chains rather than decisions.",
+    "concision_readability": "Many 3-line bullets, run-on 'with ... with ...' clauses, and 3–6 bolded terms per bullet; bold shouts instead of guiding.",
+    "skim_test": "Brands and titles visible; headline wins buried at end of 3-line bullets; heavy bold dilutes what matters.",
+    "credibility": "Overlapping roles (Amazon contract, AWS intern, UMIACS, TerpLabs all 'Present'; project during Capital One) invite 'how many hours?' questions; puffed verbs.",
+    "ats_parseability": "Clean extraction, but phone is a placeholder '(XXX) XXX-XXXX'; skills misfile SQS under observability, CloudFormation under CI/CD.",
+    "visual_layout": "One page, but cramped: dense bullets, small margins, Certifications breaks flow before Experience; bold noise everywhere.",
+    "domain_fit": "Good brands for general SWE, but cloud-plumbing bullets outweigh core engineering; AWS intern role nearly empty at top.",
+    "overall": "Brands will earn interviews, but a skeptical interviewer will poke holes in overlap, unanchored metrics, and skills breadth (Rust, CUDA, K8s unsupported)."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "Replace placeholder phone '(XXX) XXX-XXXX' with a real number or remove it.",
+    "clarify: concurrent timelines — Amazon contract (Jan 2026–Present), AWS SDE intern (Sep–Dec 2026), UMIACS (Present), TerpLabs (Present), and the IEX project during the Capital One internship. Mark part-time or end dates honestly.",
+    "clarify: baselines for '34% speedup' (latency? throughput? vs. what prior design), '90% internal satisfaction report compared to the legacy tool', and '93% meal satisfaction' (how many test users).",
+    "Cut 3-line bullets to ≤2 lines and reduce bolding to 1–2 anchors per bullet.",
+    "Prune skills you can't defend in an interview from bullets (Rust, CUDA, Kubernetes/EKS, Spring Boot, Pinecone/LlamaIndex); fix miscategorized SQS and CloudFormation.",
+    "AWS SDE intern entry has one vague present-tense bullet at the top of Experience; either say concretely what you're working on or keep it brief without filler."
+  ],
+  "bullets": [
+    {"quote": "Researching and implementing Java-based utilization optimizations for", "verdict": "add_context", "issue": "Vague 'researching and implementing optimizations'; no scope of what is being optimized.", "suggestion": "clarify: which Redshift component/resource the utilization work targets; otherwise keep as a short, honest in-progress line."},
+    {"quote": "Overhauled the legacy UI of a test data", "verdict": "tighten", "issue": "3-line run-on; 'internal satisfaction report of 90% compared to legacy' is ambiguous.", "suggestion": "Rebuilt a legacy test-data workflow editor in React + Electron (TypeScript, React-Flow) with Jest-tested state validation; clarify what the 90% satisfaction figure measures."},
+    {"quote": "Engineered a lightweight tree-style workflow search index", "verdict": "reframe", "issue": "Good design choice buried; no result stated; Redis + Node IPC tail is tech padding.", "suggestion": "Built a precomputed tree-style search index over a 270K-row PostgreSQL workflow table (Python/SQLAlchemy) to cut DB queries under access constraints, with Redis caching for full retrieval."},
+    {"quote": "Developed a Claude skill for workflow generation,", "verdict": "tighten", "issue": "Strong result (65%, <15s) buried after long chain; 'previous tooling' baseline vague.", "suggestion": "Cut workflow generation time 65% (to <15s) vs. prior tooling by building a Claude skill with sub-skill decomposition and Python validators; profiled via CloudWatch/OpenSearch latency logs."},
+    {"quote": "Deployed an Amazon Leo space topic research", "verdict": "add_context", "issue": "'Adopted into Leo's ecosystem' is unverifiable puffery; no who/how-many; what the utility does is unclear.", "suggestion": "Deployed a research utility for Amazon Leo on Docker + Fargate with GitHub Actions CI/CD and CDK (TypeScript) infra so unfamiliar engineers could contribute. clarify: who adopted it."},
+    {"quote": "Achieved a 34% speedup on a pipeline routing", "verdict": "add_context", "issue": "'Speedup' metric and baseline undefined; final clause is service name-dropping.", "suggestion": "Sped up a 6,000+ document inference pipeline 34% [clarify: latency/throughput vs. prior design] by moving to Kinesis streams feeding Lambda processors behind API Gateway."},
+    {"quote": "Integrated automated fine-tuning of an AWS Bedrock", "verdict": "reframe", "issue": "Pure AWS service chain, 3 lines, no outcome; 'decision gates' is the only interesting part.", "suggestion": "Automated retraining of a Bedrock relevance model via EventBridge schedules with decision gates to skip redundant runs; added X-Ray tracing and SNS failure alerts."},
+    {"quote": "Developing automated training for PhysTwin, a physics-based", "verdict": "tighten", "issue": "'Targeting an ICLR submission' is aspiration, fine if honest; your contribution is vague.", "suggestion": "Developing automated training for PhysTwin (physics-based digital twin) with a PhD-led team; work aimed at an ICLR submission."},
+    {"quote": "Built a Python pipeline linking AnyGrasp multi-camera", "verdict": "tighten", "issue": "'Enabling researchers to develop changes faster' is generic filler; full model name is noise.", "suggestion": "Built a Python pipeline feeding AnyGrasp multi-camera grasp candidates into Open3D-rendered overlays for a Qwen3-VL model, letting researchers isolate scene components."},
+    {"quote": "Cut research-environment setup time 30% via UV", "verdict": "tighten", "issue": "Setup time result is fine; psutil/Pytest tail is unrelated to setup and muddles causation.", "suggestion": "Cut research-environment setup time 30% with uv dependency pinning and Docker for reproducible setups; added psutil timing/memory monitoring and Pytest tests."},
+    {"quote": "Co-founded and scaled a 110+ member campus", "verdict": "reframe", "issue": "'Scaled' + 'agile practices' + Jira/GitHub bolded reads like LLM puffery; tools add nothing.", "suggestion": "Co-founded a 110+ member campus product studio that has shipped 5 live products; organize teams and code review via Jira and GitHub."},
+    {"quote": "Sustained 20,000+ site visits within the initial", "verdict": "reframe", "issue": "Implies your SQL/Redis work caused the traffic; visits came from product, not caching.", "suggestion": "Built Prisma SQL queries with Redis caching for Tortuga, a class scheduler that drew 20,000+ visits in its first 30 days, to reduce database load and latency."},
+    {"quote": "Building a work-in-progress integration of a RAG", "verdict": "add_context", "issue": "Honestly scoped WIP—good; '93% satisfaction' lacks sample size; 'official' bolded is overselling.", "suggestion": "Building (WIP) a RAG meal-suggestion feature for the UMD app with GPT-4o mini over ChromaDB + SentenceBERT; clarify: number of internal testers behind 93%."},
+    {"quote": "Implemented a C++-based order book simulation on", "verdict": "tighten", "issue": "'Contract-based plug-and-play design ... enforced correctness' is vague; what's enforced?", "suggestion": "Implemented a C++ order book simulator on historical IEX data with a pluggable interface so multiple matching/storage designs can be swapped and checked for correctness."},
+    {"quote": "Wrote and evaluated paginated hash-based data storage", "verdict": "add_context", "issue": "'Evaluated' twice, no result; what was the drift finding?", "suggestion": "Built paginated hash-based storage for live book data with an LFU cache for hot tickers; validated drift against IEX historical book. clarify: outcome of the evaluation."},
+    {"quote": "Designed and assessed the performance of a time-based", "verdict": "add_context", "issue": "Good, interview-worthy methodology (rdtscp, perf) but no finding reported.", "suggestion": "Benchmarked a time-based adaptive LSM vs. a B+ tree for log storage using rdtscp timing and Linux perf counters. clarify: which won and by how much."}
+  ],
+  "structure": [
+    {"key": "move_certifications", "change": "Move AWS certification below Projects or into Skills line.", "rationale": "It currently splits Education from Experience and pushes the brands down; cert is supporting, not headline."},
+    {"key": "label_part_time", "change": "Mark concurrent roles as part-time or adjust end dates; consider merging stale 'Present' entries.", "rationale": "Four simultaneous 'Present' roles plus a full-time internship is the first thing a skeptic asks about."},
+    {"key": "trim_skills", "change": "Cut skills not evidenced in bullets and fix categories (SQS isn't observability; CloudFormation isn't CI/CD).", "rationale": "Unsupported breadth (Rust, CUDA, K8s) invites gotcha questions and looks keyword-stuffed."},
+    {"key": "reduce_bold", "change": "Limit bold to 1–2 anchors per bullet, preferably the result metric.", "rationale": "Current bolding of every service name hides the wins and reads as buzzword soup."}
+  ],
+  "top3": [
+    "clarify: overlapping timelines — label part-time/contract roles and fix 'Present' end dates so four concurrent jobs plus a full-time internship don't sink credibility.",
+    "Rewrite bullets to ≤2 lines, result-first, with 1–2 bold anchors; drop AWS service chains that don't reflect a decision (Bedrock/EventBridge, Kinesis/API Gateway tails).",
+    "clarify: baselines and sample sizes for 34%, 90%, 93%, and add the actual findings for the IEX storage comparisons; fix placeholder phone and prune unsupported skills."
+  ]
+}

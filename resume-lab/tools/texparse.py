@@ -48,6 +48,7 @@ def latex_to_text(s: str) -> str:
     s = s.replace("--", "–").replace("~", " ")
     s = re.sub(r"\$\|\$", "|", s)
     s = re.sub(r"\\[vh]space\*?\{[^}]*\}", "", s)
+    s = re.sub(r"\\(?:begin|end)\{[a-zA-Z*]+\}(?:\[[^\]]*\])?", " ", s)
     s = re.sub(r"\\fontsize\{[^}]*\}\{[^}]*\}", "", s)
     s = re.sub(r"\\(?:setlength|addtolength)\{[^}]*\}\{[^}]*\}", "", s)
     s = re.sub(r"\\(?:href)\{[^}]*\}", "", s)

@@ -1,0 +1,66 @@
+{
+  "persona": "bigtech_recruiter",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28, current AWS SDE intern, prior Capital One SWE intern, Amazon contract work, AWS cert. Strong brands — but the page is a dense wall of bold tech names.",
+  "scores": {
+    "impact_clarity": 6,
+    "quantification": 6,
+    "technical_depth": 7,
+    "concision_readability": 4,
+    "skim_test": 6,
+    "credibility": 6,
+    "ats_parseability": 7,
+    "visual_layout": 6,
+    "domain_fit": 7,
+    "overall": 7
+  },
+  "score_rationale": {
+    "impact_clarity": "Results buried at the end of 2–3 line sentences; several bullets (Leo deploy, Bedrock fine-tuning, UMIACS training) have no clear outcome.",
+    "quantification": "Numbers exist but baselines are fuzzy: '90% satisfaction report', '93% on internal test users', 34% speedup of what metric?",
+    "technical_depth": "Real engineering is present but often reads as a chain of AWS service names rather than a design decision.",
+    "concision_readability": "Capital One and Amazon bullets are 3 lines each; 4–6 bolded terms per bullet, so bold stops guiding the eye.",
+    "skim_test": "Brands are there, but the top headline role (AWS) has one vague bullet and the wins are hidden in bold noise.",
+    "credibility": "Five overlapping concurrent roles plus a project during Capital One raises load questions; some phrasing feels LLM-polished.",
+    "ats_parseability": "Clean extraction, but phone is a placeholder and date formats are inconsistent (June 2026 vs Sep 2026).",
+    "visual_layout": "One page and aligned, but very dense; Certifications above Experience pushes the strongest content down.",
+    "domain_fit": "General SWE signals are strong, but AI/cloud-service emphasis outweighs core SWE fundamentals in the first read.",
+    "overall": "Brands carry it into interviews at most places; the density and vague AWS entry keep it out of the top tier."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "Replace the (XXX) XXX-XXXX phone placeholder with a real number or remove it.",
+    "Clarify: what the AWS Redshift internship involves — one generic 'researching and implementing' bullet undersells the most important brand on the page.",
+    "Cut bolding to 1–2 anchors per bullet; currently almost every noun is bold.",
+    "Bring every bullet to ≤2 lines; Capital One and Amazon contract bullets are 3-line walls.",
+    "Clarify: the scope/hours of the overlapping roles (AWS intern, Amazon contract, UMIACS, TerpLabs all 'Present') so it doesn't read as inflated."
+  ],
+  "bullets": [
+    {"quote": "Researching and implementing Java-based utilization optimizations for", "verdict": "add_context", "issue": "Vague, no what/why; it's the top brand and reads as a placeholder.", "suggestion": "Implementing Java-based utilization optimizations for Amazon Redshift (clarify: which component and goal)"},
+    {"quote": "Overhauled the legacy UI of a test data", "verdict": "tighten", "issue": "3 lines, tech list in the middle; '90% satisfaction report' baseline unclear.", "suggestion": "Rebuilt a legacy test-data workflow editor in React + Electron (TypeScript, React-Flow), with Jest-tested validation; 90% internal satisfaction vs. the legacy tool"},
+    {"quote": "Engineered a lightweight tree-style workflow search index", "verdict": "tighten", "issue": "3 lines; result (fewer queries) isn't stated as an outcome; IPC detail is noise.", "suggestion": "Built a precomputed tree-style workflow search index from a 270K+ row PostgreSQL table (Python, SQLAlchemy) with Redis caching to minimize DB queries under access constraints"},
+    {"quote": "Developed a Claude skill for workflow generation,", "verdict": "tighten", "issue": "Strong result buried at the end of a 3-line sentence.", "suggestion": "Cut workflow-generation time 65% to under 15s by building a Claude skill with sub-skill decomposition and Python validation, profiling bottlenecks via CloudWatch + OpenSearch"},
+    {"quote": "Deployed an Amazon Leo space topic research", "verdict": "reframe", "issue": "Unclear what the utility does; outcome is 'adopted' but buried; infra list dominates.", "suggestion": "Shipped a space-topic research utility adopted into Amazon Leo's ecosystem, deployed on Docker + Fargate with CDK-defined infra and GitHub Actions CI/CD so other engineers could contribute"},
+    {"quote": "Achieved a 34% speedup on a pipeline", "verdict": "tighten", "issue": "Good metric; trailing API Gateway clause adds length without value; specify what sped up.", "suggestion": "Sped up a pipeline routing 6,000+ scraped research documents to inference by 34% using Kinesis streams feeding Lambda processors"},
+    {"quote": "Integrated automated fine-tuning of an AWS Bedrock", "verdict": "reframe", "issue": "3-line service list, no result; reads like an AWS architecture diagram.", "suggestion": "Automated Bedrock relevance-model fine-tuning via EventBridge triggers with decision gates to skip redundant retraining; added X-Ray tracing and SNS failure alerts"},
+    {"quote": "Developing automated training for PhysTwin, a physics-based", "verdict": "add_context", "issue": "Task description only; what did you build for the training?", "suggestion": "clarify: what part of the training pipeline you own and its outcome"},
+    {"quote": "Built a Python pipeline linking AnyGrasp multi-camera", "verdict": "tighten", "issue": "Model-name heavy for a recruiter; 'develop changes faster' is vague.", "suggestion": "Built a Python pipeline feeding AnyGrasp grasp candidates as Open3D overlay views to a Qwen3-VL model, letting researchers isolate scene components to iterate faster"},
+    {"quote": "Cut research-environment setup time 30% via UV", "verdict": "tighten", "issue": "Clear metric; the monitoring/testing tail dilutes it.", "suggestion": "Cut research-environment setup time 30% with UV dependency pinning and Docker; added psutil timing/memory monitoring and Pytest tests to find bottlenecks"},
+    {"quote": "Co-founded and scaled a 110+ member campus", "verdict": "tighten", "issue": "Strong leadership signal; 'Jira/GitHub/agile' is filler.", "suggestion": "Co-founded and scaled a 110+ member campus product studio shipping 5 live products, running teams on agile practices"},
+    {"quote": "Sustained 20,000+ site visits within the initial", "verdict": "reframe", "issue": "Lead with the product; 'sustained' visits is an odd verb for caching work.", "suggestion": "Built Tortuga, a class scheduler with 20,000+ visits in its first 30 days, using Prisma SQL queries and Redis caching to cut database load and latency"},
+    {"quote": "Building a work-in-progress integration of a RAG", "verdict": "tighten", "issue": "Honest WIP scoping is good; wording is clunky.", "suggestion": "Building (WIP) a RAG meal-suggestion feature for the official UMD app with GPT-4o mini over ChromaDB + SentenceBERT; 93% satisfaction among internal testers"},
+    {"quote": "Implemented a C++-based order book simulation on", "verdict": "tighten", "issue": "'Contract-based plug-and-play' is jargon; no result.", "suggestion": "Implemented a C++ order book simulation on historical IEX data with a pluggable interface to compare storage approaches under enforced correctness checks"},
+    {"quote": "Wrote and evaluated paginated hash-based data storage", "verdict": "tighten", "issue": "'Evaluated' twice; no stated finding.", "suggestion": "Wrote paginated hash-based order book storage with in-memory LFU caching for hot tickers, validated for drift against IEX historical data"},
+    {"quote": "Designed and assessed the performance of a", "verdict": "add_context", "issue": "Benchmark described but no result reported.", "suggestion": "clarify: which design won on throughput/latency; benchmarked adaptive LSM vs. B+ tree log storage via rdtscp timing and perf counters"}
+  ],
+  "structure": [
+    {"key": "move_certifications_down", "change": "Move Certifications below Technical Skills (or fold into a Skills line).", "rationale": "Experience with AWS/Capital One is the strongest signal and should start right after Education."},
+    {"key": "trim_bold", "change": "Limit bold to 1–2 anchors per bullet, preferably metrics.", "rationale": "Current bolding is so heavy the eye can't find the wins."},
+    {"key": "consistent_dates", "change": "Use one date format throughout (e.g., Jun 2026 – Aug 2026).", "rationale": "Mixed 'June/August' and 'Sep/Dec' looks sloppy and can trip parsers."},
+    {"key": "trim_skills", "change": "Trim the skills block to what's evidenced above; drop marginal items like Cursor/Copilot.", "rationale": "Long tool lists read as keyword stuffing to a recruiter."}
+  ],
+  "top3": [
+    "Cut every bullet to ≤2 lines and reduce bolding to 1–2 anchors, leading each bullet with the result.",
+    "Clarify: the AWS Redshift internship scope so the top role has a concrete what/why bullet instead of one vague line.",
+    "Fix the placeholder phone number and move Certifications below Experience/Skills."
+  ]
+}

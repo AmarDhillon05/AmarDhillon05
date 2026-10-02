@@ -1,0 +1,34 @@
+== /home/user/AmarDhillon05/resume-lab/scores/base/round_00/resume.tex
+[ERROR] 'Overhauled the legacy UI of a test data workflow c': 3 rendered lines (max 2)
+[ERROR] 'Engineered a lightweight tree-style workflow searc': 3 rendered lines (max 2)
+[ERROR] 'Developed a Claude skill for workflow generation, ': 3 rendered lines (max 2)
+[ERROR] 'Integrated automated fine-tuning of an AWS Bedrock': 3 rendered lines (max 2)
+[WARN] 'Researching and implementing Java-based utilizatio': no metric or explicit outcome
+[ERROR] 'Overhauled the legacy UI of a test data workflow c': 297 chars (max 215)
+[ERROR] 'Overhauled the legacy UI of a test data workflow c': 5 bold phrases (max 2)
+[ERROR] 'Engineered a lightweight tree-style workflow searc': 356 chars (max 215)
+[ERROR] 'Engineered a lightweight tree-style workflow searc': 5 bold phrases (max 2)
+[ERROR] 'Developed a Claude skill for workflow generation, ': 317 chars (max 215)
+[ERROR] 'Developed a Claude skill for workflow generation, ': 6 bold phrases (max 2)
+[ERROR] 'Deployed an Amazon Leo space topic research utilit': 248 chars (max 215)
+[ERROR] 'Deployed an Amazon Leo space topic research utilit': 4 bold phrases (max 2)
+[ERROR] 'Achieved a 34% speedup on a pipeline routing 6,000': 247 chars (max 215)
+[ERROR] 'Achieved a 34% speedup on a pipeline routing 6,000': 5 bold phrases (max 2)
+[ERROR] 'Integrated automated fine-tuning of an AWS Bedrock': 324 chars (max 215)
+[ERROR] 'Integrated automated fine-tuning of an AWS Bedrock': 4 bold phrases (max 2)
+[ERROR] 'Developing automated training for PhysTwin, a phys': 3 bold phrases (max 2)
+[ERROR] 'Built a Python pipeline linking AnyGrasp multi-cam': 229 chars (max 215)
+[ERROR] 'Built a Python pipeline linking AnyGrasp multi-cam': 4 bold phrases (max 2)
+[ERROR] 'Cut research-environment setup time 30% via UV dep': 228 chars (max 215)
+[ERROR] 'Cut research-environment setup time 30% via UV dep': 5 bold phrases (max 2)
+[ERROR] 'Co-founded and scaled a 110+ member campus product': 4 bold phrases (max 2)
+[ERROR] 'Sustained 20,000+ site visits within the initial 3': 228 chars (max 215)
+[ERROR] 'Sustained 20,000+ site visits within the initial 3': 4 bold phrases (max 2)
+[ERROR] 'Building a work-in-progress integration of a RAG m': 240 chars (max 215)
+[ERROR] 'Building a work-in-progress integration of a RAG m': 5 bold phrases (max 2)
+[WARN] 'Implemented a C++-based order book simulation on h': no metric or explicit outcome
+[WARN] 'Wrote and evaluated paginated hash-based data stor': no metric or explicit outcome
+[ERROR] 'Designed and assessed the performance of a time-ba': 249 chars (max 215)
+[ERROR] 'Designed and assessed the performance of a time-ba': 4 bold phrases (max 2)
+lint: 28 errors, 3 warnings, 16 bullets
+fact_check: 0 errors, 0 warnings, 16 facts used
