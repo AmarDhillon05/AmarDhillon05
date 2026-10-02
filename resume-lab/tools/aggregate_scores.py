@@ -39,7 +39,15 @@ def main():
     dims = sorted({d for r in reviews for d in r["scores"]})
     per_dim = {d: [r["scores"][d] for r in reviews if d in r["scores"]] for d in dims}
     overall = [r["scores"].get("overall") for r in reviews if r["scores"].get("overall") is not None]
-    must_fix = [(r["persona"], m) for r in reviews for m in r.get("must_fix", [])]
+    import re
+    risks = rubric.get("accepted_risks") or []
+
+    def accepted(m):
+        return next((rk["key"] for rk in risks if all(re.search(x, m) for x in rk["match"])), None)
+
+    all_mf = [(r["persona"], m) for r in reviews for m in r.get("must_fix", [])]
+    must_fix = [(p, m) for p, m in all_mf if not accepted(m)]
+    accepted_mf = [(p, accepted(m), m) for p, m in all_mf if accepted(m)]
     low = [(r["persona"], d, v) for r in reviews for d, v in r["scores"].items() if v < thr["min_dim"]]
     gate = json.loads((rd / "gate.json").read_text()) if (rd / "gate.json").exists() else {"errors": None}
 
@@ -61,7 +69,7 @@ def main():
         "mean_by_dim": {d: round(statistics.mean(v), 2) for d, v in per_dim.items()},
         "min_by_dim": {d: min(v) for d, v in per_dim.items()},
         "overall_mean": round(statistics.mean(overall), 2) if overall else None,
-        "below_threshold": low, "must_fix": must_fix, "gate_errors": gate.get("errors"),
+        "below_threshold": low, "must_fix": must_fix, "accepted_risk_flags": accepted_mf, "gate_errors": gate.get("errors"),
         "bullet_verdicts": {k: dict(v) for k, v in verdicts.items()},
         "structure_votes": dict(structure.most_common()),
         "competitive": {r["persona"]: r.get("competitive_for_domain") for r in reviews},
@@ -73,19 +81,24 @@ def main():
           "| dim | mean | min |", "|---|---|---|"]
     md += [f"| {d} | {summary['mean_by_dim'][d]} | {summary['min_by_dim'][d]} |" for d in dims]
     md += ["", "## Must-fix"] + [f"- ({p}) {m}" for p, m in must_fix] or ["- none"]
+    md += ["", "## Accepted-risk flags (logged, non-blocking)"] + [f"- ({p}) [{k}] {m}" for p, k, m in accepted_mf]
     md += ["", "## Bullet verdicts"] + [f"- `{k}`: {dict(v)}" for k, v in verdicts.items()]
     md += ["", "## Structure votes"] + [f"- {k}: {v}" for k, v in structure.most_common()]
     (rd / "summary.md").write_text("\n".join(md) + "\n")
 
     hist = ROOT / "scores" / "history.csv"
-    new = not hist.exists()
-    with hist.open("a", newline="") as f:
+    header = ["variant", "round", "n_reviewers", "overall_mean", "min_any_dim", "n_must_fix", "n_accepted_risk", "gate_errors", "passed"] + [f"mean_{d}" for d in dims]
+    row = [variant, rnd, len(reviews), summary["overall_mean"], min(min(v) for v in per_dim.values()),
+           len(must_fix), len(accepted_mf), gate.get("errors"), passed] + [summary["mean_by_dim"].get(d) for d in dims]
+    rows = []
+    if hist.exists():
+        with hist.open() as f:
+            rows = [r for r in csv.reader(f)][1:]
+    rows = [r for r in rows if not (r[0] == variant and r[1] == rnd)] + [[str(x) for x in row]]
+    with hist.open("w", newline="") as f:
         w = csv.writer(f)
-        if new:
-            w.writerow(["variant", "round", "n_reviewers", "overall_mean", "min_any_dim", "n_must_fix", "gate_errors", "passed"] + [f"mean_{d}" for d in dims])
-        w.writerow([variant, rnd, len(reviews), summary["overall_mean"],
-                    min(min(v) for v in per_dim.values()), len(must_fix), gate.get("errors"), passed]
-                   + [summary["mean_by_dim"].get(d) for d in dims])
+        w.writerow(header)
+        w.writerows(sorted(rows, key=lambda r: (r[0], r[1])))
     print((rd / "summary.md").read_text())
 
 

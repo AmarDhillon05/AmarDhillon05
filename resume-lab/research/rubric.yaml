@@ -89,3 +89,10 @@ lint:
   min_last_line_fill: 0.30
   max_bold_per_bullet: 2
   max_chars_per_bullet: 215
+
+# Risks the candidate has explicitly accepted. A must-fix matching ALL regexes in
+# `match` is logged as accepted (still reported) and does not block passing.
+accepted_risks:
+  - key: concurrent_present_dates
+    decided: "Amar, Oct 2026: keep 'Present' on Amazon contract / UMIACS / TerpLabs during the AWS internship"
+    match: ["(?i)(present|end date|timeline)", "(?i)(overlap|concurrent|simultaneous|alongside|while|same time|paused|part-time)"]

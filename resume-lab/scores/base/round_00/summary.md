@@ -18,7 +18,6 @@
 ## Must-fix
 - (ats_specialist) Replace the '(XXX) XXX-XXXX' placeholder with a real phone number (or remove it) — parsers populate the phone field with garbage.
 - (ats_specialist) Standardize date format: use one month style everywhere (e.g., 'Jun 2026 – Aug 2026' to match 'Sep 2026 – Dec 2026').
-- (ats_specialist) Clarify: how the AWS SDE intern role (Redmond, Sep–Dec 2026) coexists with three 'Present' College Park roles; mark paused/part-time roles or set end dates.
 - (ats_specialist) Clarify: employer for the contract role — 'Amazon (via UMD App Development Contracting)' may parse as Amazon employment; state the actual employer and client explicitly.
 - (ats_specialist) Move 'Digital Badge' out of the right-aligned location column (embed the link on the cert name) so it is not parsed as a location.
 - (ats_specialist) Fix skills miscategorization: SQS is not observability; CloudFormation/CDK are infrastructure-as-code, not CI/CD.
@@ -27,15 +26,12 @@
 - (bigtech_recruiter) Clarify: what the AWS Redshift internship involves — one generic 'researching and implementing' bullet undersells the most important brand on the page.
 - (bigtech_recruiter) Cut bolding to 1–2 anchors per bullet; currently almost every noun is bold.
 - (bigtech_recruiter) Bring every bullet to ≤2 lines; Capital One and Amazon contract bullets are 3-line walls.
-- (bigtech_recruiter) Clarify: the scope/hours of the overlapping roles (AWS intern, Amazon contract, UMIACS, TerpLabs all 'Present') so it doesn't read as inflated.
 - (bs_detector) Replace placeholder phone '(XXX) XXX-XXXX' with a real number or remove it.
-- (bs_detector) clarify: concurrent timelines — Amazon contract (Jan 2026–Present), AWS SDE intern (Sep–Dec 2026), UMIACS (Present), TerpLabs (Present), and the IEX project during the Capital One internship. Mark part-time or end dates honestly.
 - (bs_detector) clarify: baselines for '34% speedup' (latency? throughput? vs. what prior design), '90% internal satisfaction report compared to the legacy tool', and '93% meal satisfaction' (how many test users).
 - (bs_detector) Cut 3-line bullets to ≤2 lines and reduce bolding to 1–2 anchors per bullet.
 - (bs_detector) Prune skills you can't defend in an interview from bullets (Rust, CUDA, Kubernetes/EKS, Spring Boot, Pinecone/LlamaIndex); fix miscategorized SQS and CloudFormation.
 - (bs_detector) AWS SDE intern entry has one vague present-tense bullet at the top of Experience; either say concretely what you're working on or keep it brief without filler.
 - (senior_swe_hm) Replace the placeholder phone number (XXX) XXX-XXXX with a real number or remove it.
-- (senior_swe_hm) Clarify: overlapping timelines — AWS intern in Redmond (Sep–Dec 2026) while Amazon contract, UMIACS research, and TerpLabs all show 'Present'; end-date or mark part-time/paused roles.
 - (senior_swe_hm) Clarify: the IEX project dates (Jul–Aug 2026) overlap the full-time Capital One internship; consider labeling it personal/side project.
 - (senior_swe_hm) Cut most of the bolding — currently 4–6 bold terms per bullet; keep at most 1–2 anchors (ideally the metric).
 - (senior_swe_hm) Bring every bullet to ≤2 lines; nearly every bullet currently wraps to 3.
@@ -47,6 +43,12 @@
 - (startup_quant_engineer) Clarify: report the actual latency/throughput results from the IEX LSM vs B+ tree and hash-storage evaluations, if you have them.
 - (startup_quant_engineer) Clarify: what the Amazon Leo research utility does and who uses it; currently unreadable to an outsider.
 - (startup_quant_engineer) Clarify: baseline for the Capital One '90% satisfaction' figure (90% of whom, vs what legacy score?).
+
+## Accepted-risk flags (logged, non-blocking)
+- (ats_specialist) [concurrent_present_dates] Clarify: how the AWS SDE intern role (Redmond, Sep–Dec 2026) coexists with three 'Present' College Park roles; mark paused/part-time roles or set end dates.
+- (bigtech_recruiter) [concurrent_present_dates] Clarify: the scope/hours of the overlapping roles (AWS intern, Amazon contract, UMIACS, TerpLabs all 'Present') so it doesn't read as inflated.
+- (bs_detector) [concurrent_present_dates] clarify: concurrent timelines — Amazon contract (Jan 2026–Present), AWS SDE intern (Sep–Dec 2026), UMIACS (Present), TerpLabs (Present), and the IEX project during the Capital One internship. Mark part-time or end dates honestly.
+- (senior_swe_hm) [concurrent_present_dates] Clarify: overlapping timelines — AWS intern in Redmond (Sep–Dec 2026) while Amazon contract, UMIACS research, and TerpLabs all show 'Present'; end-date or mark part-time/paused roles.
 
 ## Bullet verdicts
 - `Researching and implementing Java-based utilization`: {'add_context': 5}

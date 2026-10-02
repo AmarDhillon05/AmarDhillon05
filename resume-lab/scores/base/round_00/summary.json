@@ -290,10 +290,6 @@
     ],
     [
       "ats_specialist",
-      "Clarify: how the AWS SDE intern role (Redmond, Sep\u2013Dec 2026) coexists with three 'Present' College Park roles; mark paused/part-time roles or set end dates."
-    ],
-    [
-      "ats_specialist",
       "Clarify: employer for the contract role \u2014 'Amazon (via UMD App Development Contracting)' may parse as Amazon employment; state the actual employer and client explicitly."
     ],
     [
@@ -325,16 +321,8 @@
       "Bring every bullet to \u22642 lines; Capital One and Amazon contract bullets are 3-line walls."
     ],
     [
-      "bigtech_recruiter",
-      "Clarify: the scope/hours of the overlapping roles (AWS intern, Amazon contract, UMIACS, TerpLabs all 'Present') so it doesn't read as inflated."
-    ],
-    [
       "bs_detector",
       "Replace placeholder phone '(XXX) XXX-XXXX' with a real number or remove it."
-    ],
-    [
-      "bs_detector",
-      "clarify: concurrent timelines \u2014 Amazon contract (Jan 2026\u2013Present), AWS SDE intern (Sep\u2013Dec 2026), UMIACS (Present), TerpLabs (Present), and the IEX project during the Capital One internship. Mark part-time or end dates honestly."
     ],
     [
       "bs_detector",
@@ -355,10 +343,6 @@
     [
       "senior_swe_hm",
       "Replace the placeholder phone number (XXX) XXX-XXXX with a real number or remove it."
-    ],
-    [
-      "senior_swe_hm",
-      "Clarify: overlapping timelines \u2014 AWS intern in Redmond (Sep\u2013Dec 2026) while Amazon contract, UMIACS research, and TerpLabs all show 'Present'; end-date or mark part-time/paused roles."
     ],
     [
       "senior_swe_hm",
@@ -403,6 +387,28 @@
     [
       "startup_quant_engineer",
       "Clarify: baseline for the Capital One '90% satisfaction' figure (90% of whom, vs what legacy score?)."
+    ]
+  ],
+  "accepted_risk_flags": [
+    [
+      "ats_specialist",
+      "concurrent_present_dates",
+      "Clarify: how the AWS SDE intern role (Redmond, Sep\u2013Dec 2026) coexists with three 'Present' College Park roles; mark paused/part-time roles or set end dates."
+    ],
+    [
+      "bigtech_recruiter",
+      "concurrent_present_dates",
+      "Clarify: the scope/hours of the overlapping roles (AWS intern, Amazon contract, UMIACS, TerpLabs all 'Present') so it doesn't read as inflated."
+    ],
+    [
+      "bs_detector",
+      "concurrent_present_dates",
+      "clarify: concurrent timelines \u2014 Amazon contract (Jan 2026\u2013Present), AWS SDE intern (Sep\u2013Dec 2026), UMIACS (Present), TerpLabs (Present), and the IEX project during the Capital One internship. Mark part-time or end dates honestly."
+    ],
+    [
+      "senior_swe_hm",
+      "concurrent_present_dates",
+      "Clarify: overlapping timelines \u2014 AWS intern in Redmond (Sep\u2013Dec 2026) while Amazon contract, UMIACS research, and TerpLabs all show 'Present'; end-date or mark part-time/paused roles."
     ]
   ],
   "gate_errors": 28,

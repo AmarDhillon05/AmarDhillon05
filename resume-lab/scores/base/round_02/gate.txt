@@ -1,0 +1,7 @@
+== /home/user/AmarDhillon05/resume-lab/scores/base/round_02/resume.tex
+[WARN] 'Researching and implementing Java-based utilizatio': no metric or explicit outcome
+[WARN] 'Automated fine-tuning of an AWS Bedrock source-rel': no metric or explicit outcome
+[WARN] 'Implemented a C++ order-book simulator replaying h': no metric or explicit outcome
+[WARN] 'Designed paginated hash-based order-book storage w': no metric or explicit outcome
+lint: 0 errors, 4 warnings, 16 bullets
+fact_check: 0 errors, 0 warnings, 16 facts used

@@ -1,0 +1,174 @@
+{
+  "tex": "/home/user/AmarDhillon05/resume-lab/scores/base/round_02/resume.tex",
+  "n_bullets": 16,
+  "bullets": [
+    {
+      "fact": "aws_sde.redshift",
+      "chars": 85,
+      "words": 9,
+      "n_bold": 0,
+      "n_lines": 1,
+      "last_fill": 1.0,
+      "text": "Researching and implementing Java-based utilization optimizations for Amazon Redshift"
+    },
+    {
+      "fact": "capital_one.ui_overhaul",
+      "chars": 187,
+      "words": 29,
+      "n_bold": 1,
+      "n_lines": 2,
+      "last_fill": 0.62,
+      "text": "Rebuilt a legacy test-data workflow builder UI in React, TypeScript, and Electron with a React-Flow editor and Jest-tested validation; 90% of surveyed users preferred it over the old tool"
+    },
+    {
+      "fact": "capital_one.search_index",
+      "chars": 176,
+      "words": 25,
+      "n_bold": 1,
+      "n_lines": 2,
+      "last_fill": 0.66,
+      "text": "Built a precomputed tree-style search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to minimize DB queries under access limits"
+    },
+    {
+      "fact": "capital_one.claude_skill",
+      "chars": 184,
+      "words": 28,
+      "n_bold": 1,
+      "n_lines": 2,
+      "last_fill": 0.62,
+      "text": "Cut LLM workflow generation time 65% to under 15s by decomposing a Claude skill into sub-skills backed by Python search/validation tools, guided by CloudWatch + OpenSearch latency logs"
+    },
+    {
+      "fact": "amazon_contract.leo_deploy",
+      "chars": 196,
+      "words": 31,
+      "n_bold": 0,
+      "n_lines": 2,
+      "last_fill": 0.74,
+      "text": "Shipped a space-research tool for Amazon Leo, now adopted into Leo's ecosystem; deployed on Docker + AWS Fargate via GitHub Actions, with AWS CDK (TypeScript) infra so new engineers can contribute"
+    },
+    {
+      "fact": "amazon_contract.kinesis_pipeline",
+      "chars": 160,
+      "words": 23,
+      "n_bold": 1,
+      "n_lines": 2,
+      "last_fill": 0.4,
+      "text": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by moving it onto Kinesis streams feeding Lambda processors"
+    },
+    {
+      "fact": "amazon_contract.bedrock_finetune",
+      "chars": 178,
+      "words": 24,
+      "n_bold": 0,
+      "n_lines": 2,
+      "last_fill": 0.54,
+      "text": "Automated fine-tuning of an AWS Bedrock source-relevancy model via EventBridge cron, with decision gates skipping redundant retraining; added X-Ray tracing and SNS failure alerts"
+    },
+    {
+      "fact": "umiacs.phystwin",
+      "chars": 106,
+      "words": 15,
+      "n_bold": 0,
+      "n_lines": 1,
+      "last_fill": 1.0,
+      "text": "Developing automated training for PhysTwin, a physics-based digital twin, on a PhD-led team targeting ICLR"
+    },
+    {
+      "fact": "umiacs.grasp_vlm",
+      "chars": 182,
+      "words": 22,
+      "n_bold": 0,
+      "n_lines": 2,
+      "last_fill": 0.68,
+      "text": "Engineered a Python pipeline rendering AnyGrasp multi-camera grasp candidates as Open3D overlays for a Qwen3-VL-8B vision-language model, letting researchers isolate scene components"
+    },
+    {
+      "fact": "umiacs.env_setup",
+      "chars": 157,
+      "words": 21,
+      "n_bold": 1,
+      "n_lines": 2,
+      "last_fill": 0.38,
+      "text": "Shortened research-environment setup time 30% with uv dependency pinning and Docker; added psutil time/memory profiling and Pytest suites to find bottlenecks"
+    },
+    {
+      "fact": "terplabs.studio",
+      "chars": 105,
+      "words": 18,
+      "n_bold": 1,
+      "n_lines": 1,
+      "last_fill": 1.0,
+      "text": "Co-founded a 110+ member campus product studio that has shipped 5 live products, run with Jira and GitHub"
+    },
+    {
+      "fact": "terplabs.tortuga",
+      "chars": 158,
+      "words": 27,
+      "n_bold": 1,
+      "n_lines": 2,
+      "last_fill": 0.34,
+      "text": "Wrote Prisma SQL queries and Redis query caching for Tortuga to reduce database load and latency; the class scheduler drew 20,000+ visits in its first 30 days"
+    },
+    {
+      "fact": "terplabs.rag_meal",
+      "chars": 172,
+      "words": 25,
+      "n_bold": 1,
+      "n_lines": 2,
+      "last_fill": 0.51,
+      "text": "Building a RAG meal-suggestion feature for the official UMD app (GPT-4o mini, ChromaDB + SentenceBERT search); 93% of generated meals rated satisfactory by internal testers"
+    },
+    {
+      "fact": "iex.order_book",
+      "chars": 169,
+      "words": 22,
+      "n_bold": 0,
+      "n_lines": 2,
+      "last_fill": 0.47,
+      "text": "Implemented a C++ order-book simulator replaying historical IEX data, with a contract-based plug-in interface so alternative approaches swap in with enforced correctness"
+    },
+    {
+      "fact": "iex.lfu_storage",
+      "chars": 162,
+      "words": 23,
+      "n_bold": 0,
+      "n_lines": 2,
+      "last_fill": 0.41,
+      "text": "Designed paginated hash-based order-book storage with an in-memory LFU cache for hot tickers during simulation, checked for drift against IEX historical book data"
+    },
+    {
+      "fact": "iex.lsm_vs_btree",
+      "chars": 175,
+      "words": 26,
+      "n_bold": 0,
+      "n_lines": 2,
+      "last_fill": 0.49,
+      "text": "Benchmarked a time-based adaptive LSM store against a B+ tree for simulation logs, measuring throughput and latency via rdtscp and hardware utilization via Linux perf counters"
+    }
+  ],
+  "issues": [
+    {
+      "level": "WARN",
+      "where": "Researching and implementing Java-based utilizatio",
+      "msg": "no metric or explicit outcome"
+    },
+    {
+      "level": "WARN",
+      "where": "Automated fine-tuning of an AWS Bedrock source-rel",
+      "msg": "no metric or explicit outcome"
+    },
+    {
+      "level": "WARN",
+      "where": "Implemented a C++ order-book simulator replaying h",
+      "msg": "no metric or explicit outcome"
+    },
+    {
+      "level": "WARN",
+      "where": "Designed paginated hash-based order-book storage w",
+      "msg": "no metric or explicit outcome"
+    }
+  ],
+  "errors": 0,
+  "warnings": 4
+}

@@ -182,10 +182,6 @@
   "must_fix": [
     [
       "ats_specialist",
-      "Clarify overlapping dates: Amazon contract, UMIACS, and TerpLabs all say 'Present' while AWS internship is in Redmond Sep\u2013Dec 2026; LLM screeners flag 4 simultaneous roles. Confirm which are paused or remote."
-    ],
-    [
-      "ats_specialist",
       "Two separate 'Amazon' employer entries (Amazon Web Services and Amazon via UMD contracting) can be merged/deduped incorrectly by parsers; make the contracting employer name unambiguous."
     ],
     [
@@ -198,19 +194,11 @@
     ],
     [
       "bigtech_recruiter",
-      "Clarify: which roles are actually active during the Sep\u2013Dec 2026 Redmond AWS internship? Four College Park roles marked 'Present' alongside it reads as overcommitted or inflated."
-    ],
-    [
-      "bigtech_recruiter",
       "Clarify: distinguish 'Amazon Web Services' (internship) from 'Amazon (via UMD App Development Contracting)' so it doesn't look like the same brand listed twice."
     ],
     [
       "bigtech_recruiter",
       "AWS internship has a single vague bullet ('Researching and implementing...'); it's your top brand and currently says the least."
-    ],
-    [
-      "bs_detector",
-      "Clarify date overlaps: AWS internship in Redmond (Sep\u2013Dec 2026) overlaps Amazon contract, UMIACS, and TerpLabs all marked 'Present'; mark paused/ended roles or change end dates honestly."
     ],
     [
       "bs_detector",
@@ -227,10 +215,6 @@
     [
       "bs_detector",
       "TerpLabs Tortuga bullet attributes 20,000+ visits to the product, not the caching work; state the caching result or decouple the two."
-    ],
-    [
-      "senior_swe_hm",
-      "Clarify timeline overlap: three roles marked 'Present' in College Park while interning at AWS in Redmond Sep\u2013Dec 2026; mark ended/paused roles with end dates or note remote/part-time."
     ],
     [
       "senior_swe_hm",
@@ -258,11 +242,34 @@
     ],
     [
       "startup_quant_engineer",
-      "Clarify the overlapping dates: an AWS Redmond internship (Sep\u2013Dec 2026) running alongside 'Present' roles in College Park reads as a conflict. Mark the concurrent ones part-time/remote or end-date them."
+      "Clarify: '90% satisfaction' and '93% meal satisfaction' need a scope (how many users/testers) or should be softened; otherwise they read as survey filler."
+    ]
+  ],
+  "accepted_risk_flags": [
+    [
+      "ats_specialist",
+      "concurrent_present_dates",
+      "Clarify overlapping dates: Amazon contract, UMIACS, and TerpLabs all say 'Present' while AWS internship is in Redmond Sep\u2013Dec 2026; LLM screeners flag 4 simultaneous roles. Confirm which are paused or remote."
+    ],
+    [
+      "bigtech_recruiter",
+      "concurrent_present_dates",
+      "Clarify: which roles are actually active during the Sep\u2013Dec 2026 Redmond AWS internship? Four College Park roles marked 'Present' alongside it reads as overcommitted or inflated."
+    ],
+    [
+      "bs_detector",
+      "concurrent_present_dates",
+      "Clarify date overlaps: AWS internship in Redmond (Sep\u2013Dec 2026) overlaps Amazon contract, UMIACS, and TerpLabs all marked 'Present'; mark paused/ended roles or change end dates honestly."
+    ],
+    [
+      "senior_swe_hm",
+      "concurrent_present_dates",
+      "Clarify timeline overlap: three roles marked 'Present' in College Park while interning at AWS in Redmond Sep\u2013Dec 2026; mark ended/paused roles with end dates or note remote/part-time."
     ],
     [
       "startup_quant_engineer",
-      "Clarify: '90% satisfaction' and '93% meal satisfaction' need a scope (how many users/testers) or should be softened; otherwise they read as survey filler."
+      "concurrent_present_dates",
+      "Clarify the overlapping dates: an AWS Redmond internship (Sep\u2013Dec 2026) running alongside 'Present' roles in College Park reads as a conflict. Mark the concurrent ones part-time/remote or end-date them."
     ]
   ],
   "gate_errors": 0,
