@@ -13,12 +13,12 @@
     },
     {
       "fact": "capital_one.ui_overhaul",
-      "chars": 187,
-      "words": 29,
+      "chars": 181,
+      "words": 27,
       "n_bold": 1,
       "n_lines": 2,
-      "last_fill": 0.62,
-      "text": "Rebuilt a legacy test-data workflow builder UI in React, TypeScript, and Electron with a React-Flow editor and Jest-tested validation; 90% of surveyed users preferred it over the old tool"
+      "last_fill": 0.5,
+      "text": "Rebuilt a legacy test-data workflow builder in React/TypeScript + Electron, adding a React-Flow editor and Jest-tested validation; 90% of surveyed users preferred it to the old tool"
     },
     {
       "fact": "capital_one.search_index",
@@ -139,12 +139,12 @@
     },
     {
       "fact": "iex.lsm_vs_btree",
-      "chars": 175,
+      "chars": 174,
       "words": 26,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.49,
-      "text": "Benchmarked a time-based adaptive LSM store against a B+ tree for simulation logs, measuring throughput and latency via rdtscp and hardware utilization via Linux perf counters"
+      "last_fill": 0.5,
+      "text": "Created an rdtscp + Linux perf benchmark harness to compare a time-based adaptive LSM store against a B+ tree for simulation-log throughput, latency, and hardware utilization"
     }
   ],
   "issues": [

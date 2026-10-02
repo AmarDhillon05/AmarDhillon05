@@ -1,0 +1,22 @@
+{
+  "p01": {
+    "fact": "amazon_contract.leo_deploy",
+    "new_is": "B"
+  },
+  "p02": {
+    "fact": "aws_sde.redshift",
+    "new_is": "A"
+  },
+  "p03": {
+    "fact": "capital_one.ui_overhaul",
+    "new_is": "A"
+  },
+  "p04": {
+    "fact": "iex.lsm_vs_btree",
+    "new_is": "A"
+  },
+  "p05": {
+    "fact": "terplabs.tortuga",
+    "new_is": "A"
+  }
+}

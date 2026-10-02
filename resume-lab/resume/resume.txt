@@ -6,24 +6,24 @@ Education
 University of Maryland, College Park                                                                                 May 2028
 B.S. in Computer Science, Minor in Statistics; GPA: 3.5                                                      College Park, MD
 Experience
-Amazon Web Services                                                                                  Sep 2026 – Dec 2026
+Amazon Web Services                                                                                 Sep 2026 – Dec 2026
 Software Development Engineer Intern                                                                       Redmond, WA
  • Tuning Java-based upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations like patching,
 
    backtesting policies to balance availability against cost
-Capital One                                                                                          Jun 2026 – Aug 2026
-Software Engineering Intern                                                                                Richmond, VA
- • Rebuilt a legacy test-data workflow builder UI in React, TypeScript, and Electron with a React-Flow editor and
+Capital One                                                                                         Jun 2026 – Aug 2026
+Software Engineering Intern                                                                               Richmond, VA
+ • Rebuilt a legacy test-data workflow builder in React/TypeScript + Electron, adding a React-Flow editor and Jest-tested
 
-   Jest-tested validation; 90% of surveyed users preferred it over the old tool
+   validation; 90% of surveyed users preferred it to the old tool
  • Built a precomputed tree-style search index over popular workflows from a 270K+ row PostgreSQL table
 
    (Python/SQLAlchemy, Redis cache) to minimize DB queries under access limits
  • Cut LLM workflow generation time 65% to under 15s by decomposing a Claude skill into sub-skills backed by Python
 
    search/validation tools, guided by CloudWatch + OpenSearch latency logs
-UMD App Development Contracting (Client: Amazon)                                                       Jan 2026 – Present
-Software Engineer (Contract)                                                                            College Park, MD
+UMD App Development Contracting (Client: Amazon)                                                      Jan 2026 – Present
+Software Engineer (Contract)                                                                           College Park, MD
  • Shipped a space-research tool now used by Amazon Leo’s public-policy team and maintained by Leo engineers; deployed
 
    on Docker + AWS Fargate via GitHub Actions with AWS CDK (TypeScript) IaC
@@ -33,8 +33,8 @@ Software Engineer (Contract)                                                    
  • Automated fine-tuning of an AWS Bedrock source-relevancy model via EventBridge cron, with decision gates skipping
 
    redundant retraining; added X-Ray tracing and SNS failure alerts
-UMD Institute for Advanced Computer Studies (UMIACS)                                                   Dec 2025 – Present
-Machine Learning Research Intern                                                                        College Park, MD
+UMD Institute for Advanced Computer Studies (UMIACS)                                                  Dec 2025 – Present
+Machine Learning Research Intern                                                                       College Park, MD
  • Developing automated training for PhysTwin, a physics-based digital twin, on a PhD-led team targeting ICLR
 
  • Engineered a Python pipeline rendering AnyGrasp multi-camera grasp candidates as Open3D overlays for a
@@ -43,8 +43,8 @@ Machine Learning Research Intern                                                
  • Shortened research-environment setup time 30% with uv dependency pinning and Docker; added psutil time/memory
 
    profiling and Pytest suites to find bottlenecks
-TerpLabs                                                                                               Jun 2025 – Present
-Co-Founder, Software Engineer                                                                           College Park, MD
+TerpLabs                                                                                              Jun 2025 – Present
+Co-Founder, Software Engineer                                                                          College Park, MD
  • Co-founded a 110+ member campus product studio that has shipped 5 live products, run with Jira and GitHub
 
  • Wrote Prisma SQL queries and Redis query caching to cut DB load and latency for Tortuga, our class scheduler, which
@@ -62,9 +62,9 @@ IEX Matching Engine Simulation | C++, STL, POSIX                                
  • Designed paginated hash-based order-book storage with an in-memory LFU cache for hot tickers during simulation,
 
    checked for drift against IEX historical book data
- • Benchmarked a time-based adaptive LSM store against a B+ tree for simulation logs, measuring throughput and latency
+ • Created an rdtscp + Linux perf benchmark harness to compare a time-based adaptive LSM store against a B+ tree for
 
-   via rdtscp and hardware utilization via Linux perf counters
+   simulation-log throughput, latency, and hardware utilization
 
 Technical Skills
 Languages: Python, Java, C++, C, TypeScript/JavaScript, SQL
