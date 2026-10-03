@@ -1,0 +1,38 @@
+{
+  "persona": "bs_detector",
+  "target": "AI/ML engineering intern roles (LLM applications, agents, RAG, ML platform) at AI-native startups and big-tech AI orgs, 2026–27 cycle. Score domain_fit for this domain.",
+  "seven_second_takeaway": "UMD CS '28; AWS, Capital One, Amazon Leo contract. Built Claude agent skills (65% faster), Bedrock fine-tuning pipeline, RAG feature. Mostly honest, AI work sits below a non-AI lead.",
+  "scores": {"impact_clarity": 8, "quantification": 8, "technical_depth": 8, "concision_readability": 8,
+             "skim_test": 8, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 7, "overall": 8},
+  "score_rationale": {
+    "domain_fit": "Strong LLM/agent/RAG evidence exists, but the top entry (AWS capacity policies) and the only project (C++ order book) are off-domain; AI wins need reading to find."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "clarify: 'output quality held across multi-run stress tests' (Capital One). An AI interviewer will ask how quality was judged: eval set, rubric, or diff vs. old outputs? Say which, or soften the claim.",
+    "clarify: 'tuned its prompts to pick correct grasps and judge depth' (UMIACS) has no outcome. Name what changed (e.g. qualitative improvement on the team's test scenes) if real, or present it as part of the pipeline work rather than a standalone win."
+  ],
+  "bullets": [
+    {"quote": "Writing Java policies that tune upper/lower bounds", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Cut LLM workflow generation time 65% to under", "verdict": "tighten", "issue": "Strongest AI bullet; 'output quality held' is unanchored and invites a probing follow-up.", "suggestion": "Cut LLM workflow generation time 65% to under 15s by decomposing a Claude skill into sub-skills backed by Python search/validation tools; output quality held across repeated stress-test runs"},
+    {"quote": "Precomputed a tree-style search index over popular", "verdict": "tighten", "issue": "'tree-style' is vague; the design reason (DB access limits) is the interesting part and should lead.", "suggestion": "Under DB access limits, precomputed a tree-structured search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) as the Claude skill's main search tool"},
+    {"quote": "Rebuilt a legacy test-data workflow builder in", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Automated EventBridge-scheduled fine-tuning of a Bedrock model", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Shipped a space-research tool used by Amazon", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Built a Python pipeline for PhysTwin (PhD-led digital", "verdict": "add_context", "issue": "'targeting ICLR' reads as borrowed prestige; prompt tuning has no stated outcome.", "suggestion": "Built a Python pipeline for PhysTwin (PhD-led digital twin project) turning AnyGrasp output on multi-camera images into Open3D overlays a VLM uses to pick grasps and judge depth; tuned its prompts"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Building a RAG meal-suggestion feature for the", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "tighten", "issue": "Studio-wide numbers sit next to his own contribution; ownership of the 20K visits is ambiguous.", "suggestion": "Co-founded a 110+ member campus product studio (5 live products); built Redis caching for Prisma ORM queries in Tortuga, a class scheduler with 20,000+ visits in its first 30 days"},
+    {"quote": "Built a C++17 order book and matching", "verdict": "keep", "issue": "", "suggestion": ""}
+  ],
+  "structure": [
+    {"key": "ai_first_within_entries", "change": "Keep reverse-chronological order, but keep each entry's LLM/ML bullet first (already true for Capital One, Leo, TerpLabs); bold the 65% Capital One bullet's Claude/agent context as the visual anchor.", "rationale": "The AWS lead entry is non-AI; the eye must land on the agent work second without reordering dates."},
+    {"key": "project_relevance", "change": "Keep the C++ order book project only as a rigor signal; do not expand it for this domain.", "rationale": "Off-domain but credible and precise; it supports 'careful engineer' without diluting AI emphasis much."}
+  ],
+  "top3": [
+    "clarify: how 'output quality held' was measured in the Capital One Claude-skill bullet, the headline AI claim on the page",
+    "Separate personal contribution from studio-wide numbers in the TerpLabs co-founder bullet so the 20K visits aren't read as inflation",
+    "Drop 'targeting ICLR' or state the outcome of the VLM prompt tuning so the UMIACS bullet earns its AI credibility on its own"
+  ]
+}

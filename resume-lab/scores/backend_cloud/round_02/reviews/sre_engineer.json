@@ -1,0 +1,36 @@
+{
+  "persona": "sre_engineer",
+  "target": "Backend and cloud infrastructure SWE intern roles (distributed services, data layer, AWS, platform/SRE), 2026–27 cycle. Score domain_fit for this domain.",
+  "seven_second_takeaway": "UMD CS '28, AWS SDE intern on EC2 capacity for Redshift, Capital One intern, Kinesis/CDK/Fargate contract work for Amazon Leo, C++ matching engine at 1.26M events/sec.",
+  "scores": {"impact_clarity": 8, "quantification": 8, "technical_depth": 8, "concision_readability": 8,
+             "skim_test": 8, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 8, "overall": 8},
+  "score_rationale": {},
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "clarify: Kinesis bullet — what were the 'S3 staging hops' (write-then-poll?) so the 34% latency win reads as a design decision, not a service swap",
+    "clarify: Bedrock fine-tuning bullet ends at mechanism; state what the threshold-gated retraining avoids (e.g., unnecessary retrain runs) if the candidate can stand behind it"
+  ],
+  "bullets": [
+    {"quote": "Writing Java policies that tune upper/lower bounds", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Precomputed a tree-style search index so workflow", "verdict": "tighten", "issue": "Constraint-driven design is good, but the sentence buries the decision after the 270K-row detail.", "suggestion": "Precomputed a tree-style search index from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) so the Claude skill's workflow search works under strict DB access limits"},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Rebuilt a legacy test-data workflow builder in", "verdict": "keep", "issue": "Least infra-relevant bullet; fine as third bullet.", "suggestion": ""},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "add_context", "issue": "Strongest distributed-systems bullet; the why of streaming vs staging is implied, not stated.", "suggestion": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda directly"},
+    {"quote": "Shipped a space-research tool to Amazon Leo's", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Automated EventBridge-scheduled fine-tuning of a Bedrock model", "verdict": "add_context", "issue": "Good cost-aware design, but no outcome or reason for gating retrains.", "suggestion": ""},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Engineered a C++17 order book and matching", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Sustained 1.26M events/sec end-to-end over the", "verdict": "keep", "issue": "", "suggestion": ""}
+  ],
+  "structure": [
+    {"key": "keep_order", "change": "Keep current ordering: AWS, Capital One, Amazon Leo contract lead; project and skills follow.", "rationale": "Infra evidence (capacity, Kinesis, CDK/Fargate, CI) is above the fold; no reordering needed."},
+    {"key": "project_bullet_order", "change": "Consider moving the B+ tree vs LSM benchmark bullet first under the project for this domain.", "rationale": "Storage-engine trade-off is data-layer evidence backend HMs ask about; throughput numbers are secondary here."}
+  ],
+  "top3": [
+    "clarify: what the S3 staging hops were, so the Kinesis 34% latency bullet shows the design decision",
+    "clarify: the payoff of threshold-gated Bedrock retraining (what cost or toil it removes)",
+    "Tighten the Capital One search-index bullet to lead with the constraint-driven design choice"
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "variant": "ai_ml_engineering",
+  "round": "round_02",
+  "n_reviewers": 3,
+  "mean_by_dim": {
+    "ats_parseability": 8.67,
+    "concision_readability": 8,
+    "credibility": 8,
+    "domain_fit": 7.33,
+    "impact_clarity": 8,
+    "overall": 8,
+    "quantification": 7.33,
+    "skim_test": 7.67,
+    "technical_depth": 8,
+    "visual_layout": 8
+  },
+  "min_by_dim": {
+    "ats_parseability": 8,
+    "concision_readability": 8,
+    "credibility": 8,
+    "domain_fit": 7,
+    "impact_clarity": 8,
+    "overall": 8,
+    "quantification": 7,
+    "skim_test": 7,
+    "technical_depth": 8,
+    "visual_layout": 8
+  },
+  "overall_mean": 8,
+  "below_threshold": [
+    [
+      "ai_hm",
+      "quantification",
+      7
+    ],
+    [
+      "ai_recruiter",
+      "quantification",
+      7
+    ],
+    [
+      "ai_recruiter",
+      "skim_test",
+      7
+    ],
+    [
+      "ai_recruiter",
+      "domain_fit",
+      7
+    ],
+    [
+      "bs_detector",
+      "domain_fit",
+      7
+    ]
+  ],
+  "must_fix": [
+    [
+      "ai_hm",
+      "clarify: how 'output quality held across multi-run stress tests' was judged (rubric, golden set, pass rate) \u2014 I will ask this first in an interview"
+    ],
+    [
+      "ai_recruiter",
+      "clarify: for the Bedrock eval-gated retraining, state what the cross-model eval measures (e.g., agreement with larger LLM labels) so an AI HM sees eval rigor rather than just orchestration"
+    ],
+    [
+      "ai_recruiter",
+      "clarify: 'output quality held across multi-run stress tests' \u2014 name how quality was judged (rubric, validator pass rate, human check) if known"
+    ],
+    [
+      "bs_detector",
+      "clarify: 'output quality held across multi-run stress tests' (Capital One). An AI interviewer will ask how quality was judged: eval set, rubric, or diff vs. old outputs? Say which, or soften the claim."
+    ],
+    [
+      "bs_detector",
+      "clarify: 'tuned its prompts to pick correct grasps and judge depth' (UMIACS) has no outcome. Name what changed (e.g. qualitative improvement on the team's test scenes) if real, or present it as part of the pipeline work rather than a standalone win."
+    ]
+  ],
+  "accepted_risk_flags": [],
+  "gate_errors": 0,
+  "bullet_verdicts": {
+    "Writing Java policies that tune": {
+      "keep": 2,
+      "tighten": 1
+    },
+    "Cut LLM workflow generation time": {
+      "keep": 2,
+      "tighten": 1
+    },
+    "Precomputed a tree-style search index": {
+      "tighten": 3
+    },
+    "Rebuilt a legacy test-data workflow": {
+      "keep": 3
+    },
+    "Automated EventBridge-scheduled fine-tuning of a": {
+      "keep": 2,
+      "add_context": 1
+    },
+    "Reduced end-to-end latency 34% for": {
+      "keep": 3
+    },
+    "Shipped a space-research tool used": {
+      "add_context": 1,
+      "tighten": 1,
+      "keep": 1
+    },
+    "Built a Python pipeline for": {
+      "tighten": 2,
+      "add_context": 1
+    },
+    "Shortened research-environment setup time 30%": {
+      "keep": 3
+    },
+    "Building a RAG meal-suggestion feature": {
+      "keep": 3
+    },
+    "Co-founded a 110+ member campus": {
+      "keep": 2,
+      "tighten": 1
+    },
+    "Built a C++17 order book": {
+      "keep": 3
+    }
+  },
+  "structure_votes": {
+    "project_relevance": 2,
+    "order_capital_one_bullets": 1,
+    "ai_variant_project_swap": 1,
+    "aws_bullet_compact": 1,
+    "ai_first_within_entries": 1
+  },
+  "competitive": {
+    "ai_hm": "Y",
+    "ai_recruiter": "Y",
+    "bs_detector": "Y"
+  },
+  "passed": false,
+  "thresholds": {
+    "min_dim": 8,
+    "min_overall_mean": 8.5,
+    "consecutive_rounds": 2,
+    "max_rounds_base": 8,
+    "max_rounds_domain": 4
+  }
+}
