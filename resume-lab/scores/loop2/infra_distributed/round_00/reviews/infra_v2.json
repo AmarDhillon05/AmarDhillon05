@@ -1,0 +1,99 @@
+{
+  "persona": "infra_v2",
+  "target": "Infrastructure / distributed systems / platform / SRE internships (cloud infra, data infra, platform teams), 2026-27 cycle",
+  "memory_skim": {"strongest_3": [], "engineer_type": "", "memorable_numbers": [], "confusing": [], "skipped": [], "interview_questions": []},
+  "plain_english": [],
+  "scores": {
+    "impact_clarity": 7,
+    "quantification": 7,
+    "technical_depth": 8,
+    "concision_readability": 7,
+    "skim_test": 7,
+    "credibility": 8,
+    "ats_parseability": 8,
+    "visual_layout": 8,
+    "domain_fit": 7,
+    "human_voice": 7,
+    "plain_language": 6,
+    "overall": 8
+  },
+  "competitive_for_domain": "Y",
+  "bullet_feedback": [
+    {
+      "bullet": "Writing Java logic that sets the upper and lower bounds on EC2 capacity that Amazon Redshift reserves for operations like patching, balancing availability against cost, and backtesting it",
+      "problem": "The capacity/availability tradeoff, which is the single most on-target infra item on the page, is stated well, but the sentence ends on the dangling clause 'and backtesting it'. 'It' could mean the logic, the bounds, or the cost tradeoff, and the clause reads like an afterthought tacked on after a comma.",
+      "severity": 4,
+      "why_it_matters": "An infra HM reading the top bullet on the page should come away with 'this person built and validated a capacity model'. Right now validation is the last two words and its object is ambiguous, so the backtesting (the evidence of rigor) gets skipped.",
+      "missing_or_unclear": "clarify: what is backtested (the bounds against historical Redshift capacity usage?)",
+      "suggested_direction": "Move the validation into the main verb chain so the bullet reads build → validate → tradeoff, e.g. 'Writing and backtesting Java logic that sets the upper and lower bounds on EC2 capacity Amazon Redshift reserves for operations like patching, balancing availability against cost'."
+    },
+    {
+      "bullet": "Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries",
+      "problem": "'strict access limits' is the constraint that motivates the whole design, but it is unclear whether it means rate limits, permission restrictions, or query quotas. The bullet also ends at intent ('to cut database queries') with no outcome, unlike its neighbor bullets.",
+      "severity": 5,
+      "why_it_matters": "An infra interviewer judges a caching/precompute decision by the constraint it answers. Without knowing which limit applied, the reader can't tell whether a category tree plus Redis was the right tool, so a good design choice reads as generic 'added a cache'.",
+      "missing_or_unclear": "clarify: what kind of access limit (rate limit, read permissions, query quota); clarify: whether the Redis cache layer had any observed effect, if one is known",
+      "suggested_direction": "Name the limit concretely in the opening clause and, if no measured result exists, end on the concrete mechanism (what is a cache hit vs. a fallback to Postgres) rather than an intent phrase."
+    },
+    {
+      "bullet": "Cut end-to-end latency 34% on the pipeline that sends a 6,000+ document scraped research corpus to model inference by replacing scraper-to-S3-to-Lambda staging with Amazon Kinesis streams feeding AWS Lambda",
+      "problem": "Strong mechanism-plus-result shape, but 'a 6,000+ document scraped research corpus' is a four-word noun stack, and 'end-to-end latency' has no unit (per document? per batch run?). 6,000 documents is also small for Kinesis, so the obvious interview question is why streaming beat S3 staging at this volume.",
+      "severity": 4,
+      "why_it_matters": "The 34% only reads as a real streaming-architecture win if the reader knows what was being timed; otherwise it can be dismissed as removing an S3 hop. A skeptical infra reader will discount it slightly.",
+      "missing_or_unclear": "clarify: latency measured per document from scrape to inference result, or for the whole corpus run",
+      "suggested_direction": "Break the noun stack ('a corpus of 6,000+ scraped research documents') and name what end-to-end spans, e.g. 'from scrape to model inference'. Keep the before/after architecture contrast as is; it is the best part."
+    },
+    {
+      "bullet": "Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio's class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency",
+      "problem": "This is the second 'Redis cache in front of a database' bullet on the page and it ends at intent ('to reduce database load and latency'). The 20,000+ visits number describes the product's traffic, not anything the cache did.",
+      "severity": 3,
+      "why_it_matters": "Repeating the same technique without a result dilutes the stronger Capital One caching bullet and makes Redis look like a default reach rather than a decision.",
+      "missing_or_unclear": "clarify: what was cached (course listings, schedule queries) and how it was invalidated, if that distinguishes it from the Capital One cache",
+      "suggested_direction": "Either name what is cached and why it was the hot path (the design choice an interviewer would ask about), or cut this bullet and let the co-founding bullet carry TerpLabs."
+    },
+    {
+      "bullet": "Sustained 1.26M events/sec end-to-end over the full replay, keeping each price level's orders in a std::list FIFO inside a std::map and a hash map from order ID to list iterator for O(1) cancels",
+      "problem": "The throughput number has no execution context (single thread? what machine?), and the data-structure clause nests three containers in one breath ('std::list FIFO inside a std::map and a hash map from order ID to list iterator'), which takes a second read.",
+      "severity": 3,
+      "why_it_matters": "Throughput figures are only comparable with their conditions; a performance-engineering interviewer's first question will be 'on how many cores?'. The nested container phrase is the real design choice but is hard to parse at skim speed.",
+      "missing_or_unclear": "clarify: single-threaded or not, and the hardware the 1.26M events/sec was measured on",
+      "suggested_direction": "Split the structure description into two parallel parts ('price levels in a std::map of FIFO lists; a hash map from order ID to list position for O(1) cancels') and add the run condition if known."
+    },
+    {
+      "bullet": "Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and 90% of 30+ surveyed developers preferred it",
+      "problem": "Well-formed bullet, but it is front-end developer tooling leading the Capital One block, and three framework names (React, TypeScript, Electron, React Flow) occupy most of the first line.",
+      "severity": 2,
+      "why_it_matters": "For an infra/platform reader the Capital One section opens on UI work; the latency and caching bullets below it are more on-target and get read second.",
+      "missing_or_unclear": "",
+      "suggested_direction": "For this target, consider ordering the Capital One bullets so the 65% latency bullet comes first; optionally trim framework names that the Skills section already carries."
+    }
+  ],
+  "page_feedback": [
+    {
+      "problem": "The most distinctive infra evidence on the page (B+ tree vs LSM-tree storage engine benchmark, 1.26M events/sec, 50.9M-message replay) sits in Projects below five experience blocks, under the fold of a quick skim.",
+      "severity": 4,
+      "why_it_matters": "A storage-engine and throughput tradeoff is exactly what data-infra and platform HMs hire on; a 7-second skim catches AWS and Capital One brands but may not reach the project, so the 'performance-sensitive systems' half of the intended profile is underexposed.",
+      "suggested_direction": "Keep the section order (experience brands matter), but make sure the strongest infra items within each block come first so the skim lands on mechanisms with results, and consider whether the UMIACS block (one environment-setup bullet) needs to sit above the project."
+    },
+    {
+      "problem": "Bold metrics include '30%' on the UMIACS environment-setup bullet, which is the weakest and least infra-relevant number on the page, while the AWS capacity bullet has no anchor at all.",
+      "severity": 2,
+      "why_it_matters": "Bold steers the skim; one of seven bold anchors points at the least important claim.",
+      "suggested_direction": "Drop the bold on '30%' so the remaining anchors (65%, 34%, 50.9M, 12.8x, 1.26M) all point to systems/performance wins."
+    },
+    {
+      "problem": "Jargon a non-engineer can't restate: 'Claude skill', 'sub-skills', 'top-of-book prices', 'resyncing to the exchange's book', 'range queries'.",
+      "severity": 3,
+      "why_it_matters": "A recruiter screening before the HM may not be able to repeat what the Capital One AI bullets or the order-book bullets accomplished, which lowers pass-through at the first gate.",
+      "suggested_direction": "Lead each such bullet with a plain-language outcome clause before the technical noun (e.g. what the AI workflow generator does for developers), keeping the distinctive technical terms after it."
+    }
+  ],
+  "keep": [
+    "Implemented B+ tree and LSM-tree backends for the event log and benchmarked them on identical 2M-record workloads, where the B+ tree gave 12.8x the read throughput and 22x faster range queries at the cost of 27% more disk space",
+    "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange's book, agreeing with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices",
+    "Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance: on an EventBridge schedule a larger LLM grades its ratings, and fine-tuning runs only when the grades shift past a threshold",
+    "Deployed a space-topic research tool for Amazon Leo's public-policy team and set it up for handoff with AWS CDK infrastructure-as-code and GitHub Actions CI/CD, so Leo engineers new to the project now maintain it on AWS Fargate",
+    "Cut AI workflow generation time 65% to under 15s by replacing a Claude skill's open-ended search with focused sub-skills that call Python tools for workflow search and validation, guided by CloudWatch and OpenSearch latency logs",
+    "Technical Skills section grouping (Cloud & Infrastructure separated from Backend/Data)"
+  ]
+}
