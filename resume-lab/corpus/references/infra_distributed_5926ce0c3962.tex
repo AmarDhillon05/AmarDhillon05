@@ -1,0 +1,225 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{soul}
+\usepackage{setspace}
+
+
+
+
+
+
+
+
+
+
+
+ \renewcommand{\seriesdefault}{m}
+\usepackage{lmodern}
+
+
+
+
+
+
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+
+\pdfgentounicode=1
+
+
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-7pt}}
+
+
+
+
+
+\begin{document}
+\begin{center}{\Huge\scshape Redacted Candidate}\end{center}
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Central Florida}{Orlando, FL}
+      {Bachelor of Science in Computer Science}{May 2028}
+      
+  \resumeSubHeadingListEnd
+
+
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading 
+      {Software Engineer Intern}{Sep 2026 - Dec 2026}
+      {Tesla}{Fremont, CA}
+      \resumeItemListStart
+        \resumeItem{Designed and built \textbf{4+} features for a single-pane-of-glass (\textbf{SPoG}) observability platform for \textbf{Tesla Autopilot}.}
+        \resumeItem{Delivered a self-service \textbf{Grafana} access portal automating \textbf{3000+} annual requests for \textbf{5000+} engineers, saving \textbf{900+} hours annually and cutting access turnaround from \textbf{7+} days to under \textbf{2 minutes}.}
+        \resumeItem{Built an \textbf{MCP} server for \textbf{Grafana} knowledge objects, cutting object creation time by \textbf{80\%} and PR time by \textbf{90\%}.}
+         \resumeItem{Automated \textbf{RBAC} provisioning for Tesla's \textbf{AI Infrastructure} with \textbf{Microsoft Graph}, cutting approval time from \textbf{10+ minutes} to under \textbf{30 seconds}.}
+    \resumeItemListEnd
+    \resumeSubheading 
+      {Software Engineer Intern}{Jun 2026 - Aug 2026}
+      {Amazon}{Seattle, WA}
+      \resumeItemListStart
+        \resumeItem{Designed, built, owned, and shipped \textbf{2+} projects for the \textbf{Prime Video Recommendations} team.}
+        \resumeItem{Rewrote and optimized a \textbf{Lambda-based} image filtering service by using a \textbf{DynamoDB} cache and \textbf{Apache Spark} jobs on \textbf{Apache Hive}, increasing pipeline throughput by \textbf{46x} and reducing API latency by \textbf{70\%}.}
+        \resumeItem{Developed recommendation components for the \textbf{Amazon.com} homepage, serving \textbf{200M+} customers monthly, \textbf{90M+} customers daily, and handling \textbf{55K+} transactions per second with \textbf{deep learning} methods.}
+        \resumeItem{Instrumented \textbf{CloudWatch} for observability, ensuring \textbf{99.99\%} service availability across \textbf{390M+} daily requests.}
+    \resumeItemListEnd
+    \resumeSubheading 
+      {Software Engineer Intern}{Jan 2026 - Apr 2026}
+      {Cloudflare}{Austin, TX}
+      \resumeItemListStart
+        \resumeItem{Built, owned, and shipped \textbf{4+} high-impact \textbf{end-to-end} features for Cloudflare's \textbf{beta} product, \textbf{Containers}.}
+        \resumeItem{Scaled and architected a \textbf{15x} increase in container resource limits, leading to an enterprise contract of \textbf{\$130M} and generating \textbf{\$100K+} in revenue from users deploying production \textbf{AI agent} workloads.}
+        \resumeItem{Implemented regional and jurisdictional deployment constraints for \textbf{Containers} and \textbf{Workers}, reducing latency by up to \textbf{87\%} by allowing deployment to \textbf{9} global regions, \textbf{2+} major cities, and \textbf{2+} compliance domains.}
+        \resumeItem{Eliminated redundant updates in \textbf{Durable Objects} via state change detection, reducing writes by \textbf{57\%}.}
+    \resumeItemListEnd
+    
+    
+    
+    
+    
+    
+    
+    \resumeSubheading
+      {Quantitative Software Engineer Intern}{Jun 2025 - Aug 2025}
+      {Morgan Stanley}{New York, NY}
+      \resumeItemListStart
+          \resumeItem{Migrated a \textbf{C++} trading application to the web, reducing latency by \textbf{50\%} for \textbf{3000+} quants and traders.}
+          \resumeItem{Developed \textbf{Python} APIs for data ingestion, improving report quality by \textbf{45\%} and reducing manual work by \textbf{33\%}.}
+          \resumeItem{Optimized \textbf{Java} deal processing tools, reducing processing time by \textbf{55\%} and increasing daily processing by \textbf{200\%}.}
+    \resumeItemListEnd
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    \resumeSubHeadingListEnd
+
+
+\vspace*{-0.15in} 
+\section{Open Source 
+}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+        {\textbf{{\ul{ClickHouse}}} $|$ \emph{Go, ClickHouse, Database Drivers, HTTP, Batching, Compression, Distributed Systems}}{June 2021 -- Present}
+          \resumeItemListStart
+            \resumeItem{Authored and merged \textbf{3+} pull requests to \textbf{ClickHouse}, improving compression, security, and batch ingestion.}
+            \resumeItem{Reviewed and merged \textbf{4+} pull requests as a core open source maintainer, supporting new features and fixes.}
+            \resumeItem{Corrected \textbf{TLS} configuration and improved compression behavior across \textbf{2+ HTTP execution} paths.}
+          \resumeItemListEnd
+        \resumeProjectHeading
+        {\textbf{{\ul{Twilio}}} $|$ \emph{GraphQL, React, TypeScript, Tailwind CSS, Amplitude SDK, Twilio SDK, React Router, Vitest}}{June 2021 -- Present}
+            \resumeItemListStart
+            \resumeItem{Authored and merged \textbf{10+} pull requests to the \textbf{Twilio One Console}, improving \textbf{DX} for \textbf{335K+} organizations.}
+            \resumeItem{Shipped a developer tool that allowed state management of \textbf{3700+} feature flags, impacting \textbf{5700+} developers.}
+            \resumeItem{Implemented code-splitting and feature-flag filtering, reducing render time by \textbf{40x} and CPU parse time by \textbf{50ms}.}
+        \resumeItemListEnd
+      \resumeProjectHeading
+        {\textbf{{\underline{OpenTelemetry Collector}}} $|$ \emph{Go, Prometheus, OpenTelemetry, Observability}}{June 2021 -- Present}
+          \resumeItemListStart
+            \resumeItem{Contributed \textbf{3+} open source pull requests to \textbf{OpenTelemetry}, enhancing reliability and correctness.}
+            \resumeItem{Enabled re-aggregation for data receivers, ensuring \textbf{100\%} aggregation completeness and eliminating partial data.}
+            \resumeItem{Improved data fidelity by preserving \textbf{11} log fields in the \textbf{Cloudflare} receiver that were dropped during ingestion.}
+          \resumeItemListEnd
+      
+      
+      
+      
+      
+      
+    \resumeSubHeadingListEnd
+
+
+  
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, TypeScript, Go, Java, C++, C, JavaScript, SQL, R, C\#, HTML, CSS} \\
+     \textbf{Frameworks}{: React, Angular, FastAPI, Spring Boot, Next.js, Node.js, Express.js, Tailwind CSS, tRPC} \\
+     \textbf{Libraries}{: scikit-learn, PyTorch, TensorFlow, NumPy, Pandas, Flask, Django, OpenCV} \\
+     \textbf{Tools}{: Git, Docker, Kubernetes, Grafana, Prometheus, OpenTelemetry, ClickHouse, Splunk, Cribl, Kibana, Model Context Protocol, Elasticsearch, Jaeger, Cloudflare, Vercel, AWS, Microsoft Azure, GCP, Redis, Apache Spark, Apache Hive, Hadoop, MongoDB, Jupyter Notebook, Linux, PostgreSQL, SQLite, Selenium, Playwright} \\
+    }}
+ \end{itemize}
+
+
+\end{document}

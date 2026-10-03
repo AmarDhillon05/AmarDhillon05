@@ -1,0 +1,296 @@
+# Outcome-backed resume 6d7c86e1 (general_backend)
+
+- **Posted:** 2025-11-21 · **Level:** new_grad · **Outcome tier:** strong
+- **Outcome:** Full-time new grad SWE offer after ~80 applications (rising senior at top-10 CS school, no SWE internship)
+- **Section order:** Education → Experience → Technical Projects → Technical Skills → Leadership
+
+## Bullets (as posted, contact info removed at collection)
+
+- Built and launched SharePoint intranet portals serving 60+ employees across 3 teams, streamlining onboarding processes and centralizing knowledge management for hybrid workforce
+- Spearheaded development of a React-based organizational chart prototype for 24,000 employees, designing data flows and UI components to modernize an outdated PDF system
+- Architected a modular Spring Boot backend (users, itineraries, places, bookings, expenses) simplifying code ownership and enabling scalable feature development
+- Developed a JWT authentication system, enabling secure collaborative itinerary editing
+- Tuned Prisma queries and targeted indexing, improving database-to-client filtering latency by 5%
+- Implemented trie-based autocomplete cutting suggestion time by 90% compared to linear search for a dataset of 10,000+ home-price points and 360 job records
+- Rebuilt sponsor pipeline by securing new and reconnecting with past sponsors and corporate/university partners, increasing annual funding by over 80%
+
+## Notable format choices
+
+- C
+- o
+- u
+- r
+- s
+- e
+- w
+- o
+- r
+- k
+-  
+- l
+- i
+- n
+- e
+-  
+- u
+- n
+- d
+- e
+- r
+-  
+- e
+- d
+- u
+- c
+- a
+- t
+- i
+- o
+- n
+- ;
+-  
+- s
+- t
+- a
+- c
+- k
+-  
+- t
+- a
+- g
+- s
+-  
+- i
+- n
+-  
+- i
+- t
+- a
+- l
+- i
+- c
+- s
+-  
+- o
+- n
+-  
+- e
+- a
+- c
+- h
+-  
+- p
+- r
+- o
+- j
+- e
+- c
+- t
+-  
+- h
+- e
+- a
+- d
+- e
+- r
+- ;
+-  
+- L
+- e
+- a
+- d
+- e
+- r
+- s
+- h
+- i
+- p
+-  
+- s
+- e
+- c
+- t
+- i
+- o
+- n
+-  
+- w
+- i
+- t
+- h
+-  
+- q
+- u
+- a
+- n
+- t
+- i
+- f
+- i
+- e
+- d
+-  
+- o
+- u
+- t
+- c
+- o
+- m
+- e
+- s
+- ;
+-  
+- "
+- T
+- 1
+- 0
+-  
+- U
+- n
+- i
+- v
+- e
+- r
+- s
+- i
+- t
+- y
+- "
+-  
+- a
+- n
+- d
+-  
+- G
+- P
+- A
+-  
+- 3
+- .
+- 7
+-  
+- s
+- h
+- o
+- w
+- n
+- ;
+-  
+- p
+- r
+- o
+- j
+- e
+- c
+- t
+- s
+-  
+- (
+- f
+- u
+- l
+- l
+- -
+- s
+- t
+- a
+- c
+- k
+- ,
+-  
+- R
+- E
+- S
+- T
+-  
+- A
+- P
+- I
+- ,
+-  
+- D
+- o
+- c
+- k
+- e
+- r
+- i
+- z
+- e
+- d
+- )
+-  
+- c
+- a
+- r
+- r
+- y
+-  
+- t
+- h
+- e
+-  
+- r
+- e
+- s
+- u
+- m
+- e
+-  
+- a
+- s
+-  
+- t
+- h
+- e
+-  
+- o
+- n
+- l
+- y
+-  
+- t
+- r
+- u
+- e
+-  
+- S
+- W
+- E
+- -
+- a
+- d
+- j
+- a
+- c
+- e
+- n
+- t
+-  
+- i
+- n
+- t
+- e
+- r
+- n
+- s
+- h
+- i
+- p
+-  
+- w
+- a
+- s
+-  
+- I
+- T
+- -
+- i
+- s
+- h
+
+## Feedback it received
+
+- {'author_role': 'MechE – Student', 'text': 'Congrats!!! 80 apps and 2 offers for SWE roles in this market is really solid, T10 or not. You have a good gpa and cool projects, luck was not your key to success imo. Just scored a role myself as an upcoming new grad, so I know how relieving it is to have something settled. Hope the role is enjoyable,...', 'score': 3}
+- {'author_role': 'CS Student', 'text': 'Congrats! I can definitely relate to projects being your main differentiator with how it can steer conversation.', 'score': 3}
+- {'author_role': 'Software – Experienced', 'text': 'Nice, congratulations. Hope you will have a wonderful time there! Also, thank you for sharing all these details.', 'score': 2}

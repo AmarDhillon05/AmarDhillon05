@@ -1,0 +1,233 @@
+
+
+
+
+
+
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+
+
+
+
+
+
+
+
+
+
+
+\usepackage{times}
+
+
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\setlength{\parskip}{2px plus2mm minus2mm}
+
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+
+\pdfgentounicode=1
+
+
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-4pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \vspace{-2pt}
+      \textbf{\fontsize{11.5}{11.5}\selectfont #1} & \small#2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-10pt}
+}
+
+\newcommand{\resumeCourse}[2]{
+  \vspace{-3pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \vspace{-2pt}
+      \small#1 & \small #2 \\
+    \end{tabular*}\vspace{-8pt}
+}
+
+\newcommand{\resumeCourseNew}[2]{
+  \vspace{-3pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \vspace{-2pt}
+      \small#1 & \small #2 \\
+    \end{tabular*}\vspace{-8pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-10pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.2in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+
+
+
+
+\begin{document}
+\begin{center}{\Huge\scshape Redacted Candidate}\end{center}
+\section{\textbf{EDUCATION}}
+  \resumeSubHeadingListStart
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \vspace{-2pt}
+      \textbf{\fontsize{11.5}{11.5}\selectfont Stanford University} & \small Palo Alto, CA \\
+      \textit{\small Bachelor of Science, Computer Science; Minor in Music $\mid$ GPA: 3.8/4.0 } & \textit{\small Expected June 2027} \\
+    \end{tabular*}\vspace{-2pt}
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \vspace{-2pt}
+      \textit{\small Intended Coterminal M.S. in Computer Science} & \textit{\small Expected June 2028} \\
+    \end{tabular*}\vspace{-10pt}
+
+      \vspace{2pt}
+    \item{\textbf{\fontsize{11}{11}\selectfont Relevant Coursework}{: \small{Linear Algebra, Differential, and Integral Calculus of Several Variables, Computer Organization}}
+    }
+    \vspace{-8pt}
+    \resumeCourseNew{and Systems, Data Structures and Algorithms, Probability Theory, Machine Learning, Deep Learning for Computer Vision}{}
+    \vspace{4pt}
+        \resumeSubHeadingListEnd
+
+
+  \section{\textbf{PROFESSIONAL EXPERIENCE}}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+    {Amazon Web Services (AWS)}{Santa Clara, CA}
+      {Software Development Engineer Intern}{Jun 2026 -- Present}
+      \vspace{1pt}
+      \resumeItemListStart
+      \resumeItem{Built a typed, source-grounded knowledge graph of the entire Sagemaker HyperPod service, modeling package, build, and runtime-resource relationships; shipped a query cli enabling AI Agents to trace cross-package blast radius}
+      \resumeItem{Built a self-updating, human-gated pipeline (EventBridge, CodeBuild, S3, DynamoDB), publishing immutable snapshots and incremental diffs reducing sync latency from $\sim$1500ms to $\sim$200ms with full snapshot fallback}
+      \resumeItem{Engineered an optimistic-concurrency state ledger and crash-safe publishing protocol; hardened the system with 50+ tests covering state-machine invariants, concurrent interleavings, and partial-failure recovery}
+      \resumeItemListEnd
+
+
+    \resumeSubheading
+    {Stanford Center For Artificial Intelligence In Medicine \& Imaging}{Palo Alto, CA}
+      {Researcher -- Principal Investigator: Bao Do, MD}{Sept 2025 -- Mar 2026}
+      \vspace{1pt}
+      \resumeItemListStart
+        \resumeItem{Built an automated retrieval pipeline linking radiology reports to case images by orchestrating 5+ external APIs (Gemini, Google Images, and internal libraries), removing $\sim$90\% of manual lookup time for clinicians}
+        \resumeItem{Implemented structured-text extraction logic to convert unformatted radiology prose into typed clinical features (location, borders, signal characteristics, enhancement), enabling consistent downstream reasoning and retrieval}
+        \resumeItem{Developed fault-tolerant request sequencing, retries, and response validation to handle high-variance API formats and ensure consistent output quality}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Sundial}{Palo Alto, CA}
+      {Software Engineer Intern}{Jul 2024 -- Sep 2024}
+      \resumeItemListStart
+      \vspace{1pt}
+        \resumeItem{Implemented a modular Python forecasting component using Facebook Prophet, outperforming the existing production model by 120\% (MAPE) and enabling drop-in replacement for the company’s analytics pipeline}
+        \resumeItem{Designed a lightweight anomaly detector that reduced false positives for power users, using Spark SQL on S3-backed event logs to compute behavior-based thresholds}
+        \resumeItem{Delivered clean, well-documented model code adopted directly into Sundial’s production analytics pipeline}
+      \resumeItemListEnd
+          \vspace{-2pt}
+  \resumeSubHeadingListEnd
+
+
+  \section{\textbf{PROJECTS}}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+    {Hidden Studios AdTech Platform}{}
+    {Next.js, Supabase, TypeScript}{May 2025 -- Jul 2025}
+    \vspace{1pt}
+    \resumeItemListStart
+        \resumeItem{Built a backend data model for campaign scheduling, including tables for campaigns, ads, time slots, and linked media}
+        \resumeItem{Implemented ad impression and forecast logic by scraping Fortnite.gg player-count data through custom API endpoints}
+        \resumeItem{Decomposed a 1500+ line Next.js dashboard into modular components, fixing critical workflow bugs (incorrect game ID mapping, scheduler desync, forecast parameter issues) for reliable end-to-end campaign creation}
+    \resumeItemListEnd
+
+    \resumeSubheading
+    {Timestamping Video Game Eliminations with Computer Vision}{}
+    {Python, LaTeX}{Apr 2025 -- Jun 2025}
+    \vspace{1pt}
+    \resumeItemListStart
+        \resumeItem{Curated a custom detection dataset (165 events, $\sim$1,650 frames) with color-jitter augmentation strategies}
+        \resumeItem{Fine-tuned YOLOv8-nano (2.5M params) on $<$200 images, achieving 0.61 F1 and 0.49s mean temporal error, doubling precision compared to a baseline template matcher}
+        \resumeItem{Engineered a lightweight inference pipeline (OpenCV + ffmpeg) that processes a 14-minute VOD in 1.5 minutes on CPU, generating highlight clips with sub-frame accuracy}
+    \resumeItemListEnd 
+
+    \resumeSubheading
+    {Explicit/Implicit Heap Allocator}{}
+    {Unix, C}{May 2024 -- Jun 2024}
+    \vspace{1pt}
+    \resumeItemListStart
+        \resumeItem{Implemented the “malloc", “realloc", and “free" functions optimizing for request throughput and memory utilization}
+        \resumeItem{Incorporated an explicit list of nodes to assign optimal locations for new memory requests and lower memory fragmentation}
+        \resumeItem{Achieved 91\% memory utilization via testing on heap activity memory requests from Emacs, Cmake, and Firefox}
+    \resumeItemListEnd
+
+      \resumeSubHeadingListEnd
+
+
+
+    \section{\textbf{TECHNICAL SKILLS}}
+ \begin{itemize}[leftmargin=0in, label={}]
+    \item{
+        \textbf{Languages}{: \small{Python, TypeScript, C++, SQL, C, JavaScript, HTML/CSS}} \\
+        \vspace{1pt}
+        \textbf{Frameworks/Libraries}{: \small{React.js, Next.js, React Native, Supabase, Flask, Pandas, NumPy, Scikit-learn, PyTorch, Matplotlib}} \\
+        \vspace{1pt}
+        \textbf{Developer Tools}{: \small{Git, Github, Unix/Linux, Vim, VS Code, Apache Spark, Snowflake, Jupyter Notebook}} \\
+        \vspace{1pt}
+    }
+ \end{itemize}
+
+
+\end{document}

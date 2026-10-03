@@ -1,0 +1,84 @@
+
+ Redacted Candidate
+Education
+    
+    
+    University of California, Los Angeles (UCLA)Expected June GRADYEAR
+    Bachelor of Science in Computer ScienceLos Angeles, CA
+    
+
+
+
+    Experience
+    
+    
+    Software Development Engineer InternSep 2026 – Present
+    Amazon (Amazon Web Services)Boston, MA
+    
+    Extended Amazon’s Remote MCP server with 8 endpoints by integrating an internal work-management service (similar to Jira), enabling hundreds of thousands of employees to execute workflows directly from a chatbot.
+    Built specialized AI agents for internal work-management workflows, allowing agent-to-agent (A2A) coordination for custom tasks such as summarization and board updates while handling thousands of production requests.
+    Implemented A2A authentication and support for user-mocking agents for secure agent interactions and handoffs.
+    Improved production reliability and debuggability by adding logging and over a hundred unit, wiring, and deployment tests, catching possible failures before release and validating end-to-end deployment behavior.
+    
+    
+    
+    Software Engineering InternJune 2026 – Sep 2026
+    Google (YouTube)San Bruno, CA
+    
+    Engineered 10-bit software AV1 HDR video playback for the YouTube Android app via low-level ARM/NEON SIMD vectorization in C++, improving the video quality and playback performance for millions of users.
+    Defined per-device video resolution caps (e.g. 1080p) for dav1d software decoding, filtering higher-resolution formats out of the playback selection to prevent thermal throttling and battery drain on lower-end devices.
+    Built a Java-based shader effect debug UI and OpenGL video pipeline to accelerate developer iteration speed.
+    Integrated custom fragment shaders to allow video effects across thousands of DRM-protected shows and movies.
+    Resolved memory leaks, migrated deprecated code, and improved format filtering across ExoPlayer and YouTube.
+    
+    
+    
+    Software Engineering InternJune 2025 – Sep 2025
+    VideoLANRemote
+    
+    Built a shared audio dynamics core, cutting duplicate code by 20% and binary size by 5% to speed up downloads.
+    Added ggml/OpenCV to VLC, ported 3 modules to C++, and upgraded to SAM3 to support text segmentation.
+    Designed SAM2 object segmentation and YuNet face detection to be able to track over 100 concurrent targets.
+    Implemented 5 different dithering algorithms to allow users to convert videos into GIF files at varying qualities.
+    
+    
+
+
+
+    Projects
+    
+    
+    yt-media-storage | C++, FFmpeg, SIMD, OpenMP, Qt 6, libsodium, WirehairFeb 2026 – Present
+    
+    Built a C++ tool (YTSTORAGESTARS stars, YTSTORAGEFORKS forks) that can convert desktop files into YouTube videos for storage.
+    Implemented SIMD intrinsics, OpenMP parallelization, and cache optimizations to speed up conversion by 100x.
+    Designed a lightweight UI using Qt 6 and added libsodium encryption to enhance usability and security.
+    Used CRC and Wirehair error correction to recover data corrupted by lossy video compression algorithms.
+    Reached #5 on Hacker News (Y Combinator) in 12 hours, drawing thousands of views and new contributors.
+    Published a technical explanation video on YouTube with over YTIMPRESSIONS impressions, educating over YTVIEWERS viewers.
+    
+    
+    
+    mcav | Java, GLSL, libVLC, OpenCV, QEMU, VNC, TeamCity, MavenJune 2020 – Present
+    
+    Built a 12-module, 150K-line Java media framework (MCAVSTARS stars, MCAVFORKS forks) whose unified player API streams real-time video from VLC, OpenCV, Chromium, VNC, and QEMU sources across four pluggable render backends.
+    Designed a pure-GPU (GLSL fragment shader) video codec with O(1) per-pixel random access, improving BD-rate over 40% with VMAF-scored optimization rounds to reach 10 ms/frame at 1080p for integrated graphics cards.
+    Engineered a low-latency pipeline API with nearly 50 different documented video effects that can be applied.
+    Self-hosted a TeamCity CI/CD pipeline that publishes releases to a Maven repository, gated with 2,500+ tests.
+    
+    
+
+
+
+    Technical Skills
+    [leftmargin=0.15in, label=]
+     
+        Languages: Java, C/C++, OCaml, JavaScript/TypeScript, Assembly  
+        Frameworks & Libraries: Spring, FFmpeg, OpenCV, libVLC, ExoPlayer, Qt, OpenMP, React, Next.js, Tailwind  
+        Technologies: AWS, AI Agents, MCP, Git, CMake, Maven, TeamCity, OpenGL, Android, GLSL, AV1, NEON/SIMD  
+        Awards: Dean's Honors List
+    
+    
+
+
+

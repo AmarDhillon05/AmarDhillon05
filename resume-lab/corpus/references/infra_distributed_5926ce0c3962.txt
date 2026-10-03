@@ -1,0 +1,82 @@
+Redacted Candidate
+Education
+University of Central Florida
+Bachelor of Science in Computer Science
+
+Orlando, FL
+May 2028
+
+Experience
+Software Engineer Intern
+
+Sep 2026 - Dec 2026
+
+Tesla
+
+Fremont, CA
+• Designed and built 4+ features for a single-pane-of-glass (SPoG) observability platform for Tesla Autopilot.
+• Delivered a self-service Grafana access portal automating 3000+ annual requests for 5000+ engineers, saving
+900+ hours annually and cutting access turnaround from 7+ days to under 2 minutes.
+• Built an MCP server for Grafana knowledge objects, cutting object creation time by 80% and PR time by 90%.
+• Automated RBAC provisioning for Tesla’s AI Infrastructure with Microsoft Graph, cutting approval time
+from 10+ minutes to under 30 seconds.
+
+Software Engineer Intern
+
+Jun 2026 - Aug 2026
+
+Amazon
+Seattle, WA
+• Designed, built, owned, and shipped 2+ projects for the Prime Video Recommendations team.
+• Rewrote and optimized a Lambda-based image filtering service by using a DynamoDB cache and Apache
+Spark jobs on Apache Hive, increasing pipeline throughput by 46x and reducing API latency by 70%.
+• Developed recommendation components for the Amazon.com homepage, serving 200M+ customers monthly,
+90M+ customers daily, and handling 55K+ transactions per second with deep learning methods.
+• Instrumented CloudWatch for observability, ensuring 99.99% service availability across 390M+ daily requests.
+
+Software Engineer Intern
+
+Jan 2026 - Apr 2026
+
+Cloudflare
+Austin, TX
+• Built, owned, and shipped 4+ high-impact end-to-end features for Cloudflare’s beta product, Containers.
+• Scaled and architected a 15x increase in container resource limits, leading to an enterprise contract of $130M and
+generating $100K+ in revenue from users deploying production AI agent workloads.
+• Implemented regional and jurisdictional deployment constraints for Containers and Workers, reducing latency by
+up to 87% by allowing deployment to 9 global regions, 2+ major cities, and 2+ compliance domains.
+• Eliminated redundant updates in Durable Objects via state change detection, reducing writes by 57%.
+
+Quantitative Software Engineer Intern
+
+Jun 2025 - Aug 2025
+
+Morgan Stanley
+New York, NY
+• Migrated a C++ trading application to the web, reducing latency by 50% for 3000+ quants and traders.
+• Developed Python APIs for data ingestion, improving report quality by 45% and reducing manual work by 33%.
+• Optimized Java deal processing tools, reducing processing time by 55% and increasing daily processing by 200%.
+
+Open Source
+ClickHouse | Go, ClickHouse, Database Drivers, HTTP, Batching, Compression, Distributed Systems
+• Authored and merged 3+ pull requests to ClickHouse, improving compression, security, and batch ingestion.
+• Reviewed and merged 4+ pull requests as a core open source maintainer, supporting new features and fixes.
+• Corrected TLS configuration and improved compression behavior across 2+ HTTP execution paths.
+Twilio | GraphQL, React, TypeScript, Tailwind CSS, Amplitude SDK, Twilio SDK, React Router, Vitest
+• Authored and merged 10+ pull requests to the Twilio One Console, improving DX for 335K+ organizations.
+• Shipped a developer tool that allowed state management of 3700+ feature flags, impacting 5700+ developers.
+• Implemented code-splitting and feature-flag filtering, reducing render time by 40x and CPU parse time by 50ms.
+OpenTelemetry Collector | Go, Prometheus, OpenTelemetry, Observability
+• Contributed 3+ open source pull requests to OpenTelemetry, enhancing reliability and correctness.
+• Enabled re-aggregation for data receivers, ensuring 100% aggregation completeness and eliminating partial data.
+• Improved data fidelity by preserving 11 log fields in the Cloudflare receiver that were dropped during ingestion.
+
+Technical Skills
+Languages: Python, TypeScript, Go, Java, C++, C, JavaScript, SQL, R, C#, HTML, CSS
+Frameworks: React, Angular, FastAPI, Spring Boot, Next.js, Node.js, Express.js, Tailwind CSS, tRPC
+Libraries: scikit-learn, PyTorch, TensorFlow, NumPy, Pandas, Flask, Django, OpenCV
+Tools: Git, Docker, Kubernetes, Grafana, Prometheus, OpenTelemetry, ClickHouse, Splunk, Cribl, Kibana, Model
+Context Protocol, Elasticsearch, Jaeger, Cloudflare, Vercel, AWS, Microsoft Azure, GCP, Redis, Apache Spark, Apache
+Hive, Hadoop, MongoDB, Jupyter Notebook, Linux, PostgreSQL, SQLite, Selenium, Playwright
+
+

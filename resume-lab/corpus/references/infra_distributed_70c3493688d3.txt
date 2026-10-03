@@ -1,0 +1,169 @@
+
+ Redacted Candidate
+SUMMARY
+
+  
+ Backend engineer who owned the API, data pipeline, and test infrastructure carrying a B2B platform from 3K to 20K users and enterprise rollouts at CTBC Bank, MSI, and HPE. Optimized 140+ APIs (27.7% faster), scaled async pipelines from 3M to 20M+ text chunks, and cut production hotfixes by 90%; built integration test infrastructure at Google. M.C.S. at Rice, Dec. 2026.
+
+
+
+WORK EXPERIENCE
+
+  
+  
+    Software Engineering InternJun. 2026 – Aug. 2026
+    GoogleTaipei, Taiwan
+    
+      Test Infrastructure: Built 3 integration test infrastructures from a zero baseline (Java, Python), onboarding 400+ test suites across 200+ smart home device types, with 90%+ unit test coverage for the infrastructure itself
+      Automated Failure Triage: Built an LLM-backed service that triages scheduled integration test runs and posts root-cause summaries directly onto issue tickets, replacing manual log inspection and cutting failure narrow-down time by 20+ minutes per issue
+      Local Reproduction Tooling: Extended the service to reproduce device failures locally against virtual devices instead of waiting on cloud runs, cutting manual reproduction time by 85%; shipped and adopted by the team
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    Backend EngineerDec. 2024 – Aug. 2025
+    MaiAgent Co., Ltd. – Award-Winning B2B GenAI StartupTaipei, Taiwan
+    
+      API Optimization: Optimized 140+ RESTful APIs through SQL query refactoring, connection pooling (Elasticsearch, Cohere, OpenAI), and Django caching; cut response time of 13 high-traffic APIs by 27.7% overall and eliminated N+1 queries
+      CI/CD & Testing: Built a GitHub Actions CI pipeline with pytest unit and E2E coverage, reaching 67% code coverage from a zero baseline; reduced production hotfixes by 90% initially and 50% long term; managed database migrations in the CD pipeline
+      Open Source: Contributed 14 merged pull requests to LlamaIndex (15K+ stars), fixing bugs and adding features across the AWS Bedrock, Claude, Elasticsearch, Cohere, OpenAI, and MCP Client integrations
+    
+  
+
+
+
+
+
+
+
+
+  
+    Backend Engineer InternSep. 2024 – Dec. 2024
+    MaiAgent Co., Ltd. – Award-Winning B2B GenAI StartupTaipei, Taiwan
+    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      Data Pipeline: Built an async indexing pipeline with asyncio and Celery, 3.5x faster parsing while scaling 3M to 20M+ text chunks
+      Real-Time Communication: Implemented a WebSocket notification system with Redis pub/sub for file parsing status; built event-driven architecture for agent state transitions, pushing render triggers to the frontend for live UI updates
+    
+
+
+
+EDUCATION
+
+  
+  
+    Rice University - Top 20 U.S. UniversityAug. 2025 – Dec. 2026 (Expected)
+    M.C.S., Computer Science (GPA: 4.00/4.00)Houston, TX
+  
+  
+    National Yang Ming Chiao Tung University (NYCU) - Top 3 Taiwan UniversitySep. 2020 – Jun. 2024
+    B.S., Industrial Engineering and Management (GPA: 4.07/4.30, Two-Time Dean's List)Hsinchu, Taiwan
+
+
+
+PROJECTS
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    Relational Database Engine from Scratch | C++, B+ Tree, Query Optimization, TPC-HAug. 2025 – Dec. 2025
+    
+      Storage Engine: Built the C++ persistence layer, a buffer manager with LRU eviction and page pinning, slotted-page record storage, and a B+ tree index supporting range scans
+      Query Processing: Implemented the relational operators, including a sort-merge join over external merge sort that spills to disk, under a SQL compiler and a cost-based optimizer that orders joins from cardinality statistics; ran TPC-H at scale factor 1
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    Full-Stack Social Network (Ricebook) | React, Redux Toolkit, Express, MongoDB, OAuth 2.0, VitestSep. 2025 – Dec. 2025
+    
+      Full-Stack Build: Built a React 19 single-page app on Redux Toolkit against an Express 5/MongoDB API, with session-cookie auth plus Google OAuth 2.0 linking, a follower graph, a comment-threaded feed, and Cloudinary image upload
+      Testing & Deployment: Covered the Redux store with 30 Vitest suites at 97% statement coverage and the API with Jasmine integration tests; deployed frontend and backend to separate hosts with CORS-aware session config
+    
+
+
+
+AWARDS
+
+
+  Presidential Hackathon Winner (2024, Top 5 Nationally) - Urban noise agent: structured-output LLM pipeline and tool calling
+    23rd Golden Peak Award (2025) - Outstanding Commercial Product, MaiAgent AI Platform
+  
+  
+
+
+
+SKILLS
+[leftmargin=0in, label=]
+  
+
+
+
+
+
+
+
+
+
+
+
+
+ Languages: Python, Java, C/C++, TypeScript | Backend: Django, FastAPI, Express.js | Frontend: HTML, CSS, JavaScript, React
+ APIs: RESTful, WebSocket, Redis Pub/Sub | Databases: PostgreSQL, MongoDB, Elasticsearch, Neo4j, Milvus | Async: asyncio, Celery
+ Testing: pytest, JUnit, Vitest | DevOps: GitHub Actions, Docker, git, Nginx, Shell Script | AWS: EC2, S3, RDS, ElastiCache
+
+

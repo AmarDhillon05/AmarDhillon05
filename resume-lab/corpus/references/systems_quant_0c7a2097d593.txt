@@ -1,0 +1,205 @@
+
+ Redacted Candidate
+Education
+  
+  
+    
+     
+    Columbia UniversityNew York City, NY
+    Bachelors of Engineering in Computer ScienceExpected May 2027
+        
+            GPA: 3.95/4.0 — Deans List | Selected Coursework: Data Structures, Advanced Programming, Operating Systems, Databases, User Interface Design, Discrete Math, Linear Algebra
+            Activities: Columbia Organizatoin of Rising Entrepreneurs, Columbia Graphical User Interface Lab, Columbia Build Lab, Application Development Initiative, Tawianese American Student Association E-board Member
+        
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+        
+  
+
+
+
+Experience
+    
+
+    
+    Susquehanna International GroupBala Cynwyd, Pennsylvania
+        
+        Incoming Quantitative Strategy DeveloperJune 2026 - August 2026
+        
+        
+         
+        GoogleSunnyvale, California
+            
+            Software Engineering InternMay 2025 - Aug 2025
+            
+                Slashed over $250,000 in compute costs annually by implementing a native VM root filesystem for Google's global compute fleet using C++ that increased read performance by 96.3% and write performance by 60.12% by removing the necessity for a host-to-guest passthrough filesystem. First intern project on team ever to make it to production.
+                Independently designed the system and added repeatable benchmarks confirming read/write gains; implemented comprehensive Unit Tests and Integration Tests to ensure robust deployment of the VM filesystem solution.
+            
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        National Institute of Biomedical Imaging and Bioengineering (NIBIB)Bethesda, MD
+            
+            Software Engineering Summer Intern, IDEAS LabJune 2024 - August 2024
+            
+                Launched a medical augmented reality application tool for, integrating Unity, C#, and Photon Fusion for multi-user interactions. Leveraged OpenAI and Microsoft Azure Speech Cognition Services for intelligent voice commands.
+                Altered NIH's AR research roadmap as youngest intern by presenting project to the Scientific Director of the NIBIB and a team of 12 surgeons and residency students to demonstrate the potential for AR to transform surgical workflows.
+                
+            
+
+        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+        
+        
+        Stanford Ophthalmic Informatics and Artificial Intelligence GroupPalo Alto, CA
+            
+            Research InternMay 2023 - September 2023
+            
+                Executed self-led research leveraging Google Cloud Platform, Hugging Face Transformers, NumPy, Pandas, PyTorch, and Gradio to compare CNNs against visual large language models for glaucoma recognition.
+                Harnessed few-shot and chain-of-thought prompting to improve VLLM performance by 30%.
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+            
+    
+
+
+Personal Projects 
+    
+    
+     OmNom — Autonomous Food Delivery Robot (Click Here)
+    
+    
+        Built a 6ft autonomous end-to-end food delivery robot at TreeHacks 2025 from scratch in 36 hours that fetches food across Stanford's campus, winning Most Creative Hack. Combined YOLOv8 + CLIP indoor navigation, GPS/IMU outdoor waypoint following, and a GPT-4 vision state machine for autonomous iPad kiosk ordering.
+    
+
+
+     MIRA — AI Smart Mirror for Virtual Try-Ons (Click Here)
+    
+    
+    Built a smart mirror that delivers real-time styling feedback, winning the $10,000 VISA Prize at TreeHacks 2026. Combined MediaPipe pose tracking, 2D garment compositing, a Claude Agents SDK loop with a persistent memory layer, Perplexity Sonar for live product search, and ElevenLabs + Deepgram for real-time conversational AI.
+    
+
+
+     YouTube Channel w/ 10k Subscribers (Click Here)
+    
+    
+        Grew a YouTube channel on computer science, university, and tech to 10,000+ subscribers and 7,000,000+ impressions, landing recurring brand sponsorships with productivity tools including Akiflow, BenQ, Scrimba, etc.
+    
+
+
+     PlayTypr — Multiplayer Typeracing Game (Click Here)
+    
+    
+        Launched a real-time multiplayer typeracing game built with TypeScript, WebSockets, and Express, deployed on Railway, reaching ~1,000 daily active users at peak.
+    
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+
+
+
+
+
+
+        
+    
+        
+
+
+
+
+
+
+
+
+
+        
+    
+
+
+Technical Skills
+
+    
+    
+    [leftmargin=0.15in, label=] 
+        Awards: 5x Hackathon Winner (TreeHacks x2, YHack, Devfest, etc.), Afore Grant Fellow, Perfect ACT and PSAT  
+        
+        Languages: C, C++, C#, Python, Java, HTML/CSS/JavaScript, SQL, TypeScript, Bash, Protobuf  
+        
+        
+        Technologies/Frameworks: Git, PyTorch, Next.js, React, MRTK3, Photon, Redis, Heroku, TensorFlow, Linux/UNIX, gRPC, LangChain, CI/CD, Tmux, Docker, Postman, Vercel, Netlify, Unity, Xcode, Figma   
+        
+        Interests: Content Creation,Video Editing, Vlogging, Calisthenics, Hiking, Swimming, Saxophone, Anime  
+    

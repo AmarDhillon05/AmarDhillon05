@@ -1,0 +1,263 @@
+
+
+
+
+
+
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome}
+
+
+
+
+
+
+
+
+
+
+
+
+\usepackage{charter}
+
+\makeatletter
+\newcommand{\github}[1]{
+   \href{#1}{\faGithub}
+}
+\makeatother
+
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+
+\usepackage{titlesec}
+\usepackage{xcolor}
+
+\titleformat{\section}
+  {\color{black}\large\scshape\raggedright}
+  {}{0em}{}[\vspace{-1pt}\titlerule\vspace{-4pt}]
+\titlespacing*{\section}{0pt}{10pt}{10pt}
+
+
+
+\urlstyle{same}
+
+
+
+
+
+\pdfgentounicode=1
+
+
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubText}[1]{
+    \vspace{-5pt}\item
+  {\small #1}\vspace{-2pt}
+}
+
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[1]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+
+
+
+
+\begin{document}
+\begin{center}{\Huge\scshape Redacted Candidate}\end{center}
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Stanford University}{Stanford, CA}
+      {Bachelor of Science in Computer Science, GPA: 4.09/4.0
+      }
+      {Expected June 2028}
+      
+      \resumeSubText{Relevant Coursework: Operating System Principles, Computer Organization and Systems, Programming Abstractions, Mathematical Foundations of Computing, Introduction to Probability Theory, Linear Algebra and Multivariable Calculus, Frontier Systems}
+    
+      
+  \resumeSubHeadingListEnd
+
+
+
+\section{Work Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Stripe}{Seattle, WA}
+      {Software Engineer Intern}{Jun. 2026 -- Sep. 2026}
+      \resumeItemListStart
+        \resumeItem{Built a \textbf{Ruby} code generation step to automate Radar fraud protection integration for new payment methods}
+        \resumeItem{Designed and implemented a Slack agent to triage and respond to run queries, \textbf{automatically addressing 25\% of questions}}
+        \resumeItem{Overhauled \textbf{programmatic merchant deactivation}, resolving remediation flows for \textbf{230k+} merchants}
+      \resumeItemListEnd
+      
+      
+      
+      
+      
+      
+    \resumeSubheading
+      {Stanford Carta}{Stanford, CA}
+      {Backend Software Engineer}{Jan. 2026 -- Present}
+      \resumeItemListStart
+        \resumeItem{Patched \textbf{10 security issues} by migrating Carta, Stanford's course planning platform, from \textbf{ASP.NET 6} to \textbf{ASP.NET 8}}
+        \resumeItem{Reduced course search latency by \textbf{90\%} by implementing \textbf{client-side fuzzy search}, enabling real-time search previews}
+      \resumeItemListEnd
+     \resumeSubheading
+      {LastingLearn, Inc.}{Stanford, CA}
+      {Software Engineer Intern}{Oct. 2025 -- Jan. 2026}
+      \resumeItemListStart
+        \resumeItem{Architected an \textbf{AI-native} SAT prep platform using \textbf{React} and \textbf{Express.js}, integrating LLMs to generate personalized practice problems based on student performance history.}
+        \resumeItem{Engineered a high-performance leaderboard using \textbf{Redis} Sorted Sets, reducing query latency by \textbf{90\%} compared to standard SQL aggregations and handling \textbf{500+} concurrent updates.}
+      \resumeItemListEnd
+     
+     
+     
+     
+     
+     
+     
+     
+     \resumeSubheading
+      {Baker Engineering and Risk Consultants, Inc.}{Houston, TX}
+      {Software Engineer Intern}{Jun. 2024 -- Aug. 2024}
+      \resumeItemListStart
+        \resumeItem{Developed event tree analysis software in \textbf{C\#/.NET WPF} with dynamic tree editing, reducing analysis time by \textbf{80\%}}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+  
+\section{Projects}
+    \resumeSubHeadingListStart
+
+
+      
+      
+      
+      
+      
+
+        
+       \resumeProjectHeading
+        {\textbf{CiteSite} $|$ \emph{Python, FastAPI, LangGraph}}
+        \resumeItemListStart
+            \resumeItem{Won \textbf{\$500} at YHack 2026, Yale University's annual hackathon}
+            \resumeItem{Integrated academic research databases to verify the relevance of cited sources within academic research papers to stated claims}
+        \resumeItemListEnd
+
+        
+       \resumeProjectHeading
+        {{\underline{\textbf{BobaFinder}}} $|$ \emph{Python, LangGraph, LangChain, MongoDB Atlas}}
+        \resumeItemListStart
+            \resumeItem{Built \textbf{multi-agent} market entry research system determining the best location for a boba chain restaurant}
+            \resumeItem{Used \textbf{LangGraph Swarm} to enable multi-agent collaboration}
+        \resumeItemListEnd
+        
+
+       \resumeProjectHeading
+        { {\underline{\textbf{Decanter}}} $|$ \emph{JavaScript, React, Typescript, Next.js, Node.js, Supabase, PostgreSQL}}
+        \resumeItemListStart
+            \resumeItem{Built volunteer management platform for Science Olympiad tournaments using \textbf{Next.js} and \textbf{Supabase}, implementing Google \textbf{OAuth} authentication, attracting \textbf{75+} users in the first month}
+            
+            \resumeItem{Used \textbf{Vitest} to automate unit testing on server functions with \textbf{97\%} code coverage, enhancing codebase resiliency}
+        \resumeItemListEnd  
+       
+        
+      
+      
+      
+      
+      
+      
+      
+    \resumeSubHeadingListEnd
+
+
+
+
+
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: C, C\#, C++, CSS, HTML, Java, JavaScript/TypeScript, Python} \\  
+     \textbf{Tools}{: Azure DevOps, Docker, Git, Linux, VS Code, Visual Studio} \\
+     \textbf{Frameworks}{: Express.js, React, .NET, Next.js, Node.js} \\
+     \textbf{Databases}{: SQL, MongoDB, PostgreSQL}
+    }}
+ \end{itemize}
+
+
+\section{Honors}
+    \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     3x American Invitational Mathematics Examination (AIME) qualifier \\ 
+    }}
+ \end{itemize}
+
+
+
+\end{document}

@@ -1,0 +1,78 @@
+R EDACTED C ANDIDATE
+EDUCATION
+
+Stanford University
+
+Palo Alto, CA
+Bachelor of Science, Computer Science; Minor in Music | GPA: 3.8/4.0
+Expected June 2027
+Intended Coterminal M.S. in Computer Science
+Expected June 2028
+Relevant Coursework: Linear Algebra, Differential, and Integral Calculus of Several Variables, Computer Organization
+and Systems, Data Structures and Algorithms, Probability Theory, Machine Learning, Deep Learning for Computer Vision
+
+PROFESSIONAL EXPERIENCE
+
+Amazon Web Services (AWS)
+
+Santa Clara, CA
+Software Development Engineer Intern
+Jun 2026 – Present
+• Built a typed, source-grounded knowledge graph of the entire Sagemaker HyperPod service, modeling package, build, and
+runtime-resource relationships; shipped a query cli enabling AI Agents to trace cross-package blast radius
+• Built a self-updating, human-gated pipeline (EventBridge, CodeBuild, S3, DynamoDB), publishing immutable snapshots and
+incremental diffs reducing sync latency from ∼1500ms to ∼200ms with full snapshot fallback
+• Engineered an optimistic-concurrency state ledger and crash-safe publishing protocol; hardened the system with 50+ tests covering
+state-machine invariants, concurrent interleavings, and partial-failure recovery
+Stanford Center For Artificial Intelligence In Medicine & Imaging
+Palo Alto, CA
+Researcher – Principal Investigator: Bao Do, MD
+Sept 2025 – Mar 2026
+• Built an automated retrieval pipeline linking radiology reports to case images by orchestrating 5+ external APIs (Gemini, Google
+Images, and internal libraries), removing ∼90% of manual lookup time for clinicians
+• Implemented structured-text extraction logic to convert unformatted radiology prose into typed clinical features (location, borders,
+signal characteristics, enhancement), enabling consistent downstream reasoning and retrieval
+• Developed fault-tolerant request sequencing, retries, and response validation to handle high-variance API formats and ensure
+consistent output quality
+Sundial
+Palo Alto, CA
+Software Engineer Intern
+Jul 2024 – Sep 2024
+• Implemented a modular Python forecasting component using Facebook Prophet, outperforming the existing production model by
+120% (MAPE) and enabling drop-in replacement for the company’s analytics pipeline
+• Designed a lightweight anomaly detector that reduced false positives for power users, using Spark SQL on S3-backed event logs to
+compute behavior-based thresholds
+• Delivered clean, well-documented model code adopted directly into Sundial’s production analytics pipeline
+
+PROJECTS
+
+Hidden Studios AdTech Platform
+Next.js, Supabase, TypeScript
+May 2025 – Jul 2025
+• Built a backend data model for campaign scheduling, including tables for campaigns, ads, time slots, and linked media
+• Implemented ad impression and forecast logic by scraping Fortnite.gg player-count data through custom API endpoints
+• Decomposed a 1500+ line Next.js dashboard into modular components, fixing critical workflow bugs (incorrect game ID mapping,
+scheduler desync, forecast parameter issues) for reliable end-to-end campaign creation
+
+Timestamping Video Game Eliminations with Computer Vision
+Python, LaTeX
+Apr 2025 – Jun 2025
+• Curated a custom detection dataset (165 events, ∼1,650 frames) with color-jitter augmentation strategies
+• Fine-tuned YOLOv8-nano (2.5M params) on <200 images, achieving 0.61 F1 and 0.49s mean temporal error, doubling precision
+compared to a baseline template matcher
+• Engineered a lightweight inference pipeline (OpenCV + ffmpeg) that processes a 14-minute VOD in 1.5 minutes on CPU,
+generating highlight clips with sub-frame accuracy
+
+Explicit/Implicit Heap Allocator
+Unix, C
+May 2024 – Jun 2024
+• Implemented the “malloc”, “realloc”, and “free” functions optimizing for request throughput and memory utilization
+• Incorporated an explicit list of nodes to assign optimal locations for new memory requests and lower memory fragmentation
+• Achieved 91% memory utilization via testing on heap activity memory requests from Emacs, Cmake, and Firefox
+
+TECHNICAL SKILLS
+Languages: Python, TypeScript, C++, SQL, C, JavaScript, HTML/CSS
+Frameworks/Libraries: React.js, Next.js, React Native, Supabase, Flask, Pandas, NumPy, Scikit-learn, PyTorch, Matplotlib
+Developer Tools: Git, Github, Unix/Linux, Vim, VS Code, Apache Spark, Snowflake, Jupyter Notebook
+
+

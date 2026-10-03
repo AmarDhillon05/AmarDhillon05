@@ -1,0 +1,76 @@
+R EDACTED C ANDIDATE
+E DUCATION
+Stanford University
+
+Stanford, CA
+
+Bachelor of Science in Computer Science, GPA: 4.09/4.0
+Expected June 2028
+Relevant Coursework: Operating System Principles, Computer Organization and Systems, Programming Abstractions,
+Mathematical Foundations of Computing, Introduction to Probability Theory, Linear Algebra and Multivariable Calculus,
+Frontier Systems
+
+W ORK E XPERIENCE
+Stripe
+
+Seattle, WA
+
+Software Engineer Intern
+Jun. 2026 – Sep. 2026
+• Built a Ruby code generation step to automate Radar fraud protection integration for new payment methods
+• Designed and implemented a Slack agent to triage and respond to run queries, automatically addressing 25% of
+questions
+• Overhauled programmatic merchant deactivation, resolving remediation flows for 230k+ merchants
+
+Stanford Carta
+
+Stanford, CA
+
+Backend Software Engineer
+Jan. 2026 – Present
+• Patched 10 security issues by migrating Carta, Stanford’s course planning platform, from ASP.NET 6 to ASP.NET 8
+• Reduced course search latency by 90% by implementing client-side fuzzy search, enabling real-time search
+previews
+
+LastingLearn, Inc.
+
+Stanford, CA
+
+Software Engineer Intern
+Oct. 2025 – Jan. 2026
+• Architected an AI-native SAT prep platform using React and Express.js, integrating LLMs to generate personalized
+practice problems based on student performance history.
+• Engineered a high-performance leaderboard using Redis Sorted Sets, reducing query latency by 90% compared to
+standard SQL aggregations and handling 500+ concurrent updates.
+
+Baker Engineering and Risk Consultants, Inc.
+
+Houston, TX
+
+Software Engineer Intern
+Jun. 2024 – Aug. 2024
+• Developed event tree analysis software in C#/.NET WPF with dynamic tree editing, reducing analysis time by 80%
+
+P ROJECTS
+CiteSite | Python, FastAPI, LangGraph
+• Won $500 at YHack 2026, Yale University’s annual hackathon
+• Integrated academic research databases to verify the relevance of cited sources within academic research papers to
+stated claims
+BobaFinder | Python, LangGraph, LangChain, MongoDB Atlas
+• Built multi-agent market entry research system determining the best location for a boba chain restaurant
+• Used LangGraph Swarm to enable multi-agent collaboration
+Decanter | JavaScript, React, Typescript, Next.js, Node.js, Supabase, PostgreSQL
+• Built volunteer management platform for Science Olympiad tournaments using Next.js and Supabase,
+implementing Google OAuth authentication, attracting 75+ users in the first month
+• Used Vitest to automate unit testing on server functions with 97% code coverage, enhancing codebase resiliency
+
+T ECHNICAL S KILLS
+Languages: C, C#, C++, CSS, HTML, Java, JavaScript/TypeScript, Python
+Tools: Azure DevOps, Docker, Git, Linux, VS Code, Visual Studio
+Frameworks: Express.js, React, .NET, Next.js, Node.js
+Databases: SQL, MongoDB, PostgreSQL
+
+H ONORS
+3x American Invitational Mathematics Examination (AIME) qualifier
+
+

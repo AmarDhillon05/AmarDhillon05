@@ -1,0 +1,128 @@
+Redacted Candidate
+Education
+—————————————————————————————————————————–
+Northwestern University
+B.A. in Mathematics and Computer Science, B.M. in Trombone Performance
+
+Expected December 2027
+Evanston, IL
+
+•
+
+Cumulative GPA: 3.8/4.0 | Major GPA: 3.9/4.0 | Dean’s List: 8/8 Quarters
+
+•
+
+Relevant Coursework: Probability and Stochastic Processes, Derivatives Theory, Regression Analysis, Machine Learning,
+Deep Reinforcement Learning, Operating Systems, Parallel Computing, Linear Algebra, Design and Analysis of Algorithms
+
+Experience
+—————————————————————————————————————————–
+IMC Trading
+Incoming Quantitative Trading Intern
+
+June 2026 – August 2026
+Chicago, IL
+
+PEAK6 Capital Management
+Incoming Quantitative Trading Intern
+
+May 2026 – June 2026
+Chicago, IL
+
+LinkedIn
+Machine Learning Engineer Intern - Ads
+
+June 2025 – September 2025
+Mountain View, CA
+
+•
+
+Engineered a Dirichlet-parameterizing deep CTR model with DCNv2 interaction towers, optimizing a digamma-based loss to
+output α, β parameters for Thompson Sampling and predict full click-type distributions versus singular scalar output
+
+•
+
+Implemented clipped inverse propensity weighting to mitigate selection bias and applied isotonic calibration across
+chargeability and click-type heads, ensuring strict probability alignment for multiple ad objectives
+
+•
+
+Designed vectorized murmur-hash input pipelines and instrumented per-head ranking metrics, improving inference accuracy to
+reduce loss by 17% and driving a $1.2M+ increase in annualized advertisement revenue
+
+IMC Trading
+Launchpad - Quantitative Trading Cohort
+
+May 2025
+Chicago, IL
+
+•
+
+Secured 1st place out of 30 in IMC Trading’s futures market-making competition by implementing dynamic bid-ask spread sizing
+using the Avellaneda–Stoikov model and data-feed pipeline monitoring to capture order-flow edge
+
+•
+
+Engaged in intensive lectures and simulations covering options pricing, futures mechanics, market microstructure, and overall
+quantitative trading strategies, with hands-on applications in risk management and position sizing
+
+Susquehanna International Group
+Discovery Day - Quantitative Trading Cohort
+•
+
+April 2025
+Bala Cynwyd, PA
+
+Achieved the highest PnL in the trading cohort of 40 by engineering a pandas-based batch processing pipeline to analyze
+30,000+ BTC order book records across multiple exchanges, identifying arbitrage opportunities and securing profit
+
+Projects
+—————————————————————————————————————————–
+Texas Hold’em Poker Solver (GitHub)
+
+August 2025 – December 2025
+
+•
+
+Engineered a high-throughput Monte Carlo CFR C++ solver to approximate Nash Equilibria via iterative self-play,
+implementing zero-allocation hot paths to generate 2.2M+ ground-truth samples at >50,000 iterations/sec
+
+•
+
+Designed an XGBoost and PyTorch pipeline to predict optimal mixed-strategy probability distributions from 58 engineered features,
+achieving a 0.274 KL Divergence and 0.206 Total Variation Distance to compress the solution space for real-time inference
+
+NU FinTech Club Trading Competition (GitHub)
+
+June 2025 – September 2025
+
+•
+
+Advanced a C++ exchange simulator to support dynamic market scenarios, including manual trading and multi-exchange
+arbitrage; researching current market structure to inform order book and participant design
+
+•
+
+Engineered Python trading agents, including sporadic signal-based traders and participants placing information-rich large orders, to
+simulate complex market dynamics and test algorithm robustness in volatile exchange conditions
+
+Honors and Awards
+—————————————————————————————————————————–
+IMC Trading Market-Making Competition | 1st Place Overall
+
+Susquehanna International Group Arbitrage Competition | 1st Place Overall
+American Invitational Mathematics Examination Qualifier (4x) | Top 5% in the American Mathematics Competition
+IMC Trading Low Latency Competition | 2nd Place Overall
+Northwestern University Algorithmic Trading Competition | 2nd Place Cryptocurrency Exchange
+USA Coding Olympiad | Gold Division, Top 7% in Contestants
+
+Additional
+—————————————————————————————————————————–
+Programming Languages: Python, C++, C, Golang, Rust, Java, TypeScript, Bash, x86 Assembly
+Frameworks/Libraries: NumPy, TensorFlow, Pandas, PyTorch, scikit-learn, PyTest, PyBind, GTest, Node.js, Matplotlib
+Infrastructure: UNIX, CUDA, Amazon Web Services, GCC, OpenMP, Nginx, Jenkins, Docker, Git, GitHub + Actions
+Interests: Texas Hold’em Poker, Teamfight Tactics, League of Legends, Classical Music, Orchestral Conducting, Tarantino
+Movies
+
+

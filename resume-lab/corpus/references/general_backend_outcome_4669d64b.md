@@ -1,0 +1,336 @@
+# Outcome-backed resume 4669d64b (general_backend)
+
+- **Posted:** 2026-04-12 · **Level:** intern · **Outcome tier:** top
+- **Outcome:** NVIDIA Graphics Systems SWE intern offer (sophomore CS at T50 school; also several other interns listed)
+- **Section order:** Education → Experience → Projects → Skills
+
+## Bullets (as posted, contact info removed at collection)
+
+- Develop low-level graphics drivers in C/C++ to implement DirectX API calls for NVIDIA GPU architectures
+- Diagnosed signal instability in the acceleration pedal sensor to achieve a smooth 0-100% linear torque output
+- Configured the vehicle speaker system using a PWM, low-pass filter, and amplifier, passing FSAE safety requirements by achieving an 80dB+ Ready-to-Drive Sound at 2 meters
+- Engineered the backend for a real-time pose-matching tool deployed across metro stations, utilizing Flask and OpenCV to optimize video processing loops for sub-100ms latency
+- Developed a mobile client for a multi-model AI platform serving 20k+ users, achieving 6x faster response times
+- Programmed low-level I/O drivers by directly interfacing with UART registers via Port I/O and managing memory-mapped video framebuffers, enabling real-time serial debugging logs and high-resolution graphics (custom x86-64 OS)
+- Built a CPU-based rasterizer in C++20, implementing a rendering pipeline without external graphics libraries
+
+## Notable format choices
+
+- E
+- d
+- u
+- c
+- a
+- t
+- i
+- o
+- n
+-  
+- k
+- e
+- p
+- t
+-  
+- t
+- o
+-  
+- o
+- n
+- e
+-  
+- l
+- i
+- n
+- e
+-  
+- (
+- n
+- o
+-  
+- G
+- P
+- A
+- )
+- ;
+-  
+- i
+- n
+- c
+- o
+- m
+- i
+- n
+- g
+-  
+- o
+- f
+- f
+- e
+- r
+-  
+- l
+- i
+- s
+- t
+- e
+- d
+-  
+- f
+- i
+- r
+- s
+- t
+-  
+- i
+- n
+-  
+- E
+- x
+- p
+- e
+- r
+- i
+- e
+- n
+- c
+- e
+- ;
+-  
+- X
+- Y
+- Z
+- -
+- s
+- t
+- y
+- l
+- e
+-  
+- b
+- u
+- l
+- l
+- e
+- t
+- s
+-  
+- 1
+- -
+- 2
+-  
+- l
+- i
+- n
+- e
+- s
+- ;
+-  
+- t
+- a
+- i
+- l
+- o
+- r
+- e
+- d
+-  
+- t
+- o
+-  
+- l
+- o
+- w
+- -
+- l
+- e
+- v
+- e
+- l
+-  
+- s
+- y
+- s
+- t
+- e
+- m
+- s
+-  
+- w
+- i
+- t
+- h
+-  
+- p
+- r
+- o
+- j
+- e
+- c
+- t
+- s
+-  
+- (
+- O
+- S
+-  
+- k
+- e
+- r
+- n
+- e
+- l
+- ,
+-  
+- r
+- a
+- s
+- t
+- e
+- r
+- i
+- z
+- e
+- r
+- ,
+-  
+- R
+- P
+- i
+-  
+- P
+- i
+- c
+- o
+-  
+- f
+- i
+- r
+- m
+- w
+- a
+- r
+- e
+- )
+- ;
+-  
+- s
+- k
+- i
+- l
+- l
+- s
+-  
+- s
+- p
+- l
+- i
+- t
+-  
+- L
+- a
+- n
+- g
+- u
+- a
+- g
+- e
+- s
+- /
+- E
+- m
+- b
+- e
+- d
+- d
+- e
+- d
+- /
+- T
+- o
+- o
+- l
+- s
+- ;
+-  
+- a
+- u
+- t
+- h
+- o
+- r
+-  
+- s
+- a
+- i
+- d
+-  
+- b
+- u
+- l
+- l
+- e
+- t
+- s
+-  
+- r
+- e
+- w
+- r
+- i
+- t
+- t
+- e
+- n
+-  
+- s
+- h
+- o
+- r
+- t
+- e
+- r
+-  
+- a
+- n
+- d
+-  
+- u
+- n
+- d
+- e
+- r
+- s
+- t
+- a
+- n
+- d
+- a
+- b
+- l
+- e
+-  
+- t
+- o
+-  
+- n
+- o
+- n
+- -
+- t
+- e
+- c
+- h
+- n
+- i
+- c
+- a
+- l
+-  
+- H
+- R
+
+## Feedback it received
+
+- {'author_role': 'Recruiter', 'text': 'Damm! This is a seriously impressive resume. The crazy thing is you are just getting started. Congrats! You will honestly be able to get away with having a resume longer than a page when you graduate. Thanks for sharing your experience!', 'score': 11}
+- {'author_role': 'Recruiter', 'text': 'Wow. If I had to pick one, I would say my specialty is recruiting embedded software engineers. You have an insanely bright future ahead of you. I work in aerospace and defense. Embedded Software is probably the most difficult and expensive candidate to find in the entire industry. I feel there are 30 in the country getting passed around. This...', 'score': 3}
+- {'author_role': 'Commenter', 'text': 'sophomore CS Major and so many interns? reveal your secrets... (as I understand it, sophomore is 2nd year right? So you probably got 2-3 vacations up until now to intern in?, im not from US, so I dont know how the uni systens work there, but how?)', 'score': 36}

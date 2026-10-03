@@ -1,0 +1,96 @@
+Education
+
+Redacted Candidate
+
+University of Waterloo
+BMath. in Honours Math
+
+Waterloo, ON
+09/2023 - 04/2028
+
+Skills
+Languages: C/C++, Python, MLIR, Bash
+Software: LLVM, CUDA, CuteDSL, Pytorch, Git
+Others: GPU Kernels, Compilers, GPU Drivers, Linux, Kernel Debugging, LLMs
+
+Experience
+Deep Learning Library Performance Software Engineer Intern
+
+05/2026 – 09/2026
+
+Nvidia
+Santa Clara, CA
+• Optimized CuteDSL mixed-precision MoE kernels with swapAB, Split-K, 2CTA, HBM prefetch, and PDL, improving
+low-latency inference by up to 88% vs. production baseline; Integrated kernels into vLLM and FlashInfer
+• Added mixed MXFP4 and MXFP8 support to grouped and block-scaled GEMMs, enabling mixed-precision quantization
+configurations for LLM deployments
+• Productionized low-latency GEMMs by resolving BF16 OOB TMEM accesses and mixed-MX TMA scale-factor load
+correctness issues; added Split-K, fused bias, fused alpha, and tunable PDL launch counts for decode workloads
+• Built a single-node LLM execution simulator for multi-node deployments, used by 5+ engineers to validate end-to-end
+speedups and to investigate serving optimizations on Blackwell for low-latency decode
+
+Model Performance Engineer Intern
+
+01/2026 – 05/2026
+
+Baseten
+San Francisco, CA
+• Optimized OpenAI Whisper inference on H100, achieving 5x throughput and 60% latency reduction via encoder batching,
+kernel fusion, and custom runtime scheduling on TRT-LLM
+• Implemented LLM inference optimizations in TRT-LLM, integrating custom CUDA kernels using CUTLASS and
+CuteDSL, TurboQuant KV-cache quantization and RadixMLP scatter/gather kernels, improving memory efficiency and
+long-context/batched decode performance; presented kernel/runtime optimizations to FDEs and led technical reviews
+• Re-architected speaker diarization pipeline, delivering 15x peak throughput and 80% latency reduction through
+parallelization and model-level optimizations for a multi-million dollar enterprise deployment
+• Built a privacy-preserving LLM request hashing + replay system for deterministic workload re-simulation, enabling
+performance regression testing and capacity planning
+
+Compiler Engineer Intern
+
+05/2025 – 12/2025
+
+Nvidia
+Toronto, ON
+• Built and owned an internal Python–C++ profiler for CUTLASS latency decomposition with up to 21x lower overhead
+than torch.profiler and adopted by 15+ systems developers
+• Reduced end-to-end JIT compilation time by 20% by designing a deterministic Merkle-tree hashing system 5× faster
+than SHA256 for multi-GB binaries, improving kernel generation latency and iteration speed
+• Reduced kernel launch overhead by 60% by eliminating Python→C++→CUDA dispatch hotspots, achieving
+performance within 10% of tvm-ffi and over 2x faster than Triton
+• Core contributor to an MLIR-based CUDA dialect, designing and lowering 20+ ops to enable Python DSL access to
+graphs, streams, and async memory operations
+
+Software Engineer Intern
+
+09/2024 – 12/2024
+
+AMD
+Markham, ON
+• Delivered AMD’s most stable GPU software release, by resolving 25+ kernel-level crashes, hangs, and performance
+regressions, using crash dumps, firmware logs, and register-level analysis
+• Shaped display-pipeline research, shown by my ML upscaling PoC being adopted and later expanded into an internal
+technical conference paper by a successor, by prototyping a lightweight PyTorch/ROCm super sampling model
+• Strengthened display-pipeline stability on next-gen AMD GPUs/APUs by building C/C++ kernel drivers, ensuring
+robust framebuffer→display behavior for Ryzen AI and Radeon hardware
+• Contributed upstream fixes to AMD’s open-source Linux display driver, resolving defects in color calibration, frame
+synchronization, DSC decoding, and visual corruption
+
+Security Developer Co-op
+
+01/2024 – 05/2024
+
+eSentire
+Waterloo, ON
+• Performed LLM security research on production backends, analyzing attack surfaces including prompt injection, data
+exfiltration, and privilege escalation in deployed pipelines
+• Cut ingestion latency by 50%+ by optimizing JSON parsing and Snowflake execution paths, reducing pipeline stalls
+in real-time analytics
+• Improved log-processing throughput by 4× through algorithmic optimizations in Python’s data pipeline
+
+Projects
+Chess Bot | PyTorch, Python, C++, CUDA, Alpha Beta Pruning, NNUE
+• Built a GPU-accelerated chess engine using custom CUDA kernels for evaluation/search
+InvestIQ | Python, C++, IBKR API, CUDA
+• Built a low-latency market data pipeline for backtesting and feature generation with numerous trading algorithms
+
+

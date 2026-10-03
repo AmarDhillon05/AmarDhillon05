@@ -1,0 +1,198 @@
+
+
+
+
+
+
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fontawesome}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{hyperref}
+
+
+
+
+
+
+
+
+
+
+
+
+\usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.75in} 
+\addtolength{\textheight}{1.5in} 
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+
+\titleformat{\section}{
+  \vspace{-8pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}] 
+
+
+\pdfgentounicode=1
+
+
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+
+
+
+
+\begin{document}
+\begin{center}{\Huge\scshape Redacted Candidate}\end{center}
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+    {University of Wisconsin - Madison}{Sep 2023 - May 2027}
+    {B.S. Computer Science}{\textbf{GPA: 3.9/4.00}}
+        \resumeSubHeadingListEnd
+        
+\begin{itemize}[leftmargin=1em, label={}]
+    \item \textbf{\footnotesize Relevant Coursework:} \begin{footnotesize}Algorithms, Operating Systems, Big Data Systems, Artificial Intelligence \& Discrete Math  \end{footnotesize}
+    
+    
+\end{itemize}
+
+
+
+
+\section{Experience}
+    \resumeSubHeadingListStart
+
+        \resumeSubheading
+            {Software Engineer Intern }{May 2026 - Present}
+            {Netflix}{Los Gatos, CA}
+            \resumeItemListStart
+                \resumeItem{Drove \textbf{\$15M+} in projected savings by leading a UX-focused A/B test on the member cancel flow to improve subscriber save rate, spanning the React frontend to several upstream GraphQL and Falcor endpoints.}
+                \resumeItem{Architected a cross-repo migration unifying Change Plan routing across 3 flows from hardcoded logic to Netflix's Odyssey state-machine platform, shipping in my final week the first flow end-to-end.}
+                \resumeItem{Pioneered monitoring-as-code for my team's backend services, building a Gradle mechanism that publishes dashboards/alerts as version-controlled JSON via existing Jenkins CI, replacing manual UI configuration.}
+                \resumeItem{Patched a critical regex bug on cssjanus, an \textbf{open-source} RTL CSS library with \textbf{600,000+} weekly downloads.}
+            \resumeItemListEnd 
+
+        \resumeSubheading
+            {Founding Engineer}{Dec 2025 - May 2026}
+            {Intelligible AI}{Remote}
+            \resumeItemListStart
+            \resumeItem{Built the data ingestion pipelines for the first \textbf{4} database connectors (Postgres, MySQL, Snowflake, BigQuery) across multiple Lambdas + Step Functions, enabling our customers to securely integrate their production data.}
+            \resumeItem{Integrated Fivetran Connect Card  with a webhook-driven sync lifecycle across \textbf{8} Lambdas, expanding the platform from \textbf{4} native connectors to \textbf{700+} supported data sources without per-source auth code.}
+              \resumeItem{Led migration of infrastructure-as-code from AWS CDK to SST, cutting PR deploy times by \textbf{85\%} and enabling local preview environments that accelerated the team's ship cadence from weekly to daily.}
+            \resumeItemListEnd 
+        \resumeSubheading
+            {Software Engineer Intern}{June 2025 - Aug 2025}
+            {CargoLabs}{Remote}
+\resumeItemListStart
+    \resumeItem{Eliminated \textbf{8+ hours/month} of manual work by automating bordereau reporting w/ an  AWS + SQL cron job.}
+    \resumeItem{Standardized authentication pipelines across \textbf{7} \textbf{AWS Cognito} user pools while implementing consistent UI design, creating unified user workflows and reducing authentication complexity across all portals.} 
+    \resumeItem{Built a comprehensive customer service portal enabling the CargoLabs team to efficiently manage and troubleshoot client website problems, reducing average issue resolution time by \textbf{45-60\%}.}
+            \resumeItemListEnd 
+    \resumeSubHeadingListEnd
+
+
+
+\section{Personal Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{BadgerBase} {\faLink} \hspace{0.01cm}  $|$ \emph{Next.js, Node.js, MySQL, Vercel, GitHub Actions, Redis}}{}
+          \resumeItemListStart  
+            \resumeItem{Created a web app that has reached \textbf{2000+ active student users} that optimizes the UW Madison course sign-up experience by integrating course, professor, and grade data from multiple sources.}
+            \resumeItem{Reverse engineered UW APIs to build daily data collection pipelines using GitHub Actions for reliable updates.}
+            \resumeItem{Designed a MySQL database serving enrollment \& grade data for \textbf{20,000+} sections, with a Redis caching layer and serverless API endpoints to optimize latency and scalability during peak traffic.}
+\resumeItem{Built an automated Amazon SES email service that alerts students when competitive sections \& courses open, built on a secure Supabase Auth system with a personalized dashboard for managing course alerts.}
+
+ \resumeItemListEnd
+
+\resumeProjectHeading
+    {\textbf{March Madness Bracket Predictor} $|$ \emph{Python, XGBoost, LightGBM, scikit-learn}}{}
+    \resumeItemListStart
+        \resumeItem{Built an ensemble model (XGBoost, LightGBM, HistGBM) trained on KenPom efficiency ratings, seeding, and historical tournament data, achieving \textbf{81\% win prediction accuracy} and winning a 20-participant bracket pool.}
+        \resumeItem{Developed a simulation script to project round-by-round outcomes across the full 64-team bracket, propagating win probabilities through each stage of the tournament.}
+    \resumeItemListEnd
+    
+    
+    \resumeSubHeadingListEnd
+
+
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, TypeScript/JavaScript, Java, C, SQL} \\[1pt]
+  \textbf{Frontend}{: Next.js, React, Tailwind, Zustand, PostHog, Vercel} \\[1pt]
+  \textbf{Backend}{: Node.js, Bun, Hono, GraphQL, Spring Boot, Flask, DynamoDB, Redis, MySQL, Supabase} \\[1pt]
+  \textbf{Infrastructure}{: AWS (Lambda, Step Functions, ECS, S3), SST, Docker, Railway,
+  GitHub Actions}
+    }}
+ \end{itemize}
+
+
+
+
+
+\end{document}

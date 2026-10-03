@@ -1,0 +1,197 @@
+
+
+
+
+
+
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage[pro]{fontawesome5}
+\usepackage{tabularx}
+\usepackage{geometry}
+
+
+
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\geometry{
+  left=0.35in,   
+  right=0.35in,  
+  top=0.25in,    
+  bottom=0.25in, 
+  headheight=0in, 
+  headsep=0in,    
+}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+
+\titleformat{\section}{
+  \vspace{-16pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-3pt}]
+
+
+\pdfgentounicode=1
+
+
+\providecommand{\ResumePhone}{}
+\providecommand{\ResumeEmail}{}
+
+
+
+\newcommand{\resumeItem}[1]{
+    \linespread{0.85}
+  \item\small{
+    {#1}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+    \vspace{-3pt}
+    \item
+    \begin{tabular*}{0.98\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+      \vspace{-3pt} \textbf{#1} & #2 \\
+      \textit{\small #3} & \textit{\footnotesize #4} \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth\vspace{-6pt}}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-3pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.13in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.2in]\vspace{-2pt}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-6pt}}
+
+
+
+
+
+\begin{document}
+\begin{center}{\Huge\scshape Redacted Candidate}\end{center}
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Waterloo}{Waterloo, ON}
+      {BMath. in Honours Math}{09/2023 - 04/2028}
+  \resumeSubHeadingListEnd
+
+
+
+\vspace{-5pt}
+\section{Skills}
+ \begin{itemize}[leftmargin=0.08in, label={}]
+    \vspace{-3pt}\setlength\itemsep{-6pt}
+    \item{\small{
+        \textbf{Languages}{: C/C++, Python, MLIR, Bash}
+     }}
+    \item{\small{
+        \textbf{Software}{: LLVM, CUDA, CuteDSL, Pytorch, Git}
+    }}
+    \item{\small{
+        \textbf{Others}{: GPU Kernels, Compilers, GPU Drivers, Linux, Kernel Debugging, LLMs}
+    }}
+ \end{itemize}
+
+
+\vspace{-10pt}
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Deep Learning Library Performance Software Engineer Intern}{05/2026 -- 09/2026}
+      {Nvidia}{Santa Clara, CA}
+      \resumeItemListStart
+        \resumeItem{Optimized \textbf{CuteDSL} mixed-precision MoE kernels with swapAB, Split-K, 2CTA, HBM prefetch, and PDL, improving low-latency inference by up to \textbf{88\%} vs. production baseline; Integrated kernels into \textbf{vLLM} and \textbf{FlashInfer}}
+        \resumeItem{Added mixed MXFP4 and MXFP8 support to grouped and block-scaled GEMMs, enabling mixed-precision quantization configurations for LLM deployments}
+        \resumeItem{Productionized low-latency GEMMs by resolving BF16 OOB TMEM accesses and mixed-MX TMA scale-factor load correctness issues; added Split-K, fused bias, fused alpha, and tunable PDL launch counts for decode workloads}
+        \resumeItem{Built a single-node LLM execution simulator for multi-node deployments, used by \textbf{5+} engineers to validate end-to-end speedups and to investigate serving optimizations on Blackwell for low-latency decode}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Model Performance Engineer Intern}{01/2026 -- 05/2026}
+      {Baseten}{San Francisco, CA}
+      \resumeItemListStart
+        \resumeItem{Optimized OpenAI Whisper inference on H100, achieving \textbf{5x} throughput and \textbf{60\%} latency reduction via encoder batching, kernel fusion, and custom runtime scheduling on TRT-LLM}
+        \resumeItem{Implemented LLM inference optimizations in TRT-LLM, integrating custom \textbf{CUDA} kernels using CUTLASS and CuteDSL, TurboQuant KV-cache quantization and RadixMLP scatter/gather kernels, improving memory efficiency and long-context/batched decode performance; presented kernel/runtime optimizations to FDEs and led technical reviews}
+        \resumeItem{Re-architected speaker diarization pipeline, delivering \textbf{15x} peak throughput and \textbf{80\%} latency reduction through parallelization and model-level optimizations for a \textbf{multi-million} dollar enterprise deployment}
+        \resumeItem{Built a privacy-preserving LLM request hashing + replay system for deterministic workload re-simulation, enabling performance regression testing and capacity planning}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Compiler Engineer Intern}{05/2025 -- 12/2025}
+      {Nvidia}{Toronto, ON}
+      \resumeItemListStart
+        \resumeItem{Built and owned an internal \textbf{Python–C++} profiler for CUTLASS latency decomposition with up to \textbf{21x} lower overhead than torch.profiler and adopted by \textbf{15+} systems developers}
+        \resumeItem{Reduced end-to-end \textbf{JIT} compilation time by \textbf{20\%} by designing a deterministic Merkle-tree hashing system \textbf{5×} faster than SHA256 for multi-GB binaries, improving kernel generation \textbf{latency} and iteration speed}
+        \resumeItem{Reduced kernel launch overhead by \textbf{60\%} by  eliminating \textbf{Python$\rightarrow$C++$\rightarrow$CUDA} dispatch hotspots, achieving performance within \textbf{10\%} of tvm-ffi and over \textbf{2x} faster than Triton}
+        \resumeItem{Core contributor to an \textbf{MLIR}-based CUDA dialect, designing and lowering \textbf{20+} ops to enable Python DSL access to graphs, streams, and async memory operations}
+    \resumeItemListEnd
+    \resumeSubheading
+      {Software Engineer Intern}{09/2024 -- 12/2024}
+      {AMD}{Markham, ON}
+      \resumeItemListStart
+        \resumeItem{Delivered AMD’s most stable GPU software release, by resolving \textbf{25+} kernel-level crashes, hangs, and performance regressions, using crash dumps, \textbf{firmware} logs, and \textbf{register-level} analysis}
+        \resumeItem{Shaped display-pipeline research, shown by my \textbf{ML upscaling} PoC being adopted and later expanded into an internal technical conference paper by a successor, by prototyping a lightweight \textbf{PyTorch}/\textbf{ROCm} super sampling model}
+        \resumeItem{Strengthened display-pipeline stability on next-gen AMD GPUs/APUs by building \textbf{C/C++ kernel} drivers, ensuring robust framebuffer$\rightarrow$display behavior for Ryzen AI and Radeon hardware}
+        \resumeItem{Contributed upstream fixes to AMD’s open-source \textbf{Linux} display driver, resolving defects in color calibration, frame synchronization, DSC decoding, and visual corruption}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Security Developer Co-op}{01/2024 -- 05/2024}
+      {eSentire}{Waterloo, ON}
+      \resumeItemListStart
+        \resumeItem{Performed \textbf{LLM security research} on production backends, analyzing attack surfaces including prompt injection, data exfiltration, and privilege escalation in deployed pipelines}
+        \resumeItem{Cut \textbf{ingestion latency} by \textbf{50\%+} by \textbf{optimizing} JSON parsing and Snowflake execution paths, reducing pipeline stalls in \textbf{real-time analytics}}
+        \resumeItem{Improved log-processing throughput by \textbf{4×} through \textbf{algorithmic optimizations} in \textbf{Python}’s data pipeline}
+        
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+
+\section{Projects}
+    \resumeSubHeadingListStart
+        \resumeProjectHeading{\textbf{Chess Bot} $|$ PyTorch, Python, C++, CUDA, Alpha Beta Pruning, NNUE}{}
+        \resumeItemListStart
+            \resumeItem{Built a \textbf{GPU-accelerated} chess engine using custom \textbf{CUDA} kernels for evaluation/search}
+        \resumeItemListEnd
+
+        
+        
+        
+        
+        
+
+        \resumeProjectHeading{\textbf{InvestIQ} $|$ Python, C++, IBKR API, CUDA}{}
+        \resumeItemListStart
+            \resumeItem{Built a low-latency market data pipeline for backtesting and feature generation with numerous trading algorithms}
+        \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+
+\end{document}

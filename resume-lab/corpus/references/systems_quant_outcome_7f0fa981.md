@@ -1,0 +1,350 @@
+# Outcome-backed resume 7f0fa981 (systems_quant)
+
+- **Posted:** 2026-05-08 · **Level:** intern · **Outcome tier:** strong
+- **Outcome:** HFT-adjacent FPGA role/internship offer after 4 interview rounds (EE + Physics student, Australia) following resume rewrite
+- **Section order:** Summary → Education → Skills and Certifications → Experience → Projects → Achievements → Leadership
+
+## Bullets (as posted, contact info removed at collection)
+
+- Developed and verified communications and signal-processing IP cores in SystemVerilog and VHDL using Libero SoC and ModelSim, successfully integrating them into COTS FPGA hardware and decreasing system lead-times
+- Designed custom I2C IP on FPGA to achieve communication to a Raspberry Pi test controller via SSH for python V&V
+- Emulated deep-sea acoustics with HIL and SIL testing to verify achieved communication-safe FPGA signal correlation
+- Designed an Azure-based asset data automation pipeline to improve visibility of safety and operational risk metrics
+- Implemented feature extraction using VHDL on the AMD Zynq Ultrascale+ 4x2 RFSoC with OpenCPI
+- Designed a custom channeliser to investigate the impacts of quantisation and sampling noise on measurement fidelity
+- Developed a python validation model for analysis and functional verification enabling future machine learning ID
+
+## Notable format choices
+
+- M
+- a
+- s
+- t
+- e
+- r
+-  
+- c
+- o
+- p
+- y
+-  
+- w
+- i
+- t
+- h
+-  
+- a
+-  
+- 3
+- -
+- l
+- i
+- n
+- e
+-  
+- S
+- u
+- m
+- m
+- a
+- r
+- y
+-  
+- a
+- c
+- t
+- i
+- n
+- g
+-  
+- a
+- s
+-  
+- t
+- h
+- e
+-  
+- h
+- o
+- o
+- k
+- ;
+-  
+- s
+- k
+- i
+- l
+- l
+- s
+-  
+- s
+- p
+- l
+- i
+- t
+-  
+- b
+- y
+-  
+- F
+- P
+- G
+- A
+-  
+- D
+- e
+- s
+- i
+- g
+- n
+- /
+- T
+- o
+- o
+- l
+- s
+- /
+- P
+- r
+- o
+- g
+- r
+- a
+- m
+- m
+- i
+- n
+- g
+- /
+- E
+- l
+- e
+- c
+- t
+- r
+- o
+- n
+- i
+- c
+- s
+-  
+- p
+- l
+- u
+- s
+-  
+- c
+- e
+- r
+- t
+- i
+- f
+- i
+- c
+- a
+- t
+- i
+- o
+- n
+- s
+- ;
+-  
+- A
+- c
+- h
+- i
+- e
+- v
+- e
+- m
+- e
+- n
+- t
+- s
+-  
+- a
+- n
+- d
+-  
+- L
+- e
+- a
+- d
+- e
+- r
+- s
+- h
+- i
+- p
+-  
+- s
+- e
+- c
+- t
+- i
+- o
+- n
+- s
+- ;
+-  
+- t
+- w
+- o
+- -
+- p
+- a
+- g
+- e
+- ;
+-  
+- a
+- u
+- t
+- h
+- o
+- r
+-  
+- s
+- a
+- i
+- d
+-  
+- r
+- e
+- s
+- u
+- m
+- e
+-  
+- r
+- e
+- w
+- r
+- i
+- t
+- t
+- e
+- n
+-  
+- t
+- o
+-  
+- "
+- w
+- h
+- a
+- t
+-  
+- I
+-  
+- c
+- a
+- n
+-  
+- d
+- o
+-  
+- f
+- o
+- r
+-  
+- y
+- o
+- u
+- "
+-  
+- w
+- i
+- t
+- h
+-  
+- p
+- r
+- o
+- p
+- e
+- r
+-  
+- X
+- Y
+- Z
+- ;
+-  
+- v
+- e
+- r
+- y
+-  
+- f
+- e
+- w
+-  
+- q
+- u
+- a
+- n
+- t
+- i
+- f
+- i
+- e
+- d
+-  
+- b
+- u
+- l
+- l
+- e
+- t
+- s
+-  
+- (
+- d
+- o
+- m
+- a
+- i
+- n
+-  
+- r
+- e
+- l
+- i
+- e
+- s
+-  
+- o
+- n
+-  
+- t
+- o
+- o
+- l
+- /
+- p
+- r
+- o
+- t
+- o
+- c
+- o
+- l
+-  
+- s
+- p
+- e
+- c
+- i
+- f
+- i
+- c
+- i
+- t
+- y
+- )
+
+## Feedback it received
+
+- {'author_role': 'Recruiter', 'text': "Congrats! Solid experience. I know the advice is usually 1 page for students but for someone like you, having more than 1 page isn't an issue because you have solid experience and great projects. You learned one of the most important life skills along the process which is the ability to take and implement feedback. You did a great job...", 'score': 5}
+- {'author_role': 'Machine Learning – Entry-level', 'text': 'Congrats on the job and the good resume! Some minor things: \\- June, not Jun, Sept., not Sep \\- some weird usage of hyphens \\- how many pages did you hand in? 1 or 2 (derived from the master, which is a great approach by the way!) \\- Python, not python All the best!', 'score': 8}
+- {'author_role': 'Software – Experienced', 'text': 'Congratulatioms, hope you will have wonderful time there! I am glad the reviews helped you, your resume is pretty nice.', 'score': 3}

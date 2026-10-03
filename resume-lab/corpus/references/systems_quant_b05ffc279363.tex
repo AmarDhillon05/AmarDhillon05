@@ -1,0 +1,184 @@
+ 
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage{titlesec}
+\usepackage{fontawesome5}
+\usepackage{marvosym}
+\usepackage{xcolor}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{top=0.35in, bottom=0.2in, left=0.4in, right=0.4in}
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\pdfgentounicode=1
+
+\newcommand{\sectionrule}{
+  \vspace{-3.5pt}\noindent\makebox[\linewidth]{\textbf{-----------------------------------------------------------------------------------------------------------------------------}}\vspace{-21.5pt}
+}
+
+\titleformat{\section}{
+  \vspace{-7pt}\scshape\raggedright\large
+}{}{0em}{}[\vspace{-2pt}\sectionrule\vspace{-3pt}]
+
+\newcommand{\resumeEducation}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{#3} & \textit{#4} \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeExperience}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{#4} \\
+      \textit{#2} & \textit{#3} \\
+    \end{tabular*}\vspace{-3pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \vspace{-2pt}\item
+        \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+          \textbf{#1} & \textbf{#2} \\
+        \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeAwardHeading}[2]{
+    \vspace{-2pt}\item
+        \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+          \textbf{#1} $|$ \textit{#2} \\
+        \end{tabular*}\vspace{-8.5pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-1pt}}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, rightmargin=0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}}
+\begin{document}
+\begin{center}{\Huge\scshape Redacted Candidate}\end{center}
+\section*{Education}
+  \resumeSubHeadingListStart
+    \resumeEducation
+      {Northwestern University}{\textbf{Expected December 2027}}
+      {B.A. in Mathematics and Computer Science, B.M. in Trombone Performance}{Evanston, IL}
+      \resumeItemListStart
+        \resumeItem{\textbf{Cumulative GPA:} \mbox{3.8/4.0} $|$ \textbf{Major GPA:} \mbox{3.9/4.0} $|$ \textbf{Dean's List:} \mbox{8/8 Quarters}}
+        \resumeItem{\textbf{Relevant Coursework:} Probability and Stochastic Processes, Derivatives Theory, Regression Analysis, Machine Learning, \\ 
+        Deep Reinforcement Learning, Operating Systems, Parallel Computing, Linear Algebra, Design and Analysis of Algorithms }
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+
+\section*{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeExperience
+      {IMC Trading}{Incoming Quantitative Trading Intern}{Chicago, IL}{June 2026 -- August 2026}
+    \resumeExperience
+      {PEAK6 Capital Management}{Incoming Quantitative Trading Intern}{Chicago, IL}{May 2026 -- June 2026}
+    \resumeExperience
+      {LinkedIn}{Machine Learning Engineer Intern - Ads}{Mountain View, CA}{June 2025 -- September 2025}
+      \resumeItemListStart
+        \resumeItem{Engineered a \textbf{Dirichlet}-parameterizing deep CTR model with \textbf{DCNv2} interaction towers, optimizing a digamma-based loss to output $\alpha, \beta$ parameters for \textbf{Thompson Sampling} and predict full click-type distributions versus singular scalar output}
+        \resumeItem{Implemented \textbf{clipped inverse propensity weighting} to mitigate selection bias and applied \textbf{isotonic calibration} across chargeability and click-type heads, ensuring strict probability alignment for multiple ad objectives}
+        \resumeItem{Designed vectorized murmur-hash input pipelines and instrumented per-head ranking metrics, improving inference accuracy to \textbf{reduce loss by 17\%} and driving a \textbf{\$1.2M+ increase} in annualized advertisement revenue}
+      \resumeItemListEnd
+
+    \resumeExperience
+      {IMC Trading}{Launchpad - Quantitative Trading Cohort}{Chicago, IL}{May 2025}
+      \resumeItemListStart
+        \resumeItem{Secured \textbf{1st place} out of 30 in IMC Trading’s futures market‑making competition by implementing dynamic bid-ask spread sizing using the \textbf{Avellaneda–Stoikov} model and data‑feed pipeline monitoring to capture order‑flow edge}
+        \resumeItem{Engaged in intensive lectures and simulations covering \textbf{options pricing, futures mechanics}, market microstructure, and overall quantitative trading strategies, with hands-on applications in \textbf{risk management} and position sizing}
+      \resumeItemListEnd
+
+    \resumeExperience
+      {Susquehanna International Group}{Discovery Day - Quantitative Trading Cohort}{Bala Cynwyd, PA}{April 2025}
+      \resumeItemListStart
+        \resumeItem{Achieved the \textbf{highest PnL} in the trading cohort of 40 by engineering a pandas-based batch processing pipeline to analyze \textbf{30,000+ BTC order book records} across multiple exchanges, identifying arbitrage opportunities and securing profit}
+
+      \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+
+
+
+\section*{Projects}
+    \resumeSubHeadingListStart
+
+      \resumeProjectHeading
+        {Texas Hold'em Poker Solver {\textcolor{blue}{(\underline{GitHub})}}}{August 2025 -- December 2025}
+        \resumeItemListStart
+          \resumeItem{Engineered a high-throughput \textbf{Monte Carlo CFR} C++ solver to approximate Nash Equilibria via iterative self-play, implementing \textbf{zero-allocation} hot paths to generate \textbf{2.2M+} ground-truth samples at \textbf{$>$50,000 iterations/sec} }
+          \resumeItem{Designed an XGBoost and PyTorch pipeline to predict optimal mixed-strategy probability distributions from 58 engineered features, achieving a \textbf{0.274 KL Divergence} and \textbf{0.206 Total Variation Distance} to compress the solution space for real-time inference}
+        \resumeItemListEnd
+        
+      \resumeProjectHeading
+        {NU FinTech Club Trading Competition {\textcolor{blue}{(\underline{GitHub})}}}{June 2025 -- September 2025}
+        \resumeItemListStart
+          \resumeItem{Advanced a \textbf{C++ exchange simulator} to support dynamic market scenarios, including manual trading and multi-exchange arbitrage; researching current  market structure to inform order book and participant design}
+          \resumeItem{Engineered Python trading agents, including sporadic signal-based traders and participants placing information-rich large orders, to simulate complex market dynamics and test algorithm robustness in volatile exchange conditions}
+        \resumeItemListEnd
+
+
+    \resumeSubHeadingListEnd
+
+
+
+\section*{Honors and Awards}
+    \resumeSubHeadingListStart
+
+      \resumeAwardHeading   
+        {IMC Trading Market-Making Competition}{1st Place Overall}
+
+      \resumeAwardHeading
+        {Susquehanna International Group Arbitrage Competition}{1st Place Overall}
+        
+      \resumeAwardHeading
+        {American Invitational Mathematics Examination Qualifier (4x)}{Top 5\% in the American Mathematics Competition}
+
+      \resumeAwardHeading
+        {IMC Trading Low Latency Competition}{2nd Place Overall}
+
+      \resumeAwardHeading
+        {Northwestern University Algorithmic Trading Competition}{2nd Place Cryptocurrency Exchange}
+
+
+      \resumeAwardHeading
+        {USA Coding Olympiad}{Gold Division, Top 7\% in Contestants}
+      
+      \vspace{-4pt}
+
+    \resumeSubHeadingListEnd
+
+
+
+\section*{Additional}
+ \begin{itemize}[leftmargin=0in, rightmargin=0in, label={}]
+    \item{
+     \textbf{Programming Languages:} Python, C++, C, Golang, Rust, Java, TypeScript, Bash, x86 Assembly \\
+     \textbf{Frameworks/Libraries:} NumPy, TensorFlow, Pandas, PyTorch, scikit-learn, PyTest, PyBind, GTest, Node.js, Matplotlib\\
+     \textbf{Infrastructure:} UNIX, CUDA, Amazon Web Services, GCC, OpenMP, Nginx, Jenkins, Docker, Git, GitHub + Actions \\ 
+     \textbf{Interests:} Texas Hold'em Poker, Teamfight Tactics, League of Legends, Classical Music, Orchestral Conducting, Tarantino Movies
+    }
+ \end{itemize}
+
+
+\end{document}
+
+    

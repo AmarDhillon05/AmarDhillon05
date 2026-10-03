@@ -1,0 +1,201 @@
+
+
+
+
+
+
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{contour}
+\usepackage[normalem]{ulem}
+\renewcommand{\ULdepth}{1.8pt}
+\renewcommand{\ULthickness}{0.2pt}
+\contourlength{0.8pt}
+\let\oldhref\href
+\renewcommand{\href}[2]{\oldhref{#1}{\uline{#2}}}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+
+\titleformat{\section}{
+    \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+
+\pdfgentounicode=1
+
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=-1
+
+
+
+\newcommand{\resumeItem}[1]{
+    \item\small{
+            {#1 \vspace{-2pt}}
+    }
+}
+
+\newcommand{\resumeSubheading}[4]{
+    \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+
+
+
+
+\begin{document}
+\begin{center}{\Huge\scshape Redacted Candidate}\end{center}
+\section{Education}
+    \resumeSubHeadingListStart
+    \resumeSubheading
+    {University of California, Los Angeles (UCLA)}{Expected June {{GRAD_YEAR}}}
+    {Bachelor of Science in Computer Science}{Los Angeles, CA}
+    \resumeSubHeadingListEnd
+
+
+
+    \section{Experience}
+    \resumeSubHeadingListStart
+    \resumeSubheading
+    {Software Development Engineer Intern}{Sep 2026 -- Present}
+    {Amazon (Amazon Web Services)}{Boston, MA}
+    \resumeItemListStart
+    \resumeItem{Extended Amazon’s Remote MCP server with 8 endpoints by integrating an internal work-management service (similar to Jira), enabling hundreds of thousands of employees to execute workflows directly from a chatbot.}
+    \resumeItem{Built specialized AI agents for internal work-management workflows, allowing agent-to-agent (A2A) coordination for custom tasks such as summarization and board updates while handling thousands of production requests.}
+    \resumeItem{Implemented A2A authentication and support for user-mocking agents for secure agent interactions and handoffs.}
+    \resumeItem{Improved production reliability and debuggability by adding logging and over a hundred unit, wiring, and deployment tests, catching possible failures before release and validating end-to-end deployment behavior.}
+    \resumeItemListEnd
+    \vspace{1mm}
+    \resumeSubheading
+    {Software Engineering Intern}{June 2026 -- Sep 2026}
+    {Google (YouTube)}{San Bruno, CA}
+    \resumeItemListStart
+    \resumeItem{Engineered 10-bit software AV1 HDR video playback for the YouTube Android app via low-level ARM/NEON SIMD vectorization in C++, improving the video quality and playback performance for millions of users.}
+    \resumeItem{Defined per-device video resolution caps (e.g. 1080p) for dav1d software decoding, filtering higher-resolution formats out of the playback selection to prevent thermal throttling and battery drain on lower-end devices.}
+    \resumeItem{Built a Java-based shader effect debug UI and OpenGL video pipeline to accelerate developer iteration speed.}
+    \resumeItem{Integrated custom fragment shaders to allow video effects across thousands of DRM-protected shows and movies.}
+    \resumeItem{Resolved memory leaks, migrated deprecated code, and improved format filtering across ExoPlayer and YouTube.}
+    \resumeItemListEnd
+    \vspace{1mm}
+    \resumeSubheading
+    {Software Engineering Intern}{June 2025 -- Sep 2025}
+    {VideoLAN}{Remote}
+    \resumeItemListStart
+    \resumeItem{Built a shared audio dynamics core, cutting duplicate code by 20\% and binary size by 5\% to speed up downloads.}
+    \resumeItem{Added ggml/OpenCV to VLC, ported 3 modules to C++, and upgraded to SAM3 to support text segmentation.}
+    \resumeItem{Designed SAM2 object segmentation and YuNet face detection to be able to track over 100 concurrent targets.}
+    \resumeItem{Implemented 5 different dithering algorithms to allow users to convert videos into GIF files at varying qualities.}
+    \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+
+    \section{Projects}
+    \resumeSubHeadingListStart
+    \resumeProjectHeading
+    {{\textbf{yt-media-storage}} $|$ \emph{C++, FFmpeg, SIMD, OpenMP, Qt 6, libsodium, Wirehair}}{Feb 2026 -- Present}
+    \resumeItemListStart
+    \resumeItem{Built a C++ tool ({{YT_STORAGE_STARS}} stars, {{YT_STORAGE_FORKS}} forks) that can convert desktop files into YouTube videos for storage.}
+    \resumeItem{Implemented SIMD intrinsics, OpenMP parallelization, and cache optimizations to speed up conversion by 100x.}
+    \resumeItem{Designed a lightweight UI using Qt 6 and added libsodium encryption to enhance usability and security.}
+    \resumeItem{Used CRC and Wirehair error correction to recover data corrupted by lossy video compression algorithms.}
+    \resumeItem{Reached \#5 on Hacker News (Y Combinator) in 12 hours, drawing thousands of views and new contributors.}
+    \resumeItem{Published a {technical explanation video} on YouTube with over {{YT_IMPRESSIONS}} impressions, educating over {{YT_VIEWERS}} viewers.}
+    \resumeItemListEnd
+    \vspace{1mm}
+    \resumeProjectHeading
+    {{\textbf{mcav}} $|$ \emph{Java, GLSL, libVLC, OpenCV, QEMU, VNC, TeamCity, Maven}}{June 2020 -- Present}
+    \resumeItemListStart
+    \resumeItem{Built a 12-module, 150K-line Java media framework ({{MCAV_STARS}} stars, {{MCAV_FORKS}} forks) whose unified player API streams real-time video from VLC, OpenCV, Chromium, VNC, and QEMU sources across four pluggable render backends.}
+    \resumeItem{Designed a pure-GPU (GLSL fragment shader) video codec with O(1) per-pixel random access, improving BD-rate over 40\% with VMAF-scored optimization rounds to reach 10 ms/frame at 1080p for integrated graphics cards.}
+    \resumeItem{Engineered a low-latency pipeline API with nearly 50 different documented video effects that can be applied.}
+    \resumeItem{Self-hosted a TeamCity CI/CD pipeline that publishes releases to a Maven repository, gated with 2,500+ tests.}
+    \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+
+    \section{Technical Skills}
+    \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+        \textbf{Languages}{: Java, C/C++, OCaml, JavaScript/TypeScript, Assembly} \\
+        \textbf{Frameworks \& Libraries}{: Spring, FFmpeg, OpenCV, libVLC, ExoPlayer, Qt, OpenMP, React, Next.js, Tailwind} \\
+        \textbf{Technologies}{: AWS, AI Agents, MCP, Git, CMake, Maven, TeamCity, OpenGL, Android, GLSL, AV1, NEON/SIMD} \\
+        \textbf{Awards}{: Dean's Honors List}
+    }}
+    \end{itemize}
+
+
+
+\end{document}

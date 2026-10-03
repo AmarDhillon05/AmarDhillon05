@@ -1,0 +1,204 @@
+[
+  {
+    "file": "general_backend_2119c22bc655",
+    "variant": "general_backend",
+    "level": "intern",
+    "companies": [
+      "Amazon (Amazon Web Services)",
+      "Google (YouTube)",
+      "VideoLAN"
+    ],
+    "last_modified": "2026-09-29",
+    "why": "AWS + Google/YouTube intern; clear backend bullets with scope and results",
+    "compiled_pdf": false,
+    "source": "https://github.com/PulseBeat02/portfolio",
+    "license_file": null
+  },
+  {
+    "file": "general_backend_4dfbdaf6e9b5",
+    "variant": "general_backend",
+    "level": "intern",
+    "companies": [
+      "Stripe",
+      "Stanford Carta",
+      "LastingLearn, Inc.",
+      "Baker Engineering and Risk Consultants"
+    ],
+    "last_modified": "2026-09-08",
+    "why": "Stripe intern; plain-language product/infra bullets",
+    "compiled_pdf": true,
+    "source": "https://github.com/kennethliu0/resume",
+    "license_file": "LICENSE"
+  },
+  {
+    "file": "general_backend_00391957f094",
+    "variant": "general_backend",
+    "level": "intern",
+    "companies": [
+      "Amazon Web Services (AWS)",
+      "Stanford Center For Artificial Intelligence In Medicine & Imaging",
+      "Sundial"
+    ],
+    "last_modified": "2026-07-29",
+    "why": "AWS intern; backend + research mix similar to Amar's",
+    "compiled_pdf": true,
+    "source": "https://github.com/pauly00n/resume",
+    "license_file": null
+  },
+  {
+    "file": "infra_distributed_5926ce0c3962",
+    "variant": "infra_distributed",
+    "level": "intern",
+    "companies": [
+      "Tesla",
+      "Amazon",
+      "Cloudflare",
+      "Morgan Stanley"
+    ],
+    "last_modified": "2026-10-01",
+    "why": "Amazon/Cloudflare/Tesla intern; highest corpus quality score; infra-heavy",
+    "compiled_pdf": true,
+    "source": "https://github.com/must108/tex-docs",
+    "license_file": null
+  },
+  {
+    "file": "infra_distributed_70c3493688d3",
+    "variant": "infra_distributed",
+    "level": "intern",
+    "companies": [
+      "Google",
+      "MaiAgent Co., Ltd."
+    ],
+    "last_modified": "2026-09-18",
+    "why": "Google intern; distributed-systems and cloud keywords used in context",
+    "compiled_pdf": false,
+    "source": "https://github.com/yarikama/resume_latex",
+    "license_file": "LICENSE"
+  },
+  {
+    "file": "infra_distributed_62585d31928d",
+    "variant": "infra_distributed",
+    "level": "intern",
+    "companies": [
+      "Netflix",
+      "Intelligible AI"
+    ],
+    "last_modified": "2026-08-12",
+    "why": "Netflix intern; infra/SRE bullets with concrete mechanisms",
+    "compiled_pdf": true,
+    "source": "https://github.com/aidanobrien5599/resume",
+    "license_file": null
+  },
+  {
+    "file": "systems_quant_f644ba7bc0c5",
+    "variant": "systems_quant",
+    "level": "intern",
+    "companies": [
+      "IMC Trading",
+      "Capital One",
+      "UBS",
+      "Olympus",
+      "Split Rideshare"
+    ],
+    "last_modified": "2026-01-28",
+    "why": "IMC + Capital One intern; same Capital One brand, quant systems framing",
+    "compiled_pdf": true,
+    "source": "https://github.com/jhileman07/resume",
+    "license_file": null
+  },
+  {
+    "file": "systems_quant_b05ffc279363",
+    "variant": "systems_quant",
+    "level": "intern",
+    "companies": [
+      "IMC Trading",
+      "PEAK6 Capital Management",
+      "LinkedIn",
+      "Discovery Day"
+    ],
+    "last_modified": "2026-04-22",
+    "why": "IMC + PEAK6 intern; low-latency/trading-systems bullets",
+    "compiled_pdf": true,
+    "source": "https://github.com/hguan-dev/resume",
+    "license_file": null
+  },
+  {
+    "file": "systems_quant_0c7a2097d593",
+    "variant": "systems_quant",
+    "level": "intern",
+    "companies": [
+      "Susquehanna International Group",
+      "Google",
+      "Stanford Ophthalmic Informatics and Artificial Intelligence Group"
+    ],
+    "last_modified": "2026-05-14",
+    "why": "SIG + Google intern; quant firm resume with research projects",
+    "compiled_pdf": false,
+    "source": "https://github.com/23jmo/resume",
+    "license_file": null
+  },
+  {
+    "file": "ai_ml_engineering_d54264c23b67",
+    "variant": "ai_ml_engineering",
+    "level": "new_grad",
+    "companies": [
+      "Amazon",
+      "dotLumen",
+      "Thales"
+    ],
+    "last_modified": "2026-08-23",
+    "why": "Amazon new grad; ML systems grounded in engineering",
+    "compiled_pdf": false,
+    "source": "https://github.com/alesiopuf/resume",
+    "license_file": null
+  },
+  {
+    "file": "ai_ml_engineering_d5ae27a86afb",
+    "variant": "ai_ml_engineering",
+    "level": "intern",
+    "companies": [
+      "Nvidia",
+      "Baseten",
+      "AMD",
+      "eSentire"
+    ],
+    "last_modified": "2026-09-09",
+    "why": "NVIDIA + Baseten intern; ML infra / inference serving",
+    "compiled_pdf": true,
+    "source": "https://github.com/PetersonGuo/PetersonGuo",
+    "license_file": null
+  },
+  {
+    "file": "general_backend_outcome_4669d64b",
+    "variant": "general_backend",
+    "level": "intern",
+    "companies": [],
+    "last_modified": "2026-04-12",
+    "why": "outcome-backed: NVIDIA Graphics Systems SWE intern offer (sophomore CS at T50 school; also several other interns listed)",
+    "compiled_pdf": false,
+    "source": "reddit post (see corpus/outcome_resumes.jsonl)",
+    "license_file": null
+  },
+  {
+    "file": "general_backend_outcome_6d7c86e1",
+    "variant": "general_backend",
+    "level": "new_grad",
+    "companies": [],
+    "last_modified": "2025-11-21",
+    "why": "outcome-backed: Full-time new grad SWE offer after ~80 applications (rising senior at top-10 CS school, no SWE internship)",
+    "compiled_pdf": false,
+    "source": "reddit post (see corpus/outcome_resumes.jsonl)",
+    "license_file": null
+  },
+  {
+    "file": "systems_quant_outcome_7f0fa981",
+    "variant": "systems_quant",
+    "level": "intern",
+    "companies": [],
+    "last_modified": "2026-05-08",
+    "why": "outcome-backed: HFT-adjacent FPGA role/internship offer after 4 interview rounds (EE + Physics student, Australia) following resume rewr",
+    "compiled_pdf": false,
+    "source": "reddit post (see corpus/outcome_resumes.jsonl)",
+    "license_file": null
+  }
+]

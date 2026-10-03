@@ -1,0 +1,210 @@
+
+
+
+
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+
+
+
+
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-0.7in}
+\addtolength{\textheight}{1.6in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+
+\pdfgentounicode=1
+
+
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+\begin{center}{\Huge\scshape Redacted Candidate}\end{center}
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Northwestern University}{Evanston, IL}
+       {B.S. in Computer Science and Mathematics}{Expected June 2026}
+      \resumeItemListStart
+        \resumeItem{3.8/4.0 GPA; Leadership: NU Fintech (Director of Tech and Operations), Kappa Theta Pi (VP of Tech)}
+        \resumeItem{Relevant Coursework: Data Structures \& Algorithms, Operating Systems,  Computer Networking, Machine Learning, Computer Systems, Distributed Systems, Scalable Software (AWS), Database Management Systems}
+      \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+
+\section{Professional Experience}
+  \resumeSubHeadingListStart
+      \resumeSubheading
+      {IMC Trading}
+      {August 2026}
+      {Incoming Graduate Software Engineer - Equities}{New York, NY}
+
+    \resumeSubheading
+      {IMC Trading}
+      {June 2025 -- August 2025}
+      {Software Engineer Intern - Equity Options Delta Research}{Chicago, IL}
+  \resumeItemListStart
+    \resumeItem{Collaborated with quants to optimize C++ infrastructure for feature extraction from raw exchange data.}
+    \resumeItem{Integrated in-house math expression evaluation tool into a production system for real-time HFT alpha generation.}
+  \resumeItemListEnd
+
+    \resumeSubheading
+      {Capital One}
+      {June 2024 -- August 2024}
+      {Software Engineer Intern}{Dallas, TX}
+      \resumeItemListStart
+        \resumeItem{Developed enterprise event processing reactive API platform in Java to process 65 million weekly real-time events.}
+        \resumeItem{Implemented automatic cancellation of asynchronous threads to halt processing of thousands of failed events.}
+      \resumeItemListEnd
+
+      \resumeSubheading
+      {UBS}{August 2023 -- December 2023}
+      {Software Engineer Intern}{Chicago, IL}
+      \resumeItemListStart
+        \resumeItem{Innovated and tested Visual Basic Macros to eliminate repetitive processes, saving 15 employees 30 minutes daily.}
+        \resumeItem{Developed Excel and Outlook scripts to automate the reporting and marketing process of $400+$ corporate clients.}
+    \resumeItemListEnd
+
+      \resumeSubheading
+      {Olympus}
+      {August 2024 -- April 2025}
+      {Software Engineer Intern}{Evanston, IL}
+      \resumeItemListStart
+        \resumeItem{Launched athlete management software using NextJS at 10 B1G Division 1 strength and conditioning programs.}
+        \resumeItem{Deployed Dockerized RESTful API on AWS integrating JWTs for authentication, handling 5,000+ daily requests.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Split Rideshare}{June 2023 -- June 2024}
+      {Software Engineer Intern}{Evanston, IL}
+        \resumeItemListStart
+        \resumeItem{Integrated Uber ride-sharing API for airport travel matchmaking service used by 1 in 8 Northwestern students.}
+        \resumeItem{Formulated and deployed a greedy matchmaking algorithm resulting in a more than 99\% decrease in run-time.}
+    \resumeItemListEnd
+
+
+    \resumeSubheading
+      {Northwestern University}{September 2024 -- Present}
+      {Undergraduate Teaching Assistant}{Evanston, IL}
+      \resumeItemListStart
+        \resumeItem{Undergrad TA for Computer Science 336 - Design and Analysis of Algorithms (Fall 2024, Spring 2025)}
+        \resumeItem{Undergrad TA for Computer Science 343 - Operating Systems (Winter 2025)}
+        \resumeItem{Undergrad TA for Computer Science 213 - Computer Systems (Winter 2026)}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+
+\section{Projects}
+    \resumeSubHeadingListStart
+        \resumeProjectHeading
+            {\textbf{Northwestern Financial Technologies Trading Competition} $|$ \emph{C++, Grafana, Websockets, React JS}}{ }
+            \resumeItemListStart
+                \resumeItem{Collaborated with 10 developers to develop the exchange for Northwestern Trading Competition using C++.}
+                \resumeItem{Generated visualizations with Grafana and websockets for low-latency profit \& loss tracking and capital analysis.}
+            \resumeItemListEnd
+
+
+      \resumeProjectHeading
+          {\textbf{Real-Time Cryptocurrency Order Book Visualizer} $|$ \emph{C++, Boost, Websockets, Coinbase API}}{ }
+          \resumeItemListStart
+            \resumeItem{Built real-time order book visualizer for cryptocurrencies, using Coinbase Websocket API for Bitcoin data.}
+            \resumeItem{Employed Boost Beast websockets in C++ to efficiently handle and visualize high-frequency trading data, providing users with intuitive insights and graphical representations of real-time order book dynamics.}
+          \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+
+
+\section{Honors and Awards}
+    \resumeSubHeadingListStart
+        \resumeProjectHeading
+            {\textbf{Northwestern Trading Competition (2024)} $|$ \textit{Team Lead, 2nd Place High-Frequency Trading}}{}
+        \resumeProjectHeading
+            {\textbf{IMC Trading Low Latency Challenge (2025)} $|$ \textit{1st Place}}{}
+        \resumeProjectHeading
+            {\textbf{NUFT Low Latency League (2025)} $|$
+            \textit{2nd Place}}{}
+    \resumeSubHeadingListEnd
+
+
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \item{
+     \textbf{Languages}{: C++, Python, C, Go, Java, SQL, JavaScript, Bash, R, HTML, CSS, VBA, \LaTeX, MATLAB} \\
+     \textbf{Technologies}{: NumPy, Pandas, Make, APIs, UNIX, Matplotlib, React, Concurrency, Cloud Infrastructure} \\
+     \textbf{Developer Tools}{: Git, GitHub, SSH, AWS, Firebase, VS Code, GDB, Valgrind, RStudio, Microsoft Excel} \\
+     }
+ \end{itemize}
+
+\end{document}

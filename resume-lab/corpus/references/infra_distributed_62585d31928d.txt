@@ -1,0 +1,72 @@
+R EDACTED C ANDIDATE
+E DUCATION
+University of Wisconsin - Madison
+
+Sep 2023 - May 2027
+GPA: 3.9/4.00
+
+B.S. Computer Science
+Relevant Coursework: Algorithms, Operating Systems, Big Data Systems, Artificial Intelligence & Discrete Math
+
+E XPERIENCE
+Software Engineer Intern
+
+May 2026 - Present
+
+Netflix
+Los Gatos, CA
+• Drove $15M+ in projected savings by leading a UX-focused A/B test on the member cancel flow to improve
+subscriber save rate, spanning the React frontend to several upstream GraphQL and Falcor endpoints.
+• Architected a cross-repo migration unifying Change Plan routing across 3 flows from hardcoded logic to Netflix’s
+Odyssey state-machine platform, shipping in my final week the first flow end-to-end.
+• Pioneered monitoring-as-code for my team’s backend services, building a Gradle mechanism that publishes
+dashboards/alerts as version-controlled JSON via existing Jenkins CI, replacing manual UI configuration.
+• Patched a critical regex bug on cssjanus, an open-source RTL CSS library with 600,000+ weekly downloads.
+
+Founding Engineer
+
+Dec 2025 - May 2026
+
+Intelligible AI
+Remote
+• Built the data ingestion pipelines for the first 4 database connectors (Postgres, MySQL, Snowflake, BigQuery) across
+multiple Lambdas + Step Functions, enabling our customers to securely integrate their production data.
+• Integrated Fivetran Connect Card with a webhook-driven sync lifecycle across 8 Lambdas, expanding the platform
+from 4 native connectors to 700+ supported data sources without per-source auth code.
+• Led migration of infrastructure-as-code from AWS CDK to SST, cutting PR deploy times by 85% and enabling local
+preview environments that accelerated the team’s ship cadence from weekly to daily.
+
+Software Engineer Intern
+
+June 2025 - Aug 2025
+
+CargoLabs
+Remote
+• Eliminated 8+ hours/month of manual work by automating bordereau reporting w/ an AWS + SQL cron job.
+• Standardized authentication pipelines across 7 AWS Cognito user pools while implementing consistent UI design,
+creating unified user workflows and reducing authentication complexity across all portals.
+• Built a comprehensive customer service portal enabling the CargoLabs team to efficiently manage and troubleshoot
+client website problems, reducing average issue resolution time by 45-60%.
+
+P ERSONAL P ROJECTS
+BadgerBase ® | Next.js, Node.js, MySQL, Vercel, GitHub Actions, Redis
+• Created a web app that has reached 2000+ active student users that optimizes the UW Madison course sign-up
+experience by integrating course, professor, and grade data from multiple sources.
+• Reverse engineered UW APIs to build daily data collection pipelines using GitHub Actions for reliable updates.
+• Designed a MySQL database serving enrollment & grade data for 20,000+ sections, with a Redis caching layer and
+serverless API endpoints to optimize latency and scalability during peak traffic.
+• Built an automated Amazon SES email service that alerts students when competitive sections & courses open, built
+on a secure Supabase Auth system with a personalized dashboard for managing course alerts.
+March Madness Bracket Predictor | Python, XGBoost, LightGBM, scikit-learn
+• Built an ensemble model (XGBoost, LightGBM, HistGBM) trained on KenPom efficiency ratings, seeding, and
+historical tournament data, achieving 81% win prediction accuracy and winning a 20-participant bracket pool.
+• Developed a simulation script to project round-by-round outcomes across the full 64-team bracket, propagating win
+probabilities through each stage of the tournament.
+
+S KILLS
+Languages: Python, TypeScript/JavaScript, Java, C, SQL
+Frontend: Next.js, React, Tailwind, Zustand, PostHog, Vercel
+Backend: Node.js, Bun, Hono, GraphQL, Spring Boot, Flask, DynamoDB, Redis, MySQL, Supabase
+Infrastructure: AWS (Lambda, Step Functions, ECS, S3), SST, Docker, Railway, GitHub Actions
+
+

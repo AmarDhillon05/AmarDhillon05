@@ -1,0 +1,141 @@
+
+ Redacted Candidate
+Education
+
+
+
+Babeș-Bolyai University
+Sep 2023 – Jul 2026
+Bachelor of Science in Computer Science
+Cluj-Napoca, Romania
+
+GPA: 9.42 / 10.00, Thesis: 9.71 / 10.00
+Top 5% of class – Merit Scholarship (2023–2026)
+Collaborated on EU Sustainable Development Goals initiative by developing a real-time disaster response platform
+
+
+
+
+
+
+
+Research
+
+
+
+Computer Vision in Microsurgery | OpenCV, scikit-image, OptunaMay 2025 – Jul 2026
+
+Co-First Author on research submitted to Elsevier, developing a deterministic computer vision pipeline for objective intraluminal assessment of microvascular anastomoses (in collaboration with Erasmus MC & UMF Cluj).
+Architected an end-to-end image processing engine using morphological operations and Hessian-based kernels to extract and quantify 7 geometric surgical error rubrics.
+Validated the system's reliability on 232 experimental models, achieving up to 93.1% agreement with the double-blinded expert consensus to provide explainable feedback for surgical trainees.
+
+
+
+
+
+
+Experience
+
+
+
+
+Amazon
+Aug 2026 – present
+Madrid, Spain
+
+
+Software Development Engineer
+Aug 2026 – present
+
+Onboarding
+
+
+
+Software Development Engineer Intern
+Jul 2025 – Nov 2025
+
+Scaled Invoice by Amazon services across regional central nodes to improve latency and availability, thus supporting a 5% increase in transaction throughput during peak traffic.
+Improved workflow velocity for on-call and QA teams by 10% by designing and implementing a streamlined solution, leveraging Lambda, DynamoDB, SQS and other AWS Technologies to automate complex manual procedures.
+
+
+
+
+dotLumen
+Mar 2026 – Jul 2026
+Cluj-Napoca, Romania
+
+
+R&D Software Engineer
+Mar 2026 – Jul 2026
+
+Built the TakeMe feature for an autonomous guiding device for the visually impaired, integrating the local navigation stack with geo-spatial OpenStreetMap data via an on-device routing engine and map tiling pipeline, enabling outdoor point-to-point navigation with new RL configurations and debugging tooling.
+Integrated an ML segmentation model to exclude the user's white cane from obstacle detection, collaborating with the ML team on model delivery and optimizing the inference pipeline to maintain 30 FPS real-time performance.
+Participated in the migration of the core navigation stack from ROS to ROS2, refactoring legacy nodes to utilize managed lifecycles and improved real-time execution for safety-critical operations.
+
+
+
+
+Thales
+Mar 2022 – Jun 2025
+Remote
+
+
+Junior Backend Engineer
+Oct 2023 – Jun 2025
+
+Initiated the migration from a legacy Java 8 monolith to Java 21 microservices, incorporating modern technologies for infrastructure and CI/CD, resulting in a 20% reduction in lead time for changes.
+Engineered driver-level microservices for audio device integration, improving system functionality through low-level protocol implementations, resulting in 4 new major clients onboarded.
+
+
+
+Backend Engineer Intern
+Mar 2022 – Sep 2023
+
+Engineered features for a microservice-based passenger information system web application deployed for urban and regional train infrastructure in key regions of the world (Paris, Lisbon, Dubai, Cairo, Manila).
+
+
+
+
+
+
+Projects & Awards
+
+
+     
+    Day Zero Platform | React, Tailwind CSS, Spring Boot, PostgreSQL, AWSNov 2024 
+    
+     
+        Led a cross-functional team of 5 developers to design and implement a cybersecurity platform that transforms traditional CTF challenges into PVP experiences, securing 1st place among 30+ teams in the hackathon.
+    
+    
+    
+    Raiffeisen Bank Think Tank | React Native, Bootstrap, Spring Boot, MySQL, AWSDec 2023 – Apr 2024
+    
+        Developed a secure digital stock trading platform for the Bucharest Stock Exchange, enabling real-time trading, AI-based sentiment analysis, and an education portal, winning 1st place among 15+ teams.
+    
+
+    
+    National Olympiad in Informatics (ONI) | Algorithms, Data Structures, C++2021, 2022
+    
+        Awarded Bronze Medal in 2 consecutive editions at the national finals, demonstrating advanced algorithmic problem-solving and competitive programming skills.
+    
+
+
+
+
+
+Skills
+[leftmargin=0.15in, label=]
+	 
+		      Programming Languages: Python, Java, C, C++, TypeScript, Rust  
+		      Robotics & Embedded: ROS/ROS2, Intel RealSense SDK, Nav2, Sensor Fusion, SLAM  
+		      Cloud & DevOps: Linux, Docker, Kubernetes, Jenkins, AWS (Lambda, DynamoDB, SQS, S3, CloudWatch, IAM)  
+		      Backend: Spring Boot, PostgreSQL, MySQL, Redis, RabbitMQ, Kafka, gRPC  
+		      Frontend: React, React Native, Node.js, Tailwind CSS, Bootstrap  
+		      Data & ML: OpenCV, scikit-image, Optuna, TensorFlow, PyTorch  
+			  Core Concepts: Microservices Architecture, Distributed Systems, Event-Driven Systems, Real-Time Systems, Computer Vision, Autonomous Navigation, Reinforcement Learning, Image Processing, Agile Methodologies, Retrieval-Augmented Generation (RAG), Algorithms & Data Structures  
+		      Spoken Languages: Romanian (Native), English (C1), Spanish (B1)
+	      
+
+
+
