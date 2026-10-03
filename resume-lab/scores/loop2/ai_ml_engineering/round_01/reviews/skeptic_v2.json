@@ -1,0 +1,140 @@
+{
+  "persona": "skeptic_v2",
+  "target": "AI/ML engineering internships (ML infrastructure, LLM applications, applied AI platform teams), 2026-27 cycle",
+  "memory_skim": {"strongest_3": [], "engineer_type": "", "memorable_numbers": [], "confusing": [], "skipped": [], "interview_questions": []},
+  "plain_english": [],
+  "scores": {
+    "impact_clarity": 7,
+    "quantification": 6,
+    "technical_depth": 7,
+    "concision_readability": 7,
+    "skim_test": 7,
+    "credibility": 7,
+    "ats_parseability": 8,
+    "visual_layout": 8,
+    "domain_fit": 7,
+    "human_voice": 6,
+    "plain_language": 6,
+    "overall": 7
+  },
+  "competitive_for_domain": "Y",
+  "bullet_feedback": [
+    {
+      "bullet": "Building capacity planning for Amazon Redshift maintenance like patching: Java logic that sets upper and lower bounds on reserved EC2 capacity to balance availability against cost, validated by backtesting",
+      "problem": "The colon splits the bullet into a heading and a verbless fragment ('Java logic that sets...'), which nobody would say aloud. 'Building capacity planning' doesn't say whether he owns the whole capacity-planning effort or one component of it. 'maintenance like patching' reads as a typo for 'such as patching'.",
+      "severity": 5,
+      "why_it_matters": "This is the top bullet on the page and the biggest brand. A reader has to reparse it to see what Amar himself writes, and an interviewer will open with 'which part of this is yours?'",
+      "missing_or_unclear": "clarify: is the Java bounds logic the piece he owns, or the whole planner?",
+      "suggested_direction": "Make it one sentence with a verb and a clear owner: what he is writing, what it decides, and why. Drop the colon. e.g. 'Writing the Java logic that sets upper and lower bounds on reserved EC2 capacity for Redshift maintenance such as patching, trading availability against cost, and checking it with backtests'"
+    },
+    {
+      "bullet": "Cut LLM workflow generation time 65% to under 15s by splitting one large Claude skill into smaller sub-skills that call Python tools for search and validation, and output quality held in repeated stress-test runs",
+      "problem": "Three problems. (1) 'LLM workflow generation' is undefined here; the reader only learns in the third bullet that a 'workflow' is a test-data workflow. (2) The tail 'and output quality held in repeated stress-test runs' is a separate clause bolted on with 'and', with a new subject and no verb tying it to Amar. (3) The mechanism is unclear: the bullet never says why smaller sub-skills are faster (less context per call? parallel calls? fewer retries?).",
+      "severity": 6,
+      "why_it_matters": "This is the strongest LLM-application claim for this target. A screener who doesn't know what's being generated can't value the 65%, and the obvious interview question, 'why did splitting make it faster?', isn't answered on the page.",
+      "missing_or_unclear": "clarify: what a 'workflow' is (test-data workflow?) and the reason the split reduced latency",
+      "suggested_direction": "Name the output in plain words before the tech. Give the cause of the speedup in a few words. Turn the quality tail into a subordinate phrase, e.g. '...without losing output quality across repeated stress tests'"
+    },
+    {
+      "bullet": "Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries",
+      "problem": "The action arrives only after a long 'Because...' clause, and the sentence has no subject ('Because X, precomputed...'). 'strict access limits' is ambiguous: rate limits, query quotas, or permissions? 'category tree' and the 'with Redis caching...' tail are two separate designs stitched into one sentence.",
+      "severity": 4,
+      "why_it_matters": "A reader can't tell what constraint drove the design, so the design choice looks arbitrary. That makes it hard to defend under the question 'why not just add an index?'",
+      "missing_or_unclear": "clarify: what kind of access limit (rate/quota/permission) forced the precompute",
+      "suggested_direction": "Lead with the action and put the constraint after it, e.g. 'Precomputed popular workflows into a category tree the Claude skill searches first, because the 270K+ row PostgreSQL table had [kind of] limits, and cached full workflows in Redis'"
+    },
+    {
+      "bullet": "Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and 90% of 30+ surveyed developers preferred it",
+      "problem": "The middle is a tech run: React, TypeScript, Electron, React Flow and Jest, with React named twice. Only 'visual React Flow editor' explains a design choice. 'preferred it' leaves out the comparison (presumably over the legacy tool).",
+      "severity": 3,
+      "why_it_matters": "This is a small cost. The stack list pads the line and dilutes the one interesting choice, the visual editor.",
+      "missing_or_unclear": "clarify: preferred it over the legacy tool",
+      "suggested_direction": "Keep 'visual editor' and the survey result. Move React/TypeScript/Electron/Jest to Skills or reduce them to one framing noun, e.g. '...as an Electron app with a visual drag-and-drop editor; 90% of 30+ surveyed developers preferred it to the old tool'"
+    },
+    {
+      "bullet": "Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance: on an EventBridge schedule a larger LLM grades its ratings, and fine-tuning runs only when the grades shift past a threshold",
+      "problem": "'production Amazon Bedrock classifier that rates research documents by importance' is a long noun stack. Bedrock is a hosting service, not a model, so 'Bedrock classifier' invites the question 'what model is it?' The colon again splits the sentence into claim and explanation.",
+      "severity": 4,
+      "why_it_matters": "This is the clearest ML-infrastructure bullet on the page (judge-triggered retraining), and the stacked phrasing hides it. An ML interviewer will probe what 'fine-tuning on Bedrock' means and what labels the judge produces.",
+      "missing_or_unclear": "clarify: which model the classifier is (an LLM hosted on Bedrock?)",
+      "suggested_direction": "Split the noun stack into a sentence: say what the model does in plain words, then the trigger logic, with no colon. e.g. 'Automated retraining for a production LLM on Bedrock that rates research documents by importance, so a larger LLM grades its ratings on a schedule and fine-tuning runs only when those grades drift past a threshold'"
+    },
+    {
+      "bullet": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+      "problem": "'6,000+ scraped research documents' has no time unit: per day, per run, or total? The 34% has no absolute baseline (seconds? minutes?).",
+      "severity": 4,
+      "why_it_matters": "The mechanism is clear and defensible, but scale is what makes a streaming change impressive, and without a unit the reader can't judge whether the volume justifies Kinesis.",
+      "missing_or_unclear": "clarify: the time unit for 6,000+ documents and the latency baseline, if known",
+      "suggested_direction": "Add the existing unit or baseline only if it exists. Otherwise leave as is. The mechanism phrase is good."
+    },
+    {
+      "bullet": "Deployed a space-topic research tool for Amazon Leo’s public-policy team and set it up for handoff with AWS CDK infrastructure-as-code and GitHub Actions CI/CD, so Leo engineers new to the project now maintain it on AWS Fargate",
+      "problem": "'space-topic research tool' is a noun stack that doesn't say what the tool does. The bullet then lists CDK, infrastructure-as-code, GitHub Actions, CI/CD and Fargate, so it reads mostly as deployment keywords. 'AWS Fargate' at the very end adds nothing to the handoff story.",
+      "severity": 4,
+      "why_it_matters": "A non-engineer can't restate what was built. The real point, that other engineers took over maintenance, is buried under tool names.",
+      "missing_or_unclear": "clarify: what the tool does for the policy team (search? summarize? track topics?)",
+      "suggested_direction": "Say in a few plain words what the tool does. Keep CDK and CI/CD as the reason the handoff worked, and cut or move 'on AWS Fargate'."
+    },
+    {
+      "bullet": "For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp’s candidate grasps on camera images in Open3D for a vision-language model, then tuned prompts so the model picks the right grasp more often",
+      "problem": "'picks the right grasp more often' is the only result, and it is unquantified and unanchored. 'tuned prompts' is the thinnest kind of ML contribution and sits next to 'ICLR', which raises expectations.",
+      "severity": 5,
+      "why_it_matters": "Pairing 'ICLR' with a vague 'more often' invites skepticism: an interviewer will ask 'how much more often, measured how?', and the page gives no footing.",
+      "missing_or_unclear": "clarify: how grasp selection was evaluated (and the improvement, if it was measured)",
+      "suggested_direction": "If a measured improvement exists, state it. If not, say how success was judged (e.g. on a held-out set of scenes) or soften 'aimed at ICLR' so the venue doesn't outrun the result."
+    },
+    {
+      "bullet": "Building a RAG meal-suggestion feature for the official UMD app, in which GPT-4o mini writes suggestions from scraped recipes found by SentenceBERT vector search in ChromaDB, and internal testers rated 93% of meals satisfactory",
+      "problem": "'for the official UMD app' is a large scope claim, but 'Building' plus 'internal testers' suggests it hasn't shipped, and the bullet doesn't say so. The middle chains GPT-4o mini, SentenceBERT and ChromaDB in one clause ('in which...found by...in...'). The bolded 93% has no tester count.",
+      "severity": 4,
+      "why_it_matters": "A reader may assume it is live to UMD students. If it isn't, that is an awkward correction in an interview. The bold also draws the eye to the page's least-supported number.",
+      "missing_or_unclear": "clarify: whether the feature is live in the UMD app or still in internal testing",
+      "suggested_direction": "State the status plainly (e.g. 'in internal testing'). Shorten the retrieval chain to one plain phrase, such as 'retrieves similar recipes with embeddings', and keep model names in Skills. Consider unbolding 93%."
+    },
+    {
+      "bullet": "Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio’s class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency",
+      "problem": "The only number, 20,000+ visits, belongs to the product, not to the caching work, and the caching outcome is stated only as intent ('to reduce'). 'the studio' is undefined: the role header says TerpLabs, and the page never calls it a studio.",
+      "severity": 5,
+      "why_it_matters": "This is a borrowed metric. A skeptical reader sees a product-traffic number standing in for an engineering result, and the routine Redis-cache task becomes the bullet's whole content.",
+      "missing_or_unclear": "clarify: whether caching had any observed effect; whether Amar built Tortuga itself or only the cache",
+      "suggested_direction": "If Amar built Tortuga, lead with that and let the 20,000 visits be its result, with caching as the supporting detail. If he only added the cache, keep the traffic as context and say plainly that it was preventive. Replace 'the studio’s' with 'TerpLabs’'."
+    }
+  ],
+  "page_feedback": [
+    {
+      "problem": "The 'ML infrastructure' half of the intended profile rests on one bullet (judge-triggered retraining on Bedrock). The rest of the AI/ML evidence is LLM-API orchestration: Claude sub-skills, prompt tuning, and RAG with GPT-4o mini.",
+      "severity": 5,
+      "why_it_matters": "Applied-LLM teams will see a fit. ML-infrastructure teams will look for training, serving, or evaluation infrastructure and find mostly glue code around hosted models, so 'unusually strong systems engineer' comes across through the C++ project and AWS work rather than through the ML.",
+      "suggested_direction": "Bring forward the ML-infrastructure parts that already exist: the retraining trigger, the Kinesis inference pipeline, and the judge-based evaluation. Describe them as infrastructure decisions rather than LLM features."
+    },
+    {
+      "problem": "The Skills section carries terms the bullets don't support: 'model fine-tuning' (only via Bedrock), 'OpenSearch', 'CloudWatch, X-Ray', 'Docker', 'uv', plus generic filler such as 'data structures and algorithms' and 'object-oriented design'. 'Open3D' sits under AI/ML.",
+      "severity": 4,
+      "why_it_matters": "An interviewer may pick any listed item. The unsupported ones read as keyword padding, and the filler takes space from real skills.",
+      "suggested_direction": "Cut the generic items ('data structures and algorithms', 'object-oriented design'). Keep only the unsupported tools he can discuss in depth, and move Open3D out of AI/ML."
+    },
+    {
+      "problem": "'UMD App Development Contracting (Client: Amazon Leo)' doesn't say what kind of organization this is (student club, university program, or his own contracting), so ownership and employer are ambiguous.",
+      "severity": 4,
+      "why_it_matters": "These are some of the strongest bullets on the page. A reader who can't tell whether Amazon Leo was a real client under contract may discount them.",
+      "suggested_direction": "Clarify the organization type in the header in a few words, without adding scope."
+    },
+    {
+      "problem": "Three bullets use the colon/'Because' construction or stitch a second clause on with ', and' (AWS, the first Capital One bullet, Bedrock retraining, TerpLabs RAG). Read in a row, the pattern sounds generated rather than spoken.",
+      "severity": 4,
+      "why_it_matters": "The human-voice signal suffers: each bullet takes two passes to read, and a skeptical reader starts to wonder who wrote it.",
+      "suggested_direction": "Rewrite each as one subject-verb-object sentence with the result in a trailing clause. Avoid colons inside bullets."
+    },
+    {
+      "problem": "'Claude skill' / 'sub-skills' is product-specific jargon that many recruiters and engineers outside Anthropic's ecosystem won't recognize.",
+      "severity": 3,
+      "why_it_matters": "The Capital One LLM work is the domain headline, and its key noun may be read as 'Claude's ability' rather than a packaged agent capability.",
+      "suggested_direction": "On first use, add a two- or three-word gloss (e.g. 'Claude skill (agent instructions plus tools)'), or describe it as an LLM agent with tools."
+    }
+  ],
+  "keep": [
+    "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange’s book, agreeing with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices",
+    "Header and Education block: clean single-line contact row and clear grad date",
+    "Sparse bolding limited to one metric per bullet"
+  ]
+}
