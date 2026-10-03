@@ -1,0 +1,108 @@
+{
+  "persona": "ml_infra_v2",
+  "target": "AI/ML engineering internships (ML infrastructure, LLM applications, applied AI platform teams), 2026-27 cycle",
+  "memory_skim": {"strongest_3": [], "engineer_type": "", "memorable_numbers": [], "confusing": [], "skipped": [], "interview_questions": []},
+  "plain_english": [],
+  "scores": {
+    "impact_clarity": 8,
+    "quantification": 7,
+    "technical_depth": 8,
+    "concision_readability": 8,
+    "skim_test": 8,
+    "credibility": 8,
+    "ats_parseability": 9,
+    "visual_layout": 8,
+    "domain_fit": 8,
+    "human_voice": 8,
+    "plain_language": 7,
+    "overall": 8
+  },
+  "competitive_for_domain": "Y",
+  "bullet_feedback": [
+    {
+      "bullet": "Cut LLM workflow generation time 65% to under 15s by splitting one large Claude skill into smaller sub-skills that call Python tools for search and validation, and output quality held in repeated stress-test runs",
+      "problem": "The latency half has a real mechanism (decomposition into sub-skills plus tool calls), but 'output quality held in repeated stress-test runs' is the only guard on quality and names no check. An ML-infra reader's first question on any latency win for an LLM pipeline is 'what did you trade away, and how did you know?', and this clause asserts the answer without showing a mechanism.",
+      "severity": 5,
+      "why_it_matters": "Without a named check, 'quality held' reads as an eyeball judgment, which is the thing this reader screens for in LLM work. The 65% is credible, but the bullet stops short of showing an evaluation loop.",
+      "missing_or_unclear": "clarify: what 'quality held' was judged against (for example, whether the Python validation tool's checks passed, or a reviewer compared outputs to the old single-skill version). No numeric metric is needed if none exists.",
+      "suggested_direction": "Swap the vague clause for the concrete check that was actually used, even a qualitative one (for example, 'outputs still passed the same validation tool'), or cut the clause and let the validation sub-skill imply the guard. Also consider moving this bullet to the top of the Capital One entry for this target."
+    },
+    {
+      "bullet": "For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D for a vision-language model, then tuned prompts so the model picks the right grasp more often",
+      "problem": "The result clause 'tuned prompts so the model picks the right grasp more often' has no evaluation behind it: it doesn't say how 'right' was decided or what 'more often' was measured against. The visual-prompting pipeline is the engineering. The prompt tuning is the outcome, but as written it reads as prompt-only iteration.",
+      "severity": 6,
+      "why_it_matters": "This is the only research-lab ML bullet. An applied-AI interviewer will ask 'more often than what, on what set?', and with no answer on the page the bullet loses its strongest signal and invites a credibility probe.",
+      "missing_or_unclear": "clarify: how grasp correctness was judged (a labeled set of scenes, a human check, or a success criterion in sim or on a robot) and what the comparison baseline was (untuned prompt, AnyGrasp's top-scored grasp).",
+      "suggested_direction": "Lead with the pipeline decision (rendering candidate grasps as visual marks so a VLM can choose between them), then name the evaluation used to compare prompts. If no evaluation exists, scope it honestly as in-progress instead of claiming 'more often'."
+    },
+    {
+      "bullet": "Building a RAG meal-suggestion feature for the official UMD app, in which GPT-4o mini writes suggestions from scraped recipes found by SentenceBERT vector search in ChromaDB, and internal testers rated 93% of meals satisfactory",
+      "problem": "The only evaluation is end-to-end satisfaction from internal testers. Nothing shows whether retrieval itself was checked (whether the retrieved recipes were relevant) or how the generator was kept grounded in them. The phrase 'in which GPT-4o mini writes suggestions from scraped recipes found by...' also stacks three tools in a single clause.",
+      "severity": 4,
+      "why_it_matters": "For a RAG bullet, retrieval is where an ML-infra reader looks for engineering. As written, this reads as a standard tutorial stack with a satisfaction score attached, which undersells it if there was more.",
+      "missing_or_unclear": "clarify: what the retrieval step is keyed on (user preferences, dining-hall menu, dietary constraints) and whether the suggestion is constrained to retrieved recipes.",
+      "suggested_direction": "Say what the retrieval is matching on before naming the tools, so the design choice is visible. Keep the 93% as is. Example shape: 'retrieves scraped recipes matching <criterion> with SentenceBERT embeddings in ChromaDB, and GPT-4o mini writes suggestions only from those recipes'."
+    },
+    {
+      "bullet": "Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries",
+      "problem": "This bullet opens with a subordinate clause ('Because the 270K+ row...'), so the action verb doesn't appear until the middle of the first line. It ends at intent ('to cut database queries') with no outcome. The design itself (a precomputed category index as a retrieval layer the agent hits before the database, plus a cache) is good retrieval engineering.",
+      "severity": 4,
+      "why_it_matters": "A skimmer reading verb-first sees 'Because...' and may skip the bullet, losing one of the clearest retrieval-design decisions on the page.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Reorder to put the action first and the constraint second (for example, 'Precomputed popular workflows into a category tree the Claude skill searches before the 270K+ row PostgreSQL table, which had strict access limits, and cached full workflows in Redis'). Ending at intent is acceptable if no result exists."
+    },
+    {
+      "bullet": "Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and 90% of 30+ surveyed developers preferred it",
+      "problem": "This is a solid full-stack bullet, but it sits first under Capital One, ahead of both LLM bullets. For an AI/ML reader, the first Capital One line is frontend work, and the Claude-skill work comes second and third.",
+      "severity": 3,
+      "why_it_matters": "On a skim, the reader decides from the first bullet whether this internship is relevant to ML infra.",
+      "missing_or_unclear": "",
+      "suggested_direction": "For this target, reorder the Capital One bullets so the 65% LLM latency bullet comes first and this one last. Don't change the wording."
+    },
+    {
+      "bullet": "Writing Java logic that sets the upper and lower bounds on EC2 capacity that Amazon Redshift reserves for operations like patching, balancing availability against cost, and backtesting it",
+      "problem": "The trailing 'and backtesting it' attaches ambiguously: 'it' could be read as the cost tradeoff rather than the logic, and the chain 'that sets... that Amazon Redshift reserves... balancing... and backtesting' is one long relative-clause run.",
+      "severity": 3,
+      "why_it_matters": "A reader has to re-parse the sentence to see that the backtest validates the bounds logic, which is the most interesting part to an infra interviewer.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Make the backtest its own verb phrase tied to the logic, for example '...reserves for maintenance like patching, and backtesting those bounds against <historical usage> to balance availability against cost'. Only name the historical data if it's accurate."
+    },
+    {
+      "bullet": "Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio's class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency",
+      "problem": "This bullet ends at intent ('to reduce database load and latency'). The 20,000+ visits number describes the product's traffic, not the effect of the cache, so a quick reader may attribute it to the caching work.",
+      "severity": 3,
+      "why_it_matters": "This is the second Redis-cache bullet on the page with no result, so it adds little new signal for an ML-infra reader.",
+      "missing_or_unclear": "clarify: whether any observed change in load or latency exists.",
+      "suggested_direction": "If no result exists, consider shortening it or merging it with the studio bullet so the TerpLabs entry leads with the RAG work. Keep the 20,000+ figure clearly attached to Tortuga's traffic."
+    }
+  ],
+  "page_feedback": [
+    {
+      "problem": "Skills list 'PyTorch', 'CUDA', and 'model fine-tuning and evaluation', but no bullet shows PyTorch or CUDA work. The only fine-tuning shown is a triggered Bedrock fine-tune, not hands-on model training.",
+      "severity": 4,
+      "why_it_matters": "ML-infra interviewers often pick a Skills item and ask for the project behind it. Items with no supporting bullet weaken the otherwise strong credibility of the page.",
+      "suggested_direction": "Keep only the skills you can point to a project for. Otherwise, be ready to name the project, or move unsupported items lower in the list."
+    },
+    {
+      "problem": "Across the LLM work, evaluation shows up as gating in one place (the Bedrock retraining bullet) and as satisfaction or 'held' claims elsewhere (Capital One, UMIACS, RAG). The page has strong pipeline, latency, and deployment evidence, but evaluation is its thinnest axis.",
+      "severity": 4,
+      "why_it_matters": "Evaluation loops are a core hiring signal for applied-AI and LLM-platform teams. The Bedrock bullet proves the candidate can do it, so the other bullets look less rigorous by comparison.",
+      "suggested_direction": "Where a real check existed, name the check, not the feeling (what was compared and against what). Where none existed, scope the claim instead of asserting improvement."
+    },
+    {
+      "problem": "The strongest ML-infra evidence (Amazon Leo: LLM-graded retraining gate, Kinesis latency cut, CDK/Fargate handoff) is third in Experience, below an AWS bullet that isn't ML and a Capital One entry that leads with a frontend bullet.",
+      "severity": 3,
+      "why_it_matters": "On a 7-second skim, a domain hiring manager sees brands first, and the best evidence for this target is mid-page. Reverse-chronological order justifies the placement, but the within-entry ordering can still help.",
+      "suggested_direction": "Keep chronological order, and within each entry put the ML-relevant bullet first (see the Capital One note)."
+    }
+  ],
+  "keep": [
+    "Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance: on an EventBridge schedule a larger LLM grades its ratings, and fine-tuning runs only when the grades shift past a threshold",
+    "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+    "Deployed a space-topic research tool for Amazon Leo's public-policy team and set it up for handoff with AWS CDK infrastructure-as-code and GitHub Actions CI/CD, so Leo engineers new to the project now maintain it on AWS Fargate",
+    "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange's book, agreeing with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices",
+    "Co-founded a 110+ member student product studio that has shipped 5 live products",
+    "Sparse bolding limited to one headline number per bullet",
+    "Single-column layout with standard section headings and clean text extraction order"
+  ]
+}
