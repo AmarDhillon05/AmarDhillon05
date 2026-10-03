@@ -99,19 +99,19 @@
     {Software Development Engineer Intern}{Redmond, WA}
   \resumeItemListStart
     % fact: aws_sde.redshift
-    \resumeItem{Writing Java logic that sets the upper and lower bounds on EC2 capacity that Amazon Redshift reserves for operations like patching, balancing availability against cost, and backtesting it}
+    \resumeItem{Building capacity planning for Amazon Redshift maintenance like patching: Java logic that sets upper and lower bounds on reserved EC2 capacity to balance availability against cost, validated by backtesting}
   \resumeItemListEnd
 
   \resumeSubheading
     {Capital One}{Jun 2026 -- Aug 2026}
     {Software Engineering Intern}{Richmond, VA}
   \resumeItemListStart
-    % fact: capital_one.ui_overhaul
-    \resumeItem{Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and \textbf{90\%} of 30+ surveyed developers preferred it}
     % fact: capital_one.claude_skill
     \resumeItem{Cut AI workflow generation time \textbf{65\%} to under 15s by replacing a Claude skill's open-ended search with focused sub-skills that call Python tools for workflow search and validation, guided by CloudWatch and OpenSearch latency logs}
     % fact: capital_one.search_index
     \resumeItem{Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries}
+    % fact: capital_one.ui_overhaul
+    \resumeItem{Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and \textbf{90\%} of 30+ surveyed developers preferred it}
   \resumeItemListEnd
 
   \resumeSubheading
@@ -119,7 +119,7 @@
     {Software Engineer (Contract)}{College Park, MD}
   \resumeItemListStart
     % fact: amazon_contract.kinesis_pipeline
-    \resumeItem{Cut end-to-end latency \textbf{34\%} on the pipeline that sends a 6,000+ document scraped research corpus to model inference by replacing scraper-to-S3-to-Lambda staging with Amazon Kinesis streams feeding AWS Lambda}
+    \resumeItem{Cut end-to-end latency \textbf{34\%} on a data pipeline that sends 6,000+ scraped research documents to model inference by streaming them through Amazon Kinesis into AWS Lambda instead of staging each step in S3}
     % fact: amazon_contract.leo_deploy
     \resumeItem{Deployed a space-topic research tool for Amazon Leo's public-policy team and set it up for handoff with AWS CDK infrastructure-as-code and GitHub Actions CI/CD, so Leo engineers new to the project now maintain it on AWS Fargate}
     % fact: amazon_contract.bedrock_finetune
@@ -138,8 +138,6 @@
     {TerpLabs}{Jun 2025 -- Present}
     {Co-Founder, Software Engineer}{College Park, MD}
   \resumeItemListStart
-    % fact: terplabs.studio
-    \resumeItem{Co-founded a 110+ member student product studio that has shipped 5 live products}
     % fact: terplabs.tortuga
     \resumeItem{Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio's class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency}
   \resumeItemListEnd

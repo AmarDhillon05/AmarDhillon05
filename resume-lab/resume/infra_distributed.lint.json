@@ -1,24 +1,15 @@
 {
   "tex": "/home/user/AmarDhillon05/resume-lab/resume/infra_distributed.tex",
-  "n_bullets": 13,
+  "n_bullets": 12,
   "bullets": [
     {
       "fact": "aws_sde.redshift",
-      "chars": 187,
-      "words": 28,
+      "chars": 205,
+      "words": 29,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.56,
-      "text": "Writing Java logic that sets the upper and lower bounds on EC2 capacity that Amazon Redshift reserves for operations like patching, balancing availability against cost, and backtesting it"
-    },
-    {
-      "fact": "capital_one.ui_overhaul",
-      "chars": 215,
-      "words": 34,
-      "n_bold": 1,
-      "n_lines": 2,
-      "last_fill": 0.84,
-      "text": "Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and 90% of 30+ surveyed developers preferred it"
+      "last_fill": 0.72,
+      "text": "Building capacity planning for Amazon Redshift maintenance like patching: Java logic that sets upper and lower bounds on reserved EC2 capacity to balance availability against cost, validated by backtesting"
     },
     {
       "fact": "capital_one.claude_skill",
@@ -39,13 +30,22 @@
       "text": "Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries"
     },
     {
-      "fact": "amazon_contract.kinesis_pipeline",
-      "chars": 206,
-      "words": 29,
+      "fact": "capital_one.ui_overhaul",
+      "chars": 215,
+      "words": 34,
       "n_bold": 1,
       "n_lines": 2,
-      "last_fill": 0.82,
-      "text": "Cut end-to-end latency 34% on the pipeline that sends a 6,000+ document scraped research corpus to model inference by replacing scraper-to-S3-to-Lambda staging with Amazon Kinesis streams feeding AWS Lambda"
+      "last_fill": 0.84,
+      "text": "Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and 90% of 30+ surveyed developers preferred it"
+    },
+    {
+      "fact": "amazon_contract.kinesis_pipeline",
+      "chars": 201,
+      "words": 33,
+      "n_bold": 1,
+      "n_lines": 2,
+      "last_fill": 0.78,
+      "text": "Cut end-to-end latency 34% on a data pipeline that sends 6,000+ scraped research documents to model inference by streaming them through Amazon Kinesis into AWS Lambda instead of staging each step in S3"
     },
     {
       "fact": "amazon_contract.leo_deploy",
@@ -73,15 +73,6 @@
       "n_lines": 2,
       "last_fill": 0.33,
       "text": "Cut research-environment setup time 30% by pinning dependencies with uv and packaging the environment in Docker so every machine gets an identical setup"
-    },
-    {
-      "fact": "terplabs.studio",
-      "chars": 80,
-      "words": 13,
-      "n_bold": 0,
-      "n_lines": 1,
-      "last_fill": 1.0,
-      "text": "Co-founded a 110+ member student product studio that has shipped 5 live products"
     },
     {
       "fact": "terplabs.tortuga",
@@ -138,12 +129,12 @@
     },
     {
       "level": "WARN",
-      "where": "Cut end-to-end latency 34% on the pipeline that se",
+      "where": "Cut end-to-end latency 34% on a data pipeline that",
       "msg": "leading verb 'Cut' repeats (also: Cut AI workflow generation time 65% to under 15s b)"
     },
     {
       "level": "WARN",
-      "where": "Cut end-to-end latency 34% on the pipeline that se",
+      "where": "Cut end-to-end latency 34% on a data pipeline that",
       "msg": "voice: noun stack of 5 words"
     },
     {
@@ -173,11 +164,6 @@
     },
     {
       "level": "WARN",
-      "where": "Co-founded a 110+ member student product studio th",
-      "msg": "no visible technology"
-    },
-    {
-      "level": "WARN",
       "where": "Built a C++17 order book and matching engine and r",
       "msg": "leading verb 'Built' repeats (also: Built Redis caching in front of the Prisma ORM que)"
     },
@@ -198,5 +184,5 @@
     }
   ],
   "errors": 0,
-  "warnings": 15
+  "warnings": 14
 }

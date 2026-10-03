@@ -1,0 +1,20 @@
+[
+  {
+    "id": "g01",
+    "winner": "C",
+    "advantage": "concrete",
+    "decisive_wording": "C: \"Building capacity planning for Amazon Redshift maintenance like patching\" ... \"validated by backtesting\" vs A/B: \"..., balancing availability against cost, and backtesting it\"",
+    "info_preserved_or_lost": "All three keep Java, upper/lower bounds, reserved EC2 capacity, Redshift, patching, availability-vs-cost tradeoff, and backtesting. A adds the 'capacity-planning' label as a compound modifier; B drops that label entirely, so the purpose of the work is only implied. C keeps the label and states it first as the goal, then explains the mechanism.",
+    "credibility_change": "C reads as a planned, validated system ('validated by backtesting') rather than A/B's trailing 'and backtesting it', which sounds like an afterthought; slightly stronger in an interview. A and B are equally credible, but B gives a recruiter less to work with.",
+    "readability_change": "C puts the purpose before the mechanism, so a recruiter can restate it as 'capacity planning for Redshift maintenance' from the first clause. A and B open with 'Writing Java ... logic' and end with a dangling 'it' whose referent is unclear. The colon in C is a single clean break, not a chain."
+  },
+  {
+    "id": "g02",
+    "winner": "B",
+    "advantage": "concrete",
+    "decisive_wording": "B: \"6,000+ scraped research documents\" ... \"by streaming them through Amazon Kinesis into AWS Lambda instead of staging each step in S3\" vs A: \"6,000+ document scraped research corpus\" and \"scraper-to-S3-to-Lambda staging\"",
+    "info_preserved_or_lost": "All three keep the 34% end-to-end latency cut, 6,000+ scraped research documents, model inference, Kinesis, Lambda, and the removal of S3 staging. A alone names the scraper as the explicit first hop. C says 'replacing S3 staging between stages', which is the same fact with a redundant 'stages'. B carries the same information in the fewest words.",
+    "credibility_change": "About equal. All three describe a real mechanism a senior engineer would recognize (replacing S3 hand-offs with a stream). B's 'instead of staging each step in S3' makes it clearest why latency dropped, which helps when defending the number in an interview.",
+    "readability_change": "A has two noun stacks ('6,000+ document scraped research corpus', 'scraper-to-S3-to-Lambda staging') that slow every reader. C reads well but 'S3 staging between stages' is clunky. B is plain English that a recruiter can restate, and Kinesis and Lambda still appear as natural keywords."
+  }
+]

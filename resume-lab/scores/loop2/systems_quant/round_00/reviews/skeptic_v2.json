@@ -1,0 +1,134 @@
+{
+  "persona": "skeptic_v2",
+  "target": "Systems / quant-developer / low-latency C++ internships (HFT firms, trading-systems teams, performance engineering), 2026-27 cycle",
+  "memory_skim": {"strongest_3": [], "engineer_type": "", "memorable_numbers": [], "confusing": [], "skipped": [], "interview_questions": []},
+  "plain_english": [],
+  "scores": {
+    "impact_clarity": 7,
+    "quantification": 8,
+    "technical_depth": 7,
+    "concision_readability": 7,
+    "skim_test": 7,
+    "credibility": 8,
+    "ats_parseability": 8,
+    "visual_layout": 8,
+    "domain_fit": 7,
+    "human_voice": 7,
+    "plain_language": 6,
+    "overall": 7
+  },
+  "competitive_for_domain": "stretch",
+  "bullet_feedback": [
+    {
+      "bullet": "Implemented B+ tree and LSM-tree backends for the event log and benchmarked them on identical 2M-record workloads, where the B+ tree gave 12.8x the read throughput and 22x faster range queries at the cost of 27% more disk space",
+      "problem": "The comparison reports only the dimensions where the B+ tree wins (reads, range queries) and the disk-space cost, but omits write throughput, which is the reason anyone builds an LSM tree. A skeptical reader sees a one-sided benchmark. It also never says why an in-memory matching engine needs a persisted, range-queried 'event log', so the bullet reads like a separate database-course project bolted onto the order book.",
+      "severity": 5,
+      "why_it_matters": "An HFT interviewer will immediately ask 'and writes?' and 'why is there a B+ tree anywhere near a matching engine?'. If the answers aren't obvious from the page, the bullet costs credibility instead of adding depth.",
+      "missing_or_unclear": "clarify: what the event log is used for (replay? audit? recovery?) and how the two backends compared on writes",
+      "suggested_direction": "Start with one short clause on what the event log is for, then give the trade-off from both sides. If the write result exists, state it next to the read result instead of only the disk cost."
+    },
+    {
+      "bullet": "Stored price levels in a std::map of std::list FIFOs with a hash map from order ID to list iterator for O(1) cancels, sustaining 1.26M events/sec over the full replay and a 1.2 µs per-update p99 on a separate 2M-event run",
+      "problem": "Two problems. (1) 'on a separate 2M-event run' raises a flag: why isn't the p99 from the 50.9M replay? It reads like the latency number came from a friendlier run. (2) std::map plus std::list are node-based, cache-unfriendly containers that low-latency reviewers are trained to question. That's fine if it was a deliberate baseline, but the bullet presents it as the final design. It is also the most basic design bullet yet sits last, after the benchmarking bullets that depend on it.",
+      "severity": 4,
+      "why_it_matters": "A trading-systems interviewer will probe the container choice and the measurement setup first. If the page suggests the numbers were picked selectively, the strongest project loses some trust.",
+      "missing_or_unclear": "clarify: what the 1.2 µs covers (parsing + matching, or matching only) and why the p99 was measured on a separate run",
+      "suggested_direction": "Move this bullet up to second so the reader sees the design before the benchmarks. Briefly say why latency was measured separately (e.g., timing instrumentation overhead), or drop 'separate' if it doesn't change the meaning."
+    },
+    {
+      "bullet": "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange’s book, agreeing with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices",
+      "problem": "The 1-in-99,123 mismatch is left unexplained. A careful reader assumes the candidate knows the cause, but the page doesn't say so. 'Agreeing with the exchange on ... fills' is also ambiguous: it doesn't say what was compared against what (the engine's generated trades vs IEX's published trade reports?).",
+      "severity": 3,
+      "why_it_matters": "This is the headline proof of correctness and will be the first interview question. The number helps credibility only if the comparison is unambiguous.",
+      "missing_or_unclear": "clarify: what the fills were checked against",
+      "suggested_direction": "Name the reference in a few words, e.g. 'matching IEX's own trade reports on 99,122 of 99,123 fills'. Leave the cause of the single mismatch for the interview."
+    },
+    {
+      "bullet": "Writing Java logic that sets the upper and lower bounds on EC2 capacity that Amazon Redshift reserves for operations like patching, balancing availability against cost, and backtesting it",
+      "problem": "The trailing ', and backtesting it' is stitched onto a phrase that already ends a thought, and 'it' could refer to the logic, the bounds, or the capacity. 'Writing Java logic' also blurs ownership: it doesn't say whether the candidate owns the bounding algorithm or is implementing a design someone else wrote.",
+      "severity": 4,
+      "why_it_matters": "This is the biggest brand on the page and its only bullet. A reader who has to re-parse it to work out what was built takes away less than the role deserves.",
+      "missing_or_unclear": "clarify: whether the candidate designed the bounding approach or implemented it",
+      "suggested_direction": "Split it into what the logic decides and how it's validated, with a clear subject for each, e.g. 'Writing the Java logic that decides how much EC2 capacity Redshift holds back for patching and other maintenance, and backtesting it against ...' Use only facts the candidate already has."
+    },
+    {
+      "bullet": "Cut AI workflow generation time 65% to under 15s by replacing a Claude skill’s open-ended search with focused sub-skills that call Python tools for workflow search and validation, guided by CloudWatch and OpenSearch latency logs",
+      "problem": "The phrase 'guided by CloudWatch and OpenSearch latency logs' is a tech tail added after the result and the mechanism. It names tools without saying what the logs showed. 'Claude skill', 'sub-skills' and 'Python tools' are three layers of jargon that a non-LLM reader (most HFT screeners) can't picture.",
+      "severity": 4,
+      "why_it_matters": "For a systems/quant reader, the engineering in this bullet is profiling a slow path and narrowing it. That story is buried under agent vocabulary, and the profiling evidence is reduced to tool names.",
+      "missing_or_unclear": "clarify: what the latency logs revealed (which step was slow)",
+      "suggested_direction": "Lead with the diagnosis: what the logs showed was slow, then what replaced it. Cut the tool names unless they explain how the problem was found. Example shape: 'Latency logs showed most of the time went to X, so I replaced ... , cutting generation time 65% to under 15s.'"
+    },
+    {
+      "bullet": "Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries",
+      "problem": "'Strict access limits' is vague: rate limits, permission restrictions, or query quotas each imply a different design. The bullet ends on intent ('to cut database queries') with no outcome. The 'Because ..., precomputed ...' opening drops the subject, which makes it read as a dangling clause.",
+      "severity": 5,
+      "why_it_matters": "The constraint is the most interesting part of this bullet, and it's the part the reader can't decode. Without it, the design (category tree plus Redis cache) looks like generic caching.",
+      "missing_or_unclear": "clarify: what kind of access limit (rate, permissions, quota)",
+      "suggested_direction": "Name the constraint concretely and put the subject first. If no measured outcome exists, consider merging this bullet into the previous one as the 'how', instead of keeping it as a standalone bullet with no result."
+    },
+    {
+      "bullet": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+      "problem": "34% has no absolute baseline, so the reader can't tell whether this was minutes to seconds or 300 ms to 200 ms. 'S3 staging hops' is compressed jargon: a non-AWS reader won't know a 'hop' is an intermediate write-then-read through S3.",
+      "severity": 4,
+      "why_it_matters": "A latency-focused interviewer will ask 'from what to what?'. A percentage alone looks unanchored on a resume whose main project reports latency in microseconds.",
+      "missing_or_unclear": "clarify: the before/after end-to-end latency in absolute terms, if known",
+      "suggested_direction": "Add the absolute numbers if the candidate has them. Rephrase 'S3 staging hops' as what was happening, e.g. 'instead of writing each batch to S3 and reading it back at the next stage'."
+    },
+    {
+      "bullet": "For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp’s candidate grasps on camera images in Open3D for a vision-language model, then tuned prompts so the model picks the right grasp more often",
+      "problem": "'Picks the right grasp more often' is the only outcome and it's unmeasured. 'Aimed at ICLR' leans on a venue name for weight when the candidate's contribution is visualization plus prompt tuning. For this target the bullet adds little systems evidence and uses two lines.",
+      "severity": 4,
+      "why_it_matters": "A skeptic reads 'more often' as 'not measured'. A quant/systems reader will skim past it, and those two lines could go to evidence that matters for this domain.",
+      "missing_or_unclear": "clarify: how 'more often' was judged",
+      "suggested_direction": "Either state how the improvement was measured or shorten the bullet to one line describing the pipeline. Consider dropping 'aimed at ICLR' unless a submission actually exists."
+    },
+    {
+      "bullet": "Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio’s class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency",
+      "problem": "The only number (20,000+ visits) measures the product's traffic, not the effect of the caching work, so it reads like borrowed impact. The bullet ends on intent ('to reduce database load and latency') with no result.",
+      "severity": 4,
+      "why_it_matters": "A skeptical reader notices that the metric belongs to the product rather than the candidate's change, and that weakens trust in the other numbers on the page.",
+      "missing_or_unclear": "clarify: any observed change in database load or latency after caching",
+      "suggested_direction": "Keep the traffic figure as context, but make clear that the cache was a response to that traffic (e.g. 'to handle 20,000+ visits in its first month'). If there is no result, say only what was built, without implying a measured outcome."
+    },
+    {
+      "bullet": "Co-founded a 110+ member student product studio that has shipped 5 live products",
+      "problem": "Ownership is ambiguous. '110+ members' and '5 live products' describe the organization, and the bullet doesn't say what the candidate personally built or led.",
+      "severity": 3,
+      "why_it_matters": "Studio-level numbers can read as credit-taking. A trading firm interviewer will ask what you did, not what the club did.",
+      "missing_or_unclear": "clarify: the candidate's own role in the studio (e.g. which products, or what part of the studio they run)",
+      "suggested_direction": "Keep it to one line, but anchor it to the candidate's role in a few words, or merge it into the Tortuga bullet as context."
+    }
+  ],
+  "page_feedback": [
+    {
+      "problem": "Skills lists 'low-latency C++' and 'top-down analysis' as skills, and lists Rust, C and Fargate, but none of these is shown in a bullet. 'Data structures and algorithms' is filler that every CS student could list.",
+      "severity": 3,
+      "why_it_matters": "For an HFT reader, 'low-latency C++' as a self-applied label is a keyword claim; the IEX project already makes the case better. Unsupported entries invite questions the candidate may not want, such as 'walk me through a top-down analysis you did'.",
+      "suggested_direction": "Remove self-descriptive labels ('low-latency C++', 'data structures and algorithms'). Keep only tools the candidate can discuss in depth. Let the project bullets carry the latency claim."
+    },
+    {
+      "problem": "Plain-language load is uneven. The IEX bullets are rich in specialized nouns ('null control book', 'top-of-book', 'per-update p99'), and the experience bullets lean on platform jargon ('sub-skills', 'S3 staging hops', 'Prisma ORM'). A non-engineer screener can restate the IEX headline but would struggle with half the experience section.",
+      "severity": 4,
+      "why_it_matters": "At HFT firms, recruiters with little technical background often do the first pass. If they can't restate a bullet, they skip it.",
+      "suggested_direction": "Keep the distinctive technical nouns, but put a plain verb phrase in front of each one that says what it does (e.g. what a 'null control book' was used for)."
+    },
+    {
+      "problem": "About 15% of the page at the bottom is empty, while the AWS role (the strongest brand) has a single bullet and the UMIACS bullet takes two lines for low-domain-value content.",
+      "severity": 2,
+      "why_it_matters": "The space budget doesn't match what this reader cares about. Systems evidence is thin outside the one project.",
+      "suggested_direction": "No new facts are needed. Use the space to make the AWS bullet clearer (split the what and the how) rather than adding content elsewhere."
+    },
+    {
+      "problem": "The IEX project (Jul–Aug 2026) runs concurrently with the full-time Capital One internship (Jun–Aug 2026).",
+      "severity": 2,
+      "why_it_matters": "An interviewer may ask how a 50.9M-message replay system with careful benchmarking was built in the evenings of a full-time internship. This is plausible, but the candidate should be ready for it.",
+      "suggested_direction": "No change to the page is needed. Be ready to explain the timeline and scope in an interview."
+    }
+  ],
+  "keep": [
+    "Traced an apparent 1.65x slowdown to the CPU frequency governor using perf counters and a null control book, then cut run-to-run variance from about 6% to 0.06% with core pinning and a fixed clock",
+    "IEX project placed above Experience, which puts the strongest domain evidence first for this target",
+    "Section headings, date alignment and single-column layout (clean extraction order in the text output)"
+  ]
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "g01",
+    "winner": "A",
+    "advantage": "marginal",
+    "decisive_wording": "\"Building capacity planning for Amazon Redshift maintenance like patching\" ... \"validated by backtesting\"",
+    "info_preserved_or_lost": "All three keep Java, upper/lower bounds on reserved EC2 capacity, Redshift, patching, the availability-vs-cost tradeoff, and backtesting. A and C name the work as capacity planning, which is a recruiter- and ATS-friendly term; B drops that label. A frames patching as 'maintenance', which helps a non-technical reader.",
+    "credibility_change": "About the same. A's 'validated by backtesting' ties backtesting to its purpose (checking the bounds), which reads as slightly more rigorous than B/C's trailing 'and backtesting it'.",
+    "readability_change": "A opens with a plain-English label a recruiter can restate, then gives the mechanism after the colon, and ends cleanly. B and C are a single long participle chain ending in a dangling 'and backtesting it'; C also stacks 'Java capacity-planning logic'. A's colon structure is slightly more fragment-like, so the preference is mostly a matter of taste."
+  },
+  {
+    "id": "g02",
+    "winner": "A",
+    "advantage": "concrete",
+    "decisive_wording": "\"by streaming them through Amazon Kinesis into AWS Lambda instead of staging each step in S3\"",
+    "info_preserved_or_lost": "All three keep the 34% end-to-end latency cut, 6,000+ scraped research documents, model inference, Kinesis, Lambda, and S3 staging as the old approach. B adds the explicit scraper-to-S3-to-Lambda topology, but a reader can already infer it. A states the same before/after in plain verbs.",
+    "credibility_change": "Equal. Each names a real mechanism (replacing S3 staging with streaming) that a senior engineer would accept and that can be defended in an interview.",
+    "readability_change": "A is the easiest to read. 'Streaming them through ... instead of staging each step in S3' is a clear before/after that a recruiter can restate. B has two noun stacks ('6,000+ document scraped research corpus', 'scraper-to-S3-to-Lambda staging'). C reads well but is wordier ('a corpus of', 'S3 staging between stages' is repetitive). A says the same thing as C in fewer, plainer words."
+  }
+]
