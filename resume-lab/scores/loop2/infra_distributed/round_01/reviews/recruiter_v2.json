@@ -1,0 +1,136 @@
+{
+  "persona": "recruiter_v2",
+  "target": "Infrastructure / distributed systems / platform / SRE internships (cloud infra, data infra, platform teams), 2026-27 cycle",
+  "memory_skim": {
+    "strongest_3": [
+      "AWS SDE intern (Redshift capacity planning, Redmond) - the current role",
+      "Capital One SWE intern - cut AI workflow generation time 65%",
+      "IEX order book / matching engine in C++ - 50.9M real exchange messages, 1.26M events/sec"
+    ],
+    "engineer_type": "Backend / cloud engineer who does a lot of AWS work, with a performance-heavy C++ side project; reads as infra-leaning rather than front-end",
+    "memorable_numbers": ["65%", "90% of developers preferred it", "34% latency cut", "30% setup time", "50.9M messages", "12.8x", "1.26M events/sec"],
+    "confusing": [
+      "What 'Amazon Leo' is and why a UMD contracting group has Amazon as a client",
+      "What a 'Claude skill' / 'sub-skills' are at Capital One",
+      "B+ tree vs LSM-tree line - I could not tell what it means for the reader"
+    ],
+    "skipped": [
+      "Technical Skills block (too long to read in a skim)",
+      "Second and third Amazon Leo bullets",
+      "UMIACS and TerpLabs bullets beyond the titles"
+    ],
+    "interview_questions": [
+      "What does the Redshift capacity planning work actually decide, and who uses it?",
+      "Walk me through how you made the Capital One AI workflow tool faster.",
+      "How did you check your order book matched the real exchange?",
+      "How do you split time between the AWS internship and the ongoing roles?"
+    ]
+  },
+  "plain_english": [
+    {"quote": "Building capacity planning for Amazon Redshift maintenance like", "restatement": "At AWS he is writing Java code that decides how many spare servers to reserve while Redshift is being patched, so there are enough without wasting money, and he tests it against past data.", "understood": true},
+    {"quote": "Cut AI workflow generation time 65% to under", "restatement": "He made Capital One's AI assistant build workflows 65% faster (under 15 seconds) by splitting its one big open-ended search into smaller, targeted steps, using latency logs to find the slow parts.", "understood": true},
+    {"quote": "Because the 270K+ row PostgreSQL workflow table", "restatement": "Since the big workflow database was hard to query, he pre-sorted the popular workflows into categories for the AI to check first and added a cache so it hits the database less.", "understood": true},
+    {"quote": "Rebuilt the legacy tool developers use to", "restatement": "He rebuilt an old internal tool for creating test data as a desktop app with a visual drag-and-drop editor, and 90% of 30+ developers surveyed liked it better.", "understood": true},
+    {"quote": "Cut end-to-end latency 34% on a data", "restatement": "He made a pipeline that feeds 6,000+ research documents into an AI model 34% faster by streaming the data between steps instead of saving it to storage at each step.", "understood": true},
+    {"quote": "Deployed a space-topic research tool for Amazon", "restatement": "He launched a research tool for Amazon Leo's policy team and set up automated deployment so Leo's own engineers now run and maintain it.", "understood": true},
+    {"quote": "Automated retraining for a production Amazon Bedrock", "restatement": "He set up a scheduled check where a bigger AI grades a document-rating model, and the model only gets retrained when its quality drifts too far.", "understood": true},
+    {"quote": "Cut research-environment setup time 30% by pinning", "restatement": "He made the lab's software setup 30% faster and identical on every machine by locking versions and packaging it in a container.", "understood": true},
+    {"quote": "Built Redis caching in front of the", "restatement": "For his startup's class-scheduling app, which got 20,000+ visits in its first month, he added a cache to reduce database load and speed it up.", "understood": true},
+    {"quote": "Built a C++17 order book and matching", "restatement": "He built a stock-exchange order matching engine in C++ and ran 50.9M real exchange messages through it, matching the real exchange's results almost exactly (99,122 of 99,123 trades).", "understood": true},
+    {"quote": "Implemented B+ tree and LSM-tree backends for", "restatement": "He built two different ways to store the engine's event history and tested them head to head; one was about 13x faster for reads but used 27% more disk.", "understood": false},
+    {"quote": "Sustained 1.26M events/sec end-to-end over the", "restatement": "His engine processed 1.26 million events per second over the full replay, and he chose data structures that make cancelling an order instant.", "understood": true}
+  ],
+  "scores": {
+    "impact_clarity": 8,
+    "quantification": 8,
+    "technical_depth": 9,
+    "concision_readability": 7,
+    "skim_test": 8,
+    "credibility": 8,
+    "ats_parseability": 9,
+    "visual_layout": 8,
+    "domain_fit": 8,
+    "human_voice": 8,
+    "plain_language": 7,
+    "overall": 8
+  },
+  "competitive_for_domain": "Y",
+  "bullet_feedback": [
+    {
+      "bullet": "Implemented B+ tree and LSM-tree backends for the event log and benchmarked them on identical 2M-record workloads, where the B+ tree gave 12.8x the read throughput and 22x faster range queries at the cost of 27% more disk space",
+      "problem": "Three unexplained terms in a row ('B+ tree', 'LSM-tree', 'range queries') and no statement of what he decided or why the comparison mattered. I can repeat the numbers but not the point.",
+      "severity": 7,
+      "why_it_matters": "A recruiter cannot pitch this line to a hiring manager, and it is one of only three bullets on the strongest project; it reads as a benchmark table rather than an engineering decision.",
+      "missing_or_unclear": "clarify: what the event log is for and which backend he chose (or what the trade-off taught him)",
+      "suggested_direction": "Lead with the purpose ('compared two storage designs for the engine's event log') and end with the choice or takeaway; keep the 12.8x as the single headline number and consider cutting one of the three figures."
+    },
+    {
+      "bullet": "Building capacity planning for Amazon Redshift maintenance like patching: Java logic that sets upper and lower bounds on reserved EC2 capacity to balance availability against cost, validated by backtesting",
+      "problem": "The colon splits the bullet into a heading plus a noun phrase ('Java logic that sets...'), so the second half has no verb; 'maintenance like patching' also reads awkwardly.",
+      "severity": 4,
+      "why_it_matters": "This is the top line on the page and the biggest brand; it reads like a project label rather than a person describing their work, which costs human-voice points at the most-read spot.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Make it one sentence with a verb throughout, e.g. 'Building Java logic that decides how much EC2 capacity to reserve during Redshift maintenance such as patching, balancing availability against cost and validating it by backtesting.'"
+    },
+    {
+      "bullet": "Cut AI workflow generation time 65% to under 15s by replacing a Claude skill’s open-ended search with focused sub-skills that call Python tools for workflow search and validation, guided by CloudWatch and OpenSearch latency logs",
+      "problem": "'Claude skill' and 'sub-skills' are unfamiliar product terms to a non-engineer, and 'workflow' appears three times in this bullet and four more times in the next, so the Capital One section blurs together.",
+      "severity": 4,
+      "why_it_matters": "I could restate it, but only because the 65% carries it; a reader outside AI tooling loses what was actually being generated and for whom.",
+      "missing_or_unclear": "clarify: what a 'workflow' is here (e.g. test-data workflows, as in bullet 3) so the three Capital One bullets read as one story",
+      "suggested_direction": "Name what the workflows are once, early, and replace 'sub-skills' with plainer wording such as 'smaller, focused steps'; trim the trailing 'guided by...' clause if space is needed."
+    },
+    {
+      "bullet": "Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries",
+      "problem": "Starts with a 'Because...' clause so the action verb ('precomputed') is hidden mid-line, and the bullet ends on intent ('to cut database queries') with no outcome.",
+      "severity": 3,
+      "why_it_matters": "On a skim the eye lands on 'Because the 270K+ row PostgreSQL' and moves on without seeing what he built.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Put the verb first: 'Precomputed popular workflows into a category tree ... because the 270K+ row PostgreSQL table had strict access limits, and cached full workflows in Redis to cut database queries.'"
+    },
+    {
+      "bullet": "Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance: on an EventBridge schedule a larger LLM grades its ratings, and fine-tuning runs only when the grades shift past a threshold",
+      "problem": "Colon-joined two-part structure plus 'EventBridge', 'LLM' and 'fine-tuning' make the second half dense; it is the hardest Amazon Leo bullet to read aloud.",
+      "severity": 3,
+      "why_it_matters": "The interesting idea (retrain only when quality drifts) is buried at the end of the second line, which I skipped on the skim.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Lead with the idea: 'Set up a production Bedrock document classifier to retrain only when needed: a larger LLM grades its ratings on a schedule, and fine-tuning runs when the grades drift past a threshold.'"
+    },
+    {
+      "bullet": "Cut end-to-end latency 34% on a data pipeline that sends 6,000+ scraped research documents to model inference by streaming them through Amazon Kinesis into AWS Lambda instead of staging each step in S3",
+      "problem": "'model inference' and 'staging each step in S3' are jargon a recruiter has to guess at, though the before/after structure is good.",
+      "severity": 2,
+      "why_it_matters": "Minor; the 34% and 'instead of' contrast still carry it.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Optional: 'to an AI model' instead of 'to model inference'."
+    }
+  ],
+  "page_feedback": [
+    {
+      "problem": "The 'UMD App Development Contracting (Client: Amazon Leo)' header is confusing on a skim: I couldn't tell whether this is Amazon employment, a student club, or a consulting job, and 'Amazon Leo' is not a name most recruiters know.",
+      "severity": 5,
+      "why_it_matters": "Next to the real AWS internship, a second Amazon-branded entry can look like double-counting or brand padding to a recruiter; it is also the section with the strongest infra bullets (Kinesis, CDK, Fargate handoff).",
+      "suggested_direction": "Clarify the relationship in the header or title line (e.g. 'student contracting team' or a short descriptor of Amazon Leo) without adding new claims."
+    },
+    {
+      "problem": "Bold is used only on Capital One, the Amazon Leo first bullet, UMIACS and the IEX project numbers; the AWS role (top of page) and its bullet have no bold anchor, so the eye jumps past the biggest brand to '65%'.",
+      "severity": 3,
+      "why_it_matters": "The 7-second takeaway is Capital One's 65% and the C++ numbers rather than 'currently an AWS SDE intern on Redshift'.",
+      "suggested_direction": "Acceptable as is since the AWS role has no metric; if desired, reorder nothing but make sure the AWS line reads cleanly as one sentence (see bullet feedback)."
+    },
+    {
+      "problem": "The Technical Skills section is five dense lines with nested parentheses (e.g. 'AWS (EC2, Lambda, Kinesis, Fargate/ECS, API Gateway, EventBridge, SNS), observability (CloudWatch, X-Ray)').",
+      "severity": 2,
+      "why_it_matters": "I skipped it entirely on the skim; it works for ATS but not for a human.",
+      "suggested_direction": "Fine for ATS; optionally trim items that appear nowhere else (psutil, SQLAlchemy) to shorten the block."
+    }
+  ],
+  "keep": [
+    "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange’s book, agreeing with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices",
+    "Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and 90% of 30+ surveyed developers preferred it",
+    "Deployed a space-topic research tool for Amazon Leo’s public-policy team and set it up for handoff with AWS CDK infrastructure-as-code and GitHub Actions CI/CD, so Leo engineers new to the project now maintain it on AWS Fargate",
+    "Cut research-environment setup time 30% by pinning dependencies with uv and packaging the environment in Docker so every machine gets an identical setup",
+    "Sustained 1.26M events/sec end-to-end over the full replay, keeping each price level’s orders in a std::list FIFO inside a std::map and a hash map from order ID to list iterator for O(1) cancels",
+    "Section order (Education, Experience with AWS first, Projects, Skills) and the one-page layout"
+  ]
+}
