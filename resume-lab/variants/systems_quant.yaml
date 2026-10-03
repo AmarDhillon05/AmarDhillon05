@@ -1,0 +1,20 @@
+# Systems / quant-adjacent (loop 2; was quant_hft). Emphasis per Amar's spec §17: IEX matching engine,
+# C++, correctness, replay scale, B+ tree vs LSM, perf, throughput, low-level design. Projects lead.
+# The IEX project carries 4 bullets here (lint run with --max-per-role 4): it is this variant's centerpiece.
+base: resume/resume.tex
+out: resume/systems_quant.tex
+projects_first: true
+drop: [capital_one.ui_overhaul, amazon_contract.leo_deploy, amazon_contract.bedrock_finetune, terplabs.rag_meal]
+text:
+  iex.throughput+iex.data_structures: 'Stored price levels in a std::map of std::list FIFOs with a hash map from order ID to list iterator for O(1) cancels, sustaining \textbf{1.26M events/sec} over the full replay and a 1.2 \textmu{}s per-update p99 on a separate 2M-event run'
+retag:
+  iex.throughput+iex.data_structures: iex.throughput+iex.data_structures+iex.latency_dist
+add_after:
+  iex.storage_benchmark:
+    - fact: iex.perf_rigor
+      text: 'Traced an apparent 1.65x slowdown to the CPU frequency governor using perf counters and a null control book, then cut run-to-run variance from about 6\% to 0.06\% with core pinning and a fixed clock'
+skills:
+  - '\textbf{Languages:} C++17, C, Python, Java, Rust, SQL, TypeScript, Bash'
+  - '\textbf{Systems \& Performance:} low-latency C++, debugging and profiling with Linux perf (hardware counters, top-down analysis), POSIX, STL, B+ trees, LSM trees, data structures and algorithms, benchmarking'
+  - '\textbf{Cloud \& Tools:} AWS (Lambda, Kinesis, EC2, Fargate, CloudWatch monitoring), AWS CDK, PostgreSQL, Redis, Docker, GitHub Actions (CI/CD), Git, Pytest'
+  - '\textbf{Certification:} \href{https://www.credly.com/badges/d2406a97-d937-47de-823b-724981159d3b/public_url}{\underline{AWS Certified Developer -- Associate}} (Nov 2024 -- Nov 2027)'

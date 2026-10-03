@@ -86,7 +86,7 @@
 \section{Education}
 \resumeSubHeadingListStart
   \resumeSubheading
-    {University of Maryland, College Park}{May 2028}
+    {University of Maryland, College Park}{Expected May 2028}
     {B.S. in Computer Science, Minor in Statistics; GPA: 3.5}{College Park, MD}
 \resumeSubHeadingListEnd
 
@@ -99,19 +99,19 @@
     {Software Development Engineer Intern}{Redmond, WA}
   \resumeItemListStart
     % fact: aws_sde.redshift
-    \resumeItem{Writing Java policies that tune upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations like patching, balancing availability against cost; validated by backtesting}
+    \resumeItem{Writing Java logic that decides how much EC2 capacity Amazon Redshift reserves for operations like patching, setting upper and lower bounds that keep availability high without overspending, and backtesting the policies}
   \resumeItemListEnd
 
   \resumeSubheading
     {Capital One}{Jun 2026 -- Aug 2026}
     {Software Engineering Intern}{Richmond, VA}
   \resumeItemListStart
-    % fact: capital_one.search_index
-    \resumeItem{Precomputed a category-keyed tree index so workflow search works under strict DB access limits, distilling a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) into the main search tool of an LLM agent}
     % fact: capital_one.claude_skill
-    \resumeItem{Cut LLM workflow generation time \textbf{65\%} to under 15s by decomposing a Claude skill into sub-skills backed by Python search/validation tools, guided by CloudWatch + OpenSearch latency logs}
+    \resumeItem{Cut AI workflow generation time \textbf{65\%} to under 15s by splitting one large Claude skill into smaller sub-skills that call Python tools for search and validation, after CloudWatch and OpenSearch latency logs showed where time went}
+    % fact: capital_one.search_index
+    \resumeItem{Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries}
     % fact: capital_one.ui_overhaul
-    \resumeItem{Rebuilt a legacy test-data workflow builder in React/TypeScript + Electron, adding a React-Flow editor and Jest-tested validation; \textbf{90\%} of 30+ surveyed developers preferred it to the old tool}
+    \resumeItem{Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and \textbf{90\%} of 30+ surveyed developers preferred it}
   \resumeItemListEnd
 
   \resumeSubheading
@@ -119,11 +119,11 @@
     {Software Engineer (Contract)}{College Park, MD}
   \resumeItemListStart
     % fact: amazon_contract.kinesis_pipeline
-    \resumeItem{Reduced end-to-end latency \textbf{34\%} routing a 6,000+ document scraped research corpus to inference by replacing scraper-to-S3-to-Lambda staging with Kinesis streams into Lambda}
+    \resumeItem{Cut end-to-end latency \textbf{34\%} on the pipeline that sends a 6,000+ document scraped research corpus to model inference by replacing scraper-to-S3-to-Lambda staging with Amazon Kinesis streams feeding AWS Lambda}
     % fact: amazon_contract.leo_deploy
-    \resumeItem{Shipped a space-research tool to Amazon Leo's public-policy team with AWS CDK (TypeScript) IaC and GitHub Actions CI so Leo engineers now maintain it; runs on AWS Fargate (Docker)}
+    \resumeItem{Deployed a space-topic research tool for Amazon Leo's public-policy team and set it up for handoff with AWS CDK infrastructure-as-code and GitHub Actions CI/CD, so Leo engineers new to the project now maintain it on AWS Fargate}
     % fact: amazon_contract.bedrock_finetune
-    \resumeItem{Automated a production EventBridge fine-tuning loop for a Bedrock document-importance classifier that skips redundant retraining unless a larger LLM's eval scores move past a threshold}
+    \resumeItem{Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance: on an EventBridge schedule a larger LLM grades its ratings, and fine-tuning runs only when the grades shift past a threshold}
   \resumeItemListEnd
 
   \resumeSubheading
@@ -131,7 +131,7 @@
     {Machine Learning Research Intern}{College Park, MD}
   \resumeItemListStart
     % fact: umiacs.env_setup
-    \resumeItem{Shortened research-environment setup time \textbf{30\%} with uv dependency pinning and Docker; added psutil time/memory profiling and Pytest suites to find bottlenecks}
+    \resumeItem{Cut research-environment setup time \textbf{30\%} by pinning dependencies with uv and packaging the environment in Docker so every machine gets an identical setup}
   \resumeItemListEnd
 
   \resumeSubheading
@@ -139,7 +139,7 @@
     {Co-Founder, Software Engineer}{College Park, MD}
   \resumeItemListStart
     % fact: terplabs.studio+terplabs.tortuga
-    \resumeItem{Co-founded a 110+ member campus product studio that has shipped 5 live products, including Tortuga, a class scheduler with \mbox{\textbf{20,000+ visits}} in its first 30 days; built Redis caching for its Prisma ORM queries}
+    \resumeItem{Co-founded a 110+ member student product studio that has shipped 5 live products, and personally built Redis caching in front of the Prisma ORM queries for one, Tortuga, a class scheduler with \mbox{\textbf{20,000+ visits}} in its first 30 days}
   \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -151,11 +151,11 @@
     {\textbf{IEX Order Book \& Matching Engine} $|$ \textit{C++17, STL, POSIX, Linux perf}}{Jul 2026 -- Aug 2026}
   \resumeItemListStart
     % fact: iex.replay_correctness
-    \resumeItem{Engineered a C++17 order book and matching engine that replayed \textbf{50.9M} real IEX DEEP+ messages with no resync, matching 99,122 of 99,123 fills exactly and 100\% of top-of-book prices}
+    \resumeItem{Built a C++17 order book and matching engine and replayed \textbf{50.9M} real IEX exchange messages through it without ever resyncing to the exchange's book, matching 99,122 of 99,123 fills and 100\% of top-of-book prices}
     % fact: iex.storage_benchmark
-    \resumeItem{Benchmarked B+ tree vs LSM skip-list stores for the simulation's event logs on identical 2M-record workloads; the B+ tree gave \textbf{12.8$\times$} read throughput and 22$\times$ faster range summaries for 27\% more disk}
-    % fact: iex.throughput
-    \resumeItem{Sustained \textbf{1.26M events/sec} end-to-end over the full replay, averaging 686.7 ns/event in the matching engine}
+    \resumeItem{Implemented B+ tree and LSM-tree backends for the engine's event log and benchmarked them on identical 2M-record workloads: the B+ tree gave \textbf{12.8x} the read throughput and 22x faster range summaries for 27\% more disk}
+    % fact: iex.throughput+iex.data_structures
+    \resumeItem{Sustained \mbox{\textbf{1.26M events/sec}} end-to-end over the full replay, keeping each price level's orders in a std::list FIFO inside a std::map and a hash map from order ID to list iterator for O(1) cancels}
   \resumeItemListEnd
 \resumeSubHeadingListEnd
 
@@ -164,13 +164,13 @@
 \begin{itemize}[leftmargin=0in, label={}, itemsep=0pt, topsep=2pt]
   \small
   % fact: skills
-  \item{\textbf{Languages:} Java, Python, C++, TypeScript/JavaScript, SQL}
+  \item{\textbf{Languages:} Java, Python, C++, TypeScript, JavaScript, SQL, Bash}
   % fact: skills
-  \item{\textbf{Cloud (AWS):} Lambda, Kinesis, Fargate/ECS, EventBridge, CDK (IaC), CloudWatch, Bedrock, EC2, Redshift}
+  \item{\textbf{Cloud \& Infrastructure:} AWS (EC2, Lambda, Kinesis, Fargate/ECS, API Gateway, EventBridge, SNS), observability (CloudWatch, X-Ray), AWS CDK (infrastructure as code), Docker, GitHub Actions (CI/CD), Linux}
   % fact: skills
-  \item{\textbf{Backend \& Data:} PostgreSQL, Redis, SQLAlchemy, Prisma, OpenSearch, B+ tree / LSM storage}
+  \item{\textbf{Backend, Full-Stack \& Data:} PostgreSQL, Redis, SQLAlchemy, Prisma, OpenSearch, REST APIs, Node.js, B+ tree and LSM-tree storage}
   % fact: skills
-  \item{\textbf{DevOps \& Tools:} Docker, GitHub Actions (CI/CD), Linux, perf, Pytest, Jest, uv}
+  \item{\textbf{Practices \& Tools:} debugging and performance profiling (perf, psutil), benchmarking, unit testing (Pytest, Jest), data structures and algorithms, Git, uv}
   % fact: skills
   \item{\textbf{Certification:} \href{https://www.credly.com/badges/d2406a97-d937-47de-823b-724981159d3b/public_url}{\underline{AWS Certified Developer -- Associate}} (Nov 2024 -- Nov 2027)}
 \end{itemize}

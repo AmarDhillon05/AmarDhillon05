@@ -1,0 +1,19 @@
+# Infrastructure / distributed systems (loop 2; was backend_cloud). Emphasis per Amar's spec §17:
+# Redshift capacity, Kinesis/Lambda architecture, throughput/latency, storage, Docker/Fargate/CDK, performance.
+base: resume/resume.tex
+out: resume/infra_distributed.tex
+order:
+  amazon_contract: [amazon_contract.kinesis_pipeline, amazon_contract.leo_deploy, amazon_contract.bedrock_finetune]
+drop: [terplabs.rag_meal]
+text:
+  amazon_contract.kinesis_pipeline: 'Cut end-to-end latency \textbf{34\%} on the pipeline that sends a 6,000+ document scraped research corpus to model inference by replacing scraper-to-S3-to-Lambda staging with Amazon Kinesis streams feeding AWS Lambda'
+  # UMIACS: the reproducibility work is the infra-relevant story here (grasp pipeline swapped out via retag)
+  umiacs.grasp_vlm: 'Cut research-environment setup time \textbf{30\%} by pinning dependencies with uv and packaging the environment in Docker so every machine gets an identical setup'
+retag:
+  umiacs.grasp_vlm: umiacs.env_setup
+skills:
+  - '\textbf{Languages:} Java, Python, C++, TypeScript, JavaScript, SQL, Bash'
+  - '\textbf{Cloud \& Infrastructure:} AWS (EC2, Lambda, Kinesis, Fargate/ECS, API Gateway, EventBridge, SNS), observability (CloudWatch, X-Ray), AWS CDK (infrastructure as code), Docker, GitHub Actions (CI/CD), Linux'
+  - '\textbf{Backend, Full-Stack \& Data:} PostgreSQL, Redis, SQLAlchemy, Prisma, OpenSearch, REST APIs, Node.js, B+ tree and LSM-tree storage'
+  - '\textbf{Practices \& Tools:} debugging and performance profiling (perf, psutil), benchmarking, unit testing (Pytest, Jest), data structures and algorithms, Git, uv'
+  - '\textbf{Certification:} \href{https://www.credly.com/badges/d2406a97-d937-47de-823b-724981159d3b/public_url}{\underline{AWS Certified Developer -- Associate}} (Nov 2024 -- Nov 2027)'

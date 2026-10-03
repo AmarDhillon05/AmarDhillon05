@@ -20,8 +20,8 @@ Capital One
 Jun 2026 – Aug 2026
 Software Engineering Intern
 Richmond, VA
-• Cut LLM workflow generation time 65% to under 15s by splitting one large Claude skill into smaller sub-skills that call
-Python tools for search and validation, and output quality held in repeated stress-test runs
+• Cut AI workflow generation time 65% to under 15s by splitting one large Claude skill into smaller sub-skills that call
+Python tools for search and validation, after CloudWatch and OpenSearch latency logs showed where time went
 • Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a
 category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries
 • Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a
@@ -30,24 +30,22 @@ UMD App Development Contracting (Client: Amazon Leo)
 Jan 2026 – Present
 Software Engineer (Contract)
 College Park, MD
-• Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance: on an
-EventBridge schedule a larger LLM grades its ratings, and fine-tuning runs only when the grades shift past a threshold
-• Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3
-staging hops with Kinesis streams feeding Lambda
+• Cut end-to-end latency 34% on the pipeline that sends a 6,000+ document scraped research corpus to model inference
+by replacing scraper-to-S3-to-Lambda staging with Amazon Kinesis streams feeding AWS Lambda
 • Deployed a space-topic research tool for Amazon Leo’s public-policy team and set it up for handoff with AWS CDK
 infrastructure-as-code and GitHub Actions CI/CD, so Leo engineers new to the project now maintain it on AWS Fargate
+• Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance: on an
+EventBridge schedule a larger LLM grades its ratings, and fine-tuning runs only when the grades shift past a threshold
 UMD Institute for Advanced Computer Studies (UMIACS)
 Dec 2025 – Present
 Machine Learning Research Intern
 College Park, MD
-• For a PhD-led robotics project aimed at ICLR, built a Python pipeline that renders AnyGrasp’s candidate grasps on
-multi-camera images as Open3D overlays for a vision-language model, and tuned its prompts so it picks right more often
+• Cut research-environment setup time 30% by pinning dependencies with uv and packaging the environment in Docker
+so every machine gets an identical setup
 TerpLabs
 Jun 2025 – Present
 Co-Founder, Software Engineer
 College Park, MD
-• Building a RAG meal-suggestion feature for the official UMD app, in which GPT-4o mini writes suggestions from scraped
-recipes found by SentenceBERT vector search in ChromaDB, and internal testers rated 93% of meals satisfactory
 • Co-founded a 110+ member student product studio that has shipped 5 live products, and personally built Redis caching
 in front of the Prisma ORM queries for one, Tortuga, a class scheduler with 20,000+ visits in its first 30 days
 
@@ -56,16 +54,19 @@ IEX Order Book & Matching Engine | C++17, STL, POSIX, Linux perf
 Jul 2026 – Aug 2026
 • Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without
 ever resyncing to the exchange’s book, matching 99,122 of 99,123 fills and 100% of top-of-book prices
+• Implemented B+ tree and LSM-tree backends for the engine’s event log and benchmarked them on identical 2M-record
+workloads: the B+ tree gave 12.8x the read throughput and 22x faster range summaries for 27% more disk
+• Sustained 1.26M events/sec end-to-end over the full replay, keeping each price level’s orders in a std::list FIFO inside
+a std::map and a hash map from order ID to list iterator for O(1) cancels
 
 Technical Skills
-AI/ML: LLMs (Claude, Amazon Bedrock, GPT-4o mini), retrieval-augmented generation (RAG), vector search (ChromaDB,
-SentenceBERT), LLM agents and tool use (Claude skills), model fine-tuning and evaluation, vision-language models, prompt
-engineering, PyTorch, Open3D
-Languages: Python, Java, C++, C, TypeScript, JavaScript, SQL, CUDA
-Cloud & Data: AWS (Lambda, Kinesis, EventBridge, Fargate, CloudWatch), AWS CDK, monitoring (CloudWatch, X-Ray), REST
-APIs, PostgreSQL, Redis, MongoDB (NoSQL), OpenSearch
-Engineering: full-stack apps (React, Electron), data structures and algorithms, object-oriented design, Docker, GitHub Actions
-(CI/CD), Linux, unit testing (Pytest, Jest), Git, uv
+Languages: Java, Python, C++, TypeScript, JavaScript, SQL, Bash
+Cloud & Infrastructure: AWS (EC2, Lambda, Kinesis, Fargate/ECS, API Gateway, EventBridge, SNS), observability
+(CloudWatch, X-Ray), AWS CDK (infrastructure as code), Docker, GitHub Actions (CI/CD), Linux
+Backend, Full-Stack & Data: PostgreSQL, Redis, SQLAlchemy, Prisma, OpenSearch, REST APIs, Node.js, B+ tree and
+LSM-tree storage
+Practices & Tools: debugging and performance profiling (perf, psutil), benchmarking, unit testing (Pytest, Jest), data structures
+and algorithms, Git, uv
 Certification: AWS Certified Developer – Associate (Nov 2024 – Nov 2027)
 
 

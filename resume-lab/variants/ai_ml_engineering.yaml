@@ -1,19 +1,15 @@
+# AI/ML engineering, written as ML infrastructure grounded in engineering (loop 2, Amar's choice to keep).
 base: resume/resume.tex
 out: resume/ai_ml_engineering.tex
 order:
-  capital_one: [capital_one.claude_skill, capital_one.search_index, capital_one.ui_overhaul]
   amazon_contract: [amazon_contract.bedrock_finetune, amazon_contract.kinesis_pipeline, amazon_contract.leo_deploy]
   terplabs: [terplabs.rag_meal, terplabs.studio+terplabs.tortuga]
-drop: [iex.throughput, iex.storage_benchmark]
+drop: [iex.throughput+iex.data_structures, iex.storage_benchmark]
 text:
-  amazon_contract.bedrock_finetune: 'Automated a production EventBridge fine-tuning loop for a Bedrock model that classifies documents by importance, retraining only when a larger LLM''s scoring of its labels shifts past a threshold'
-  umiacs.grasp_vlm: 'Built a Python pipeline for PhysTwin (PhD-led digital twin, targeting ICLR) rendering AnyGrasp grasps on multi-camera images as Open3D overlays for a VLM; tuned its prompts for grasp selection and depth cues'
-  capital_one.claude_skill: 'Cut LLM workflow generation time \textbf{65\%} to under 15s by decomposing a Claude skill into sub-skills with Python search/validation tools; output quality held in repeated stress-test runs'
-  iex.replay_correctness: 'Built a C++17 order book and matching engine that replayed 50.9M real IEX DEEP+ messages with no resync, matching 99,122 of 99,123 fills exactly'
-  terplabs.studio+terplabs.tortuga: 'Co-founded a 110+ member campus product studio that has shipped 5 live products, including Tortuga, a class scheduler with 20,000+ visits in its first 30 days; built Redis caching for its Prisma ORM queries'
+  capital_one.claude_skill: 'Cut LLM workflow generation time \textbf{65\%} to under 15s by splitting one large Claude skill into smaller sub-skills that call Python tools for search and validation, and output quality held in repeated stress-test runs'
 skills:
-  - '\textbf{AI/ML:} Claude (agent skills, tool use), AWS Bedrock (fine-tuning), RAG, GPT-4o mini, ChromaDB, SentenceBERT embeddings, Open3D'
-  - '\textbf{Languages:} Python, Java, C++, TypeScript/JavaScript, SQL'
-  - '\textbf{Cloud \& Data:} AWS (Lambda, Kinesis, EventBridge, Fargate, CDK, CloudWatch, X-Ray), PostgreSQL, Redis, OpenSearch'
-  - '\textbf{Tools:} Docker, GitHub Actions, Linux, Pytest, Jest, uv, React, Electron'
+  - '\textbf{AI/ML:} LLMs (Claude, Amazon Bedrock, GPT-4o mini), retrieval-augmented generation (RAG), vector search (ChromaDB, SentenceBERT), LLM agents and tool use (Claude skills), model fine-tuning and evaluation, vision-language models, prompt engineering, PyTorch, Open3D'
+  - '\textbf{Languages:} Python, Java, C++, C, TypeScript, JavaScript, SQL, CUDA'
+  - '\textbf{Cloud \& Data:} AWS (Lambda, Kinesis, EventBridge, Fargate, CloudWatch), AWS CDK, monitoring (CloudWatch, X-Ray), REST APIs, PostgreSQL, Redis, MongoDB (NoSQL), OpenSearch'
+  - '\textbf{Engineering:} full-stack apps (React, Electron), data structures and algorithms, object-oriented design, Docker, GitHub Actions (CI/CD), Linux, unit testing (Pytest, Jest), Git, uv'
   - '\textbf{Certification:} \href{https://www.credly.com/badges/d2406a97-d937-47de-823b-724981159d3b/public_url}{\underline{AWS Certified Developer -- Associate}} (Nov 2024 -- Nov 2027)'
