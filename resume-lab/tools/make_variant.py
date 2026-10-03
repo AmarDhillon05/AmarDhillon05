@@ -11,6 +11,7 @@ spec keys (all optional except base/out):
   text: {fact.id: "new text"}   # override bullet text (LaTeX)
   order: {first.fact.id: [ids in desired order within that role list]}
   add_after: {existing.fact.id: [{fact: new.id, text: "..."}]}
+  retag: {old.id: "a.b+c.d"}    # change a bullet's fact annotation (e.g. after merging)
   skills: ["\\textbf{Row:} a, b", ...]   # replace the skills rows
 Every bullet keeps its `% fact:` annotation, so tools/fact_check.py still applies.
 """
@@ -51,6 +52,10 @@ def main():
         start, end = ms[0].start(), ms[-1].end()
         assert s[start:end].count("% fact:") == len(ids), f"order: {ids} are not one contiguous list"
         s = s[:start] + "".join(by_id[i] for i in ids) + s[end:]
+
+    for old, new in (spec.get("retag") or {}).items():
+        assert f"% fact: {old}\n" in s, f"retag: {old} not found"
+        s = s.replace(f"% fact: {old}\n", f"% fact: {new}\n")
 
     if spec.get("projects_first"):
         pm = re.search(r"%-----------PROJECTS-----------\n.*?(?=%-----------SKILLS)", s, re.S)

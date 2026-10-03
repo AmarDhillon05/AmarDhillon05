@@ -1,0 +1,4 @@
+== /home/user/AmarDhillon05/resume-lab/scores/quant_hft/round_02/resume.tex
+[WARN] 'Built a Python pipeline for PhysTwin, a PhD-led di': leading verb 'Built' repeats (also: Built a C++17 order book and matching engine that )
+lint: 0 errors, 1 warnings, 10 bullets
+fact_check: 0 errors, 0 warnings, 12 facts used
