@@ -1,0 +1,35 @@
+{
+  "persona": "senior_swe_hm",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28 with AWS SDE and Capital One internships, an Amazon Leo client contract, and a C++ matching engine replaying 50.9M IEX messages. Strong.",
+  "scores": {"impact_clarity": 8, "quantification": 8, "technical_depth": 8, "concision_readability": 8,
+             "skim_test": 9, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 8, "overall": 9},
+  "score_rationale": {},
+  "competitive_for_domain": "Y",
+  "must_fix": [],
+  "bullets": [
+    {"quote": "Writing Java to tune upper/lower bounds on EC2", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Rebuilt a legacy test-data workflow builder in React/TypeScript", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Precomputed a tree-style search index over popular workflows", "verdict": "tighten", "issue": "'tree-style' is vague; ends at intent with no outcome (accepted). Name the structure if it's a real trie/prefix tree.", "suggestion": "Precomputed a tree-structured search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to cut DB queries under access limits"},
+    {"quote": "Cut LLM workflow generation time 65% to under", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Shipped a space-research tool used by Amazon Leo's", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline routing", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Automated EventBridge-scheduled fine-tuning of a Bedrock source-relevancy model", "verdict": "tighten", "issue": "Reads AWS-service-heavy; the interesting decision is the retrain-skip gate. Lead with it.", "suggestion": "Automated scheduled (EventBridge) fine-tuning of a Bedrock source-relevancy model with gates that skip redundant retraining; added X-Ray tracing and SNS failure alerts"},
+    {"quote": "Built a Python pipeline for PhysTwin, a PhD-led", "verdict": "tighten", "issue": "'and tunes its prompts' is a weak trailing clause; the pipeline description is the substance.", "suggestion": "Built a Python pipeline for PhysTwin (PhD-led digital twin project targeting ICLR) that runs AnyGrasp on multi-camera images and renders grasps as Open3D overlays for VLM prompting"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Added Redis query caching over Prisma SQL queries", "verdict": "add_context", "issue": "Only bullet whose stated goal (reduce load/latency) has no result; 20K visits is scope, not caching outcome.", "suggestion": "For Tortuga, a class scheduler that drew 20,000+ visits in its first 30 days, added Redis caching over Prisma SQL queries to absorb peak read load"},
+    {"quote": "Building a RAG meal-suggestion feature for the official", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Engineered a C++17 order book and matching engine", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores for", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Sustained 1.26M events/sec end-to-end over the full", "verdict": "tighten", "issue": "'1.40 GHz base clock' is oddly precise filler; the throughput and ns/event carry it.", "suggestion": "Sustained 1.26M events/sec end-to-end over the full replay, with 686.7 ns/event matching latency"}
+  ],
+  "structure": [
+    {"key": "keep_current_order", "change": "Keep Education → Experience → Projects → Skills; ordering by brand recency is right for this level.", "rationale": "AWS and Capital One lead the skim; the C++ project is strong enough to hold its own at the bottom."}
+  ],
+  "top3": [
+    "Tighten the TerpLabs Redis bullet so the caching action isn't paired with an unmeasured outcome; lead with Tortuga's scope instead.",
+    "Make the EventBridge/Bedrock bullet lead with the decision (retrain-skip gates) rather than the service list.",
+    "Trim trailing filler ('and tunes its prompts', '1.40 GHz base clock') to sharpen the PhysTwin and matching-engine bullets."
+  ]
+}

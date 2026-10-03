@@ -1,0 +1,35 @@
+{
+  "persona": "bigtech_recruiter",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28, currently AWS SDE intern after Capital One SWE intern, plus Amazon-client contract work and a C++ matching engine. Clear early-career standout.",
+  "scores": {"impact_clarity": 8, "quantification": 8, "technical_depth": 8, "concision_readability": 8,
+             "skim_test": 8, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 9, "overall": 9},
+  "score_rationale": {},
+  "competitive_for_domain": "Y",
+  "must_fix": [],
+  "bullets": [
+    {"quote": "Writing Java to tune upper/lower bounds on EC2", "verdict": "tighten", "issue": "Top-brand role but the one bullet is a run-on with no visible anchor; 'backtesting' clause trails.", "suggestion": "Writing Java to tune upper/lower bounds on EC2 capacity reserved for Redshift operations (e.g., patching); backtesting policies to balance availability against cost"},
+    {"quote": "Rebuilt a legacy test-data workflow builder in React/TypeScript", "verdict": "keep"},
+    {"quote": "Precomputed a tree-style search index over popular workflows", "verdict": "keep"},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "keep"},
+    {"quote": "Shipped a space-research tool used by Amazon Leo's", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep"},
+    {"quote": "Automated EventBridge-scheduled fine-tuning of a Bedrock source-relevancy model", "verdict": "tighten", "issue": "Reads as an AWS service list; the decision-gate idea is the interesting part but gets diluted.", "suggestion": "Automated EventBridge-scheduled fine-tuning of a Bedrock source-relevancy model with decision gates that skip redundant retraining; added X-Ray tracing and SNS alerts"},
+    {"quote": "Built a Python pipeline for PhysTwin, a PhD-led", "verdict": "keep"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "keep"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep"},
+    {"quote": "Added Redis query caching over Prisma SQL queries", "verdict": "keep"},
+    {"quote": "Building a RAG meal-suggestion feature for the official", "verdict": "keep"},
+    {"quote": "Engineered a C++17 order book and matching engine", "verdict": "keep"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores", "verdict": "tighten", "issue": "Three ratios in one bullet; dense for a generalist skim.", "suggestion": "Benchmarked B+ tree vs LSM skip-list stores for event logs on identical 2M-record workloads; B+ tree gave 12.8× read throughput and 22× faster range summaries at 27% more disk"},
+    {"quote": "Sustained 1.26M events/sec end-to-end over the", "verdict": "tighten", "issue": "'686.7 ns/event on a 1.40 GHz base clock' is detail a recruiter skips; bold 1.26M carries it.", "suggestion": "Sustained 1.26M events/sec end-to-end over the full replay (686.7 ns/event matching)"}
+  ],
+  "structure": [
+    {"key": "keep_current_order", "change": "Keep Education → Experience (AWS, Capital One first) → Projects → Skills", "rationale": "Brands lead the page exactly where a 7-second skim lands; no reordering needed."}
+  ],
+  "top3": [
+    "Tighten the AWS bullet so the current top-brand role reads in one pass",
+    "Trim the matching-engine perf bullet's clock-speed detail to reduce metric density for generalist readers",
+    "Trim the AWS-service list in the Bedrock fine-tuning bullet so the decision-gate design stands out"
+  ]
+}
