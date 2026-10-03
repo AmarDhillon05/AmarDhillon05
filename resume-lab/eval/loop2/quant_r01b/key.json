@@ -1,0 +1,26 @@
+{
+  "g01": {
+    "fact": "iex.throughput+iex.data_structures+iex.latency_dist",
+    "labels": {
+      "A": "incumbent",
+      "B": "cand1",
+      "C": "cand2"
+    },
+    "texts": {
+      "incumbent": "Stored price levels in a std::map of std::list FIFOs with a hash map from order ID to list iterator for O(1) cancels, sustaining 1.26M events/sec over the full replay and a 1.2 \u00b5s per-update p99 on a separate 2M-event run",
+      "cand1": "Sustained 1.26M events/sec over the full replay and a 1.2 \u00b5s per-message p99 on a separate 2M-event run, keeping each price level as a FIFO queue (std::list) inside a std::map, with an order-ID hash map for O(1) cancels",
+      "cand2": "Sustained 1.26M events/sec over the full replay with each price level kept as a FIFO std::list inside a std::map and a hash map from order ID to list node for O(1) cancels, and a separate 2M-event run measured a 1.2 \u00b5s p99"
+    }
+  },
+  "g02": {
+    "fact": "iex.perf_rigor",
+    "labels": {
+      "A": "cand1",
+      "B": "incumbent"
+    },
+    "texts": {
+      "cand1": "Traced an apparent 1.65x performance regression to the CPU frequency governor, not a code change, using perf counters and a do-nothing control book, then cut run-to-run variance from about 6% to 0.06% by pinning cores and fixing the clock",
+      "incumbent": "Traced an apparent 1.65x slowdown to the CPU frequency governor using perf counters and a null control book, then cut run-to-run variance from about 6% to 0.06% with core pinning and a fixed clock"
+    }
+  }
+}
