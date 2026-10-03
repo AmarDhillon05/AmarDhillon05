@@ -1,0 +1,37 @@
+{
+  "persona": "hft_engineer",
+  "target": "Software engineering intern roles at quantitative trading / HFT firms (Jane Street, HRT, Citadel Securities, Optiver, IMC style), 2026–27 cycle. Score domain_fit for this domain.",
+  "seven_second_takeaway": "UMD CS '28; C++17 IEX order book replaying 50.9M real messages with ns-level latency and careful benchmarking; AWS and Capital One SWE internships.",
+  "scores": {"impact_clarity": 8, "quantification": 8, "technical_depth": 8, "concision_readability": 7,
+             "skim_test": 8, "credibility": 7, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 8, "overall": 8},
+  "score_rationale": {
+    "concision_readability": "Every order-book bullet is a full two lines and packed with numbers; the eye has to work through the project block.",
+    "credibility": "120 ns p50 per update vs 686.7 ns/event mean for the engine looks inconsistent without saying what each run measured; an interviewer will go straight to it."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "clarify: how the 120 ns p50 / 1.2 µs p99 per book update (2M-event profiling run) relates to the 686.7 ns/event matching-engine mean on the full replay. Name what each covers (book update only vs parse+match, different run/clock) so they don't read as contradicting each other."
+  ],
+  "bullets": [
+    {"quote": "Built a C++17 order book and matching engine", "verdict": "keep"},
+    {"quote": "Indexed orders in a hash map holding iterators", "verdict": "tighten", "issue": "Good design choice, but the latency clause belongs with the throughput bullet; mixing them invites p50-vs-mean confusion.", "suggestion": "Indexed orders in a hash map of iterators into per-price FIFO queues over std::map levels, giving O(1) cancels; separate 2M-event profiling run: 120 ns p50, 1.2 µs p99 per book update"},
+    {"quote": "Sustained 1.26M events/sec end-to-end over the full", "verdict": "add_context", "issue": "Say what 'end-to-end' and 'engine alone' include so the mean doesn't seem to contradict the 120 ns p50.", "suggestion": "Sustained 1.26M events/sec end-to-end (parse + book + match) over the full replay; matching engine alone averages 686.7 ns/event (1.46M/s) at a fixed 1.40 GHz base clock"},
+    {"quote": "Traced a 1.65× phantom regression to a CPU-governor", "verdict": "keep"},
+    {"quote": "Benchmarked B+ tree vs LSM stores for", "verdict": "keep", "issue": "Least HFT-relevant bullet in the project, but shows honest trade-off analysis and a negative result."},
+    {"quote": "Writing Java policies that tune upper/lower bounds", "verdict": "keep", "issue": "Honestly scoped as in-progress; fine."},
+    {"quote": "Precomputed a tree-style search index over popular", "verdict": "tighten", "issue": "Dense; 'as the Claude skill's main search tool under DB access limits' reads awkwardly.", "suggestion": "Precomputed a tree-style search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to serve as the Claude skill's main search tool under DB access limits"},
+    {"quote": "Cut LLM workflow generation time 65% to under", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep"},
+    {"quote": "Built a Python pipeline for PhysTwin (PhD-led digital", "verdict": "tighten", "issue": "Least relevant to HFT; could be compressed to one line if space is needed.", "suggestion": "Built a Python pipeline for PhysTwin (PhD-led digital twin, targeting ICLR) turning multi-camera AnyGrasp output into Open3D overlays for a VLM; tuned prompts to pick grasps and judge depth"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep"}
+  ],
+  "structure": [
+    {"key": "keep_project_first", "change": "Keep the order book project above Experience.", "rationale": "It is exactly the evidence an HFT HM hires on; seeing it first is the main reason this resume works for the domain."},
+    {"key": "split_latency_vs_throughput", "change": "Keep latency distribution numbers in one bullet and throughput numbers in another, each stating its measurement setup.", "rationale": "Separates the two benchmark regimes so the numbers read as consistent methodology rather than conflicting claims."}
+  ],
+  "top3": [
+    "clarify: reconcile the 120 ns p50 per book update with the 686.7 ns/event engine mean by naming what each measurement covers and which run it came from",
+    "Tighten the order-book bullets so they read more easily: fewer numbers per line, one measurement story per bullet",
+    "Compress the least HFT-relevant bullets (PhysTwin, Capital One search index) so the systems/perf signal stands out more"
+  ]
+}

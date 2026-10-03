@@ -1,0 +1,116 @@
+{
+  "persona": "bs_detector",
+  "target": "Backend and cloud infrastructure SWE intern roles (distributed services, data layer, AWS, platform/SRE), 2026–27 cycle. Score domain_fit for this domain.",
+  "seven_second_takeaway": "UMD CS '28, AWS SDE intern then Capital One; ships real AWS pipelines (Kinesis/Lambda/CDK/Fargate) for Amazon Leo; C++ matching engine at 1.26M events/sec.",
+  "scores": {
+    "impact_clarity": 7,
+    "quantification": 8,
+    "technical_depth": 8,
+    "concision_readability": 8,
+    "skim_test": 8,
+    "credibility": 8,
+    "ats_parseability": 9,
+    "visual_layout": 8,
+    "domain_fit": 8,
+    "overall": 8
+  },
+  "score_rationale": {
+    "impact_clarity": "Search-index, EventBridge fine-tuning and TerpLabs Redis clauses end at the mechanism; reader must infer why they mattered. Most other bullets read What-How-Result cleanly."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "Clarify: is 6,000+ documents a total corpus or a per-day/per-run volume? Choosing Kinesis over S3 for 6K total docs invites an immediate 'why streaming?' follow-up.",
+    "Replace insider jargon 'the Claude skill's main search tool' / 'sub-skills' with plain backend terms a non-Capital-One HM understands (e.g., LLM agent's search tool)."
+  ],
+  "bullets": [
+    {
+      "quote": "Writing Java policies that tune upper/lower bounds",
+      "verdict": "keep",
+      "issue": "",
+      "suggestion": ""
+    },
+    {
+      "quote": "Precomputed a tree-style search index so workflow",
+      "verdict": "tighten",
+      "issue": "'tree-style' is vague and 'Claude skill's main search tool' is internal jargon; lead with the constraint.",
+      "suggestion": "Under strict DB access limits, distilled a 270K+ row PostgreSQL table into a precomputed tree search index (Python/SQLAlchemy, Redis cache) serving the LLM agent's main search tool"
+    },
+    {
+      "quote": "Cut LLM workflow generation time 65% to",
+      "verdict": "tighten",
+      "issue": "Strong, baselined metric; 'Claude skill'/'sub-skills' wording reads as internal shorthand.",
+      "suggestion": "Cut LLM workflow generation time 65% to under 15s by splitting one monolithic agent prompt into smaller steps backed by Python search/validation tools, guided by CloudWatch + OpenSearch latency logs"
+    },
+    {
+      "quote": "Rebuilt a legacy test-data workflow builder in",
+      "verdict": "keep",
+      "issue": "",
+      "suggestion": ""
+    },
+    {
+      "quote": "Reduced end-to-end latency 34% for a pipeline",
+      "verdict": "add_context",
+      "issue": "Good design choice; clarify whether 6,000+ is total or throughput so the Kinesis decision survives follow-up.",
+      "suggestion": ""
+    },
+    {
+      "quote": "Shipped a space-research tool to Amazon Leo's",
+      "verdict": "keep",
+      "issue": "",
+      "suggestion": ""
+    },
+    {
+      "quote": "Automated EventBridge-scheduled fine-tuning of a Bedrock model",
+      "verdict": "tighten",
+      "issue": "Convoluted trigger clause; 'cross-model eval scores move past a threshold' needs a re-read. ML-leaning for a backend panel.",
+      "suggestion": "Automated EventBridge-scheduled Bedrock fine-tuning for a document-importance classifier, retraining only when a larger LLM's eval of its outputs crosses a threshold"
+    },
+    {
+      "quote": "Shortened research-environment setup time 30% with uv",
+      "verdict": "keep",
+      "issue": "",
+      "suggestion": ""
+    },
+    {
+      "quote": "Co-founded a 110+ member campus product studio",
+      "verdict": "tighten",
+      "issue": "Redis/Prisma clause is tacked on; no stated reason or effect, so it reads as keyword insertion.",
+      "suggestion": "Co-founded a 110+ member campus product studio shipping 5 live products, incl. Tortuga, a class scheduler with 20,000+ visits in 30 days; built its Redis caching layer over Prisma ORM queries"
+    },
+    {
+      "quote": "Engineered a C++17 order book and matching",
+      "verdict": "keep",
+      "issue": "",
+      "suggestion": ""
+    },
+    {
+      "quote": "Benchmarked B+ tree vs LSM skip-list stores",
+      "verdict": "keep",
+      "issue": "",
+      "suggestion": ""
+    },
+    {
+      "quote": "Sustained 1.26M events/sec end-to-end over the",
+      "verdict": "keep",
+      "issue": "",
+      "suggestion": ""
+    }
+  ],
+  "structure": [
+    {
+      "key": "lead_project_with_storage_benchmark",
+      "change": "Within the IEX project, put the B+ tree vs LSM benchmark bullet first.",
+      "rationale": "For a backend/data-layer panel the storage-engine tradeoff is the most domain-relevant evidence; matching-fill accuracy reads more HFT."
+    },
+    {
+      "key": "skills_cloud_first",
+      "change": "Keep Cloud (AWS) row directly after Languages (as-is); consider moving Bedrock to end of row.",
+      "rationale": "Infra keywords (Lambda, Kinesis, Fargate, CDK, EC2) should lead; Bedrock is ML-leaning."
+    }
+  ],
+  "top3": [
+    "Clarify: 6,000+ documents total vs per-day volume, so the Kinesis-over-S3 latency win holds up under a 'why streaming?' question.",
+    "Swap Capital One's internal 'Claude skill / sub-skills' jargon for plain backend wording on both LLM bullets.",
+    "Tighten the EventBridge fine-tuning and TerpLabs Redis clauses so each ends on a clear purpose instead of a dangling mechanism."
+  ]
+}

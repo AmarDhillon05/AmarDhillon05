@@ -1,0 +1,106 @@
+{
+  "persona": "quant_recruiter",
+  "target": "Software engineering intern roles at quantitative trading / HFT firms (Jane Street, HRT, Citadel Securities, Optiver, IMC style), 2026–27 cycle. Score domain_fit for this domain.",
+  "seven_second_takeaway": "UMD CS '28, 3.5 GPA. C++17 IEX order book/matching engine with ns-level latency numbers and perf work, leading the page. AWS and Capital One SWE internships.",
+  "scores": {
+    "impact_clarity": 8,
+    "quantification": 8,
+    "technical_depth": 8,
+    "concision_readability": 7,
+    "skim_test": 8,
+    "credibility": 7,
+    "ats_parseability": 8,
+    "visual_layout": 8,
+    "domain_fit": 8,
+    "overall": 7
+  },
+  "score_rationale": {
+    "concision_readability": "The project bullets are packed with numbers (5+ figures per bullet). Each is two full lines and the eye stalls on them.",
+    "credibility": "120 ns p50 / 1.2 µs p99 next to a 686.7 ns mean invites a 'which run, which clock?' question. 'Claude skill' wording is internal jargon.",
+    "overall": "The project is exactly what HFT screens want. GPA 3.5 is under the usual ~3.7 bar, and there are no competitive or rigor signals beyond the project."
+  },
+  "competitive_for_domain": "stretch",
+  "must_fix": [
+    "clarify: how the 2M-event profiling run (120 ns p50, 1.2 µs p99) relates to the full replay's 686.7 ns/event mean. State whether they ran under the same clock and whether 686.7 ns includes parsing, so the numbers don't look contradictory.",
+    "clarify: what 'adaptive batch sizing' refers to in the B+ tree vs LSM bullet. As written, the negative result has no context."
+  ],
+  "bullets": [
+    {
+      "quote": "Built a C++17 order book and matching engine",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Indexed orders in a hash map holding iterators",
+      "verdict": "tighten",
+      "issue": "Good design detail, but the latency numbers come from a separate run with unstated conditions.",
+      "suggestion": "Indexed orders in a hash map of iterators into per-price FIFO queues (std::map levels) for O(1) cancels; 120 ns p50 / 1.2 µs p99 per book update over a 2M-event profiling run"
+    },
+    {
+      "quote": "Sustained 1.26M events/sec end-to-end over the full",
+      "verdict": "tighten",
+      "issue": "Dense; the pairing of two throughput figures with a mean latency is hard to parse in one pass.",
+      "suggestion": "Sustained 1.26M events/s end-to-end over the full replay (matching engine alone: 686.7 ns/event, 1.46M/s) with the CPU pinned at its 1.40 GHz base clock"
+    },
+    {
+      "quote": "Traced a 1.65× phantom regression to a CPU-governor",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Benchmarked B+ tree vs LSM stores for the",
+      "verdict": "add_context",
+      "issue": "Weakest project bullet for HFT; 'adaptive batch sizing' is unexplained.",
+      "suggestion": "Benchmarked B+ tree vs LSM stores for the replay's event log: B+ tree gave 12.8× read throughput at 27% more disk"
+    },
+    {
+      "quote": "Writing Java policies that tune upper/lower bounds",
+      "verdict": "keep",
+      "issue": "In-progress work, honestly scoped; fine for a current internship."
+    },
+    {
+      "quote": "Precomputed a tree-style search index over popular workflows",
+      "verdict": "reframe",
+      "issue": "'the Claude skill' assumes the reader knows the project; the purpose isn't clear on first read.",
+      "suggestion": "Precomputed a tree-style search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) as the LLM agent's main search tool under DB access limits"
+    },
+    {
+      "quote": "Cut LLM workflow generation time 65% to under",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Reduced end-to-end latency 34% for a pipeline",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Built a Python pipeline for PhysTwin (PhD-led digital",
+      "verdict": "tighten",
+      "issue": "Low relevance for HFT; very name-heavy (PhysTwin, AnyGrasp, Open3D, VLM, ICLR) with no outcome.",
+      "suggestion": "Built a Python pipeline turning AnyGrasp output on multi-camera images into Open3D overlays for a VLM in PhysTwin (PhD-led, targeting ICLR); tuned prompts for grasp choice and depth"
+    },
+    {
+      "quote": "Co-founded a 110+ member campus product studio",
+      "verdict": "keep"
+    }
+  ],
+  "structure": [
+    {
+      "key": "keep_project_first",
+      "change": "Keep the IEX project above Experience.",
+      "rationale": "It is the single strongest HFT signal on the page and it gets read first."
+    },
+    {
+      "key": "add_coursework_line",
+      "change": "Optionally add a relevant-coursework line under Education (only courses actually taken, e.g. algorithms, systems, probability).",
+      "rationale": "With a 3.5 GPA, showing rigorous CS and stats courses helps offset it for quant screens."
+    },
+    {
+      "key": "trim_project_to_four",
+      "change": "Consider cutting or shortening the B+ tree vs LSM bullet so the four core order-book bullets breathe.",
+      "rationale": "It is less relevant to trading systems and adds density."
+    }
+  ],
+  "top3": [
+    "clarify: reconcile the 120 ns p50 / 1.2 µs p99 profiling numbers with the 686.7 ns/event mean so an interviewer can't catch an apparent contradiction.",
+    "Lighten the number density in the project bullets (one or two headline figures each) so the latency story reads in one pass.",
+    "Replace internal jargon ('the Claude skill', 'adaptive batch sizing') with plain descriptions a quant recruiter understands at a glance."
+  ]
+}

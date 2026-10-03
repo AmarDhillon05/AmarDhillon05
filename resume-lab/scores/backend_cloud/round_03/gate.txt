@@ -1,0 +1,4 @@
+== /home/user/AmarDhillon05/resume-lab/scores/backend_cloud/round_03/resume.tex
+[WARN] 'Automated EventBridge-scheduled fine-tuning of a B': no metric or explicit outcome
+lint: 0 errors, 1 warnings, 12 bullets
+fact_check: 0 errors, 0 warnings, 13 facts used
