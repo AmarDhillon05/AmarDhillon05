@@ -1,0 +1,36 @@
+{
+  "persona": "infra_hm",
+  "target": "Backend and cloud infrastructure SWE intern roles (distributed services, data layer, AWS, platform/SRE), 2026–27 cycle. Score domain_fit for this domain.",
+  "seven_second_takeaway": "UMD CS '28, current AWS SDE intern after Capital One; ships Kinesis/Lambda/CDK/Fargate pipelines for Amazon Leo; C++ matching engine at 1.26M events/sec.",
+  "scores": {"impact_clarity": 8, "quantification": 7, "technical_depth": 8, "concision_readability": 8,
+             "skim_test": 8, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 8, "overall": 8},
+  "score_rationale": {
+    "quantification": "Strong project numbers, but the AWS bullet has no result, 34% latency lacks a baseline, and the Capital One index has no measured outcome."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "clarify: the AWS bullet's outcome or scope (which ops, what backtesting showed) if any can be stated; the most prestigious line currently ends at method"
+  ],
+  "bullets": [
+    {"quote": "Writing Java policies that tune upper/lower bounds", "verdict": "add_context", "issue": "Headline brand bullet ends at 'validated by backtesting'; no stated scope or result.", "suggestion": "Writing Java policies that tune EC2 capacity bounds reserved for Amazon Redshift operations (e.g., patching), trading availability against cost; validating them by backtesting"},
+    {"quote": "Precomputed a tree-style search index so workflow", "verdict": "tighten", "issue": "Strong data-layer constraint story, but the sentence order buries the 270K-row PostgreSQL scale.", "suggestion": "Distilled a 270K+ row PostgreSQL table into a precomputed tree-style search index (Python/SQLAlchemy, Redis cache) so an LLM agent's main search tool works under strict DB access limits"},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "keep"},
+    {"quote": "Rebuilt a legacy test-data workflow builder in", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep"},
+    {"quote": "Shipped a space-research tool to Amazon Leo’s", "verdict": "keep"},
+    {"quote": "Automated EventBridge-scheduled fine-tuning of a Bedrock", "verdict": "keep"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "keep"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep"},
+    {"quote": "Engineered a C++17 order book and matching", "verdict": "keep"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores", "verdict": "keep"},
+    {"quote": "Sustained 1.26M events/sec end-to-end over the", "verdict": "keep"}
+  ],
+  "structure": [
+    {"key": "keep_current_order", "change": "Keep Education → Experience → Projects → Skills; AWS and Capital One lead correctly for this domain.", "rationale": "Infra HM sees the strongest backend/cloud brands and the Kinesis/CDK work before anything else."}
+  ],
+  "top3": [
+    "clarify: add any stated scope or outcome to the AWS EC2/Redshift capacity bullet so the top line ends at a result, not a method",
+    "Reorder the Capital One search-index bullet to lead with the 270K-row PostgreSQL scale and the DB-access constraint",
+    "clarify: the baseline for the 34% Kinesis latency cut (e.g., what end-to-end latency was before) so it holds up in an interview"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "persona": "sre_engineer",
+  "target": "Backend and cloud infrastructure SWE intern roles (distributed services, data layer, AWS, platform/SRE), 2026–27 cycle. Score domain_fit for this domain.",
+  "seven_second_takeaway": "UMD CS '28, current AWS SDE intern on EC2 capacity for Redshift, Capital One intern, Kinesis/CDK/Fargate contract work, C++ matching engine at 1.26M events/sec.",
+  "scores": {
+    "impact_clarity": 8,
+    "quantification": 7,
+    "technical_depth": 8,
+    "concision_readability": 8,
+    "skim_test": 8,
+    "credibility": 8,
+    "ats_parseability": 9,
+    "visual_layout": 8,
+    "domain_fit": 8,
+    "overall": 8
+  },
+  "score_rationale": {
+    "quantification": "Strong numbers on Kinesis, LLM latency and IEX, but the AWS capacity bullet and search index have no outcome; 30% setup time lacks a baseline."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "clarify: what the AWS backtesting showed (e.g., whether the policy held availability while reducing reserved capacity); right now the strongest SRE bullet ends at method, with no outcome"
+  ],
+  "bullets": [
+    {"quote": "Writing Java policies that tune upper/lower bounds", "verdict": "add_context", "issue": "Exactly the capacity/availability-vs-cost story I hire on, but it ends at 'validated by backtesting' with no outcome.", "suggestion": "Writing Java policies that tune upper/lower bounds on EC2 capacity reserved for Redshift operations (e.g., patching), trading availability against cost; validated by backtesting [state what backtesting showed]"},
+    {"quote": "Precomputed a tree-style search index so workflow", "verdict": "tighten", "issue": "Constraint-driven design is good, but the sentence is long and ends at intent.", "suggestion": "Precomputed a tree-style search index over a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) so an LLM agent's main search tool works under strict DB access limits"},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "keep"},
+    {"quote": "Rebuilt a legacy test-data workflow builder in", "verdict": "keep", "issue": "Frontend-heavy for this domain, but it shows outcome; fine as the third Capital One bullet."},
+    {"quote": "Reduced end-to-end latency 34% for a", "verdict": "keep"},
+    {"quote": "Shipped a space-research tool to Amazon Leo's", "verdict": "keep", "issue": "IaC plus CI plus handoff to the client's engineers is maintainability evidence I want; keep."},
+    {"quote": "Automated EventBridge-scheduled fine-tuning of a Bedrock", "verdict": "tighten", "issue": "The toil/cost-avoidance angle (skipping redundant retraining) is the point; lead with it.", "suggestion": "Cut redundant retraining by gating EventBridge-scheduled Bedrock classifier fine-tuning on a larger LLM's eval scores crossing a threshold"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "keep", "issue": "Reproducible environments; baseline gap is an accepted risk."},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep"},
+    {"quote": "Engineered a C++17 order book and matching", "verdict": "keep"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores", "verdict": "keep", "issue": "Storage-engine trade-off with a disk cost stated; great data-layer interview hook."},
+    {"quote": "Sustained 1.26M events/sec end-to-end over the", "verdict": "keep"}
+  ],
+  "structure": [
+    {"key": "keep_order", "change": "Keep current reverse-chronological order with AWS first; no section moves needed.", "rationale": "AWS capacity work and the Kinesis/CDK contract are already in the top half where an infra HM looks."},
+    {"key": "skills_cloud_first", "change": "Optionally list Cloud (AWS) and Backend & Data before Languages in Technical Skills.", "rationale": "Minor; puts the domain keywords where a platform screener skims first."}
+  ],
+  "top3": [
+    "clarify: the outcome of the AWS EC2 capacity backtesting; this is the single most SRE-relevant bullet and it currently has no result",
+    "Reframe the Bedrock bullet to lead with the avoided-retraining (toil/cost) outcome rather than the scheduler mechanics",
+    "Tighten the Capital One search-index bullet so the constraint (strict DB access limits) and the design (precomputed index) read in one pass"
+  ]
+}
