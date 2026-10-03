@@ -1,0 +1,26 @@
+{
+  "p01": {
+    "fact": "amazon_contract.bedrock_finetune",
+    "new_is": "B"
+  },
+  "p02": {
+    "fact": "aws_sde.redshift",
+    "new_is": "A"
+  },
+  "p03": {
+    "fact": "iex.storage_benchmark",
+    "new_is": "B"
+  },
+  "p04": {
+    "fact": "iex.throughput",
+    "new_is": "B"
+  },
+  "p05": {
+    "fact": "terplabs.tortuga",
+    "new_is": "A"
+  },
+  "p06": {
+    "fact": "umiacs.grasp_vlm",
+    "new_is": "A"
+  }
+}

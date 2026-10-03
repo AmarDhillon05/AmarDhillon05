@@ -99,7 +99,7 @@
     {Software Development Engineer Intern}{Redmond, WA}
   \resumeItemListStart
     % fact: aws_sde.redshift
-    \resumeItem{Writing Java to tune upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations like patching, backtesting policies to balance availability against cost}
+    \resumeItem{Writing Java to tune upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations (e.g., patching), backtesting policies to balance availability against cost}
   \resumeItemListEnd
 
   \resumeSubheading
@@ -109,7 +109,7 @@
     % fact: capital_one.ui_overhaul
     \resumeItem{Rebuilt a legacy test-data workflow builder in React/TypeScript + Electron, adding a React-Flow editor and Jest-tested validation; \textbf{90\%} of 30+ surveyed developers preferred it to the old tool}
     % fact: capital_one.search_index
-    \resumeItem{Precomputed a tree-style search index over popular workflows from a \textbf{270K+ row} PostgreSQL table (Python/SQLAlchemy, Redis cache) to minimize DB queries under access limits}
+    \resumeItem{Precomputed a tree-style search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to minimize DB queries under access limits}
     % fact: capital_one.claude_skill
     \resumeItem{Cut LLM workflow generation time \textbf{65\%} to under 15s by decomposing a Claude skill into sub-skills backed by Python search/validation tools, guided by CloudWatch + OpenSearch latency logs}
   \resumeItemListEnd
@@ -123,7 +123,7 @@
     % fact: amazon_contract.kinesis_pipeline
     \resumeItem{Reduced end-to-end latency \textbf{34\%} for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda}
     % fact: amazon_contract.bedrock_finetune
-    \resumeItem{Automated Bedrock source-relevancy model fine-tuning on an EventBridge schedule, with decision gates that skip redundant retraining; added X-Ray tracing and SNS failure alerts}
+    \resumeItem{Automated scheduled (EventBridge) fine-tuning of a Bedrock source-relevancy model, with decision gates that skip redundant retraining; added X-Ray tracing and SNS failure alerts}
   \resumeItemListEnd
 
   \resumeSubheading
@@ -131,7 +131,7 @@
     {Machine Learning Research Intern}{College Park, MD}
   \resumeItemListStart
     % fact: umiacs.grasp_vlm
-    \resumeItem{Built a Python pipeline for PhysTwin (physics-based digital twin; PhD-led team targeting ICLR) running AnyGrasp on multi-camera images and rendering grasps as Open3D overlays for a VLM, plus prompt tuning}
+    \resumeItem{Built a Python pipeline for PhysTwin, a PhD-led digital twin project targeting ICLR: runs AnyGrasp on multi-camera images, renders grasps as Open3D overlays for a VLM, and tunes its prompts}
     % fact: umiacs.env_setup
     \resumeItem{Shortened research-environment setup time \textbf{30\%} with uv dependency pinning and Docker; added psutil time/memory profiling and Pytest suites to find bottlenecks}
   \resumeItemListEnd
@@ -141,9 +141,9 @@
     {Co-Founder, Software Engineer}{College Park, MD}
   \resumeItemListStart
     % fact: terplabs.studio
-    \resumeItem{Co-founded a \textbf{110+ member} campus product studio that has shipped 5 live products}
+    \resumeItem{Co-founded a 110+ member campus product studio that has shipped 5 live products}
     % fact: terplabs.tortuga
-    \resumeItem{Wrote Prisma SQL queries and Redis query caching to reduce DB load and latency for Tortuga, a class scheduler that drew \mbox{\textbf{20,000+ visits}} in its first 30 days}
+    \resumeItem{Added Redis query caching over Prisma SQL queries to reduce DB load and latency for Tortuga, a class scheduler that drew \mbox{\textbf{20,000+ visits}} in its first 30 days}
     % fact: terplabs.rag_meal
     \resumeItem{Building a RAG meal-suggestion feature for the official UMD app (GPT-4o mini, ChromaDB + SentenceBERT search); \textbf{93\%} of generated meals rated satisfactory by internal testers}
   \resumeItemListEnd
@@ -159,9 +159,9 @@
     % fact: iex.replay_correctness
     \resumeItem{Engineered a C++17 order book and matching engine that replayed \textbf{50.9M} real IEX DEEP+ messages with no resync, matching 99,122 of 99,123 fills exactly and 100\% of top-of-book prices}
     % fact: iex.storage_benchmark
-    \resumeItem{Benchmarked B+ tree vs LSM skip-list log stores on identical 2M-record workloads: \textbf{12.8$\times$} read throughput and 22$\times$ faster range summaries for 27\% more disk}
+    \resumeItem{Benchmarked B+ tree vs LSM skip-list stores for the simulation's event logs on identical 2M-record workloads; the B+ tree gave \textbf{12.8$\times$} read throughput and 22$\times$ faster range summaries for 27\% more disk}
     % fact: iex.throughput
-    \resumeItem{Sustained \textbf{1.26M events/sec} end-to-end with 686.7 ns/event matching at a 1.40 GHz base clock, 1.41$\times$ the cost of a passive mirror book for deciding every fill itself}
+    \resumeItem{Sustained \textbf{1.26M events/sec} end-to-end over the full replay, with 686.7 ns/event matching on a 1.40 GHz base clock}
   \resumeItemListEnd
 \resumeSubHeadingListEnd
 
