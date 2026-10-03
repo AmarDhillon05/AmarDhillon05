@@ -1,0 +1,41 @@
+{
+  "persona": "ats_specialist",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28; current AWS SDE intern after Capital One SWE intern; Amazon Leo contract shipping on AWS; C++ matching engine at 1.26M events/sec.",
+  "scores": {"impact_clarity": 8, "quantification": 8, "technical_depth": 9, "concision_readability": 8,
+             "skim_test": 9, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 8, "overall": 9},
+  "score_rationale": {},
+  "competitive_for_domain": "Y",
+  "must_fix": [],
+  "bullets": [
+    {"quote": "Writing Java policies that tune upper/lower bounds", "verdict": "keep"},
+    {"quote": "Rebuilt a legacy test-data workflow builder in", "verdict": "keep"},
+    {"quote": "Precomputed a tree-style search index over popular", "verdict": "tighten",
+     "issue": "Parenthetical tech list interrupts the sentence; LLM screeners parse 'tree-style' vaguely.",
+     "suggestion": "Precomputed a tree-style search index (Python/SQLAlchemy, Redis cache) over popular workflows in a 270K+ row PostgreSQL table to minimize DB queries under access limits"},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "keep"},
+    {"quote": "Shipped a space-research tool used by Amazon", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep"},
+    {"quote": "Automated fine-tuning of a Bedrock source-relevancy model", "verdict": "tighten",
+     "issue": "Stacks four AWS service names; reads closer to keyword density than the other bullets.",
+     "suggestion": "Automated scheduled fine-tuning of a Bedrock source-relevancy model (EventBridge), gated to skip redundant retraining, with X-Ray tracing and SNS failure alerts"},
+    {"quote": "Built a Python pipeline for PhysTwin (PhD-led", "verdict": "tighten",
+     "issue": "Two actions joined by 'then'; 'AnyGrasp' and 'VLM' unexpanded for non-robotics screeners.",
+     "suggestion": "Built a Python pipeline for PhysTwin (PhD-led digital twin targeting ICLR) running AnyGrasp grasp detection on multi-camera images, rendering Open3D overlays; tuned the VLM's grasp-detection prompts"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "keep"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep"},
+    {"quote": "Building a RAG meal-suggestion feature for the", "verdict": "keep"},
+    {"quote": "Engineered a C++17 order book and matching", "verdict": "keep"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores", "verdict": "keep"},
+    {"quote": "Sustained 1.26M events/sec end-to-end over the", "verdict": "keep"}
+  ],
+  "structure": [
+    {"key": "edu_date_on_school_line", "change": "Optional: keep 'May 2028' visually right-aligned but it already extracts adjacent to the degree; no change needed unless a parser test shows the date detached.", "rationale": "Extraction puts date after the degree line; most ATS still associate it, but verify in Workday."},
+    {"key": "certification_own_line_ok", "change": "Keep certification inside Technical Skills; consider labeling it 'Certifications' (plural) for standard heading matching.", "rationale": "Some parsers key on 'Certifications' as a section label; minor gain, zero cost."}
+  ],
+  "top3": [
+    "Tighten the Bedrock/EventBridge bullet so it leads with the engineering decision rather than a run of AWS service names.",
+    "Front-load tech in the Capital One search-index bullet and drop the mid-sentence parenthetical for cleaner LLM parsing.",
+    "Clarify the PhysTwin bullet for non-robotics screeners (what AnyGrasp does) and split its two actions cleanly."
+  ]
+}

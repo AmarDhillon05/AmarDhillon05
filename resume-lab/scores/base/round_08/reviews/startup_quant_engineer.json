@@ -1,0 +1,35 @@
+{
+  "persona": "startup_quant_engineer",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28; AWS SDE intern, Capital One SWE intern, shipped tool for Amazon Leo; C++ IEX order book at 1.26M events/sec with exact fill matching.",
+  "scores": {"impact_clarity": 8, "quantification": 8, "technical_depth": 9, "concision_readability": 8,
+             "skim_test": 8, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 8, "overall": 9},
+  "score_rationale": {},
+  "competitive_for_domain": "Y",
+  "must_fix": [],
+  "bullets": [
+    {"quote": "Writing Java policies that tune upper/lower bounds", "verdict": "keep"},
+    {"quote": "Rebuilt a legacy test-data workflow builder in", "verdict": "keep"},
+    {"quote": "Precomputed a tree-style search index over popular", "verdict": "tighten", "issue": "'tree-style' is vague; ends at intent. Name the structure so an interviewer has a hook.", "suggestion": "Precomputed a prefix-tree search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to cut DB queries under access limits"},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "keep"},
+    {"quote": "Shipped a space-research tool used by Amazon", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep"},
+    {"quote": "Automated fine-tuning of a Bedrock source-relevancy model", "verdict": "keep", "issue": "No outcome, but the gating/observability design choices carry it; acceptable as the third bullet."},
+    {"quote": "Built a Python pipeline for PhysTwin (PhD-led", "verdict": "tighten", "issue": "'the VLM' appears without introduction; two actions in one bullet reads slightly run-on.", "suggestion": "Built a Python pipeline for PhysTwin (PhD-led digital twin targeting ICLR) running AnyGrasp on multi-camera images with Open3D grasp overlays; tuned VLM prompts to detect those grasps"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "keep"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep"},
+    {"quote": "Building a RAG meal-suggestion feature for the", "verdict": "keep"},
+    {"quote": "Engineered a C++17 order book and matching", "verdict": "keep"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores", "verdict": "keep", "issue": "Great tradeoff bullet; be ready to explain why event logs needed an indexed store at all."},
+    {"quote": "Sustained 1.26M events/sec end-to-end over the", "verdict": "keep"}
+  ],
+  "structure": [
+    {"key": "keep_experience_first", "change": "Keep Experience above Projects for the general SWE target; no reorder needed.", "rationale": "AWS/Capital One/Amazon Leo brands are the skim hook; the order book still lands on page one, above the fold-ish."},
+    {"key": "trim_skills_cloud_line", "change": "Optionally drop a few low-signal AWS service names (e.g., SNS, X-Ray) from Skills since bullets already show them.", "rationale": "Skills block reads a bit like a keyword list; bullets already demonstrate these in context."}
+  ],
+  "top3": [
+    "Tighten the Capital One search-index bullet: name the index structure concretely so it reads as a design decision, not 'tree-style'.",
+    "Smooth the PhysTwin bullet so 'VLM' is introduced and the two actions read in one pass.",
+    "Prepare interview depth on the order book: tail latency vs. 686.7 ns mean, the one mismatched fill, and why B+ tree for event logs — these are the questions you will get."
+  ]
+}
