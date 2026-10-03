@@ -1,0 +1,18 @@
+[
+  {
+    "id": "g01",
+    "versions": {
+      "A": "Building capacity planning for Amazon Redshift maintenance like patching: Java logic that sets upper and lower bounds on reserved EC2 capacity to balance availability against cost, validated by backtesting",
+      "B": "Writing Java logic that sets the upper and lower bounds on EC2 capacity that Amazon Redshift reserves for operations like patching, balancing availability against cost, and backtesting it",
+      "C": "Writing Java capacity-planning logic that sets the upper and lower bounds on EC2 capacity that Amazon Redshift reserves for operations like patching, balancing availability against cost, and backtesting it"
+    }
+  },
+  {
+    "id": "g02",
+    "versions": {
+      "A": "Cut end-to-end latency 34% on a data pipeline that sends 6,000+ scraped research documents to model inference by streaming them through Amazon Kinesis into AWS Lambda instead of staging each step in S3",
+      "B": "Cut end-to-end latency 34% on the pipeline that sends a 6,000+ document scraped research corpus to model inference by replacing scraper-to-S3-to-Lambda staging with Amazon Kinesis streams feeding AWS Lambda",
+      "C": "Cut end-to-end latency 34% on a data pipeline that sends a corpus of 6,000+ scraped research documents to model inference, replacing S3 staging between stages with Amazon Kinesis streams feeding AWS Lambda"
+    }
+  }
+]
