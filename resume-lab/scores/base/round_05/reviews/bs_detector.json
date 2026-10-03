@@ -1,0 +1,39 @@
+{
+  "persona": "bs_detector",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28 with AWS SDE and Capital One internships, an Amazon Leo contract shipped to production, and a C++ order book replaying 50.9M real IEX messages.",
+  "scores": {"impact_clarity": 8, "quantification": 8, "technical_depth": 9, "concision_readability": 8,
+             "skim_test": 8, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 9, "overall": 9},
+  "score_rationale": {},
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "Clarify: the Tortuga bullet pairs a Redis caching change with 20,000+ visits; the traffic number is product reach, not a result of the caching. Make that clear in the wording so an interviewer does not read it as a caching result.",
+    "AWS bullet: 'operations like patching, backtesting policies' can be misread as backtesting being one of the operations. Split the clauses so the method is clear."
+  ],
+  "bullets": [
+    {"quote": "Writing Java to tune upper/lower bounds on", "verdict": "tighten", "issue": "Comma makes 'backtesting policies' read like a Redshift operation; the method gets lost.", "suggestion": "Writing Java to tune upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations (e.g., patching), backtesting policies to balance availability against cost"},
+    {"quote": "Rebuilt a legacy test-data workflow builder in", "verdict": "keep"},
+    {"quote": "Precomputed a tree-style search index over popular", "verdict": "tighten", "issue": "'Tree-style' is vague; expect a follow-up on what structure it is and why.", "suggestion": "Precomputed a tree-structured search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to cut DB queries under access limits"},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "keep"},
+    {"quote": "Shipped a space-research tool used by Amazon", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep"},
+    {"quote": "Automated EventBridge-scheduled fine-tuning of a Bedrock", "verdict": "tighten", "issue": "'Decision gates' is jargon-ish; be ready to explain the skip criterion. Three AWS service names stack up.", "suggestion": "Automated EventBridge-scheduled fine-tuning of a Bedrock source-relevancy model, skipping retraining when it would be redundant; added X-Ray tracing and SNS failure alerts"},
+    {"quote": "Built a Python pipeline for PhysTwin, a", "verdict": "tighten", "issue": "'Tunes its prompts' is vague about whether the candidate or the pipeline tunes prompts. The ICLR scoping is honest; keep it.", "suggestion": "Built a Python pipeline for PhysTwin, a PhD-led digital twin project targeting ICLR: runs AnyGrasp on multi-camera images and renders grasps as Open3D overlays for VLM prompt tuning"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "keep"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep"},
+    {"quote": "Added Redis query caching over Prisma SQL", "verdict": "reframe", "issue": "The visit count is product traction and is not attributable to the caching work; the juxtaposition overclaims.", "suggestion": "Added Redis caching over Prisma SQL queries to cut DB load for Tortuga (class scheduler; product drew 20,000+ visits in its first 30 days)"},
+    {"quote": "Building a RAG meal-suggestion feature for the", "verdict": "keep"},
+    {"quote": "Engineered a C++17 order book and matching", "verdict": "keep"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores", "verdict": "keep"},
+    {"quote": "Sustained 1.26M events/sec end-to-end over the", "verdict": "tighten", "issue": "Precise and honest, but 686.7 ns plus a clock speed is dense; be ready to explain how it was measured.", "suggestion": "Sustained 1.26M events/sec end-to-end over the full replay (686.7 ns/event matching on a 1.40 GHz base clock)"}
+  ],
+  "structure": [
+    {"key": "keep_current_order", "change": "Keep Education, Experience, Projects, Skills in this order; the brand-heavy experience correctly leads.", "rationale": "AWS and Capital One are the strongest skim signals for general SWE and already sit at the top."},
+    {"key": "bold_consistency", "change": "Bold one headline metric per role at most, including the Leo contract (34%), or drop the bolding on minor ones.", "rationale": "The bolding is uneven: some roles have an anchor and Leo has none, so a skimmer's eye skips the production-client role."}
+  ],
+  "top3": [
+    "Reframe the Tortuga bullet so the 20,000+ visits reads as product reach, not a caching result.",
+    "Fix the AWS bullet's clause structure so 'backtesting policies' clearly reads as the method.",
+    "Replace vague phrases ('tree-style', 'decision gates', 'tunes its prompts') with plain descriptions you can defend in one follow-up question."
+  ]
+}
