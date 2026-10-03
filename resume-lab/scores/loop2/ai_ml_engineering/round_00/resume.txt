@@ -1,0 +1,72 @@
+Amar Dhillon
+
+NYC Area | amardhillon844@gmail.com | (XXX) XXX-XXXX | linkedin.com/in/amar-dhillon-917537261 | github.com/AmarDhillon05
+
+Education
+University of Maryland, College Park
+B.S. in Computer Science, Minor in Statistics; GPA: 3.5
+
+Expected May 2028
+College Park, MD
+
+Experience
+Amazon Web Services
+Sep 2026 – Dec 2026
+Software Development Engineer Intern
+Redmond, WA
+• Writing Java logic that sets the upper and lower bounds on EC2 capacity that Amazon Redshift reserves for operations
+like patching, balancing availability against cost, and backtesting it
+Capital One
+Jun 2026 – Aug 2026
+Software Engineering Intern
+Richmond, VA
+• Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a
+visual React Flow editor and Jest-tested validation, and 90% of 30+ surveyed developers preferred it
+• Cut LLM workflow generation time 65% to under 15s by splitting one large Claude skill into smaller sub-skills that call
+Python tools for search and validation, and output quality held in repeated stress-test runs
+• Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a
+category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries
+UMD App Development Contracting (Client: Amazon Leo)
+Jan 2026 – Present
+Software Engineer (Contract)
+College Park, MD
+• Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance: on an
+EventBridge schedule a larger LLM grades its ratings, and fine-tuning runs only when the grades shift past a threshold
+• Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3
+staging hops with Kinesis streams feeding Lambda
+• Deployed a space-topic research tool for Amazon Leo’s public-policy team and set it up for handoff with AWS CDK
+infrastructure-as-code and GitHub Actions CI/CD, so Leo engineers new to the project now maintain it on AWS Fargate
+UMD Institute for Advanced Computer Studies (UMIACS)
+Dec 2025 – Present
+Machine Learning Research Intern
+College Park, MD
+• For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp’s candidate grasps on camera
+images in Open3D for a vision-language model, then tuned prompts so the model picks the right grasp more often
+TerpLabs
+Jun 2025 – Present
+Co-Founder, Software Engineer
+College Park, MD
+• Building a RAG meal-suggestion feature for the official UMD app, in which GPT-4o mini writes suggestions from scraped
+recipes found by SentenceBERT vector search in ChromaDB, and internal testers rated 93% of meals satisfactory
+• Co-founded a 110+ member student product studio that has shipped 5 live products
+• Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio’s class scheduler with 20,000+ visits in
+its first 30 days, to reduce database load and latency
+
+Projects
+IEX Order Book & Matching Engine | C++17, STL, POSIX, Linux perf
+Jul 2026 – Aug 2026
+• Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without
+ever resyncing to the exchange’s book, agreeing with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices
+
+Technical Skills
+AI/ML: LLMs (Claude, Amazon Bedrock, GPT-4o mini), retrieval-augmented generation (RAG), vector search (ChromaDB,
+SentenceBERT), LLM agents and tool use (Claude skills), model fine-tuning and evaluation, vision-language models, prompt
+engineering, PyTorch, Open3D
+Languages: Python, Java, C++, C, TypeScript, JavaScript, SQL, CUDA
+Cloud & Data: AWS (Lambda, Kinesis, EventBridge, Fargate, CloudWatch), AWS CDK, monitoring (CloudWatch, X-Ray), REST
+APIs, PostgreSQL, Redis, MongoDB (NoSQL), OpenSearch
+Engineering: full-stack apps (React, Electron), data structures and algorithms, object-oriented design, Docker, GitHub Actions
+(CI/CD), Linux, unit testing (Pytest, Jest), Git, uv
+Certification: AWS Certified Developer – Associate (Nov 2024 – Nov 2027)
+
+

@@ -1,0 +1,252 @@
+{
+  "variant": "infra_distributed",
+  "n_postings": 42,
+  "must_coverage": 0.923,
+  "nice_coverage": 0.857,
+  "missing_claimable": [
+    "developer tools",
+    "Kubernetes",
+    "agents"
+  ],
+  "not_claimable": [
+    "Go",
+    "distributed systems",
+    "scalability",
+    "networking",
+    "system design",
+    "code review"
+  ],
+  "rows": [
+    {
+      "keyword": "Python",
+      "df": 0.71,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "Java",
+      "df": 0.43,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "C++",
+      "df": 0.36,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "Go",
+      "df": 0.52,
+      "tier": "must",
+      "claimable": false,
+      "present": false
+    },
+    {
+      "keyword": "TypeScript",
+      "df": 0.43,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "JavaScript",
+      "df": 0.5,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "React",
+      "df": 0.36,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "REST APIs",
+      "df": 0.24,
+      "tier": "nice",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "PostgreSQL",
+      "df": 0.17,
+      "tier": "nice",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "databases",
+      "df": 0.33,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "AWS",
+      "df": 0.19,
+      "tier": "nice",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "cloud",
+      "df": 0.29,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "Kubernetes",
+      "df": 0.14,
+      "tier": "nice",
+      "claimable": true,
+      "present": false
+    },
+    {
+      "keyword": "CI/CD",
+      "df": 0.14,
+      "tier": "nice",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "Git",
+      "df": 0.19,
+      "tier": "nice",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "data pipelines / ETL",
+      "df": 0.12,
+      "tier": "nice",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "distributed systems",
+      "df": 0.19,
+      "tier": "nice",
+      "claimable": false,
+      "present": false
+    },
+    {
+      "keyword": "scalability",
+      "df": 0.79,
+      "tier": "must",
+      "claimable": false,
+      "present": false
+    },
+    {
+      "keyword": "performance optimization",
+      "df": 0.5,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "data structures & algorithms",
+      "df": 0.33,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "networking",
+      "df": 0.14,
+      "tier": "nice",
+      "claimable": false,
+      "present": false
+    },
+    {
+      "keyword": "unit testing",
+      "df": 0.21,
+      "tier": "nice",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "debugging",
+      "df": 0.17,
+      "tier": "nice",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "monitoring / observability",
+      "df": 0.17,
+      "tier": "nice",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "system design",
+      "df": 0.29,
+      "tier": "must",
+      "claimable": false,
+      "present": false
+    },
+    {
+      "keyword": "LLMs",
+      "df": 0.14,
+      "tier": "nice",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "agents",
+      "df": 0.12,
+      "tier": "nice",
+      "claimable": true,
+      "present": false
+    },
+    {
+      "keyword": "full stack",
+      "df": 0.4,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "backend",
+      "df": 0.48,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "developer tools",
+      "df": 0.29,
+      "tier": "must",
+      "claimable": true,
+      "present": false
+    },
+    {
+      "keyword": "code review",
+      "df": 0.26,
+      "tier": "must",
+      "claimable": false,
+      "present": false
+    },
+    {
+      "keyword": "storage engines",
+      "df": 0.17,
+      "tier": "nice",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "trading / market data",
+      "df": 0.17,
+      "tier": "nice",
+      "claimable": true,
+      "present": true
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "tex": "/home/user/AmarDhillon05/resume-lab/scores/loop2/systems_quant/round_00/resume.tex",
+  "n_bullets": 11,
+  "bullets": [
+    {
+      "fact": "iex.replay_correctness",
+      "chars": 232,
+      "words": 38,
+      "n_bold": 1,
+      "n_lines": 2,
+      "last_fill": 1.0,
+      "text": "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange's book, agreeing with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices"
+    },
+    {
+      "fact": "iex.storage_benchmark",
+      "chars": 227,
+      "words": 39,
+      "n_bold": 1,
+      "n_lines": 2,
+      "last_fill": 0.96,
+      "text": "Implemented B+ tree and LSM-tree backends for the event log and benchmarked them on identical 2M-record workloads, where the B+ tree gave 12.8x the read throughput and 22x faster range queries at the cost of 27% more disk space"
+    },
+    {
+      "fact": "iex.perf_rigor",
+      "chars": 196,
+      "words": 34,
+      "n_bold": 0,
+      "n_lines": 2,
+      "last_fill": 0.7,
+      "text": "Traced an apparent 1.65x slowdown to the CPU frequency governor using perf counters and a null control book, then cut run-to-run variance from about 6% to 0.06% with core pinning and a fixed clock"
+    },
+    {
+      "fact": "iex.throughput+iex.data_structures+iex.latency_dist",
+      "chars": 220,
+      "words": 40,
+      "n_bold": 1,
+      "n_lines": 2,
+      "last_fill": 0.89,
+      "text": "Stored price levels in a std::map of std::list FIFOs with a hash map from order ID to list iterator for O(1) cancels, sustaining 1.26M events/sec over the full replay and a 1.2 s per-update p99 on a separate 2M-event run"
+    },
+    {
+      "fact": "aws_sde.redshift",
+      "chars": 187,
+      "words": 28,
+      "n_bold": 0,
+      "n_lines": 2,
+      "last_fill": 0.56,
+      "text": "Writing Java logic that sets the upper and lower bounds on EC2 capacity that Amazon Redshift reserves for operations like patching, balancing availability against cost, and backtesting it"
+    },
+    {
+      "fact": "capital_one.claude_skill",
+      "chars": 228,
+      "words": 35,
+      "n_bold": 1,
+      "n_lines": 2,
+      "last_fill": 1.0,
+      "text": "Cut AI workflow generation time 65% to under 15s by replacing a Claude skill's open-ended search with focused sub-skills that call Python tools for workflow search and validation, guided by CloudWatch and OpenSearch latency logs"
+    },
+    {
+      "fact": "capital_one.search_index",
+      "chars": 220,
+      "words": 33,
+      "n_bold": 0,
+      "n_lines": 2,
+      "last_fill": 0.88,
+      "text": "Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries"
+    },
+    {
+      "fact": "amazon_contract.kinesis_pipeline",
+      "chars": 165,
+      "words": 24,
+      "n_bold": 1,
+      "n_lines": 2,
+      "last_fill": 0.42,
+      "text": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda"
+    },
+    {
+      "fact": "umiacs.grasp_vlm",
+      "chars": 225,
+      "words": 37,
+      "n_bold": 0,
+      "n_lines": 2,
+      "last_fill": 0.95,
+      "text": "For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D for a vision-language model, then tuned prompts so the model picks the right grasp more often"
+    },
+    {
+      "fact": "terplabs.studio",
+      "chars": 80,
+      "words": 13,
+      "n_bold": 0,
+      "n_lines": 1,
+      "last_fill": 1.0,
+      "text": "Co-founded a 110+ member student product studio that has shipped 5 live products"
+    },
+    {
+      "fact": "terplabs.tortuga",
+      "chars": 174,
+      "words": 30,
+      "n_bold": 0,
+      "n_lines": 2,
+      "last_fill": 0.44,
+      "text": "Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio's class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency"
+    }
+  ],
+  "issues": [
+    {
+      "level": "WARN",
+      "where": "Built a C++17 order book and matching engine and r",
+      "msg": "voice: noun stack of 5 words"
+    },
+    {
+      "level": "WARN",
+      "where": "Built a C++17 order book and matching engine and r",
+      "msg": "voice: 5 numbers in one bullet (metric stacking)"
+    },
+    {
+      "level": "WARN",
+      "where": "Implemented B+ tree and LSM-tree backends for the ",
+      "msg": "voice: 4 numbers in one bullet (metric stacking)"
+    },
+    {
+      "level": "WARN",
+      "where": "Traced an apparent 1.65x slowdown to the CPU frequ",
+      "msg": "voice: noun stack of 6 words"
+    },
+    {
+      "level": "WARN",
+      "where": "Stored price levels in a std::map of std::list FIF",
+      "msg": "voice: 5 numbers in one bullet (metric stacking)"
+    },
+    {
+      "level": "WARN",
+      "where": "Cut AI workflow generation time 65% to under 15s b",
+      "msg": "voice: noun stack of 5 words"
+    },
+    {
+      "level": "WARN",
+      "where": "Because the 270K+ row PostgreSQL workflow table ha",
+      "msg": "opening 'Because' may not be an action verb"
+    },
+    {
+      "level": "WARN",
+      "where": "Because the 270K+ row PostgreSQL workflow table ha",
+      "msg": "voice: noun stack of 8 words"
+    },
+    {
+      "level": "WARN",
+      "where": "For a PhD-led robotics project aimed at ICLR, buil",
+      "msg": "opening 'For' may not be an action verb"
+    },
+    {
+      "level": "WARN",
+      "where": "Co-founded a 110+ member student product studio th",
+      "msg": "no visible technology"
+    },
+    {
+      "level": "WARN",
+      "where": "Built Redis caching in front of the Prisma ORM que",
+      "msg": "leading verb 'Built' repeats (also: Built a C++17 order book and matching engine and r)"
+    }
+  ],
+  "errors": 0,
+  "warnings": 11
+}
