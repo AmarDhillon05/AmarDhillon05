@@ -1,0 +1,40 @@
+{
+  "persona": "startup_quant_engineer",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD '28 with AWS and Capital One SDE internships, shipped tool for Amazon Leo, campus product studio, and a measured C++ IEX order book at 1.26M events/sec.",
+  "scores": {"impact_clarity": 8, "quantification": 8, "technical_depth": 9, "concision_readability": 8,
+             "skim_test": 8, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 8, "overall": 9},
+  "score_rationale": {},
+  "competitive_for_domain": "Y",
+  "must_fix": [],
+  "bullets": [
+    {"quote": "Balancing Amazon Redshift availability against cost by writing", "verdict": "reframe",
+     "issue": "Headline brand's only bullet opens on the goal, not the action; verb buried mid-sentence.",
+     "suggestion": "Writing and backtesting Java policies that tune upper/lower bounds on EC2 capacity reserved for Redshift operations like patching, balancing availability against cost"},
+    {"quote": "Rebuilt a legacy test-data workflow builder in React/TypeScript", "verdict": "keep"},
+    {"quote": "Precomputed a tree-style search index over popular workflows", "verdict": "keep"},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "keep"},
+    {"quote": "Shipped a space-research tool used by Amazon Leo’s", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep"},
+    {"quote": "Automated fine-tuning of a Bedrock source-relevancy model", "verdict": "keep"},
+    {"quote": "Built a Python pipeline for PhysTwin, a PhD-led", "verdict": "tighten",
+     "issue": "Colon-and-semicolon chain reads as a task list; trailing 'tuned the VLM's prompts' dilutes it.",
+     "suggestion": "Built a Python pipeline for PhysTwin (PhD-led digital twin project targeting ICLR) that runs AnyGrasp on multi-camera images and renders grasps as Open3D overlays for a VLM"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "keep"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep"},
+    {"quote": "Building a RAG meal-suggestion feature for the", "verdict": "keep"},
+    {"quote": "Engineered a C++17 order book and matching engine", "verdict": "keep"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores", "verdict": "keep"},
+    {"quote": "Sustained 1.26M events/sec end-to-end over the", "verdict": "add_context",
+     "issue": "Throughput/latency numbers lack machine and threading context; any perf interviewer asks first.",
+     "suggestion": "Sustained 1.26M events/sec end-to-end over the full replay (clarify: single-threaded? on what hardware?), averaging 686.7 ns/event in the matching engine"}
+  ],
+  "structure": [
+    {"key": "throughput_bullet_second", "change": "In the order book project, move the 1.26M events/sec bullet directly after the correctness bullet, ahead of the B+ tree benchmark.", "rationale": "Correctness then speed is the story; the storage benchmark is a side experiment and reads better last."}
+  ],
+  "top3": [
+    "Reframe the AWS bullet to lead with the action (writing/backtesting Java capacity policies) so the top brand line reads as engineering, not a goal.",
+    "clarify: hardware and thread count behind 1.26M events/sec and 686.7 ns/event, and reorder that bullet to sit second in the order book project.",
+    "Tighten the PhysTwin bullet into one clean What → How sentence, dropping the tacked-on prompt-tuning clause."
+  ]
+}

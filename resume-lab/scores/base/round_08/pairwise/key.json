@@ -1,0 +1,14 @@
+{
+  "p01": {
+    "fact": "aws_sde.redshift",
+    "new_is": "B"
+  },
+  "p02": {
+    "fact": "iex.storage_benchmark",
+    "new_is": "B"
+  },
+  "p03": {
+    "fact": "umiacs.grasp_vlm",
+    "new_is": "B"
+  }
+}

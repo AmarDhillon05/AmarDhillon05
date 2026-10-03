@@ -1,0 +1,17 @@
+[
+  {
+    "id": "p01",
+    "A": "Balancing Amazon Redshift availability against cost by writing and backtesting Java policies that tune upper/lower bounds on EC2 capacity reserved for operations like patching",
+    "B": "Writing Java policies that tune upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations like patching, balancing availability against cost; initial backtests complete"
+  },
+  {
+    "id": "p02",
+    "A": "Benchmarked B+ tree vs LSM skip-list stores for the simulation's event logs on identical 2M-record workloads; the B+ tree gave 12.8 read throughput and 22 faster range summaries for 27% more disk",
+    "B": "Benchmarked B+ tree vs LSM skip-list stores for the replay's event logs on identical 2M-record workloads; the B+ tree gave 12.8 read throughput and 22 faster range summaries for 27% more disk"
+  },
+  {
+    "id": "p03",
+    "A": "Built a Python pipeline for PhysTwin, a PhD-led digital twin project targeting ICLR: runs AnyGrasp on multi-camera images, renders grasps as Open3D overlays for a VLM; tuned the VLM's prompts",
+    "B": "Built a Python pipeline for PhysTwin (PhD-led digital twin project targeting ICLR) that runs AnyGrasp on multi-camera images and renders grasps as Open3D overlays, then optimized the VLM prompts that detect them"
+  }
+]

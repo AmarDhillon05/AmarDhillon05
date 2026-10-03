@@ -14,8 +14,8 @@ Amazon Web Services
 Sep 2026 – Dec 2026
 Software Development Engineer Intern
 Redmond, WA
-• Balancing Amazon Redshift availability against cost by writing and backtesting Java policies that tune upper/lower
-bounds on EC2 capacity reserved for operations like patching
+• Writing Java policies that tune upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations like
+patching, balancing availability against cost; initial backtests complete
 Capital One
 Jun 2026 – Aug 2026
 Software Engineering Intern
@@ -40,8 +40,8 @@ UMD Institute for Advanced Computer Studies (UMIACS)
 Dec 2025 – Present
 Machine Learning Research Intern
 College Park, MD
-• Built a Python pipeline for PhysTwin, a PhD-led digital twin project targeting ICLR: runs AnyGrasp on multi-camera
-images, renders grasps as Open3D overlays for a VLM; tuned the VLM’s prompts
+• Built a Python pipeline for PhysTwin (PhD-led digital twin project targeting ICLR) that runs AnyGrasp on
+multi-camera images and renders grasps as Open3D overlays, then optimized the VLM prompts that detect them
 • Shortened research-environment setup time 30% with uv dependency pinning and Docker; added psutil time/memory
 profiling and Pytest suites to find bottlenecks
 TerpLabs
@@ -58,8 +58,8 @@ IEX Order Book & Matching Engine | C++17, STL, POSIX, Linux perf
 Jul 2026 – Aug 2026
 • Engineered a C++17 order book and matching engine that replayed 50.9M real IEX DEEP+ messages with no resync,
 matching 99,122 of 99,123 fills exactly and 100% of top-of-book prices
-• Benchmarked B+ tree vs LSM skip-list stores for the simulation’s event logs on identical 2M-record workloads; the B+
-tree gave 12.8× read throughput and 22× faster range summaries for 27% more disk
+• Benchmarked B+ tree vs LSM skip-list stores for the replay’s event logs on identical 2M-record workloads; the B+ tree
+gave 12.8× read throughput and 22× faster range summaries for 27% more disk
 • Sustained 1.26M events/sec end-to-end over the full replay, averaging 686.7 ns/event in the matching engine
 
 Technical Skills

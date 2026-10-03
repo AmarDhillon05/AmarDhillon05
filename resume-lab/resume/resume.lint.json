@@ -4,12 +4,12 @@
   "bullets": [
     {
       "fact": "aws_sde.redshift",
-      "chars": 175,
+      "chars": 185,
       "words": 24,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.51,
-      "text": "Balancing Amazon Redshift availability against cost by writing and backtesting Java policies that tune upper/lower bounds on EC2 capacity reserved for operations like patching"
+      "last_fill": 0.58,
+      "text": "Writing Java policies that tune upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations like patching, balancing availability against cost; initial backtests complete"
     },
     {
       "fact": "capital_one.ui_overhaul",
@@ -67,12 +67,12 @@
     },
     {
       "fact": "umiacs.grasp_vlm",
-      "chars": 191,
-      "words": 30,
+      "chars": 211,
+      "words": 32,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.68,
-      "text": "Built a Python pipeline for PhysTwin, a PhD-led digital twin project targeting ICLR: runs AnyGrasp on multi-camera images, renders grasps as Open3D overlays for a VLM; tuned the VLM's prompts"
+      "last_fill": 0.94,
+      "text": "Built a Python pipeline for PhysTwin (PhD-led digital twin project targeting ICLR) that runs AnyGrasp on multi-camera images and renders grasps as Open3D overlays, then optimized the VLM prompts that detect them"
     },
     {
       "fact": "umiacs.env_setup",
@@ -112,12 +112,12 @@
     },
     {
       "fact": "iex.storage_benchmark",
-      "chars": 195,
+      "chars": 191,
       "words": 32,
       "n_bold": 1,
       "n_lines": 2,
-      "last_fill": 0.71,
-      "text": "Benchmarked B+ tree vs LSM skip-list stores for the simulation's event logs on identical 2M-record workloads; the B+ tree gave 12.8 read throughput and 22 faster range summaries for 27% more disk"
+      "last_fill": 0.67,
+      "text": "Benchmarked B+ tree vs LSM skip-list stores for the replay's event logs on identical 2M-record workloads; the B+ tree gave 12.8 read throughput and 22 faster range summaries for 27% more disk"
     },
     {
       "fact": "iex.throughput",

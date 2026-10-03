@@ -39,7 +39,7 @@ roles:
     status: in_progress     # present tense OK
     bullets:
       redshift:
-        claim: Researching and implementing Java-based utilization optimizations for Amazon Redshift. Detail (Amar, Oct 2026) - tuning the upper and lower bounds of EC2 capacity reserved for Redshift operations such as patching, controlling the reservation envelope to keep availability without blowing up cost; policies backtested; ~2 weeks in, no shareable numbers
+        claim: Researching and implementing Java-based utilization optimizations for Amazon Redshift. Detail (Amar, Oct 2026) - tuning the upper and lower bounds of EC2 capacity reserved for Redshift operations such as patching, controlling the reservation envelope to keep availability without blowing up cost; policies backtested (initial backtest results exist, Amar Oct 2026); ~2 weeks in, no shareable numbers
         core_techs: [Java, Redshift]
         optional_techs: [EC2, backtesting]
         notes: backtest results intentionally omitted (preliminary / internal)
