@@ -1,0 +1,146 @@
+{
+  "persona": "ats_structure_v2",
+  "target": "AI/ML engineering internships (ML infrastructure, LLM applications, applied AI platform teams), 2026-27 cycle",
+  "memory_skim": {"strongest_3": [], "engineer_type": "", "memorable_numbers": [], "confusing": [], "skipped": [], "interview_questions": []},
+  "plain_english": [],
+  "scores": {
+    "impact_clarity": 7,
+    "quantification": 7,
+    "technical_depth": 8,
+    "concision_readability": 8,
+    "skim_test": 7,
+    "credibility": 7,
+    "ats_parseability": 8,
+    "visual_layout": 8,
+    "domain_fit": 7,
+    "human_voice": 8,
+    "plain_language": 7,
+    "overall": 8
+  },
+  "competitive_for_domain": "Y",
+  "bullet_feedback": [
+    {
+      "bullet": "Writing Java logic that sets the upper and lower bounds on EC2 capacity that Amazon Redshift reserves for operations like patching, balancing availability against cost, and backtesting it",
+      "problem": "The closing clause 'and backtesting it' has an unclear referent: 'it' could be the Java logic, the bounds, or the cost tradeoff. It also comes after a comma list ('balancing availability against cost, and backtesting it'), so a parser or LLM summarizer reads backtesting as a third item in a list instead of the validation step.",
+      "severity": 3,
+      "why_it_matters": "This is the first bullet on the page, under the top brand. If a screener's summary comes out as 'wrote Java logic for EC2', the candidate loses the capacity-planning and backtesting part, which is the only systems signal in the role.",
+      "missing_or_unclear": "clarify: what is backtested (the bounds? the policy?) and against what (historical capacity or usage data?)",
+      "suggested_direction": "Name the object of the backtest and make it its own clause, e.g. '...balancing availability against cost, and backtesting the bounds against <existing data source>'"
+    },
+    {
+      "bullet": "Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and 90% of 30+ surveyed developers preferred it",
+      "problem": "'the legacy tool developers use' parses on a first read as 'tool developers' (people who build tools). 'preferred it' has no stated comparison: preferred over the legacy tool is implied, not said. For an AI/ML target, this is also the first bullet of the Capital One role, so the role opens with frontend work instead of the LLM work below it.",
+      "severity": 4,
+      "why_it_matters": "An ML-team screener reading the top of each role sees EC2 capacity, then React/Electron, and does not reach LLM evidence until the second Capital One bullet. The 90% figure reads weaker when the comparison is not stated.",
+      "missing_or_unclear": "clarify: 90% preferred it over the legacy tool (confirm that is the comparison)",
+      "suggested_direction": "Move this bullet below the two LLM bullets in this role. Reword the opening so 'developers' is clearly the subject, e.g. 'Rebuilt developers' legacy test-data workflow tool as...', and end with '...preferred it over the legacy tool'."
+    },
+    {
+      "bullet": "Cut LLM workflow generation time 65% to under 15s by splitting one large Claude skill into smaller sub-skills that call Python tools for search and validation, and output quality held in repeated stress-test runs",
+      "problem": "'Claude skill' / 'sub-skills' is product-specific jargon that ATS keyword lists and most recruiters will not map to the terms postings use. Scale's postings ask for 'agentic AI applications' and 'orchestration for fleets of asynchronous agents'. What the bullet describes, sub-skills calling Python tools, is LLM agent tool calling (function calling), but that term doesn't appear on the page.",
+      "severity": 4,
+      "why_it_matters": "A keyword-matching screener credits 'LLM' and 'Python' here but misses 'agent' and 'tool calling', which are the terms the LLM-application postings actually search for. The strongest LLM-application bullet on the page under-scores.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Keep 'Claude skill' but add the generic term once, e.g. 'splitting one large Claude agent skill into smaller sub-skills that call Python tools (tool calling) for search and validation'. Also add 'LLM agents with tool calling / function calling' in the Skills section. Put this bullet first in the Capital One role."
+    },
+    {
+      "bullet": "Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries",
+      "problem": "'strict access limits' is ambiguous: it could mean rate limits, query quotas, or permission restrictions, and each one implies a different design reason. 'the Claude skill' refers back to the previous bullet, so this bullet can't be understood without that one. Some screeners chunk bullets independently.",
+      "severity": 3,
+      "why_it_matters": "The constraint is the whole reason the design exists. If the reader can't tell what kind of limit it was, the category tree plus Redis cache reads as an arbitrary choice and not a response to a constraint.",
+      "missing_or_unclear": "clarify: what kind of access limit (query rate, quota, read permissions)",
+      "suggested_direction": "Make the constraint specific in a few words, e.g. 'had strict <rate/quota/permission> limits', and refer to 'the workflow-generation agent' so the bullet makes sense without the one above it."
+    },
+    {
+      "bullet": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+      "problem": "'6,000+ scraped research documents' has no time unit, so it could be per day, per run, or the total corpus. The scope of the 34% depends on which one it is.",
+      "severity": 4,
+      "why_it_matters": "ML infrastructure screeners judge pipeline scale by throughput. Without a unit, '6,000+' can't be read as a scale signal, and an interviewer will ask right away.",
+      "missing_or_unclear": "clarify: 6,000+ documents per day / per batch / total",
+      "suggested_direction": "Add the unit to the existing number, e.g. '6,000+ scraped research documents <per day/total>'. Also add 'Amazon S3' to the AWS list in Skills, since S3 appears here but not in Skills."
+    },
+    {
+      "bullet": "Deployed a space-topic research tool for Amazon Leo’s public-policy team and set it up for handoff with AWS CDK infrastructure-as-code and GitHub Actions CI/CD, so Leo engineers new to the project now maintain it on AWS Fargate",
+      "problem": "'space-topic research tool' does not say what the tool does, and it isn't clear whether it is the same system as the classifier and document pipeline in the two bullets above or a separate one. The keyword coverage (AWS CDK, infrastructure-as-code, CI/CD, Fargate) is excellent, but the object of the work is vague.",
+      "severity": 4,
+      "why_it_matters": "An LLM screener summarizing the role can't say what was built, so it falls back to 'deployed a tool'. A recruiter can't connect this bullet to the ML pipeline story that makes the role strong.",
+      "missing_or_unclear": "clarify: what the tool does for the public-policy team, and whether it is the front end of the classifier/document pipeline above",
+      "suggested_direction": "Replace 'space-topic research tool' with a few words on its function. If it is the same system as the classifier pipeline, say 'Deployed the research-document tool...' so the three bullets read as one system."
+    },
+    {
+      "bullet": "For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp’s candidate grasps on camera images in Open3D for a vision-language model, then tuned prompts so the model picks the right grasp more often",
+      "problem": "'picks the right grasp more often' is the only result, and it is an unmeasured comparative. This is the only bullet under the most ML-relevant title on the page ('Machine Learning Research Intern'), and it misses supported screener terms: 'multimodal' and 'vision-language model (VLM)' as an acronym pair.",
+      "severity": 4,
+      "why_it_matters": "ML research and multimodal postings (Perplexity lists 'multimodal modeling') match on these terms. 'More often' gives the interviewer and the screener nothing to anchor the result on.",
+      "missing_or_unclear": "clarify: whether grasp-selection accuracy was measured before and after prompt tuning; if not, say how 'right grasp' was judged",
+      "suggested_direction": "If a measured before/after exists, state it in place of 'more often'. If not, describe how correctness was judged without implying a number. Write 'vision-language model (VLM)' once, and add 'multimodal' to the Skills line next to vision-language models."
+    },
+    {
+      "bullet": "Co-founded a 110+ member student product studio that has shipped 5 live products",
+      "problem": "This repeats the 'Co-Founder' title and has no technical content. It doesn't say what the candidate built or led across the 5 products, so it carries no keywords and no engineering signal.",
+      "severity": 3,
+      "why_it_matters": "It takes a full bullet slot in a role whose other two bullets are strong technical evidence. A screener gets only 'student org founder' from it.",
+      "missing_or_unclear": "clarify: the candidate's own role in the 5 products (e.g. tech lead on which)",
+      "suggested_direction": "Either merge the studio scale (110+ members, 5 live products) into the role context and drop the standalone bullet, or rewrite it to name the candidate's own engineering or leadership responsibility."
+    },
+    {
+      "bullet": "Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio’s class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency",
+      "problem": "The bullet ends at intent ('to reduce database load and latency') with no outcome. The only number (20,000+ visits) describes the product's traffic, not the effect of the caching.",
+      "severity": 4,
+      "why_it_matters": "Placed next to a measured traffic figure, a reader assumes the caching was measured too. When asked, the candidate has to admit it wasn't, which costs credibility on an otherwise solid bullet.",
+      "missing_or_unclear": "clarify: whether any load or latency change was observed after adding the cache",
+      "suggested_direction": "If an effect was observed, state it in place of the 'to reduce...' clause. If not, rephrase as the reason for the design (e.g. 'so repeated schedule lookups during the launch spike hit Redis and not the database'), which explains the engineering without implying a result."
+    }
+  ],
+  "page_feedback": [
+    {
+      "problem": "PyTorch, CUDA, OpenSearch, MongoDB and X-Ray appear only in Technical Skills, with no bullet showing where they were used. PyTorch is the single most-repeated requirement across the ML postings (Lyft, Coinbase, Perplexity, Jump Trading), and CUDA is a key Jump term.",
+      "severity": 5,
+      "why_it_matters": "LLM screeners increasingly weigh skills by evidence in the experience section, and interviewers ask 'where did you use PyTorch/CUDA?'. A listed-but-unsupported core skill reads as padding and drags down the credibility of the whole list.",
+      "suggested_direction": "Clarify where each was used. If PyTorch was part of the UMIACS or fine-tuning work, it is fine to keep in Skills. Cut any tool from Skills that the candidate could not discuss in an interview. Do not add these terms to bullets unless they explain the engineering."
+    },
+    {
+      "problem": "The Skills section leaves out several terms the candidate's own bullets already prove and postings match on: 'embeddings' (SentenceBERT), 'LLM-as-a-judge evaluation' (a larger LLM grades the classifier's ratings), 'drift-triggered retraining / MLOps' (fine-tuning only when grades shift past a threshold), 'tool calling / function calling' (sub-skills call Python tools), 'multimodal', 'text classification', and 'Amazon S3'.",
+      "severity": 4,
+      "why_it_matters": "Scale's postings ask for 'evaluation infrastructure', 'agentic AI', and 'RAG pipelines', and Perplexity asks for 'dense vector representations'. The candidate did this work, but an exact-match ATS will not credit it because the screener's terms aren't on the page.",
+      "suggested_direction": "Add these to the existing Skills lines, not to bullets. For example, AI/ML line: 'LLM evaluation (LLM-as-a-judge), automated retraining on drift (MLOps), embeddings and vector search (SentenceBERT, ChromaDB), LLM agents with tool calling, multimodal / vision-language models (VLMs), text classification'. Add S3 to the AWS list."
+    },
+    {
+      "problem": "The Skills header 'AI/ML:' is acronym-only. The literal phrase 'machine learning' appears only once on the page, in the UMIACS title.",
+      "severity": 3,
+      "why_it_matters": "Some ATS keyword filters (Workday/Greenhouse boolean searches) match the spelled-out 'machine learning' and don't expand 'ML'.",
+      "suggested_direction": "Rename the header to 'Machine Learning & AI:' (or similar) so the full phrase appears in a section parsers weight heavily."
+    },
+    {
+      "problem": "For an ML screen, the first bullet of each of the top two roles is non-ML (EC2 capacity bounds at AWS; React/Electron at Capital One). The first ML-specific evidence is the second Capital One bullet, and the strongest ML infrastructure bullet (Bedrock automated retraining) is in the third role.",
+      "severity": 5,
+      "why_it_matters": "Recruiters and LLM screeners weight the top of each role most. An ML-platform recruiter skimming the top third sees a general SWE profile before the ML evidence.",
+      "suggested_direction": "Keep the chronological role order, but reorder bullets inside roles: lead Capital One with the 65% LLM workflow bullet, then the PostgreSQL/Redis bullet, then the Electron rebuild."
+    },
+    {
+      "problem": "In the extracted text, the Education dates and location ('Expected May 2028', 'College Park, MD') come after a blank line, separated from the school and degree lines. Experience entries interleave company, date, title and location on separate lines.",
+      "severity": 2,
+      "why_it_matters": "Modern parsers and LLM screeners handle this, but older Workday/Taleo-style parsers sometimes drop a detached graduation date, and grad date is a hard filter for internships (e.g. Lyft requires Dec 2027 to Summer 2028).",
+      "suggested_direction": "If the template allows it, emit the date on the same text line as the school or degree (right-aligned tab instead of a separate box) so extraction keeps them together."
+    },
+    {
+      "problem": "The certification is a line inside 'Technical Skills' and has a date range ('Nov 2024 – Nov 2027') in the same format as employment dates.",
+      "severity": 2,
+      "why_it_matters": "ATS certification fields are filled from a 'Certifications' heading. Inside Skills, the AWS cert may not land in the structured field, and a naive parser may read the range as another job.",
+      "suggested_direction": "Either move it under its own 'Certifications' heading (one line), or write the dates as 'issued Nov 2024, valid through Nov 2027'."
+    },
+    {
+      "problem": "Curly apostrophes (Leo’s, AnyGrasp’s, studio’s, exchange’s) come through as Unicode U+2019 in the extracted text.",
+      "severity": 1,
+      "why_it_matters": "Negligible for modern parsers. It only matters for exact-match searches on possessive forms.",
+      "suggested_direction": "Optional: use straight apostrophes in the source."
+    }
+  ],
+  "keep": [
+    "Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance: on an EventBridge schedule a larger LLM grades its ratings, and fine-tuning runs only when the grades shift past a threshold",
+    "Building a RAG meal-suggestion feature for the official UMD app, in which GPT-4o mini writes suggestions from scraped recipes found by SentenceBERT vector search in ChromaDB, and internal testers rated 93% of meals satisfactory",
+    "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange’s book, agreeing with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices",
+    "Standard section headings (Education, Experience, Projects, Technical Skills) in single-column order, with consistent 'Mon YYYY – Mon YYYY' dates and a clickable email, LinkedIn and GitHub in the header",
+    "Acronym expansions already present: 'retrieval-augmented generation (RAG)', 'AWS CDK infrastructure-as-code', 'GitHub Actions CI/CD'"
+  ]
+}
