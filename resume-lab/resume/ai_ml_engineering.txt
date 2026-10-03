@@ -14,18 +14,18 @@ Amazon Web Services
 Sep 2026 – Dec 2026
 Software Development Engineer Intern
 Redmond, WA
-• Writing Java logic that sets the upper and lower bounds on EC2 capacity Amazon Redshift reserves for operations like
-patching, balancing availability against cost, and backtesting it
+• Writing Java logic that sets the upper and lower bounds on EC2 capacity that Amazon Redshift reserves for operations
+like patching, balancing availability against cost, and backtesting it
 Capital One
 Jun 2026 – Aug 2026
 Software Engineering Intern
 Richmond, VA
+• Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a
+visual React Flow editor and Jest-tested validation, and 90% of 30+ surveyed developers preferred it
 • Cut LLM workflow generation time 65% to under 15s by splitting one large Claude skill into smaller sub-skills that call
 Python tools for search and validation, and output quality held in repeated stress-test runs
 • Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a
 category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries
-• Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a
-visual React Flow editor and Jest-tested validation, and 90% of 30+ surveyed developers preferred it
 UMD App Development Contracting (Client: Amazon Leo)
 Jan 2026 – Present
 Software Engineer (Contract)
@@ -40,8 +40,8 @@ UMD Institute for Advanced Computer Studies (UMIACS)
 Dec 2025 – Present
 Machine Learning Research Intern
 College Park, MD
-• For a PhD-led robotics project aimed at ICLR, built a pipeline that shows a vision-language model AnyGrasp’s candidate
-grasps as Open3D overlays on multi-camera images, then tuned prompts so the model picks the right grasp more often
+• For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp’s candidate grasps on camera
+images in Open3D for a vision-language model, then tuned prompts so the model picks the right grasp more often
 TerpLabs
 Jun 2025 – Present
 Co-Founder, Software Engineer

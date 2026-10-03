@@ -40,12 +40,12 @@
     },
     {
       "fact": "aws_sde.redshift",
-      "chars": 182,
-      "words": 27,
+      "chars": 187,
+      "words": 28,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.52,
-      "text": "Writing Java logic that sets the upper and lower bounds on EC2 capacity Amazon Redshift reserves for operations like patching, balancing availability against cost, and backtesting it"
+      "last_fill": 0.56,
+      "text": "Writing Java logic that sets the upper and lower bounds on EC2 capacity that Amazon Redshift reserves for operations like patching, balancing availability against cost, and backtesting it"
     },
     {
       "fact": "capital_one.claude_skill",
@@ -76,12 +76,12 @@
     },
     {
       "fact": "umiacs.grasp_vlm",
-      "chars": 233,
+      "chars": 225,
       "words": 37,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.99,
-      "text": "For a PhD-led robotics project aimed at ICLR, built a pipeline that shows a vision-language model AnyGrasp's candidate grasps as Open3D overlays on multi-camera images, then tuned prompts so the model picks the right grasp more often"
+      "last_fill": 0.95,
+      "text": "For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D for a vision-language model, then tuned prompts so the model picks the right grasp more often"
     },
     {
       "fact": "terplabs.studio",
@@ -96,7 +96,7 @@
       "fact": "terplabs.tortuga",
       "chars": 174,
       "words": 30,
-      "n_bold": 1,
+      "n_bold": 0,
       "n_lines": 2,
       "last_fill": 0.44,
       "text": "Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio's class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency"
@@ -130,11 +130,6 @@
     },
     {
       "level": "WARN",
-      "where": "Writing Java logic that sets the upper and lower b",
-      "msg": "voice: noun stack of 5 words"
-    },
-    {
-      "level": "WARN",
       "where": "Cut AI workflow generation time 65% to under 15s b",
       "msg": "voice: noun stack of 5 words"
     },
@@ -165,5 +160,5 @@
     }
   ],
   "errors": 0,
-  "warnings": 12
+  "warnings": 11
 }

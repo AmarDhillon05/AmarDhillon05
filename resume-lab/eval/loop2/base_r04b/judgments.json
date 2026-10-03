@@ -1,0 +1,29 @@
+[
+  {
+    "id": "g01",
+    "winner": "B",
+    "advantage": "marginal",
+    "decisive_wording": "shows a vision-language model AnyGrasp's candidate grasps ... so the model picks the right grasp more often",
+    "info_preserved_or_lost": "All three keep the same facts (PhD-led, ICLR, AnyGrasp, Open3D overlays, multi-camera images, VLM selection, prompt tuning). B names the outcome as 'the right grasp'; A ends on the vague 'chooses correctly'; C says 'pick one' and 'picks correctly'.",
+    "credibility_change": "None. All three describe the same mechanism: candidate grasps are overlaid on images and the VLM chooses one.",
+    "readability_change": "B is the easiest to restate: it puts the model as the direct audience and resolves 'it' to 'the model' and 'the right grasp'. A's 'renders ... for a vision-language model to choose from' and C's 'turns ... into ... so ... can pick one' are a little more roundabout, and both end on a vague 'it'."
+  },
+  {
+    "id": "g02",
+    "winner": "B",
+    "advantage": "concrete",
+    "decisive_wording": "classifier that rates research documents by importance: on an EventBridge schedule a larger LLM grades its ratings",
+    "info_preserved_or_lost": "A and B keep Bedrock, EventBridge, LLM-as-grader and threshold-gated fine-tuning. B also says the documents are research documents and that the LLM grades the classifier's ratings, not the classifier in general. A compresses this into the noun stack 'document-importance classifier' and drops 'research'. C drops EventBridge, which is a keyword a job posting could match.",
+    "credibility_change": "B is slightly more credible: 'grades its ratings' says exactly what gets evaluated, while A's 'grades the classifier' is vaguer.",
+    "readability_change": "B avoids A's noun stack and stays one sentence with a single colon. C has a long nested clause ('fine-tuning it only when a larger LLM's scheduled grades of its output move past a threshold') that is harder to parse."
+  },
+  {
+    "id": "g03",
+    "winner": "B",
+    "advantage": "marginal",
+    "decisive_wording": "Cut the time for AI to generate a workflow 65% vs. Cut AI workflow generation time 65%",
+    "info_preserved_or_lost": "Both keep 65%, under 15s, the move from open-ended search to focused sub-skills, the Python tools, and CloudWatch/OpenSearch. A says 'workflow search and validation', which is slightly more specific; B says only 'search and validation'.",
+    "credibility_change": "None. The mechanism and metrics are identical.",
+    "readability_change": "B replaces the four-word noun stack 'AI workflow generation time' with a phrase a recruiter can read aloud. It costs a few extra words and drops the 'workflow' qualifier on search, so the preference is close to taste."
+  }
+]

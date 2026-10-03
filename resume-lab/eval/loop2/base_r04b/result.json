@@ -1,0 +1,29 @@
+[
+  {
+    "fact": "umiacs.grasp_vlm",
+    "winner": "incumbent",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "For a PhD-led robotics project aimed at ICLR, built a pipeline that shows a vision-language model AnyGrasp's candidate grasps as Open3D overlays on multi-camera images, then tuned prompts so the model picks the right grasp more often",
+    "decisive_wording": "shows a vision-language model AnyGrasp's candidate grasps ... so the model picks the right grasp more often",
+    "info": "All three keep the same facts (PhD-led, ICLR, AnyGrasp, Open3D overlays, multi-camera images, VLM selection, prompt tuning). B names the outcome as 'the right grasp'; A ends on the vague 'chooses correctly'; C says 'pick one' and 'picks correctly'."
+  },
+  {
+    "fact": "amazon_contract.bedrock_finetune",
+    "winner": "incumbent",
+    "advantage": "concrete",
+    "adopt": false,
+    "text": "Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance: on an EventBridge schedule a larger LLM grades its ratings, and fine-tuning runs only when the grades shift past a threshold",
+    "decisive_wording": "classifier that rates research documents by importance: on an EventBridge schedule a larger LLM grades its ratings",
+    "info": "A and B keep Bedrock, EventBridge, LLM-as-grader and threshold-gated fine-tuning. B also says the documents are research documents and that the LLM grades the classifier's ratings, not the classifier in general. A compresses this into the noun stack 'document-importance classifier' and drops 'research'. C drops EventBridge, which is a keyword a job posting could match."
+  },
+  {
+    "fact": "capital_one.claude_skill",
+    "winner": "cand1",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Cut AI workflow generation time 65% to under 15s by replacing a Claude skill's open-ended search with focused sub-skills that call Python tools for workflow search and validation, guided by CloudWatch and OpenSearch latency logs",
+    "decisive_wording": "Cut the time for AI to generate a workflow 65% vs. Cut AI workflow generation time 65%",
+    "info": "Both keep 65%, under 15s, the move from open-ended search to focused sub-skills, the Python tools, and CloudWatch/OpenSearch. A says 'workflow search and validation', which is slightly more specific; B says only 'search and validation'."
+  }
+]
