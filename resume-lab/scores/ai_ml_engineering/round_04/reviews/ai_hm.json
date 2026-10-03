@@ -1,0 +1,34 @@
+{
+  "persona": "ai_hm",
+  "target": "AI/ML engineering intern roles (LLM applications, agents, RAG, ML platform) at AI-native startups and big-tech AI orgs, 2026–27 cycle. Score domain_fit for this domain.",
+  "seven_second_takeaway": "UMD CS '28 with AWS, Capital One, Amazon Leo contract. Decomposed a Claude skill into tool-using sub-skills (65% faster), drift-triggered Bedrock retraining, shipped RAG feature.",
+  "scores": {"impact_clarity": 8, "quantification": 8, "technical_depth": 8, "concision_readability": 8,
+             "skim_test": 8, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 8, "overall": 8},
+  "score_rationale": {},
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "clarify: on the Claude sub-skill decomposition, did output quality/validation pass rate hold after the 65% speedup? 'Stress-tested over repeated runs' implies a check but never states the result; an LLM-platform HM will ask immediately."
+  ],
+  "bullets": [
+    {"quote": "Writing Java policies that tune upper/lower bounds", "verdict": "keep", "suggestion": ""},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "add_context", "issue": "Speed result is clear; quality outcome of the stress test is implied but unstated.", "suggestion": "Cut LLM workflow generation time 65% to under 15s by decomposing a Claude skill into sub-skills with Python search/validation tools; stress-tested on example workflows over repeated runs"},
+    {"quote": "Precomputed a tree-style search index over popular", "verdict": "keep", "suggestion": ""},
+    {"quote": "Rebuilt a legacy test-data workflow builder in", "verdict": "keep", "suggestion": ""},
+    {"quote": "Automated EventBridge-scheduled fine-tuning of a Bedrock", "verdict": "keep", "suggestion": ""},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep", "suggestion": ""},
+    {"quote": "Shipped a space-research tool used by Amazon", "verdict": "keep", "suggestion": ""},
+    {"quote": "Built a Python pipeline for PhysTwin (PhD-led", "verdict": "tighten", "issue": "Dense noun stack; the VLM grasp-selection angle (most AI-relevant) is buried at the end.", "suggestion": "Built a Python pipeline feeding a VLM multi-camera images with AnyGrasp grasps as Open3D overlays for PhysTwin (PhD-led digital twin, targeting ICLR); tuned prompts for grasp selection and depth cues"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "keep", "suggestion": ""},
+    {"quote": "Building a RAG meal-suggestion feature for the", "verdict": "keep", "suggestion": ""},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep", "suggestion": ""},
+    {"quote": "Built a C++17 order book and matching", "verdict": "keep", "issue": "Off-domain for AI roles but a strong correctness signal; fine as the lone project.", "suggestion": ""}
+  ],
+  "structure": [
+    {"key": "keep_ai_skills_first", "change": "Keep AI/ML as the first Technical Skills row (already done).", "rationale": "Screener sees Claude tool use, Bedrock fine-tuning, RAG before generic languages; correct for this domain."}
+  ],
+  "top3": [
+    "clarify: state whether workflow quality/validation held after the 65% Claude sub-skill speedup, using only what the stress test actually showed.",
+    "Tighten the PhysTwin bullet so the VLM prompting / grasp-selection work leads instead of trailing.",
+    "Leave the rest alone: Capital One agent decomposition, drift-triggered Bedrock retraining, and RAG with an eval metric are exactly what an applied-AI HM screens for."
+  ]
+}

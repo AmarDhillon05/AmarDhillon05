@@ -1,0 +1,46 @@
+{
+  "persona": "ai_recruiter",
+  "target": "AI/ML engineering intern roles (LLM applications, agents, RAG, ML platform) at AI-native startups and big-tech AI orgs, 2026–27 cycle. Score domain_fit for this domain.",
+  "seven_second_takeaway": "UMD CS '28, AWS + Capital One interns; built a Claude tool-using agent (65% faster), Bedrock fine-tuning automation, and a RAG feature with a measured quality score.",
+  "scores": {
+    "impact_clarity": 8,
+    "quantification": 7,
+    "technical_depth": 8,
+    "concision_readability": 8,
+    "skim_test": 8,
+    "credibility": 8,
+    "ats_parseability": 9,
+    "visual_layout": 8,
+    "domain_fit": 8,
+    "overall": 8
+  },
+  "score_rationale": {
+    "quantification": "Strong latency numbers, but the Bedrock fine-tuning and AWS bullets have no outcome. The 65% speedup doesn't say whether output quality held, which is the eval question AI HMs ask."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "clarify: did the Capital One sub-skill decomposition keep or improve workflow output quality (e.g., pass rate in the stress tests)? Right now the 65% reads as speed-only, with no eval signal."
+  ],
+  "bullets": [
+    {"quote": "Writing Java policies that tune upper/lower bounds", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "tighten", "issue": "Strongest AI bullet; 'stress-tested... repeated runs' hints at evals but doesn't say what was checked.", "suggestion": "Cut Claude workflow generation time 65% to under 15s by splitting one skill into sub-skills with Python search/validation tools; stress-tested on example workflows over repeated runs"},
+    {"quote": "Precomputed a tree-style search index over popular", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Rebuilt a legacy test-data workflow builder in", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Automated EventBridge-scheduled fine-tuning of a Bedrock", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Reduced end-to-end latency 34% for a", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Shipped a space-research tool used by Amazon", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Built a Python pipeline for PhysTwin (PhD-led", "verdict": "tighten", "issue": "Dense noun stack. The VLM prompting work, which matters most for this domain, comes last.", "suggestion": "Tuned VLM prompts for grasp selection and depth cues on PhysTwin (PhD-led digital twin, targeting ICLR); built the Python pipeline rendering AnyGrasp grasps as Open3D overlays on multi-camera images"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Building a RAG meal-suggestion feature for the", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Built a C++17 order book and matching", "verdict": "keep", "issue": "Off-domain for AI roles, but it shows rigor and fills the Projects slot well.", "suggestion": ""}
+  ],
+  "structure": [
+    {"key": "skills_ai_trim", "change": "In AI/ML skills, drop 'GPT-4o mini' as a standalone item (it is already in the RAG bullet), or fold it into 'OpenAI API'", "rationale": "Listing a specific model as a skill reads like keyword padding to AI recruiters; the bullets already show it in use."}
+  ],
+  "top3": [
+    "clarify: whether output quality held or improved alongside the 65% Capital One speedup. One eval signal would make this the standout agent bullet.",
+    "Reorder the PhysTwin bullet so the VLM prompt-tuning work leads and the domain keyword lands first.",
+    "Trim model-name keywords (GPT-4o mini) from Skills so the AI/ML line reads as capabilities rather than a buzzword list."
+  ]
+}

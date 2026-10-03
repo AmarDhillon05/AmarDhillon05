@@ -105,3 +105,6 @@ accepted_risks:
   - key: env_setup_baseline
     decided: "Amar, Oct 2026: no baseline available for the 30% setup-time reduction"
     match: ["(?i)30%", "(?i)(baseline|from what|from x|minutes|unclear)"]
+  - key: aws_backtest_results
+    decided: "Amar/Claude, Oct 2026: Redshift backtest results are preliminary/internal (2 weeks into the internship); intentionally omitted"
+    match: ["(?i)(aws|redshift|backtest)", "(?i)(showed|outcome|result|what the backtest)"]
