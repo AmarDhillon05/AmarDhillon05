@@ -1,3 +1,102 @@
+# Loop 2: ATS breadth + human voice (Oct 3, current)
+
+Your feedback on loop 1 was that the bullets were concise but didn't sound human and had lost ATS breadth. Your 22-section spec then governed this loop. **These are the current deliverables. Loop 1 is kept below for history.**
+
+| file (Jake format) | original-format twin | target |
+|---|---|---|
+| `resume/resume.tex` | `resume/original_format/resume.tex` | General SWE / backend (base) |
+| `resume/infra_distributed.tex` | `resume/original_format/infra_distributed.tex` | Infra / distributed systems (was `backend_cloud`) |
+| `resume/systems_quant.tex` | `resume/original_format/systems_quant.tex` | Systems / quant-adjacent (was `quant_hft`) |
+| `resume/ai_ml_engineering.tex` | `resume/original_format/ai_ml_engineering.tex` | ML infra grounded in engineering |
+
+**About the original-format twins:**
+- Each one uses your original `.tex` layout: preamble, 8.5pt bullets, Certifications section, and title-first role headers. Only the words change.
+- Spacing is auto-fitted to exactly one page by `tools/to_original_format.py`.
+- Put your real phone number back in both formats before uploading.
+
+## Results
+
+| version | round | evaluators | overall | human voice | plain language | recruiter restates | ATS must-have |
+|---|---|---|---|---|---|---|---|
+| base | 00 (loop-1 final) | 6 | 7.83 | **6.0** | **5.83** | 11/14 | **47%** |
+| base | 01 | 6 | 8.0 | 6.83 | 6.67 | 11/14 | 100% |
+| base | 02 | 6 | 8.0 | 7.5 | 6.5 | 11/13 | 100% |
+| base | 03 | 6 | 7.83 | 7.0 | 6.33 | 12/14 | 100% |
+| base | 04 (final) | 6 | 7.83 | 7.33 | 6.83 | 12/14 | 100% |
+| infra | 00 → 01 | 6 → 3 | 7.83 → 7.67 | 7.17 → 7.33 | 6.5 → 6.67 | 12/13 → 11/12 | 92% |
+| systems/quant | 00 → 01 | 6 → 3 | 7.33 → 7.67 | 7.33 → 7.0 | 6.0 → 6.67 | 8/11 → 9/10 | 94% → 88% |
+| AI/ML | 00 → 01 | 6 → 3 | 7.83 → 7.67 | 7.67 → 7.0 | 6.83 → 6.67 | 10/12 → 10/11 | 100% → 90% |
+
+**How to read the table:**
+- **Evaluators** (spec §6):
+  - non-technical recruiter, who does a memory skim and restates every bullet in plain English;
+  - senior SWE;
+  - hiring manager;
+  - skeptic, who also checks human voice;
+  - ATS/LLM screener, reading real 2026 job postings;
+  - one domain specialist per version.
+- **Confirmation rounds** (variant round 01) used the 3 evaluators that matter most for the remaining issues, so their means are not strictly comparable with the 6-evaluator rounds.
+- **"ATS must-have"** means the share of keywords that appear in at least 25% of real postings and that your facts support. A keyword you can't honestly claim never counts against you.
+
+**Convergence (spec §19):**
+- The base resume moved fast in rounds 01–02 and then flattened over 02–04, with no material gain for 2 rounds. Every evaluator rated every version competitive except systems/quant: 2 of its 6 evaluators said "stretch", and so did 1 of the 3 in its confirmation round.
+- The quant "stretch" is the same structural point loop 1 found: the IEX project is the only C++/low-latency evidence on the page. Wording can't change that.
+
+**What still caps the scores** needs facts, not wording:
+1. **Capital One search index.** What kind of "strict access limits": rate limits, permissions, or query quotas?
+2. **Leo tool.** What it does for the policy team, and whether you built it or deployed it.
+3. **Kinesis 34%.** Per document or per batch, and how it was measured.
+4. **B+ tree vs LSM.** Whether write throughput was measured. Reviewers expect the LSM's write side.
+5. **PhysTwin.** Any evaluation behind "picks the right grasp more often".
+
+## What changed
+
+**Human voice:**
+- 7 of 14 bullets used to stitch clauses with semicolons; none do now.
+- Parenthetical tech dumps are gone.
+- Noun stacks are broken up. For example, "Bedrock document-importance classifier" became "a production Amazon Bedrock classifier that rates research documents by importance".
+- Bullets now say what the thing does for someone: "the legacy tool developers use to create test-data workflows", "a vision-language model ... picks the right grasp".
+
+**ATS breadth:**
+- Skills are regrouped into the categories screeners parse, with matchable forms: AWS CDK (infrastructure as code), GitHub Actions (CI/CD), retrieval-augmented generation (RAG), unit testing (Pytest, Jest), data structures and algorithms.
+- Each version's Skills carries only items its facts back.
+- Three skills you listed originally were dropped from AI/ML because no bullet supports them: PyTorch, CUDA and MongoDB. Add any back only if you can discuss real use. PyTorch is the single most-requested term in the ML postings.
+- "Expected May 2028" now replaces "May 2028", so parsers don't read it as a completed degree.
+
+**Ownership:** the TerpLabs studio claim and your own Redis work are now separate bullets, and "20,000+ visits" is no longer bolded on the caching bullet.
+
+**Mechanisms:**
+- The Claude-skill bullet now says why it got faster: open-ended model search was replaced by Python search and validation tools.
+- The order-book bullet names the real containers: a std::list FIFO per price level and an order-ID → list-iterator hash map for O(1) cancels.
+
+**Structure:**
+- Capital One order is tuned per version: the UI tool first in the base, so "workflow" is defined before it is used; backend or AI work first in the variants.
+- The research-environment setup bullet leaves the base (it stays in infra). The studio bullet leaves the variants.
+
+## How it was validated
+
+1. **Gate**, now including the voice checks in `tools/voice.py`:
+   - inflated words, semicolons, parentheticals, noun stacks, tool inventories, metric stacking;
+   - all calibrated against 1,442 bullets from the reference corpus.
+   - Plus ≤3 bullets per role, with a documented exception of 4 for the quant IEX project, and the existing 1-page, 2-line and `fact_check` rules.
+2. **Two independent blind judges per candidate.** They answered "which communicates more useful information with less reader effort?" under randomized labels.
+   - A rewrite was adopted only when both judges preferred it and at least one named a **concrete** advantage.
+   - Exceptions are logged and limited to accuracy or parse fixes that 3+ evaluators flagged.
+3. **Decision log.** `eval/loop2/decisions.jsonl` has 106 entries: every proposed change, accepted or rejected, with the reason and the evaluator evidence.
+4. **Raw material:**
+   - every review, summary, PDF and gate result is under `scores/loop2/<version>/round_NN/`;
+   - the job postings used are in `corpus/jds/`;
+   - 14 redacted reference resumes are in `corpus/references/`.
+
+## Questions only you can answer
+These are the five facts listed under Results, plus the following (also in `resume/annotations.yaml`):
+- **Nanosat and Northrop:** may they appear in some versions? Nanosat would help the infra and systems versions most.
+- **Interview stories:** which story per role would you most want to tell?
+- **Ownership:** did you design the search-index tree yourself, and did you build all of the Bedrock loop or only part of it?
+
+---
+# Loop 1 (history)
+
 # Resume Lab: base resume report
 
 **Deliverable:** `resume/resume.tex`, an Overleaf-ready file (pdfLaTeX, standard packages only), with compiled output at `resume/resume.pdf`.
