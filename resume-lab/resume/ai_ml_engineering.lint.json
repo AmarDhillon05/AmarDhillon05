@@ -1,15 +1,15 @@
 {
   "tex": "/home/user/AmarDhillon05/resume-lab/resume/ai_ml_engineering.tex",
-  "n_bullets": 11,
+  "n_bullets": 12,
   "bullets": [
     {
       "fact": "aws_sde.redshift",
-      "chars": 218,
-      "words": 31,
+      "chars": 182,
+      "words": 27,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.85,
-      "text": "Writing Java logic that decides how much EC2 capacity Amazon Redshift reserves for operations like patching, setting upper and lower bounds that keep availability high without overspending, and backtesting the policies"
+      "last_fill": 0.52,
+      "text": "Writing Java logic that sets the upper and lower bounds on EC2 capacity Amazon Redshift reserves for operations like patching, balancing availability against cost, and backtesting it"
     },
     {
       "fact": "capital_one.claude_skill",
@@ -67,12 +67,12 @@
     },
     {
       "fact": "umiacs.grasp_vlm",
-      "chars": 232,
+      "chars": 233,
       "words": 37,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 1.0,
-      "text": "For a PhD-led robotics project aimed at ICLR, built a Python pipeline that renders AnyGrasp's candidate grasps on multi-camera images as Open3D overlays for a vision-language model, and tuned its prompts so it picks right more often"
+      "last_fill": 0.99,
+      "text": "For a PhD-led robotics project aimed at ICLR, built a pipeline that shows a vision-language model AnyGrasp's candidate grasps as Open3D overlays on multi-camera images, then tuned prompts so the model picks the right grasp more often"
     },
     {
       "fact": "terplabs.rag_meal",
@@ -84,29 +84,38 @@
       "text": "Building a RAG meal-suggestion feature for the official UMD app, in which GPT-4o mini writes suggestions from scraped recipes found by SentenceBERT vector search in ChromaDB, and internal testers rated 93% of meals satisfactory"
     },
     {
-      "fact": "terplabs.studio+terplabs.tortuga",
-      "chars": 228,
-      "words": 39,
+      "fact": "terplabs.studio",
+      "chars": 80,
+      "words": 13,
+      "n_bold": 0,
+      "n_lines": 1,
+      "last_fill": 1.0,
+      "text": "Co-founded a 110+ member student product studio that has shipped 5 live products"
+    },
+    {
+      "fact": "terplabs.tortuga",
+      "chars": 174,
+      "words": 30,
       "n_bold": 1,
       "n_lines": 2,
-      "last_fill": 0.92,
-      "text": "Co-founded a 110+ member student product studio that has shipped 5 live products, and personally built Redis caching in front of the Prisma ORM queries for one, Tortuga, a class scheduler with 20,000+ visits in its first 30 days"
+      "last_fill": 0.44,
+      "text": "Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio's class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency"
     },
     {
       "fact": "iex.replay_correctness",
-      "chars": 211,
-      "words": 34,
+      "chars": 232,
+      "words": 38,
       "n_bold": 1,
       "n_lines": 2,
-      "last_fill": 0.84,
-      "text": "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange's book, matching 99,122 of 99,123 fills and 100% of top-of-book prices"
+      "last_fill": 1.0,
+      "text": "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange's book, agreeing with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices"
     }
   ],
   "issues": [
     {
       "level": "WARN",
-      "where": "Writing Java logic that decides how much EC2 capac",
-      "msg": "voice: noun stack of 8 words"
+      "where": "Writing Java logic that sets the upper and lower b",
+      "msg": "voice: noun stack of 5 words"
     },
     {
       "level": "WARN",
@@ -151,7 +160,12 @@
     {
       "level": "WARN",
       "where": "Co-founded a 110+ member student product studio th",
-      "msg": "voice: 4 numbers in one bullet (metric stacking)"
+      "msg": "no visible technology"
+    },
+    {
+      "level": "WARN",
+      "where": "Built a C++17 order book and matching engine and r",
+      "msg": "leading verb 'Built' repeats (also: Built Redis caching in front of the Prisma ORM que)"
     },
     {
       "level": "WARN",
@@ -165,5 +179,5 @@
     }
   ],
   "errors": 0,
-  "warnings": 12
+  "warnings": 13
 }

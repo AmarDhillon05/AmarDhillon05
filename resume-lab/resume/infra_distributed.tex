@@ -99,7 +99,7 @@
     {Software Development Engineer Intern}{Redmond, WA}
   \resumeItemListStart
     % fact: aws_sde.redshift
-    \resumeItem{Writing Java logic that decides how much EC2 capacity Amazon Redshift reserves for operations like patching, setting upper and lower bounds that keep availability high without overspending, and backtesting the policies}
+    \resumeItem{Writing Java logic that sets the upper and lower bounds on EC2 capacity Amazon Redshift reserves for operations like patching, balancing availability against cost, and backtesting it}
   \resumeItemListEnd
 
   \resumeSubheading
@@ -107,7 +107,7 @@
     {Software Engineering Intern}{Richmond, VA}
   \resumeItemListStart
     % fact: capital_one.claude_skill
-    \resumeItem{Cut AI workflow generation time \textbf{65\%} to under 15s by splitting one large Claude skill into smaller sub-skills that call Python tools for search and validation, after CloudWatch and OpenSearch latency logs showed where time went}
+    \resumeItem{Cut AI workflow generation time \textbf{65\%} to under 15s by replacing a Claude skill's open-ended search with focused sub-skills that call Python tools for workflow search and validation, guided by CloudWatch and OpenSearch latency logs}
     % fact: capital_one.search_index
     \resumeItem{Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries}
     % fact: capital_one.ui_overhaul
@@ -138,8 +138,10 @@
     {TerpLabs}{Jun 2025 -- Present}
     {Co-Founder, Software Engineer}{College Park, MD}
   \resumeItemListStart
-    % fact: terplabs.studio+terplabs.tortuga
-    \resumeItem{Co-founded a 110+ member student product studio that has shipped 5 live products, and personally built Redis caching in front of the Prisma ORM queries for one, Tortuga, a class scheduler with \mbox{\textbf{20,000+ visits}} in its first 30 days}
+    % fact: terplabs.studio
+    \resumeItem{Co-founded a 110+ member student product studio that has shipped 5 live products}
+    % fact: terplabs.tortuga
+    \resumeItem{Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio's class scheduler with \mbox{\textbf{20,000+ visits}} in its first 30 days, to reduce database load and latency}
   \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -151,9 +153,9 @@
     {\textbf{IEX Order Book \& Matching Engine} $|$ \textit{C++17, STL, POSIX, Linux perf}}{Jul 2026 -- Aug 2026}
   \resumeItemListStart
     % fact: iex.replay_correctness
-    \resumeItem{Built a C++17 order book and matching engine and replayed \textbf{50.9M} real IEX exchange messages through it without ever resyncing to the exchange's book, matching 99,122 of 99,123 fills and 100\% of top-of-book prices}
+    \resumeItem{Built a C++17 order book and matching engine and replayed \textbf{50.9M} real IEX exchange messages through it without ever resyncing to the exchange's book, agreeing with the exchange on 99,122 of 99,123 fills and 100\% of top-of-book prices}
     % fact: iex.storage_benchmark
-    \resumeItem{Implemented B+ tree and LSM-tree backends for the engine's event log and benchmarked them on identical 2M-record workloads: the B+ tree gave \textbf{12.8x} the read throughput and 22x faster range summaries for 27\% more disk}
+    \resumeItem{Implemented B+ tree and LSM-tree backends for the event log and benchmarked them on identical 2M-record workloads, where the B+ tree gave \textbf{12.8x} the read throughput and 22x faster range queries at the cost of 27\% more disk space}
     % fact: iex.throughput+iex.data_structures
     \resumeItem{Sustained \mbox{\textbf{1.26M events/sec}} end-to-end over the full replay, keeping each price level's orders in a std::list FIFO inside a std::map and a hash map from order ID to list iterator for O(1) cancels}
   \resumeItemListEnd

@@ -3,7 +3,7 @@ base: resume/resume.tex
 out: resume/ai_ml_engineering.tex
 order:
   amazon_contract: [amazon_contract.bedrock_finetune, amazon_contract.kinesis_pipeline, amazon_contract.leo_deploy]
-  terplabs: [terplabs.rag_meal, terplabs.studio+terplabs.tortuga]
+  terplabs: [terplabs.rag_meal, terplabs.studio, terplabs.tortuga]
 drop: [iex.throughput+iex.data_structures, iex.storage_benchmark]
 text:
   capital_one.claude_skill: 'Cut LLM workflow generation time \textbf{65\%} to under 15s by splitting one large Claude skill into smaller sub-skills that call Python tools for search and validation, and output quality held in repeated stress-test runs'
