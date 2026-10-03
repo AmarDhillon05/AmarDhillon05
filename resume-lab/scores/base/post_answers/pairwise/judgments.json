@@ -1,0 +1,6 @@
+[
+  {"id": "p01", "winner": "B", "reason": "States what the model does and the concrete retraining trigger; A's 'source-relevancy' and 'redundant runs' are vague, ops details add little."},
+  {"id": "p02", "winner": "A", "reason": "Gives a clear purpose (minimize DB queries); B's 'Claude skill's main search tool' needs unexplained context and reads awkwardly."},
+  {"id": "p03", "winner": "B", "reason": "'Redis caching for its Prisma ORM queries' is clearer and more accurate than 'over Prisma SQL'; otherwise identical."},
+  {"id": "p04", "winner": "A", "reason": "Clearer flow to the VLM and a concrete purpose for prompt tuning (pick grasps, judge depth); B's ending is clunky."}
+]

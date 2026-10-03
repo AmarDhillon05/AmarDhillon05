@@ -2,6 +2,7 @@ variant,round,n_reviewers,overall_mean,min_any_dim,n_must_fix,n_accepted_risk,ga
 ai_ml_engineering,round_01,3,8,7,8,0,0,False,8.33,8,8,7,7.67,8,7,7,8,8
 ai_ml_engineering,round_02,3,8,7,5,0,0,False,8.67,8,8,7.33,8,8,7.33,7.67,8,8
 ai_ml_engineering,round_03,3,8,7,7,0,0,False,9,8,7.67,7,7.67,8,7,7.33,8,8
+ai_ml_engineering,round_04,3,8,7,5,0,0,False,9,8,8,7.67,7.67,8,7.33,8,8,8
 backend_cloud,round_01,3,8,8,3,0,0,False,9,8,8,8,8,8,8,8,8,8
 backend_cloud,round_02,3,8,7,6,0,0,False,9,8,8,7.67,7.67,8,7.67,8,8,8
 backend_cloud,round_03,3,8,7,4,0,0,False,9,8,8,8,7.67,8,7.33,8,8,8

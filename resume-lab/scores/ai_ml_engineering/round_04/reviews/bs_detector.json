@@ -1,0 +1,119 @@
+{
+  "persona": "bs_detector",
+  "target": "AI/ML engineering intern roles (LLM applications, agents, RAG, ML platform) at AI-native startups and big-tech AI orgs, 2026–27 cycle. Score domain_fit for this domain.",
+  "seven_second_takeaway": "UMD CS '28 with AWS and Capital One internships; Claude agent-skill latency cut 65%, Bedrock fine-tuning pipeline for Amazon Leo, RAG feature. Strong builder, AI evidence slightly buried.",
+  "scores": {
+    "impact_clarity": 7,
+    "quantification": 7,
+    "technical_depth": 8,
+    "concision_readability": 8,
+    "skim_test": 8,
+    "credibility": 8,
+    "ats_parseability": 9,
+    "visual_layout": 8,
+    "domain_fit": 7,
+    "overall": 8
+  },
+  "score_rationale": {
+    "impact_clarity": "Several bullets end at the mechanism (AWS policies, search index, Bedrock retraining trigger, PhysTwin prompt tuning) with no stated outcome, so the why/result is left implicit.",
+    "quantification": "65%→<15s is well anchored; 34% and 30% float without baselines, and 93% has an unknown tester count. Metrics are honest but uneven.",
+    "domain_fit": "AI evidence is real and good (agent skills, LLM-judged retraining, RAG, VLM), but the top entry is non-AI Java capacity work and the AI wins sit mid-bullet-list."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "clarify: 'targeting ICLR' on PhysTwin: say whether you are on the paper or not; as written an interviewer will ask, and 'PhD-led' already signals you are not first author, so make your contribution unmistakable",
+    "PyTorch is listed in AI/ML skills but appears in no bullet; either be ready to defend hands-on PyTorch work or drop it so the skills line matches the evidence",
+    "'stress-tested on example workflows over repeated runs' is vague filler that invites 'how many, and what did you measure?'; tighten or cut it"
+  ],
+  "bullets": [
+    {
+      "quote": "Writing Java policies that tune upper/lower bounds",
+      "verdict": "keep",
+      "issue": "",
+      "suggestion": ""
+    },
+    {
+      "quote": "Cut LLM workflow generation time 65% to",
+      "verdict": "tighten",
+      "issue": "Strong, anchored metric; the 'stress-tested ... repeated runs' tail is vague and adds nothing verifiable.",
+      "suggestion": "Cut LLM workflow generation time 65% to under 15s by decomposing a monolithic Claude skill into sub-skills backed by Python search and validation tools"
+    },
+    {
+      "quote": "Precomputed a tree-style search index over popular",
+      "verdict": "tighten",
+      "issue": "Reads as tech list; lead with the constraint (DB access limits) so the design choice is the point.",
+      "suggestion": "Worked around DB access limits by precomputing a tree-style index of popular workflows from a 270K+ row PostgreSQL table (SQLAlchemy, Redis cache) as the Claude skill's main search tool"
+    },
+    {
+      "quote": "Rebuilt a legacy test-data workflow builder in",
+      "verdict": "keep",
+      "issue": "",
+      "suggestion": ""
+    },
+    {
+      "quote": "Automated EventBridge-scheduled fine-tuning of a Bedrock model",
+      "verdict": "keep",
+      "issue": "",
+      "suggestion": ""
+    },
+    {
+      "quote": "Reduced end-to-end latency 34% for a pipeline",
+      "verdict": "keep",
+      "issue": "",
+      "suggestion": ""
+    },
+    {
+      "quote": "Shipped a space-research tool used by Amazon",
+      "verdict": "keep",
+      "issue": "",
+      "suggestion": ""
+    },
+    {
+      "quote": "Built a Python pipeline for PhysTwin (PhD-led digital",
+      "verdict": "reframe",
+      "issue": "Name-drop dense (PhysTwin, ICLR, AnyGrasp, Open3D, VLM); your contribution and its purpose get lost; 'targeting ICLR' borrows prestige.",
+      "suggestion": "Built a Python pipeline that renders AnyGrasp grasp candidates as Open3D overlays on multi-camera images so a VLM can select grasps; tuned its prompts for grasp selection and depth cues (PhysTwin, PhD-led)"
+    },
+    {
+      "quote": "Shortened research-environment setup time 30% with uv",
+      "verdict": "keep",
+      "issue": "",
+      "suggestion": ""
+    },
+    {
+      "quote": "Building a RAG meal-suggestion feature for the",
+      "verdict": "keep",
+      "issue": "",
+      "suggestion": ""
+    },
+    {
+      "quote": "Co-founded a 110+ member campus product studio",
+      "verdict": "tighten",
+      "issue": "Studio-wide outcomes and your Redis work are blended; reader can't tell what you personally built versus led.",
+      "suggestion": "Co-founded a 110+ member campus product studio with 5 live products; built Redis caching for Prisma queries in Tortuga, a class scheduler with 20,000+ visits in its first 30 days"
+    },
+    {
+      "quote": "Built a C++17 order book and matching",
+      "verdict": "keep",
+      "issue": "",
+      "suggestion": ""
+    }
+  ],
+  "structure": [
+    {
+      "key": "skills_match_evidence",
+      "change": "Prune skills not backed by any bullet (PyTorch, OpenSearch, X-Ray) or keep only those you can defend in depth.",
+      "rationale": "AI interviewers probe listed frameworks; an unevidenced PyTorch line is the easiest credibility hit on the page."
+    },
+    {
+      "key": "ai_bullet_first_in_amazon_leo",
+      "change": "Keep the Bedrock LLM-judged retraining bullet first under Amazon Leo (already done) and consider moving the Capital One block's Claude bullet to remain first; no reordering of roles needed.",
+      "rationale": "Chronological order is honest; within-role ordering already surfaces AI work, which is the conservative way to improve domain fit."
+    }
+  ],
+  "top3": [
+    "clarify the PhysTwin bullet: state your own contribution plainly and either drop 'targeting ICLR' or confirm you are an author",
+    "Align the AI/ML skills line with the bullets: remove or be ready to defend PyTorch",
+    "Cut the vague 'stress-tested on example workflows over repeated runs' tail from the Capital One headline bullet so the 65% → <15s result lands cleanly"
+  ]
+}

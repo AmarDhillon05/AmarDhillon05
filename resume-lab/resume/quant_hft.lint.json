@@ -58,12 +58,12 @@
     },
     {
       "fact": "capital_one.search_index",
-      "chars": 189,
-      "words": 28,
+      "chars": 170,
+      "words": 24,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.81,
-      "text": "Precomputed a tree-style search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) as the Claude skill's main search tool under DB access limits"
+      "last_fill": 0.66,
+      "text": "Precomputed a tree-style search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to minimize DB queries under access limits"
     },
     {
       "fact": "capital_one.claude_skill",

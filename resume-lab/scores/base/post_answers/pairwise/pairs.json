@@ -1,0 +1,22 @@
+[
+  {
+    "id": "p01",
+    "A": "Automated fine-tuning of a Bedrock source-relevancy model on an EventBridge schedule, gated to skip redundant retraining runs, with X-Ray tracing and SNS alerts on failure",
+    "B": "Automated EventBridge-scheduled fine-tuning of a Bedrock model that classifies documents by importance, retraining only when a larger LLM's cross-model eval scores move past a threshold"
+  },
+  {
+    "id": "p02",
+    "A": "Precomputed a tree-style search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to minimize DB queries under access limits",
+    "B": "Precomputed a tree-style search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) as the Claude skill's main search tool under DB access limits"
+  },
+  {
+    "id": "p03",
+    "A": "Co-founded a 110+ member campus product studio that has shipped 5 live products, including Tortuga, a class scheduler with 20,000+ visits in its first 30 days; built its Redis caching over Prisma SQL",
+    "B": "Co-founded a 110+ member campus product studio that has shipped 5 live products, including Tortuga, a class scheduler with 20,000+ visits in its first 30 days; built Redis caching for its Prisma ORM queries"
+  },
+  {
+    "id": "p04",
+    "A": "Built a Python pipeline for PhysTwin (PhD-led digital twin, targeting ICLR) turning AnyGrasp output on multi-camera images into Open3D overlays for a VLM; tuned its prompts to pick correct grasps and judge depth",
+    "B": "Built a Python pipeline for PhysTwin (PhD-led digital twin targeting ICLR) that runs AnyGrasp on multi-camera images and renders grasps as Open3D overlays, then tuned the VLM's prompts for detecting those grasps"
+  }
+]

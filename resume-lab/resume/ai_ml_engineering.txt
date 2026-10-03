@@ -21,9 +21,9 @@ Jun 2026 – Aug 2026
 Software Engineering Intern
 Richmond, VA
 • Cut LLM workflow generation time 65% to under 15s by decomposing a Claude skill into sub-skills with Python
-search/validation tools, stress-tested on example workflows over repeated runs
+search/validation tools; output quality held in repeated stress-test runs
 • Precomputed a tree-style search index over popular workflows from a 270K+ row PostgreSQL table
-(Python/SQLAlchemy, Redis cache) as the Claude skill’s main search tool under DB access limits
+(Python/SQLAlchemy, Redis cache) to minimize DB queries under access limits
 • Rebuilt a legacy test-data workflow builder in React/TypeScript + Electron, adding a React-Flow editor and Jest-tested
 validation; 90% of 30+ surveyed developers preferred it to the old tool
 UMD App Development Contracting (Client: Amazon Leo)
@@ -61,7 +61,7 @@ matching 99,122 of 99,123 fills exactly
 
 Technical Skills
 AI/ML: Claude (agent skills, tool use), AWS Bedrock (fine-tuning), RAG, GPT-4o mini, ChromaDB, SentenceBERT embeddings,
-PyTorch, Open3D
+Open3D
 Languages: Python, Java, C++, TypeScript/JavaScript, SQL
 Cloud & Data: AWS (Lambda, Kinesis, EventBridge, Fargate, CDK, CloudWatch, X-Ray), PostgreSQL, Redis, OpenSearch
 Tools: Docker, GitHub Actions, Linux, Pytest, Jest, uv, React, Electron

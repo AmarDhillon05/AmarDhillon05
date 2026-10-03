@@ -35,7 +35,7 @@ Jun 2026 – Aug 2026
 Software Engineering Intern
 Richmond, VA
 • Precomputed a tree-style search index over popular workflows from a 270K+ row PostgreSQL table
-(Python/SQLAlchemy, Redis cache) as the Claude skill’s main search tool under DB access limits
+(Python/SQLAlchemy, Redis cache) to minimize DB queries under access limits
 • Cut LLM workflow generation time 65% to under 15s by splitting a Claude agent skill into sub-skills backed by Python
 search/validation tools, guided by CloudWatch + OpenSearch latency logs
 UMD App Development Contracting (Client: Amazon Leo)

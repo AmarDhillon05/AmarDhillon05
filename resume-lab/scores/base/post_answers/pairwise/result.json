@@ -1,0 +1,29 @@
+{
+  "tally": {
+    "new": 3,
+    "old": 1,
+    "tie": 0
+  },
+  "rows": [
+    {
+      "fact": "amazon_contract.bedrock_finetune",
+      "winner": "new",
+      "reason": "States what the model does and the concrete retraining trigger; A's 'source-relevancy' and 'redundant runs' are vague, ops details add little."
+    },
+    {
+      "fact": "capital_one.search_index",
+      "winner": "old",
+      "reason": "Gives a clear purpose (minimize DB queries); B's 'Claude skill's main search tool' needs unexplained context and reads awkwardly."
+    },
+    {
+      "fact": "terplabs.studio+terplabs.tortuga",
+      "winner": "new",
+      "reason": "'Redis caching for its Prisma ORM queries' is clearer and more accurate than 'over Prisma SQL'; otherwise identical."
+    },
+    {
+      "fact": "umiacs.grasp_vlm",
+      "winner": "new",
+      "reason": "Clearer flow to the VLM and a concrete purpose for prompt tuning (pick grasps, judge depth); B's ending is clunky."
+    }
+  ]
+}
