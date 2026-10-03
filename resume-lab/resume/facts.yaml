@@ -58,12 +58,12 @@ roles:
         optional_techs: [Jest, React-Flow]
         required_numbers: ["90%"]
       search_index:
-        claim: Built a lightweight tree-style workflow search index to minimize DB queries under access constraints; Python + SQLAlchemy pipeline distilled popular workflows from a 270,000+ row PostgreSQL table into a precomputed index; Redis caching for full workflow retrieval; exposed via a Node.js IPC module
+        claim: Built a lightweight tree-style workflow search index to minimize DB queries under access constraints; Python + SQLAlchemy pipeline distilled popular workflows from a 270,000+ row PostgreSQL table into a precomputed index; Redis caching for full workflow retrieval; exposed via a Node.js IPC module; the index is the main search tool the Claude skill (capital_one.claude_skill) calls, with wiki sources used afterward (Amar, Oct 2026)
         core_techs: [Python, SQLAlchemy, PostgreSQL, Redis]
         optional_techs: [Node.js, IPC]
         required_numbers: ["270,000+"]
       claude_skill:
-        claim: Developed a Claude skill for workflow generation; constrained open-ended model search via sub-skill decomposition and Python functions for workflow search/validation; used AWS CloudWatch + OpenSearch latency logging to find bottlenecks; cut generation time 65% vs previous tooling to under 15 seconds
+        claim: Developed a Claude skill for workflow generation; constrained open-ended model search via sub-skill decomposition and Python functions for workflow search/validation; used AWS CloudWatch + OpenSearch latency logging to find bottlenecks; cut generation time 65% vs previous tooling to under 15 seconds; output quality held or improved, checked on stress-test examples, overall satisfaction, and a multi-run stress test confirming the usual errors no longer occurred (Amar, Oct 2026)
         core_techs: [Claude, Python]
         optional_techs: [CloudWatch, OpenSearch, sub-skill decomposition]
         required_numbers: ["65%", "15 seconds|15s|15 s"]
@@ -86,7 +86,7 @@ roles:
         optional_techs: [API Gateway]
         required_numbers: ["34%", "6,000+"]
       bedrock_finetune:
-        claim: Automated fine-tuning of an AWS Bedrock source-relevancy inference model via EventBridge cron triggers with decision gates that avoid redundant retraining; CloudWatch + X-Ray tracing for performance monitoring; metric-based SNS alerts to engineers on failure
+        claim: Automated fine-tuning of an AWS Bedrock source-relevancy inference model (classifies research documents and their importance) via EventBridge cron triggers with decision gates that avoid redundant retraining - a retrain is skipped unless cross-model evaluation metrics change beyond a threshold; the metrics come from a larger LLM that evaluates the relevancy model, and Amar tuned that evaluator (Amar, Oct 2026); CloudWatch + X-Ray tracing for performance monitoring; metric-based SNS alerts to engineers on failure
         core_techs: [AWS Bedrock, EventBridge]
         optional_techs: [CloudWatch, X-Ray, SNS]
         required_numbers: []
@@ -104,7 +104,7 @@ roles:
         core_techs: [PhysTwin]
         required_numbers: []
       grasp_vlm:
-        claim: "For PhysTwin (physics-based digital twin; PhD-led team targeting ICLR). Built a Python pipeline that takes multi-camera images, runs AnyGrasp on them, and renders grasp candidates as clear Open3D visual overlays; built the pipeline feeding those renders into a Qwen3-VL-8B-Instruct-FP8 VLM for detection; did prompt optimization for the VLM; did NOT work on the VLM output (Amar, Oct 2026). Lets researchers iterate faster by isolating scene components"
+        claim: "For PhysTwin (physics-based digital twin; PhD-led team targeting ICLR). Built a Python pipeline that takes multi-camera images, runs AnyGrasp on them, and renders grasp candidates as clear Open3D visual overlays; built the pipeline feeding those renders into a Qwen3-VL-8B-Instruct-FP8 VLM for detection; did prompt optimization for the VLM, which made it pick the correct grasp more often and better handle depth in the image (Amar, Oct 2026); did NOT work on the VLM output (Amar, Oct 2026). Lets researchers iterate faster by isolating scene components"
         core_techs: [Python, AnyGrasp, Open3D]
         optional_techs: [PhysTwin, ICLR, Qwen3-VL-8B-Instruct-FP8, VLM, prompt optimization]
         required_numbers: []   # "8B" / "FP8" / "Qwen3" are model-name tokens, whitelisted below
@@ -198,12 +198,21 @@ projects:
         core_techs: []
         required_numbers: []
       storage_benchmark:
-        claim: "Storage engine with three log-database backends sharing a leaf format. B+ tree vs LSM skip list on identical 2M-record workloads: 25x fewer node hops (17,938 vs 452,434), 42x fewer summary folds, 22x faster range-summarize, 12.8x higher read throughput, page-cache hit rate 69.4% vs 32.9%, for 27% more bytes on disk. Range queries served from node summaries, 2,602 records per node summary vs 62, answering without opening the node"
+        claim: "Storage engine with three log-database backends sharing a leaf format (the LSM indexes its nodes with a skip list, per repo source). B+ tree vs LSM skip list on identical 2M-record workloads: 25x fewer node hops (17,938 vs 452,434), 42x fewer summary folds, 22x faster range-summarize, 12.8x higher read throughput, page-cache hit rate 69.4% vs 32.9%, for 27% more bytes on disk. Range queries served from node summaries, 2,602 records per node summary vs 62, answering without opening the node"
         core_techs: [B+ tree, LSM]
         required_numbers: []
       adaptive_negative:
         claim: "Measured an adaptive batch-sizing policy and published it as a negative result: +71% disk, +23% hops, -32% append rate, no query win; cost dominated by node lookup, not batch size"
         core_techs: []
+        required_numbers: []
+      data_structures:
+        claim: "Order book layout (source: order-book-playground repo, Oct 2026): per-symbol hash map; price levels in ordered std::map (bids descending, asks ascending) each holding a FIFO std::list queue of order IDs; order-ID hash map storing an iterator into its queue for O(1) cancels; price-time priority; IEX executes dropped so fills are the engine's own"
+        core_techs: [hash map]
+        optional_techs: [std::map, std::list, FIFO, O(1)]
+        required_numbers: []
+      latency_dist:
+        claim: "Per-message latency on a separate 2M-event benchmark run (report_0002, unpinned): exchange book p50 120 ns, p90 232 ns, p99 1216 ns (~1.2 us, 1.2 µs), p99.9 2304 ns (~2.3 us, 2.3 µs); mirror p50 100 ns, p99 1024 ns. Different run from the 686.7 ns full-stream mean"
+        core_techs: [p99]
         required_numbers: []
       perf_rigor:
         claim: "Hardware counters (perf, 5 runs): IPC 1.85, 55.0% cache miss rate, 2.29 branch misses per 1K instructions, wall time reproducible to +/-0.09%. Top-down: 44.9% retiring, 25.8% frontend-bound, 21.8% backend-bound, 7.5% bad speculation. Diagnosed a 1.65x phantom regression as a CPU-governor artifact (not a code change) by instrumenting a null control book and the timing harness; cut run-to-run variance from ~6% to 0.06% by core pinning and fixing the clock. Reporting harness records CPU, core type, governor and turbo state with every figure and suppresses latency rows whose p50 falls within measured instrument cost"

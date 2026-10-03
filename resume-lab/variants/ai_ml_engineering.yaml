@@ -6,6 +6,7 @@ order:
   terplabs: [terplabs.rag_meal, terplabs.studio+terplabs.tortuga]
 drop: [iex.throughput, iex.storage_benchmark]
 text:
+  capital_one.claude_skill: 'Cut LLM workflow generation time \textbf{65\%} to under 15s by decomposing a Claude skill into sub-skills with Python search/validation tools; output quality held across multi-run stress tests'
   iex.replay_correctness: 'Built a C++17 order book and matching engine that replayed 50.9M real IEX DEEP+ messages with no resync, matching 99,122 of 99,123 fills exactly'
   terplabs.studio+terplabs.tortuga: 'Co-founded a 110+ member campus product studio that has shipped 5 live products, including Tortuga, a class scheduler with 20,000+ visits in its first 30 days; built Redis caching for its Prisma ORM queries'
 skills:

@@ -1,6 +1,6 @@
 {
   "tex": "/home/user/AmarDhillon05/resume-lab/resume/quant_hft.tex",
-  "n_bullets": 10,
+  "n_bullets": 11,
   "bullets": [
     {
       "fact": "iex.replay_correctness",
@@ -10,6 +10,15 @@
       "n_lines": 2,
       "last_fill": 0.58,
       "text": "Built a C++17 order book and matching engine that replayed 50.9M real IEX DEEP+ messages with no resync, matching 99,122 of 99,123 fills exactly and 100% of top-of-book prices"
+    },
+    {
+      "fact": "iex.data_structures+iex.latency_dist",
+      "chars": 161,
+      "words": 29,
+      "n_bold": 0,
+      "n_lines": 2,
+      "last_fill": 0.39,
+      "text": "Indexed orders in a hash map holding iterators into per-price FIFO queues (std::map levels, O(1) cancels); 120 ns p50 and 1.2 s p99 per message on a 2M-event run"
     },
     {
       "fact": "iex.throughput",
@@ -49,12 +58,12 @@
     },
     {
       "fact": "capital_one.search_index",
-      "chars": 170,
-      "words": 24,
+      "chars": 189,
+      "words": 28,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.66,
-      "text": "Precomputed a tree-style search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to minimize DB queries under access limits"
+      "last_fill": 0.81,
+      "text": "Precomputed a tree-style search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) as the Claude skill's main search tool under DB access limits"
     },
     {
       "fact": "capital_one.claude_skill",
@@ -76,12 +85,12 @@
     },
     {
       "fact": "umiacs.grasp_vlm",
-      "chars": 195,
-      "words": 30,
+      "chars": 211,
+      "words": 33,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.74,
-      "text": "Built a Python pipeline for PhysTwin, a PhD-led digital twin targeting ICLR, running AnyGrasp on multi-camera images and rendering grasps as Open3D overlays for a VLM; tuned its detection prompts"
+      "last_fill": 0.82,
+      "text": "Built a Python pipeline for PhysTwin (PhD-led digital twin, targeting ICLR) turning AnyGrasp output on multi-camera images into Open3D overlays for a VLM; tuned its prompts to pick correct grasps and judge depth"
     },
     {
       "fact": "terplabs.studio+terplabs.tortuga",
@@ -96,7 +105,7 @@
   "issues": [
     {
       "level": "WARN",
-      "where": "Built a Python pipeline for PhysTwin, a PhD-led di",
+      "where": "Built a Python pipeline for PhysTwin (PhD-led digi",
       "msg": "leading verb 'Built' repeats (also: Built a C++17 order book and matching engine that )"
     }
   ],

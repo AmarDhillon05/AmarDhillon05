@@ -20,18 +20,18 @@ Capital One
 Jun 2026 – Aug 2026
 Software Engineering Intern
 Richmond, VA
-• Cut LLM workflow generation time 65% to under 15s by decomposing a Claude skill into sub-skills backed by Python
-search/validation tools, guided by CloudWatch + OpenSearch latency logs
+• Cut LLM workflow generation time 65% to under 15s by decomposing a Claude skill into sub-skills with Python
+search/validation tools; output quality held across multi-run stress tests
 • Precomputed a tree-style search index over popular workflows from a 270K+ row PostgreSQL table
-(Python/SQLAlchemy, Redis cache) to minimize DB queries under access limits
+(Python/SQLAlchemy, Redis cache) as the Claude skill’s main search tool under DB access limits
 • Rebuilt a legacy test-data workflow builder in React/TypeScript + Electron, adding a React-Flow editor and Jest-tested
 validation; 90% of 30+ surveyed developers preferred it to the old tool
 UMD App Development Contracting (Client: Amazon Leo)
 Jan 2026 – Present
 Software Engineer (Contract)
 College Park, MD
-• Automated fine-tuning of a Bedrock source-relevancy model on an EventBridge schedule, gated to skip redundant
-retraining runs, with X-Ray tracing and SNS alerts on failure
+• Automated EventBridge-scheduled fine-tuning of a Bedrock model that classifies documents by importance, retraining
+only when a larger LLM’s cross-model eval scores move past a threshold
 • Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3
 staging hops with Kinesis streams feeding Lambda
 • Shipped a space-research tool used by Amazon Leo’s public-policy team, now maintained by Leo engineers; deployed on
@@ -40,8 +40,8 @@ UMD Institute for Advanced Computer Studies (UMIACS)
 Dec 2025 – Present
 Machine Learning Research Intern
 College Park, MD
-• Built a Python pipeline for PhysTwin, a PhD-led digital twin targeting ICLR, running AnyGrasp on multi-camera
-images and rendering grasps as Open3D overlays for a VLM; tuned its detection prompts
+• Built a Python pipeline for PhysTwin (PhD-led digital twin, targeting ICLR) turning AnyGrasp output on multi-camera
+images into Open3D overlays for a VLM; tuned its prompts to pick correct grasps and judge depth
 • Shortened research-environment setup time 30% with uv dependency pinning and Docker; added psutil time/memory
 profiling and Pytest suites to find bottlenecks
 TerpLabs

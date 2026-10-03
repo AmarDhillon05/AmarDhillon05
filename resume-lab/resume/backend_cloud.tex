@@ -107,7 +107,7 @@
     {Software Engineering Intern}{Richmond, VA}
   \resumeItemListStart
     % fact: capital_one.search_index
-    \resumeItem{Precomputed a tree-style search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to minimize DB queries under access limits}
+    \resumeItem{Precomputed a tree-style search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) as the Claude skill's main search tool under DB access limits}
     % fact: capital_one.claude_skill
     \resumeItem{Cut LLM workflow generation time \textbf{65\%} to under 15s by decomposing a Claude skill into sub-skills backed by Python search/validation tools, guided by CloudWatch + OpenSearch latency logs}
     % fact: capital_one.ui_overhaul
@@ -123,7 +123,7 @@
     % fact: amazon_contract.leo_deploy
     \resumeItem{Shipped a space-research tool used by Amazon Leo's public-policy team, now maintained by Leo engineers; deployed on AWS Fargate (Docker) via GitHub Actions and CDK (TypeScript)}
     % fact: amazon_contract.bedrock_finetune
-    \resumeItem{Automated fine-tuning of a Bedrock source-relevancy model on an EventBridge schedule, gated to skip redundant retraining runs, with X-Ray tracing and SNS alerts on failure}
+    \resumeItem{Automated EventBridge-scheduled fine-tuning of a Bedrock model that classifies documents by importance, retraining only when a larger LLM's cross-model eval scores move past a threshold}
   \resumeItemListEnd
 
   \resumeSubheading
@@ -131,7 +131,7 @@
     {Machine Learning Research Intern}{College Park, MD}
   \resumeItemListStart
     % fact: umiacs.grasp_vlm
-    \resumeItem{Built a Python pipeline for PhysTwin, a PhD-led digital twin targeting ICLR, running AnyGrasp on multi-camera images and rendering grasps as Open3D overlays for a VLM; tuned its detection prompts}
+    \resumeItem{Built a Python pipeline for PhysTwin (PhD-led digital twin, targeting ICLR) turning AnyGrasp output on multi-camera images into Open3D overlays for a VLM; tuned its prompts to pick correct grasps and judge depth}
     % fact: umiacs.env_setup
     \resumeItem{Shortened research-environment setup time \textbf{30\%} with uv dependency pinning and Docker; added psutil time/memory profiling and Pytest suites to find bottlenecks}
   \resumeItemListEnd

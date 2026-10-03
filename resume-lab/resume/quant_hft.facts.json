@@ -5,6 +5,8 @@
     "capital_one.claude_skill",
     "capital_one.search_index",
     "iex.adaptive_negative",
+    "iex.data_structures",
+    "iex.latency_dist",
     "iex.perf_rigor",
     "iex.replay_correctness",
     "iex.storage_benchmark",
