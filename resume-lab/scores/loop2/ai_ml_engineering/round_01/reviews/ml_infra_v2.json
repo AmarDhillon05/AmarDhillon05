@@ -1,0 +1,102 @@
+{
+  "persona": "ml_infra_v2",
+  "target": "AI/ML engineering internships (ML infrastructure, LLM applications, applied AI platform teams), 2026-27 cycle",
+  "memory_skim": {"strongest_3": [], "engineer_type": "", "memorable_numbers": [], "confusing": [], "skipped": [], "interview_questions": []},
+  "plain_english": [],
+  "scores": {"impact_clarity": 7, "quantification": 7, "technical_depth": 8, "concision_readability": 8, "skim_test": 7,
+             "credibility": 8, "ats_parseability": 8, "visual_layout": 8, "domain_fit": 7, "human_voice": 8,
+             "plain_language": 7, "overall": 8},
+  "competitive_for_domain": "Y",
+  "bullet_feedback": [
+    {
+      "bullet": "For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D for a vision-language model, then tuned prompts so the model picks the right grasp more often",
+      "problem": "The bullet ends on 'tuned prompts so the model picks the right grasp more often'. That is a prompt-only outcome with no stated evaluation: 'more often' has no comparison set, no trial count, and no definition of 'right grasp'. For an ML infra reader this is exactly the pattern that reads as hype, and it is the only bullet on the page under a 'Machine Learning Research' title.",
+      "severity": 6,
+      "why_it_matters": "The interviewer's first question will be 'more often than what, measured how?'. If the bullet can't answer it, the real engineering (rendering grasp candidates into an image the VLM can choose from) gets discounted along with the vague ending.",
+      "missing_or_unclear": "clarify: how 'right grasp' was judged (human label, sim success, real-robot trials), and against what baseline 'more often' was measured.",
+      "suggested_direction": "Put the weight on the pipeline design (turning 3D grasp candidates into a visual multiple-choice for the VLM). If an evaluation set or success rate exists, name it; if not, replace 'more often' with the concrete method used to compare prompt variants, or end at the pipeline."
+    },
+    {
+      "bullet": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+      "problem": "'34%' has no absolute baseline, and '6,000+ scraped research documents' has no time unit (per day? per run? total corpus?).",
+      "severity": 4,
+      "why_it_matters": "Latency claims are judged by the absolute number: 34% off 2 seconds and 34% off 20 minutes are very different engineering stories. Without the unit on 6,000+, the reader can't size the throughput.",
+      "missing_or_unclear": "clarify: end-to-end latency before/after in seconds or minutes, and whether 6,000+ is per day or total.",
+      "suggested_direction": "Keep the mechanism (S3 staging hops replaced by Kinesis to Lambda), which is strong. Add the absolute latency and the time unit for the document count if known, e.g. 'from X to Y per document'."
+    },
+    {
+      "bullet": "Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance: on an EventBridge schedule a larger LLM grades its ratings, and fine-tuning runs only when the grades shift past a threshold",
+      "problem": "This is the best ML infra evidence on the page (scheduled LLM-as-judge evaluation gating fine-tuning), but 'the grades shift past a threshold' doesn't say what the shift is measured against, and the bullet has no outcome.",
+      "severity": 4,
+      "why_it_matters": "An ML infra interviewer hires on evaluation-gated retraining, so they'll want to know whether the gate compares to a fixed baseline or a rolling window, and whether the judge was ever checked against human labels. Without that, the gate reads as a sketch rather than a tuned system.",
+      "missing_or_unclear": "clarify: what the judge's grades are compared to (agreement rate with the classifier? drift from a prior window?) and what happened after it shipped (retrains triggered, fine-tunes avoided, stability).",
+      "suggested_direction": "Keep the structure. Swap 'the grades shift past a threshold' for the specific quantity being thresholded (e.g. 'agreement with the judge drops below a set level'), using only true details."
+    },
+    {
+      "bullet": "Cut LLM workflow generation time 65% to under 15s by splitting one large Claude skill into smaller sub-skills that call Python tools for search and validation, and output quality held in repeated stress-test runs",
+      "problem": "'Claude skill' and 'sub-skills' are vendor-specific terms that many ML/platform readers and most recruiters won't recognize as an agent/tool-use decomposition. The link between splitting and speed (smaller context per call? fewer tokens? parallel calls?) is also left implicit.",
+      "severity": 4,
+      "why_it_matters": "The speedup is the headline AI result at a big-name company, but if the reader can't tell why splitting a skill made it faster, it reads as a prompt rearrangement rather than an engineering decision.",
+      "missing_or_unclear": "clarify: why the split cut time (smaller prompts, deterministic Python doing work the model used to do, fewer retries).",
+      "suggested_direction": "Gloss 'Claude skill' once in plain words (e.g. 'one large Claude agent prompt (skill)'), and name the reason the split was faster in a short clause. The quality phrase can stay as is."
+    },
+    {
+      "bullet": "Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio's class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency",
+      "problem": "Ends on intent ('to reduce database load and latency') with no observed effect, and the 20,000+ visits number describes the product's traffic, not the caching work.",
+      "severity": 4,
+      "why_it_matters": "A reader skims the bold-free number, attributes 20K visits to the cache, then sees no cache result. It is the weakest bullet in an otherwise results-driven section and adds little for ML roles.",
+      "missing_or_unclear": "clarify: whether hit rate, query count, or latency was measured after adding the cache.",
+      "suggested_direction": "If a measured effect exists, end on it. If not, either name what was cached and why (which queries were hot) so the design choice carries the bullet, or cut it to give the RAG bullet more room."
+    },
+    {
+      "bullet": "Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries",
+      "problem": "Opening with 'Because' delays the verb to the second clause, and 'strict access limits' is ambiguous (rate limits, permissions, query quotas?).",
+      "severity": 3,
+      "why_it_matters": "On a skim the bullet reads as a database description; the retrieval design (precomputed category tree searched before the database, Redis for full records) is the part a retrieval-minded interviewer wants, and it's buried mid-sentence.",
+      "missing_or_unclear": "clarify: what kind of access limit (rate limit, quota, permission-gated).",
+      "suggested_direction": "Lead with the action: 'Precomputed popular workflows into a category tree the Claude skill searches first ... because the 270K+ row table was [rate-limited/quota-limited]'."
+    },
+    {
+      "bullet": "Building capacity planning for Amazon Redshift maintenance like patching: Java logic that sets upper and lower bounds on reserved EC2 capacity to balance availability against cost, validated by backtesting",
+      "problem": "'Java logic' after the colon is a noun phrase that hides what the logic is based on (forecasting, historical usage, rules), and 'maintenance like patching' reads awkwardly.",
+      "severity": 3,
+      "why_it_matters": "This is the top bullet on the page and the reader's first impression of the AWS role. 'Java logic' tells them the language but not the technique, so the bullet reads as generic.",
+      "missing_or_unclear": "clarify: what inputs the bounds are computed from (historical maintenance demand, forecasts, fleet size).",
+      "suggested_direction": "Rephrase as a full sentence that names the technique: 'Building Java logic that sets upper and lower bounds on reserved EC2 capacity for Redshift maintenance (e.g. patching) from [input], balancing availability against cost; validating it by backtesting'."
+    },
+    {
+      "bullet": "Deployed a space-topic research tool for Amazon Leo's public-policy team and set it up for handoff with AWS CDK infrastructure-as-code and GitHub Actions CI/CD, so Leo engineers new to the project now maintain it on AWS Fargate",
+      "problem": "'space-topic research tool' doesn't say what the tool does for the policy team, so the reader can't connect it to the classifier and pipeline bullets above.",
+      "severity": 3,
+      "why_it_matters": "The handoff outcome is good production evidence, but without knowing what the tool is, the bullet reads as infrastructure for an unnamed thing.",
+      "missing_or_unclear": "clarify: what the tool lets policy staff do (search, filter, read ranked documents?) and whether it is the front end of the classifier pipeline.",
+      "suggested_direction": "Replace 'space-topic research tool' with a short functional description, and trim 'infrastructure-as-code' since CDK already implies it."
+    }
+  ],
+  "page_feedback": [
+    {
+      "problem": "The strongest ML infra evidence (evaluation-gated retraining, Kinesis latency cut) sits in the third role, under a non-ML-sounding company heading 'UMD App Development Contracting'. The two roles above it open with capacity planning and an LLM-latency bullet.",
+      "severity": 4,
+      "why_it_matters": "A platform/ML infra screener skimming top-down sees AWS capacity planning first and has to reach mid-page to find the retraining loop that best matches the target.",
+      "suggested_direction": "Keep chronological order, but make sure the '(Client: Amazon Leo)' heading line and the retraining bullet are what the eye lands on: the retraining bullet is already first in its role. Consider tightening the AWS and Capital One bullets so that section starts higher on the page."
+    },
+    {
+      "problem": "Across the AI bullets, evaluation is mostly qualitative ('output quality held', 'picks the right grasp more often', '93% satisfactory'). Mechanisms are well named, but only the Bedrock bullet describes an evaluation loop, and none states an eval set or baseline.",
+      "severity": 4,
+      "why_it_matters": "This reader's main filter is 'AI grounded in engineering, with an evaluation'. Its absence makes the AI work read more like LLM application building than ML infrastructure, which is a fit question for platform-team roles.",
+      "suggested_direction": "Without inventing metrics, describe the evaluation mechanism that existed (who or what judged, what it was compared against) in the bullets where it's known, starting with UMIACS and the Bedrock gate."
+    },
+    {
+      "problem": "Skills 'AI/ML' line mixes in 'Open3D' (a 3D geometry library) and 'prompt engineering', and uses 'Claude skills' as a skill term.",
+      "severity": 2,
+      "why_it_matters": "Minor: 'prompt engineering' as a listed skill weakens the systems-oriented framing for this reader, and Open3D fits better under a tools/libraries grouping.",
+      "suggested_direction": "Move Open3D out of the AI/ML line; consider dropping 'prompt engineering' since the bullets already show it in context."
+    }
+  ],
+  "keep": [
+    "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange's book, agreeing with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices",
+    "Building a RAG meal-suggestion feature for the official UMD app, in which GPT-4o mini writes suggestions from scraped recipes found by SentenceBERT vector search in ChromaDB, and internal testers rated 93% of meals satisfactory",
+    "Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and 90% of 30+ surveyed developers preferred it",
+    "One-page layout with right-aligned dates and locations, sparse metric-only bolding, and standard section headings"
+  ]
+}
