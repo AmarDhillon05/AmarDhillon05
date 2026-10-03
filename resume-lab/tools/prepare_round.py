@@ -26,6 +26,13 @@ def main():
     gate = {"errors": lint["errors"] + facts["errors"], "lint_errors": lint["errors"],
             "fact_errors": facts["errors"], "warnings": lint.get("warnings", 0) + facts.get("warnings", 0)}
     (rd / "gate.json").write_text(json.dumps(gate, indent=2))
+    jd = {"base": "general_backend"}.get(Path(variant).name, Path(variant).name)
+    if (ROOT / "corpus" / "jds" / f"{jd}.jsonl").exists() and (rd / "resume.pdf").exists():
+        a = subprocess.run([sys.executable, str(ROOT / "tools" / "ats_score.py"), str(rd / "resume.pdf"), jd,
+                            "--json", str(rd / "ats.json")], capture_output=True, text=True)
+        gate["ats_must_coverage"] = json.loads((rd / "ats.json").read_text())["must_coverage"]
+        (rd / "gate.json").write_text(json.dumps(gate, indent=2))
+        print(a.stdout)
     if (rd / "resume.pdf").exists():
         subprocess.run(["pdftoppm", "-png", "-r", "110", "-singlefile", str(rd / "resume.pdf"), str(rd / "resume")])
     for junk in ("resume.log", "resume.build.log"):

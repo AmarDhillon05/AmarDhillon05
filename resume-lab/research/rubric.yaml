@@ -63,6 +63,18 @@ dimensions:
       4: Strongest domain-relevant evidence is hidden or missing.
       7: Relevant, but ordering/emphasis isn't optimized for this domain.
       9: A domain HM sees exactly the evidence they hire on, first.
+  human_voice:
+    what: Reads like a person describing their own work - full sentences with verbs, no noun stacks, semicolon chains, tech-dump parentheticals or resume-speak (loop 2, Amar).
+    anchors:
+      4: Telegraphic, machine-generated feel; several phrases nobody would say out loud.
+      7: Mostly natural; a few compressed or stitched phrases.
+      9: Every bullet could be read aloud in an interview as is.
+  plain_language:
+    what: A non-technical recruiter can restate every bullet (what was built, why it mattered) without guessing (loop 2, Amar).
+    anchors:
+      4: Several bullets can't be restated by a non-engineer.
+      7: Most can; one or two need jargon knowledge.
+      9: Every bullet is restatable while keeping its distinctive technical nouns.
   overall:
     what: Holistic likelihood this resume earns an interview for the target domain/level (2026–27 cycle).
     anchors:

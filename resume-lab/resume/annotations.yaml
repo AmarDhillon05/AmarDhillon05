@@ -1,0 +1,122 @@
+# Per-experience annotations (Amar's spec §13 + §21). Rewrites cut `supporting` before
+# `evidence`, and `evidence` before `core`. `do_not_imply` items are hard constraints for
+# every rewrite and every evaluator suggestion.
+#
+# Provenance rule: a field is filled only from something Amar has said (facts.yaml claims,
+# his Oct 2026 answers) and cites it. Anything he has not stated is `UNCONFIRMED`.
+# His answers override everything here. Open questions are in `questions:` at the bottom.
+
+positioning: >
+  A systems-oriented software engineer who has repeatedly built and improved real technical
+  systems across cloud, developer tooling, ML infrastructure, and performance-sensitive software.
+
+experiences:
+  aws_sde.redshift:
+    purpose: Keep Redshift operations like patching available without over-reserving EC2 capacity (Amar, Oct 2026)
+    core: Writing Java policies that set the upper/lower bounds of EC2 capacity reserved for Redshift operations
+    evidence: Policies are backtested; the tradeoff is availability vs cost
+    supporting: ~2 weeks in; initial backtest results exist but aren't shareable
+    do_not_imply: [a shipped/launched result, any savings number, ownership of Redshift itself]
+    interview_story: UNCONFIRMED
+    production_status: in progress (internship ongoing)
+
+  capital_one.ui_overhaul:
+    purpose: Replace a legacy test-data workflow creator that developers used
+    core: Rebuilt the workflow builder's UI in React/TypeScript + Electron
+    evidence: 90% of 30-40 surveyed developers preferred it to the legacy tool
+    supporting: [React-Flow editor, TypeScript workflow/state validation, Jest tests on mock workflows]
+    do_not_imply: [an exact sample size beyond "30+", a metric other than preference]
+    interview_story: UNCONFIRMED
+    production_status: internal tool used by developers
+
+  capital_one.search_index:
+    purpose: Let workflow search work while minimizing DB queries under access constraints (facts.yaml)
+    core: Reduced DB dependency under access constraints (Amar's spec §13 example)
+    evidence: A precomputed, category-keyed tree index built from 270K+ PostgreSQL rows (Python + SQLAlchemy); lookups walk the category tree to find an example workflow
+    supporting: [Redis caching for full workflow retrieval, Node.js IPC module (spec §13 marks IPC as supporting)]
+    link: It is the main search tool the Claude skill calls; wiki sources come afterward (Amar, Oct 2026)
+    do_not_imply: [a measured speedup or query reduction number (none exists)]
+    interview_story: UNCONFIRMED
+
+  capital_one.claude_skill:
+    purpose: Make LLM workflow generation fast enough to use (facts.yaml)
+    core: Cut workflow generation time 65% to under 15s
+    evidence: Split the Claude skill into sub-skills backed by Python search/validation tools; CloudWatch + OpenSearch latency logs showed where the time went
+    supporting: [output quality held on stress-test runs (qualitative; no pass rate)]
+    do_not_imply: [a pass rate or numeric quality metric, that it shipped to customers]
+    interview_story: UNCONFIRMED
+
+  amazon_contract.leo_deploy:
+    purpose: A space-topic research tool for Amazon Leo's public-policy staff that Leo engineers could own (Amar, Oct 2026)
+    core: Shipped the tool; Leo engineers now maintain and roll it out
+    evidence: Docker on AWS Fargate, GitHub Actions CI/CD, AWS CDK (TypeScript) infrastructure-as-code written so engineers new to the project could contribute
+    supporting: []
+    do_not_imply: [a user count, that Amar still owns it, Amazon employment (it is a contract via UMD)]
+    interview_story: UNCONFIRMED
+
+  amazon_contract.kinesis_pipeline:
+    purpose: Get 6,000+ scraped research documents to inference faster
+    core: 34% lower end-to-end latency
+    evidence: Replaced the scraper -> S3 -> Lambda -> S3 staging hops with Kinesis streams feeding Lambda processors
+    supporting: [Lambda + API Gateway front the pipeline for app integration]
+    do_not_imply: [6,000+ per day/run (it is the total scraped), that transport alone got faster]
+    interview_story: UNCONFIRMED
+
+  amazon_contract.bedrock_finetune:
+    purpose: Keep the document-importance model current without wasted retraining runs (Amar, Oct 2026)
+    core: A production fine-tuning loop for an AWS Bedrock model that classifies research documents by importance
+    evidence: EventBridge-scheduled; a retrain is skipped unless cross-model eval metrics (a larger LLM grading the classifier, an evaluator Amar tuned) move past a threshold
+    supporting: [CloudWatch + X-Ray tracing, metric-based SNS alerts on failure]
+    do_not_imply: [an accuracy gain number, how often it retrains]
+    interview_story: UNCONFIRMED
+
+  umiacs.grasp_vlm:
+    purpose: Help a PhD-led PhysTwin team (physics-based digital twin, targeting ICLR) evaluate robot grasps with a VLM
+    core: Built the Python pipeline from multi-camera images -> AnyGrasp grasp candidates -> Open3D overlay renders -> the VLM's input
+    evidence: Prompt tuning made the VLM pick the correct grasp more often and handle depth better (Amar, Oct 2026)
+    supporting: [the VLM is Qwen3-VL-8B]
+    do_not_imply: [work on the VLM's output, model training, an accuracy number, authorship of the paper]
+    interview_story: UNCONFIRMED
+
+  umiacs.env_setup:
+    purpose: Faster, identical research environments
+    core: 30% shorter environment setup
+    evidence: uv dependency pinning + Docker
+    supporting: [psutil time/memory profiling, Pytest suites]
+    do_not_imply: [a baseline time (unknown)]
+    interview_story: UNCONFIRMED
+
+  terplabs.studio+terplabs.tortuga:
+    purpose: A student product studio that ships real apps
+    core: Co-founded a 110+ member studio that has shipped 5 live products
+    evidence: Tortuga, a class scheduler, had 20,000+ visits in its first 30 days; Amar built Redis caching for its Prisma ORM queries
+    supporting: [Jira/GitHub, agile practices]
+    do_not_imply: [that the caching caused the traffic]
+    interview_story: UNCONFIRMED
+
+  terplabs.rag_meal:
+    purpose: Meal suggestions inside the official UMD app
+    core: Building a RAG meal-suggestion feature (work in progress)
+    evidence: 93% of generated meals rated satisfactory by internal testers
+    supporting: [GPT-4o mini, ChromaDB + SentenceBERT vector search over scraped recipe data]
+    do_not_imply: [that it is launched, a tester count (unknown)]
+    interview_story: UNCONFIRMED
+
+  iex:
+    purpose: Personal project; a C++17 order book and matching engine replayed against real IEX exchange data
+    core: Correctness at scale - 50.9M real IEX DEEP+ messages replayed with no resync, 99,122/99,123 fills exact
+    evidence: [B+ tree vs LSM skip-list storage benchmark (12.8x reads, 22x range summaries, 27% more disk), 1.26M events/sec end-to-end, per-update p99 1.2 µs on a separate 2M-event run, std::map price levels + FIFO std::list queues + hash map for O(1) cancel]
+    supporting: [CPU-governor phantom-regression diagnosis, perf counters, negative result on adaptive batching]
+    do_not_imply: [a production trading system, that the 686.7 ns mean and the p99 come from the same run]
+    interview_story: UNCONFIRMED
+
+  hidden_roles:
+    nanosat: UNCONFIRMED whether to show; the facts use "mission-critical", which the spec bans unless justified
+    northrop: UNCONFIRMED whether to show
+
+questions:
+  - For each role, which story would you most want to tell in an interview? (fills interview_story)
+  - "Nanosat (Rust/KubOS/GraphQL, 23% latency cut) and Northrop (OpenCV C++, 74% detection accuracy): are you comfortable defending these, and may they appear in some variants?"
+  - Capital One search index - did you design the category-tree structure yourself, or implement a design you were given?
+  - Bedrock loop - did you build the whole loop, or a part of it (e.g. the gate and evaluator)?
+  - Kinesis - was the 34% measured by you with before/after runs, and on what (one batch, an average)?

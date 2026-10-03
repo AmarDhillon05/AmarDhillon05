@@ -1,0 +1,20 @@
+== /home/user/AmarDhillon05/resume-lab/scores/loop2/base/round_00/resume.tex
+[WARN] 'Writing Java policies that tune upper/lower bounds': voice: semicolon joins clauses (split or use 'and')
+[WARN] 'Rebuilt a legacy test-data workflow builder in Rea': voice: semicolon joins clauses (split or use 'and')
+[WARN] 'Rebuilt a legacy test-data workflow builder in Rea': voice: noun stack of 5 words
+[WARN] 'Cut LLM workflow generation time 65% to under 15s ': voice: noun stack of 5 words
+[WARN] "Shipped a space-research tool used by Amazon Leo's": voice: semicolon joins clauses (split or use 'and')
+[WARN] "Shipped a space-research tool used by Amazon Leo's": voice: 2 parentheticals (max 1)
+[WARN] 'Automated a production EventBridge fine-tuning loo': no metric or explicit outcome
+[WARN] 'Automated a production EventBridge fine-tuning loo': voice: noun stack of 6 words
+[WARN] 'Built a Python pipeline for PhysTwin (PhD-led digi': voice: semicolon joins clauses (split or use 'and')
+[WARN] 'Shortened research-environment setup time 30% with': voice: semicolon joins clauses (split or use 'and')
+[WARN] 'Co-founded a 110+ member campus product studio tha': voice: semicolon joins clauses (split or use 'and')
+[WARN] 'Co-founded a 110+ member campus product studio tha': voice: 4 numbers in one bullet (metric stacking)
+[WARN] 'Building a RAG meal-suggestion feature for the off': voice: semicolon joins clauses (split or use 'and')
+[WARN] 'Engineered a C++17 order book and matching engine ': voice: 5 numbers in one bullet (metric stacking)
+[WARN] 'Benchmarked B+ tree vs LSM skip-list stores for th': voice: semicolon joins clauses (split or use 'and')
+[WARN] 'Benchmarked B+ tree vs LSM skip-list stores for th': voice: noun stack of 7 words
+[WARN] 'Benchmarked B+ tree vs LSM skip-list stores for th': voice: 4 numbers in one bullet (metric stacking)
+lint: 0 errors, 17 warnings, 14 bullets
+fact_check: 0 errors, 0 warnings, 15 facts used
