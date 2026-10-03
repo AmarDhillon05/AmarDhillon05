@@ -1,0 +1,36 @@
+{
+  "persona": "ats_specialist",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28; AWS SDE intern and Capital One SWE intern; Amazon contract shipping on AWS; C++ order book replaying 50.9M messages at 1.26M events/sec.",
+  "scores": {"impact_clarity": 8, "quantification": 8, "technical_depth": 9, "concision_readability": 8,
+             "skim_test": 8, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 8, "overall": 8},
+  "score_rationale": {},
+  "competitive_for_domain": "Y",
+  "must_fix": [],
+  "bullets": [
+    {"quote": "Writing Java to tune upper/lower bounds on", "verdict": "tighten", "issue": "Comma splice joins two actions; the backtesting purpose reads as an afterthought.", "suggestion": "Writing Java to tune upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations (e.g., patching) and backtesting policies to balance availability against cost"},
+    {"quote": "Rebuilt a legacy test-data workflow builder in", "verdict": "keep"},
+    {"quote": "Precomputed a tree-style search index over popular", "verdict": "keep", "issue": "Ends at intent; dense parenthetical tech list mid-sentence."},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "tighten", "issue": "'Claude skill' is niche jargon that screeners and non-AI recruiters may not parse.", "suggestion": "Cut LLM workflow generation time 65% to under 15s by splitting one Claude agent skill into sub-skills backed by Python search/validation tools, guided by CloudWatch + OpenSearch latency logs"},
+    {"quote": "Shipped a space-research tool used by Amazon", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep"},
+    {"quote": "Automated EventBridge-scheduled fine-tuning of a Bedrock", "verdict": "keep"},
+    {"quote": "Built a Python pipeline for PhysTwin, a", "verdict": "tighten", "issue": "Three chained actions; 'tunes its prompts' has an ambiguous referent.", "suggestion": "Built a Python pipeline for PhysTwin, a PhD-led digital twin project targeting ICLR: runs AnyGrasp on multi-camera images and renders grasps as Open3D overlays for VLM prompt tuning"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "keep"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep"},
+    {"quote": "Added Redis query caching over Prisma SQL", "verdict": "keep"},
+    {"quote": "Building a RAG meal-suggestion feature for the", "verdict": "keep"},
+    {"quote": "Engineered a C++17 order book and matching", "verdict": "keep"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores", "verdict": "keep"},
+    {"quote": "Sustained 1.26M events/sec end-to-end over the", "verdict": "keep"}
+  ],
+  "structure": [
+    {"key": "skills_evidence_alignment", "change": "Drop or justify skills with no bullet evidence (PyTorch, API Gateway, Node.js), or add them to existing bullets only if true.", "rationale": "LLM screeners increasingly cross-check skills against bullets; unbacked keywords read as padding."},
+    {"key": "clarify_amazon_leo", "change": "Clarify: consider 'Amazon Leo (formerly Project Kuiper)' in the org line if the candidate is comfortable with it.", "rationale": "Leo is a recent rebrand; some parsers/screeners won't map it to Amazon's satellite program."}
+  ],
+  "top3": [
+    "Tighten the AWS bullet (remove the comma splice) so the one bullet under the top brand reads cleanly in one pass.",
+    "Align the Skills section with bullet evidence: drop PyTorch/API Gateway/Node.js unless they appear in real work.",
+    "Clarify: replace niche phrasing ('Claude skill', 'tunes its prompts', 'Amazon Leo') with terms a generic screener will recognize."
+  ]
+}
