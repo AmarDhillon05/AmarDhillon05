@@ -1,0 +1,19 @@
+{
+  "tally": {
+    "new": 2,
+    "old": 0,
+    "tie": 0
+  },
+  "rows": [
+    {
+      "fact": "terplabs.studio+terplabs.tortuga",
+      "winner": "new",
+      "reason": "Prisma is an ORM, not SQL; 'Redis caching for Prisma ORM queries' is accurate and clearer than 'over Prisma SQL'."
+    },
+    {
+      "fact": "umiacs.grasp_vlm",
+      "winner": "new",
+      "reason": "B introduces the VLM before referencing it, and is more concise; A's 'the VLM' appears unintroduced."
+    }
+  ]
+}

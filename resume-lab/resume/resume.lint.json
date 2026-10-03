@@ -67,12 +67,12 @@
     },
     {
       "fact": "umiacs.grasp_vlm",
-      "chars": 211,
-      "words": 32,
+      "chars": 195,
+      "words": 30,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.88,
-      "text": "Built a Python pipeline for PhysTwin (PhD-led digital twin targeting ICLR) that runs AnyGrasp on multi-camera images and renders grasps as Open3D overlays, then tuned the VLM's prompts for detecting those grasps"
+      "last_fill": 0.74,
+      "text": "Built a Python pipeline for PhysTwin, a PhD-led digital twin targeting ICLR, running AnyGrasp on multi-camera images and rendering grasps as Open3D overlays for a VLM; tuned its detection prompts"
     },
     {
       "fact": "umiacs.env_setup",
@@ -85,12 +85,12 @@
     },
     {
       "fact": "terplabs.studio+terplabs.tortuga",
-      "chars": 199,
-      "words": 33,
+      "chars": 206,
+      "words": 34,
       "n_bold": 1,
       "n_lines": 2,
-      "last_fill": 0.76,
-      "text": "Co-founded a 110+ member campus product studio that has shipped 5 live products, including Tortuga, a class scheduler with 20,000+ visits in its first 30 days; built its Redis caching over Prisma SQL"
+      "last_fill": 0.82,
+      "text": "Co-founded a 110+ member campus product studio that has shipped 5 live products, including Tortuga, a class scheduler with 20,000+ visits in its first 30 days; built Redis caching for its Prisma ORM queries"
     },
     {
       "fact": "terplabs.rag_meal",

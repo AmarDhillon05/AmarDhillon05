@@ -1,0 +1,12 @@
+[
+  {
+    "id": "p01",
+    "A": "Co-founded a 110+ member campus product studio that has shipped 5 live products, including Tortuga, a class scheduler with 20,000+ visits in its first 30 days; built its Redis caching over Prisma SQL",
+    "B": "Co-founded a 110+ member campus product studio that has shipped 5 live products, including Tortuga, a class scheduler with 20,000+ visits in its first 30 days; built Redis caching for its Prisma ORM queries"
+  },
+  {
+    "id": "p02",
+    "A": "Built a Python pipeline for PhysTwin (PhD-led digital twin targeting ICLR) that runs AnyGrasp on multi-camera images and renders grasps as Open3D overlays, then tuned the VLM's prompts for detecting those grasps",
+    "B": "Built a Python pipeline for PhysTwin, a PhD-led digital twin targeting ICLR, running AnyGrasp on multi-camera images and rendering grasps as Open3D overlays for a VLM; tuned its detection prompts"
+  }
+]
