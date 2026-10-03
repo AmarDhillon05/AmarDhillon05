@@ -6,7 +6,7 @@ order:
   terplabs: [terplabs.rag_meal, terplabs.studio+terplabs.tortuga]
 drop: [iex.throughput, iex.storage_benchmark]
 text:
-  amazon_contract.bedrock_finetune: 'Automated EventBridge-scheduled fine-tuning of a Bedrock model that classifies documents by importance, retraining only when a larger LLM''s scoring of its labels shifts past a threshold'
+  amazon_contract.bedrock_finetune: 'Automated a production EventBridge fine-tuning loop for a Bedrock model that classifies documents by importance, retraining only when a larger LLM''s scoring of its labels shifts past a threshold'
   umiacs.grasp_vlm: 'Built a Python pipeline for PhysTwin (PhD-led digital twin, targeting ICLR) rendering AnyGrasp grasps on multi-camera images as Open3D overlays for a VLM; tuned its prompts for grasp selection and depth cues'
   capital_one.claude_skill: 'Cut LLM workflow generation time \textbf{65\%} to under 15s by decomposing a Claude skill into sub-skills with Python search/validation tools; output quality held in repeated stress-test runs'
   iex.replay_correctness: 'Built a C++17 order book and matching engine that replayed 50.9M real IEX DEEP+ messages with no resync, matching 99,122 of 99,123 fills exactly'

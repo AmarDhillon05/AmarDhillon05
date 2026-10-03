@@ -69,7 +69,7 @@
 
 ## Accepted risks (your decisions; reviewers will still notice)
 - Three roles are marked "Present" alongside the full-time AWS internship. Be ready to say what's active.
-- No measured result exists for the Capital One search index.
+- No measured result exists for the Capital One search index, and no pass rate exists for the Claude skill.
 - The 93% has no tester count, and the 30% setup-time figure has no baseline.
 
 ## How every change was validated
@@ -109,7 +109,7 @@ Four versions, all built from the base by `tools/make_variant.py` (specs in `var
 **Why each variant plateaued**
 - **Quant:** the project is what HFT screens want. The GPA (3.5 against a ~3.7 bar) and having only one quant-relevant item keep the recruiter at "stretch". No wording can fix that.
 - **AI/ML:** steady at 8. The AWS capacity role (non-AI) sits on top in reverse-chronological order, and the reviewers want eval numbers that don't exist yet: a pass rate for the Claude skill and a grasp-accuracy figure for PhysTwin.
-- **Backend:** steady at 8. The remaining asks need facts you haven't supplied: the 6,000+ document scope, the AWS backtest results (intentionally omitted), and the name of the "tree-style" index structure.
+- **Backend:** steady at 8. The remaining asks need facts you haven't supplied: the AWS backtest results (intentionally omitted). The 6,000+ scope and the index structure were answered later (see below).
 
 **Facts added from your repo** (`resume/sources/order_book_playground_2026-10.md`):
 - the order-book data structures
@@ -120,8 +120,14 @@ The 1.26M/s end-to-end figure, the 686.7 ns matching-engine mean and the 2M-run 
 
 **Post-cap polish:** the last tweaks to each variant were checked only by the gate (and, for the base, a blind judge). No panel reviewed them.
 
+## Final answers applied (Oct 3, not panel-reviewed)
+Your last answers were folded in, then checked by the gate on all four files (0 errors, each one page) and by a blind judge on the base (both new phrasings won; `scores/base/final_answers/`). No panel re-reviewed them, because the round caps were already reached.
+- **Bedrock:** now "a production EventBridge fine-tuning loop" (base, AI, backend).
+- **Search index:** "tree-style" became "category-keyed tree index" (base, backend; the AI variant inherits it from the base).
+- **Kinesis (backend):** "a 6,000+ document scraped research corpus", so the 6,000+ reads as the total corpus.
+- **Claude skill:** no pass rate exists, so it is logged as accepted risk `claude_skill_eval_metric` and no number was invented.
+
 ## Still useful from you
-1. Are the 6,000+ documents a total corpus, or per day/per run?
-2. Is the Bedrock retraining loop running in production, or built and scheduled?
-3. Do you have a validation pass rate for the Claude skill, or a grasp-selection accuracy for PhysTwin?
-4. What concretely is the "tree-style" search index?
+1. A grasp-selection accuracy for PhysTwin, if one is ever measured.
+2. AWS Redshift backtest results, once they're final and approved to share.
+3. Your real phone number (Overleaf only), and whether to keep the 3.5 GPA on the quant variant (it's kept for now).

@@ -13,12 +13,12 @@
     },
     {
       "fact": "capital_one.search_index",
-      "chars": 208,
+      "chars": 210,
       "words": 32,
       "n_bold": 0,
       "n_lines": 2,
       "last_fill": 0.81,
-      "text": "Precomputed a tree-style search index so workflow search works under strict DB access limits, distilling a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) into the main search tool of an LLM agent"
+      "text": "Precomputed a category-keyed tree index so workflow search works under strict DB access limits, distilling a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) into the main search tool of an LLM agent"
     },
     {
       "fact": "capital_one.claude_skill",
@@ -40,12 +40,12 @@
     },
     {
       "fact": "amazon_contract.kinesis_pipeline",
-      "chars": 178,
-      "words": 23,
+      "chars": 171,
+      "words": 22,
       "n_bold": 1,
       "n_lines": 2,
       "last_fill": 0.56,
-      "text": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing scraper-to-S3-to-Lambda staging with Kinesis streams into Lambda"
+      "text": "Reduced end-to-end latency 34% routing a 6,000+ document scraped research corpus to inference by replacing scraper-to-S3-to-Lambda staging with Kinesis streams into Lambda"
     },
     {
       "fact": "amazon_contract.leo_deploy",
@@ -58,12 +58,12 @@
     },
     {
       "fact": "amazon_contract.bedrock_finetune",
-      "chars": 180,
-      "words": 23,
+      "chars": 184,
+      "words": 25,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.59,
-      "text": "Automated EventBridge-scheduled fine-tuning of a Bedrock document-importance classifier that skips redundant retraining runs unless a larger LLM's eval scores move past a threshold"
+      "last_fill": 0.64,
+      "text": "Automated a production EventBridge fine-tuning loop for a Bedrock document-importance classifier that skips redundant retraining unless a larger LLM's eval scores move past a threshold"
     },
     {
       "fact": "umiacs.env_setup",
@@ -114,7 +114,7 @@
   "issues": [
     {
       "level": "WARN",
-      "where": "Automated EventBridge-scheduled fine-tuning of a B",
+      "where": "Automated a production EventBridge fine-tuning loo",
       "msg": "no metric or explicit outcome"
     }
   ],

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "p01",
+    "A": "Automated EventBridge-scheduled fine-tuning of a Bedrock model that classifies documents by importance, retraining only when a larger LLM's cross-model eval scores move past a threshold",
+    "B": "Automated a production EventBridge fine-tuning loop for a Bedrock document-importance classifier, retraining only when a larger LLM's cross-model eval scores move past a threshold"
+  },
+  {
+    "id": "p02",
+    "A": "Precomputed a tree-style search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to minimize DB queries under access limits",
+    "B": "Precomputed a category-keyed tree index of popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to minimize DB queries under access limits"
+  }
+]

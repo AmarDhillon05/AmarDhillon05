@@ -1,0 +1,10 @@
+{
+  "p01": {
+    "fact": "amazon_contract.bedrock_finetune",
+    "new_is": "B"
+  },
+  "p02": {
+    "fact": "capital_one.search_index",
+    "new_is": "B"
+  }
+}

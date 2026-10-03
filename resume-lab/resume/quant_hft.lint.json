@@ -63,7 +63,7 @@
       "n_bold": 0,
       "n_lines": 2,
       "last_fill": 0.66,
-      "text": "Precomputed a tree-style search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to minimize DB queries under access limits"
+      "text": "Precomputed a category-keyed tree index of popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to minimize DB queries under access limits"
     },
     {
       "fact": "capital_one.claude_skill",

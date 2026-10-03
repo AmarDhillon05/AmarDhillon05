@@ -5,10 +5,10 @@ order:
   amazon_contract: [amazon_contract.kinesis_pipeline, amazon_contract.leo_deploy, amazon_contract.bedrock_finetune]
 drop: [terplabs.rag_meal, umiacs.grasp_vlm]
 text:
-  amazon_contract.kinesis_pipeline: 'Reduced end-to-end latency \textbf{34\%} for a pipeline routing 6,000+ scraped research documents to inference by replacing scraper-to-S3-to-Lambda staging with Kinesis streams into Lambda'
-  amazon_contract.bedrock_finetune: 'Automated EventBridge-scheduled fine-tuning of a Bedrock document-importance classifier that skips redundant retraining runs unless a larger LLM''s eval scores move past a threshold'
+  amazon_contract.kinesis_pipeline: 'Reduced end-to-end latency \textbf{34\%} routing a 6,000+ document scraped research corpus to inference by replacing scraper-to-S3-to-Lambda staging with Kinesis streams into Lambda'
+  amazon_contract.bedrock_finetune: 'Automated a production EventBridge fine-tuning loop for a Bedrock document-importance classifier that skips redundant retraining unless a larger LLM''s eval scores move past a threshold'
   aws_sde.redshift: 'Writing Java policies that tune upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations like patching, balancing availability against cost; validated by backtesting'
-  capital_one.search_index: 'Precomputed a tree-style search index so workflow search works under strict DB access limits, distilling a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) into the main search tool of an LLM agent'
+  capital_one.search_index: 'Precomputed a category-keyed tree index so workflow search works under strict DB access limits, distilling a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) into the main search tool of an LLM agent'
   amazon_contract.leo_deploy: 'Shipped a space-research tool to Amazon Leo''s public-policy team with AWS CDK (TypeScript) IaC and GitHub Actions CI so Leo engineers now maintain it; runs on AWS Fargate (Docker)'
 skills:
   - '\textbf{Languages:} Java, Python, C++, TypeScript/JavaScript, SQL'

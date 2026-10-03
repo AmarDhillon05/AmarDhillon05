@@ -109,7 +109,7 @@
     % fact: capital_one.ui_overhaul
     \resumeItem{Rebuilt a legacy test-data workflow builder in React/TypeScript + Electron, adding a React-Flow editor and Jest-tested validation; \textbf{90\%} of 30+ surveyed developers preferred it to the old tool}
     % fact: capital_one.search_index
-    \resumeItem{Precomputed a tree-style search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to minimize DB queries under access limits}
+    \resumeItem{Precomputed a category-keyed tree index of popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to minimize DB queries under access limits}
     % fact: capital_one.claude_skill
     \resumeItem{Cut LLM workflow generation time \textbf{65\%} to under 15s by decomposing a Claude skill into sub-skills backed by Python search/validation tools, guided by CloudWatch + OpenSearch latency logs}
   \resumeItemListEnd
@@ -123,7 +123,7 @@
     % fact: amazon_contract.kinesis_pipeline
     \resumeItem{Reduced end-to-end latency \textbf{34\%} for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda}
     % fact: amazon_contract.bedrock_finetune
-    \resumeItem{Automated EventBridge-scheduled fine-tuning of a Bedrock model that classifies documents by importance, retraining only when a larger LLM's cross-model eval scores move past a threshold}
+    \resumeItem{Automated a production EventBridge fine-tuning loop for a Bedrock document-importance classifier, retraining only when a larger LLM's cross-model eval scores move past a threshold}
   \resumeItemListEnd
 
   \resumeSubheading

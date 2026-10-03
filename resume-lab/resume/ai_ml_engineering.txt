@@ -22,7 +22,7 @@ Software Engineering Intern
 Richmond, VA
 • Cut LLM workflow generation time 65% to under 15s by decomposing a Claude skill into sub-skills with Python
 search/validation tools; output quality held in repeated stress-test runs
-• Precomputed a tree-style search index over popular workflows from a 270K+ row PostgreSQL table
+• Precomputed a category-keyed tree index of popular workflows from a 270K+ row PostgreSQL table
 (Python/SQLAlchemy, Redis cache) to minimize DB queries under access limits
 • Rebuilt a legacy test-data workflow builder in React/TypeScript + Electron, adding a React-Flow editor and Jest-tested
 validation; 90% of 30+ surveyed developers preferred it to the old tool
@@ -30,8 +30,8 @@ UMD App Development Contracting (Client: Amazon Leo)
 Jan 2026 – Present
 Software Engineer (Contract)
 College Park, MD
-• Automated EventBridge-scheduled fine-tuning of a Bedrock model that classifies documents by importance, retraining
-only when a larger LLM’s scoring of its labels shifts past a threshold
+• Automated a production EventBridge fine-tuning loop for a Bedrock model that classifies documents by importance,
+retraining only when a larger LLM’s scoring of its labels shifts past a threshold
 • Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3
 staging hops with Kinesis streams feeding Lambda
 • Shipped a space-research tool used by Amazon Leo’s public-policy team, now maintained by Leo engineers; deployed on

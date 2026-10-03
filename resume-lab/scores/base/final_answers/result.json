@@ -1,0 +1,19 @@
+{
+  "tally": {
+    "new": 2,
+    "old": 0,
+    "tie": 0
+  },
+  "rows": [
+    {
+      "fact": "amazon_contract.bedrock_finetune",
+      "winner": "new",
+      "reason": "B is tighter and more readable, naming the system as a 'fine-tuning loop' for a 'document-importance classifier', though 'production' is an unsupported claim that A avoids."
+    },
+    {
+      "fact": "capital_one.search_index",
+      "winner": "new",
+      "reason": "'Category-keyed tree index' is more specific and concrete than the vague 'tree-style search index', making the design clearer to an engineer."
+    }
+  ]
+}

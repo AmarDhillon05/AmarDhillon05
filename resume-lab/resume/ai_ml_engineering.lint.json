@@ -27,7 +27,7 @@
       "n_bold": 0,
       "n_lines": 2,
       "last_fill": 0.66,
-      "text": "Precomputed a tree-style search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to minimize DB queries under access limits"
+      "text": "Precomputed a category-keyed tree index of popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to minimize DB queries under access limits"
     },
     {
       "fact": "capital_one.ui_overhaul",
@@ -40,12 +40,12 @@
     },
     {
       "fact": "amazon_contract.bedrock_finetune",
-      "chars": 185,
-      "words": 26,
+      "chars": 194,
+      "words": 29,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.57,
-      "text": "Automated EventBridge-scheduled fine-tuning of a Bedrock model that classifies documents by importance, retraining only when a larger LLM's scoring of its labels shifts past a threshold"
+      "last_fill": 0.66,
+      "text": "Automated a production EventBridge fine-tuning loop for a Bedrock model that classifies documents by importance, retraining only when a larger LLM's scoring of its labels shifts past a threshold"
     },
     {
       "fact": "amazon_contract.kinesis_pipeline",
@@ -114,7 +114,7 @@
   "issues": [
     {
       "level": "WARN",
-      "where": "Automated EventBridge-scheduled fine-tuning of a B",
+      "where": "Automated a production EventBridge fine-tuning loo",
       "msg": "no metric or explicit outcome"
     },
     {

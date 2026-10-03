@@ -107,7 +107,7 @@
     {Software Engineering Intern}{Richmond, VA}
   \resumeItemListStart
     % fact: capital_one.search_index
-    \resumeItem{Precomputed a tree-style search index so workflow search works under strict DB access limits, distilling a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) into the main search tool of an LLM agent}
+    \resumeItem{Precomputed a category-keyed tree index so workflow search works under strict DB access limits, distilling a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) into the main search tool of an LLM agent}
     % fact: capital_one.claude_skill
     \resumeItem{Cut LLM workflow generation time \textbf{65\%} to under 15s by decomposing a Claude skill into sub-skills backed by Python search/validation tools, guided by CloudWatch + OpenSearch latency logs}
     % fact: capital_one.ui_overhaul
@@ -119,11 +119,11 @@
     {Software Engineer (Contract)}{College Park, MD}
   \resumeItemListStart
     % fact: amazon_contract.kinesis_pipeline
-    \resumeItem{Reduced end-to-end latency \textbf{34\%} for a pipeline routing 6,000+ scraped research documents to inference by replacing scraper-to-S3-to-Lambda staging with Kinesis streams into Lambda}
+    \resumeItem{Reduced end-to-end latency \textbf{34\%} routing a 6,000+ document scraped research corpus to inference by replacing scraper-to-S3-to-Lambda staging with Kinesis streams into Lambda}
     % fact: amazon_contract.leo_deploy
     \resumeItem{Shipped a space-research tool to Amazon Leo's public-policy team with AWS CDK (TypeScript) IaC and GitHub Actions CI so Leo engineers now maintain it; runs on AWS Fargate (Docker)}
     % fact: amazon_contract.bedrock_finetune
-    \resumeItem{Automated EventBridge-scheduled fine-tuning of a Bedrock document-importance classifier that skips redundant retraining runs unless a larger LLM's eval scores move past a threshold}
+    \resumeItem{Automated a production EventBridge fine-tuning loop for a Bedrock document-importance classifier that skips redundant retraining unless a larger LLM's eval scores move past a threshold}
   \resumeItemListEnd
 
   \resumeSubheading
