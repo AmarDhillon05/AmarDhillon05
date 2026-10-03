@@ -105,8 +105,8 @@ roles:
         required_numbers: []
       grasp_vlm:
         claim: "For PhysTwin (physics-based digital twin; PhD-led team targeting ICLR). Built a Python pipeline that takes multi-camera images, runs AnyGrasp on them, and renders grasp candidates as clear Open3D visual overlays; built the pipeline feeding those renders into a Qwen3-VL-8B-Instruct-FP8 VLM for detection; did prompt optimization for the VLM, which made it pick the correct grasp more often and better handle depth in the image (Amar, Oct 2026); did NOT work on the VLM output (Amar, Oct 2026). Lets researchers iterate faster by isolating scene components"
-        core_techs: [Python, AnyGrasp, Open3D]
-        optional_techs: [PhysTwin, ICLR, Qwen3-VL-8B-Instruct-FP8, VLM, prompt optimization]
+        core_techs: [AnyGrasp, Open3D]
+        optional_techs: [Python, PhysTwin, ICLR, Qwen3-VL-8B-Instruct-FP8, VLM, prompt optimization]
         required_numbers: []   # "8B" / "FP8" / "Qwen3" are model-name tokens, whitelisted below
       env_setup:
         claim: Cut research-environment setup time 30% via uv dependency pinning and Docker for identical setups; psutil-based timing/memory monitoring; Pytest unit tests to quickly identify bottlenecks

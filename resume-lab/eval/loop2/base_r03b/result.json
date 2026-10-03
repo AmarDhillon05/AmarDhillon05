@@ -1,0 +1,92 @@
+[
+  {
+    "fact": "capital_one.search_index",
+    "winner": "cand1",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries",
+    "decisive_wording": "C: \"Built the category tree ... so lookups make fewer queries to the access-limited database\"; B: \"Because the ... table had strict access limits\"; A: \"because the database had strict access limits\"",
+    "info": "All keep 270K+ rows, PostgreSQL, category tree searched first, Redis caching, and the access limit. A gives the constraint but no outcome. B and C both state the effect (fewer database queries). C also opens with an action verb."
+  },
+  {
+    "fact": "capital_one.claude_skill",
+    "winner": "cand1",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Cut AI workflow generation time 65% to under 15s by splitting one large Claude skill into smaller sub-skills that call Python tools for search and validation, after CloudWatch and OpenSearch latency logs showed where time went",
+    "decisive_wording": "B: \"replacing a Claude skill's open-ended search with focused sub-skills\"; C: \"instead of the model searching open-ended\"; A: \"after CloudWatch and OpenSearch latency logs showed where time went\"",
+    "info": "All keep 65%, under 15s, sub-skills, Python tools for search and validation, CloudWatch and OpenSearch. B and C explain why it got faster (open-ended search replaced). A drops that but keeps the diagnostic story of logs showing where time went. C drops 'AI' and 'latency'."
+  },
+  {
+    "fact": "umiacs.grasp_vlm",
+    "winner": "cand1",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "For a PhD-led robotics project aimed at ICLR, built a Python pipeline that shows a vision-language model AnyGrasp's candidate grasps as Open3D overlays on multi-camera images, and tuned its prompts so the model picks the correct grasp more often",
+    "decisive_wording": "C: \"shows a vision-language model AnyGrasp's candidate grasps as Open3D overlays\" and \"so the model picks the correct grasp more often\"",
+    "info": "A drops Open3D and states no outcome for the prompt tuning. B keeps Open3D, but 'picks right more often' is vague and its 'its' could refer to the pipeline. C keeps Open3D and states the outcome plainly."
+  },
+  {
+    "fact": "amazon_contract.kinesis_pipeline",
+    "winner": "incumbent",
+    "advantage": "concrete",
+    "adopt": false,
+    "text": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+    "decisive_wording": "B: \"for a pipeline routing 6,000+ scraped research documents to inference\" vs A: \"on the pipeline that sends a 6,000+ document scraped research corpus to model inference\"",
+    "info": "Same facts: 34%, 6,000+ documents, S3 staging replaced, Kinesis feeding Lambda. A adds the 'Amazon'/'AWS' prefixes, which are minor ATS keyword variants."
+  },
+  {
+    "fact": "amazon_contract.bedrock_finetune",
+    "winner": "incumbent",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance: on an EventBridge schedule a larger LLM grades its ratings, and fine-tuning runs only when the grades shift past a threshold",
+    "decisive_wording": "A: \"on an EventBridge schedule a larger LLM grades its ratings, and fine-tuning runs only when the grades shift past a threshold\"; B: \"scores the classifier past a set threshold\"",
+    "info": "All keep Bedrock, the importance classifier, EventBridge, LLM grading, and threshold-gated fine-tuning. A states the schedule most explicitly. B's 'scores the classifier past a threshold' leaves unclear which direction triggers retraining. C matches A in content."
+  },
+  {
+    "fact": "iex.replay_correctness",
+    "winner": "cand1",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange's book, agreeing with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices",
+    "decisive_wording": "A: \"agreeing with the exchange on 99,122 of 99,123 fills\" vs B: \"matching 99,122 of 99,123 fills\"",
+    "info": "Identical facts. A says explicitly what the comparison is against."
+  },
+  {
+    "fact": "iex.storage_benchmark",
+    "winner": "cand1",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Implemented B+ tree and LSM-tree backends for the engine's event log and benchmarked them on identical 2M-record workloads, where the B+ tree gave 12.8x the read throughput and 22x faster range queries at the cost of 27% more disk space",
+    "decisive_wording": "A: \"22x faster range queries at the cost of 27% more disk space\" vs B: \"22x faster range summaries for 27% more disk\"",
+    "info": "Same numbers. A uses the standard term 'range queries'. B's 'range summaries' is nonstandard and unclear."
+  },
+  {
+    "fact": "aws_sde.redshift",
+    "winner": "cand1",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Writing Java logic that decides how much EC2 capacity Amazon Redshift reserves for operations like patching, setting upper and lower bounds that keep availability high without overspending, and backtesting the policies",
+    "decisive_wording": "B: \"sets the upper and lower bounds on EC2 capacity ... balancing availability against cost\"",
+    "info": "A drops the upper and lower bounds mechanism. B and C both keep it. C adds the plain-language 'decides how much' framing and 'policies', at the cost of length."
+  },
+  {
+    "fact": "capital_one.ui_overhaul",
+    "winner": "incumbent",
+    "advantage": "concrete",
+    "adopt": false,
+    "text": "Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and 90% of 30+ surveyed developers preferred it",
+    "decisive_wording": "A: \"as a React and TypeScript Electron app\"",
+    "info": "A keeps React and TypeScript, which are high-value keywords for job postings and ATS. B drops them but adds 'to the old tool', which is redundant."
+  },
+  {
+    "fact": "terplabs.rag_meal",
+    "winner": "cand1",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Building a RAG meal-suggestion feature for the official UMD app, in which GPT-4o mini writes suggestions from scraped recipes found by SentenceBERT vector search in ChromaDB, and internal testers rated 93% of meals satisfactory",
+    "decisive_wording": "B: \"finds matching scraped recipes with SentenceBERT vector search in ChromaDB, then has GPT-4o mini write the suggestion\" vs A: \"in which GPT-4o mini writes suggestions from scraped recipes found by...\"",
+    "info": "Identical facts."
+  }
+]
