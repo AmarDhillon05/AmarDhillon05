@@ -4,7 +4,7 @@ projects_first: true
 drop: [capital_one.ui_overhaul, amazon_contract.leo_deploy, amazon_contract.bedrock_finetune, umiacs.env_setup, terplabs.rag_meal]
 text:
   iex.replay_correctness: 'Built a C++17 order book and matching engine that replayed \textbf{50.9M} real IEX DEEP+ messages with no resync, matching 99,122 of 99,123 fills exactly and 100\% of top-of-book prices'
-  iex.throughput: 'Sustained \textbf{1.26M events/sec} end-to-end, averaging 686.7 ns/event at a 1.40 GHz base clock; matching every fill itself costs 1.41$\times$ a passive book that only mirrors feed state'
+  iex.throughput: 'Sustained \textbf{1.26M events/sec} end-to-end, averaging 686.7 ns/event with the CPU fixed at its 1.40 GHz base clock; full matching takes 1.41$\times$ the time of a mirror-only book'
   iex.storage_benchmark: 'Benchmarked B+ tree vs LSM skip-list stores for the replay''s event log on 2M-record workloads (B+ tree: 12.8$\times$ read throughput for 27\% more disk); documented adaptive batch sizing as a negative result'
 add_after:
   iex.throughput:
@@ -16,6 +16,6 @@ retag:
   iex.storage_benchmark: iex.storage_benchmark+iex.adaptive_negative
 skills:
   - '\textbf{Languages:} C++17, C, Python, Java, SQL, TypeScript'
-  - '\textbf{Systems \& Performance:} Linux perf (hardware counters, top-down analysis), POSIX, STL, B+ trees, LSM trees, Redis, PostgreSQL'
-  - '\textbf{Cloud \& Tools:} AWS (Lambda, Kinesis, Fargate, CDK, CloudWatch), Docker, GitHub Actions, Pytest'
+  - '\textbf{Systems \& Performance:} Linux perf (hardware counters, top-down analysis), POSIX, STL, B+ trees, LSM trees'
+  - '\textbf{Cloud \& Tools:} AWS (Lambda, Kinesis, Fargate, CDK, CloudWatch), Redis, PostgreSQL, Docker, GitHub Actions, Pytest'
   - '\textbf{Certification:} \href{https://www.credly.com/badges/d2406a97-d937-47de-823b-724981159d3b/public_url}{\underline{AWS Certified Developer -- Associate}} (Nov 2024 -- Nov 2027)'
