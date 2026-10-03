@@ -11,7 +11,6 @@
     "last_modified": "2026-09-29",
     "why": "AWS + Google/YouTube intern; clear backend bullets with scope and results",
     "compiled_pdf": false,
-    "source": "https://github.com/PulseBeat02/portfolio",
     "license_file": null
   },
   {
@@ -27,7 +26,6 @@
     "last_modified": "2026-09-08",
     "why": "Stripe intern; plain-language product/infra bullets",
     "compiled_pdf": true,
-    "source": "https://github.com/kennethliu0/resume",
     "license_file": "LICENSE"
   },
   {
@@ -42,7 +40,6 @@
     "last_modified": "2026-07-29",
     "why": "AWS intern; backend + research mix similar to Amar's",
     "compiled_pdf": true,
-    "source": "https://github.com/pauly00n/resume",
     "license_file": null
   },
   {
@@ -58,7 +55,6 @@
     "last_modified": "2026-10-01",
     "why": "Amazon/Cloudflare/Tesla intern; highest corpus quality score; infra-heavy",
     "compiled_pdf": true,
-    "source": "https://github.com/must108/tex-docs",
     "license_file": null
   },
   {
@@ -72,7 +68,6 @@
     "last_modified": "2026-09-18",
     "why": "Google intern; distributed-systems and cloud keywords used in context",
     "compiled_pdf": false,
-    "source": "https://github.com/yarikama/resume_latex",
     "license_file": "LICENSE"
   },
   {
@@ -86,7 +81,6 @@
     "last_modified": "2026-08-12",
     "why": "Netflix intern; infra/SRE bullets with concrete mechanisms",
     "compiled_pdf": true,
-    "source": "https://github.com/aidanobrien5599/resume",
     "license_file": null
   },
   {
@@ -103,7 +97,6 @@
     "last_modified": "2026-01-28",
     "why": "IMC + Capital One intern; same Capital One brand, quant systems framing",
     "compiled_pdf": true,
-    "source": "https://github.com/jhileman07/resume",
     "license_file": null
   },
   {
@@ -119,7 +112,6 @@
     "last_modified": "2026-04-22",
     "why": "IMC + PEAK6 intern; low-latency/trading-systems bullets",
     "compiled_pdf": true,
-    "source": "https://github.com/hguan-dev/resume",
     "license_file": null
   },
   {
@@ -134,7 +126,6 @@
     "last_modified": "2026-05-14",
     "why": "SIG + Google intern; quant firm resume with research projects",
     "compiled_pdf": false,
-    "source": "https://github.com/23jmo/resume",
     "license_file": null
   },
   {
@@ -149,7 +140,6 @@
     "last_modified": "2026-08-23",
     "why": "Amazon new grad; ML systems grounded in engineering",
     "compiled_pdf": false,
-    "source": "https://github.com/alesiopuf/resume",
     "license_file": null
   },
   {
@@ -165,7 +155,6 @@
     "last_modified": "2026-09-09",
     "why": "NVIDIA + Baseten intern; ML infra / inference serving",
     "compiled_pdf": true,
-    "source": "https://github.com/PetersonGuo/PetersonGuo",
     "license_file": null
   },
   {
@@ -176,7 +165,6 @@
     "last_modified": "2026-04-12",
     "why": "outcome-backed: NVIDIA Graphics Systems SWE intern offer (sophomore CS at T50 school; also several other interns listed)",
     "compiled_pdf": false,
-    "source": "reddit post (see corpus/outcome_resumes.jsonl)",
     "license_file": null
   },
   {
@@ -187,7 +175,6 @@
     "last_modified": "2025-11-21",
     "why": "outcome-backed: Full-time new grad SWE offer after ~80 applications (rising senior at top-10 CS school, no SWE internship)",
     "compiled_pdf": false,
-    "source": "reddit post (see corpus/outcome_resumes.jsonl)",
     "license_file": null
   },
   {
@@ -198,7 +185,6 @@
     "last_modified": "2026-05-08",
     "why": "outcome-backed: HFT-adjacent FPGA role/internship offer after 4 interview rounds (EE + Physics student, Australia) following resume rewr",
     "compiled_pdf": false,
-    "source": "reddit post (see corpus/outcome_resumes.jsonl)",
     "license_file": null
   }
 ]

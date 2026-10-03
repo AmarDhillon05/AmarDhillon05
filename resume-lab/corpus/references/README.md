@@ -26,18 +26,4 @@ About a dozen strong, recent resumes kept as reading references, 2–3 per resum
 | `general_backend_outcome_6d7c86e1` | general_backend | new_grad |  | 2025-11-21 | outcome-backed: Full-time new grad SWE offer after ~80 applications (rising senior at top-10 CS school, no SWE internship) | no (custom fonts/engine); see .txt |
 | `systems_quant_outcome_7f0fa981` | systems_quant | intern |  | 2026-05-08 | outcome-backed: HFT-adjacent FPGA role/internship offer after 4 interview rounds (EE + Physics student, Australia) following resume rewr | no (custom fonts/engine); see .txt |
 
-Sources, for attribution only:
-- `general_backend_2119c22bc655`: https://github.com/PulseBeat02/portfolio (no license file in repo)
-- `general_backend_4dfbdaf6e9b5`: https://github.com/kennethliu0/resume (license file: LICENSE)
-- `general_backend_00391957f094`: https://github.com/pauly00n/resume (no license file in repo)
-- `infra_distributed_5926ce0c3962`: https://github.com/must108/tex-docs (no license file in repo)
-- `infra_distributed_70c3493688d3`: https://github.com/yarikama/resume_latex (license file: LICENSE)
-- `infra_distributed_62585d31928d`: https://github.com/aidanobrien5599/resume (no license file in repo)
-- `systems_quant_f644ba7bc0c5`: https://github.com/jhileman07/resume (no license file in repo)
-- `systems_quant_b05ffc279363`: https://github.com/hguan-dev/resume (no license file in repo)
-- `systems_quant_0c7a2097d593`: https://github.com/23jmo/resume (no license file in repo)
-- `ai_ml_engineering_d54264c23b67`: https://github.com/alesiopuf/resume (no license file in repo)
-- `ai_ml_engineering_d5ae27a86afb`: https://github.com/PetersonGuo/PetersonGuo (no license file in repo)
-- `general_backend_outcome_4669d64b`: reddit post (see corpus/outcome_resumes.jsonl) (no license file in repo)
-- `general_backend_outcome_6d7c86e1`: reddit post (see corpus/outcome_resumes.jsonl) (no license file in repo)
-- `systems_quant_outcome_7f0fa981`: reddit post (see corpus/outcome_resumes.jsonl) (no license file in repo)
+Provenance: each file's id is the corpus id. The id-to-repo mapping lives only in the gitignored `corpus/raw/github_scrape_report.json`, so this folder carries no handles. Outcome-backed files come from public reddit posts, also listed in `corpus/outcome_resumes.jsonl` without usernames.

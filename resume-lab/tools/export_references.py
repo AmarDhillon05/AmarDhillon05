@@ -113,7 +113,7 @@ def main():
         m = meta[rid]
         rows.append({"file": stem, "variant": variant, "level": m["level"], "companies": m["companies"],
                      "last_modified": m["last_modified"][:10], "why": why, "compiled_pdf": compiled,
-                     "source": f"https://github.com/{repo}", "license_file": lic})
+                     "license_file": lic})
         print(f"ok {stem} pdf={compiled}")
     (OUT / "index.json").write_text(json.dumps(rows, indent=2))
 
