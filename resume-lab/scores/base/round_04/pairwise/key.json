@@ -1,0 +1,34 @@
+{
+  "p01": {
+    "fact": "amazon_contract.bedrock_finetune",
+    "new_is": "B"
+  },
+  "p02": {
+    "fact": "amazon_contract.leo_deploy",
+    "new_is": "A"
+  },
+  "p03": {
+    "fact": "aws_sde.redshift",
+    "new_is": "A"
+  },
+  "p04": {
+    "fact": "capital_one.search_index",
+    "new_is": "A"
+  },
+  "p05": {
+    "fact": "iex.lfu_storage",
+    "new_is": "A"
+  },
+  "p06": {
+    "fact": "iex.order_book",
+    "new_is": "A"
+  },
+  "p07": {
+    "fact": "terplabs.studio",
+    "new_is": "B"
+  },
+  "p08": {
+    "fact": "terplabs.tortuga",
+    "new_is": "A"
+  }
+}

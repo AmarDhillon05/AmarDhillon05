@@ -1,0 +1,42 @@
+[
+  {
+    "id": "p01",
+    "A": "Automated fine-tuning of an AWS Bedrock source-relevancy model via EventBridge cron, with decision gates skipping redundant retraining; added X-Ray tracing and SNS failure alerts",
+    "B": "Automated Bedrock source-relevancy model fine-tuning on an EventBridge schedule, with decision gates that skip redundant retraining; added X-Ray tracing and SNS failure alerts"
+  },
+  {
+    "id": "p02",
+    "A": "Shipped a space-research tool used by Amazon Leo's public-policy team, now maintained by Leo engineers; deployed on AWS Fargate (Docker) via GitHub Actions and CDK (TypeScript)",
+    "B": "Shipped a space-research tool used by Amazon Leo's public-policy team, now maintained by Leo engineers; deployed on Docker + AWS Fargate via GitHub Actions with AWS CDK (TypeScript) IaC"
+  },
+  {
+    "id": "p03",
+    "A": "Tuning upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations like patching in Java, backtesting policies to balance availability against cost",
+    "B": "Tuning Java-based upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations like patching, backtesting policies to balance availability against cost"
+  },
+  {
+    "id": "p04",
+    "A": "Precomputed a tree-style search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to minimize DB queries under access limits",
+    "B": "Built a precomputed tree-style search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to minimize DB queries under access limits"
+  },
+  {
+    "id": "p05",
+    "A": "Designed paginated hash-based order-book storage with an in-memory LFU cache for hot tickers, validating replayed books for drift against IEX historical book data",
+    "B": "Designed paginated hash-based order-book storage with an in-memory LFU cache for hot tickers during simulation, checked for drift against IEX historical book data"
+  },
+  {
+    "id": "p06",
+    "A": "Implemented a C++ order-book simulator replaying historical IEX data, with a plug-in interface whose contracts hold every alternative approach to the same correctness checks",
+    "B": "Implemented a C++ order-book simulator replaying historical IEX data, with a contract-based plug-in interface so alternative approaches swap in with enforced correctness"
+  },
+  {
+    "id": "p07",
+    "A": "Co-founded a 110+ member campus product studio that has shipped 5 live products, run with Jira and GitHub",
+    "B": "Co-founded a 110+ member campus product studio that has shipped 5 live products"
+  },
+  {
+    "id": "p08",
+    "A": "Built the Prisma SQL query layer and Redis caching to reduce DB load and latency for Tortuga, a class scheduler that drew 20,000+ visits in its first 30 days",
+    "B": "Wrote Prisma SQL queries and Redis query caching to reduce DB load and latency for Tortuga, a class scheduler that drew 20,000+ visits in its first 30 days"
+  }
+]
