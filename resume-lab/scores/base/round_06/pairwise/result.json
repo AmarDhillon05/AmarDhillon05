@@ -1,0 +1,34 @@
+{
+  "tally": {
+    "new": 5,
+    "old": 0,
+    "tie": 0
+  },
+  "rows": [
+    {
+      "fact": "aws_sde.redshift",
+      "winner": "new",
+      "reason": "B makes clear the Java policies themselves were written and backtested; A's dangling 'backtesting policies' clause is ambiguous on first read."
+    },
+    {
+      "fact": "iex.throughput",
+      "winner": "new",
+      "reason": "'In the matching engine' clearly scopes the latency; B's clock-speed aside adds noise and reads awkwardly ('matching on a ... clock')."
+    },
+    {
+      "fact": "terplabs.studio",
+      "winner": "new",
+      "reason": "Concrete example with traffic correctly attributed to the product adds credibility to '5 live products' without overreach."
+    },
+    {
+      "fact": "terplabs.tortuga",
+      "winner": "new",
+      "reason": "A juxtaposes product traffic with a caching change, implying causation; B keeps the engineering claim honest and concise."
+    },
+    {
+      "fact": "umiacs.grasp_vlm",
+      "winner": "new",
+      "reason": "A clearly credits the candidate with prompt tuning; B's 'tunes its prompts' wrongly implies the pipeline auto-tunes prompts."
+    }
+  ]
+}

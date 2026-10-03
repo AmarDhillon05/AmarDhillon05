@@ -1,0 +1,7 @@
+[
+  {"id": "p01", "winner": "B", "reason": "B makes clear the Java policies themselves were written and backtested; A's dangling 'backtesting policies' clause is ambiguous on first read.", "better_rewrite": "Wrote and backtested Java policies tuning upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations like patching, balancing availability against cost"},
+  {"id": "p02", "winner": "A", "reason": "'In the matching engine' clearly scopes the latency; B's clock-speed aside adds noise and reads awkwardly ('matching on a ... clock').", "better_rewrite": ""},
+  {"id": "p03", "winner": "B", "reason": "Concrete example with traffic correctly attributed to the product adds credibility to '5 live products' without overreach.", "better_rewrite": ""},
+  {"id": "p04", "winner": "B", "reason": "A juxtaposes product traffic with a caching change, implying causation; B keeps the engineering claim honest and concise.", "better_rewrite": "Added Redis caching over Prisma SQL queries in Tortuga (class scheduler, 20,000+ visits in first 30 days) to cut database load and latency"},
+  {"id": "p05", "winner": "A", "reason": "A clearly credits the candidate with prompt tuning; B's 'tunes its prompts' wrongly implies the pipeline auto-tunes prompts.", "better_rewrite": ""}
+]
