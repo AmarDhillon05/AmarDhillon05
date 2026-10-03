@@ -1,0 +1,126 @@
+{
+  "persona": "ats_structure_v2",
+  "target": "Systems / quant-developer / low-latency C++ internships (HFT firms, trading-systems teams, performance engineering), 2026-27 cycle",
+  "memory_skim": {"strongest_3": [], "engineer_type": "", "memorable_numbers": [], "confusing": [], "skipped": [], "interview_questions": []},
+  "plain_english": [],
+  "scores": {
+    "impact_clarity": 7,
+    "quantification": 8,
+    "technical_depth": 8,
+    "concision_readability": 7,
+    "skim_test": 7,
+    "credibility": 8,
+    "ats_parseability": 8,
+    "visual_layout": 8,
+    "domain_fit": 7,
+    "human_voice": 7,
+    "plain_language": 6,
+    "overall": 7
+  },
+  "competitive_for_domain": "Y",
+  "bullet_feedback": [
+    {
+      "bullet": "Stored price levels in a std::map of std::list FIFOs with a hash map from order ID to list iterator for O(1) cancels, sustaining 1.26M events/sec over the full replay and a 1.2 µs per-update p99 on a separate 2M-event run",
+      "problem": "The project's headline throughput and tail-latency numbers (1.26M events/sec, 1.2 µs p99) are the last clause of the fourth bullet, behind a data-structure description. The 'µ' micro sign is a non-ASCII glyph that some ATS normalizers drop or mangle (e.g. '1.2 s' or '1.2 ?s'), which would turn a strong latency number into nonsense.",
+      "severity": 5,
+      "why_it_matters": "For an HFT screen, throughput and p99 latency are the numbers the reader matches on. A recruiter skimming the project for 7 seconds sees correctness (bullet 1) but probably not speed, and a parser that drops the glyph corrupts the one latency figure on the page.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Move this bullet up to second in the project so correctness and speed come first and the storage-engine comparison comes after. Write the unit as 'us' or 'microseconds' so it survives plain-text extraction. Optionally say 'price-time priority' for the std::list FIFOs, since that is the matching rule they implement and the term screeners match on."
+    },
+    {
+      "bullet": "Implemented B+ tree and LSM-tree backends for the event log and benchmarked them on identical 2M-record workloads, where the B+ tree gave 12.8x the read throughput and 22x faster range queries at the cost of 27% more disk space",
+      "problem": "'the event log' never says what the log is for or why it needs range queries. An event log is usually append-heavy, so a reader expects the write side of the comparison and only gets reads and disk space.",
+      "severity": 3,
+      "why_it_matters": "A trading-systems interviewer will ask straight away why reads and range queries matter for a matching engine's log. Without one clause of purpose, the bullet looks like a side benchmark rather than a design decision.",
+      "missing_or_unclear": "clarify: what reads or range queries the event log serves (e.g. replay by time window or order-ID lookup), and whether write throughput was measured",
+      "suggested_direction": "Add a short purpose phrase after 'event log' that says what queries it answers. If write throughput was measured, add it so the trade-off reads in both directions. If not, leave the numbers as they are."
+    },
+    {
+      "bullet": "Writing Java logic that sets the upper and lower bounds on EC2 capacity that Amazon Redshift reserves for operations like patching, balancing availability against cost, and backtesting it",
+      "problem": "The trailing 'and backtesting it' attaches to the end of a long clause, so it reads as if the backtesting belongs to 'cost' or 'patching'. 'Backtesting' is a strong quant-screen keyword here, and it is buried in a dangling pronoun.",
+      "severity": 3,
+      "why_it_matters": "Both LLM screeners and humans match 'backtesting' (it appears in the Jump C++ posting's scope). Here it is grammatically ambiguous and easy to skip, which wastes the one link between the AWS role and trading-style work.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Reorder so the backtesting is its own verb phrase, e.g. 'Writing and backtesting Java logic that sets the upper and lower bounds on the EC2 capacity Amazon Redshift reserves for operations like patching, balancing availability against cost'."
+    },
+    {
+      "bullet": "Cut AI workflow generation time 65% to under 15s by replacing a Claude skill’s open-ended search with focused sub-skills that call Python tools for workflow search and validation, guided by CloudWatch and OpenSearch latency logs",
+      "problem": "'AI workflow generation', 'Claude skill' and 'sub-skills' are product-specific terms that neither a recruiter nor a trading-firm engineer can unpack. The bullet never says what a 'workflow' is or who uses it. The curly apostrophe in 'skill’s' is a minor extraction risk.",
+      "severity": 4,
+      "why_it_matters": "This is the top bullet under a recognizable brand. If the reader cannot restate it, the 65% number lands without context and the Capital One entry reads as LLM prompt work rather than latency engineering, which is the part that matters for this target.",
+      "missing_or_unclear": "clarify: what a 'workflow' is in one plain noun phrase (who generates it, for what)",
+      "suggested_direction": "Lead with the plain-English object ('internal automation workflows that engineers generate with an AI assistant'), then the method. Keep '65% to under 15s' and 'latency logs', since profiling-driven latency work is what this domain hires on."
+    },
+    {
+      "bullet": "Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries",
+      "problem": "The bullet opens with a 'Because' clause, so the verb comes 12 words in. It also stitches two techniques together ('precomputed... into a category tree' and 'with Redis caching') and ends on intent ('to cut database queries').",
+      "severity": 3,
+      "why_it_matters": "Skimmers read the first few words of a bullet. Here those words are a constraint, not an action, so the caching and precomputation design is easy to miss.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Start with the action ('Precomputed popular workflows into a category tree...'), then give the constraint as the reason ('...because the 270K+ row PostgreSQL table had strict access limits'). Keep the Redis clause last."
+    },
+    {
+      "bullet": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+      "problem": "'to inference' leaves out what model or service the documents go to. 'Amazon Leo' in the company line is a recently renamed program that many recruiters won't recognize.",
+      "severity": 2,
+      "why_it_matters": "The bullet is structurally sound (result, scope, method). A missing object after 'inference' is a small comprehension gap and does not hide anything that matters.",
+      "missing_or_unclear": "clarify: inference by what (e.g. an LLM summarization or classification model)",
+      "suggested_direction": "Add one noun after 'inference' naming what runs on the documents. Leave the 34% and the S3-to-Kinesis/Lambda swap as written."
+    },
+    {
+      "bullet": "For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp’s candidate grasps on camera images in Open3D for a vision-language model, then tuned prompts so the model picks the right grasp more often",
+      "problem": "'picks the right grasp more often' is the only result, and it is unquantified. The bullet is the least relevant to systems/HFT but takes two full lines.",
+      "severity": 3,
+      "why_it_matters": "For this target, the bullet costs two lines of reading and adds no systems or performance signal. The vague ending also invites a 'by how much?' question the page can't answer.",
+      "missing_or_unclear": "clarify: whether a grasp-selection accuracy or success rate was measured",
+      "suggested_direction": "If a measured rate exists, replace 'more often' with it. If not, shorten the bullet to fit one line (cut 'aimed at ICLR' or the Open3D detail) so the space goes to the systems content."
+    },
+    {
+      "bullet": "Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio’s class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency",
+      "problem": "The bullet ends on intent ('to reduce database load and latency') with no result. The 20,000+ visits figure describes the product's traffic, not the caching work, so a skimmer may credit the number to the cache.",
+      "severity": 3,
+      "why_it_matters": "A latency-focused reader will ask what the cache changed. Read loosely, the number can look like an inflated attribution.",
+      "missing_or_unclear": "clarify: any measured cache hit rate or latency or query-count change",
+      "suggested_direction": "If a measured effect exists, end on it. If not, change 'to reduce' to the observed qualitative outcome, or keep the intent but make clear that 20,000+ visits is the load the cache served (e.g. 'to absorb load from 20,000+ visits in its first 30 days')."
+    }
+  ],
+  "page_feedback": [
+    {
+      "problem": "Keyword gaps against the postings for terms the page already supports. I read 16 postings (IMC C++ Early Careers, IMC Quant Performance Engineer, Jump Campus C++ SWE, Akuna C++ SWE Intern, Point72 Quant SWE Intern, Virtu 2027 SWE Intern, DRW Quant Dev Intern, and others). Terms they repeat: C++ / modern C++ (C++17+), data structures and algorithms, Linux, performance profiling (perf, gprof, VTune), debugging (GDB, Valgrind, AddressSanitizer), low latency, market data, order entry / order lifecycle, backtesting, memory/caches, concurrency/multithreading, lock-free data structures, networking/protocol decoding, Python, Java, Git, CI, PostgreSQL. The resume already carries C++17, STL, POSIX, Linux perf, hardware counters, low-latency C++, data structures and algorithms, benchmarking, p99, backtesting, Python, Java, Git, CI/CD, PostgreSQL. It does not carry 'market data' (even though replaying 50.9M IEX exchange messages is market-data feed processing), 'Linux' as a standalone skill (only inside 'Linux perf'), 'CPU affinity' as a synonym for 'core pinning', or 'price-time priority' for the FIFO matching.",
+      "severity": 4,
+      "why_it_matters": "Exact-match ATS filters and LLM screeners at trading firms query on 'market data' and 'Linux'. A screener can miss the strongest project because it describes market-data work without using the phrase.",
+      "suggested_direction": "Use phrasing the page already supports: say 'IEX market data' (or 'IEX market-data feed') in the project's first bullet. Add 'Linux' and 'CPU affinity / core pinning' to the Systems & Performance skills line. Use 'price-time priority' where the FIFOs are described. Do not add concurrency, lock-free, GDB/Valgrind, networking or C++20 unless the candidate actually did that work, because none of it is shown on the page."
+    },
+    {
+      "problem": "Several Skills-section items have no supporting evidence anywhere on the page: Rust, Fargate, AWS CDK, Docker, GitHub Actions (CI/CD) and Pytest. Rust stands out in a C++/HFT context.",
+      "severity": 3,
+      "why_it_matters": "LLM screeners increasingly cross-check skills against bullets, and HFT interviewers often pick an unsupported language from the skills list to probe. An unbacked 'Rust' can cost credibility in the interview.",
+      "suggested_direction": "Keep the items the candidate can defend in an interview, and cut or move to the end the ones that are only incidental. Keeping secondary tools in Skills is fine. Just make sure each one would survive one follow-up question."
+    },
+    {
+      "problem": "The domain evidence rests on one two-month personal project. The rest of Experience is cloud and AI-tooling work (Java capacity logic, Claude skills, Kinesis/Lambda, VLM prompts, Redis). The project heading has no repository link, even though the header already links github.com/AmarDhillon05.",
+      "severity": 4,
+      "why_it_matters": "An HFT reviewer will judge almost the whole candidacy on the order book. Being able to open the code is what turns '99,122 of 99,123 fills' from a claim into a verified result.",
+      "suggested_direction": "If the repository is public, link it directly in the project heading line (e.g. replace or follow the tech list with the repo path). Keep the project above Experience as it is now, since that ordering is already right for this target."
+    },
+    {
+      "problem": "Parse-level details: (a) the certification line '(Nov 2024 – Nov 2027)' uses the same 'Mon YYYY – Mon YYYY' pattern as jobs, so Workday/Lever-style parsers can read it as an employment date range; (b) the non-ASCII glyphs 'µ' and curly apostrophes (’) appear in bullets; (c) the '(Client: Amazon Leo)' parenthetical sits in the company field and some parsers will store it as the employer name; (d) the project heading puts a pipe-separated tech list on the title line, which can merge into the parsed project title. Otherwise extraction is clean: reading order is correct, headings are standard (Education, Projects, Experience, Technical Skills), dates are consistent with en dashes, and contact info is on one parseable line.",
+      "severity": 2,
+      "why_it_matters": "None of these blocks parsing, but each can put a slightly wrong value into a structured ATS field (a fake 3-year role, a garbled latency number, an employer named 'UMD App Development Contracting (Client: Amazon Leo)').",
+      "suggested_direction": "Write the certification as 'issued Nov 2024, valid through Nov 2027' or just 'Nov 2024'. Use ASCII 'us' and straight apostrophes. Optionally move 'Client: Amazon Leo' into the title line or the bullet instead of the employer name."
+    },
+    {
+      "problem": "Roughly the bottom 15% of the page is blank, while the UMIACS and Capital One bullets are wrapped dense into two lines and the Experience section is visually compressed.",
+      "severity": 2,
+      "why_it_matters": "This costs some polish only. The page is clean, single-column, consistently aligned and readable at 100% zoom.",
+      "suggested_direction": "Use the spare space for slightly more spacing between entries rather than more content, or leave it as is."
+    }
+  ],
+  "keep": [
+    "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange’s book, agreeing with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices",
+    "Traced an apparent 1.65x slowdown to the CPU frequency governor using perf counters and a null control book, then cut run-to-run variance from about 6% to 0.06% with core pinning and a fixed clock",
+    "Projects section placed above Experience, with the IEX order book as the first entry on the page",
+    "Systems & Performance skills line: low-latency C++, debugging and profiling with Linux perf (hardware counters, top-down analysis), POSIX, STL, B+ trees, LSM trees, data structures and algorithms, benchmarking",
+    "Single-column layout with standard section headings and right-aligned 'Mon YYYY – Mon YYYY' dates"
+  ]
+}
