@@ -1,0 +1,25 @@
+[
+  {
+    "id": "g01",
+    "versions": {
+      "A": "For a PhD-led robotics project aimed at ICLR, built a pipeline that renders AnyGrasp's candidate grasps as Open3D overlays on multi-camera images for a vision-language model to choose from, and tuned its prompts so it chooses correctly more often",
+      "B": "For a PhD-led robotics project aimed at ICLR, built a pipeline that shows a vision-language model AnyGrasp's candidate grasps as Open3D overlays on multi-camera images, then tuned prompts so the model picks the right grasp more often",
+      "C": "For a PhD-led robotics project aimed at ICLR, built a pipeline that turns grasp candidates from AnyGrasp into Open3D overlays on multi-camera images so a vision-language model can pick one, then tuned prompts so it picks correctly more often"
+    }
+  },
+  {
+    "id": "g02",
+    "versions": {
+      "A": "Automated retraining for a production document-importance classifier on Amazon Bedrock. On an EventBridge schedule a larger LLM grades the classifier, and fine-tuning runs only when those grades move past a threshold",
+      "B": "Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance: on an EventBridge schedule a larger LLM grades its ratings, and fine-tuning runs only when the grades shift past a threshold",
+      "C": "Automated retraining for a production classifier, hosted on Amazon Bedrock, that rates research documents by importance, fine-tuning it only when a larger LLM's scheduled grades of its output move past a threshold"
+    }
+  },
+  {
+    "id": "g03",
+    "versions": {
+      "A": "Cut AI workflow generation time 65% to under 15s by replacing a Claude skill's open-ended search with focused sub-skills that call Python tools for workflow search and validation, guided by CloudWatch and OpenSearch latency logs",
+      "B": "Cut the time for AI to generate a workflow 65% to under 15s by replacing a Claude skill's open-ended search with focused sub-skills that call Python tools for search and validation, guided by CloudWatch and OpenSearch latency logs"
+    }
+  }
+]
