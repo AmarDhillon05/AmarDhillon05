@@ -1,0 +1,127 @@
+{
+  "persona": "hiring_manager_v2",
+  "target": "Systems / quant-developer / low-latency C++ internships (HFT firms, trading-systems teams, performance engineering), 2026-27 cycle",
+  "memory_skim": {"strongest_3": [], "engineer_type": "", "memorable_numbers": [], "confusing": [], "skipped": [], "interview_questions": []},
+  "plain_english": [],
+  "scores": {
+    "impact_clarity": 7,
+    "quantification": 8,
+    "technical_depth": 8,
+    "concision_readability": 7,
+    "skim_test": 8,
+    "credibility": 8,
+    "ats_parseability": 9,
+    "visual_layout": 8,
+    "domain_fit": 7,
+    "human_voice": 7,
+    "plain_language": 6,
+    "overall": 7
+  },
+  "competitive_for_domain": "stretch",
+  "bullet_feedback": [
+    {
+      "bullet": "Stored price levels in a std::map of std::list FIFOs with a hash map from order ID to list iterator for O(1) cancels, sustaining 1.26M events/sec over the full replay and a 1.2 µs per-update p99 on a separate 2M-event run",
+      "problem": "The bullet leads with the data-structure choice and presents 'std::map of std::list' as the headline design, then attaches two numbers measured on two different runs ('over the full replay' vs 'on a separate 2M-event run'). A trading-systems reader sees node-based containers (std::map, std::list) as the textbook non-cache-friendly baseline and will wonder whether the candidate knows that, since nothing in the bullet signals it was a deliberate first version or a measured trade-off.",
+      "severity": 5,
+      "why_it_matters": "In HFT screens the container choice is the first thing probed; stated without a reason it can read as 'did not consider cache locality' rather than 'chose simplicity and measured it', which undercuts the strongest project on the page. The two-run split also makes the reader stop to work out which number describes what.",
+      "missing_or_unclear": "clarify: why std::map/std::list was chosen (baseline, correctness-first, or measured against an alternative); whether 1.26M events/sec and the 1.2 µs p99 come from the same build and machine setup (pinned/fixed clock as in bullet 3)",
+      "suggested_direction": "Open with the result and the O(1)-cancel design idea (order ID -> iterator), then name the containers; if the node-based layout was a deliberate baseline, say so in a few words. Consider stating both numbers under one run description, or making clear the p99 run is the pinned/fixed-clock setup."
+    },
+    {
+      "bullet": "Implemented B+ tree and LSM-tree backends for the event log and benchmarked them on identical 2M-record workloads, where the B+ tree gave 12.8x the read throughput and 22x faster range queries at the cost of 27% more disk space",
+      "problem": "'the event log' appears without saying what the log is for in a matching engine (replay, audit, recovery, querying history), so the reader cannot judge why read throughput and range queries are the metrics that matter. The bullet also stops at the comparison and does not say which backend the engine uses or what the decision was.",
+      "severity": 4,
+      "why_it_matters": "A hiring manager rewards design decisions, not benchmarks in isolation; without the purpose and the choice, the bullet reads as a side experiment rather than an engineering trade-off the candidate owned.",
+      "missing_or_unclear": "clarify: what the event log stores and who reads it; which backend was kept and why; whether the workload was read-heavy (LSM trees are expected to win on writes, so the write side of the comparison is absent)",
+      "suggested_direction": "Add a short purpose clause for the log before the tech names, and end with the decision rather than only the ratios, e.g. '...so I kept the B+ tree because replay is read-heavy' (only if true)."
+    },
+    {
+      "bullet": "Traced an apparent 1.65x slowdown to the CPU frequency governor using perf counters and a null control book, then cut run-to-run variance from about 6% to 0.06% with core pinning and a fixed clock",
+      "problem": "'an apparent 1.65x slowdown' does not say slowdown of what relative to what (between two builds? between runs?), and 'null control book' is unexplained jargon that a recruiter or ATS screener cannot restate.",
+      "severity": 3,
+      "why_it_matters": "This is the most HFT-relevant methodology bullet on the page (benchmark hygiene, isolating noise), but a non-specialist screener will skip it and a specialist must guess the setup before appreciating it.",
+      "missing_or_unclear": "clarify: what the 1.65x was measured between; what the null control book is (e.g. a do-nothing book used to isolate harness cost)",
+      "suggested_direction": "Name the comparison in 3-5 words after 'slowdown' and gloss 'null control book' with a short plain-English phrase; keep the 6% -> 0.06% result as is."
+    },
+    {
+      "bullet": "Writing Java logic that sets the upper and lower bounds on EC2 capacity that Amazon Redshift reserves for operations like patching, balancing availability against cost, and backtesting it",
+      "problem": "The trailing 'and backtesting it' is grammatically detached (it reads as if 'availability against cost' is being backtested), and 'Writing Java logic' does not say whether the candidate owns the bounds algorithm, implements a spec, or builds the backtest harness.",
+      "severity": 4,
+      "why_it_matters": "AWS is the top brand on the page; ambiguous ownership on its only bullet makes a hiring manager discount it to 'intern on a team' rather than 'owned a capacity-planning component'.",
+      "missing_or_unclear": "clarify: which part the candidate designs vs implements; what the backtest runs against (historical capacity/usage data)",
+      "suggested_direction": "Split into a clear subject-verb structure: what the logic decides, how the candidate validates it via backtesting, and what part is theirs. Keep present tense since the role is ongoing."
+    },
+    {
+      "bullet": "Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries",
+      "problem": "The 'Because...' opener puts 20+ words of constraint before the action, and the bullet ends on intent ('to cut database queries') with no observed effect. It also overlaps with the previous bullet's 65% result, so the reader cannot tell whether this change is part of that 65% or separate.",
+      "severity": 4,
+      "why_it_matters": "Readers skim the first few words; starting with 'Because the 270K+ row PostgreSQL' hides the verb, and an intent-only ending reads weaker than the bullets around it.",
+      "missing_or_unclear": "clarify: whether this caching/category-tree change contributed to the 65% generation-time reduction in the previous bullet",
+      "suggested_direction": "Lead with the verb ('Precomputed popular workflows into a category tree...') and move the access-limit constraint into a short trailing 'because' clause; if it is part of the 65%, consider merging the two bullets so one result covers both changes."
+    },
+    {
+      "bullet": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+      "problem": "34% has no absolute baseline (seconds per document? per batch?), and 'routing ... to inference' does not say what the pipeline is for or who consumes its output for the client.",
+      "severity": 3,
+      "why_it_matters": "A percentage without a unit is hard to defend in an interview, and the 'who used it / what changed' question is unanswered for a client engagement.",
+      "missing_or_unclear": "clarify: latency before/after in absolute units if known; what the inference output is used for",
+      "suggested_direction": "Add the absolute latency or the unit of measurement if available; otherwise keep the bullet short and add a few words on the pipeline's purpose."
+    },
+    {
+      "bullet": "For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D for a vision-language model, then tuned prompts so the model picks the right grasp more often",
+      "problem": "'picks the right grasp more often' is an unmeasured outcome, and 'aimed at ICLR' signals a submission target rather than a result. The bullet has little to do with systems or latency work, yet takes two lines.",
+      "severity": 3,
+      "why_it_matters": "For an HFT reader this line costs space without adding domain evidence, and the vague outcome invites 'how much more often?' with no answer on the page.",
+      "missing_or_unclear": "clarify: how grasp-selection accuracy was judged, if any measurement exists",
+      "suggested_direction": "Either state the measured improvement if one exists or shorten the bullet to one line focused on what was built, freeing space for the systems project."
+    },
+    {
+      "bullet": "Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio's class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency",
+      "problem": "The bullet ends at intent ('to reduce database load and latency'); the 20,000+ visits is the product's adoption, not an outcome of the caching work, so the metric is not attributable to the action.",
+      "severity": 3,
+      "why_it_matters": "A hiring manager will ask what the cache changed (hit rate, latency, DB load) and the bullet gives no answer, so the scale number reads as borrowed credibility.",
+      "missing_or_unclear": "clarify: any observed effect of the cache; what else the candidate built on Tortuga",
+      "suggested_direction": "If an effect was observed, state it in place of the intent clause; if not, reframe around the candidate's role on Tortuga with the visit count as product context."
+    },
+    {
+      "bullet": "Co-founded a 110+ member student product studio that has shipped 5 live products",
+      "problem": "The bullet credits the studio's output (110+ members, 5 products) without saying what the candidate personally did as co-founder (technical lead on which products, recruiting, infrastructure).",
+      "severity": 3,
+      "why_it_matters": "Ownership is ambiguous: a reader cannot separate the candidate's contribution from the organization's.",
+      "missing_or_unclear": "clarify: the candidate's specific role or responsibilities in the studio",
+      "suggested_direction": "Add a short clause naming what the candidate owns at the studio level, or merge into the Tortuga bullet to keep the section to one line of context plus one technical bullet."
+    }
+  ],
+  "page_feedback": [
+    {
+      "problem": "Only one item on the page (the IEX project) shows C++/low-latency work; every experience entry is Java, Python, or AWS serverless. 'low-latency C++' in Skills is therefore backed by a single two-month personal project.",
+      "severity": 5,
+      "why_it_matters": "HFT and quant-dev hiring managers will read this as a strong cloud/AI intern who did one excellent systems project, not as a systems engineer with repeated performance work; the intended 'repeatedly built and improved performance-sensitive software' profile is only half-communicated.",
+      "suggested_direction": "Keep Projects above Experience (correct for this target). Consider spending the reclaimed space (see UMIACS/TerpLabs comments and the empty bottom of the page) on systems-relevant detail already true of the work, and drop skills-section phrases like 'low-latency C++' that restate a claim rather than list a tool."
+    },
+    {
+      "problem": "The IEX project has no link to code or a write-up, even though the header has a GitHub link.",
+      "severity": 4,
+      "why_it_matters": "For a solo project carrying most of the domain weight, trading-firm reviewers want to verify it; the replay-accuracy and perf claims become far more credible with a repo one click away.",
+      "suggested_direction": "If the repository is public, link it from the project title line."
+    },
+    {
+      "problem": "Roughly the bottom 15% of the page is empty while several bullets are compressed into dense two-line sentences.",
+      "severity": 2,
+      "why_it_matters": "Minor visual imbalance; the space could give the project bullets breathing room or a short clarifying clause.",
+      "suggested_direction": "Use the space for clarifications flagged in bullet feedback rather than new bullets or more metrics."
+    },
+    {
+      "problem": "Rust and C appear in Languages with no supporting work on the page.",
+      "severity": 2,
+      "why_it_matters": "Trading-firm interviewers often pick a listed language to probe; an unsupported listing is a small credibility risk.",
+      "suggested_direction": "Keep only languages the candidate is comfortable being interviewed in."
+    }
+  ],
+  "keep": [
+    "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange's book, agreeing with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices",
+    "Cut AI workflow generation time 65% to under 15s by replacing a Claude skill's open-ended search with focused sub-skills that call Python tools for workflow search and validation, guided by CloudWatch and OpenSearch latency logs",
+    "Placing Projects (IEX order book) above Experience for this target",
+    "Project title line format: 'IEX Order Book & Matching Engine | C++17, STL, POSIX, Linux perf'"
+  ]
+}
