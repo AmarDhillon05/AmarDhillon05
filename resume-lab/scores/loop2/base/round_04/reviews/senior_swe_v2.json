@@ -1,0 +1,114 @@
+{
+  "persona": "senior_swe_v2",
+  "target": "General SWE / backend software engineering internships (big tech + strong startups), 2026-27 cycle",
+  "memory_skim": {"strongest_3": [], "engineer_type": "", "memorable_numbers": [], "confusing": [], "skipped": [], "interview_questions": []},
+  "plain_english": [],
+  "scores": {
+    "impact_clarity": 8,
+    "quantification": 8,
+    "technical_depth": 8,
+    "concision_readability": 7,
+    "skim_test": 7,
+    "credibility": 8,
+    "ats_parseability": 8,
+    "visual_layout": 8,
+    "domain_fit": 8,
+    "human_voice": 8,
+    "plain_language": 7,
+    "overall": 8
+  },
+  "competitive_for_domain": "Y",
+  "bullet_feedback": [
+    {
+      "bullet": "Implemented B+ tree and LSM-tree backends for the event log and benchmarked them on identical 2M-record workloads, where the B+ tree gave 12.8x the read throughput and 22x faster range queries at the cost of 27% more disk space",
+      "problem": "The workload named is an 'event log', which is append-heavy, yet the bullet reports only read-side wins for the B+ tree and never says which backend was kept or why reads mattered for this log. The textbook reason to build an LSM tree is write throughput, and its absence is the first thing an infra interviewer will notice.",
+      "severity": 5,
+      "why_it_matters": "The first follow-up question will be 'what about writes, and which did you ship?' If the answer isn't ready, the strongest tradeoff bullet on the page looks like a benchmark the candidate didn't fully interpret. If the answer is ready, the bullet is underselling a real design decision.",
+      "missing_or_unclear": "clarify: which backend the engine ended up using, and why read/range performance mattered for the event log (e.g. replay or audit queries); clarify whether write throughput was measured",
+      "suggested_direction": "Name the read pattern that made the B+ tree win relevant, or state the decision the benchmark drove. Keep both distinctive nouns (B+ tree, LSM-tree) exactly as they are."
+    },
+    {
+      "bullet": "For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp’s candidate grasps on camera images in Open3D for a vision-language model, then tuned prompts so the model picks the right grasp more often",
+      "problem": "'picks the right grasp more often' is the only outcome, and it has no measurement. The engineering work described is visualization plus prompt tuning, which is thinner than every other role on the page.",
+      "severity": 5,
+      "why_it_matters": "A backend interviewer reads 'tuned prompts ... more often' as unmeasured trial and error. It's also the only bullet for this role, so it ends up representing the whole research position, and it pulls down the 'built real systems' story.",
+      "missing_or_unclear": "clarify: how grasp correctness was judged (a held-out set of scenes? a success count?), and what the pipeline does beyond the overlay (projection from 3D grasp poses to 2D image coordinates?)",
+      "suggested_direction": "Lead with the mechanism that is real engineering, such as projecting candidate 3D grasps into the image so the VLM can choose among labeled options, and state how 'right grasp' was evaluated if that exists. Otherwise cut 'more often' so the bullet doesn't make a claim it can't back up."
+    },
+    {
+      "bullet": "Writing Java logic that sets the upper and lower bounds on EC2 capacity that Amazon Redshift reserves for operations like patching, balancing availability against cost, and backtesting it",
+      "problem": "The mechanism is unclear: 'Java logic that sets the upper and lower bounds' doesn't say what the bounds are computed from (fleet size, historical usage, a forecast?). 'and backtesting it' trails after the tradeoff clause, so it reads as an afterthought. 'it' could refer to the logic or to the balance.",
+      "severity": 4,
+      "why_it_matters": "This is the top bullet under the biggest brand. A reader can tell the domain (reserved capacity for maintenance) but not the engineering decision, and the interview opener 'how are the bounds computed?' has no anchor on the page.",
+      "missing_or_unclear": "clarify: what inputs drive the bounds, and what the backtest replays (historical capacity or demand data?)",
+      "suggested_direction": "Restructure as what is computed, from what, and how it's validated, e.g. '... bounds on the EC2 capacity Redshift reserves for patching and other maintenance, computed from <input>, and backtesting them against historical <data> to balance availability against cost'. Do not add results (they were intentionally omitted)."
+    },
+    {
+      "bullet": "Cut AI workflow generation time 65% to under 15s by replacing a Claude skill’s open-ended search with focused sub-skills that call Python tools for workflow search and validation, guided by CloudWatch and OpenSearch latency logs",
+      "problem": "The clause 'guided by CloudWatch and OpenSearch latency logs' is tacked onto the end and reads as name-dropping. It doesn't say what the logs revealed, such as which step dominated latency. The core decision, replacing open-ended agent search with deterministic tool calls, is good but gets diluted.",
+      "severity": 4,
+      "why_it_matters": "An interviewer will ask 'what did the logs show was slow?' The bullet suggests a profiling-driven decision but never names the finding, so the most senior-sounding part of the bullet is the vaguest.",
+      "missing_or_unclear": "clarify: what the latency logs pinpointed (e.g. repeated LLM search turns, unbounded tool loops) that motivated the sub-skill split",
+      "suggested_direction": "Either replace the trailing tech nouns with the finding they produced, or cut the clause. If kept, move CloudWatch/OpenSearch to Skills. Keep '65% to under 15s' and 'focused sub-skills that call Python tools'."
+    },
+    {
+      "bullet": "Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries",
+      "problem": "'strict access limits' is ambiguous: it could mean rate limits, query quotas, or permission restrictions, and the right design differs for each. The category tree isn't characterized (keyed on what? how is 'popular' chosen?). The Redis clause raises staleness and invalidation questions the bullet doesn't touch.",
+      "severity": 4,
+      "why_it_matters": "The causal 'Because ...' framing is a real engineering justification and the best part of this bullet, but a backend interviewer will press on it right away: what limit, how is the tree refreshed, and what happens when a cached workflow changes. Vague constraints make the decision hard to defend.",
+      "missing_or_unclear": "clarify: the nature of the access limit (rate/quota vs. permissions), what the category tree is keyed on, and how cache/tree freshness is handled",
+      "suggested_direction": "Replace 'strict access limits' with the specific constraint, and name what the tree is organized by in a few words. Keep 'category tree' and the precompute-then-fallback structure. The missing outcome is a known, accepted gap."
+    },
+    {
+      "bullet": "Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio’s class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency",
+      "problem": "Ends in intent ('to reduce database load and latency') with no result or design detail. Redis caching now appears twice on the page (Capital One and here), and in this instance there's no decision attached: what's cached, the TTL or invalidation, or why caching was needed at 20K visits/month.",
+      "severity": 4,
+      "why_it_matters": "Repeated with no mechanism, 'Redis caching' starts to look like the candidate's default answer instead of a considered choice. 20,000 visits over 30 days is roughly one request every couple of minutes on average, so an interviewer may question whether a cache was needed unless traffic was spiky (e.g. registration windows).",
+      "missing_or_unclear": "clarify: what was cached (course/section lookups?), and whether load was bursty around registration",
+      "suggested_direction": "Name the hot query or traffic pattern that justified the cache so the decision reads as a response to a real load shape. If nothing distinctive exists, consider merging this into the co-founder bullet as a scope line and putting the space toward a stronger item."
+    },
+    {
+      "bullet": "Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and 90% of 30+ surveyed developers preferred it",
+      "problem": "Most of the bullet is a stack list (React, TypeScript, Electron, React Flow, Jest). 'Jest-tested validation' is a compressed noun phrase that doesn't say what is validated (workflow graph structure? field schemas?). The only outcome is a preference survey.",
+      "severity": 3,
+      "why_it_matters": "For a backend-leaning screen, this reads as a front-end rewrite with no visible engineering decision. The interesting part, validating a user-drawn workflow graph before it runs, is hidden behind tool names.",
+      "missing_or_unclear": "clarify: what the validation checks (e.g. cycles, missing required steps, schema errors)",
+      "suggested_direction": "Trade one or two framework names (Electron/Jest can live in Skills) for a short phrase saying what validation catches. Keep 'visual React Flow editor' because it explains the product."
+    },
+    {
+      "bullet": "Deployed a space-topic research tool for Amazon Leo’s public-policy team and set it up for handoff with AWS CDK infrastructure-as-code and GitHub Actions CI/CD, so Leo engineers new to the project now maintain it on AWS Fargate",
+      "problem": "'space-topic research tool' is vague about what the system does, and it's the first time this system appears, before the Kinesis and classifier bullets that depend on it. The bullet is mostly about deployment tooling, so the reader meets the plumbing before the system.",
+      "severity": 3,
+      "why_it_matters": "The next two bullets (Kinesis pipeline, Bedrock classifier) are among the strongest on the page, but they assume the reader knows what the tool is. A one-phrase description up front would make the whole section read as one coherent system.",
+      "missing_or_unclear": "clarify: what the tool does in a few words (e.g. scrapes and ranks space-policy documents for analysts)",
+      "suggested_direction": "Replace 'space-topic research tool' with a short functional description that sets up the scraping/classification bullets. The handoff outcome ('Leo engineers new to the project now maintain it') is good; keep it."
+    }
+  ],
+  "page_feedback": [
+    {
+      "problem": "The most technically convincing evidence (the IEX order book and matching engine: 50.9M replayed messages, 99,122/99,123 fills, B+ tree vs LSM benchmark, O(1) cancels) sits at the bottom of the page, below a single-bullet research role and a student studio section.",
+      "severity": 4,
+      "why_it_matters": "On a 7-second skim, the systems-oriented profile the candidate wants to project depends on the reader reaching the Projects section. The top of the page shows brands, not depth.",
+      "suggested_direction": "Keep Experience first (the brands earn that), but think about tightening the TerpLabs and UMIACS bullets so Projects moves up. A one-line project mention elsewhere isn't needed; the ordering and density are the fix."
+    },
+    {
+      "problem": "Some Skills entries carry no weight or are filler: 'data structures and algorithms' (a course topic, not a skill line), 'Jira, Agile', 'psutil'.",
+      "severity": 2,
+      "why_it_matters": "These dilute an otherwise tight skills block and signal keyword padding to a technical reader.",
+      "suggested_direction": "Cut 'data structures and algorithms', 'Jira' and 'Agile', and let the order book bullets show DS&A."
+    },
+    {
+      "problem": "Bold is applied to the weakest metric in places, e.g. '90%' on a developer preference survey, while the order book's most distinctive figure ('99,122 of 99,123 fills') is unbolded.",
+      "severity": 2,
+      "why_it_matters": "Bold steers the skim, so the eye lands on a survey stat instead of the correctness result that sets this resume apart.",
+      "suggested_direction": "Move bold from the survey percentage to anchors that carry technical weight. Keep at most one bold per bullet."
+    }
+  ],
+  "keep": [
+    "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange’s book, agreeing with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices",
+    "Sustained 1.26M events/sec end-to-end over the full replay, keeping each price level’s orders in a std::list FIFO inside a std::map and a hash map from order ID to list iterator for O(1) cancels",
+    "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+    "Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance: on an EventBridge schedule a larger LLM grades its ratings, and fine-tuning runs only when the grades shift past a threshold",
+    "Distinctive technical nouns are intact and must stay: order book, matching engine, B+ tree vs LSM-tree, Kinesis streams, document classifier, category tree"
+  ]
+}
