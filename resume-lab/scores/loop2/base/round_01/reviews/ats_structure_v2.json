@@ -1,0 +1,149 @@
+{
+  "persona": "ats_structure_v2",
+  "target": "General SWE / backend software engineering internships (big tech + strong startups), 2026-27 cycle",
+  "memory_skim": {"strongest_3": [], "engineer_type": "", "memorable_numbers": [], "confusing": [], "skipped": [], "interview_questions": []},
+  "plain_english": [],
+  "scores": {
+    "impact_clarity": 7,
+    "quantification": 8,
+    "technical_depth": 8,
+    "concision_readability": 7,
+    "skim_test": 8,
+    "credibility": 8,
+    "ats_parseability": 8,
+    "visual_layout": 8,
+    "domain_fit": 8,
+    "human_voice": 7,
+    "plain_language": 6,
+    "overall": 8
+  },
+  "competitive_for_domain": "Y",
+  "bullet_feedback": [
+    {
+      "bullet": "Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries",
+      "problem": "The bullet opens with a 'Because...' clause, so the action verb ('precomputed') lands 13 words in, and 'the Claude skill' is referenced with 'the' before any bullet has said what the skill is (it is only explained in the next bullet). 'strict access limits' is ambiguous (rate limits, permissions, or query quotas).",
+      "severity": 5,
+      "why_it_matters": "LLM screeners and recruiters weight the first words of a bullet; here they get a constraint instead of an action. A non-engineer cannot tell what 'the Claude skill' is, so the design choice (precompute + cache in front of a constrained database) is lost.",
+      "missing_or_unclear": "clarify: what kind of 'access limits' (rate limit, read quota, permissions); what 'the Claude skill' is on first mention",
+      "suggested_direction": "Lead with the verb and the thing built, then the constraint; name the skill as the AI workflow generator on first mention. Example shape: 'Precomputed popular workflows into a category tree that the Claude workflow-generation skill searches first, with Redis caching full workflows, because the 270K+ row PostgreSQL table had strict [rate/access] limits'. Consider ordering this after the 65% bullet so the skill is introduced first."
+    },
+    {
+      "bullet": "Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and 90% of 30+ surveyed developers preferred it",
+      "problem": "Four technologies (React, TypeScript, Electron, React Flow) plus Jest packed into one clause; 'preferred it' leaves the comparison implicit.",
+      "severity": 3,
+      "why_it_matters": "The reader has to wade through the stack to reach the outcome; the keywords are already matched by the Skills section, so the bullet gains nothing for ATS by carrying all of them.",
+      "missing_or_unclear": "clarify: preferred over the legacy tool",
+      "suggested_direction": "Keep the technologies that explain the engineering (Electron app, visual React Flow editor) and let the Skills section carry TypeScript/Jest; make the comparison explicit: '...and 90% of 30+ surveyed developers preferred it over the legacy tool'."
+    },
+    {
+      "bullet": "Deployed a space-topic research tool for Amazon Leo’s public-policy team and set it up for handoff with AWS CDK infrastructure-as-code and GitHub Actions CI/CD, so Leo engineers new to the project now maintain it on AWS Fargate",
+      "problem": "'space-topic research tool' is an unusual phrase that does not tell the reader what the tool does for users; the bullet's verb is 'Deployed', which undersells building it if the candidate also built it.",
+      "severity": 4,
+      "why_it_matters": "This is the anchor bullet for a brand-name client; a recruiter skims it and cannot restate what the product is, only that it was deployed.",
+      "missing_or_unclear": "clarify: what the tool does in one phrase (e.g. what users search or receive); whether the candidate built it or only deployed it",
+      "suggested_direction": "Replace 'space-topic research tool' with a plain description of its function using existing facts; keep the CDK / GitHub Actions / Fargate handoff outcome, which is strong."
+    },
+    {
+      "bullet": "Automated retraining for a production Amazon Bedrock model that sorts research documents by importance: on an EventBridge schedule a larger LLM grades it, and it is fine-tuned only when those grades shift past a threshold",
+      "problem": "'a larger LLM grades it' has an ambiguous referent: 'it' could be the model or the documents. The colon-then-passive structure ('it is fine-tuned') makes the candidate disappear from the second half.",
+      "severity": 5,
+      "why_it_matters": "This is the clearest ML-infrastructure design decision on the page (drift-triggered fine-tuning), and a reader may misread what is being graded and therefore miss the design.",
+      "missing_or_unclear": "clarify: whether the larger LLM grades the Bedrock model's rankings/outputs or the documents themselves",
+      "suggested_direction": "Name the graded object and keep the candidate as subject, e.g. 'Automated retraining for a production Amazon Bedrock model that ranks research documents by importance: an EventBridge-scheduled job has a larger LLM grade the model's rankings and triggers fine-tuning only when grades drift past a threshold'."
+    },
+    {
+      "bullet": "For a PhD-led robotics project targeting ICLR, built a Python pipeline that draws AnyGrasp candidates from multi-camera images as Open3D overlays and tuned prompts so a vision-language model picks the right grasp more often",
+      "problem": "'draws AnyGrasp candidates ... as Open3D overlays' requires robotics-tool knowledge to parse, and the outcome 'more often' is unanchored.",
+      "severity": 5,
+      "why_it_matters": "A recruiter or general SWE screener cannot restate what was built; the research brand (ICLR) is visible but the contribution is not.",
+      "missing_or_unclear": "clarify: how 'more often' was judged (if a measured comparison exists, state it; if not, state the qualitative outcome plainly)",
+      "suggested_direction": "Say in plain words first what the pipeline does (renders candidate robot grasps from camera images so a vision-language model can choose one), then keep AnyGrasp/Open3D as the method nouns; replace 'more often' with whatever comparison actually exists, or drop it."
+    },
+    {
+      "bullet": "Co-founded a 110+ member student product studio that has shipped 5 live products, and personally built Redis caching in front of the Prisma ORM queries for one, Tortuga, a class scheduler with 20,000+ visits in its first 30 days",
+      "problem": "Two separate claims (founding a 110-person studio; building Redis caching for one product) are chained with 'and', and the 20,000+ visits metric reads as if it resulted from the caching work. The caching itself has no stated effect.",
+      "severity": 5,
+      "why_it_matters": "An interviewer will ask 'what did the cache change?' and the page has no answer; the attribution of 20,000+ visits to the candidate's work is ambiguous, which costs credibility on follow-up.",
+      "missing_or_unclear": "clarify: what the Redis cache changed (load, latency, DB queries) if known; that 20,000+ visits is Tortuga's traffic, not a caching result",
+      "suggested_direction": "Split scope from contribution: one clause for the studio (110+ members, 5 live products) and one for 'built Redis caching in front of Tortuga's Prisma/PostgreSQL queries to handle 20,000+ visits in its first 30 days' (only if that is the true reason for the cache)."
+    },
+    {
+      "bullet": "Building a RAG meal-suggestion feature for the official UMD app (GPT-4o mini, ChromaDB + SentenceBERT search); 93% of generated meals rated satisfactory by internal testers",
+      "problem": "Tech-dump parenthetical plus a semicolon chain; 'RAG' is not expanded in the bullet and the retrieval design is listed rather than described.",
+      "severity": 4,
+      "why_it_matters": "Reads telegraphic rather than spoken; a non-engineer cannot tell what is retrieved or why, and the parenthetical hides the one design fact (vector search over meals) that would prompt an interview question.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Turn the parenthetical into a verb phrase describing what is retrieved and how, e.g. 'Building a retrieval-augmented (RAG) meal-suggestion feature for the official UMD app that searches [dining menus] with SentenceBERT embeddings in ChromaDB before GPT-4o mini writes the suggestion; 93% of generated meals...' using only facts that are true."
+    },
+    {
+      "bullet": "Writing Java logic that decides how much EC2 capacity Amazon Redshift reserves for operations like patching, setting upper and lower bounds that keep availability high without overspending, and backtesting the policies",
+      "problem": "'Java logic' is vague about what artifact is being built (a service, a policy engine, a scheduler component), and this is the only bullet under the top-billed role.",
+      "severity": 3,
+      "why_it_matters": "The highest-visibility role on the page is the least specific about the engineering; the skim takeaway for AWS is 'wrote Java logic'.",
+      "missing_or_unclear": "clarify: what the Java code is (e.g. a capacity-reservation policy in an existing service)",
+      "suggested_direction": "Replace 'Java logic' with the concrete noun for what is being written, e.g. 'Writing the Java capacity-reservation policy that decides...'; keep the rest."
+    },
+    {
+      "bullet": "Cut research-environment setup time 30% with uv dependency pinning and Docker, and added psutil time and memory profiling and Pytest unit tests to help the team find bottlenecks",
+      "problem": "Two unrelated contributions joined by 'and'; 'psutil time and memory profiling and Pytest unit tests' stacks two 'and's in one noun chain.",
+      "severity": 2,
+      "why_it_matters": "Minor readability cost; the bullet still parses.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Use a comma or 'then' to separate the two contributions; drop one 'and' in the noun chain."
+    }
+  ],
+  "page_feedback": [
+    {
+      "problem": "Extraction order puts dates and locations on their own lines after the title (Education: school, degree, 'Expected May 2028', 'College Park, MD'; each role: company, dates, title, location). Text order is consistent across all entries, so this is a minor risk, but Workday-style parsers occasionally attach the location line to the wrong field.",
+      "severity": 2,
+      "why_it_matters": "Low risk of a mis-filled location or graduation date field in an auto-populated application profile.",
+      "suggested_direction": "No change required; if a parse test in Workday shows a mis-filled field, put date and location on the same text line as company/title in the source template."
+    },
+    {
+      "problem": "Project header 'IEX Order Book & Matching Engine | C++17, STL, POSIX, Linux perf' extracts as one line, so parsers that read projects as title+date will store the tech list as part of the project title.",
+      "severity": 2,
+      "why_it_matters": "Cosmetic in parsed profiles; keywords are still matched.",
+      "suggested_direction": "Acceptable as is; optionally drop 'STL' and 'POSIX' from the header (the bullets do not show POSIX use) and let C++17 and perf carry it."
+    },
+    {
+      "problem": "Certification lives as a line inside 'Technical Skills' rather than under its own 'Certifications' heading.",
+      "severity": 2,
+      "why_it_matters": "Greenhouse/Lever certification fields and some LLM screeners look for a Certifications heading; here it may be read as a skill.",
+      "suggested_direction": "Optional: rename the line label to 'Certifications:' or give it its own one-line heading if space allows."
+    },
+    {
+      "problem": "Keyword coverage against the 30 general/backend postings (Pinterest, Robinhood Backend, Affirm, Coinbase, Stripe, Lyft Backend, Ramp Backend, Palantir): matched terms present on the page include Python, Java, C++, TypeScript/JavaScript, React, PostgreSQL, Redis, AWS, unit testing, CI/CD, infrastructure as code, Docker, data structures and algorithms, APIs, generative AI/LLMs, Agile. Gaps that postings name and the page partly supports: 'S3' is used in a bullet but missing from the AWS list; 'LLMs' is not expanded to 'large language models'; the page never uses the phrases 'data pipeline' or 'event streaming' in Skills even though the Kinesis/Lambda bullet shows that work. Terms the postings ask for that the page does not support (Go, Kafka, Kubernetes, Django) should not be added.",
+      "severity": 3,
+      "why_it_matters": "Exact-match ATS filters and LLM screeners matching 'S3', 'large language models', or 'streaming data pipelines' will miss work the candidate actually did.",
+      "suggested_direction": "In Skills only: add S3 to the AWS list, write 'large language models (LLMs)', and consider 'event streaming (Kinesis)' or 'data pipelines' under Cloud & DevOps. Do not add these to bullets."
+    },
+    {
+      "problem": "Several Skills entries have no supporting bullet: REST APIs, API Gateway, Node.js, SQLAlchemy, PyTorch, C.",
+      "severity": 3,
+      "why_it_matters": "LLM screeners increasingly cross-check skills against bullet evidence, and interviewers probe listed skills; unsupported entries add little match value and some follow-up risk.",
+      "suggested_direction": "Keep only those the candidate can defend in an interview; if a bullet already used one of them (e.g. API Gateway in the Leo tool), there is no need to add it to a bullet, but be ready to describe it."
+    },
+    {
+      "problem": "The intended 'systems-oriented engineer' story is carried most strongly by the IEX matching engine (50.9M messages, 1.26M events/sec, B+ tree vs LSM), which sits last above Skills, while the top-billed AWS role has one bullet whose engineering object is 'Java logic'.",
+      "severity": 3,
+      "why_it_matters": "On a 7-second skim the reader gets brands (AWS, Capital One, Amazon Leo) but the performance-sensitive systems evidence is at the bottom; backend screeners may read the profile as AI-tooling/full-stack more than systems.",
+      "suggested_direction": "Keep section order (Experience before Projects is standard), but sharpen the AWS bullet's noun (see bullet feedback) so the first entry reads as systems work; no reordering of facts needed."
+    },
+    {
+      "problem": "Contact location 'NYC Area' differs from every role and the school location (College Park, MD).",
+      "severity": 2,
+      "why_it_matters": "Some ATS location filters key on the contact line; a recruiter may briefly wonder about relocation.",
+      "suggested_direction": "Fine if intentional (targeting NYC roles); otherwise keep consistent with where the candidate wants to be matched."
+    }
+  ],
+  "keep": [
+    "Cut AI workflow generation time 65% to under 15s by splitting one large Claude skill into smaller sub-skills that call Python tools for search and validation, after CloudWatch and OpenSearch latency logs showed where time went",
+    "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+    "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange’s book, matching 99,122 of 99,123 fills and 100% of top-of-book prices",
+    "Compared B+ tree and LSM skip-list storage for the engine’s event logs on identical 2M-record workloads: the B+ tree read 12.8x faster and answered range queries 22x faster, at the cost of 27% more disk",
+    "Sustained 1.26M events/sec end-to-end over the full replay, with price levels in a std::map of FIFO queues and a hash map from order ID to queue position for O(1) cancels",
+    "Standard section headings (Education, Experience, Projects, Technical Skills) and a single-column layout that extracts in reading order",
+    "Consistent 'Mon YYYY – Mon YYYY' date format across all entries",
+    "Skills section already expands 'AWS CDK (infrastructure as code)', 'GitHub Actions (CI/CD)', and 'retrieval-augmented generation (RAG)'"
+  ]
+}

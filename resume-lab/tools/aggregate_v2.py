@@ -55,8 +55,8 @@ def main():
     for g in groups:
         L.append(f"\n### {'PRIORITY · ' if g['priority'] else ''}{g['n_evaluators']} evaluators · max sev {g['max_severity']}\n> {g['bullet']}")
         for f in g["feedback"]:
-            L.append(f"- **{f['persona']}** (sev {f.get("severity", "?")}): {f['problem']}. *Direction:* {f['suggested_direction']}")
-    L += ["", "## Page-level"] + [f"- **{f['persona']}** (sev {f.get("severity", "?")}): {f['problem']}. *Direction:* {f['suggested_direction']}" for f in out["page_feedback"]]
+            L.append(f"- **{f['persona']}** (sev {f.get('severity', '?')}): {f['problem']}. *Direction:* {f['suggested_direction']}")
+    L += ["", "## Page-level"] + [f"- **{f['persona']}** (sev {f.get('severity', '?')}): {f['problem']}. *Direction:* {f['suggested_direction']}" for f in out["page_feedback"]]
     (rd / "summary.md").write_text("\n".join(L) + "\n")
     print("\n".join(L[:20]))
 

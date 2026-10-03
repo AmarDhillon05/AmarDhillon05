@@ -1,0 +1,42 @@
+# Loop 2 · base · round 02 candidates (diagnosis: scores/loop2/base/round_01, 6 evaluators).
+# Structural changes applied alongside (logged in eval/loop2/decisions.jsonl):
+#  - Capital One order: claude_skill -> search_index -> ui_overhaul (4/6 evaluators: the skill is referenced before it is introduced; backend reader wants backend first)
+#  - umiacs.env_setup removed from the base (4/6 flag its second half; spec §11 step 5: drop least valuable bullet) to lift the IEX project (5/6 page-level: strongest systems evidence too low; memory skim read "AWS + AI apps", not "systems engineer")
+capital_one.search_index:
+  incumbent: "Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries"
+  candidates:
+    - "Built the search index that skill calls first: popular workflows from a 270K+ row PostgreSQL table, precomputed into a tree organized by category, with Redis caching full workflows so lookups need fewer queries to the access-limited database"
+    - "Gave that skill its main search tool, a category tree of popular workflows precomputed from a 270K+ row PostgreSQL table, with Redis caching full workflows, so it could search without repeatedly querying the access-limited database"
+amazon_contract.bedrock_finetune:
+  incumbent: "Automated retraining for a production Amazon Bedrock model that sorts research documents by importance: on an EventBridge schedule a larger LLM grades it, and it is fine-tuned only when those grades shift past a threshold"
+  candidates:
+    - "Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance: on an EventBridge schedule, a larger LLM grades the classifier's ratings, and fine-tuning runs only when those grades shift past a threshold"
+    - "Automated fine-tuning of a production Amazon Bedrock classifier that rates research documents by importance, retraining only when a larger LLM's scheduled grades of its ratings (via EventBridge) shift past a threshold"
+umiacs.grasp_vlm:
+  incumbent: "For a PhD-led robotics project targeting ICLR, built a Python pipeline that draws AnyGrasp candidates from multi-camera images as Open3D overlays and tuned prompts so a vision-language model picks the right grasp more often"
+  candidates:
+    - "Built a Python pipeline that helps a vision-language model choose how a robot should grasp an object: it renders AnyGrasp's candidate grasps onto multi-camera images as Open3D overlays, and prompt tuning made the model pick the right grasp more often"
+    - "For a PhD-led robotics project targeting ICLR, built a Python pipeline that renders candidate robot grasps (from AnyGrasp) as Open3D overlays on multi-camera images so a vision-language model can choose one, and tuned its prompts to choose correctly more often"
+terplabs.studio+terplabs.tortuga:
+  incumbent: "Co-founded a 110+ member student product studio that has shipped 5 live products, and personally built Redis caching in front of the Prisma ORM queries for one of them, Tortuga, a class scheduler with 20,000+ visits in its first 30 days"
+  candidates:
+    - "Co-founded a 110+ member student product studio that has shipped 5 live products, including Tortuga, a class scheduler with 20,000+ visits in its first 30 days, and built Redis caching in front of Tortuga's Prisma ORM queries to reduce database load"
+    - "Co-founded a 110+ member student product studio with 5 live products. For one, Tortuga, a class scheduler that drew 20,000+ visits in its first 30 days, built Redis caching in front of its Prisma ORM queries to reduce database load"
+terplabs.rag_meal:
+  incumbent: "Building a RAG meal-suggestion feature for the official UMD app (GPT-4o mini, ChromaDB + SentenceBERT search); 93% of generated meals rated satisfactory by internal testers"
+  candidates:
+    - "Building meal suggestions for the official UMD app that search scraped recipes with SentenceBERT embeddings in ChromaDB and have GPT-4o mini write the suggestion (RAG), and internal testers rated 93% of generated meals satisfactory"
+    - "Building a retrieval-augmented (RAG) meal-suggestion feature for the official UMD app, in which GPT-4o mini writes suggestions from scraped recipes found by SentenceBERT vector search in ChromaDB, and internal testers rated 93% of meals satisfactory"
+capital_one.ui_overhaul:
+  incumbent: "Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and 90% of 30+ surveyed developers preferred it"
+  candidates:
+    - "Rebuilt the legacy desktop tool developers use to create test-data workflows as an Electron app with a visual React Flow editor and Jest-tested TypeScript validation, and 90% of 30+ surveyed developers preferred it over the old tool"
+iex.storage_benchmark:
+  incumbent: "Compared B+ tree and LSM skip-list storage for the engine's event logs on identical 2M-record workloads: the B+ tree read 12.8x faster and answered range queries 22x faster, at the cost of 27% more disk"
+  candidates:
+    - "Implemented B+ tree and LSM-tree backends for the engine's event-log store and benchmarked them on identical 2M-record workloads, where the B+ tree gave 12.8x the read throughput and 22x faster range summaries for 27% more disk"
+iex.throughput:
+  incumbent: "Sustained 1.26M events/sec end-to-end over the full replay, with price levels in a std::map of FIFO queues and a hash map from order ID to queue position for O(1) cancels"
+  candidates:
+    - "Sustained 1.26M events/sec end-to-end over the full replay, keeping each price level's orders in a std::list FIFO inside a std::map and a hash map from order ID to list iterator for O(1) cancels"
+    - "Stored price levels in a std::map, each a std::list FIFO of orders, with a hash map from order ID to list iterator for O(1) cancels, and sustained 1.26M events/sec end-to-end over the full replay"
