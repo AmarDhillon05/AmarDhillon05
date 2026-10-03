@@ -4,10 +4,13 @@ order:
   capital_one: [capital_one.claude_skill, capital_one.search_index, capital_one.ui_overhaul]
   amazon_contract: [amazon_contract.bedrock_finetune, amazon_contract.kinesis_pipeline, amazon_contract.leo_deploy]
   terplabs: [terplabs.rag_meal, terplabs.studio+terplabs.tortuga]
-drop: [iex.throughput]
+drop: [iex.throughput, iex.storage_benchmark]
+text:
+  iex.replay_correctness: 'Built a C++17 order book and matching engine that replayed 50.9M real IEX DEEP+ messages with no resync, matching 99,122 of 99,123 fills exactly'
+  terplabs.studio+terplabs.tortuga: 'Co-founded a 110+ member campus product studio that has shipped 5 live products, including Tortuga, a class scheduler with 20,000+ visits in its first 30 days; built Redis caching for its Prisma ORM queries'
 skills:
+  - '\textbf{AI/ML:} Claude (agent skills, tool use), AWS Bedrock (fine-tuning), RAG, GPT-4o mini, ChromaDB, SentenceBERT embeddings, PyTorch, Open3D'
   - '\textbf{Languages:} Python, Java, C++, TypeScript/JavaScript, SQL'
-  - '\textbf{AI/ML:} Claude (skills, sub-skill decomposition), RAG, GPT-4o mini, ChromaDB, SentenceBERT, AWS Bedrock, PyTorch, Open3D, VLM prompting'
   - '\textbf{Cloud \& Data:} AWS (Lambda, Kinesis, EventBridge, Fargate, CDK, CloudWatch, X-Ray), PostgreSQL, Redis, OpenSearch'
   - '\textbf{Tools:} Docker, GitHub Actions, Linux, Pytest, Jest, uv, React, Electron'
   - '\textbf{Certification:} \href{https://www.credly.com/badges/d2406a97-d937-47de-823b-724981159d3b/public_url}{\underline{AWS Certified Developer -- Associate}} (Nov 2024 -- Nov 2027)'
