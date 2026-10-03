@@ -1,0 +1,5 @@
+[
+  {"id": "p01", "winner": "A", "reason": "Single clean clause reads in one pass; 'gated to skip redundant retraining runs' is concrete, while B's semicolon split and 'decision gates' add friction.", "better_rewrite": "Automated EventBridge-scheduled fine-tuning of a Bedrock source-relevancy model, gated to skip redundant retraining, with X-Ray tracing and SNS failure alerts"},
+  {"id": "p02", "winner": "A", "reason": "Leads with Redshift context and the availability-vs-cost goal, so the reader knows why before how; B buries the product and purpose.", "better_rewrite": ""},
+  {"id": "p03", "winner": "A", "reason": "'Averaging' says what the latency figure is (a mean per event); B's 'with 686.7 ns/event' leaves the statistic undefined.", "better_rewrite": ""}
+]

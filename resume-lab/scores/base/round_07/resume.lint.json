@@ -1,0 +1,141 @@
+{
+  "tex": "/home/user/AmarDhillon05/resume-lab/scores/base/round_07/resume.tex",
+  "n_bullets": 14,
+  "bullets": [
+    {
+      "fact": "aws_sde.redshift",
+      "chars": 175,
+      "words": 24,
+      "n_bold": 0,
+      "n_lines": 2,
+      "last_fill": 0.51,
+      "text": "Balancing Amazon Redshift availability against cost by writing and backtesting Java policies that tune upper/lower bounds on EC2 capacity reserved for operations like patching"
+    },
+    {
+      "fact": "capital_one.ui_overhaul",
+      "chars": 190,
+      "words": 28,
+      "n_bold": 1,
+      "n_lines": 2,
+      "last_fill": 0.59,
+      "text": "Rebuilt a legacy test-data workflow builder in React/TypeScript + Electron, adding a React-Flow editor and Jest-tested validation; 90% of 30+ surveyed developers preferred it to the old tool"
+    },
+    {
+      "fact": "capital_one.search_index",
+      "chars": 170,
+      "words": 24,
+      "n_bold": 0,
+      "n_lines": 2,
+      "last_fill": 0.66,
+      "text": "Precomputed a tree-style search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to minimize DB queries under access limits"
+    },
+    {
+      "fact": "capital_one.claude_skill",
+      "chars": 184,
+      "words": 28,
+      "n_bold": 1,
+      "n_lines": 2,
+      "last_fill": 0.62,
+      "text": "Cut LLM workflow generation time 65% to under 15s by decomposing a Claude skill into sub-skills backed by Python search/validation tools, guided by CloudWatch + OpenSearch latency logs"
+    },
+    {
+      "fact": "amazon_contract.leo_deploy",
+      "chars": 176,
+      "words": 26,
+      "n_bold": 0,
+      "n_lines": 2,
+      "last_fill": 0.56,
+      "text": "Shipped a space-research tool used by Amazon Leo's public-policy team, now maintained by Leo engineers; deployed on AWS Fargate (Docker) via GitHub Actions and CDK (TypeScript)"
+    },
+    {
+      "fact": "amazon_contract.kinesis_pipeline",
+      "chars": 165,
+      "words": 24,
+      "n_bold": 1,
+      "n_lines": 2,
+      "last_fill": 0.42,
+      "text": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda"
+    },
+    {
+      "fact": "amazon_contract.bedrock_finetune",
+      "chars": 171,
+      "words": 25,
+      "n_bold": 0,
+      "n_lines": 2,
+      "last_fill": 0.51,
+      "text": "Automated fine-tuning of a Bedrock source-relevancy model on an EventBridge schedule, gated to skip redundant retraining runs, with X-Ray tracing and SNS alerts on failure"
+    },
+    {
+      "fact": "umiacs.grasp_vlm",
+      "chars": 191,
+      "words": 30,
+      "n_bold": 0,
+      "n_lines": 2,
+      "last_fill": 0.68,
+      "text": "Built a Python pipeline for PhysTwin, a PhD-led digital twin project targeting ICLR: runs AnyGrasp on multi-camera images, renders grasps as Open3D overlays for a VLM; tuned the VLM's prompts"
+    },
+    {
+      "fact": "umiacs.env_setup",
+      "chars": 157,
+      "words": 21,
+      "n_bold": 1,
+      "n_lines": 2,
+      "last_fill": 0.38,
+      "text": "Shortened research-environment setup time 30% with uv dependency pinning and Docker; added psutil time/memory profiling and Pytest suites to find bottlenecks"
+    },
+    {
+      "fact": "terplabs.studio+terplabs.tortuga",
+      "chars": 199,
+      "words": 33,
+      "n_bold": 1,
+      "n_lines": 2,
+      "last_fill": 0.76,
+      "text": "Co-founded a 110+ member campus product studio that has shipped 5 live products, including Tortuga, a class scheduler with 20,000+ visits in its first 30 days; built its Redis caching over Prisma SQL"
+    },
+    {
+      "fact": "terplabs.rag_meal",
+      "chars": 172,
+      "words": 25,
+      "n_bold": 1,
+      "n_lines": 2,
+      "last_fill": 0.51,
+      "text": "Building a RAG meal-suggestion feature for the official UMD app (GPT-4o mini, ChromaDB + SentenceBERT search); 93% of generated meals rated satisfactory by internal testers"
+    },
+    {
+      "fact": "iex.replay_correctness",
+      "chars": 180,
+      "words": 29,
+      "n_bold": 1,
+      "n_lines": 2,
+      "last_fill": 0.58,
+      "text": "Engineered a C++17 order book and matching engine that replayed 50.9M real IEX DEEP+ messages with no resync, matching 99,122 of 99,123 fills exactly and 100% of top-of-book prices"
+    },
+    {
+      "fact": "iex.storage_benchmark",
+      "chars": 195,
+      "words": 32,
+      "n_bold": 1,
+      "n_lines": 2,
+      "last_fill": 0.71,
+      "text": "Benchmarked B+ tree vs LSM skip-list stores for the simulation's event logs on identical 2M-record workloads; the B+ tree gave 12.8 read throughput and 22 faster range summaries for 27% more disk"
+    },
+    {
+      "fact": "iex.throughput",
+      "chars": 107,
+      "words": 15,
+      "n_bold": 1,
+      "n_lines": 1,
+      "last_fill": 1.0,
+      "text": "Sustained 1.26M events/sec end-to-end over the full replay, averaging 686.7 ns/event in the matching engine"
+    }
+  ],
+  "issues": [
+    {
+      "level": "WARN",
+      "where": "Automated fine-tuning of a Bedrock source-relevanc",
+      "msg": "no metric or explicit outcome"
+    }
+  ],
+  "errors": 0,
+  "warnings": 1
+}

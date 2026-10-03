@@ -1,0 +1,4 @@
+== /home/user/AmarDhillon05/resume-lab/scores/base/round_07/resume.tex
+[WARN] 'Automated fine-tuning of a Bedrock source-relevanc': no metric or explicit outcome
+lint: 0 errors, 1 warnings, 14 bullets
+fact_check: 0 errors, 0 warnings, 15 facts used
