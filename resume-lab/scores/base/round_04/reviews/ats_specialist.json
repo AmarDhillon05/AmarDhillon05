@@ -1,0 +1,39 @@
+{
+  "persona": "ats_specialist",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28 with AWS SDE and Capital One SWE internships, an AWS contract for Amazon Leo, and a C++ order-book engine replaying 50.9M IEX messages.",
+  "scores": {"impact_clarity": 8, "quantification": 8, "technical_depth": 9, "concision_readability": 8,
+             "skim_test": 8, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 9, "overall": 9},
+  "score_rationale": {},
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "Clarify the order-book third bullet: '1.41× the cost of a passive mirror book for deciding every fill itself' needs re-reading by humans and LLM screeners alike.",
+    "Clarify how the B+ tree vs LSM benchmark relates to the order book (event log storage?); as written it reads like a separate project."
+  ],
+  "bullets": [
+    {"quote": "Writing Java to tune upper/lower bounds on", "verdict": "tighten", "issue": "Present tense fits the ongoing role, but 'like patching' is loose and the why comes after a comma.", "suggestion": "Writing Java to tune upper/lower bounds on EC2 capacity reserved for Redshift operations (e.g., patching), backtesting policies to balance availability against cost"},
+    {"quote": "Rebuilt a legacy test-data workflow builder in React/TypeScript", "verdict": "keep"},
+    {"quote": "Precomputed a tree-style search index over popular", "verdict": "keep"},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "tighten", "issue": "'Claude skill' is product jargon that a screener or non-AI HM may not parse.", "suggestion": "Cut LLM workflow generation time 65% to under 15s by splitting one monolithic Claude prompt skill into sub-skills backed by Python search/validation tools, guided by CloudWatch + OpenSearch latency logs"},
+    {"quote": "Shipped a space-research tool used by Amazon Leo's", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep"},
+    {"quote": "Automated Bedrock source-relevancy model fine-tuning on an", "verdict": "keep"},
+    {"quote": "Built a Python pipeline for PhysTwin (physics-based", "verdict": "tighten", "issue": "Dense with proper nouns (PhysTwin, AnyGrasp, VLM, ICLR); 'plus prompt tuning' trails off.", "suggestion": "Built a Python pipeline for PhysTwin (physics-based digital twin; PhD-led ICLR-targeted project) that runs AnyGrasp on multi-camera images and renders grasps as Open3D overlays for a vision-language model"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "keep"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep"},
+    {"quote": "Wrote Prisma SQL queries and Redis query caching", "verdict": "keep"},
+    {"quote": "Building a RAG meal-suggestion feature for the", "verdict": "keep"},
+    {"quote": "Engineered a C++17 order book and matching", "verdict": "keep"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list log", "verdict": "add_context", "issue": "Unclear what these stores are for within the engine; which one won is implied, not stated.", "suggestion": "Benchmarked B+ tree vs LSM skip-list stores for the engine's event log on identical 2M-record workloads: B+ tree gave 12.8× read throughput and 22× faster range summaries for 27% more disk"},
+    {"quote": "Sustained 1.26M events/sec end-to-end with 686.7", "verdict": "reframe", "issue": "Final clause is hard to parse; lead with throughput and latency, state the comparison plainly.", "suggestion": "Sustained 1.26M events/sec end-to-end at 686.7 ns/event matching (1.40 GHz base clock); self-matching every fill costs only 1.41× a passive mirror book"}
+  ],
+  "structure": [
+    {"key": "keep_section_order", "change": "Keep Education → Experience → Projects → Technical Skills order and single-column layout.", "rationale": "Standard headings and order extract cleanly in Workday/Greenhouse/Lever; no tables or columns to break parsing."},
+    {"key": "expand_acronyms_once", "change": "Expand VLM once ('vision-language model') and drop or gloss low-value acronyms like ICLR if space is tight.", "rationale": "LLM screeners and recruiters match plain terms more reliably than niche acronyms."}
+  ],
+  "top3": [
+    "Clarify the order-book throughput bullet: put 1.26M events/sec first and state the 1.41× passive-mirror comparison in plain words.",
+    "Clarify what the B+ tree vs LSM benchmark stored and which design won, so it reads as part of the engine.",
+    "Make the PhysTwin and Claude-skill bullets easier to scan by expanding VLM and replacing product jargon with plain terms."
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "persona": "startup_quant_engineer",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28 with AWS + Capital One internships, a shipped Amazon Leo contract tool, and a real-data C++ order book doing 1.26M events/sec.",
+  "scores": {"impact_clarity": 8, "quantification": 8, "technical_depth": 9, "concision_readability": 8,
+             "skim_test": 8, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 8, "overall": 8},
+  "score_rationale": {},
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "Order book bullet 3: '1.41× the cost of a passive mirror book for deciding every fill itself' is hard to parse; rephrase so the comparison reads in one pass.",
+    "Order book bullet 2: B+ tree vs LSM benchmark lacks context on what is being stored (the engine's event log?) and how it ties to the engine; clarify: what the log stores."
+  ],
+  "bullets": [
+    {"quote": "Writing Java to tune upper/lower bounds on EC2", "verdict": "tighten",
+     "issue": "Only AWS bullet; long, ends on a goal. Fine as in-progress, but lead with the objective.",
+     "suggestion": "Tuning EC2 capacity reserved for Redshift operations (e.g., patching) in Java, backtesting reservation-bound policies to balance availability against cost"},
+    {"quote": "Rebuilt a legacy test-data workflow builder in React/TypeScript", "verdict": "keep"},
+    {"quote": "Precomputed a tree-style search index over popular workflows", "verdict": "keep",
+     "issue": "Ends at intent with no result; accepted by candidate."},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "keep"},
+    {"quote": "Shipped a space-research tool used by Amazon Leo’s", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep",
+     "issue": "Strongest systems win in Experience but unbolded while weaker scope numbers elsewhere are bold.",
+     "suggestion": "Bold '34%' and drop bold from scope-only numbers like '270K+ row' to keep anchors consistent."},
+    {"quote": "Automated Bedrock source-relevancy model fine-tuning on an EventBridge", "verdict": "keep"},
+    {"quote": "Built a Python pipeline for PhysTwin (physics-based digital", "verdict": "tighten",
+     "issue": "Dense parenthetical plus trailing 'plus prompt tuning' makes it read twice.",
+     "suggestion": "Built a Python pipeline for PhysTwin, a PhD-led physics digital twin targeting ICLR: runs AnyGrasp on multi-camera images and renders grasps as Open3D overlays for a VLM"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "keep"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep"},
+    {"quote": "Wrote Prisma SQL queries and Redis query caching", "verdict": "keep"},
+    {"quote": "Building a RAG meal-suggestion feature for the official", "verdict": "keep"},
+    {"quote": "Engineered a C++17 order book and matching engine", "verdict": "keep"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list log stores", "verdict": "add_context",
+     "issue": "Unclear what the stores hold or why it matters to the engine; 'range summaries' is jargon.",
+     "suggestion": "Benchmarked B+ tree vs LSM skip-list stores for the engine's event log on identical 2M-record workloads: 12.8× read throughput and 22× faster range summaries for 27% more disk"},
+    {"quote": "Sustained 1.26M events/sec end-to-end with 686.7", "verdict": "reframe",
+     "issue": "Mirror-book comparison phrasing is convoluted; key numbers are good.",
+     "suggestion": "Sustained 1.26M events/sec end-to-end (686.7 ns/event matching at 1.40 GHz base clock); self-matching every fill costs 1.41× a passive mirror book"}
+  ],
+  "structure": [
+    {"key": "bold_consistency", "change": "Bold only outcome numbers (90%, 65%, 34%, 20,000+, 50.9M, 1.26M); unbold scope figures like 270K+ row and 110+ member.", "rationale": "Bold should guide the eye to wins; current set mixes scope and results and skips 34%."}
+  ],
+  "top3": [
+    "Rephrase the order book throughput bullet so the 1.41× mirror-book comparison reads in one pass.",
+    "Clarify: what the B+ tree vs LSM stores hold and how they connect to the matching engine.",
+    "Make bolding consistent (bold 34% latency win, unbold scope-only numbers) and tighten the PhysTwin bullet."
+  ]
+}
