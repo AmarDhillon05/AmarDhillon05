@@ -1,0 +1,5 @@
+== /home/user/AmarDhillon05/resume-lab/scores/ai_ml_engineering/round_04/resume.tex
+[WARN] 'Automated EventBridge-scheduled fine-tuning of a B': no metric or explicit outcome
+[WARN] 'Built a C++17 order book and matching engine that ': leading verb 'Built' repeats (also: Built a Python pipeline for PhysTwin (PhD-led digi)
+lint: 0 errors, 2 warnings, 12 bullets
+fact_check: 0 errors, 0 warnings, 13 facts used

@@ -1,0 +1,48 @@
+# ai_ml_engineering / round_03
+
+**passed:** False  |  overall mean 8  |  gate errors 0
+
+| dim | mean | min |
+|---|---|---|
+| ats_parseability | 9 | 9 |
+| concision_readability | 8 | 8 |
+| credibility | 7.67 | 7 |
+| domain_fit | 7 | 7 |
+| impact_clarity | 7.67 | 7 |
+| overall | 8 | 8 |
+| quantification | 7 | 7 |
+| skim_test | 7.33 | 7 |
+| technical_depth | 8 | 8 |
+| visual_layout | 8 | 8 |
+
+## Must-fix
+- (ai_hm) clarify: the Capital One eval — 'usual errors stopped recurring' is the only quality signal on the headline agent bullet; state what was checked (e.g. error class, number of stress-test workflows) if known
+- (ai_hm) clarify: the VLM grasp bullet — 'picks correct grasps more often' is unanchored; either state how it was judged or reword so it doesn't imply a measured gain
+- (ai_recruiter) clarify: how the VLM grasp improvement was judged (eval set, success rate, before/after) — 'picks correct grasps more often' reads unmeasured to an AI HM
+- (ai_recruiter) clarify: whether the drift-triggered Bedrock retraining is running in production and what the classifier quality or retrain frequency looks like
+- (bs_detector) clarify: Capital One 65% bullet — what 'validated on stress-test workflows where the usual errors stopped recurring' means concretely (which errors, how many workflows); as written it collapses under one follow-up
+- (bs_detector) clarify: UMIACS VLM bullet — 'picks correct grasps more often' has no measurement; either state how it was evaluated (if known) or reword as a scoped contribution without implying a measured gain
+- (bs_detector) clarify: Amazon Leo fine-tuning bullet — whether the drift-triggered retraining has actually fired in production or is built/scheduled; 'Automated' implies it runs
+
+## Accepted-risk flags (logged, non-blocking)
+
+## Bullet verdicts
+- `Writing Java policies that tune`: {'tighten': 2, 'keep': 1}
+- `Cut LLM workflow generation time`: {'tighten': 2, 'keep': 1}
+- `Precomputed a tree-style search index`: {'keep': 3}
+- `Rebuilt a legacy test-data workflow`: {'keep': 3}
+- `Automated EventBridge-scheduled fine-tuning of a`: {'keep': 1, 'reframe': 1, 'add_context': 1}
+- `Reduced end-to-end latency 34% for`: {'keep': 3}
+- `Shipped a space-research tool used`: {'keep': 3}
+- `Tuned VLM prompts for PhysTwin`: {'reframe': 2, 'add_context': 1}
+- `Shortened research-environment setup time 30%`: {'keep': 3}
+- `Building a RAG meal-suggestion feature`: {'tighten': 1, 'keep': 2}
+- `Co-founded a 110+ member campus`: {'keep': 2, 'tighten': 1}
+- `Built a C++17 order book`: {'keep': 3}
+
+## Structure votes
+- skills_ai_first: 2
+- ai_first_in_capital_one: 1
+- vlm_bullet_lead_with_pipeline: 1
+- ai_summary_line_optional: 1
+- ai_bullets_lead_within_roles: 1

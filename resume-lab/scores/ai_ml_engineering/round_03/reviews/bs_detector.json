@@ -1,0 +1,120 @@
+{
+  "persona": "bs_detector",
+  "target": "AI/ML engineering intern roles (LLM applications, agents, RAG, ML platform) at AI-native startups and big-tech AI orgs, 2026–27 cycle. Score domain_fit for this domain.",
+  "seven_second_takeaway": "UMD CS '28; AWS and Capital One SWE internships; Claude agent-skill latency cut 65%; Bedrock fine-tuning pipeline for Amazon Leo; RAG feature; ML research lab.",
+  "scores": {
+    "impact_clarity": 8,
+    "quantification": 7,
+    "technical_depth": 8,
+    "concision_readability": 8,
+    "skim_test": 7,
+    "credibility": 7,
+    "ats_parseability": 9,
+    "visual_layout": 8,
+    "domain_fit": 7,
+    "overall": 8
+  },
+  "score_rationale": {
+    "quantification": "Strong numbers on Capital One and Kinesis bullets, but VLM grasp bullet says 'more often' with no number, and the 65% bullet's validation claim is fuzzy.",
+    "skim_test": "Top slot is a non-AI AWS capacity-policy bullet; the strongest LLM/agent win sits second, so the AI story takes a beat to surface.",
+    "credibility": "'Usual errors stopped recurring' and 'picks correct grasps more often' are soft claims that invite a 'how did you measure that?' follow-up.",
+    "domain_fit": "Strong LLM/agent/RAG/ML-platform evidence exists, but the lead role and the lone project (C++ order book) are off-domain for AI/ML."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "clarify: Capital One 65% bullet — what 'validated on stress-test workflows where the usual errors stopped recurring' means concretely (which errors, how many workflows); as written it collapses under one follow-up",
+    "clarify: UMIACS VLM bullet — 'picks correct grasps more often' has no measurement; either state how it was evaluated (if known) or reword as a scoped contribution without implying a measured gain",
+    "clarify: Amazon Leo fine-tuning bullet — whether the drift-triggered retraining has actually fired in production or is built/scheduled; 'Automated' implies it runs"
+  ],
+  "bullets": [
+    {
+      "quote": "Writing Java policies that tune upper/lower bounds",
+      "verdict": "keep",
+      "issue": "Honestly scoped as in-progress; off-domain for AI/ML but fine as current role.",
+      "suggestion": ""
+    },
+    {
+      "quote": "Cut LLM workflow generation time 65% to",
+      "verdict": "tighten",
+      "issue": "Strong headline; trailing validation clause is vague and sounds hand-wavy under questioning.",
+      "suggestion": "Cut LLM workflow generation time 65% to under 15s by decomposing a Claude skill into sub-skills with Python search/validation tools, checked against stress-test workflows"
+    },
+    {
+      "quote": "Precomputed a tree-style search index over popular",
+      "verdict": "keep",
+      "issue": "No result, but intent is concrete and the design choice (precompute under DB limits) is interview-worthy.",
+      "suggestion": ""
+    },
+    {
+      "quote": "Rebuilt a legacy test-data workflow builder in",
+      "verdict": "keep",
+      "issue": "Survey preference with n stated is honest and defensible.",
+      "suggestion": ""
+    },
+    {
+      "quote": "Automated EventBridge-scheduled fine-tuning of a Bedrock model",
+      "verdict": "add_context",
+      "issue": "Best ML-platform bullet; clarify whether drift-triggered retraining has run in practice.",
+      "suggestion": ""
+    },
+    {
+      "quote": "Reduced end-to-end latency 34% for a",
+      "verdict": "keep",
+      "issue": "Clear baseline, scope, and mechanism.",
+      "suggestion": ""
+    },
+    {
+      "quote": "Shipped a space-research tool used by Amazon",
+      "verdict": "keep",
+      "issue": "Adoption claim ('maintained by Leo engineers') is concrete and verifiable.",
+      "suggestion": ""
+    },
+    {
+      "quote": "Tuned VLM prompts for PhysTwin (PhD-led digital",
+      "verdict": "reframe",
+      "issue": "'More often' is an unmeasured gain; 'targeting ICLR' borrows prestige from an unsubmitted paper.",
+      "suggestion": "Tuned VLM prompts for grasp selection and depth handling on PhysTwin (PhD-led digital twin), fed by a Python pipeline rendering AnyGrasp-on-Open3D overlays"
+    },
+    {
+      "quote": "Shortened research-environment setup time 30% with uv",
+      "verdict": "keep",
+      "issue": "Baseline gap is accepted; mechanism is concrete.",
+      "suggestion": ""
+    },
+    {
+      "quote": "Building a RAG meal-suggestion feature for the",
+      "verdict": "keep",
+      "issue": "Honestly scoped (in progress, internal testers); good RAG stack signal.",
+      "suggestion": ""
+    },
+    {
+      "quote": "Co-founded a 110+ member campus product studio",
+      "verdict": "tighten",
+      "issue": "Mixes org stats with personal contribution; reader can't tell which numbers are yours.",
+      "suggestion": "Co-founded a 110+ member campus product studio (5 live products); built Redis caching for Prisma ORM queries in Tortuga, a class scheduler with 20,000+ visits in its first 30 days"
+    },
+    {
+      "quote": "Built a C++17 order book and matching",
+      "verdict": "keep",
+      "issue": "Exact, verifiable numbers; off-domain for AI/ML but shows rigor.",
+      "suggestion": ""
+    }
+  ],
+  "structure": [
+    {
+      "key": "ai_bullets_lead_within_roles",
+      "change": "Keep chronological role order, but ensure AI/LLM bullets lead within each role (already true at Capital One and Leo); consider ordering UMIACS above Leo only if dates allow — otherwise leave as is.",
+      "rationale": "AI HM should hit agent/fine-tuning/RAG evidence in the first lines they read after the AWS header."
+    },
+    {
+      "key": "skills_ai_first",
+      "change": "Keep AI/ML as the first skills line; drop GPT-4o mini from skills since it is a model, not a skill, and already appears in the RAG bullet.",
+      "rationale": "Reduces buzzword density in the line an AI screener reads most closely."
+    }
+  ],
+  "top3": [
+    "clarify: replace 'where the usual errors stopped recurring' on the 65% Claude-skill bullet with something concrete or cut it — it is the headline AI win and must survive follow-up",
+    "Reframe the UMIACS VLM bullet to drop the unmeasured 'more often' and the 'targeting ICLR' prestige hook unless a submission/result exists",
+    "clarify: whether the Bedrock drift-triggered retraining loop has actually run; if only built, say so — it is the strongest ML-platform signal and needs to be bulletproof"
+  ]
+}
