@@ -1,0 +1,92 @@
+[
+  {
+    "id": "g01",
+    "winner": "C",
+    "advantage": "marginal",
+    "decisive_wording": "C: \"Built the category tree ... so lookups make fewer queries to the access-limited database\"; B: \"Because the ... table had strict access limits\"; A: \"because the database had strict access limits\"",
+    "info_preserved_or_lost": "All keep 270K+ rows, PostgreSQL, category tree searched first, Redis caching, and the access limit. A gives the constraint but no outcome. B and C both state the effect (fewer database queries). C also opens with an action verb.",
+    "credibility_change": "About the same. C and B make the purpose explicit, so the design reads as a deliberate response to the constraint.",
+    "readability_change": "A trails off with a tacked-on 'because' clause. B front-loads a subordinate clause, which delays the verb. C opens with the verb and ends with the outcome, but its middle is slightly dense."
+  },
+  {
+    "id": "g02",
+    "winner": "B",
+    "advantage": "marginal",
+    "decisive_wording": "B: \"replacing a Claude skill's open-ended search with focused sub-skills\"; C: \"instead of the model searching open-ended\"; A: \"after CloudWatch and OpenSearch latency logs showed where time went\"",
+    "info_preserved_or_lost": "All keep 65%, under 15s, sub-skills, Python tools for search and validation, CloudWatch and OpenSearch. B and C explain why it got faster (open-ended search replaced). A drops that but keeps the diagnostic story of logs showing where time went. C drops 'AI' and 'latency'.",
+    "credibility_change": "B and C give a senior engineer a mechanism for the speedup. A's mechanism is only 'splitting', which is weaker.",
+    "readability_change": "B is smooth. C's 'searching open-ended' is ungrammatical. A is readable but less informative."
+  },
+  {
+    "id": "g03",
+    "winner": "C",
+    "advantage": "concrete",
+    "decisive_wording": "C: \"shows a vision-language model AnyGrasp's candidate grasps as Open3D overlays\" and \"so the model picks the correct grasp more often\"",
+    "info_preserved_or_lost": "A drops Open3D and states no outcome for the prompt tuning. B keeps Open3D, but 'picks right more often' is vague and its 'its' could refer to the pipeline. C keeps Open3D and states the outcome plainly.",
+    "credibility_change": "C and B add the Open3D tool. C's outcome claim is the clearest to defend in an interview.",
+    "readability_change": "C reads most naturally for a recruiter. B's 'picks right' is colloquial and ambiguous."
+  },
+  {
+    "id": "g04",
+    "winner": "B",
+    "advantage": "concrete",
+    "decisive_wording": "B: \"for a pipeline routing 6,000+ scraped research documents to inference\" vs A: \"on the pipeline that sends a 6,000+ document scraped research corpus to model inference\"",
+    "info_preserved_or_lost": "Same facts: 34%, 6,000+ documents, S3 staging replaced, Kinesis feeding Lambda. A adds the 'Amazon'/'AWS' prefixes, which are minor ATS keyword variants.",
+    "credibility_change": "None.",
+    "readability_change": "B carries the same information in fewer words and avoids A's noun stack '6,000+ document scraped research corpus'."
+  },
+  {
+    "id": "g05",
+    "winner": "A",
+    "advantage": "marginal",
+    "decisive_wording": "A: \"on an EventBridge schedule a larger LLM grades its ratings, and fine-tuning runs only when the grades shift past a threshold\"; B: \"scores the classifier past a set threshold\"",
+    "info_preserved_or_lost": "All keep Bedrock, the importance classifier, EventBridge, LLM grading, and threshold-gated fine-tuning. A states the schedule most explicitly. B's 'scores the classifier past a threshold' leaves unclear which direction triggers retraining. C matches A in content.",
+    "credibility_change": "A and C make the drift-triggered retraining loop clear. B's nested clause blurs it.",
+    "readability_change": "A uses a colon and C splits into two sentences, and both read cleanly. B's interrupting clause makes it the hardest to parse. The choice between A and C is mostly taste."
+  },
+  {
+    "id": "g06",
+    "winner": "A",
+    "advantage": "concrete",
+    "decisive_wording": "A: \"agreeing with the exchange on 99,122 of 99,123 fills\" vs B: \"matching 99,122 of 99,123 fills\"",
+    "info_preserved_or_lost": "Identical facts. A says explicitly what the comparison is against.",
+    "credibility_change": "A makes the validation claim unambiguous. In B, 'matching' collides with 'matching engine' and could be read as the engine executing 99,122 fills.",
+    "readability_change": "A costs three more words for a clear gain in comprehension."
+  },
+  {
+    "id": "g07",
+    "winner": "A",
+    "advantage": "concrete",
+    "decisive_wording": "A: \"22x faster range queries at the cost of 27% more disk space\" vs B: \"22x faster range summaries for 27% more disk\"",
+    "info_preserved_or_lost": "Same numbers. A uses the standard term 'range queries'. B's 'range summaries' is nonstandard and unclear.",
+    "credibility_change": "In A, 'range queries' is the textbook B+ tree versus LSM tradeoff, so it holds up better with an interviewer.",
+    "readability_change": "A's 'at the cost of' makes the tradeoff explicit for a recruiter. B is terser but less clear."
+  },
+  {
+    "id": "g08",
+    "winner": "B",
+    "advantage": "marginal",
+    "decisive_wording": "B: \"sets the upper and lower bounds on EC2 capacity ... balancing availability against cost\"",
+    "info_preserved_or_lost": "A drops the upper and lower bounds mechanism. B and C both keep it. C adds the plain-language 'decides how much' framing and 'policies', at the cost of length.",
+    "credibility_change": "B and C name a concrete mechanism (bounds), so they are more credible than A.",
+    "readability_change": "B is the most compact and still restatable. C is the friendliest for a recruiter but wordy and slightly redundant."
+  },
+  {
+    "id": "g09",
+    "winner": "A",
+    "advantage": "concrete",
+    "decisive_wording": "A: \"as a React and TypeScript Electron app\"",
+    "info_preserved_or_lost": "A keeps React and TypeScript, which are high-value keywords for job postings and ATS. B drops them but adds 'to the old tool', which is redundant.",
+    "credibility_change": "Slightly better in A, since the stack is explicit.",
+    "readability_change": "About the same length and equally natural."
+  },
+  {
+    "id": "g10",
+    "winner": "B",
+    "advantage": "marginal",
+    "decisive_wording": "B: \"finds matching scraped recipes with SentenceBERT vector search in ChromaDB, then has GPT-4o mini write the suggestion\" vs A: \"in which GPT-4o mini writes suggestions from scraped recipes found by...\"",
+    "info_preserved_or_lost": "Identical facts.",
+    "credibility_change": "B's retrieve-then-generate order shows a senior engineer the RAG mechanism more directly.",
+    "readability_change": "B follows the pipeline order and avoids A's stiff 'in which' and its passive, nested 'found by' clause."
+  }
+]
