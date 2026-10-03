@@ -1,0 +1,12 @@
+base: resume/resume.tex
+out: resume/backend_cloud.tex
+order:
+  capital_one: [capital_one.search_index, capital_one.claude_skill, capital_one.ui_overhaul]
+  amazon_contract: [amazon_contract.kinesis_pipeline, amazon_contract.leo_deploy, amazon_contract.bedrock_finetune]
+drop: [terplabs.rag_meal]
+skills:
+  - '\textbf{Languages:} Java, Python, C++, TypeScript/JavaScript, SQL'
+  - '\textbf{Cloud (AWS):} Lambda, Kinesis, Fargate/ECS, API Gateway, EventBridge, CDK (IaC), CloudWatch, X-Ray, SNS, EC2, Redshift'
+  - '\textbf{Backend \& Data:} PostgreSQL, Redis, SQLAlchemy, Prisma, OpenSearch, Node.js, B+ tree / LSM storage'
+  - '\textbf{DevOps \& Tools:} Docker, GitHub Actions (CI/CD), Linux, perf, Pytest, Jest, uv'
+  - '\textbf{Certification:} \href{https://www.credly.com/badges/d2406a97-d937-47de-823b-724981159d3b/public_url}{\underline{AWS Certified Developer -- Associate}} (Nov 2024 -- Nov 2027)'

@@ -1,0 +1,18 @@
+base: resume/resume.tex
+out: resume/quant_hft.tex
+projects_first: true
+drop: [capital_one.ui_overhaul, amazon_contract.leo_deploy, umiacs.env_setup, terplabs.rag_meal]
+text:
+  iex.throughput: 'Sustained \textbf{1.26M events/sec} end-to-end; the authoritative matching engine averages 686.7 ns/event at a 1.40 GHz base clock, 1.41$\times$ a passive mirror book (485.6 ns)'
+add_after:
+  iex.throughput:
+    - fact: iex.perf_rigor
+      text: 'Traced a 1.65$\times$ phantom regression to a CPU-governor artifact using perf counters and a null control book; core pinning and a fixed clock cut run-to-run variance from $\sim$6\% to 0.06\%'
+  iex.storage_benchmark:
+    - fact: iex.adaptive_negative
+      text: 'Published an adaptive batch-sizing policy as a negative result (+71\% disk, +23\% node hops, $-$32\% append rate, no query win): cost is dominated by node lookup, not batch size'
+skills:
+  - '\textbf{Languages:} C++17, Python, Java, C, SQL, TypeScript'
+  - '\textbf{Systems \& Performance:} Linux perf (hardware counters, top-down analysis), POSIX, STL, B+ trees, LSM trees, Redis, PostgreSQL'
+  - '\textbf{Cloud \& Tools:} AWS (Lambda, Kinesis, Fargate, CDK, CloudWatch), Docker, GitHub Actions, Pytest'
+  - '\textbf{Certification:} \href{https://www.credly.com/badges/d2406a97-d937-47de-823b-724981159d3b/public_url}{\underline{AWS Certified Developer -- Associate}} (Nov 2024 -- Nov 2027)'

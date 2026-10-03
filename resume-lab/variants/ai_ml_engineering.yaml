@@ -1,0 +1,13 @@
+base: resume/resume.tex
+out: resume/ai_ml_engineering.tex
+order:
+  capital_one: [capital_one.claude_skill, capital_one.search_index, capital_one.ui_overhaul]
+  amazon_contract: [amazon_contract.bedrock_finetune, amazon_contract.kinesis_pipeline, amazon_contract.leo_deploy]
+  terplabs: [terplabs.rag_meal, terplabs.studio+terplabs.tortuga]
+drop: [iex.throughput]
+skills:
+  - '\textbf{Languages:} Python, Java, C++, TypeScript/JavaScript, SQL'
+  - '\textbf{AI/ML:} Claude (skills, sub-skill decomposition), RAG, GPT-4o mini, ChromaDB, SentenceBERT, AWS Bedrock, PyTorch, Open3D, VLM prompting'
+  - '\textbf{Cloud \& Data:} AWS (Lambda, Kinesis, EventBridge, Fargate, CDK, CloudWatch, X-Ray), PostgreSQL, Redis, OpenSearch'
+  - '\textbf{Tools:} Docker, GitHub Actions, Linux, Pytest, Jest, uv, React, Electron'
+  - '\textbf{Certification:} \href{https://www.credly.com/badges/d2406a97-d937-47de-823b-724981159d3b/public_url}{\underline{AWS Certified Developer -- Associate}} (Nov 2024 -- Nov 2027)'

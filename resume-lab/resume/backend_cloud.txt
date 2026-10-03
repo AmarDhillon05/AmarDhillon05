@@ -1,0 +1,70 @@
+Amar Dhillon
+
+NYC Area | amardhillon844@gmail.com | (XXX) XXX-XXXX | linkedin.com/in/amar-dhillon-917537261 | github.com/AmarDhillon05
+
+Education
+University of Maryland, College Park
+B.S. in Computer Science, Minor in Statistics; GPA: 3.5
+
+May 2028
+College Park, MD
+
+Experience
+Amazon Web Services
+Sep 2026 – Dec 2026
+Software Development Engineer Intern
+Redmond, WA
+• Writing Java policies that tune upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations like
+patching, balancing availability against cost; initial backtests complete
+Capital One
+Jun 2026 – Aug 2026
+Software Engineering Intern
+Richmond, VA
+• Precomputed a tree-style search index over popular workflows from a 270K+ row PostgreSQL table
+(Python/SQLAlchemy, Redis cache) to minimize DB queries under access limits
+• Cut LLM workflow generation time 65% to under 15s by decomposing a Claude skill into sub-skills backed by Python
+search/validation tools, guided by CloudWatch + OpenSearch latency logs
+• Rebuilt a legacy test-data workflow builder in React/TypeScript + Electron, adding a React-Flow editor and Jest-tested
+validation; 90% of 30+ surveyed developers preferred it to the old tool
+UMD App Development Contracting (Client: Amazon Leo)
+Jan 2026 – Present
+Software Engineer (Contract)
+College Park, MD
+• Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3
+staging hops with Kinesis streams feeding Lambda
+• Shipped a space-research tool used by Amazon Leo’s public-policy team, now maintained by Leo engineers; deployed on
+AWS Fargate (Docker) via GitHub Actions and CDK (TypeScript)
+• Automated fine-tuning of a Bedrock source-relevancy model on an EventBridge schedule, gated to skip redundant
+retraining runs, with X-Ray tracing and SNS alerts on failure
+UMD Institute for Advanced Computer Studies (UMIACS)
+Dec 2025 – Present
+Machine Learning Research Intern
+College Park, MD
+• Built a Python pipeline for PhysTwin, a PhD-led digital twin targeting ICLR, running AnyGrasp on multi-camera
+images and rendering grasps as Open3D overlays for a VLM; tuned its detection prompts
+• Shortened research-environment setup time 30% with uv dependency pinning and Docker; added psutil time/memory
+profiling and Pytest suites to find bottlenecks
+TerpLabs
+Jun 2025 – Present
+Co-Founder, Software Engineer
+College Park, MD
+• Co-founded a 110+ member campus product studio that has shipped 5 live products, including Tortuga, a class
+scheduler with 20,000+ visits in its first 30 days; built Redis caching for its Prisma ORM queries
+
+Projects
+IEX Order Book & Matching Engine | C++17, STL, POSIX, Linux perf
+Jul 2026 – Aug 2026
+• Engineered a C++17 order book and matching engine that replayed 50.9M real IEX DEEP+ messages with no resync,
+matching 99,122 of 99,123 fills exactly and 100% of top-of-book prices
+• Benchmarked B+ tree vs LSM skip-list stores for the simulation’s event logs on identical 2M-record workloads; the B+
+tree gave 12.8× read throughput and 22× faster range summaries for 27% more disk
+• Sustained 1.26M events/sec end-to-end over the full replay, averaging 686.7 ns/event in the matching engine
+
+Technical Skills
+Languages: Java, Python, C++, TypeScript/JavaScript, SQL
+Cloud (AWS): Lambda, Kinesis, Fargate/ECS, API Gateway, EventBridge, CDK (IaC), CloudWatch, X-Ray, SNS, EC2, Redshift
+Backend & Data: PostgreSQL, Redis, SQLAlchemy, Prisma, OpenSearch, Node.js, B+ tree / LSM storage
+DevOps & Tools: Docker, GitHub Actions (CI/CD), Linux, perf, Pytest, Jest, uv
+Certification: AWS Certified Developer – Associate (Nov 2024 – Nov 2027)
+
+

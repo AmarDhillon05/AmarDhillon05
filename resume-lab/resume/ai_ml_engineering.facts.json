@@ -1,0 +1,21 @@
+{
+  "used_facts": [
+    "amazon_contract.bedrock_finetune",
+    "amazon_contract.kinesis_pipeline",
+    "amazon_contract.leo_deploy",
+    "aws_sde.redshift",
+    "capital_one.claude_skill",
+    "capital_one.search_index",
+    "capital_one.ui_overhaul",
+    "iex.replay_correctness",
+    "iex.storage_benchmark",
+    "terplabs.rag_meal",
+    "terplabs.studio",
+    "terplabs.tortuga",
+    "umiacs.env_setup",
+    "umiacs.grasp_vlm"
+  ],
+  "issues": [],
+  "errors": 0,
+  "warnings": 0
+}
