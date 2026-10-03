@@ -1,0 +1,14 @@
+{
+  "p01": {
+    "fact": "amazon_contract.bedrock_finetune",
+    "new_is": "A"
+  },
+  "p02": {
+    "fact": "aws_sde.redshift",
+    "new_is": "A"
+  },
+  "p03": {
+    "fact": "iex.throughput",
+    "new_is": "A"
+  }
+}

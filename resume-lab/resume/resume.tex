@@ -99,7 +99,7 @@
     {Software Development Engineer Intern}{Redmond, WA}
   \resumeItemListStart
     % fact: aws_sde.redshift
-    \resumeItem{Writing and backtesting Java policies that tune upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations like patching, to balance availability against cost}
+    \resumeItem{Balancing Amazon Redshift availability against cost by writing and backtesting Java policies that tune upper/lower bounds on EC2 capacity reserved for operations like patching}
   \resumeItemListEnd
 
   \resumeSubheading
@@ -123,7 +123,7 @@
     % fact: amazon_contract.kinesis_pipeline
     \resumeItem{Reduced end-to-end latency \textbf{34\%} for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda}
     % fact: amazon_contract.bedrock_finetune
-    \resumeItem{Automated EventBridge-scheduled fine-tuning of a Bedrock source-relevancy model, with decision gates that skip redundant retraining; added X-Ray tracing and SNS failure alerts}
+    \resumeItem{Automated fine-tuning of a Bedrock source-relevancy model on an EventBridge schedule, gated to skip redundant retraining runs, with X-Ray tracing and SNS alerts on failure}
   \resumeItemListEnd
 
   \resumeSubheading
@@ -140,10 +140,8 @@
     {TerpLabs}{Jun 2025 -- Present}
     {Co-Founder, Software Engineer}{College Park, MD}
   \resumeItemListStart
-    % fact: terplabs.studio
-    \resumeItem{Co-founded a 110+ member campus product studio that has shipped 5 live products, including Tortuga, a class scheduler with \mbox{\textbf{20,000+ visits}} in its first 30 days}
-    % fact: terplabs.tortuga
-    \resumeItem{Added Redis query caching over Tortuga's Prisma SQL queries to reduce database load and application latency}
+    % fact: terplabs.studio+terplabs.tortuga
+    \resumeItem{Co-founded a 110+ member campus product studio that has shipped 5 live products, including Tortuga, a class scheduler with \mbox{\textbf{20,000+ visits}} in its first 30 days; built its Redis caching over Prisma SQL}
     % fact: terplabs.rag_meal
     \resumeItem{Building a RAG meal-suggestion feature for the official UMD app (GPT-4o mini, ChromaDB + SentenceBERT search); \textbf{93\%} of generated meals rated satisfactory by internal testers}
   \resumeItemListEnd
@@ -161,7 +159,7 @@
     % fact: iex.storage_benchmark
     \resumeItem{Benchmarked B+ tree vs LSM skip-list stores for the simulation's event logs on identical 2M-record workloads; the B+ tree gave \textbf{12.8$\times$} read throughput and 22$\times$ faster range summaries for 27\% more disk}
     % fact: iex.throughput
-    \resumeItem{Sustained \textbf{1.26M events/sec} end-to-end over the full replay, with 686.7 ns/event in the matching engine}
+    \resumeItem{Sustained \textbf{1.26M events/sec} end-to-end over the full replay, averaging 686.7 ns/event in the matching engine}
   \resumeItemListEnd
 \resumeSubHeadingListEnd
 

@@ -193,7 +193,7 @@ projects:
         optional_techs: [C++17, DEEP+]
         required_numbers: []
       throughput:
-        claim: "Sustained 1.26M events/sec end-to-end over the full stream, 8.0 GB peak RSS. At 1.40 GHz base clock: mirror book 485.6 ns/event (2.06M events/sec); authoritative matching engine 686.7 ns/event (1.46M events/sec), 1.41x the mirror, for deciding every fill itself"
+        claim: "Sustained 1.26M events/sec end-to-end over the full stream, 8.0 GB peak RSS. At 1.40 GHz base clock: mirror book 485.6 ns/event (2.06M events/sec); authoritative matching engine 686.7 ns/event (1.46M events/sec; ns/event is the per-event average implied by throughput), 1.41x the mirror, for deciding every fill itself"
         core_techs: []
         required_numbers: []
       storage_benchmark:

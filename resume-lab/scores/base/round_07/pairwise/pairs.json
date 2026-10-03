@@ -1,0 +1,17 @@
+[
+  {
+    "id": "p01",
+    "A": "Automated fine-tuning of a Bedrock source-relevancy model on an EventBridge schedule, gated to skip redundant retraining runs, with X-Ray tracing and SNS alerts on failure",
+    "B": "Automated EventBridge-scheduled fine-tuning of a Bedrock source-relevancy model, with decision gates that skip redundant retraining; added X-Ray tracing and SNS failure alerts"
+  },
+  {
+    "id": "p02",
+    "A": "Balancing Amazon Redshift availability against cost by writing and backtesting Java policies that tune upper/lower bounds on EC2 capacity reserved for operations like patching",
+    "B": "Writing and backtesting Java policies that tune upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations like patching, to balance availability against cost"
+  },
+  {
+    "id": "p03",
+    "A": "Sustained 1.26M events/sec end-to-end over the full replay, averaging 686.7 ns/event in the matching engine",
+    "B": "Sustained 1.26M events/sec end-to-end over the full replay, with 686.7 ns/event in the matching engine"
+  }
+]

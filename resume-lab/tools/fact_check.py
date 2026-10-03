@@ -93,16 +93,25 @@ def main():
         if not b.fact_id:
             add("ERROR", where, "missing `% fact:` annotation")
             continue
-        if b.fact_id not in table:
-            add("ERROR", where, f"unknown fact id {b.fact_id}")
+        # a merged bullet may cite several facts: `% fact: a.b+c.d`
+        ids = b.fact_id.split("+")
+        unknown = [i for i in ids if i not in table]
+        if unknown:
+            add("ERROR", where, f"unknown fact id(s) {unknown}")
             continue
-        if b.fact_id in used:
-            add("ERROR", where, f"fact {b.fact_id} used twice")
-        used[b.fact_id] = b.text
-        role, f = table[b.fact_id]
-        if f.get("superseded") or role.get("superseded"):
-            add("ERROR", where, f"fact {b.fact_id} is superseded (corrected by candidate); do not use")
-        used_roles.add(b.fact_id.split(".")[0])
+        for i in ids:
+            if i in used:
+                add("ERROR", where, f"fact {i} used twice")
+            used[i] = b.text
+            r_i, f_i = table[i]
+            if f_i.get("superseded") or r_i.get("superseded"):
+                add("ERROR", where, f"fact {i} is superseded (corrected by candidate); do not use")
+            used_roles.add(i.split(".")[0])
+        parts = [table[i] for i in ids]
+        role = parts[0][0]
+        f = {"claim": " ".join(p[1]["claim"] for p in parts),
+             "required_numbers": [n for p in parts for n in (p[1].get("required_numbers") or [])],
+             "core_techs": [t for p in parts for t in (p[1].get("core_techs") or [])]}
         text_wo = strip_whitelist(b.text, wl)
         for req in f.get("required_numbers") or []:
             alts = req.split("|")

@@ -1,15 +1,15 @@
 {
   "tex": "/home/user/AmarDhillon05/resume-lab/resume/resume.tex",
-  "n_bullets": 15,
+  "n_bullets": 14,
   "bullets": [
     {
       "fact": "aws_sde.redshift",
-      "chars": 174,
+      "chars": 175,
       "words": 24,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.49,
-      "text": "Writing and backtesting Java policies that tune upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations like patching, to balance availability against cost"
+      "last_fill": 0.51,
+      "text": "Balancing Amazon Redshift availability against cost by writing and backtesting Java policies that tune upper/lower bounds on EC2 capacity reserved for operations like patching"
     },
     {
       "fact": "capital_one.ui_overhaul",
@@ -58,12 +58,12 @@
     },
     {
       "fact": "amazon_contract.bedrock_finetune",
-      "chars": 175,
-      "words": 22,
+      "chars": 171,
+      "words": 25,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.54,
-      "text": "Automated EventBridge-scheduled fine-tuning of a Bedrock source-relevancy model, with decision gates that skip redundant retraining; added X-Ray tracing and SNS failure alerts"
+      "last_fill": 0.51,
+      "text": "Automated fine-tuning of a Bedrock source-relevancy model on an EventBridge schedule, gated to skip redundant retraining runs, with X-Ray tracing and SNS alerts on failure"
     },
     {
       "fact": "umiacs.grasp_vlm",
@@ -84,22 +84,13 @@
       "text": "Shortened research-environment setup time 30% with uv dependency pinning and Docker; added psutil time/memory profiling and Pytest suites to find bottlenecks"
     },
     {
-      "fact": "terplabs.studio",
-      "chars": 158,
-      "words": 26,
+      "fact": "terplabs.studio+terplabs.tortuga",
+      "chars": 199,
+      "words": 33,
       "n_bold": 1,
       "n_lines": 2,
-      "last_fill": 0.42,
-      "text": "Co-founded a 110+ member campus product studio that has shipped 5 live products, including Tortuga, a class scheduler with 20,000+ visits in its first 30 days"
-    },
-    {
-      "fact": "terplabs.tortuga",
-      "chars": 107,
-      "words": 16,
-      "n_bold": 0,
-      "n_lines": 1,
-      "last_fill": 1.0,
-      "text": "Added Redis query caching over Tortuga's Prisma SQL queries to reduce database load and application latency"
+      "last_fill": 0.76,
+      "text": "Co-founded a 110+ member campus product studio that has shipped 5 live products, including Tortuga, a class scheduler with 20,000+ visits in its first 30 days; built its Redis caching over Prisma SQL"
     },
     {
       "fact": "terplabs.rag_meal",
@@ -130,18 +121,18 @@
     },
     {
       "fact": "iex.throughput",
-      "chars": 102,
+      "chars": 107,
       "words": 15,
       "n_bold": 1,
       "n_lines": 1,
       "last_fill": 1.0,
-      "text": "Sustained 1.26M events/sec end-to-end over the full replay, with 686.7 ns/event in the matching engine"
+      "text": "Sustained 1.26M events/sec end-to-end over the full replay, averaging 686.7 ns/event in the matching engine"
     }
   ],
   "issues": [
     {
       "level": "WARN",
-      "where": "Automated EventBridge-scheduled fine-tuning of a B",
+      "where": "Automated fine-tuning of a Bedrock source-relevanc",
       "msg": "no metric or explicit outcome"
     }
   ],

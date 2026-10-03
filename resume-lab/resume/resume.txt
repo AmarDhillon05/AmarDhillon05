@@ -14,8 +14,8 @@ Amazon Web Services
 Sep 2026 – Dec 2026
 Software Development Engineer Intern
 Redmond, WA
-• Writing and backtesting Java policies that tune upper/lower bounds on EC2 capacity reserved for Amazon Redshift
-operations like patching, to balance availability against cost
+• Balancing Amazon Redshift availability against cost by writing and backtesting Java policies that tune upper/lower
+bounds on EC2 capacity reserved for operations like patching
 Capital One
 Jun 2026 – Aug 2026
 Software Engineering Intern
@@ -34,8 +34,8 @@ College Park, MD
 AWS Fargate (Docker) via GitHub Actions and CDK (TypeScript)
 • Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3
 staging hops with Kinesis streams feeding Lambda
-• Automated EventBridge-scheduled fine-tuning of a Bedrock source-relevancy model, with decision gates that skip
-redundant retraining; added X-Ray tracing and SNS failure alerts
+• Automated fine-tuning of a Bedrock source-relevancy model on an EventBridge schedule, gated to skip redundant
+retraining runs, with X-Ray tracing and SNS alerts on failure
 UMD Institute for Advanced Computer Studies (UMIACS)
 Dec 2025 – Present
 Machine Learning Research Intern
@@ -49,8 +49,7 @@ Jun 2025 – Present
 Co-Founder, Software Engineer
 College Park, MD
 • Co-founded a 110+ member campus product studio that has shipped 5 live products, including Tortuga, a class
-scheduler with 20,000+ visits in its first 30 days
-• Added Redis query caching over Tortuga’s Prisma SQL queries to reduce database load and application latency
+scheduler with 20,000+ visits in its first 30 days; built its Redis caching over Prisma SQL
 • Building a RAG meal-suggestion feature for the official UMD app (GPT-4o mini, ChromaDB + SentenceBERT search);
 93% of generated meals rated satisfactory by internal testers
 
@@ -61,7 +60,7 @@ Jul 2026 – Aug 2026
 matching 99,122 of 99,123 fills exactly and 100% of top-of-book prices
 • Benchmarked B+ tree vs LSM skip-list stores for the simulation’s event logs on identical 2M-record workloads; the B+
 tree gave 12.8× read throughput and 22× faster range summaries for 27% more disk
-• Sustained 1.26M events/sec end-to-end over the full replay, with 686.7 ns/event in the matching engine
+• Sustained 1.26M events/sec end-to-end over the full replay, averaging 686.7 ns/event in the matching engine
 
 Technical Skills
 Languages: Python, Java, C++, C, TypeScript/JavaScript, SQL
