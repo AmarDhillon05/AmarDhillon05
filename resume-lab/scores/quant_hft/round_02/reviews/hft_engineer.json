@@ -1,0 +1,45 @@
+{
+  "persona": "hft_engineer",
+  "target": "Software engineering intern roles at quantitative trading / HFT firms (Jane Street, HRT, Citadel Securities, Optiver, IMC style), 2026–27 cycle. Score domain_fit for this domain.",
+  "seven_second_takeaway": "UMD CS '28; C++ IEX order book replaying 50.9M real messages at 1.26M events/sec with perf-counter debugging; AWS and Capital One internships.",
+  "scores": {"impact_clarity": 8, "quantification": 8, "technical_depth": 7, "concision_readability": 8,
+             "skim_test": 8, "credibility": 8, "ats_parseability": 8, "visual_layout": 8, "domain_fit": 8, "overall": 7},
+  "score_rationale": {
+    "technical_depth": "IEX project never says how the book is laid out (price levels, order lookup, allocation); non-project bullets are cloud plumbing, no concurrency evidence.",
+    "overall": "Strong, honest project leads, but only one domain-relevant item; mean-only latency and generic cloud roles keep it below top-tier HFT pile."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "clarify: the order book's core data-structure / memory-layout choice (how price levels and order IDs are stored) — this is the first thing an HFT interviewer asks and the page is silent on it",
+    "clarify: '1.41× a passive book that only mirrors feed state' — reads ambiguously; state it as overhead of matching vs. a mirror-only baseline"
+  ],
+  "bullets": [
+    {"quote": "Built a C++17 order book and matching engine", "verdict": "keep"},
+    {"quote": "Sustained 1.26M events/sec end-to-end, averaging 686.7 ns/event", "verdict": "tighten",
+     "issue": "Second clause on 1.41× passive book is hard to parse; mean-only figure invites tail-latency question.",
+     "suggestion": "Sustained 1.26M events/sec end-to-end (686.7 ns/event mean at a 1.40 GHz base clock); full matching adds 1.41× over a mirror-only passive book"},
+    {"quote": "Traced a 1.65× phantom regression to a CPU-governor", "verdict": "keep"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores", "verdict": "tighten",
+     "issue": "Storage-engine comparison is tangential to the hot path; lowest HFT value of the four.",
+     "suggestion": "Benchmarked B+ tree vs LSM skip-list stores for the replay event log (2M records): B+ tree gave 12.8× read throughput for 27% more disk"},
+    {"quote": "Writing Java policies that tune upper/lower bounds", "verdict": "keep"},
+    {"quote": "Precomputed a tree-style search index over popular", "verdict": "tighten",
+     "issue": "'tree-style' is vague; ends at intent rather than outcome (accepted risk).",
+     "suggestion": "Precomputed a tree search index over popular workflows from a 270K+ row PostgreSQL table (SQLAlchemy, Redis cache) to cut DB queries under access limits"},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep"},
+    {"quote": "Built a Python pipeline for PhysTwin, a PhD-led", "verdict": "tighten",
+     "issue": "Irrelevant to HFT; dense name-dropping (AnyGrasp, Open3D, VLM) without a result.",
+     "suggestion": "Built a Python pipeline for PhysTwin (PhD-led digital twin targeting ICLR) running AnyGrasp on multi-camera images and rendering grasps for a VLM"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep"}
+  ],
+  "structure": [
+    {"key": "projects_first_keep", "change": "Keep Projects above Experience for this target.", "rationale": "The IEX engine is the only HFT-relevant evidence; it must be seen first, and it is."},
+    {"key": "skills_lead_cpp", "change": "Keep C++17/C first in Languages and Linux perf first in Systems; consider dropping Pytest/GitHub Actions.", "rationale": "Frees space and keeps the skills line signaling low-level systems over web tooling."}
+  ],
+  "top3": [
+    "clarify: add the order book's data-structure / memory-layout decision to the IEX project (e.g. by tightening the B+ tree bullet to make room)",
+    "Reword the 1.41× passive-book comparison so the overhead claim reads in one pass",
+    "clarify: report latency distribution (p50/p99) when measured; mean-only ns/event will be the first follow-up question"
+  ]
+}

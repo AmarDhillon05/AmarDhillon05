@@ -1,0 +1,48 @@
+{
+  "persona": "quant_recruiter",
+  "target": "Software engineering intern roles at quantitative trading / HFT firms (Jane Street, HRT, Citadel Securities, Optiver, IMC style), 2026–27 cycle. Score domain_fit for this domain.",
+  "seven_second_takeaway": "UMD CS '28, 3.5 GPA. C++17 IEX order book/matching engine with real ns/event and perf-counter work up top; AWS and Capital One internships behind it.",
+  "scores": {"impact_clarity": 8, "quantification": 8, "technical_depth": 8, "concision_readability": 7,
+             "skim_test": 8, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 8, "overall": 7},
+  "score_rationale": {
+    "concision_readability": "IEX bullets are dense with numbers; '1.41x a passive book that only mirrors feed state' takes two reads. Several experience bullets read as long single sentences.",
+    "overall": "Order book project is exactly the signal we hire on, but 3.5 GPA sits below the usual ~3.7 bar and there are no rigorous/competitive signals beyond it."
+  },
+  "competitive_for_domain": "stretch",
+  "must_fix": [
+    "Clarify: the '1.41x a passive book' comparison is hard to parse; state plainly that full matching costs 1.41x the time of a feed-mirroring-only book.",
+    "Clarify: '686.7 ns/event at a 1.40 GHz base clock' raises the question of why base clock is cited; make sure it is phrased as the fixed-clock test condition so it reads as rigor, not hedging."
+  ],
+  "bullets": [
+    {"quote": "Built a C++17 order book and matching engine", "verdict": "keep"},
+    {"quote": "Sustained 1.26M events/sec end-to-end, averaging 686.7", "verdict": "tighten",
+     "issue": "Second clause on 1.41x passive book is awkward and buries a good design comparison.",
+     "suggestion": "Sustained 1.26M events/sec end-to-end (686.7 ns/event, fixed 1.40 GHz clock); full fill matching costs 1.41x a passive book that only mirrors feed state"},
+    {"quote": "Traced a 1.65× phantom regression to a CPU-governor", "verdict": "keep"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores", "verdict": "tighten",
+     "issue": "Least hot-path relevant; parenthetical result and negative-result clause compete for attention.",
+     "suggestion": "Benchmarked B+ tree vs LSM skip-list stores for the replay event log on 2M records: B+ tree gave 12.8x read throughput for 27% more disk"},
+    {"quote": "Writing Java policies that tune upper/lower bounds", "verdict": "add_context",
+     "issue": "In-progress with no result yet; 'initial backtests complete' is vague but honest.",
+     "suggestion": "Writing Java policies that set upper/lower bounds on EC2 capacity reserved for Redshift maintenance (e.g. patching), trading availability against cost; initial backtests complete"},
+    {"quote": "Precomputed a tree-style search index over popular", "verdict": "tighten",
+     "issue": "No outcome; 'tree-style' is vague. Fine for scope, low signal for quant.",
+     "suggestion": "Precomputed a tree index over popular workflows in a 270K+ row PostgreSQL table (SQLAlchemy, Redis cache) to cut DB queries under access limits"},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep"},
+    {"quote": "Built a Python pipeline for PhysTwin, a PhD-led", "verdict": "tighten",
+     "issue": "Off-domain for HFT and dense with proper nouns; low value per line here.",
+     "suggestion": "Built a Python pipeline for PhysTwin (PhD-led digital twin, ICLR-targeted) running AnyGrasp on multi-camera images and rendering grasps as Open3D overlays for a VLM"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep"}
+  ],
+  "structure": [
+    {"key": "keep_projects_first", "change": "Keep Projects above Experience for this target.", "rationale": "The order book is the single strongest quant signal; leading with it is correct."},
+    {"key": "skills_cpp_first", "change": "Move 'Systems & Performance' line above 'Languages' or lead with it, and drop Redis/PostgreSQL from that line into Cloud & Tools.", "rationale": "Keeps the systems line pure low-level signal (perf, POSIX, data structures) that HFT screeners look for."},
+    {"key": "trim_offdomain_ml", "change": "If space is needed, shorten the UMIACS bullet to one line.", "rationale": "ML robotics work is least relevant to HFT SWE and costs two lines."}
+  ],
+  "top3": [
+    "Clarify the IEX throughput bullet: plainly state the 1.41x matching vs passive-book cost and frame 1.40 GHz as the fixed-clock test condition.",
+    "Tighten the systems skills line so C++/perf/POSIX/data-structure depth reads first and is not diluted by web/DB tools.",
+    "Shorten off-domain bullets (UMIACS, Capital One index) so the page's density concentrates on performance and C++ evidence."
+  ]
+}

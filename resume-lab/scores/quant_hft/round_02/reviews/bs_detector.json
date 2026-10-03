@@ -1,0 +1,46 @@
+{
+  "persona": "bs_detector",
+  "target": "Software engineering intern roles at quantitative trading / HFT firms (Jane Street, HRT, Citadel Securities, Optiver, IMC style), 2026–27 cycle. Score domain_fit for this domain.",
+  "seven_second_takeaway": "UMD CS '28, C++17 IEX order book replaying 50.9M real messages with near-exact fill match; AWS and Capital One SWE internships; perf-counter debugging.",
+  "scores": {"impact_clarity": 8, "quantification": 8, "technical_depth": 8, "concision_readability": 7,
+             "skim_test": 8, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 8, "overall": 7},
+  "score_rationale": {
+    "concision_readability": "IEX bullets are dense; '1.41× a passive book that only mirrors feed state' and 'LSM skip-list' need re-reading to parse.",
+    "overall": "Strong, honest C++ project leads, but one project plus mean-only latency and 3.5 GPA is mid-pack in a brutal quant pile."
+  },
+  "competitive_for_domain": "stretch",
+  "must_fix": [
+    "Clarify the 1.41× clause: state plainly that full matching costs 1.41× the time of a mirror-only book; as written it reads like a riddle.",
+    "Latency is mean-only (686.7 ns/event); an HFT interviewer will immediately ask for p50/p99. Add tail percentiles if measured, or be ready to explain why not.",
+    "Clarify 'LSM skip-list stores': it is an LSM tree with a skip-list memtable? Ambiguous naming invites a gotcha follow-up."
+  ],
+  "bullets": [
+    {"quote": "Built a C++17 order book and matching engine", "verdict": "keep"},
+    {"quote": "Sustained 1.26M events/sec end-to-end, averaging 686.7", "verdict": "tighten",
+     "issue": "Second clause is hard to parse; mean-only latency invites tail-latency question.",
+     "suggestion": "Sustained 1.26M events/sec end-to-end (686.7 ns/event mean at 1.40 GHz base clock); full matching costs 1.41× the time of a mirror-only passive book"},
+    {"quote": "Traced a 1.65× phantom regression to a CPU-governor", "verdict": "keep"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores", "verdict": "tighten",
+     "issue": "Ambiguous 'LSM skip-list'; trailing negative-result clause reads as filler.",
+     "suggestion": "Benchmarked B+ tree vs LSM-tree stores for the replay's event log on 2M-record workloads; B+ tree gave 12.8× read throughput for 27% more disk"},
+    {"quote": "Writing Java policies that tune upper/lower bounds", "verdict": "keep"},
+    {"quote": "Precomputed a tree-style search index over popular workflows", "verdict": "add_context",
+     "issue": "Ends at intent ('to minimize DB queries'); no outcome. Accepted risk, but weakest bullet on page.",
+     "suggestion": "Precomputed a tree-style search index over popular workflows in a 270K+ row PostgreSQL table, with a Redis cache, to cut DB queries under access limits"},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep"},
+    {"quote": "Built a Python pipeline for PhysTwin, a PhD-led", "verdict": "tighten",
+     "issue": "'tuned its detection prompts' is vague tail; whose contribution vs the PhD's is unclear.",
+     "suggestion": "Built a Python pipeline for PhysTwin (PhD-led digital twin targeting ICLR) running AnyGrasp on multi-camera images and rendering grasps as Open3D overlays for a VLM"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep"}
+  ],
+  "structure": [
+    {"key": "keep_project_first", "change": "Keep the IEX project above Experience for this target.", "rationale": "It is the only evidence quant/HFT screeners hire on; leading with it is correct."},
+    {"key": "trim_ml_research", "change": "Consider dropping or shortening the UMIACS entry if space is needed for an extra IEX detail.", "rationale": "Least domain-relevant entry; its bullet is the vaguest on the page."}
+  ],
+  "top3": [
+    "Rewrite the 1.41× clause so the matching-vs-mirror overhead reads in one pass.",
+    "Clarify: are p50/p99 latencies measured? If so, report them; HFT interviewers discount mean-only numbers.",
+    "Clarify 'LSM skip-list' naming and drop the 'negative result' tail to tighten the B+ tree bullet."
+  ]
+}
