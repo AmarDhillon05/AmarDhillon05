@@ -1,0 +1,122 @@
+{
+  "g01": {
+    "fact": "capital_one.search_index",
+    "labels": {
+      "A": "cand2",
+      "B": "incumbent",
+      "C": "cand1"
+    },
+    "texts": {
+      "cand2": "Precomputed popular workflows from a 270K+ row PostgreSQL table into a category tree that the Claude skill searches first, with Redis caching full workflows, because the database had strict access limits",
+      "incumbent": "Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries",
+      "cand1": "Built the category tree of popular workflows that the Claude skill searches first, precomputed from a 270K+ row PostgreSQL table with Redis caching full workflows, so lookups make fewer queries to the access-limited database"
+    }
+  },
+  "g02": {
+    "fact": "capital_one.claude_skill",
+    "labels": {
+      "A": "incumbent",
+      "B": "cand1",
+      "C": "cand2"
+    },
+    "texts": {
+      "incumbent": "Cut AI workflow generation time 65% to under 15s by splitting one large Claude skill into smaller sub-skills that call Python tools for search and validation, after CloudWatch and OpenSearch latency logs showed where time went",
+      "cand1": "Cut AI workflow generation time 65% to under 15s by replacing a Claude skill's open-ended search with focused sub-skills that call Python tools for workflow search and validation, guided by CloudWatch and OpenSearch latency logs",
+      "cand2": "Cut workflow generation time 65% to under 15s by splitting a Claude skill into sub-skills, so Python functions do workflow search and validation instead of the model searching open-ended, guided by CloudWatch and OpenSearch logs"
+    }
+  },
+  "g03": {
+    "fact": "umiacs.grasp_vlm",
+    "labels": {
+      "A": "cand2",
+      "B": "incumbent",
+      "C": "cand1"
+    },
+    "texts": {
+      "cand2": "For a PhD-led robotics project aimed at ICLR, built a Python pipeline that renders AnyGrasp's candidate grasps on multi-camera images so a vision-language model can choose among them, and tuned the model's prompts for grasp selection",
+      "incumbent": "For a PhD-led robotics project aimed at ICLR, built a Python pipeline that renders AnyGrasp's candidate grasps on multi-camera images as Open3D overlays for a vision-language model, and tuned its prompts so it picks right more often",
+      "cand1": "For a PhD-led robotics project aimed at ICLR, built a Python pipeline that shows a vision-language model AnyGrasp's candidate grasps as Open3D overlays on multi-camera images, and tuned its prompts so the model picks the correct grasp more often"
+    }
+  },
+  "g04": {
+    "fact": "amazon_contract.kinesis_pipeline",
+    "labels": {
+      "A": "cand1",
+      "B": "incumbent"
+    },
+    "texts": {
+      "cand1": "Cut end-to-end latency 34% on the pipeline that sends a 6,000+ document scraped research corpus to model inference by replacing S3 staging between steps with Amazon Kinesis streams feeding AWS Lambda",
+      "incumbent": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda"
+    }
+  },
+  "g05": {
+    "fact": "amazon_contract.bedrock_finetune",
+    "labels": {
+      "A": "incumbent",
+      "B": "cand2",
+      "C": "cand1"
+    },
+    "texts": {
+      "incumbent": "Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance: on an EventBridge schedule a larger LLM grades its ratings, and fine-tuning runs only when the grades shift past a threshold",
+      "cand2": "Automated fine-tuning of a production Amazon Bedrock classifier that rates research documents by importance, retraining only when a larger LLM, run on an EventBridge schedule, scores the classifier past a set threshold",
+      "cand1": "Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance. An EventBridge job has a larger LLM grade the classifier, and fine-tuning runs only when those grades move past a threshold"
+    }
+  },
+  "g06": {
+    "fact": "iex.replay_correctness",
+    "labels": {
+      "A": "cand1",
+      "B": "incumbent"
+    },
+    "texts": {
+      "cand1": "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange's book, agreeing with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices",
+      "incumbent": "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange's book, matching 99,122 of 99,123 fills and 100% of top-of-book prices"
+    }
+  },
+  "g07": {
+    "fact": "iex.storage_benchmark",
+    "labels": {
+      "A": "cand1",
+      "B": "incumbent"
+    },
+    "texts": {
+      "cand1": "Implemented B+ tree and LSM-tree backends for the engine's event log and benchmarked them on identical 2M-record workloads, where the B+ tree gave 12.8x the read throughput and 22x faster range queries at the cost of 27% more disk space",
+      "incumbent": "Implemented B+ tree and LSM-tree backends for the engine's event log and benchmarked them on identical 2M-record workloads: the B+ tree gave 12.8x the read throughput and 22x faster range summaries for 27% more disk"
+    }
+  },
+  "g08": {
+    "fact": "aws_sde.redshift",
+    "labels": {
+      "A": "cand2",
+      "B": "cand1",
+      "C": "incumbent"
+    },
+    "texts": {
+      "cand2": "Writing the Java logic that decides how much EC2 capacity Amazon Redshift reserves for operations like patching, keeping enough for availability without overspending, and backtesting it",
+      "cand1": "Writing Java logic that sets the upper and lower bounds on EC2 capacity Amazon Redshift reserves for operations like patching, balancing availability against cost, and backtesting it",
+      "incumbent": "Writing Java logic that decides how much EC2 capacity Amazon Redshift reserves for operations like patching, setting upper and lower bounds that keep availability high without overspending, and backtesting the policies"
+    }
+  },
+  "g09": {
+    "fact": "capital_one.ui_overhaul",
+    "labels": {
+      "A": "incumbent",
+      "B": "cand1"
+    },
+    "texts": {
+      "incumbent": "Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and 90% of 30+ surveyed developers preferred it",
+      "cand1": "Rebuilt the legacy tool developers use to create test-data workflows as an Electron app with a visual React Flow editor and Jest-tested validation, and 90% of 30+ surveyed developers preferred it to the old tool"
+    }
+  },
+  "g10": {
+    "fact": "terplabs.rag_meal",
+    "labels": {
+      "A": "incumbent",
+      "B": "cand1"
+    },
+    "texts": {
+      "incumbent": "Building a RAG meal-suggestion feature for the official UMD app, in which GPT-4o mini writes suggestions from scraped recipes found by SentenceBERT vector search in ChromaDB, and internal testers rated 93% of meals satisfactory",
+      "cand1": "Building a RAG meal-suggestion feature for the official UMD app that finds matching scraped recipes with SentenceBERT vector search in ChromaDB, then has GPT-4o mini write the suggestion, and internal testers rated 93% of meals satisfactory"
+    }
+  }
+}
