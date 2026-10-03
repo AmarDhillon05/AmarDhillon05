@@ -53,7 +53,7 @@ roles:
     status: completed
     bullets:
       ui_overhaul:
-        claim: Overhauled the legacy UI of a test-data workflow creator; TypeScript workflow/state validation tested with Jest on mock workflows; React-Flow improved editor fluidity; in an internal survey, 90% of surveyed users preferred the new tool over the legacy one  # clarified by Amar, Oct 2026
+        claim: Overhauled the legacy UI of a test-data workflow creator; TypeScript workflow/state validation tested with Jest on mock workflows; React-Flow improved editor fluidity; in an internal survey of 30-40 developers, 90% of surveyed users preferred the new tool over the legacy one  # clarified by Amar, Oct 2026
         core_techs: [React, Electron, TypeScript]
         optional_techs: [Jest, React-Flow]
         required_numbers: ["90%"]

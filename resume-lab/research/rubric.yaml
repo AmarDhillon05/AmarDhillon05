@@ -96,3 +96,9 @@ accepted_risks:
   - key: concurrent_present_dates
     decided: "Amar, Oct 2026: keep 'Present' on Amazon contract / UMIACS / TerpLabs during the AWS internship"
     match: ["(?i)(present|end date|timeline)", "(?i)(overlap|concurrent|simultaneous|alongside|while|same time|paused|part-time)"]
+  - key: search_index_no_result
+    decided: "Amar, Oct 2026: no measured result for the Capital One search index; keep intent wording"
+    match: ["(?i)search[- ]index", "(?i)(outcome|result|measur|impact|ends at intent)"]
+  - key: rag_sample_size
+    decided: "Amar, Oct 2026: tester count for the 93% RAG metric is unknown"
+    match: ["(?i)(93%|meal)", "(?i)(how many|sample|tester count|n=|number of testers|scope)"]
