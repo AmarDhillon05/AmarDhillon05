@@ -33,7 +33,7 @@ def main():
     groups = []
     for k, fs in by_bullet.items():
         personas = sorted({f["persona"] for f in fs})
-        top = max(f["severity"] for f in fs)
+        top = max(f.get("severity", 5) for f in fs)
         groups.append({"bullet": fs[0]["bullet"], "n_evaluators": len(personas), "max_severity": top,
                        "priority": len(personas) >= 2 or top >= 8, "feedback": fs})
     groups.sort(key=lambda g: (-g["priority"], -g["n_evaluators"], -g["max_severity"]))
@@ -43,7 +43,7 @@ def main():
     page = [{**f, "persona": r["persona"]} for r in revs for f in r.get("page_feedback", [])]
     out = {"variant": variant, "round": n, "n_reviews": len(revs), "mean": mean, "min": mins,
            "plain_english": f"{understood}/{len(pe)}", "memory_skim": rec.get("memory_skim") if rec else None,
-           "bullet_groups": groups, "page_feedback": sorted(page, key=lambda f: -f["severity"]),
+           "bullet_groups": groups, "page_feedback": sorted(page, key=lambda f: -f.get("severity", 5)),
            "keep": {r["persona"]: r.get("keep", []) for r in revs},
            "competitive": {r["persona"]: r.get("competitive_for_domain") for r in revs}}
     (rd / "summary.json").write_text(json.dumps(out, indent=2))
@@ -55,8 +55,8 @@ def main():
     for g in groups:
         L.append(f"\n### {'PRIORITY · ' if g['priority'] else ''}{g['n_evaluators']} evaluators · max sev {g['max_severity']}\n> {g['bullet']}")
         for f in g["feedback"]:
-            L.append(f"- **{f['persona']}** (sev {f['severity']}): {f['problem']}. *Direction:* {f['suggested_direction']}")
-    L += ["", "## Page-level"] + [f"- **{f['persona']}** (sev {f['severity']}): {f['problem']}. *Direction:* {f['suggested_direction']}" for f in out["page_feedback"]]
+            L.append(f"- **{f['persona']}** (sev {f.get("severity", "?")}): {f['problem']}. *Direction:* {f['suggested_direction']}")
+    L += ["", "## Page-level"] + [f"- **{f['persona']}** (sev {f.get("severity", "?")}): {f['problem']}. *Direction:* {f['suggested_direction']}" for f in out["page_feedback"]]
     (rd / "summary.md").write_text("\n".join(L) + "\n")
     print("\n".join(L[:20]))
 
