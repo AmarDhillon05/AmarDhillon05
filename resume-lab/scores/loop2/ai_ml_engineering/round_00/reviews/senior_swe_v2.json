@@ -1,0 +1,106 @@
+{
+  "persona": "senior_swe_v2",
+  "target": "AI/ML engineering internships (ML infrastructure, LLM applications, applied AI platform teams), 2026-27 cycle",
+  "memory_skim": {"strongest_3": [], "engineer_type": "", "memorable_numbers": [], "confusing": [], "skipped": [], "interview_questions": []},
+  "plain_english": [],
+  "scores": {
+    "impact_clarity": 7,
+    "quantification": 7,
+    "technical_depth": 8,
+    "concision_readability": 8,
+    "skim_test": 7,
+    "credibility": 8,
+    "ats_parseability": 8,
+    "visual_layout": 8,
+    "domain_fit": 7,
+    "human_voice": 8,
+    "plain_language": 7,
+    "overall": 8
+  },
+  "competitive_for_domain": "Y",
+  "bullet_feedback": [
+    {
+      "bullet": "Writing Java logic that sets the upper and lower bounds on EC2 capacity that Amazon Redshift reserves for operations like patching, balancing availability against cost, and backtesting it",
+      "problem": "The mechanism is missing: 'Java logic that sets the upper and lower bounds' does not say what the bounds are computed from (a policy, a forecast, historical usage). The trailing 'and backtesting it' is grammatically detached after the 'balancing availability against cost' clause, so it reads as an afterthought.",
+      "severity": 5,
+      "why_it_matters": "This is the top bullet under the most recognizable brand, so it is the first thing an interviewer probes. Right now the only answer the page supports is 'I wrote Java', and the engineering decision (how the bounds are chosen) is invisible. The dangling clause also makes a reader re-parse the sentence.",
+      "missing_or_unclear": "clarify: what input or signal the bounds are derived from, and what the backtest replays (e.g. past capacity/usage data)",
+      "suggested_direction": "Lead with what drives the bounds, then the tradeoff, then the backtest as its own verb phrase. Example shape: 'Writing Java logic that sets min/max EC2 capacity Redshift reserves for patching from <signal>, and backtesting it against <data> to balance availability against cost'."
+    },
+    {
+      "bullet": "Cut LLM workflow generation time 65% to under 15s by splitting one large Claude skill into smaller sub-skills that call Python tools for search and validation, and output quality held in repeated stress-test runs",
+      "problem": "The causal link between 'splitting one large Claude skill into smaller sub-skills' and a 65% speedup is not stated. A reader cannot tell whether the gain came from smaller prompts/context per call, running sub-skills in parallel, or moving search/validation out of the model into deterministic Python tools.",
+      "severity": 5,
+      "why_it_matters": "For an LLM-applications team this is the most domain-relevant bullet on the page, and 'why did splitting make it faster?' is the first interview question. If the mechanism is offloading work to Python tools, that is the interesting design decision and it is currently a subordinate clause.",
+      "missing_or_unclear": "clarify: which change produced most of the latency drop (less context per call, parallel calls, or deterministic tools replacing model reasoning)",
+      "suggested_direction": "Name the mechanism as the reason for the speedup, and put the quality clause in a tighter form so the sentence ends on the engineering rather than on a hedge. Example shape: 'Cut ... 65% to under 15s by moving search and validation out of one large Claude skill into Python tools called by smaller sub-skills, with output quality holding across repeated stress tests'."
+    },
+    {
+      "bullet": "Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries",
+      "problem": "'strict access limits' is ambiguous (rate limits? permissions? query quotas?), and it is the constraint the whole design rests on. 'category tree' does not say what the nodes are keyed on or how the skill navigates it. Opening with 'Because' delays the action to the middle of line one.",
+      "severity": 5,
+      "why_it_matters": "This is a genuinely good constraint-driven design story, but an interviewer will immediately ask 'what were the limits, and how does the model search a tree?'. If the answer is 'it can only read N rows per request', the bullet should say so, because that is what makes the precompute decision non-obvious.",
+      "missing_or_unclear": "clarify: the nature of the access limit, and what the tree's levels represent (e.g. category -> subcategory -> workflow ID)",
+      "suggested_direction": "Lead with the action and fold the constraint in after it, replacing 'strict access limits' with the concrete limit. Example shape: 'Precomputed popular workflows into a <keyed-on> category tree that the Claude skill searches first, since the 270K+ row PostgreSQL table was <limit>, with Redis caching full workflows to cut database queries'."
+    },
+    {
+      "bullet": "Deployed a space-topic research tool for Amazon Leo’s public-policy team and set it up for handoff with AWS CDK infrastructure-as-code and GitHub Actions CI/CD, so Leo engineers new to the project now maintain it on AWS Fargate",
+      "problem": "'space-topic research tool' does not say what the tool does, so the bullet is entirely about deployment plumbing. CDK, GitHub Actions and Fargate are three names in one sentence with no decision connecting them, which reads close to a deployment checklist. It is also the longest bullet on the page.",
+      "severity": 4,
+      "why_it_matters": "The handoff outcome (other engineers maintain it) is a good, credible result, but without knowing what the tool is a reader cannot judge scope, and the stack list invites 'which part did you actually write?' questions.",
+      "missing_or_unclear": "clarify: what the tool does for the public-policy team in a few words (search? summarize? track?)",
+      "suggested_direction": "Spend the words saved by trimming the stack on one phrase describing what the tool does. Keep CDK as the load-bearing tech for 'handoff' and consider dropping 'AWS Fargate' or 'GitHub Actions' to the Skills section."
+    },
+    {
+      "bullet": "For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp’s candidate grasps on camera images in Open3D for a vision-language model, then tuned prompts so the model picks the right grasp more often",
+      "problem": "'picks the right grasp more often' is an unquantified, unanchored outcome, and 'tuned prompts' is the thinnest ML technique on the page. It is unclear how 'right grasp' was judged (labeled set, real robot trials, human review).",
+      "severity": 6,
+      "why_it_matters": "This is the only research-flavored ML item, and an ML-infra or applied-AI interviewer will ask 'more often than what, measured how?'. If there is no answer, the bullet weakens credibility; if there is one, the page is leaving it out. The visual-prompting idea (rendering grasp candidates onto the image for the VLM) is the interesting part and is currently mid-sentence.",
+      "missing_or_unclear": "clarify: how grasp selection was evaluated (e.g. against a labeled set or in trials), even if no number is available",
+      "suggested_direction": "Make the visual-prompting design the subject, and replace 'more often' with how it was checked. If there is no measurement, say what the pipeline enables instead of implying an improvement that cannot be defended."
+    },
+    {
+      "bullet": "Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio’s class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency",
+      "problem": "Ends at intent ('to reduce database load and latency') with no outcome, and it is the second 'Redis caching to cut database queries' bullet on the page (Capital One already makes the same point with a stronger constraint story). The 20,000+ visits number describes the product, not this change.",
+      "severity": 4,
+      "why_it_matters": "A repeated technique with no result dilutes the stronger Capital One version and spends two lines on a slot that could show a different skill for an AI/ML reader. An interviewer will ask what the cache keys and invalidation policy were and whether load or latency actually dropped.",
+      "missing_or_unclear": "clarify: what was cached (keyed on what) and whether any load/latency change was observed",
+      "suggested_direction": "Either cut this bullet and let the studio bullet carry Tortuga, or rewrite it around the caching decision (what is cached, how it is invalidated) so it is distinct from the Capital One Redis use."
+    },
+    {
+      "bullet": "Co-founded a 110+ member student product studio that has shipped 5 live products",
+      "problem": "Duplicates the 'Co-Founder' title directly above it and contains no engineering content.",
+      "severity": 2,
+      "why_it_matters": "Minor: it is a fine leadership signal, but a technical screener skims past it.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Keep it short as is, or fold the 110+ members / 5 products into the Tortuga or RAG bullet context if space is needed."
+    }
+  ],
+  "page_feedback": [
+    {
+      "problem": "Skills lists PyTorch, CUDA, 'model fine-tuning and evaluation', X-Ray, OpenSearch and MongoDB, none of which appear in any bullet. PyTorch and CUDA in particular are the keywords an ML-infra screener keys on and will ask about.",
+      "severity": 5,
+      "why_it_matters": "On an ML-infra screen, listing CUDA and PyTorch with no supporting bullet invites a deep question the page cannot back up, and it makes the AI/ML line look partially name-dropped. The fine-tuning claim is supported only indirectly (the Bedrock retraining trigger), not by hands-on training work.",
+      "suggested_direction": "Keep only skills you can discuss for 10 minutes. If PyTorch/CUDA were used in UMIACS or elsewhere, let a bullet say where; otherwise consider trimming them, and drop generic items like 'data structures and algorithms' and 'object-oriented design'."
+    },
+    {
+      "problem": "The strongest ML-infrastructure evidence (Amazon Leo: LLM-graded retraining trigger, Kinesis-to-Lambda inference pipeline) sits as the third role, below an AWS bullet about EC2 capacity bounds and a Capital One React/Electron bullet.",
+      "severity": 4,
+      "why_it_matters": "In a 7-second skim an AI/ML hiring manager sees 'Java capacity bounds' and 'React Flow editor' first, which reads as general SWE. The 'systems engineer who builds ML infrastructure' story only appears halfway down.",
+      "suggested_direction": "Within Capital One, consider putting the Claude sub-skill bullet first and the Electron rebuild last, so the first LLM-related content appears in the top third of the page. Role order can stay chronological."
+    },
+    {
+      "problem": "The AI/ML work is almost entirely LLM orchestration (prompting, skills, RAG, LLM-as-judge); there is little showing model-side work such as training loops, evaluation harnesses, or serving performance.",
+      "severity": 3,
+      "why_it_matters": "For LLM-application and applied-AI platform teams this is a good fit; for ML-infra roles that probe training/serving internals, the page reads as an application engineer who uses models rather than one who works on them.",
+      "suggested_direction": "No new facts needed: where existing work involved evaluation (the Bedrock classifier grading, the Claude stress tests, the VLM grasp selection), use the word 'evaluation' and say how it was done, so the evaluation story is visible."
+    }
+  ],
+  "keep": [
+    "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange’s book, agreeing with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices",
+    "Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance: on an EventBridge schedule a larger LLM grades its ratings, and fine-tuning runs only when the grades shift past a threshold",
+    "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+    "Building a RAG meal-suggestion feature for the official UMD app, in which GPT-4o mini writes suggestions from scraped recipes found by SentenceBERT vector search in ChromaDB, and internal testers rated 93% of meals satisfactory",
+    "Distinctive technical nouns preserved throughout: order book, matching engine, category tree, Kinesis streams, Bedrock classifier, sub-skills, vector search in ChromaDB"
+  ]
+}
