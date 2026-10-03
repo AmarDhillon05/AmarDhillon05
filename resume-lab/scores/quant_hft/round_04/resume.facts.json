@@ -1,0 +1,21 @@
+{
+  "used_facts": [
+    "amazon_contract.kinesis_pipeline",
+    "aws_sde.redshift",
+    "capital_one.claude_skill",
+    "capital_one.search_index",
+    "iex.adaptive_negative",
+    "iex.data_structures",
+    "iex.latency_dist",
+    "iex.perf_rigor",
+    "iex.replay_correctness",
+    "iex.storage_benchmark",
+    "iex.throughput",
+    "terplabs.studio",
+    "terplabs.tortuga",
+    "umiacs.grasp_vlm"
+  ],
+  "issues": [],
+  "errors": 0,
+  "warnings": 0
+}

@@ -105,6 +105,3 @@ accepted_risks:
   - key: env_setup_baseline
     decided: "Amar, Oct 2026: no baseline available for the 30% setup-time reduction"
     match: ["(?i)30%", "(?i)(baseline|from what|from x|minutes|unclear)"]
-  - key: iex_tail_latency
-    decided: "Pending from Amar, Oct 2026: only mean ns/event measured so far; no p50/p99 reported"
-    match: ["(?i)(p50|p99|p999|tail|percentile|distribution)", "(?i)(latency|ns|mean)"]

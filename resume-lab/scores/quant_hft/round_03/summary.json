@@ -1,0 +1,154 @@
+{
+  "variant": "quant_hft",
+  "round": "round_03",
+  "n_reviewers": 3,
+  "mean_by_dim": {
+    "ats_parseability": 9,
+    "concision_readability": 7.67,
+    "credibility": 7,
+    "domain_fit": 8,
+    "impact_clarity": 8,
+    "overall": 7.67,
+    "quantification": 7.33,
+    "skim_test": 8,
+    "technical_depth": 8.33,
+    "visual_layout": 8
+  },
+  "min_by_dim": {
+    "ats_parseability": 9,
+    "concision_readability": 7,
+    "credibility": 7,
+    "domain_fit": 8,
+    "impact_clarity": 8,
+    "overall": 7,
+    "quantification": 7,
+    "skim_test": 8,
+    "technical_depth": 8,
+    "visual_layout": 8
+  },
+  "overall_mean": 7.67,
+  "below_threshold": [
+    [
+      "bs_detector",
+      "quantification",
+      7
+    ],
+    [
+      "bs_detector",
+      "credibility",
+      7
+    ],
+    [
+      "hft_engineer",
+      "quantification",
+      7
+    ],
+    [
+      "hft_engineer",
+      "credibility",
+      7
+    ],
+    [
+      "quant_recruiter",
+      "concision_readability",
+      7
+    ],
+    [
+      "quant_recruiter",
+      "credibility",
+      7
+    ],
+    [
+      "quant_recruiter",
+      "overall",
+      7
+    ]
+  ],
+  "must_fix": [
+    [
+      "bs_detector",
+      "clarify: 1.26M events/sec and 686.7 ns/event don't match (1/686.7 ns \u2248 1.46M/s). State what each one measures (e.g. parse+match vs match only, or wall-clock vs per-event timer) or make them agree."
+    ],
+    [
+      "bs_detector",
+      "clarify: p50 120 ns / p99 1.2 \u00b5s (2M-event run) vs 686.7 ns mean (full run, 1.40 GHz). If they come from different runs, clock settings or scopes, say so. Otherwise the mean is far above p50 but below p99 in a way that needs a heavy p99.9 tail to explain."
+    ],
+    [
+      "hft_engineer",
+      "clarify: 1.26M events/sec and 686.7 ns/event average don't match (1/686.7 ns is ~1.46M/s); state whether they come from different runs or include different work (parse, I/O)"
+    ],
+    [
+      "hft_engineer",
+      "clarify: what the 120 ns p50 / 1.2 \u00b5s p99 measures (book update only vs end-to-end) and whether it was on the same fixed 1.40 GHz clock, so it reconciles with the 686.7 ns mean"
+    ],
+    [
+      "quant_recruiter",
+      "clarify: the latency numbers across bullets 2 and 3 (p50 120 ns, p99 1.2 us, mean 686.7 ns/event, 1.26M events/sec = ~794 ns/event). Say which run and which scope (book op only vs. end-to-end with parsing/I/O) each one measures, or an interviewer will go after the gap first."
+    ],
+    [
+      "quant_recruiter",
+      "clarify: what 'full matching takes 1.41x the time of a mirror-only book' means. Most screeners won't know 'mirror-only'."
+    ]
+  ],
+  "accepted_risk_flags": [],
+  "gate_errors": 0,
+  "bullet_verdicts": {
+    "Built a C++17 order book": {
+      "keep": 3
+    },
+    "Indexed orders in a hash": {
+      "add_context": 2,
+      "tighten": 1
+    },
+    "Sustained 1.26M events/sec end-to-end, averaging": {
+      "reframe": 1,
+      "tighten": 1,
+      "add_context": 1
+    },
+    "Traced a 1.65\u00d7 phantom regression": {
+      "keep": 3
+    },
+    "Benchmarked B+ tree vs LSM": {
+      "tighten": 2,
+      "keep": 1
+    },
+    "Writing Java policies that tune": {
+      "keep": 3
+    },
+    "Precomputed a tree-style search index": {
+      "tighten": 3
+    },
+    "Cut LLM workflow generation time": {
+      "keep": 3
+    },
+    "Reduced end-to-end latency 34% for": {
+      "keep": 3
+    },
+    "Built a Python pipeline for": {
+      "tighten": 3
+    },
+    "Co-founded a 110+ member campus": {
+      "keep": 3
+    }
+  },
+  "structure_votes": {
+    "keep_project_first": 3,
+    "split_latency_metrics": 1,
+    "skills_order": 1,
+    "gpa_placement": 1,
+    "trim_offdomain_experience": 1
+  },
+  "competitive": {
+    "bs_detector": "stretch",
+    "hft_engineer": "Y",
+    "quant_recruiter": "stretch"
+  },
+  "passed": false,
+  "thresholds": {
+    "min_dim": 8,
+    "min_overall_mean": 8.5,
+    "consecutive_rounds": 2,
+    "max_rounds_base": 8,
+    "max_rounds_domain": 4
+  }
+}
