@@ -1,0 +1,46 @@
+{
+  "persona": "bs_detector",
+  "target": "Backend and cloud infrastructure SWE intern roles (distributed services, data layer, AWS, platform/SRE), 2026–27 cycle. Score domain_fit for this domain.",
+  "seven_second_takeaway": "UMD CS '28, AWS SDE intern (Redshift/EC2 capacity), Capital One intern, serverless AWS contract work (Kinesis/Lambda/Fargate/CDK), C++ IEX matching engine at 1.26M events/sec.",
+  "scores": {
+    "impact_clarity": 8,
+    "quantification": 8,
+    "technical_depth": 8,
+    "concision_readability": 8,
+    "skim_test": 8,
+    "credibility": 8,
+    "ats_parseability": 9,
+    "visual_layout": 8,
+    "domain_fit": 8,
+    "overall": 8
+  },
+  "score_rationale": {},
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "Skills lists X-Ray, SNS, API Gateway and Node.js but no bullet uses them; be ready to defend each in an interview or cut them, because a backend interviewer will ask about one."
+  ],
+  "bullets": [
+    {"quote": "Writing Java policies that tune upper/lower bounds", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Precomputed a tree-style search index over popular", "verdict": "tighten", "issue": "'tree-style' is vague and 'as the Claude skill's main search tool' reads awkwardly; the design choice is buried.", "suggestion": "Precomputed a tree-structured index of popular workflows from a 270K+ row PostgreSQL table (SQLAlchemy, Redis cache), serving as the Claude skill's main search tool under DB access limits"},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Rebuilt a legacy test-data workflow builder in", "verdict": "keep", "issue": "Frontend-heavy for this domain, but honestly scoped and the survey metric has a stated sample size.", "suggestion": ""},
+    {"quote": "Reduced end-to-end latency 34% for a", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Shipped a space-research tool used by Amazon", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Automated EventBridge-scheduled fine-tuning of a Bedrock model", "verdict": "tighten", "issue": "'larger LLM's cross-model eval scores move past a threshold' takes two reads to parse.", "suggestion": "Automated EventBridge-scheduled fine-tuning of a Bedrock document-importance classifier, retraining only when a larger LLM's eval scores cross a threshold"},
+    {"quote": "Built a Python pipeline for PhysTwin (PhD-led", "verdict": "reframe", "issue": "Name-heavy (PhysTwin, AnyGrasp, Open3D, VLM) and off-domain; the backend reader learns little from it.", "suggestion": "Built a Python pipeline turning multi-camera grasp predictions (AnyGrasp) into Open3D overlays for a VLM in a PhD-led digital-twin project (PhysTwin, targeting ICLR)"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Engineered a C++17 order book and matching", "verdict": "tighten", "issue": "'Engineered' is filler; the numbers already carry it, and they are specific enough to be believable.", "suggestion": "Built a C++17 order book and matching engine that replayed 50.9M real IEX DEEP+ messages with no resync, matching 99,122 of 99,123 fills exactly and 100% of top-of-book prices"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Sustained 1.26M events/sec end-to-end over the", "verdict": "keep", "issue": "", "suggestion": ""}
+  ],
+  "structure": [
+    {"key": "trim_umiacs", "change": "Cut UMIACS to its single setup/profiling bullet, or merge both into one line, for backend/cloud submissions.", "rationale": "The ML research bullet is the least domain-relevant content on the page and frees space for backend evidence."},
+    {"key": "prune_skills", "change": "Remove skills that appear in no bullet (X-Ray, SNS, API Gateway, Node.js) unless you can speak to real usage.", "rationale": "Unbacked keywords invite follow-up questions that can undercut otherwise strong credibility."}
+  ],
+  "top3": [
+    "Prune or be ready to defend skills not backed by any bullet (X-Ray, SNS, API Gateway, Node.js).",
+    "Tighten the Capital One search-index and Bedrock retraining bullets so the design choice reads in one pass.",
+    "Trim the UMIACS ML section so the backend/cloud evidence (AWS, Kinesis/Lambda, IEX storage benchmark) has more room."
+  ]
+}
