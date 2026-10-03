@@ -1,0 +1,20 @@
+[
+  {
+    "id": "g01",
+    "winner": "B",
+    "advantage": "marginal",
+    "decisive_wording": "B opens with \"Sustained 1.26M events/sec ... 1.2 µs per-message p99\" and then gives the mechanism as \"keeping each price level as a FIFO queue (std::list) inside a std::map, with an order-ID hash map for O(1) cancels\"; A opens with \"Stored price levels in a std::map of std::list FIFOs with a hash map from order ID to list iterator\"; C ends with \"and a separate 2M-event run measured a 1.2 µs p99\"",
+    "info_preserved_or_lost": "All three keep the throughput, the p99, the separate 2M-event run, std::map plus std::list FIFOs, and O(1) cancels. A and C say what the hash map points to (list iterator / list node), which is why cancels are O(1). B drops that detail and says only \"order-ID hash map\". B uses \"per-message\" where A says \"per-update\" and C gives no unit.",
+    "credibility_change": "A is the most exact about the mechanism, with the iterator mapping a senior engineer would check for. B is still credible because the parts it names give O(1) cancels. C is about as credible as A but tacks the latency on at the end, so it reads as an afterthought.",
+    "readability_change": "B is easiest to read: the results come first, so a recruiter gets the numbers right away, and \"FIFO queue (std::list) inside a std::map\" is easy to follow. A opens with a dense stack of container names before any result. C is a run-on sentence with two \"and\" clauses and an awkward passive ending."
+  },
+  {
+    "id": "g02",
+    "winner": "A",
+    "advantage": "concrete",
+    "decisive_wording": "\"not a code change\" and \"do-nothing control book\" (A) vs. \"null control book\" (B)",
+    "info_preserved_or_lost": "Both keep the 1.65x figure, the CPU frequency governor root cause, perf counters, the control book, the drop in variance from about 6% to 0.06%, core pinning, and the fixed clock. Only A says outright that the code was not at fault, and A calls the slowdown a \"regression\".",
+    "credibility_change": "A is slightly stronger. \"not a code change\" shows that a code cause was ruled out, which is the point of the debugging story and something a strong interview answer would cover. \"Regression\" is the standard engineering term.",
+    "readability_change": "B is about six words shorter. A is easier to understand: a non-technical recruiter can restate \"it wasn't the code, it was the CPU clock\", and \"do-nothing control book\" is clearer than \"null control book\". A's extra words add meaning, not padding."
+  }
+]

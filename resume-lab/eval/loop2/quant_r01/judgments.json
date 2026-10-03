@@ -1,0 +1,20 @@
+[
+  {
+    "id": "g01",
+    "winner": "B",
+    "advantage": "marginal",
+    "decisive_wording": "B: \"Sustained 1.26M events/sec over the full replay and a 1.2 µs per-message p99 on a separate 2M-event run, keeping each price level as a FIFO queue (std::list)\" vs A: \"...for O(1) cancels, and a separate 2M-event run measured a 1.2 µs p99\" and C: \"Stored price levels in a std::map of std::list FIFOs with a hash map from order ID to list iterator\"",
+    "info_preserved_or_lost": "All three keep 1.26M events/sec, 1.2 µs p99, the 2M-event run, std::map + std::list per price level, and the O(1) cancel hash map. A drops the unit of the p99 (no 'per-message'/'per-update'). C keeps the most precise mechanism detail ('list iterator'), which A approximates as 'list node' and B drops ('order-ID hash map'). B and C both qualify the p99 unit.",
+    "credibility_change": "Roughly equal. C's 'hash map from order ID to list iterator' is the most convincing to a senior engineer since it names the actual handle enabling O(1) erase; B's 'FIFO queue (std::list)' makes the queue semantics explicit. A's trailing 'a separate 2M-event run measured' reads like an afterthought but is not less credible.",
+    "readability_change": "B groups both results up front so a recruiter gets the outcome immediately, then gives the mechanism in plain terms ('FIFO queue'). A splits the two metrics around a long mechanism clause and ends in a run-on 'and ... measured'. C leads with a dense noun stack ('std::map of std::list FIFOs') before any result, which is harder for a non-technical reader. B over A is a clear readability gain; B over C is mostly ordering preference."
+  },
+  {
+    "id": "g02",
+    "winner": "B",
+    "advantage": "concrete",
+    "decisive_wording": "B: \"1.65x performance regression to the CPU frequency governor, not a code change\" and \"do-nothing control book\" vs A: \"1.65x slowdown\" and \"null control book\"",
+    "info_preserved_or_lost": "Both keep the 1.65x figure, CPU frequency governor root cause, perf counters, control book, and the 6% to 0.06% variance reduction via core pinning and fixed clock. B adds the explicit point that the cause was not a code change, which is the key insight of the story; A leaves it implied by 'apparent'.",
+    "credibility_change": "B is stronger: 'not a code change' states the debugging conclusion outright, and 'regression' frames it as a real engineering investigation, giving an interviewer a clear hook. 'Do-nothing control book' signals the experimental design more transparently than 'null control book'.",
+    "readability_change": "B is a few words longer but easier for a recruiter to restate: 'performance regression ... not a code change' and 'do-nothing control book' are self-explanatory, whereas 'null control book' is jargon. 'By pinning cores and fixing the clock' reads more like a person than 'with core pinning and a fixed clock'."
+  }
+]
