@@ -1,0 +1,5 @@
+== /home/user/AmarDhillon05/resume-lab/scores/base/round_05/resume.tex
+[WARN] 'Automated EventBridge-scheduled fine-tuning of a B': no metric or explicit outcome
+[WARN] 'Co-founded a 110+ member campus product studio tha': no visible technology
+lint: 0 errors, 2 warnings, 15 bullets
+fact_check: 0 errors, 0 warnings, 15 facts used

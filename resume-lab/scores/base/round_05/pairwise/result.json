@@ -1,0 +1,39 @@
+{
+  "tally": {
+    "new": 4,
+    "old": 2,
+    "tie": 0
+  },
+  "rows": [
+    {
+      "fact": "amazon_contract.bedrock_finetune",
+      "winner": "old",
+      "reason": "Leads with the model being fine-tuned; 'scheduled (EventBridge)' parenthetical in B interrupts the read."
+    },
+    {
+      "fact": "aws_sde.redshift",
+      "winner": "old",
+      "reason": "Near-identical; 'like patching' reads more smoothly than the parenthetical '(e.g., patching)'."
+    },
+    {
+      "fact": "iex.storage_benchmark",
+      "winner": "new",
+      "reason": "B states which store won and what was logged; A leaves the winner implicit. Both need \u00d7 symbols restored."
+    },
+    {
+      "fact": "iex.throughput",
+      "winner": "new",
+      "reason": "A's mirror-book cost comparison is confusing and likely garbled; B is clean and credible in one pass."
+    },
+    {
+      "fact": "terplabs.tortuga",
+      "winner": "new",
+      "reason": "A names one clear contribution (Redis caching layer); B blurs writing queries with caching."
+    },
+    {
+      "fact": "umiacs.grasp_vlm",
+      "winner": "new",
+      "reason": "Colon-separated steps are skimmable; B's long parenthetical and trailing 'plus prompt tuning' hurt readability."
+    }
+  ]
+}
