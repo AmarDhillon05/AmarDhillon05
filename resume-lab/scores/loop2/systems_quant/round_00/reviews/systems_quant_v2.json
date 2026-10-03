@@ -1,0 +1,129 @@
+{
+  "persona": "systems_quant_v2",
+  "target": "Systems / quant-developer / low-latency C++ internships (HFT firms, trading-systems teams, performance engineering), 2026-27 cycle",
+  "memory_skim": {"strongest_3": [], "engineer_type": "", "memorable_numbers": [], "confusing": [], "skipped": [], "interview_questions": []},
+  "plain_english": [],
+  "scores": {
+    "impact_clarity": 7,
+    "quantification": 8,
+    "technical_depth": 8,
+    "concision_readability": 7,
+    "skim_test": 7,
+    "credibility": 8,
+    "ats_parseability": 8,
+    "visual_layout": 8,
+    "domain_fit": 7,
+    "human_voice": 8,
+    "plain_language": 6,
+    "overall": 7
+  },
+  "competitive_for_domain": "Y",
+  "bullet_feedback": [
+    {
+      "bullet": "Stored price levels in a std::map of std::list FIFOs with a hash map from order ID to list iterator for O(1) cancels, sustaining 1.26M events/sec over the full replay and a 1.2 µs per-update p99 on a separate 2M-event run",
+      "problem": "The two performance numbers are well scoped by run, but the units and measurement boundary are not. The first bullet counts '50.9M real IEX exchange messages', while this one says 'events/sec' and 'per-update', so a reader can't tell whether messages, events and updates are the same unit. The bullet also doesn't say whether 1.26M/s and the 1.2 µs p99 were measured before or after the pinning and fixed-clock setup from bullet 3, or whether the p99 includes message parsing or only the book update. Only p99 is given, with no p50 to show the shape of the distribution.",
+      "severity": 6,
+      "why_it_matters": "This is the headline latency claim for an HFT screener, and the first follow-up question is 'what exactly is inside the timed region, and under what machine conditions?' A quick check gives 50.9M / 1.26M/s ≈ 40 s, which is only consistent if messages equal events. If they don't, the numbers look like they disagree.",
+      "missing_or_unclear": "clarify: whether 'event' = 'IEX message' = 'update'; what the timed region covers (parse + book update vs. book update only); whether both runs used the pinned, fixed-clock setup; p50 next to p99 if it was measured",
+      "suggested_direction": "Use one unit name across all four bullets and add a few words on the timed region and the setup. Consider moving the data-structure clause into its own short sentence so the numbers aren't buried after a 20-word design description, e.g. '...for O(1) cancels. On the pinned setup it sustained 1.26M messages/sec over the full replay and a 1.2 µs p99 book-update latency on a separate 2M-message run.'"
+    },
+    {
+      "bullet": "Implemented B+ tree and LSM-tree backends for the event log and benchmarked them on identical 2M-record workloads, where the B+ tree gave 12.8x the read throughput and 22x faster range queries at the cost of 27% more disk space",
+      "problem": "The comparison only reports read-side metrics, where B+ trees are expected to win, plus disk space. It leaves out write/append throughput, which is the reason anyone would pick an LSM tree and the main operation on an 'event log'. The bullet also doesn't say what the workload mix was ('identical 2M-record workloads' could be read-only or mixed) or which backend was kept.",
+      "severity": 5,
+      "why_it_matters": "A storage-literate interviewer will read a read-only comparison of B+ tree vs. LSM as one-sided and ask whether writes were measured. As written, the bullet reads like a known textbook result rather than a tradeoff decision.",
+      "missing_or_unclear": "clarify: read/write mix of the 2M-record workload; whether write throughput was measured; which backend the engine ended up using and why",
+      "suggested_direction": "Name the workload mix in a couple of words. If a write-side result exists, give the tradeoff in both directions instead of reads plus disk only. If not, say the workload was read-heavy so the conclusion is scoped honestly."
+    },
+    {
+      "bullet": "Traced an apparent 1.65x slowdown to the CPU frequency governor using perf counters and a null control book, then cut run-to-run variance from about 6% to 0.06% with core pinning and a fixed clock",
+      "problem": "This is the best evidence of benchmarking rigor on the page, but two phrases block it. 'Null control book' is unexplained: a reader can't tell whether it's a no-op book used to isolate harness cost. 'Run-to-run variance... 0.06%' doesn't say which metric (throughput? p99?), what statistic (CV? max-min spread?) or over how many runs. 0.06% is low enough that a performance engineer will want exactly that context before believing it.",
+      "severity": 5,
+      "why_it_matters": "Unscoped variance figures are exactly what this reader checks. A 100x variance reduction with no metric or run count could be read as cherry-picked, which undercuts the bullet meant to prove the candidate measures carefully.",
+      "missing_or_unclear": "clarify: what 'null control book' is; which metric's variance and what statistic (e.g. coefficient of variation of throughput across N runs)",
+      "suggested_direction": "Replace 'null control book' with a few plain words on its role (e.g. 'a no-op book as a control'), and name the metric and statistic behind 6% → 0.06%."
+    },
+    {
+      "bullet": "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange's book, agreeing with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices",
+      "problem": "Good correctness framing, but the single mismatched fill is left unexplained. '100% of top-of-book prices' also doesn't say what it was checked against (every IEX TOPS/price-level update? sampled snapshots?).",
+      "severity": 3,
+      "why_it_matters": "Interviewers will ask about the one mismatch. Having a cause ready, or showing on the page that it's understood, turns the number into evidence of careful debugging instead of an open question.",
+      "missing_or_unclear": "clarify: whether the one mismatched fill was root-caused; what feed or granularity top-of-book agreement was measured against",
+      "suggested_direction": "If the mismatch was diagnosed, a short clause naming the cause strengthens it. Otherwise leave it as is and be ready to explain it. Optionally name the reference the top-of-book check was compared to."
+    },
+    {
+      "bullet": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+      "problem": "'End-to-end latency 34%' doesn't say whether it's mean, median or tail, or whether it's per document or per batch. The rest of the page is careful about p99 and runs, so this bullet stands out as less rigorous next to it.",
+      "severity": 4,
+      "why_it_matters": "A latency-focused reader notices the unscoped percentage right after the order-book section and discounts it, and a little of that doubt carries over to the rest of the page.",
+      "missing_or_unclear": "clarify: which latency statistic (mean/median/p99) and per-document vs. per-batch",
+      "suggested_direction": "Add two or three words naming the statistic and the unit (e.g. 'median per-document latency'), using whatever was actually measured."
+    },
+    {
+      "bullet": "Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries",
+      "problem": "Starting with 'Because...' hides the action until the middle of the sentence. 'Strict access limits' is vague (rate limits? permissions? query quotas?), so the reason for the design isn't clear. 'To cut database queries' states an intent with no observed effect, and three mechanisms (precompute, category tree, Redis) are packed into one sentence.",
+      "severity": 4,
+      "why_it_matters": "A skimmer reads the first words for the action and finds a dependent clause instead. A technical reader can't judge whether the caching design fits the constraint without knowing what the constraint was.",
+      "missing_or_unclear": "clarify: what kind of access limit (rate limit, read quota, permission scope)",
+      "suggested_direction": "Lead with the verb and move the constraint after it, naming the constraint concretely, e.g. 'Precomputed popular workflows into a category tree the Claude skill searches first, and cached full workflows in Redis, because the 270K+ row PostgreSQL table had [specific limit].'"
+    },
+    {
+      "bullet": "Writing Java logic that sets the upper and lower bounds on EC2 capacity that Amazon Redshift reserves for operations like patching, balancing availability against cost, and backtesting it",
+      "problem": "The sentence trails off: ', and backtesting it' is attached to a participle phrase, so it reads as if 'balancing' and 'backtesting' are parallel. 'Writing Java logic' is also a weak verb phrase for what sounds like a capacity-planning policy.",
+      "severity": 3,
+      "why_it_matters": "This is the strongest brand on the page and it is mostly read for the brand. A clumsy sentence costs a re-read, and the backtesting part, the most quant-relevant word in it, gets lost at the end.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Split the action and the validation so backtesting has a clear subject, e.g. 'Writing the Java policy that sets upper and lower bounds on the EC2 capacity Amazon Redshift reserves for operations like patching, trading availability against cost, and backtesting it against historical usage' (only if the backtest is on historical usage; otherwise keep the existing scope)."
+    },
+    {
+      "bullet": "For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D for a vision-language model, then tuned prompts so the model picks the right grasp more often",
+      "problem": "'Picks the right grasp more often' is a result with no measure, and 'tuned prompts' is the weakest-sounding engineering verb on the page for this audience. For an HFT screener this is the least relevant bullet, and it uses two full lines.",
+      "severity": 3,
+      "why_it_matters": "Two lines of low-relevance text with a vague result take attention from the systems evidence and weaken the 'careful with numbers' impression the project section sets up.",
+      "missing_or_unclear": "clarify: whether grasp-selection accuracy was measured before and after prompt tuning",
+      "suggested_direction": "If no measurement exists, shorten to one line focused on what was built (the overlay pipeline feeding the VLM) and drop the unmeasured improvement claim."
+    },
+    {
+      "bullet": "Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio's class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency",
+      "problem": "This ends at intent ('to reduce database load and latency') with no observed effect. It is also the third Redis-caching bullet on the page, after Capital One and the Redis mention in skills.",
+      "severity": 3,
+      "why_it_matters": "Repeating the same technique without a result makes it read as filler, and the stated purpose without an outcome invites 'did it?' from an interviewer.",
+      "missing_or_unclear": "clarify: whether any reduction in DB load or latency was observed",
+      "suggested_direction": "If no outcome exists, consider cutting this bullet and keeping the TerpLabs co-founder line, which frees space for the systems content. Otherwise state the observed effect."
+    }
+  ],
+  "page_feedback": [
+    {
+      "problem": "The order-book project is the only C++/low-latency evidence, and all the other experience is cloud, LLM tooling or ML. The Skills line 'low-latency C++' is a self-applied label, and C and Rust are listed with nothing on the page backing them.",
+      "severity": 5,
+      "why_it_matters": "An HFT screener will weigh one strong project against a page that otherwise reads as cloud/AI SWE, and self-labels in Skills are discounted. The intended 'repeatedly built and improved performance-sensitive systems' story only comes through for the order book.",
+      "suggested_direction": "Keep the project first, which is correct. In Skills, prefer concrete items the page proves (perf counters, core pinning, B+/LSM trees) over the 'low-latency C++' label. Consider dropping languages that have no evidence anywhere on the page."
+    },
+    {
+      "problem": "The page uses three different words for the same unit across the project bullets: 'messages', 'events' and 'updates'.",
+      "severity": 5,
+      "why_it_matters": "For a reader who checks that numbers are consistent with each other, shifting units make it impossible to confirm that 50.9M messages at 1.26M/s and a 1.2 µs p99 describe the same work.",
+      "suggested_direction": "Pick one term and use it in all four project bullets."
+    },
+    {
+      "problem": "About 15% of the page at the bottom is empty, while several bullets are dense two-liners packing design, numbers and setup into one sentence.",
+      "severity": 2,
+      "why_it_matters": "The order-book bullets are the strongest content but the hardest to read quickly. The unused space could let them breathe.",
+      "suggested_direction": "Use the free vertical space for slightly more spacing between bullets or sections, or split the densest project bullet into design and result, without adding new content."
+    },
+    {
+      "problem": "Within the project bullets, bold falls on 50.9M, 12.8x and 1.26M events/sec, but not on the 99,122 of 99,123 correctness result or the 1.2 µs p99.",
+      "severity": 2,
+      "why_it_matters": "For this audience, exact-match correctness and tail latency are the headline signals. Bolding message volume and throughput instead points the skimmer at the less distinctive numbers.",
+      "suggested_direction": "Move bold anchors to the correctness match and the p99, keeping one per bullet."
+    }
+  ],
+  "keep": [
+    "Project section placed above Experience, with the IEX Order Book & Matching Engine as the first content block",
+    "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange's book (the core correctness framing against real exchange data)",
+    "Traced an apparent 1.65x slowdown to the CPU frequency governor ... with core pinning and a fixed clock (the debugging story itself; only scope the variance metric)",
+    "Explicitly stating which run each performance number came from ('over the full replay' vs. 'on a separate 2M-event run')",
+    "Cut AI workflow generation time 65% to under 15s by replacing a Claude skill's open-ended search with focused sub-skills that call Python tools for workflow search and validation, guided by CloudWatch and OpenSearch latency logs",
+    "Co-founded a 110+ member student product studio that has shipped 5 live products"
+  ]
+}
