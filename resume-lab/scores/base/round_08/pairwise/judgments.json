@@ -1,0 +1,20 @@
+[
+  {
+    "id": "p01",
+    "winner": "B",
+    "reason": "Leads with the concrete action and states the current stage ('initial backtests complete'); A's 'backtesting' leaves status vague.",
+    "better_rewrite": "Writing Java policies that tune upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations like patching, balancing availability vs. cost; initial backtests complete"
+  },
+  {
+    "id": "p02",
+    "winner": "tie",
+    "reason": "Identical except 'simulation's' vs 'replay's'; both share garbled multipliers ('12.8 read throughput', '22 faster') that hurt credibility equally.",
+    "better_rewrite": "Benchmarked B+ tree vs LSM skip-list stores for event logs on identical 2M-record workloads; B+ tree gave 12.8x read throughput and 22x faster range summaries for 27% more disk"
+  },
+  {
+    "id": "p03",
+    "winner": "A",
+    "reason": "Clear pipeline flow and plain 'tuned the VLM's prompts'; B's 'that detect them' is ambiguous and 'optimized' implies an unstated result.",
+    "better_rewrite": "Built a Python pipeline for PhysTwin (PhD-led digital twin project targeting ICLR): runs AnyGrasp on multi-camera images, renders grasps as Open3D overlays for a VLM; tuned its prompts"
+  }
+]

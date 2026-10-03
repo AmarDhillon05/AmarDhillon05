@@ -1,0 +1,24 @@
+{
+  "tally": {
+    "new": 1,
+    "old": 1,
+    "tie": 1
+  },
+  "rows": [
+    {
+      "fact": "aws_sde.redshift",
+      "winner": "new",
+      "reason": "Leads with the concrete action and states the current stage ('initial backtests complete'); A's 'backtesting' leaves status vague."
+    },
+    {
+      "fact": "iex.storage_benchmark",
+      "winner": "tie",
+      "reason": "Identical except 'simulation's' vs 'replay's'; both share garbled multipliers ('12.8 read throughput', '22 faster') that hurt credibility equally."
+    },
+    {
+      "fact": "umiacs.grasp_vlm",
+      "winner": "old",
+      "reason": "Clear pipeline flow and plain 'tuned the VLM's prompts'; B's 'that detect them' is ambiguous and 'optimized' implies an unstated result."
+    }
+  ]
+}

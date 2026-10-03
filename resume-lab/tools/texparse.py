@@ -46,6 +46,7 @@ def match_brace(s: str, i: int) -> int:
 def latex_to_text(s: str) -> str:
     s = s.replace("\\%", "%").replace("\\&", "&").replace("\\$", "$").replace("\\#", "#")
     s = s.replace("--", "–").replace("~", " ")
+    s = s.replace("$\\times$", "×").replace("\\times", "×")
     s = re.sub(r"\$\|\$", "|", s)
     s = re.sub(r"\\[vh]space\*?\{[^}]*\}", "", s)
     s = re.sub(r"\\(?:begin|end)\{[a-zA-Z*]+\}(?:\[[^\]]*\])?", " ", s)
