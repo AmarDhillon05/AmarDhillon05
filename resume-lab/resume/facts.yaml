@@ -81,7 +81,7 @@ roles:
         optional_techs: [GitHub Actions, TypeScript]
         required_numbers: []
       kinesis_pipeline:
-        claim: 34% end-to-end latency reduction (clarified by Amar, Oct 2026) on a pipeline routing 6,000+ scraped research documents for inference, via Kinesis streams feeding Lambda processors for processing/redirection; Lambda + API Gateway front it for app integration
+        claim: 34% end-to-end latency reduction (clarified by Amar, Oct 2026) on a pipeline routing 6,000+ scraped research documents for inference. Before - scraper output staged through S3 (scraper -> S3 -> Lambda -> S3), slower end to end; after - Kinesis streams feeding Lambda processors for processing/redirection; Lambda + API Gateway front it for app integration
         core_techs: [Kinesis, Lambda]
         optional_techs: [API Gateway]
         required_numbers: ["34%", "6,000+"]
@@ -99,13 +99,14 @@ roles:
     status: in_progress
     bullets:
       phystwin:
-        claim: Developing automated training for PhysTwin (a physics-based digital twin) with a PhD research team targeting an ICLR submission
+        claim: "CORRECTED by Amar, Oct 2026: NOT a training pipeline. Context only: PhysTwin, a physics-based digital twin, PhD research team targeting an ICLR submission. Do not use standalone; context is folded into umiacs.grasp_vlm"
+        superseded: true
         core_techs: [PhysTwin]
         required_numbers: []
       grasp_vlm:
-        claim: Built a Python pipeline linking AnyGrasp multi-camera grasp candidates to Open3D-rendered overlay views consumed by a Qwen3-VL-8B-Instruct-FP8 VLM, letting researchers iterate faster by isolating scene components
+        claim: "For PhysTwin (physics-based digital twin; PhD-led team targeting ICLR). Built a Python pipeline that takes multi-camera images, runs AnyGrasp on them, and renders grasp candidates as clear Open3D visual overlays; built the pipeline feeding those renders into a Qwen3-VL-8B-Instruct-FP8 VLM for detection; did prompt optimization for the VLM; did NOT work on the VLM output (Amar, Oct 2026). Lets researchers iterate faster by isolating scene components"
         core_techs: [Python, AnyGrasp, Open3D]
-        optional_techs: [Qwen3-VL-8B-Instruct-FP8, VLM]
+        optional_techs: [PhysTwin, ICLR, Qwen3-VL-8B-Instruct-FP8, VLM, prompt optimization]
         required_numbers: []   # "8B" / "FP8" / "Qwen3" are model-name tokens, whitelisted below
       env_setup:
         claim: Cut research-environment setup time 30% via uv dependency pinning and Docker for identical setups; psutil-based timing/memory monitoring; Pytest unit tests to quickly identify bottlenecks
@@ -181,9 +182,35 @@ roles:
 
 projects:
   iex:
-    title: IEX Matching Engine Simulation
-    stack: [C++, STL, POSIX, Database internals]
+    title: IEX Order Book & Matching Engine
+    stack: [C++17, STL, POSIX, Linux perf]
     dates: Jul 2026 -- Aug 2026
+    source: resume/sources/iex_metrics_2026-10.md   # Amar's verbatim metrics, Oct 3 2026
+    bullets:
+      replay_correctness:
+        claim: "C++17 order book + matching engine on the IEX DEEP+ feed. Replayed 50,959,176 (~50.9M, ~51M) real exchange messages through a free-running matching engine with no resync; 99,122 / 99,123 fills exact (one divergence, 37 shares). Share conservation exact across 6,996,617,788 (~7.0B) shares submitted. 100.00% (100%) of shares placed correctly (16,433,036); top-of-book price agreement 100.00% (100%) at every sample, price+size 99.99%"
+        core_techs: [C++, IEX]
+        optional_techs: [C++17, DEEP+]
+        required_numbers: []
+      throughput:
+        claim: "Sustained 1.26M events/sec end-to-end over the full stream, 8.0 GB peak RSS. At 1.40 GHz base clock: mirror book 485.6 ns/event (2.06M events/sec); authoritative matching engine 686.7 ns/event (1.46M events/sec), 1.41x the mirror, for deciding every fill itself"
+        core_techs: []
+        required_numbers: []
+      storage_benchmark:
+        claim: "Storage engine with three log-database backends sharing a leaf format. B+ tree vs LSM skip list on identical 2M-record workloads: 25x fewer node hops (17,938 vs 452,434), 42x fewer summary folds, 22x faster range-summarize, 12.8x higher read throughput, page-cache hit rate 69.4% vs 32.9%, for 27% more bytes on disk. Range queries served from node summaries, 2,602 records per node summary vs 62, answering without opening the node"
+        core_techs: [B+ tree, LSM]
+        required_numbers: []
+      adaptive_negative:
+        claim: "Measured an adaptive batch-sizing policy and published it as a negative result: +71% disk, +23% hops, -32% append rate, no query win; cost dominated by node lookup, not batch size"
+        core_techs: []
+        required_numbers: []
+      perf_rigor:
+        claim: "Hardware counters (perf, 5 runs): IPC 1.85, 55.0% cache miss rate, 2.29 branch misses per 1K instructions, wall time reproducible to +/-0.09%. Top-down: 44.9% retiring, 25.8% frontend-bound, 21.8% backend-bound, 7.5% bad speculation. Diagnosed a 1.65x phantom regression as a CPU-governor artifact (not a code change) by instrumenting a null control book and the timing harness; cut run-to-run variance from ~6% to 0.06% by core pinning and fixing the clock. Reporting harness records CPU, core type, governor and turbo state with every figure and suppresses latency rows whose p50 falls within measured instrument cost"
+        core_techs: [perf]
+        required_numbers: []
+
+  iex_superseded:   # pre-metrics wording (Oct 2), kept for history; do not use
+    superseded: true
     bullets:
       order_book:
         claim: C++ order-book simulation on historical IEX data; contract-based plug-and-play design to evaluate multiple approaches with enforced correctness
@@ -199,6 +226,7 @@ projects:
         optional_techs: [rdtscp, perf]
         required_numbers: []
 
+
 skills_pool:   # any subset may be shown; nothing outside this pool may be added
   languages: [Python, C, C++, JavaScript, TypeScript, HTML, CSS, Java, Rust, CUDA, SQL, Bash]
   web: [REST APIs, Express.js, Flask, FastAPI, Node.js, React.js, Next.js, Spring Boot, Electron, React-Flow, Prisma, GraphQL]
@@ -208,4 +236,4 @@ skills_pool:   # any subset may be shown; nothing outside this pool may be added
   tooling: [Docker, Kubernetes, Git, GitHub, GitHub Actions, Bitbucket, Linux, Pytest, Jest, uv, psutil, perf, Jira, KubOS, QGroundControl, Arduino]
 
 # Number-like tokens that are allowed anywhere without being metrics
-number_whitelist: ["Qwen3", "8B", "FP8", "GPT-4o", "4o", "I/II", "2025", "2026", "2027", "2028", "2024", "3.5", "B+", "IEX"]
+number_whitelist: ["C++17", "Qwen3", "8B", "FP8", "GPT-4o", "4o", "I/II", "2025", "2026", "2027", "2028", "2024", "3.5", "B+", "IEX"]

@@ -102,3 +102,6 @@ accepted_risks:
   - key: rag_sample_size
     decided: "Amar, Oct 2026: tester count for the 93% RAG metric is unknown"
     match: ["(?i)(93%|meal)", "(?i)(how many|sample|tester count|n=|number of testers|scope)"]
+  - key: env_setup_baseline
+    decided: "Amar, Oct 2026: no baseline available for the 30% setup-time reduction"
+    match: ["(?i)30%", "(?i)(baseline|from what|from x|minutes|unclear)"]

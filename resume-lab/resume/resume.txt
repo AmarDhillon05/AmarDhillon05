@@ -27,19 +27,17 @@ Software Engineer (Contract)                                                    
  • Shipped a space-research tool used by Amazon Leo’s public-policy team, now maintained by Leo engineers; deployed on
 
    AWS Fargate (Docker) via GitHub Actions and CDK (TypeScript)
- • Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by moving it
+ • Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3
 
-   onto Kinesis streams feeding Lambda processors
+   staging hops with Kinesis streams feeding Lambda
  • Automated Bedrock source-relevancy model fine-tuning on an EventBridge schedule, with decision gates that skip
 
    redundant retraining; added X-Ray tracing and SNS failure alerts
 UMD Institute for Advanced Computer Studies (UMIACS)                                                  Dec 2025 – Present
 Machine Learning Research Intern                                                                       College Park, MD
- • Developing automated training for PhysTwin, a physics-based digital twin, on a PhD-led team targeting ICLR
+ • Built a Python pipeline for PhysTwin (physics-based digital twin; PhD-led team targeting ICLR) running AnyGrasp on
 
- • Engineered a Python pipeline rendering AnyGrasp multi-camera grasp candidates as Open3D overlays for a
-
-   Qwen3-VL-8B vision-language model, letting researchers isolate scene components
+   multi-camera images and rendering grasps as Open3D overlays for a VLM, plus prompt tuning
  • Shortened research-environment setup time 30% with uv dependency pinning and Docker; added psutil time/memory
 
    profiling and Pytest suites to find bottlenecks
@@ -55,16 +53,16 @@ Co-Founder, Software Engineer                                                   
    93% of generated meals rated satisfactory by internal testers
 
 Projects
-IEX Matching Engine Simulation | C++, STL, POSIX                                                   Jul 2026 – Aug 2026
- • Implemented a C++ order-book simulator replaying historical IEX data, with a contract-based plug-in interface so
+IEX Order Book & Matching Engine | C++17, STL, POSIX, Linux perf                                   Jul 2026 – Aug 2026
+ • Engineered a C++17 order book and matching engine that replayed 50.9M real IEX DEEP+ messages with no resync,
 
-   alternative approaches swap in under the same correctness checks
- • Designed paginated hash-based order-book storage with an in-memory LFU cache for hot tickers, validating replayed
+   matching 99,122 of 99,123 fills exactly and 100% of top-of-book prices
+ • Benchmarked B+ tree vs LSM skip-list log stores on identical 2M-record workloads: 12.8× read throughput and 22×
 
-   books for drift against IEX historical book data
- • Benchmarked a time-based adaptive LSM store against a B+ tree for simulation logs, measuring throughput and latency
+   faster range summaries for 27% more disk
+ • Sustained 1.26M events/sec end-to-end with 686.7 ns/event matching at a 1.40 GHz base clock, 1.41× the cost of a
 
-   via rdtscp and hardware utilization via Linux perf counters
+   passive mirror book for deciding every fill itself
 
 Technical Skills
 Languages: Python, Java, C++, C, TypeScript/JavaScript, SQL

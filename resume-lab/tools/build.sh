@@ -11,7 +11,7 @@ for tex in "$@"; do
     echo "BUILD FAILED: $tex"; grep -m5 -A2 '^!' "$dir/$base.build.log"; status=1; continue
   fi
   grep -q 'Overfull \\hbox' "$dir/$base.build.log" && echo "[WARN] overfull hbox in $tex"
-  pdftotext -layout "$dir/$base.pdf" "$dir/$base.txt"
+  pdftotext "$dir/$base.pdf" "$dir/$base.txt"  # plain mode ≈ what ATS parsers extract
   rm -f "$dir/$base".{aux,out}
   echo "== $tex"
   python3 "$here/lint.py" "$dir/$base.tex" --json "$dir/$base.lint.json" ${LINT_ARGS:-} || status=1

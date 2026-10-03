@@ -100,6 +100,8 @@ def main():
             add("ERROR", where, f"fact {b.fact_id} used twice")
         used[b.fact_id] = b.text
         role, f = table[b.fact_id]
+        if f.get("superseded") or role.get("superseded"):
+            add("ERROR", where, f"fact {b.fact_id} is superseded (corrected by candidate); do not use")
         used_roles.add(b.fact_id.split(".")[0])
         text_wo = strip_whitelist(b.text, wl)
         for req in f.get("required_numbers") or []:
