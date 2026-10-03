@@ -15,13 +15,13 @@ Jul 2026 – Aug 2026
 • Built a C++17 order book and matching engine that replayed 50.9M real IEX DEEP+ messages with no resync,
 matching 99,122 of 99,123 fills exactly and 100% of top-of-book prices
 • Indexed orders in a hash map holding iterators into per-price FIFO queues (std::map levels, O(1) cancels); a separate
-2M-event profiling run measured 120 ns p50 and 1.2 µs p99 per book update
+2M-event profiling run put the per-update p99 tail at 1.2 µs
 • Sustained 1.26M events/sec end-to-end over the full replay; the matching engine alone averages 686.7 ns/event
 (1.46M/s) with the CPU fixed at its 1.40 GHz base clock
 • Traced a 1.65× phantom regression to a CPU-governor artifact using perf counters and a null control book; core pinning
 and a fixed clock cut run-to-run variance from ∼6% to 0.06%
 • Benchmarked B+ tree vs LSM stores for the replay’s event log: the B+ tree gave 12.8× read throughput for 27% more
-disk; documented adaptive batch sizing as a negative result
+disk; documented adaptive log batch sizing as a negative result
 
 Experience
 Amazon Web Services
@@ -36,7 +36,7 @@ Software Engineering Intern
 Richmond, VA
 • Precomputed a tree-style search index over popular workflows from a 270K+ row PostgreSQL table
 (Python/SQLAlchemy, Redis cache) as the Claude skill’s main search tool under DB access limits
-• Cut LLM workflow generation time 65% to under 15s by decomposing a Claude skill into sub-skills backed by Python
+• Cut LLM workflow generation time 65% to under 15s by splitting a Claude agent skill into sub-skills backed by Python
 search/validation tools, guided by CloudWatch + OpenSearch latency logs
 UMD App Development Contracting (Client: Amazon Leo)
 Jan 2026 – Present

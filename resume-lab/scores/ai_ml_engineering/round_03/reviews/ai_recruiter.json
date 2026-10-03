@@ -1,0 +1,100 @@
+{
+  "persona": "ai_recruiter",
+  "target": "AI/ML engineering intern roles (LLM applications, agents, RAG, ML platform) at AI-native startups and big-tech AI orgs, 2026–27 cycle. Score domain_fit for this domain.",
+  "seven_second_takeaway": "UMD CS '28 with AWS and Capital One internships; shipped a Claude agent-skill speedup (65%), Bedrock fine-tuning pipeline for Amazon Leo, and a RAG feature with tester ratings.",
+  "scores": {
+    "impact_clarity": 8,
+    "quantification": 7,
+    "technical_depth": 8,
+    "concision_readability": 8,
+    "skim_test": 8,
+    "credibility": 8,
+    "ats_parseability": 9,
+    "visual_layout": 8,
+    "domain_fit": 7,
+    "overall": 8
+  },
+  "score_rationale": {
+    "quantification": "AWS, VLM grasp, and Bedrock retraining bullets end without a measured result; VLM 'more often' is unanchored where an eval number would matter most.",
+    "domain_fit": "Top slot is a non-AI capacity-policy role; strongest LLM evidence sits second; lone project is C++ trading, off-domain for AI hiring managers."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "clarify: how the VLM grasp improvement was judged (eval set, success rate, before/after) — 'picks correct grasps more often' reads unmeasured to an AI HM",
+    "clarify: whether the drift-triggered Bedrock retraining is running in production and what the classifier quality or retrain frequency looks like"
+  ],
+  "bullets": [
+    {
+      "quote": "Writing Java policies that tune upper/lower bounds",
+      "verdict": "tighten",
+      "issue": "Non-AI and WIP; fine to keep honest, but it occupies the highest-attention slot for this domain.",
+      "suggestion": "Writing Java policies that tune EC2 capacity bounds reserved for Redshift maintenance (e.g., patching), trading availability against cost; initial backtests complete"
+    },
+    {
+      "quote": "Cut LLM workflow generation time 65% to",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Precomputed a tree-style search index over popular",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Rebuilt a legacy test-data workflow builder in",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Automated EventBridge-scheduled fine-tuning of a Bedrock model",
+      "verdict": "reframe",
+      "issue": "Strong ML-platform story (LLM-as-judge drift trigger) but leads with the scheduler instead of the idea.",
+      "suggestion": "Built drift-triggered fine-tuning for a Bedrock document-importance classifier: a larger LLM re-scores its labels and EventBridge retrains only when agreement shifts past a threshold"
+    },
+    {
+      "quote": "Reduced end-to-end latency 34% for a pipeline",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Shipped a space-research tool used by Amazon",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Tuned VLM prompts for PhysTwin (PhD-led digital",
+      "verdict": "add_context",
+      "issue": "'More often' with no measure; AI recruiters want an eval for prompt work.",
+      "suggestion": "Tuned VLM prompts for PhysTwin (PhD-led digital twin, targeting ICLR) to improve grasp selection and depth handling, fed by a Python pipeline rendering AnyGrasp-on-Open3D overlays"
+    },
+    {
+      "quote": "Shortened research-environment setup time 30% with uv",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Building a RAG meal-suggestion feature for the",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Co-founded a 110+ member campus product studio",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Built a C++17 order book and matching",
+      "verdict": "keep",
+      "issue": "Impressive correctness evidence but off-domain; consider it lower priority in an AI-targeted version."
+    }
+  ],
+  "structure": [
+    {
+      "key": "ai_summary_line_optional",
+      "change": "Keep reverse-chronological order, but consider moving the Capital One block above AWS only if the AWS role is framed as concurrent/upcoming; otherwise leave as is.",
+      "rationale": "Capital One holds the best LLM evidence; recruiters read the first block hardest. Conservative: only if dates allow without confusion."
+    },
+    {
+      "key": "skills_ai_first",
+      "change": "Keep AI/ML skills row first (already done); drop 'GPT-4o mini' from skills since it appears in the RAG bullet.",
+      "rationale": "Model names in a skills list read as buzzwords; shown through accomplishments already."
+    }
+  ],
+  "top3": [
+    "clarify: how VLM grasp quality was measured and add that result if one exists — prompt work without an eval is the weakest AI signal here",
+    "Reframe the Bedrock bullet to lead with the LLM-judged drift-triggered retraining design, the most ML-platform-shaped idea on the page",
+    "Reduce the visual weight of non-AI content at the top (tighten AWS bullet; consider Capital One prominence) so the LLM/agent work lands in the 7-second skim"
+  ]
+}

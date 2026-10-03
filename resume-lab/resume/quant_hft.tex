@@ -99,13 +99,13 @@
     % fact: iex.replay_correctness
     \resumeItem{Built a C++17 order book and matching engine that replayed \textbf{50.9M} real IEX DEEP+ messages with no resync, matching 99,122 of 99,123 fills exactly and 100\% of top-of-book prices}
     % fact: iex.data_structures+iex.latency_dist
-    \resumeItem{Indexed orders in a hash map holding iterators into per-price FIFO queues (std::map levels, O(1) cancels); a separate 2M-event profiling run measured 120 ns p50 and 1.2 \textmu{}s p99 per book update}
+    \resumeItem{Indexed orders in a hash map holding iterators into per-price FIFO queues (std::map levels, O(1) cancels); a separate 2M-event profiling run put the per-update p99 tail at 1.2 \textmu{}s}
     % fact: iex.throughput
     \resumeItem{Sustained \textbf{1.26M events/sec} end-to-end over the full replay; the matching engine alone averages 686.7 ns/event (1.46M/s) with the CPU fixed at its 1.40 GHz base clock}
     % fact: iex.perf_rigor
     \resumeItem{Traced a 1.65$\times$ phantom regression to a CPU-governor artifact using perf counters and a null control book; core pinning and a fixed clock cut run-to-run variance from $\sim$6\% to 0.06\%}
     % fact: iex.storage_benchmark+iex.adaptive_negative
-    \resumeItem{Benchmarked B+ tree vs LSM stores for the replay's event log: the B+ tree gave 12.8$\times$ read throughput for 27\% more disk; documented adaptive batch sizing as a negative result}
+    \resumeItem{Benchmarked B+ tree vs LSM stores for the replay's event log: the B+ tree gave 12.8$\times$ read throughput for 27\% more disk; documented adaptive log batch sizing as a negative result}
   \resumeItemListEnd
 \resumeSubHeadingListEnd
 
@@ -128,7 +128,7 @@
     % fact: capital_one.search_index
     \resumeItem{Precomputed a tree-style search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) as the Claude skill's main search tool under DB access limits}
     % fact: capital_one.claude_skill
-    \resumeItem{Cut LLM workflow generation time \textbf{65\%} to under 15s by decomposing a Claude skill into sub-skills backed by Python search/validation tools, guided by CloudWatch + OpenSearch latency logs}
+    \resumeItem{Cut LLM workflow generation time \textbf{65\%} to under 15s by splitting a Claude agent skill into sub-skills backed by Python search/validation tools, guided by CloudWatch + OpenSearch latency logs}
   \resumeItemListEnd
 
   \resumeSubheading

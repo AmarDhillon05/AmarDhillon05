@@ -13,12 +13,12 @@
     },
     {
       "fact": "iex.data_structures+iex.latency_dist",
-      "chars": 190,
-      "words": 32,
+      "chars": 177,
+      "words": 29,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.64,
-      "text": "Indexed orders in a hash map holding iterators into per-price FIFO queues (std::map levels, O(1) cancels); a separate 2M-event profiling run measured 120 ns p50 and 1.2 s p99 per book update"
+      "last_fill": 0.5,
+      "text": "Indexed orders in a hash map holding iterators into per-price FIFO queues (std::map levels, O(1) cancels); a separate 2M-event profiling run put the per-update p99 tail at 1.2 s"
     },
     {
       "fact": "iex.throughput",
@@ -40,12 +40,12 @@
     },
     {
       "fact": "iex.storage_benchmark+iex.adaptive_negative",
-      "chars": 173,
-      "words": 30,
+      "chars": 177,
+      "words": 31,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.49,
-      "text": "Benchmarked B+ tree vs LSM stores for the replay's event log: the B+ tree gave 12.8\u00d7 read throughput for 27% more disk; documented adaptive batch sizing as a negative result"
+      "last_fill": 0.52,
+      "text": "Benchmarked B+ tree vs LSM stores for the replay's event log: the B+ tree gave 12.8\u00d7 read throughput for 27% more disk; documented adaptive log batch sizing as a negative result"
     },
     {
       "fact": "aws_sde.redshift",
@@ -67,12 +67,12 @@
     },
     {
       "fact": "capital_one.claude_skill",
-      "chars": 184,
-      "words": 28,
+      "chars": 188,
+      "words": 29,
       "n_bold": 1,
       "n_lines": 2,
       "last_fill": 0.62,
-      "text": "Cut LLM workflow generation time 65% to under 15s by decomposing a Claude skill into sub-skills backed by Python search/validation tools, guided by CloudWatch + OpenSearch latency logs"
+      "text": "Cut LLM workflow generation time 65% to under 15s by splitting a Claude agent skill into sub-skills backed by Python search/validation tools, guided by CloudWatch + OpenSearch latency logs"
     },
     {
       "fact": "amazon_contract.kinesis_pipeline",

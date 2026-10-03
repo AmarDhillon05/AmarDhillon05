@@ -1,0 +1,40 @@
+{
+  "persona": "bs_detector",
+  "target": "Software engineering intern roles at quantitative trading / HFT firms (Jane Street, HRT, Citadel Securities, Optiver, IMC style), 2026–27 cycle. Score domain_fit for this domain.",
+  "seven_second_takeaway": "UMD CS '28 who built a C++17 IEX order book replaying 50.9M real messages with ns-level latency numbers; AWS and Capital One SWE internships.",
+  "scores": {"impact_clarity": 7, "quantification": 8, "technical_depth": 8, "concision_readability": 7,
+             "skim_test": 8, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 8, "overall": 8},
+  "score_rationale": {
+    "impact_clarity": "Order book bullets are strong; UMIACS, TerpLabs Redis, Capital One index and AWS (WIP) bullets end without a result.",
+    "concision_readability": "Project bullets stack 3-4 numbers each; dense to read. 'Claude skill' jargon is opaque to a trading-firm reader."
+  },
+  "competitive_for_domain": "stretch",
+  "must_fix": [
+    "clarify: 120 ns p50 / 1.2 µs p99 per book update vs 686.7 ns/event mean for the matching engine look inconsistent; state what each run measures so it survives the first follow-up",
+    "clarify: what 'fills' means against IEX DEEP+ (which reports trades, not your fills) and be ready to explain the 1 mismatch",
+    "Define or drop 'the Claude skill' in Capital One bullets; a quant HM won't know what the object being optimized is"
+  ],
+  "bullets": [
+    {"quote": "Built a C++17 order book and matching engine", "verdict": "keep"},
+    {"quote": "Indexed orders in a hash map holding iterators", "verdict": "add_context", "issue": "p50 120 ns conflicts on its face with 686.7 ns/event mean in next bullet; unclear what differs.", "suggestion": "Indexed orders in a hash map of iterators into per-price FIFO queues (std::map levels, O(1) cancels); an isolated 2M-event book-update benchmark measured 120 ns p50, 1.2 µs p99"},
+    {"quote": "Sustained 1.26M events/sec end-to-end over the full", "verdict": "tighten", "issue": "Three throughput/latency figures in one bullet; reader must reconcile with prior bullet.", "suggestion": "Sustained 1.26M events/sec end-to-end over the full replay (matching engine alone: 686.7 ns/event, 1.46M/s) at a fixed 1.40 GHz clock"},
+    {"quote": "Traced a 1.65× phantom regression to a CPU-governor", "verdict": "keep", "issue": "Best credibility signal on the page; expect questions on how 0.06% variance was measured."},
+    {"quote": "Benchmarked B+ tree vs LSM stores for the", "verdict": "tighten", "issue": "Storage-engine choice for an event log is tangential to HFT; 'adaptive batch sizing negative result' is vague.", "suggestion": "Benchmarked B+ tree vs LSM stores for the replay's event log: B+ tree gave 12.8× read throughput for 27% more disk"},
+    {"quote": "Writing Java policies that tune upper/lower bounds", "verdict": "keep", "issue": "Honestly scoped as in-progress; 'backtests' is good domain vocabulary."},
+    {"quote": "Precomputed a tree-style search index over popular workflows", "verdict": "reframe", "issue": "No result (accepted) and 'the Claude skill' is undefined; reads as LLM-tooling jargon.", "suggestion": "Precomputed a tree-style search index over popular workflows in a 270K+ row PostgreSQL table (SQLAlchemy, Redis cache) so an LLM agent could search within DB access limits"},
+    {"quote": "Cut LLM workflow generation time 65% to under", "verdict": "tighten", "issue": "Result is clear; 'Claude skill into sub-skills' is insider jargon.", "suggestion": "Cut LLM workflow generation time 65% to under 15s by splitting one agent into sub-agents backed by Python search/validation tools, guided by CloudWatch/OpenSearch latency logs"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep", "issue": "Baseline unstated but the mechanism is concrete and defensible."},
+    {"quote": "Built a Python pipeline for PhysTwin (PhD-led digital", "verdict": "tighten", "issue": "No outcome; 'tuned its prompts' is weak and off-domain for trading.", "suggestion": "Built a Python pipeline for PhysTwin (PhD-led digital twin) turning multi-camera AnyGrasp output into Open3D overlays that a VLM uses to pick grasps and judge depth"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep", "issue": "'visits' is honest wording; Redis clause adds little but is harmless."}
+  ],
+  "structure": [
+    {"key": "keep_project_first", "change": "Keep the order book project above Experience", "rationale": "It is the only evidence a trading-firm HM hires on; moving it down would bury the headline."},
+    {"key": "trim_project_to_four", "change": "Merge or cut the B+ tree/LSM bullet so the project has four tighter bullets", "rationale": "Fewer, cleaner numbers make the latency story easier to defend and skim."},
+    {"key": "use_bottom_whitespace", "change": "Use freed space to loosen dense project bullets rather than add content", "rationale": "Page has spare room at bottom; density, not length, is the readability issue."}
+  ],
+  "top3": [
+    "clarify: reconcile the 120 ns p50 vs 686.7 ns/event mean figures by naming what each benchmark measures",
+    "Replace 'Claude skill' jargon in Capital One bullets with plain 'LLM agent' wording",
+    "Tighten or cut the B+ tree vs LSM bullet so the order book section reads as four crisp, defensible claims"
+  ]
+}

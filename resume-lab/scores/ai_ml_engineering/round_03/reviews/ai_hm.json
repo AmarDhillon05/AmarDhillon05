@@ -1,0 +1,105 @@
+{
+  "persona": "ai_hm",
+  "target": "AI/ML engineering intern roles (LLM applications, agents, RAG, ML platform) at AI-native startups and big-tech AI orgs, 2026–27 cycle. Score domain_fit for this domain.",
+  "seven_second_takeaway": "UMD CS '28, AWS + Capital One interns; decomposed a Claude skill for 65% faster LLM workflows, drift-triggered Bedrock retraining, RAG feature at 93% satisfaction.",
+  "scores": {
+    "impact_clarity": 7,
+    "quantification": 7,
+    "technical_depth": 8,
+    "concision_readability": 8,
+    "skim_test": 7,
+    "credibility": 8,
+    "ats_parseability": 9,
+    "visual_layout": 8,
+    "domain_fit": 7,
+    "overall": 8
+  },
+  "score_rationale": {
+    "impact_clarity": "Several AI bullets stop at mechanism: retraining trigger has no outcome, VLM bullet says 'more often', AWS bullet is in-progress.",
+    "quantification": "Strong anchors at Capital One and Kinesis; VLM grasp improvement and fine-tuning automation have no measured result or baseline.",
+    "skim_test": "First thing under Experience is a non-AI EC2 capacity bullet; the Claude/agent story only surfaces on the second entry.",
+    "domain_fit": "LLM evidence is real and strong but split across entries; top slot (AWS) and Projects (C++ order book) are off-domain."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "clarify: the Capital One eval — 'usual errors stopped recurring' is the only quality signal on the headline agent bullet; state what was checked (e.g. error class, number of stress-test workflows) if known",
+    "clarify: the VLM grasp bullet — 'picks correct grasps more often' is unanchored; either state how it was judged or reword so it doesn't imply a measured gain"
+  ],
+  "bullets": [
+    {
+      "quote": "Writing Java policies that tune upper/lower bounds",
+      "verdict": "tighten",
+      "issue": "Off-domain and in-progress; fine for honesty, but it occupies the most-read slot for an AI reader.",
+      "suggestion": "Writing Java policies that tune EC2 capacity bounds reserved for Redshift operations (e.g. patching), trading availability against cost; initial backtests complete"
+    },
+    {
+      "quote": "Cut LLM workflow generation time 65% to",
+      "verdict": "tighten",
+      "issue": "Best agent bullet on the page; eval clause is vague and trails the sentence.",
+      "suggestion": "Cut LLM workflow generation time 65% to under 15s by decomposing a Claude skill into sub-skills backed by Python search/validation tools; recurring errors stopped on stress-test workflows"
+    },
+    {
+      "quote": "Precomputed a tree-style search index over popular",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Rebuilt a legacy test-data workflow builder in",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Automated EventBridge-scheduled fine-tuning of a Bedrock model",
+      "verdict": "keep",
+      "issue": "Strong retraining-decision design (LLM-as-judge drift trigger); exactly what I'd ask about."
+    },
+    {
+      "quote": "Reduced end-to-end latency 34% for a pipeline",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Shipped a space-research tool used by Amazon",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Tuned VLM prompts for PhysTwin (PhD-led digital",
+      "verdict": "reframe",
+      "issue": "Research-log phrasing; 'more often' is unmeasured; the pipeline is the engineering part but sits last.",
+      "suggestion": "Built a Python pipeline feeding AnyGrasp-on-Open3D overlays to a VLM and iterated its prompts to improve grasp choice and depth handling for PhysTwin (PhD-led digital twin, targeting ICLR)"
+    },
+    {
+      "quote": "Shortened research-environment setup time 30% with uv",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Building a RAG meal-suggestion feature for the",
+      "verdict": "tighten",
+      "issue": "Good retrieval stack named, but no retrieval design choice; lead with the result for the AI reader.",
+      "suggestion": "Building a RAG meal-suggestion feature for the official UMD app (SentenceBERT embeddings in ChromaDB, GPT-4o mini generation); 93% of generated meals rated satisfactory by internal testers"
+    },
+    {
+      "quote": "Co-founded a 110+ member campus product studio",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Built a C++17 order book and matching engine",
+      "verdict": "keep",
+      "issue": "Strong correctness signal but off-domain for AI; acceptable as the only project."
+    }
+  ],
+  "structure": [
+    {
+      "key": "ai_first_in_capital_one",
+      "change": "Keep the Claude decomposition bullet first at Capital One and ensure the React/Electron bullet stays last.",
+      "rationale": "Already done; preserve it — it is the single strongest AI signal and must stay the first thing under the second entry."
+    },
+    {
+      "key": "vlm_bullet_lead_with_pipeline",
+      "change": "In UMIACS, lead with the pipeline you built rather than prompt tuning.",
+      "rationale": "AI HMs discount prompt-tweaking claims; the data pipeline is the engineering evidence."
+    }
+  ],
+  "top3": [
+    "clarify: what 'usual errors stopped recurring' means on the Capital One agent bullet — the eval is the thing an AI HM probes first",
+    "Reframe the VLM bullet around the pipeline and drop the unmeasured 'more often' implication",
+    "Tighten the RAG bullet so the retrieval stack reads as a design (embedding → store → generator) and the 93% result lands cleanly"
+  ]
+}
