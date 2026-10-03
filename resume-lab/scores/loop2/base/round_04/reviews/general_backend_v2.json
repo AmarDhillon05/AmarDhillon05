@@ -1,0 +1,135 @@
+{
+  "persona": "general_backend_v2",
+  "target": "General SWE / backend software engineering internships (big tech + strong startups), 2026-27 cycle",
+  "memory_skim": {"strongest_3": [], "engineer_type": "", "memorable_numbers": [], "confusing": [], "skipped": [], "interview_questions": []},
+  "plain_english": [],
+  "scores": {
+    "impact_clarity": 8,
+    "quantification": 8,
+    "technical_depth": 8,
+    "concision_readability": 8,
+    "skim_test": 7,
+    "credibility": 8,
+    "ats_parseability": 9,
+    "visual_layout": 9,
+    "domain_fit": 7,
+    "human_voice": 8,
+    "plain_language": 7,
+    "overall": 8
+  },
+  "competitive_for_domain": "Y",
+  "bullet_feedback": [
+    {
+      "bullet": "Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and 90% of 30+ surveyed developers preferred it",
+      "problem": "This is the first Capital One bullet and it is the most frontend one (React, TypeScript, Electron, React Flow). The backend work in the role (the 270K-row PostgreSQL table, Redis caching, Python tools behind the Claude skill) sits below it. 'React' appears twice in one clause.",
+      "severity": 4,
+      "why_it_matters": "A backend reader skimming the top of each role sees UI work at Capital One first and may file the role as frontend before reaching the data and latency bullets.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Put this bullet third in the role, after the latency and PostgreSQL/Redis bullets, and drop one of the two 'React' mentions (for example, 'an Electron app in React and TypeScript with a visual flow editor')."
+    },
+    {
+      "bullet": "Cut AI workflow generation time 65% to under 15s by replacing a Claude skill’s open-ended search with focused sub-skills that call Python tools for workflow search and validation, guided by CloudWatch and OpenSearch latency logs",
+      "problem": "'Claude skill' and 'sub-skills' are product-specific terms most interviewers and recruiters will not know. 'Workflow' also appears three times. The closing 'guided by CloudWatch and OpenSearch latency logs' reads like a tool tag rather than part of the story.",
+      "severity": 4,
+      "why_it_matters": "The 65% / under-15s result is strong, but a reader who doesn't know what a 'skill' is can't tell whether the speedup came from systems work or prompt editing, so the engineering credit gets discounted.",
+      "missing_or_unclear": "clarify: what a 'Claude skill' is in one or two plain words (for example, the agent's instructions or tool set)",
+      "suggested_direction": "Say in plain terms what the open-ended search was being replaced with (narrow tool calls to Python search and validation functions), and either fold the logs into the method ('after latency logs showed most time went to X') or cut them to the Skills line."
+    },
+    {
+      "bullet": "Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries",
+      "problem": "'strict access limits' is vague. It could mean permissions, rate limits, query quotas, or slow queries, and the design only makes sense under some of those. Opening with 'Because' also pushes the action verb to the middle of the line.",
+      "severity": 5,
+      "why_it_matters": "This is the most backend-flavored bullet in a big-tech-adjacent role, and the constraint is the first thing a backend interviewer will ask about. Leaving it vague makes the caching and precompute design look less deliberate than it probably was.",
+      "missing_or_unclear": "clarify: what 'access limits' means (read quota, rate limit, permission-scoped access, or something else)",
+      "suggested_direction": "Lead with the verb and name the constraint precisely, e.g. 'Precomputed popular workflows into a category tree ... because the 270K+ row PostgreSQL table [had a specific limit]'."
+    },
+    {
+      "bullet": "Writing Java logic that sets the upper and lower bounds on EC2 capacity that Amazon Redshift reserves for operations like patching, balancing availability against cost, and backtesting it",
+      "problem": "The trailing 'and backtesting it' reads as a fourth item in the 'like patching, balancing...' list. It's unclear whether 'it' means the logic or the bounds.",
+      "severity": 3,
+      "why_it_matters": "This is the first bullet on the page and the top brand. A reader who has to re-parse it loses a little confidence right at the start.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Make backtesting its own clause, e.g. 'Writing and backtesting Java logic that sets the upper and lower bounds on ... , balancing availability against cost'."
+    },
+    {
+      "bullet": "Deployed a space-topic research tool for Amazon Leo’s public-policy team and set it up for handoff with AWS CDK infrastructure-as-code and GitHub Actions CI/CD, so Leo engineers new to the project now maintain it on AWS Fargate",
+      "problem": "'space-topic research tool' doesn't say what the tool does (search, summarize, rank, alert?). The ownership and handoff story is excellent, but the product itself is a blank.",
+      "severity": 4,
+      "why_it_matters": "The other two bullets in this role depend on knowing what the system is (documents in, importance ratings out). Without that, a reader can't connect the deploy, pipeline, and classifier into one system.",
+      "missing_or_unclear": "clarify: what the tool does for the policy team, in a few words",
+      "suggested_direction": "Replace 'space-topic research tool' with a short plain description of its function (e.g. 'a tool that collects and ranks space-policy research documents'), keeping the CDK/CI/Fargate handoff clause as is."
+    },
+    {
+      "bullet": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+      "problem": "The 34% has no absolute scale (seconds per document? minutes per batch?). '6,000+ documents' could be a total, a daily volume, or a batch size.",
+      "severity": 3,
+      "why_it_matters": "A backend interviewer will ask 'from what to what' and 'at what throughput'. The design choice (S3 hops replaced with streaming) is strong, but the number is harder to defend without its unit.",
+      "missing_or_unclear": "clarify: latency unit or before/after values, and whether 6,000+ is total or per period",
+      "suggested_direction": "Add the time unit or before/after values if known, and anchor 6,000+ to a period or say it's a total."
+    },
+    {
+      "bullet": "Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio’s class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency",
+      "problem": "The bullet ends at intent ('to reduce database load and latency'). The 20,000+ visits is the product's scale, not the cache's effect, but its placement makes it read like a result.",
+      "severity": 3,
+      "why_it_matters": "A backend interviewer will ask about hit rate, invalidation when schedules change, and what got cached. The bullet gives no hook for those beyond 'Redis in front of Prisma'.",
+      "missing_or_unclear": "clarify: what was cached (course lists, search results, user schedules) and, if measured, any effect",
+      "suggested_direction": "Name what the cache holds, which also signals a design decision. Then either state a measured effect or keep the intent wording as is, without implying the visit count is the result."
+    },
+    {
+      "bullet": "Implemented B+ tree and LSM-tree backends for the event log and benchmarked them on identical 2M-record workloads, where the B+ tree gave 12.8x the read throughput and 22x faster range queries at the cost of 27% more disk space",
+      "problem": "The comparison reports only the read side, where a B+ tree is expected to win. The write side, which is the reason LSM trees exist, isn't mentioned.",
+      "severity": 3,
+      "why_it_matters": "Any storage-literate interviewer will immediately ask about write throughput or amplification. A one-sided comparison can look like the benchmark was picked to flatter one structure.",
+      "missing_or_unclear": "clarify: write-throughput result of the benchmark, if it was measured",
+      "suggested_direction": "If write results exist, swap one read metric for the write comparison so the trade-off reads both ways; otherwise leave as is and be ready to discuss it."
+    },
+    {
+      "bullet": "For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp’s candidate grasps on camera images in Open3D for a vision-language model, then tuned prompts so the model picks the right grasp more often",
+      "problem": "'picks the right grasp more often' is an unquantified improvement, and 'tuned prompts' is the least systems-like part of the bullet.",
+      "severity": 2,
+      "why_it_matters": "For a backend reader this role is a minor signal anyway. The vague ending just makes it the softest bullet on the page.",
+      "missing_or_unclear": "clarify: how 'more often' was measured, if at all",
+      "suggested_direction": "Keep the bullet short and pipeline-focused. If there is no number, end on the pipeline's role rather than an unmeasured improvement."
+    }
+  ],
+  "page_feedback": [
+    {
+      "problem": "The strongest backend and cloud evidence isn't what shows first. Top to bottom, a backend reader sees an in-progress AWS bullet with no outcome (deliberately left out), then a React/Electron frontend bullet. The clearest backend wins (Kinesis/Lambda latency cut, CDK/CI/Fargate handoff, PostgreSQL + Redis precompute, the 1.26M events/sec matching engine) sit in the middle and bottom third.",
+      "severity": 5,
+      "why_it_matters": "In a 7-second skim, the takeaway is 'AWS + Capital One brands, some React and AI', not 'ships backend systems'. That undersells the intended systems-engineer profile.",
+      "suggested_direction": "Keep chronology but reorder within roles: lead Capital One with the latency or PostgreSQL/Redis bullet, and make sure the first line of each role names a backend or infrastructure action."
+    },
+    {
+      "problem": "What a backend interviewer would dig into: (1) the Redshift capacity bounds (inputs, how backtesting is set up, failure modes); (2) what 'strict access limits' on the PostgreSQL table were and how the category tree is kept fresh and invalidated alongside Redis; (3) Kinesis vs S3 (ordering, retries, Lambda concurrency, cost); (4) the matching engine's 1-in-99,123 fill mismatch and what hardware the 1.26M events/sec ran on; (5) B+ vs LSM write trade-offs. All of these are defensible threads, but the bullets need to be precise enough that the questions land where the candidate is strong.",
+      "severity": 3,
+      "why_it_matters": "Vague phrases ('access limits', 'space-topic tool', unitless 34%) invite questions the candidate can't steer, while precise phrasing invites the depth questions he can answer well.",
+      "suggested_direction": "Fix the specific vague terms flagged in bullet_feedback. No new content is needed."
+    },
+    {
+      "problem": "'REST APIs' and 'API Gateway' appear in Skills, but no bullet describes designing or owning an API surface (endpoints, contracts, auth).",
+      "severity": 3,
+      "why_it_matters": "API design is a core backend interview topic. Skills-only claims get probed, and if there's nothing behind them, they slightly weaken credibility.",
+      "suggested_direction": "If an existing bullet's system exposed an API (e.g. the Leo tool or Tortuga), consider rephrasing that bullet to mention it. Otherwise, consider removing those terms from Skills."
+    },
+    {
+      "problem": "The IEX project is dated Jul–Aug 2026, which overlaps the Capital One internship (Jun–Aug 2026).",
+      "severity": 2,
+      "why_it_matters": "A careful reader may wonder whether a full matching engine was built during a full-time internship. It's an easy thing to answer, but it can raise a brief doubt.",
+      "suggested_direction": "Expect the question. Optionally, check that the project dates reflect when the work was actually done."
+    },
+    {
+      "problem": "Amazon appears twice: the AWS internship and 'UMD App Development Contracting (Client: Amazon Leo)'.",
+      "severity": 2,
+      "why_it_matters": "A fast skimmer may merge the two or think the contract is an Amazon role. The '(Client: ...)' label mostly prevents that.",
+      "suggested_direction": "No change needed beyond keeping the 'Client:' wording. Don't let the contract's title read like an Amazon employer line."
+    }
+  ],
+  "keep": [
+    "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange’s book, agreeing with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices",
+    "Sustained 1.26M events/sec end-to-end over the full replay, keeping each price level’s orders in a std::list FIFO inside a std::map and a hash map from order ID to list iterator for O(1) cancels",
+    "Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance: on an EventBridge schedule a larger LLM grades its ratings, and fine-tuning runs only when the grades shift past a threshold",
+    "Co-founded a 110+ member student product studio that has shipped 5 live products",
+    "The CDK + GitHub Actions + Fargate handoff clause in the Amazon Leo deploy bullet ('so Leo engineers new to the project now maintain it on AWS Fargate'), which is strong ownership evidence",
+    "Single-page layout, sparse bolding (one anchor per bullet at most), right-aligned dates and locations, and the categorized Technical Skills section with AWS certification"
+  ]
+}
