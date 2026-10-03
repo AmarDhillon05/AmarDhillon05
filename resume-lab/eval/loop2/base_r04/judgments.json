@@ -1,0 +1,29 @@
+[
+  {
+    "id": "g01",
+    "winner": "C",
+    "advantage": "concrete",
+    "decisive_wording": "C: \"shows a vision-language model AnyGrasp's candidate grasps ... then tuned prompts so the model picks the right grasp more often\" vs A: \"so it picks correctly more often\" and B: \"tuned its prompts so it chooses correctly\"",
+    "info_preserved_or_lost": "All three keep PhD-led/ICLR context, AnyGrasp, Open3D overlays, multi-camera images, VLM selection and prompt tuning. A and B leave the object of 'picks/chooses correctly' implicit; C states it is the right grasp. B's 'renders' is a slightly stronger mechanism verb than C's 'shows'.",
+    "credibility_change": "Roughly equal; C's 'the model picks the right grasp' gives a clearer, defensible success criterion for an interview discussion.",
+    "readability_change": "C resolves the ambiguous pronouns in A ('it' could be the pipeline) and B ('its prompts'/'it chooses'), so a recruiter can restate it on one read."
+  },
+  {
+    "id": "g02",
+    "winner": "C",
+    "advantage": "concrete",
+    "decisive_wording": "C: \"rates research documents by importance: on an EventBridge schedule a larger LLM grades its ratings\" vs A's missing EventBridge and B's \"document-importance classifier\" / \"grades the classifier\"",
+    "info_preserved_or_lost": "A drops EventBridge (a keyword and the scheduling mechanism). B keeps EventBridge but compresses the purpose into the noun stack 'document-importance classifier' and drops 'research'. C keeps Bedrock, research-document importance rating, EventBridge, LLM-as-grader and threshold-gated fine-tuning.",
+    "credibility_change": "C and B name the real scheduling mechanism; C also says what is graded (its ratings), which is more precise than B's 'grades the classifier'. A is less concrete about how scheduling works.",
+    "readability_change": "C reads as one plain sentence with a colon; A's interrupting 'hosted on Amazon Bedrock' clause and 'scheduled grades of its output' are harder to parse; B's split into two sentences and noun stack add effort."
+  },
+  {
+    "id": "g03",
+    "winner": "A",
+    "advantage": "marginal",
+    "decisive_wording": "A: \"Cut the time for AI to generate a workflow 65%\" vs B: \"Cut AI workflow generation time 65%\"",
+    "info_preserved_or_lost": "Both keep the 65% / under 15s metric, Claude skill, sub-skills, Python tools, CloudWatch and OpenSearch. B adds 'workflow' before 'search and validation', a small specificity gain.",
+    "credibility_change": "No meaningful difference.",
+    "readability_change": "A avoids the four-word noun stack 'AI workflow generation time' and sounds more like a person; B is slightly shorter. Preference is mostly taste."
+  }
+]

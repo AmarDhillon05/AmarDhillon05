@@ -1,0 +1,116 @@
+{
+  "persona": "ats_structure_v2",
+  "target": "General SWE / backend software engineering internships (big tech + strong startups), 2026-27 cycle",
+  "memory_skim": {"strongest_3": [], "engineer_type": "", "memorable_numbers": [], "confusing": [], "skipped": [], "interview_questions": []},
+  "plain_english": [],
+  "scores": {
+    "impact_clarity": 7,
+    "quantification": 8,
+    "technical_depth": 8,
+    "concision_readability": 7,
+    "skim_test": 8,
+    "credibility": 8,
+    "ats_parseability": 9,
+    "visual_layout": 8,
+    "domain_fit": 8,
+    "human_voice": 7,
+    "plain_language": 7,
+    "overall": 8
+  },
+  "competitive_for_domain": "Y",
+  "bullet_feedback": [
+    {
+      "bullet": "Writing Java logic that sets the upper and lower bounds on EC2 capacity Amazon Redshift reserves for operations like patching, balancing availability against cost, and backtesting it",
+      "problem": "The phrase 'EC2 capacity Amazon Redshift reserves' drops the relative pronoun, so the reader first parses 'EC2 capacity Amazon Redshift' as a noun stack and has to backtrack. The trailing 'and backtesting it' also attaches loosely: 'it' could mean the logic, the bounds or the cost tradeoff.",
+      "severity": 5,
+      "why_it_matters": "This is the top bullet under the strongest brand on the page, so a recruiter skimming it may not get past the garden path. An LLM screener summarizing it may also misattribute who reserves the capacity.",
+      "missing_or_unclear": "clarify: what 'it' refers to in 'backtesting it' (the bounds logic, presumably)",
+      "suggested_direction": "Add 'that' to make the clause explicit, and move the backtesting into the main verb phrase. For example: 'Writing and backtesting Java logic that sets the upper and lower bounds on the EC2 capacity that Amazon Redshift reserves for operations like patching, balancing availability against cost'"
+    },
+    {
+      "bullet": "Cut AI workflow generation time 65% to under 15s by replacing a Claude skill’s open-ended search with focused sub-skills that call Python tools for workflow search and validation, guided by CloudWatch and OpenSearch latency logs",
+      "problem": "'AI workflow generation' and 'Claude skill' are not defined anywhere, so the reader doesn't know what a 'workflow' is: test-data workflows? Bullet 3 suggests so, but the reader only learns that two bullets later. The bullet also packs four tools (Claude, Python, CloudWatch, OpenSearch) into a single sentence.",
+      "severity": 4,
+      "why_it_matters": "A non-engineer recruiter can't restate what got faster or for whom. The 65% headline loses force when its object is unclear.",
+      "missing_or_unclear": "clarify: what kind of workflow is generated and who uses it (the test-data workflows named in bullet 3?)",
+      "suggested_direction": "Name the object once in plain words (for example 'test-data workflow generation'). Optionally trim 'guided by CloudWatch and OpenSearch latency logs', since CloudWatch and OpenSearch already appear in Skills and the clause pushes the bullet to its full two lines."
+    },
+    {
+      "bullet": "For a PhD-led robotics project aimed at ICLR, built a pipeline that shows a vision-language model AnyGrasp’s candidate grasps as Open3D overlays on multi-camera images, then tuned prompts so the model picks the right grasp more often",
+      "problem": "'shows a vision-language model AnyGrasp’s candidate grasps' is a garden path. The reader parses 'vision-language model AnyGrasp' as one name, as if AnyGrasp were the VLM, when AnyGrasp is the grasp proposer and the VLM is the selector. 'more often' gives no outcome or comparison.",
+      "severity": 6,
+      "why_it_matters": "A robotics- or ML-literate interviewer will notice the misattribution of AnyGrasp, which hurts credibility on the only research bullet. Recruiters will not be able to restate it.",
+      "missing_or_unclear": "clarify: that AnyGrasp proposes grasps and the VLM chooses among them",
+      "suggested_direction": "Reorder so that each actor is named before its action. For example: 'built a pipeline that renders AnyGrasp’s candidate grasps as Open3D overlays on multi-camera images so a vision-language model can choose one, then tuned prompts so it picks the right grasp more often'"
+    },
+    {
+      "bullet": "Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio’s class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency",
+      "problem": "The only number, '20,000+ visits', describes the product's traffic, not the effect of the caching. The bullet ends on intent ('to reduce database load and latency') rather than a result. This is the third Redis caching bullet on the page (Capital One and the Amazon Leo work also cache or cut queries).",
+      "severity": 4,
+      "why_it_matters": "A reader may credit the 20K visits to the candidate's caching work, or may see it as a borrowed metric. The repeated caching pattern makes TerpLabs read as a duplicate of Capital One.",
+      "missing_or_unclear": "clarify: whether any before/after load or latency was observed; if not, frame the bullet around the design choice (what is cached, what invalidates it)",
+      "suggested_direction": "Either name what the cache keys on or how it invalidates, which makes the technique interview-worthy without a new metric, or cut this bullet and let the RAG bullet carry TerpLabs."
+    },
+    {
+      "bullet": "Deployed a space-topic research tool for Amazon Leo’s public-policy team and set it up for handoff with AWS CDK infrastructure-as-code and GitHub Actions CI/CD, so Leo engineers new to the project now maintain it on AWS Fargate",
+      "problem": "'space-topic research tool' is vague: the reader can't tell what the tool does (it collects and ranks documents, per the next two bullets).",
+      "severity": 3,
+      "why_it_matters": "This is the lead bullet of the role. Without a clear noun, the next two bullets have nothing to anchor to on a first read.",
+      "missing_or_unclear": "clarify: what the tool does for the policy team in a few words",
+      "suggested_direction": "Replace 'space-topic research tool' with a short description of its function that already appears implicitly in the role's other bullets (scraping and rating research documents). Keep 'AWS CDK infrastructure-as-code' and 'GitHub Actions CI/CD': both are exact-match screener terms and are earned here."
+    }
+  ],
+  "page_feedback": [
+    {
+      "problem": "In the Skills section, 'Bedrock' is listed under 'AI/ML: LLMs (Claude, Bedrock, GPT-4o mini)'. Amazon Bedrock is an AWS service, not an LLM, and it is missing from the AWS list. Amazon S3 is used in the Kinesis bullet but does not appear in Skills.",
+      "severity": 3,
+      "why_it_matters": "Exact-match ATS filters and recruiter searches use 'Amazon Bedrock' and 'S3' / 'Amazon S3'. The current form only gets a partial match on 'Bedrock'. Listing a service as an LLM is also a small accuracy slip that an AWS interviewer would notice.",
+      "suggested_direction": "Move it into the Cloud list as 'Amazon Bedrock', and add 'S3' to the AWS parenthetical. Both are already supported by bullets on the page."
+    },
+    {
+      "problem": "AWS services are written only inside the parenthetical 'AWS (Lambda, Kinesis, Fargate, EC2, ...)'. Some legacy keyword matchers (older Workday and Taleo configs) search for the compound 'AWS Lambda' and may score only 'AWS' and 'Lambda' separately.",
+      "severity": 2,
+      "why_it_matters": "This is a minor recall loss on boolean recruiter searches. LLM screeners handle it fine.",
+      "suggested_direction": "Optional: since the bullets already say 'AWS Fargate' and 'AWS CDK', no change is strictly needed. If space allows, write the first item as 'AWS Lambda'."
+    },
+    {
+      "problem": "The text extraction orders each role as company, then dates, then title, then location. Dates come out between the company and the title instead of on the same line as either.",
+      "severity": 2,
+      "why_it_matters": "Greenhouse, Lever and Ashby parse this correctly. Workday's resume autofill sometimes attaches the date line to the wrong field, so the candidate may need to fix the autofill by hand. It does not affect LLM screeners.",
+      "suggested_direction": "No layout change is needed. Note only that Workday autofill fields should be checked when applying."
+    },
+    {
+      "problem": "The certification sits as a line inside 'Technical Skills' rather than under its own 'Certifications' heading.",
+      "severity": 2,
+      "why_it_matters": "Parsers that fill a dedicated certifications field (Workday, iCIMS) look for that heading, so 'AWS Certified Developer – Associate' may land as a skill string. Keyword search still finds it.",
+      "suggested_direction": "Acceptable as is. If a parser drops it, rename the line label or give it a one-line 'Certifications' heading."
+    },
+    {
+      "problem": "Curly apostrophes (’) appear in 'skill’s', 'Leo’s', 'AnyGrasp’s', 'exchange’s', 'level’s', and the certification uses an en dash.",
+      "severity": 1,
+      "why_it_matters": "All modern ATSs normalize these characters. Only very old exact-string matchers would treat them differently, and none of the affected words is a keyword.",
+      "suggested_direction": "No action is needed."
+    },
+    {
+      "problem": "Keyword fit against the postings: the core screener terms are covered naturally. Java, Python, C++, TypeScript/JavaScript, React, Node.js, PostgreSQL, Redis, AWS, Docker, CI/CD, REST APIs, unit testing, data structures and algorithms, and LLM/AI tooling all appear. Terms that recur in the postings but are absent (Go, Kafka, Kubernetes, Django, distributed systems, code review) have no supporting evidence on the page and should not be added.",
+      "severity": 1,
+      "why_it_matters": "Adding unsupported terms would create claims that collapse under one interview question. The current coverage already clears typical backend intern filters.",
+      "suggested_direction": "Keep the Skills section as is apart from the Bedrock/S3 fix. Don't add unearned terms."
+    },
+    {
+      "problem": "The Experience section is dense: 9 of the 11 experience and project bullets run the full two lines, so the page has little white space between the Capital One, Amazon Leo and TerpLabs blocks.",
+      "severity": 3,
+      "why_it_matters": "In a 7-second skim, the eye catches the bolded metrics (65%, 34%, 50.9M, 1.26M) but has to work to find the role boundaries in the middle of the page.",
+      "suggested_direction": "Trim clauses that only repeat tool names already in Skills (for example 'guided by CloudWatch and OpenSearch latency logs') so that one or two bullets fit on one line and the role blocks separate visually."
+    }
+  ],
+  "keep": [
+    "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange’s book, agreeing with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices",
+    "Implemented B+ tree and LSM-tree backends for the event log and benchmarked them on identical 2M-record workloads, where the B+ tree gave 12.8x the read throughput and 22x faster range queries at the cost of 27% more disk space",
+    "Sustained 1.26M events/sec end-to-end over the full replay, keeping each price level’s orders in a std::list FIFO inside a std::map and a hash map from order ID to list iterator for O(1) cancels",
+    "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+    "Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance: on an EventBridge schedule a larger LLM grades its ratings, and fine-tuning runs only when the grades shift past a threshold",
+    "Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and 90% of 30+ surveyed developers preferred it",
+    "Standard section headings (Education, Experience, Projects, Technical Skills), consistent 'Mon YYYY – Mon YYYY' date format, and single-column layout with a clean contact line"
+  ]
+}
