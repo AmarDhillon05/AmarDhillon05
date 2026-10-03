@@ -1,0 +1,44 @@
+{
+  "persona": "bigtech_recruiter",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28, current AWS SDE intern, Capital One SWE intern, Amazon client contract work, C++ matching engine at 1.26M events/sec. Strong brands, clean page.",
+  "scores": {"impact_clarity": 8, "quantification": 8, "technical_depth": 8, "concision_readability": 8,
+             "skim_test": 8, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 9, "overall": 9},
+  "score_rationale": {},
+  "competitive_for_domain": "Y",
+  "must_fix": [],
+  "bullets": [
+    {"quote": "Balancing Amazon Redshift availability against cost by writing", "verdict": "tighten",
+     "issue": "Top-of-page brand bullet leads with the goal, not the action; reads slightly abstract to a non-specialist.",
+     "suggestion": "Wrote and backtested Java policies that tune upper/lower bounds on EC2 capacity reserved for Redshift operations like patching, balancing availability against cost"},
+    {"quote": "Rebuilt a legacy test-data workflow builder in React/TypeScript", "verdict": "keep"},
+    {"quote": "Precomputed a tree-style search index over popular workflows", "verdict": "tighten",
+     "issue": "Ends at intent; lead with why (access limits) so the design choice reads as purposeful.",
+     "suggestion": "To stay under DB access limits, precomputed a tree-style search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache)"},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "keep"},
+    {"quote": "Shipped a space-research tool used by Amazon", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep"},
+    {"quote": "Automated fine-tuning of a Bedrock source-relevancy model", "verdict": "tighten",
+     "issue": "Tail (X-Ray tracing, SNS alerts) reads as AWS service list; the gating decision is the interesting part.",
+     "suggestion": "Automated scheduled (EventBridge) fine-tuning of a Bedrock source-relevancy model, gated to skip redundant retraining runs; X-Ray tracing and SNS failure alerts"},
+    {"quote": "Built a Python pipeline for PhysTwin, a PhD-led", "verdict": "tighten",
+     "issue": "Colon/semicolon chain is dense; 'tuned the VLM's prompts' trails off without an outcome.",
+     "suggestion": "Built a Python pipeline for PhysTwin (PhD-led digital twin project targeting ICLR) that runs AnyGrasp on multi-camera images and renders grasps as Open3D overlays for a VLM"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "keep"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep"},
+    {"quote": "Building a RAG meal-suggestion feature for the", "verdict": "keep"},
+    {"quote": "Engineered a C++17 order book and matching", "verdict": "keep"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores", "verdict": "keep"},
+    {"quote": "Sustained 1.26M events/sec end-to-end over the", "verdict": "tighten",
+     "issue": "Strongest headline number sits last; consider moving it directly under the first project bullet.",
+     "suggestion": "Move this bullet to second position in the project so throughput sits next to correctness."}
+  ],
+  "structure": [
+    {"key": "project_bullet_order", "change": "Reorder IEX project bullets: correctness, throughput, then B+ tree vs LSM benchmark.", "rationale": "Puts the two headline wins (exact fills, 1.26M events/sec) together where a skimmer's eye lands first."}
+  ],
+  "top3": [
+    "Rephrase the AWS bullet to lead with the action (wrote/backtested Java capacity policies) since it's the first thing recruiters read.",
+    "Untangle the PhysTwin bullet into one clean What-How sentence; drop or fold the trailing prompt-tuning clause.",
+    "Trim the AWS service tail on the Bedrock bullet and move the 1.26M events/sec bullet up in the project."
+  ]
+}

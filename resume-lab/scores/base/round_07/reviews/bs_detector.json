@@ -1,0 +1,45 @@
+{
+  "persona": "bs_detector",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28; AWS SDE intern now, Capital One last summer, Amazon Leo contract; C++ IEX matching engine at 1.26M events/sec; 90% dev preference, 65% faster LLM generation.",
+  "scores": {"impact_clarity": 8, "quantification": 8, "technical_depth": 8, "concision_readability": 8,
+             "skim_test": 8, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 8, "overall": 8},
+  "score_rationale": {},
+  "competitive_for_domain": "Y",
+  "must_fix": [],
+  "bullets": [
+    {"quote": "Balancing Amazon Redshift availability against cost by writing", "verdict": "keep",
+     "issue": "", "suggestion": ""},
+    {"quote": "Rebuilt a legacy test-data workflow builder in React/TypeScript", "verdict": "keep"},
+    {"quote": "Precomputed a tree-style search index over popular workflows", "verdict": "tighten",
+     "issue": "'tree-style' is vague; a follow-up on index structure will come immediately. Be ready to explain it.",
+     "suggestion": "Precomputed a tree-structured search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to cut DB queries under access limits"},
+    {"quote": "Cut LLM workflow generation time 65% to under", "verdict": "keep"},
+    {"quote": "Shipped a space-research tool used by Amazon Leo's", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline routing", "verdict": "keep"},
+    {"quote": "Automated fine-tuning of a Bedrock source-relevancy model on", "verdict": "tighten",
+     "issue": "Four AWS service names in one bullet reads like a cert checklist; the gating logic is the interesting part.",
+     "suggestion": "Automated scheduled fine-tuning of a Bedrock source-relevancy model (EventBridge), gated to skip redundant retraining runs; added X-Ray tracing and SNS failure alerts"},
+    {"quote": "Built a Python pipeline for PhysTwin, a PhD-led", "verdict": "tighten",
+     "issue": "Trailing 'tuned the VLM's prompts' is a weak tacked-on clause; the AnyGrasp-to-VLM pipeline carries the bullet.",
+     "suggestion": "Built a Python pipeline for PhysTwin (PhD-led digital twin project targeting ICLR) that runs AnyGrasp on multi-camera images and renders grasps as Open3D overlays for VLM prompting"},
+    {"quote": "Shortened research-environment setup time 30% with uv dependency", "verdict": "keep"},
+    {"quote": "Co-founded a 110+ member campus product studio that", "verdict": "keep"},
+    {"quote": "Building a RAG meal-suggestion feature for the official", "verdict": "keep"},
+    {"quote": "Engineered a C++17 order book and matching engine", "verdict": "keep"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores for", "verdict": "tighten",
+     "issue": "Reports only read wins for the B+ tree; any interviewer asks about write throughput, LSM's whole point.",
+     "suggestion": "If you measured write throughput, state the trade-off honestly; otherwise be ready to explain why read/range performance mattered more for this workload."},
+    {"quote": "Sustained 1.26M events/sec end-to-end over the full", "verdict": "tighten",
+     "issue": "686.7 ns is spurious precision; also clarify hardware context in interview.",
+     "suggestion": "Sustained 1.26M events/sec end-to-end over the full replay, averaging ~687 ns/event in the matching engine"}
+  ],
+  "structure": [
+    {"key": "keep_order", "change": "Keep current Education > Experience > Projects > Skills order", "rationale": "Brand-name internships lead correctly; the C++ project stands out right after experience."}
+  ],
+  "top3": [
+    "Trim AWS service stacking in the Bedrock bullet so the gating/automation decision, not the service list, is the headline.",
+    "Make the B+ tree vs LSM benchmark an honest trade-off (or be ready to defend omitting writes); it invites the first skeptical question.",
+    "Drop the trailing 'tuned the VLM's prompts' clause and replace spurious precision (686.7 ns) with a rounded figure."
+  ]
+}

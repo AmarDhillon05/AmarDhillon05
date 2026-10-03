@@ -1,0 +1,53 @@
+{
+  "persona": "senior_swe_hm",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28 with AWS and Capital One SWE internships, an Amazon client contract, and a C++ matching engine at 1.26M events/sec. Strong for an intern.",
+  "scores": {"impact_clarity": 7, "quantification": 8, "technical_depth": 8, "concision_readability": 8,
+             "skim_test": 8, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 8, "overall": 8},
+  "score_rationale": {
+    "impact_clarity": "Several bullets stop at mechanism or intent (AWS policies, search index, PhysTwin pipeline, Bedrock retraining); the reader has to guess the outcome."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "Clarify the AWS bullet's current state: say what stage it's at (e.g., backtested vs. deployed) so it doesn't read as an open-ended task",
+    "PhysTwin bullet ends on 'tuned the VLM's prompts': tuned toward what? Clarify the purpose or cut that clause"
+  ],
+  "bullets": [
+    {"quote": "Balancing Amazon Redshift availability against cost by writing", "verdict": "add_context",
+     "issue": "Strong tradeoff framing, but no stage or outcome; reads as ongoing task. Lead with the action.",
+     "suggestion": "Writing and backtesting Java policies that tune upper/lower bounds on EC2 capacity reserved for Redshift operations like patching, balancing availability against cost"},
+    {"quote": "Rebuilt a legacy test-data workflow builder in React/TypeScript", "verdict": "keep"},
+    {"quote": "Precomputed a tree-style search index over popular workflows", "verdict": "tighten",
+     "issue": "Good design decision, but ends at intent; 'under access limits' is vague. Say what constraint drove precomputation.",
+     "suggestion": "Precomputed a tree-style search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) so lookups avoided DB queries under access limits"},
+    {"quote": "Cut LLM workflow generation time 65% to under", "verdict": "keep"},
+    {"quote": "Shipped a space-research tool used by Amazon Leo's", "verdict": "tighten",
+     "issue": "Handoff to client engineers is the impact; deployment stack is tech-listy. Lead with ownership and handoff.",
+     "suggestion": "Shipped a space-research tool for Amazon Leo's public-policy team, deployed on AWS Fargate (Docker) via GitHub Actions + CDK and handed off to Leo engineers who now maintain it"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep"},
+    {"quote": "Automated fine-tuning of a Bedrock source-relevancy model on", "verdict": "add_context",
+     "issue": "Gating redundant retraining is the interesting decision; say what the gate checks. Otherwise the AWS service list overshadows it."},
+    {"quote": "Built a Python pipeline for PhysTwin, a PhD-led", "verdict": "reframe",
+     "issue": "Dense and colon-chained; your ownership is unclear and 'tuned the VLM's prompts' has no purpose.",
+     "suggestion": "Built the Python perception pipeline for PhysTwin (PhD-led digital twin, targeting ICLR): runs AnyGrasp on multi-camera images and renders grasps as Open3D overlays fed to a VLM"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "tighten",
+     "issue": "Two unrelated actions in one bullet; profiling clause has no outcome.",
+     "suggestion": "Cut research-environment setup time 30% via uv dependency pinning and Docker; added psutil time/memory profiling and Pytest suites to locate bottlenecks"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep"},
+    {"quote": "Building a RAG meal-suggestion feature for the official", "verdict": "keep"},
+    {"quote": "Engineered a C++17 order book and matching engine", "verdict": "keep"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores", "verdict": "tighten",
+     "issue": "'the simulation's event logs' is ambiguous here; tie it to the replay so it's clearly the same project.",
+     "suggestion": "Benchmarked B+ tree vs LSM skip-list stores for the replay's event logs on identical 2M-record workloads; B+ tree gave 12.8× read throughput and 22× faster range summaries for 27% more disk"},
+    {"quote": "Sustained 1.26M events/sec end-to-end over the", "verdict": "keep"}
+  ],
+  "structure": [
+    {"key": "merge_order_book_metrics", "change": "Consider moving the 1.26M events/sec bullet to second position in the IEX project, directly after correctness", "rationale": "Correctness then throughput is the natural story; the storage benchmark is a secondary design study."},
+    {"key": "keep_education_top", "change": "Keep Education first; no change", "rationale": "Grad date and school are needed in the 7-second skim for intern filtering."}
+  ],
+  "top3": [
+    "Clarify: AWS bullet — state what stage the policies reached (backtested/shipped) and lead with the action verb rather than 'Balancing'",
+    "Rework the PhysTwin bullet so your ownership and the purpose of the VLM prompt tuning are clear",
+    "Clarify: what the Bedrock retraining gate checks — it's your best design decision in that role and is currently buried behind service names"
+  ]
+}
