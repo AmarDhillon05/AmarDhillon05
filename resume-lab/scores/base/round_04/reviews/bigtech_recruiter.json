@@ -1,0 +1,41 @@
+{
+  "persona": "bigtech_recruiter",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28 with AWS SDE and Capital One SWE internships, an Amazon client contract, ML research, and a C++ matching-engine project. Strong pass to the next stage.",
+  "scores": {"impact_clarity": 8, "quantification": 8, "technical_depth": 8, "concision_readability": 7,
+             "skim_test": 8, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 8, "overall": 8},
+  "score_rationale": {
+    "concision_readability": "Nearly every bullet fills two full lines; the order-book bullets pack in so many numbers and qualifiers that I have to slow down and re-read."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "Order-book bullet 3 ('1.41x the cost of a passive mirror book for deciding every fill itself') is unreadable for a non-specialist. Simplify it or drop the comparison clause.",
+    "Order-book bullet 2 (B+ tree vs LSM stores) doesn't explain how it relates to the matching engine. Clarify: is this the engine's log/storage layer? If not, it looks bolted on."
+  ],
+  "bullets": [
+    {"quote": "Writing Java to tune upper/lower bounds on", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Rebuilt a legacy test-data workflow builder in", "verdict": "keep"},
+    {"quote": "Precomputed a tree-style search index over popular", "verdict": "tighten", "issue": "'under access limits' is vague; the purpose takes a second read.", "suggestion": "Precomputed a tree-style search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to cut DB queries under strict access limits"},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "keep"},
+    {"quote": "Shipped a space-research tool used by Amazon", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep"},
+    {"quote": "Automated Bedrock source-relevancy model fine-tuning on an", "verdict": "tighten", "issue": "Reads as a list of services; the outcome of the decision gates is implied, not stated.", "suggestion": "Automated scheduled Bedrock fine-tuning of a source-relevancy model (EventBridge), with decision gates that skip redundant retraining; added X-Ray tracing and SNS failure alerts"},
+    {"quote": "Built a Python pipeline for PhysTwin (physics-based", "verdict": "tighten", "issue": "The long parenthetical buries the action; the trailing 'plus prompt tuning' feels tacked on.", "suggestion": "Built a Python pipeline running AnyGrasp on multi-camera images and rendering grasps as Open3D overlays for a VLM, for PhysTwin, a physics-based digital twin (PhD-led, targeting ICLR)"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "keep"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep"},
+    {"quote": "Wrote Prisma SQL queries and Redis query caching", "verdict": "keep"},
+    {"quote": "Building a RAG meal-suggestion feature for the", "verdict": "keep"},
+    {"quote": "Engineered a C++17 order book and matching", "verdict": "keep"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list log", "verdict": "add_context", "issue": "Its link to the order book is unclear, and the stack of three ratios is hard to parse.", "suggestion": "Benchmarked B+ tree vs LSM skip-list event-log stores on identical 2M-record workloads: B+ tree gave 12.8x read throughput and 22x faster range summaries for 27% more disk"},
+    {"quote": "Sustained 1.26M events/sec end-to-end with 686.7", "verdict": "tighten", "issue": "Too many figures; 'passive mirror book' comparison is opaque to most readers.", "suggestion": "Sustained 1.26M events/sec end-to-end with 686.7 ns/event matching at a 1.40 GHz base clock"}
+  ],
+  "structure": [
+    {"key": "keep_current_order", "change": "Keep Education, then Experience led by AWS and Capital One, then Projects, then Skills.", "rationale": "Brands sit right where my eye lands. That's the right order for a big-tech early-career screen."},
+    {"key": "terplabs_bullet_merge", "change": "Consider merging the TerpLabs co-founding line into the role line, or shortening it, to free a line for whitespace.", "rationale": "The page is dense; a one-clause bullet adds little that the title doesn't already say."}
+  ],
+  "top3": [
+    "Simplify the order-book bullets: cut the passive-mirror-book comparison and tie the B+ tree/LSM benchmark explicitly to the engine.",
+    "Trim the dense two-line bullets (PhysTwin, Bedrock, search index) so action and result read in one pass and the page gets some breathing room.",
+    "Clarify: four roles show 'Present' alongside the AWS internship. Make sure you can explain the time split in a recruiter screen."
+  ]
+}

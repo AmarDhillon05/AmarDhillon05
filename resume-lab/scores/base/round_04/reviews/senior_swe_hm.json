@@ -1,0 +1,50 @@
+{
+  "persona": "senior_swe_hm",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28 with AWS SDE and Capital One internships, a shipped AWS contract tool for Amazon Leo, and a C++ order book replaying 50.9M real IEX messages.",
+  "scores": {"impact_clarity": 8, "quantification": 8, "technical_depth": 8, "concision_readability": 8,
+             "skim_test": 9, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 9, "overall": 9},
+  "score_rationale": {},
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "Clarify the order-book project's B+ tree vs LSM bullet: say what the log store holds (e.g., the replayed event log) so it reads as part of the engine, not a separate benchmark.",
+    "Rephrase '1.41× the cost of a passive mirror book for deciding every fill itself'; as written it takes two reads to see it means matching overhead vs. passively mirroring the feed."
+  ],
+  "bullets": [
+    {"quote": "Writing Java to tune upper/lower bounds on EC2", "verdict": "tighten",
+     "issue": "Good problem framing for an in-progress role; 'like patching' slightly muddies what the capacity is for.",
+     "suggestion": "Writing Java to tune upper/lower bounds on EC2 capacity reserved for Redshift maintenance (e.g., patching), backtesting policies to balance availability against cost"},
+    {"quote": "Rebuilt a legacy test-data workflow builder in React/TypeScript", "verdict": "keep"},
+    {"quote": "Precomputed a tree-style search index over popular workflows", "verdict": "keep",
+     "issue": "Design decision is clear (precompute + cache under access limits); outcome is intent-only, which is acceptable."},
+    {"quote": "Cut LLM workflow generation time 65% to under", "verdict": "keep"},
+    {"quote": "Shipped a space-research tool used by Amazon Leo's", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep"},
+    {"quote": "Automated Bedrock source-relevancy model fine-tuning on an EventBridge", "verdict": "keep"},
+    {"quote": "Built a Python pipeline for PhysTwin (physics-based digital", "verdict": "tighten",
+     "issue": "Parenthetical plus 'plus prompt tuning' tail make it the densest bullet; your own contribution gets lost.",
+     "suggestion": "Built a Python pipeline running AnyGrasp on multi-camera images and rendering grasps as Open3D overlays for a VLM, for PhysTwin, a PhD-led digital-twin project targeting ICLR"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "keep"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep"},
+    {"quote": "Wrote Prisma SQL queries and Redis query caching", "verdict": "tighten",
+     "issue": "'Wrote Prisma SQL queries' is a task; lead with the caching decision and keep the 20K visits as scale.",
+     "suggestion": "Added Redis query caching over Prisma SQL queries to cut DB load and latency for Tortuga, a class scheduler that drew 20,000+ visits in its first 30 days"},
+    {"quote": "Building a RAG meal-suggestion feature for the official", "verdict": "keep"},
+    {"quote": "Engineered a C++17 order book and matching engine", "verdict": "keep"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list log stores", "verdict": "add_context",
+     "issue": "Strong tradeoff, but unclear what the store is for or which design you chose.",
+     "suggestion": "State which store backs the engine's event log and that 12.8×/22× came at a 27% disk cost, e.g. 'Chose a B+ tree over an LSM skip-list for the event log: 12.8× reads, 22× faster range summaries, 27% more disk'"},
+    {"quote": "Sustained 1.26M events/sec end-to-end with 686.7", "verdict": "reframe",
+     "issue": "Closing clause is hard to parse; clock-speed detail is noise for general SWE readers.",
+     "suggestion": "Sustained 1.26M events/sec end-to-end (686.7 ns/event); active matching costs only 1.41× a passive mirror book that copies the feed's fills"}
+  ],
+  "structure": [
+    {"key": "keep_section_order", "change": "Keep Education → Experience → Projects → Skills; no reordering needed.", "rationale": "Brands (AWS, Capital One, Amazon Leo) already lead; the order book project is visible above skills."},
+    {"key": "trim_skills_cloud_line", "change": "Optionally drop X-Ray/SNS/API Gateway from the Cloud skills line if space is needed.", "rationale": "They are already shown in context in bullets; the skills line reads as a long AWS list."}
+  ],
+  "top3": [
+    "Clarify the order-book B+ tree vs LSM bullet so the benchmark reads as a design decision for the engine, not a side experiment.",
+    "Rephrase the order-book throughput bullet's '1.41× the cost of a passive mirror book' clause so it parses in one read; consider dropping the clock-speed detail.",
+    "Tighten the PhysTwin and Prisma/Redis bullets so each leads with your engineering action instead of context or a task verb."
+  ]
+}

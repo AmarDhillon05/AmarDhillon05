@@ -1,0 +1,60 @@
+{
+  "persona": "bs_detector",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28; AWS SDE intern now, Capital One SWE intern; Amazon Leo contract tool in production; C++ order book replaying 50.9M real IEX messages.",
+  "scores": {"impact_clarity": 7, "quantification": 8, "technical_depth": 8, "concision_readability": 7,
+             "skim_test": 8, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 8, "overall": 8},
+  "score_rationale": {
+    "impact_clarity": "Several bullets end at mechanism (Bedrock automation, PhysTwin, AWS) or tie a metric to the wrong action (Tortuga visits vs caching).",
+    "concision_readability": "Order-book bullets 2 and 3 are dense and need re-reading; PhysTwin bullet stacks a parenthetical plus a tacked-on 'plus prompt tuning'."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "Tortuga bullet: 20,000+ visits is product traction, not the result of your Prisma/Redis work; as written it reads like borrowed credit. Separate the claim or state what caching achieved.",
+    "Order book benchmark bullet: unclear which store won (B+ tree or LSM) and how it relates to the order book; the direction of 12.8x / 22x / 27% must be readable in one pass.",
+    "Order book throughput bullet: '1.41x the cost of a passive mirror book for deciding every fill itself' is opaque; an interviewer will stop here and ask what it means."
+  ],
+  "bullets": [
+    {"quote": "Writing Java to tune upper/lower bounds on EC2", "verdict": "tighten",
+     "issue": "Dangling 'backtesting' clause; fine to have no result for an in-progress internship, but grammar blurs who backtests what.",
+     "suggestion": "Writing Java to tune upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations (e.g., patching), backtesting policies to balance availability against cost"},
+    {"quote": "Rebuilt a legacy test-data workflow builder in React/TypeScript", "verdict": "keep"},
+    {"quote": "Precomputed a tree-style search index over popular workflows", "verdict": "keep",
+     "issue": "No measured result (accepted); intent wording is honest, keep it that way."},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "keep"},
+    {"quote": "Shipped a space-research tool used by Amazon", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep"},
+    {"quote": "Automated Bedrock source-relevancy model fine-tuning on an", "verdict": "tighten",
+     "issue": "Reads as AWS service checklist (Bedrock, EventBridge, X-Ray, SNS); the decision gates are the interesting part.",
+     "suggestion": "Automated scheduled (EventBridge) fine-tuning of a Bedrock source-relevancy model, with decision gates that skip redundant retraining; added X-Ray tracing and SNS failure alerts"},
+    {"quote": "Built a Python pipeline for PhysTwin (physics-based", "verdict": "tighten",
+     "issue": "Parenthetical and 'plus prompt tuning' bolt-on dilute it; 'targeting ICLR' is a team aspiration, not your outcome.",
+     "suggestion": "Built a Python pipeline for PhysTwin (physics-based digital twin) that runs AnyGrasp on multi-camera images and renders grasps as Open3D overlays for a VLM; tuned the VLM prompts"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "keep",
+     "issue": "Baseline absent (accepted risk); be ready to state minutes in interview."},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "add_context",
+     "issue": "Your engineering role in the 5 products is unstated; club size alone is a leadership, not SWE, signal.",
+     "suggestion": "Clarify: what you personally built or led across the 5 shipped products, if anything beyond the bullets below."},
+    {"quote": "Wrote Prisma SQL queries and Redis query caching", "verdict": "reframe",
+     "issue": "Metric (20K visits) is traction, not attributable to caching; 'Prisma SQL queries' is slightly off since Prisma is an ORM.",
+     "suggestion": "Wrote Prisma queries and Redis caching to cut DB load and latency for Tortuga, a class scheduler that drew 20,000+ visits in its first 30 days"},
+    {"quote": "Building a RAG meal-suggestion feature for the", "verdict": "keep",
+     "issue": "Tester count unknown (accepted); 'internal testers' is honestly scoped."},
+    {"quote": "Engineered a C++17 order book and matching", "verdict": "keep"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list log", "verdict": "reframe",
+     "issue": "Winner and its link to the order book are ambiguous; reader can't tell which store got 12.8x.",
+     "suggestion": "Benchmarked B+ tree vs LSM skip-list log stores on identical 2M-record workloads; the B+ tree gave 12.8x read throughput and 22x faster range summaries for 27% more disk (confirm direction)"},
+    {"quote": "Sustained 1.26M events/sec end-to-end with 686.7", "verdict": "tighten",
+     "issue": "Over-precise and the mirror-book comparison is cryptic; clock speed adds noise for a general SWE reader.",
+     "suggestion": "Sustained 1.26M events/sec end-to-end (686.7 ns/event matching), 1.41x the cost of a passive book that only mirrors IEX fills instead of matching them"}
+  ],
+  "structure": [
+    {"key": "keep_education_top", "change": "Keep Education first", "rationale": "2028 grad; school and date belong in the 7-second scan, which it already passes."},
+    {"key": "terplabs_lead_with_engineering", "change": "Move the co-founder/110-member bullet last within TerpLabs", "rationale": "Lead with engineering work; club size is the least SWE-relevant line in the section."}
+  ],
+  "top3": [
+    "Reframe the Tortuga bullet so the 20,000+ visits is not presented as the result of your caching work.",
+    "Rewrite order-book bullets 2 and 3 so the benchmark winner and the mirror-book comparison read in one pass.",
+    "Trim the Bedrock and PhysTwin bullets to the decision you made (retraining gates; grasp-to-VLM pipeline) instead of service/venue name-drops."
+  ]
+}
