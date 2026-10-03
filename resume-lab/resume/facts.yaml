@@ -122,14 +122,14 @@ roles:
     status: in_progress
     bullets:
       studio:
-        claim: Co-founded and scaled a 110+ member campus product studio shipping 5 live products; organized teams with Jira and GitHub under agile practices
+        claim: Co-founded and scaled a 110+ member campus product studio shipping 5 live products (including Tortuga, a class scheduler with 20,000+ site visits in its first 30 days after launch); organized teams with Jira and GitHub under agile practices
         core_techs: []
         optional_techs: [Jira, GitHub, agile]
         required_numbers: ["110+", "5"]
       tortuga:
         claim: Tortuga (enhanced class scheduler) sustained 20,000+ site visits in its first 30 days after launch; built Prisma-based SQL querying with Redis query caching to reduce DB load and latency
         core_techs: [Prisma, SQL, Redis]
-        required_numbers: ["20,000+", "30"]
+        required_numbers: []   # traffic (20,000+ / 30 days) may be shown here OR on terplabs.studio; reviewers flagged it as misattributed to caching (round 05)
       rag_meal:
         claim: Building (work in progress) a RAG meal-suggestion integration into the official UMD app using GPT-4o mini over ChromaDB + SentenceBERT vector search on scraped recipe data; 93% of generated meal suggestions were rated satisfactory by internal testers (clarified by Amar, Oct 2026)
         core_techs: [RAG, GPT-4o mini, ChromaDB]

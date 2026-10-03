@@ -1,0 +1,48 @@
+{
+  "persona": "startup_quant_engineer",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28 with AWS and Capital One internships, a shipped AWS tool for Amazon Leo, and a C++ IEX order book replaying 50.9M messages at 1.26M events/sec.",
+  "scores": {"impact_clarity": 8, "quantification": 8, "technical_depth": 8, "concision_readability": 8,
+             "skim_test": 8, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 8, "overall": 8},
+  "score_rationale": {},
+  "competitive_for_domain": "Y",
+  "must_fix": [],
+  "bullets": [
+    {"quote": "Writing Java to tune upper/lower bounds on EC2", "verdict": "tighten",
+     "issue": "Long noun chain; the backtesting method, the strongest part, sits at the end after a comma splice.",
+     "suggestion": "Backtesting Java policies that tune upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations (e.g., patching), balancing availability against cost"},
+    {"quote": "Rebuilt a legacy test-data workflow builder in React/TypeScript", "verdict": "keep"},
+    {"quote": "Precomputed a tree-style search index over popular", "verdict": "tighten",
+     "issue": "Ends at intent; 'tree-style' is vague. Accepted no-result risk, but the design choice could read sharper.",
+     "suggestion": "Precomputed a tree-structured search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) so lookups avoid DB queries under access limits"},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "keep"},
+    {"quote": "Shipped a space-research tool used by Amazon Leo's", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep"},
+    {"quote": "Automated EventBridge-scheduled fine-tuning of a Bedrock source-relevancy model", "verdict": "tighten",
+     "issue": "Tech-heavy; 'decision gates' is the interesting design choice but its criterion is unstated.",
+     "suggestion": "Automated EventBridge-scheduled fine-tuning of a Bedrock source-relevancy model, gated to skip redundant retraining; added X-Ray tracing and SNS failure alerts"},
+    {"quote": "Built a Python pipeline for PhysTwin, a PhD-led", "verdict": "tighten",
+     "issue": "Three verbs in a list after a colon; candidate's own contribution vs. the PhD project is slightly blurred.",
+     "suggestion": "Built a Python pipeline for PhysTwin (PhD-led digital twin project targeting ICLR) that runs AnyGrasp on multi-camera images and renders grasps as Open3D overlays for VLM prompt tuning"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "keep"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep"},
+    {"quote": "Added Redis query caching over Prisma SQL queries", "verdict": "add_context",
+     "issue": "20,000+ visits is product traffic, not a caching result; reads like the cache earned the number.",
+     "suggestion": "For Tortuga, a class scheduler that drew 20,000+ visits in its first 30 days, added Redis caching over Prisma SQL queries to cut DB load and latency"},
+    {"quote": "Building a RAG meal-suggestion feature for the official", "verdict": "keep"},
+    {"quote": "Engineered a C++17 order book and matching engine", "verdict": "keep"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores", "verdict": "keep"},
+    {"quote": "Sustained 1.26M events/sec end-to-end over the", "verdict": "tighten",
+     "issue": "'1.40 GHz base clock' is good rigor but reads oddly; say what hardware/core it ran on.",
+     "suggestion": "Sustained 1.26M events/sec end-to-end over the full replay (686.7 ns/event matching) on a single 1.40 GHz base-clock core"}
+  ],
+  "structure": [
+    {"key": "bold_consistency", "change": "Bold one headline number per role at most; currently bolding is uneven (TerpLabs/order book bold multiple, AWS/UMIACS bold none).", "rationale": "Bold should guide the eye to the 3-4 best wins, not every percentage."},
+    {"key": "keep_project_placement", "change": "Keep Projects after Experience for general SWE; do not promote above AWS/Capital One.", "rationale": "Brands carry the general-SWE skim; the order book is a strong closer and differentiator where it sits."}
+  ],
+  "top3": [
+    "Untangle the TerpLabs Redis bullet so the 20,000+ visits reads as product traffic, not a caching outcome.",
+    "Tighten the AWS bullet so the backtesting method leads; it is the first bullet a recruiter reads.",
+    "Make bolding consistent: one headline number per role (e.g., 90%, 34%, 50.9M, 1.26M), drop the rest."
+  ]
+}

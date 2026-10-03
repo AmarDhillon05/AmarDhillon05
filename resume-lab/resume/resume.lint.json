@@ -4,12 +4,12 @@
   "bullets": [
     {
       "fact": "aws_sde.redshift",
-      "chars": 171,
-      "words": 23,
+      "chars": 174,
+      "words": 24,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.45,
-      "text": "Writing Java to tune upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations (e.g., patching), backtesting policies to balance availability against cost"
+      "last_fill": 0.49,
+      "text": "Writing and backtesting Java policies that tune upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations like patching, to balance availability against cost"
     },
     {
       "fact": "capital_one.ui_overhaul",
@@ -58,21 +58,21 @@
     },
     {
       "fact": "amazon_contract.bedrock_finetune",
-      "chars": 177,
-      "words": 23,
+      "chars": 175,
+      "words": 22,
       "n_bold": 0,
       "n_lines": 2,
       "last_fill": 0.54,
-      "text": "Automated scheduled (EventBridge) fine-tuning of a Bedrock source-relevancy model, with decision gates that skip redundant retraining; added X-Ray tracing and SNS failure alerts"
+      "text": "Automated EventBridge-scheduled fine-tuning of a Bedrock source-relevancy model, with decision gates that skip redundant retraining; added X-Ray tracing and SNS failure alerts"
     },
     {
       "fact": "umiacs.grasp_vlm",
-      "chars": 189,
+      "chars": 191,
       "words": 30,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.64,
-      "text": "Built a Python pipeline for PhysTwin, a PhD-led digital twin project targeting ICLR: runs AnyGrasp on multi-camera images, renders grasps as Open3D overlays for a VLM, and tunes its prompts"
+      "last_fill": 0.68,
+      "text": "Built a Python pipeline for PhysTwin, a PhD-led digital twin project targeting ICLR: runs AnyGrasp on multi-camera images, renders grasps as Open3D overlays for a VLM; tuned the VLM's prompts"
     },
     {
       "fact": "umiacs.env_setup",
@@ -85,21 +85,21 @@
     },
     {
       "fact": "terplabs.studio",
-      "chars": 79,
-      "words": 13,
-      "n_bold": 0,
-      "n_lines": 1,
-      "last_fill": 1.0,
-      "text": "Co-founded a 110+ member campus product studio that has shipped 5 live products"
+      "chars": 158,
+      "words": 26,
+      "n_bold": 1,
+      "n_lines": 2,
+      "last_fill": 0.42,
+      "text": "Co-founded a 110+ member campus product studio that has shipped 5 live products, including Tortuga, a class scheduler with 20,000+ visits in its first 30 days"
     },
     {
       "fact": "terplabs.tortuga",
-      "chars": 156,
-      "words": 28,
-      "n_bold": 1,
-      "n_lines": 2,
-      "last_fill": 0.34,
-      "text": "Added Redis query caching over Prisma SQL queries to reduce DB load and latency for Tortuga, a class scheduler that drew 20,000+ visits in its first 30 days"
+      "chars": 107,
+      "words": 16,
+      "n_bold": 0,
+      "n_lines": 1,
+      "last_fill": 1.0,
+      "text": "Added Redis query caching over Tortuga's Prisma SQL queries to reduce database load and application latency"
     },
     {
       "fact": "terplabs.rag_meal",
@@ -130,26 +130,21 @@
     },
     {
       "fact": "iex.throughput",
-      "chars": 113,
-      "words": 18,
+      "chars": 102,
+      "words": 15,
       "n_bold": 1,
       "n_lines": 1,
       "last_fill": 1.0,
-      "text": "Sustained 1.26M events/sec end-to-end over the full replay, with 686.7 ns/event matching on a 1.40 GHz base clock"
+      "text": "Sustained 1.26M events/sec end-to-end over the full replay, with 686.7 ns/event in the matching engine"
     }
   ],
   "issues": [
     {
       "level": "WARN",
-      "where": "Automated scheduled (EventBridge) fine-tuning of a",
+      "where": "Automated EventBridge-scheduled fine-tuning of a B",
       "msg": "no metric or explicit outcome"
-    },
-    {
-      "level": "WARN",
-      "where": "Co-founded a 110+ member campus product studio tha",
-      "msg": "no visible technology"
     }
   ],
   "errors": 0,
-  "warnings": 2
+  "warnings": 1
 }

@@ -1,0 +1,27 @@
+[
+  {
+    "id": "p01",
+    "A": "Writing Java to tune upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations like patching, backtesting policies to balance availability against cost",
+    "B": "Writing and backtesting Java policies that tune upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations like patching, to balance availability against cost"
+  },
+  {
+    "id": "p02",
+    "A": "Sustained 1.26M events/sec end-to-end over the full replay, with 686.7 ns/event in the matching engine",
+    "B": "Sustained 1.26M events/sec end-to-end over the full replay, with 686.7 ns/event matching on a 1.40 GHz base clock"
+  },
+  {
+    "id": "p03",
+    "A": "Co-founded a 110+ member campus product studio that has shipped 5 live products",
+    "B": "Co-founded a 110+ member campus product studio that has shipped 5 live products, including Tortuga, a class scheduler with 20,000+ visits in its first 30 days"
+  },
+  {
+    "id": "p04",
+    "A": "Added Redis query caching over Prisma SQL queries to reduce DB load and latency for Tortuga, a class scheduler that drew 20,000+ visits in its first 30 days",
+    "B": "Added Redis query caching over Tortuga's Prisma SQL queries to reduce database load and application latency"
+  },
+  {
+    "id": "p05",
+    "A": "Built a Python pipeline for PhysTwin, a PhD-led digital twin project targeting ICLR: runs AnyGrasp on multi-camera images, renders grasps as Open3D overlays for a VLM; tuned the VLM's prompts",
+    "B": "Built a Python pipeline for PhysTwin, a PhD-led digital twin project targeting ICLR: runs AnyGrasp on multi-camera images, renders grasps as Open3D overlays for a VLM, and tunes its prompts"
+  }
+]
