@@ -87,8 +87,10 @@ lint:
   pages: 1
   max_rendered_lines: 2
   min_last_line_fill: 0.30
-  max_bold_per_bullet: 2
-  max_chars_per_bullet: 215
+  max_bold_per_bullet: 1
+  max_chars_per_bullet: 235
+  max_bullets_per_role: 3
+  min_font_pt: 9
 
 # Risks the candidate has explicitly accepted. A must-fix matching ALL regexes in
 # `match` is logged as accepted (still reported) and does not block passing.

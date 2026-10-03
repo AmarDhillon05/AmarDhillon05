@@ -10,6 +10,9 @@ Checks
             no repeated leading verbs; bold phrases per bullet capped;
             every experience/project bullet has a metric or explicit outcome word
             and at least one technology (bold or known tech)
+  voice   : tools/voice.py heuristics (inflated words, semicolons, parentheticals, noun stacks,
+            tool inventories, metric stacking), all WARN, calibrated on the corpus
+  structure: bullets per role, minimum body font size
 Exit code 1 if any ERROR.
 """
 import argparse
@@ -22,6 +25,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 import texparse  # noqa: E402
+import voice  # noqa: E402
 
 WEAK_STARTS = {"responsible", "helped", "worked", "assisted", "participated", "utilized", "used",
                "involved", "tasked", "handled", "did", "made", "was", "were", "a", "an", "the"}
@@ -128,6 +132,8 @@ def main():
     ap.add_argument("--max-bold", type=int, default=cfg.get("max_bold_per_bullet", 3))
     ap.add_argument("--max-chars", type=int, default=cfg.get("max_chars_per_bullet", 10**6))
     ap.add_argument("--pages", type=int, default=cfg.get("pages", 1))
+    ap.add_argument("--max-per-role", type=int, default=cfg.get("max_bullets_per_role", 99))
+    ap.add_argument("--min-font", type=float, default=cfg.get("min_font_pt", 0))
     args = ap.parse_args()
 
     tex_path = Path(args.tex)
@@ -187,6 +193,19 @@ def main():
             add("WARN", where, "no metric or explicit outcome")
         if not b.bold and not re.search(r"[A-Z][a-zA-Z0-9+#.]+", " ".join(words[1:])):
             add("WARN", where, "no visible technology")
+        for msg in voice.issues(b.text):
+            add("WARN", where, f"voice: {msg}")
+
+    # ---- structure
+    per_role = {}
+    for b in exp:
+        per_role[(b.section, b.role)] = per_role.get((b.section, b.role), 0) + 1
+    for (sec, role), n in per_role.items():
+        if n > args.max_per_role:
+            add("ERROR", role[:50] or sec, f"{n} bullets in one role (max {args.max_per_role})")
+    m = re.search(r"\\documentclass\[[^\]]*?(\d+(\.\d+)?)pt", tex)
+    if m and float(m.group(1)) < args.min_font:
+        add("ERROR", "document", f"body font {m.group(1)}pt (min {args.min_font})")
 
     summary = {
         "tex": str(tex_path),
