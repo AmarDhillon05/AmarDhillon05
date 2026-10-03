@@ -1,0 +1,15 @@
+{
+  "g01": {
+    "fact": "amazon_contract.bedrock_finetune",
+    "labels": {
+      "A": "cand2",
+      "B": "cand1",
+      "C": "incumbent"
+    },
+    "texts": {
+      "cand2": "Built LLM-as-a-judge gating for a production Amazon Bedrock document-importance classifier: a larger LLM scores it on an EventBridge schedule, and fine-tuning runs only when those scores move past a threshold",
+      "cand1": "Automated retraining for a production classifier on Amazon Bedrock that rates research documents by importance, using a larger LLM as a judge on an EventBridge schedule and fine-tuning only when its scores move past a threshold",
+      "incumbent": "Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance: on an EventBridge schedule a larger LLM grades its ratings, and fine-tuning runs only when the grades shift past a threshold"
+    }
+  }
+}

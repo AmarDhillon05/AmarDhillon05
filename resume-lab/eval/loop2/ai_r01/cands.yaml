@@ -1,0 +1,9 @@
+# AI/ML · round 01 candidates (diagnosis: scores/loop2/ai_ml_engineering/round_00).
+# Structural (applied, logged): Capital One order claude_skill -> search_index -> ui_overhaul (ML reader, 2/6);
+# drop terplabs.studio (4/6); Redshift capacity-planning wording (4/6 trailing clause); Skills: remove PyTorch, CUDA,
+# MongoDB (no supporting bullet, 3/6), add embeddings and LLM-as-a-judge evaluation (ATS: proven by bullets), dedupe CloudWatch.
+amazon_contract.bedrock_finetune:
+  incumbent: "Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance: on an EventBridge schedule a larger LLM grades its ratings, and fine-tuning runs only when the grades shift past a threshold"
+  candidates:
+    - "Automated retraining for a production classifier on Amazon Bedrock that rates research documents by importance, using a larger LLM as a judge on an EventBridge schedule and fine-tuning only when its scores move past a threshold"
+    - "Built LLM-as-a-judge gating for a production Amazon Bedrock document-importance classifier: a larger LLM scores it on an EventBridge schedule, and fine-tuning runs only when those scores move past a threshold"

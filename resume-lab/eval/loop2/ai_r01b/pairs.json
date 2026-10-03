@@ -1,0 +1,10 @@
+[
+  {
+    "id": "g01",
+    "versions": {
+      "A": "Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance: on an EventBridge schedule a larger LLM grades its ratings, and fine-tuning runs only when the grades shift past a threshold",
+      "B": "Automated retraining for a production classifier on Amazon Bedrock that rates research documents by importance, using a larger LLM as a judge on an EventBridge schedule and fine-tuning only when its scores move past a threshold",
+      "C": "Built LLM-as-a-judge gating for a production Amazon Bedrock document-importance classifier: a larger LLM scores it on an EventBridge schedule, and fine-tuning runs only when those scores move past a threshold"
+    }
+  }
+]

@@ -1,0 +1,126 @@
+{
+  "persona": "skeptic_v2",
+  "target": "Infrastructure / distributed systems / platform / SRE internships (cloud infra, data infra, platform teams), 2026-27 cycle",
+  "memory_skim": {"strongest_3": [], "engineer_type": "", "memorable_numbers": [], "confusing": [], "skipped": [], "interview_questions": []},
+  "plain_english": [],
+  "scores": {
+    "impact_clarity": 7,
+    "quantification": 7,
+    "technical_depth": 7,
+    "concision_readability": 7,
+    "skim_test": 7,
+    "credibility": 7,
+    "ats_parseability": 8,
+    "visual_layout": 8,
+    "domain_fit": 6,
+    "human_voice": 6,
+    "plain_language": 6,
+    "overall": 7
+  },
+  "competitive_for_domain": "Y",
+  "bullet_feedback": [
+    {
+      "bullet": "Building capacity planning for Amazon Redshift maintenance like patching: Java logic that sets upper and lower bounds on reserved EC2 capacity to balance availability against cost, validated by backtesting",
+      "problem": "Colon-stitched fragment. After the colon, 'Java logic that sets upper and lower bounds' has no verb tied to the candidate, so nobody would say it out loud. 'Building capacity planning' also reads as if the intern owns all of Redshift maintenance capacity planning, and 'maintenance like patching' is clumsy.",
+      "severity": 6,
+      "why_it_matters": "This is the most infra-relevant brand on the page and the first bullet an infra HM reads. Unclear ownership and a fragmented sentence weaken it, and the first interview question will be 'which part is yours?'",
+      "missing_or_unclear": "clarify: which part the candidate builds (the bounds logic, the backtest harness, or both) and what the bounds are computed from",
+      "suggested_direction": "Make it one sentence with the candidate as the subject of each verb, and name the component they own before the language. Example shape: 'Writing the Java logic that sets upper and lower bounds on the reserved EC2 capacity Redshift holds for maintenance such as patching, trading availability against cost, and validating it by backtesting'"
+    },
+    {
+      "bullet": "Cut AI workflow generation time 65% to under 15s by replacing a Claude skill’s open-ended search with focused sub-skills that call Python tools for workflow search and validation, guided by CloudWatch and OpenSearch latency logs",
+      "problem": "'AI workflow generation' is never defined, so a reader can't tell what is generated or for whom. The bullet stacks three clauses: the cut, the replacement, then 'guided by CloudWatch and OpenSearch latency logs' tacked on at the end. 'Sub-skills' and 'Claude skill' are vendor-specific terms most infra readers won't parse.",
+      "severity": 5,
+      "why_it_matters": "This is the lead Capital One bullet, but it reads as LLM prompt plumbing rather than systems work. The one infra-relevant idea, profiling latency from logs to find the bottleneck, is buried at the end.",
+      "missing_or_unclear": "clarify: what a 'workflow' is (test-data workflow, as the third bullet implies?) and what the logs showed was slow",
+      "suggested_direction": "Say what a workflow is in plain words first. Move the profiling step ahead of the fix so the bullet reads diagnose then change then result, and drop 'OpenSearch' unless it explains the engineering."
+    },
+    {
+      "bullet": "Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries",
+      "problem": "'Strict access limits' is ambiguous: rate limits, permissions, or query quotas? 'Category tree' is unexplained. Opening with 'Because' delays the action, and the bullet drops its subject ('...limits, precomputed'), which reads as telegraphic. 'With Redis caching full workflows' is a second mechanism bolted on.",
+      "severity": 6,
+      "why_it_matters": "An infra interviewer will go straight to the constraint and ask what the limit was and how the tree stays fresh when the table changes. Right now the reader can't tell whether this is a caching/precompute design or a permissions workaround.",
+      "missing_or_unclear": "clarify: what kind of access limit; what the category tree is keyed on; how precomputed entries and the Redis cache are invalidated or refreshed",
+      "suggested_direction": "Lead with the verb and the subject ('I precomputed...'), name what the limit was in a few words, and say what the tree is keyed on before naming the stores."
+    },
+    {
+      "bullet": "Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and 90% of 30+ surveyed developers preferred it",
+      "problem": "Tech dump: React, TypeScript, Electron, React Flow, and Jest in one clause, with React named twice. 'Preferred it' doesn't say over what (presumably the legacy tool). This is frontend work and takes a full slot on an infra-targeted page.",
+      "severity": 4,
+      "why_it_matters": "An infra screener skims past it as frontend, and the stack list gets in the way of the one interesting fact: internal developers adopted the tool.",
+      "missing_or_unclear": "clarify: preferred over the legacy tool?",
+      "suggested_direction": "Cut the stack to the one or two technologies that explain the design (Electron app, visual editor) and leave the rest to Skills. For this target, consider shortening this bullet or ordering it last within the role."
+    },
+    {
+      "bullet": "Deployed a space-topic research tool for Amazon Leo’s public-policy team and set it up for handoff with AWS CDK infrastructure-as-code and GitHub Actions CI/CD, so Leo engineers new to the project now maintain it on AWS Fargate",
+      "problem": "'Space-topic research tool' is a noun stack nobody says out loud. The bullet also chains three tools across two clauses, and 'AWS Fargate' lands at the very end, where it reads as a keyword rather than a design choice.",
+      "severity": 4,
+      "why_it_matters": "The real point is a clean handoff: infra-as-code plus CI so a new team can own it. That is strong platform evidence, but the reader has to parse a noun stack first.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Rephrase 'space-topic research tool' as 'a tool that researches space-policy topics' (or similar, without adding facts). Put the handoff outcome next to the CDK/CI mechanism and name Fargate where the deployment target is introduced."
+    },
+    {
+      "bullet": "Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance: on an EventBridge schedule a larger LLM grades its ratings, and fine-tuning runs only when the grades shift past a threshold",
+      "problem": "'Production Amazon Bedrock classifier' is a four-word noun stack. The colon stitches two sentences together, and 'grades its ratings' / 'grades shift' is circular wording (ratings, grades, threshold) that takes two reads.",
+      "severity": 5,
+      "why_it_matters": "The mechanism (scheduled LLM-as-judge drift check gating retraining) is a good design choice. The phrasing hides it, and a skeptic will ask whether retraining has ever actually triggered.",
+      "missing_or_unclear": "clarify: whether the threshold-gated fine-tuning has run in production or is the designed path",
+      "suggested_direction": "Split the colon into a plain sentence order: what runs on the schedule, what it checks, and what happens when the check fails. Example shape: 'Automated retraining for a production document-importance classifier on Bedrock: a scheduled job has a larger LLM re-grade a sample of its ratings and starts fine-tuning only when agreement drops past a threshold'"
+    },
+    {
+      "bullet": "Cut research-environment setup time 30% by pinning dependencies with uv and packaging the environment in Docker so every machine gets an identical setup",
+      "problem": "This is the only bullet under a 'Machine Learning Research Intern' title, and it describes environment tooling, not research. The causal link is also loose: pinning and containerizing mainly buy reproducibility, so 'setup time 30%' invites 'what part got faster?'",
+      "severity": 4,
+      "why_it_matters": "A reader sees a research title backed by a Dockerfile and may suspect the title is inflated. An interviewer will ask what the research was.",
+      "missing_or_unclear": "clarify: which step of setup got faster (dependency resolution, build, onboarding)",
+      "suggested_direction": "Lead with the reproducibility outcome ('every machine gets an identical setup'), which is the real mechanism, and keep the 30% as the secondary result. That framing also fits a platform/dev-tooling target."
+    },
+    {
+      "bullet": "Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio’s class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency",
+      "problem": "The only number (20,000+ visits) measures product traffic, not the cache, and the bullet ends at intent ('to reduce database load and latency'). 'The studio's' is unexplained (is TerpLabs a studio?). Redis caching to cut DB queries already appears in the Capital One bullet, so this repeats the same idea.",
+      "severity": 5,
+      "why_it_matters": "A skim reader may credit the 20,000 visits to the caching. Under a 'Co-Founder' title, a single caching bullet also leaves ownership of the rest of the product unclear.",
+      "missing_or_unclear": "clarify: what TerpLabs is in a few words; what part of Tortuga the candidate built beyond the cache",
+      "suggested_direction": "Separate the product scale from the change: say what Tortuga is and its traffic, then what the candidate built. If no effect of the cache was measured, phrase it as the design (what is cached and why) rather than as a result."
+    },
+    {
+      "bullet": "Implemented B+ tree and LSM-tree backends for the event log and benchmarked them on identical 2M-record workloads, where the B+ tree gave 12.8x the read throughput and 22x faster range queries at the cost of 27% more disk space",
+      "problem": "The comparison reports only read-side wins for the B+ tree. An LSM tree's main advantage is write throughput, which is missing, so the benchmark looks one-sided. 'The event log' is never introduced, so the reader doesn't know why a matching engine needs a storage backend.",
+      "severity": 5,
+      "why_it_matters": "Storage-engine tradeoffs are exactly what an infra/data-infra interviewer will dig into. The first follow-up will be 'what about writes?', and a bullet that seems to skip it looks cherry-picked.",
+      "missing_or_unclear": "clarify: write/ingest results if they were measured; what the event log stores and why it is persisted",
+      "suggested_direction": "If write numbers exist, state the tradeoff both ways instead of only the read side. Otherwise frame it as the read-path choice for this workload, and say in a few words what the event log is for."
+    }
+  ],
+  "page_feedback": [
+    {
+      "problem": "Little distributed-systems evidence. The strongest engineering on the page (IEX order book, storage backends) is single-process. Experience bullets mostly describe AWS service wiring (Kinesis to Lambda, CDK, EventBridge) and LLM tooling, with no failure handling, scaling limits, consistency, retries, or monitoring/alerting ownership.",
+      "severity": 6,
+      "why_it_matters": "An infra/SRE HM hires on how a system behaves under load and failure. With three of the eight experience bullets about Claude/LLM tooling, the page reads as 'cloud-savvy full-stack/AI engineer' more than 'systems engineer'.",
+      "suggested_direction": "Without adding facts, reorder and rephrase existing bullets to bring out the systems parts that are already there: the Kinesis streaming change, the CDK/CI handoff, the capacity bounds, and the precompute/cache constraint. Shorten or move down the frontend and prompt-structure details."
+    },
+    {
+      "problem": "The Skills section lists technologies that never appear in a bullet: X-Ray, API Gateway, SNS, SQLAlchemy, Node.js, psutil. It also lists 'data structures and algorithms' and 'B+ tree and LSM-tree storage' as skills.",
+      "severity": 3,
+      "why_it_matters": "A skeptical reader treats unsupported items as keywords and may ask about X-Ray or SNS cold. 'Data structures and algorithms' is filler every resume claims.",
+      "suggested_direction": "Keep only items the candidate can defend in an interview. Drop 'data structures and algorithms' and let the IEX project carry the B+ tree/LSM claim instead of listing it as a skill."
+    },
+    {
+      "problem": "The page leans on colon and 'Because...' constructions and long three-clause sentences (the AWS bullet, the Bedrock bullet, Capital One bullet 2), which push several bullets to the full two lines with dense middles.",
+      "severity": 4,
+      "why_it_matters": "Read aloud, these sound written rather than spoken. The reader has to hold the setup in mind before reaching the verb, which slows the skim on the bullets that matter most for this target.",
+      "suggested_direction": "Rewrite the stitched bullets as subject-verb-object sentences, one mechanism per bullet, and cut trailing tool names that don't explain the design."
+    },
+    {
+      "problem": "Vendor-specific jargon ('Claude skill', 'sub-skills', 'Amazon Leo') appears without a gloss.",
+      "severity": 3,
+      "why_it_matters": "A recruiter or an infra HM outside the LLM world can't restate the Capital One bullets. 'Amazon Leo' may not be recognized as Amazon's satellite internet program.",
+      "suggested_direction": "Use a plain-language description the first time each term appears, e.g. describe the Claude skill by what it does, and keep the product names secondary."
+    }
+  ],
+  "keep": [
+    "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange’s book, agreeing with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices",
+    "Sustained 1.26M events/sec end-to-end over the full replay, keeping each price level’s orders in a std::list FIFO inside a std::map and a hash map from order ID to list iterator for O(1) cancels",
+    "Cut end-to-end latency 34% on a data pipeline that sends 6,000+ scraped research documents to model inference by streaming them through Amazon Kinesis into AWS Lambda instead of staging each step in S3"
+  ]
+}
