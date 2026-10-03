@@ -1,0 +1,56 @@
+{
+  "persona": "bigtech_recruiter",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28, 3.5 GPA; AWS SDE intern and Capital One SWE intern, plus Amazon-client contract work, co-founded campus studio, C++ matching engine. Strong early-career profile.",
+  "scores": {"impact_clarity": 8, "quantification": 8, "technical_depth": 8, "concision_readability": 7,
+             "skim_test": 8, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 8, "overall": 9},
+  "score_rationale": {
+    "concision_readability": "Nearly every bullet fills two full lines; UMIACS and project bullets pack niche jargon (AnyGrasp, IEX DEEP+, 99,122 of 99,123) that slows a skim."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [],
+  "bullets": [
+    {"quote": "Writing Java policies that tune upper/lower bounds", "verdict": "keep",
+     "issue": "", "suggestion": ""},
+    {"quote": "Rebuilt a legacy test-data workflow builder in", "verdict": "keep",
+     "issue": "", "suggestion": ""},
+    {"quote": "Precomputed a tree-style search index over popular", "verdict": "tighten",
+     "issue": "Reads as a tech list; the purpose comes last. Lead with why.",
+     "suggestion": "Cut DB load under access limits by precomputing a tree-style search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache)"},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "keep",
+     "issue": "", "suggestion": ""},
+    {"quote": "Shipped a space-research tool used by Amazon", "verdict": "keep",
+     "issue": "", "suggestion": ""},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep",
+     "issue": "", "suggestion": ""},
+    {"quote": "Automated fine-tuning of a Bedrock source-relevancy model", "verdict": "tighten",
+     "issue": "Reads like an AWS service checklist (Bedrock, EventBridge, X-Ray, SNS); the outcome is implied, not stated.",
+     "suggestion": "Automated scheduled fine-tuning of a Bedrock source-relevancy model (EventBridge), gated to skip redundant retraining runs, with X-Ray tracing and SNS failure alerts"},
+    {"quote": "Built a Python pipeline for PhysTwin (PhD-led", "verdict": "reframe",
+     "issue": "Dense research jargon; a recruiter can't tell what it does. 'the VLM' appears without being introduced.",
+     "suggestion": "Built a Python pipeline for PhysTwin, a PhD-led digital-twin project targeting ICLR, that runs AnyGrasp on multi-camera images and renders grasps in Open3D; tuned a VLM's prompts to detect them"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "keep",
+     "issue": "", "suggestion": ""},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep",
+     "issue": "", "suggestion": ""},
+    {"quote": "Building a RAG meal-suggestion feature for the", "verdict": "keep",
+     "issue": "", "suggestion": ""},
+    {"quote": "Engineered a C++17 order book and matching", "verdict": "tighten",
+     "issue": "'99,122 of 99,123 fills' is precise but hard to read at a glance.",
+     "suggestion": "Engineered a C++17 order book and matching engine that replayed 50.9M real IEX DEEP+ messages with no resync, reproducing 99,122/99,123 fills and 100% of top-of-book prices"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores", "verdict": "keep",
+     "issue": "", "suggestion": ""},
+    {"quote": "Sustained 1.26M events/sec end-to-end over the", "verdict": "tighten",
+     "issue": "A good headline number buried as the last bullet; it could merge with or follow bullet 1.",
+     "suggestion": "Move this up to second position so the throughput headline sits next to the correctness result"}
+  ],
+  "structure": [
+    {"key": "bold_consistency", "change": "Bold one headline number in each role's strongest bullet (e.g., Capital One's 65%, Leo's 34%); remove bold from secondary numbers.", "rationale": "Bold is uneven right now; consistent anchors let a 7-second skim catch one win per brand."},
+    {"key": "project_bullet_order", "change": "Within the IEX project, order the bullets correctness, then throughput, then benchmark.", "rationale": "Puts the two most legible results first; the storage benchmark is a secondary detail."}
+  ],
+  "top3": [
+    "Make the UMIACS PhysTwin bullet readable to a non-specialist: introduce the project in plain words and define 'the VLM'",
+    "Lead the Capital One search-index and Leo fine-tuning bullets with the purpose, not the tech list",
+    "Make the bold anchors consistent: one headline number per role, and move the 1.26M events/sec project result up"
+  ]
+}

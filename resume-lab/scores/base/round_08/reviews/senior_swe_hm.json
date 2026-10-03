@@ -1,0 +1,38 @@
+{
+  "persona": "senior_swe_hm",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28; AWS SDE intern + Capital One SWE intern; shipped AWS-native tool for Amazon Leo; C++ order book replaying 50.9M IEX messages at 1.26M events/sec.",
+  "scores": {"impact_clarity": 8, "quantification": 8, "technical_depth": 9, "concision_readability": 8,
+             "skim_test": 9, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 9, "overall": 9},
+  "score_rationale": {},
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "UMIACS bullet 1: 'the VLM' is never introduced; reader can't tell which model was prompt-tuned or what the tuning achieved",
+    "Amazon Leo fine-tuning bullet ends at mechanism (EventBridge, X-Ray, SNS) with no stated outcome; clarify: what did gating or automation change for the team"
+  ],
+  "bullets": [
+    {"quote": "Writing Java policies that tune upper/lower bounds", "verdict": "keep"},
+    {"quote": "Rebuilt a legacy test-data workflow builder in", "verdict": "keep"},
+    {"quote": "Precomputed a tree-style search index over popular", "verdict": "tighten", "issue": "Ends at intent; 'tree-style' is vague. Accepted no-metric, but sharpen the design reason.", "suggestion": "Precomputed a tree search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) so lookups avoid DB queries under access limits"},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "keep"},
+    {"quote": "Shipped a space-research tool used by Amazon", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep"},
+    {"quote": "Automated fine-tuning of a Bedrock source-relevancy model", "verdict": "add_context", "issue": "Strong ops hygiene but no outcome; reads as a list of AWS services after the verb.", "suggestion": "Automated scheduled fine-tuning of a Bedrock source-relevancy model (EventBridge), skipping retraining when nothing changed; X-Ray tracing and SNS failure alerts"},
+    {"quote": "Built a Python pipeline for PhysTwin (PhD-led", "verdict": "reframe", "issue": "Long, two actions joined; 'the VLM' undefined; no result.", "suggestion": "Built a Python pipeline for PhysTwin (PhD-led digital twin, ICLR submission) running AnyGrasp on multi-camera images and rendering grasps as Open3D overlays; tuned VLM prompts to detect them"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "keep"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep"},
+    {"quote": "Building a RAG meal-suggestion feature for the", "verdict": "keep"},
+    {"quote": "Engineered a C++17 order book and matching", "verdict": "keep"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores", "verdict": "tighten", "issue": "'for the simulation's event logs' is slightly confusing; the tradeoff framing is excellent.", "suggestion": "Benchmarked B+ tree vs LSM skip-list stores for replay event logs on identical 2M-record workloads; B+ tree gave 12.8× read throughput and 22× faster range summaries for 27% more disk"},
+    {"quote": "Sustained 1.26M events/sec end-to-end over the", "verdict": "keep"}
+  ],
+  "structure": [
+    {"key": "keep_order", "change": "Keep current Education → Experience → Projects → Skills order; reverse-chronological brands lead correctly.", "rationale": "AWS and Capital One are the strongest signals and appear first; no reordering needed."},
+    {"key": "trim_skills_cloud", "change": "Consider trimming the Cloud (AWS) skills line to services shown in bullets with decisions attached.", "rationale": "Line is long and reads slightly like a service catalog; bullets already carry the evidence."}
+  ],
+  "top3": [
+    "Fix the UMIACS PhysTwin bullet: define the VLM and split or tighten so it reads what → how → result",
+    "Clarify: what outcome the Bedrock retraining automation produced (fewer runs, reliability, hand-off) instead of ending on a service list",
+    "Tighten wording on the Capital One search-index and B+ tree bullets so the design reason reads in one pass"
+  ]
+}

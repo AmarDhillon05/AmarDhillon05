@@ -1,0 +1,39 @@
+{
+  "persona": "bs_detector",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28; AWS SDE intern now, Capital One intern, Amazon Leo contract shipped tool; C++ IEX matching engine replaying 50.9M real messages at 1.26M events/sec.",
+  "scores": {"impact_clarity": 8, "quantification": 8, "technical_depth": 8, "concision_readability": 8,
+             "skim_test": 8, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 8, "overall": 8},
+  "score_rationale": {},
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "clarify: the B+ tree vs LSM benchmark is for 'the simulation's event logs' — the link to the order book is unexplained and invites 'why did a matching engine need an event-log store?'",
+    "clarify: 'the VLM' in the PhysTwin bullet has no antecedent — say what the VLM is doing in the pipeline or drop the clause",
+    "'Prisma SQL' is not a thing (Prisma is an ORM); write 'Redis caching in front of a Prisma/SQL data layer' or similar so a backend interviewer doesn't wince"
+  ],
+  "bullets": [
+    {"quote": "Writing Java policies that tune upper/lower bounds", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Rebuilt a legacy test-data workflow builder in", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Precomputed a tree-style search index over popular", "verdict": "tighten", "issue": "Ends at intent; 'tree-style' is vague—say what the tree indexes (e.g., workflow steps/prefixes) if true.", "suggestion": "Precomputed a search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) so lookups avoid hitting the DB under access limits"},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Shipped a space-research tool used by Amazon", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Automated fine-tuning of a Bedrock source-relevancy model", "verdict": "tighten", "issue": "Four AWS service names stacked; reads closer to a tech list than the other bullets. No outcome.", "suggestion": "Automated scheduled fine-tuning of a Bedrock source-relevancy model (EventBridge), skipping redundant retraining runs, with tracing and failure alerts (X-Ray, SNS)"},
+    {"quote": "Built a Python pipeline for PhysTwin (PhD-led", "verdict": "add_context", "issue": "'the VLM' appears from nowhere; second clause is hard to parse on one read.", "suggestion": "Built a Python pipeline for PhysTwin (PhD-led digital twin targeting ICLR) running AnyGrasp on multi-camera images and rendering grasps as Open3D overlays; tuned VLM prompts to detect those grasps"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "tighten", "issue": "'Prisma SQL' is a misnomer; your own contribution is tacked on at the end.", "suggestion": "Co-founded a 110+ member campus product studio that has shipped 5 live products, incl. Tortuga, a class scheduler with 20,000+ visits in its first 30 days; built its Redis cache over a Prisma/SQL backend"},
+    {"quote": "Building a RAG meal-suggestion feature for the", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Engineered a C++17 order book and matching", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores", "verdict": "add_context", "issue": "Why the engine needs an event-log store is unstated; numbers are good but context is missing.", "suggestion": "Benchmarked B+ tree vs LSM skip-list stores for the engine's replay event log on identical 2M-record workloads; B+ tree gave 12.8× read throughput and 22× faster range summaries for 27% more disk"},
+    {"quote": "Sustained 1.26M events/sec end-to-end over the", "verdict": "keep", "issue": "", "suggestion": ""}
+  ],
+  "structure": [
+    {"key": "merge_iex_perf_into_first_bullet", "change": "Consider moving the 1.26M events/sec throughput bullet directly after the correctness bullet (it already is) or bolding only one headline metric per IEX bullet", "rationale": "Three bolded numbers in one project section compete; the 50.9M replay + 1.26M/s are the two that matter."},
+    {"key": "skills_trim_rag", "change": "Move 'RAG' out of the AI/ML & Tools list (it's a technique, already shown in TerpLabs bullet); keep PyTorch only if you can discuss real usage", "rationale": "Skills list with unevidenced items is the first thing a skeptic probes."}
+  ],
+  "top3": [
+    "clarify: explain why the matching engine needed an event-log store in the B+ tree vs LSM bullet, so the benchmark doesn't look bolted on",
+    "Fix the PhysTwin bullet's dangling 'the VLM' and the 'Prisma SQL' misnomer — small wording slips a technical interviewer will notice",
+    "De-stack the Bedrock/EventBridge/X-Ray/SNS bullet so it reads as a design choice (skip redundant retraining) rather than a service inventory"
+  ]
+}
