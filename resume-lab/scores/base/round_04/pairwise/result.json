@@ -1,0 +1,49 @@
+{
+  "tally": {
+    "new": 5,
+    "old": 3,
+    "tie": 0
+  },
+  "rows": [
+    {
+      "fact": "amazon_contract.bedrock_finetune",
+      "winner": "new",
+      "reason": "Nearly identical; B reads more smoothly ('on a schedule', 'gates that skip') and drops redundant 'AWS' jargon like 'cron'."
+    },
+    {
+      "fact": "amazon_contract.leo_deploy",
+      "winner": "new",
+      "reason": "Same facts; A states the deploy stack more cleanly without the redundant 'AWS CDK ... IaC' phrasing."
+    },
+    {
+      "fact": "aws_sde.redshift",
+      "winner": "old",
+      "reason": "A's trailing 'in Java' misattaches to patching; B ties Java to the work, though 'Java-based bounds' is still slightly awkward."
+    },
+    {
+      "fact": "capital_one.search_index",
+      "winner": "new",
+      "reason": "Same content; A's 'Precomputed' is a stronger, tighter verb than 'Built a precomputed'."
+    },
+    {
+      "fact": "iex.lfu_storage",
+      "winner": "new",
+      "reason": "A clearly says replayed books were validated for drift; B's dangling 'checked for drift' is ambiguous about what was checked."
+    },
+    {
+      "fact": "iex.order_book",
+      "winner": "old",
+      "reason": "A's 'contracts hold every alternative approach' is garbled; B clearly explains swappable plug-ins with enforced correctness."
+    },
+    {
+      "fact": "terplabs.studio",
+      "winner": "new",
+      "reason": "'Run with Jira and GitHub' adds no signal; B is more concise with the same substance."
+    },
+    {
+      "fact": "terplabs.tortuga",
+      "winner": "old",
+      "reason": "B precisely describes the work; A's 'the query layer' overclaims ownership. Both state intent, not measured DB/latency results."
+    }
+  ]
+}

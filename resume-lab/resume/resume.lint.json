@@ -4,12 +4,12 @@
   "bullets": [
     {
       "fact": "aws_sde.redshift",
-      "chars": 162,
-      "words": 22,
+      "chars": 168,
+      "words": 23,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.35,
-      "text": "Tuning upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations like patching in Java, backtesting policies to balance availability against cost"
+      "last_fill": 0.45,
+      "text": "Writing Java to tune upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations like patching, backtesting policies to balance availability against cost"
     },
     {
       "fact": "capital_one.ui_overhaul",
@@ -103,12 +103,12 @@
     },
     {
       "fact": "terplabs.tortuga",
-      "chars": 157,
-      "words": 29,
+      "chars": 155,
+      "words": 28,
       "n_bold": 1,
       "n_lines": 2,
       "last_fill": 0.34,
-      "text": "Built the Prisma SQL query layer and Redis caching to reduce DB load and latency for Tortuga, a class scheduler that drew 20,000+ visits in its first 30 days"
+      "text": "Wrote Prisma SQL queries and Redis query caching to reduce DB load and latency for Tortuga, a class scheduler that drew 20,000+ visits in its first 30 days"
     },
     {
       "fact": "terplabs.rag_meal",
@@ -121,12 +121,12 @@
     },
     {
       "fact": "iex.order_book",
-      "chars": 173,
+      "chars": 177,
       "words": 24,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.48,
-      "text": "Implemented a C++ order-book simulator replaying historical IEX data, with a plug-in interface whose contracts hold every alternative approach to the same correctness checks"
+      "last_fill": 0.54,
+      "text": "Implemented a C++ order-book simulator replaying historical IEX data, with a contract-based plug-in interface so alternative approaches swap in under the same correctness checks"
     },
     {
       "fact": "iex.lfu_storage",

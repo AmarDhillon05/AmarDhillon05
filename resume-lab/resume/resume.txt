@@ -8,9 +8,9 @@ B.S. in Computer Science, Minor in Statistics; GPA: 3.5                         
 Experience
 Amazon Web Services                                                                                 Sep 2026 – Dec 2026
 Software Development Engineer Intern                                                                       Redmond, WA
- • Tuning upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations like patching in Java, backtesting
+ • Writing Java to tune upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations like patching,
 
-   policies to balance availability against cost
+   backtesting policies to balance availability against cost
 Capital One                                                                                         Jun 2026 – Aug 2026
 Software Engineering Intern                                                                               Richmond, VA
  • Rebuilt a legacy test-data workflow builder in React/TypeScript + Electron, adding a React-Flow editor and Jest-tested
@@ -47,7 +47,7 @@ TerpLabs                                                                        
 Co-Founder, Software Engineer                                                                          College Park, MD
  • Co-founded a 110+ member campus product studio that has shipped 5 live products
 
- • Built the Prisma SQL query layer and Redis caching to reduce DB load and latency for Tortuga, a class scheduler that
+ • Wrote Prisma SQL queries and Redis query caching to reduce DB load and latency for Tortuga, a class scheduler that
 
    drew 20,000+ visits in its first 30 days
  • Building a RAG meal-suggestion feature for the official UMD app (GPT-4o mini, ChromaDB + SentenceBERT search);
@@ -55,10 +55,10 @@ Co-Founder, Software Engineer                                                   
    93% of generated meals rated satisfactory by internal testers
 
 Projects
-IEX Matching Engine Simulation | C++, STL, POSIX                                                    Jul 2026 – Aug 2026
- • Implemented a C++ order-book simulator replaying historical IEX data, with a plug-in interface whose contracts hold
+IEX Matching Engine Simulation | C++, STL, POSIX                                                   Jul 2026 – Aug 2026
+ • Implemented a C++ order-book simulator replaying historical IEX data, with a contract-based plug-in interface so
 
-   every alternative approach to the same correctness checks
+   alternative approaches swap in under the same correctness checks
  • Designed paginated hash-based order-book storage with an in-memory LFU cache for hot tickers, validating replayed
 
    books for drift against IEX historical book data

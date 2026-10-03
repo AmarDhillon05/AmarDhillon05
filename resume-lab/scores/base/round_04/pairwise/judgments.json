@@ -1,0 +1,10 @@
+[
+  {"id": "p01", "winner": "B", "reason": "Nearly identical; B reads more smoothly ('on a schedule', 'gates that skip') and drops redundant 'AWS' jargon like 'cron'.", "better_rewrite": ""},
+  {"id": "p02", "winner": "A", "reason": "Same facts; A states the deploy stack more cleanly without the redundant 'AWS CDK ... IaC' phrasing.", "better_rewrite": ""},
+  {"id": "p03", "winner": "B", "reason": "A's trailing 'in Java' misattaches to patching; B ties Java to the work, though 'Java-based bounds' is still slightly awkward.", "better_rewrite": "Tuning (in Java) upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations like patching; backtesting policies to balance availability against cost"},
+  {"id": "p04", "winner": "A", "reason": "Same content; A's 'Precomputed' is a stronger, tighter verb than 'Built a precomputed'.", "better_rewrite": ""},
+  {"id": "p05", "winner": "A", "reason": "A clearly says replayed books were validated for drift; B's dangling 'checked for drift' is ambiguous about what was checked.", "better_rewrite": ""},
+  {"id": "p06", "winner": "B", "reason": "A's 'contracts hold every alternative approach' is garbled; B clearly explains swappable plug-ins with enforced correctness.", "better_rewrite": "Implemented a C++ order-book simulator replaying historical IEX data, with a contract-based plug-in interface so alternative approaches swap in under the same correctness checks"},
+  {"id": "p07", "winner": "B", "reason": "'Run with Jira and GitHub' adds no signal; B is more concise with the same substance.", "better_rewrite": ""},
+  {"id": "p08", "winner": "B", "reason": "B precisely describes the work; A's 'the query layer' overclaims ownership. Both state intent, not measured DB/latency results.", "better_rewrite": ""}
+]
