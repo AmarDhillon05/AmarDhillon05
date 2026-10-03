@@ -1,0 +1,41 @@
+{
+  "persona": "ats_specialist",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28; AWS SDE intern, Capital One SWE intern, Amazon Leo contract; C++ IEX matching engine at 1.26M events/sec; strong AWS/Python/TypeScript keyword coverage.",
+  "scores": {"impact_clarity": 8, "quantification": 8, "technical_depth": 9, "concision_readability": 8,
+             "skim_test": 8, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 8, "overall": 8},
+  "score_rationale": {},
+  "competitive_for_domain": "Y",
+  "must_fix": [],
+  "bullets": [
+    {"quote": "Balancing Amazon Redshift availability against cost by writing", "verdict": "tighten",
+     "issue": "Lone bullet for the top brand; gerund opener reads as a task, no stated outcome yet.",
+     "suggestion": "Writing and backtesting Java policies that tune upper/lower bounds on EC2 capacity reserved for Redshift operations like patching, balancing availability against cost"},
+    {"quote": "Rebuilt a legacy test-data workflow builder in React/TypeScript", "verdict": "keep"},
+    {"quote": "Precomputed a tree-style search index over popular workflows", "verdict": "keep"},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "keep"},
+    {"quote": "Shipped a space-research tool used by Amazon", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep"},
+    {"quote": "Automated fine-tuning of a Bedrock source-relevancy model", "verdict": "keep"},
+    {"quote": "Built a Python pipeline for PhysTwin, a", "verdict": "tighten",
+     "issue": "Trailing 'tuned the VLM's prompts' is a weak tacked-on clause after a semicolon.",
+     "suggestion": "Built a Python pipeline for PhysTwin, a PhD-led digital twin project targeting ICLR, that runs AnyGrasp on multi-camera images and renders grasps as Open3D overlays for VLM prompting"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "keep"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep"},
+    {"quote": "Building a RAG meal-suggestion feature for the", "verdict": "keep"},
+    {"quote": "Engineered a C++17 order book and matching", "verdict": "keep"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores", "verdict": "tighten",
+     "issue": "Dense with three metrics; slows the skim compared with neighbouring bullets.",
+     "suggestion": "Benchmarked B+ tree vs LSM skip-list event-log stores on identical 2M-record workloads: B+ tree gave 12.8× read throughput and 22× faster range summaries for 27% more disk"},
+    {"quote": "Sustained 1.26M events/sec end-to-end over the", "verdict": "keep"}
+  ],
+  "structure": [
+    {"key": "aws_bullet_tense", "change": "Keep AWS role but phrase its single bullet with a present-tense action verb leading (Writing/Backtesting) rather than 'Balancing'", "rationale": "LLM screeners weight the first verb; the top-brand role should open on the engineering action."},
+    {"key": "skills_keyword_order", "change": "Within Web & Data, consider listing TypeScript-adjacent and REST-relevant items (Node.js, PostgreSQL) first; no new items", "rationale": "Generic SWE JDs match on core web/db terms more than niche stores like ChromaDB."}
+  ],
+  "top3": [
+    "Tighten the AWS bullet to lead with the Java policy/backtesting action so the strongest brand reads as engineering, not a goal",
+    "Trim the B+ tree vs LSM bullet to reduce metric density and keep the project section scannable",
+    "Fold 'tuned the VLM's prompts' into the PhysTwin sentence instead of a trailing semicolon clause"
+  ]
+}
