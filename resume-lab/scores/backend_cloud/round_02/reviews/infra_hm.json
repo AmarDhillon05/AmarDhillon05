@@ -1,0 +1,49 @@
+{
+  "persona": "infra_hm",
+  "target": "Backend and cloud infrastructure SWE intern roles (distributed services, data layer, AWS, platform/SRE), 2026–27 cycle. Score domain_fit for this domain.",
+  "seven_second_takeaway": "UMD CS '28, AWS SDE intern + Capital One; Kinesis/Lambda pipeline with CDK IaC, Redis/Postgres work, C++ engine at 1.26M events/sec, B+ tree vs LSM benchmark.",
+  "scores": {"impact_clarity": 8, "quantification": 7, "technical_depth": 8, "concision_readability": 8,
+             "skim_test": 8, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 7, "overall": 8},
+  "score_rationale": {
+    "quantification": "Strong numbers on the project; service-side metrics (34%, 65%) lack absolute baselines, and AWS, CDK and Redis caching bullets end without a measured result.",
+    "domain_fit": "Strong infra evidence exists, but Capital One reads LLM/Claude-skill-centric and a React/Electron bullet takes space; backend signal could lead harder."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "AWS bullet ends with 'initial backtests complete', which is weak; clarify what the backtests showed or state the policy design choice more concretely",
+    "Clarify: what the 34% Kinesis latency reduction is measured from (absolute end-to-end time before/after, if known)"
+  ],
+  "bullets": [
+    {"quote": "Writing Java policies that tune upper/lower bounds", "verdict": "add_context",
+     "issue": "Most important brand, but no result; 'initial backtests complete' reads as a status update.",
+     "suggestion": "Writing Java policies that set upper/lower bounds on EC2 capacity reserved for Redshift operations (e.g., patching), trading availability against cost; validating via backtests"},
+    {"quote": "Precomputed a tree-style search index so workflow", "verdict": "tighten",
+     "issue": "'Tree-style index' and 'distilling into the skill's tool' are vague; the data-layer constraint is the interesting part.",
+     "suggestion": "Built a precomputed tree index over a 270K+ row PostgreSQL table (SQLAlchemy, Redis cache) so workflow search works under strict DB access limits; it backs the Claude skill's main search tool"},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "keep"},
+    {"quote": "Rebuilt a legacy test-data workflow builder in", "verdict": "tighten",
+     "issue": "Frontend work; fine, but should sit last and stay short for backend readers.",
+     "suggestion": "Rebuilt a legacy test-data workflow builder (React/TypeScript, Electron, React-Flow) with Jest-tested validation; 90% of 30+ surveyed developers preferred it"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep",
+     "issue": "Best infra bullet; an absolute baseline would make it more defensible if one exists."},
+    {"quote": "Shipped a space-research tool to Amazon Leo's", "verdict": "keep"},
+    {"quote": "Automated EventBridge-scheduled fine-tuning of a Bedrock model", "verdict": "keep"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "tighten",
+     "issue": "Two loosely linked actions; profiling clause adds little without findings.",
+     "suggestion": "Shortened research-environment setup time 30% via uv dependency pinning and Docker; added psutil profiling and Pytest suites to locate bottlenecks"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep",
+     "issue": "Redis caching tacked on at the end; fine as is given space."},
+    {"quote": "Engineered a C++17 order book and matching", "verdict": "keep"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores", "verdict": "keep"},
+    {"quote": "Sustained 1.26M events/sec end-to-end over the", "verdict": "keep"}
+  ],
+  "structure": [
+    {"key": "capital_one_bullet_order", "change": "Lead Capital One with the 65% latency bullet, then search index, then the React/Electron bullet last.", "rationale": "Puts the measured backend result first for backend HMs; frontend work is least relevant here."},
+    {"key": "keep_section_order", "change": "Keep Education → Experience → Projects → Skills as is.", "rationale": "Brands and AWS stack already surface early; no reordering needed beyond bullets."}
+  ],
+  "top3": [
+    "Strengthen the AWS bullet: replace 'initial backtests complete' with the concrete design choice or validation approach (no invented results)",
+    "Reorder Capital One bullets so the 65% latency win leads and the React/Electron bullet sits last",
+    "Clarify: absolute baselines for the 34% Kinesis and 65% generation-time reductions, if known"
+  ]
+}
