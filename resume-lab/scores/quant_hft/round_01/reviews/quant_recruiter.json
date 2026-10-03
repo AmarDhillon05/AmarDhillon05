@@ -1,0 +1,45 @@
+{
+  "persona": "quant_recruiter",
+  "target": "Software engineering intern roles at quantitative trading / HFT firms (Jane Street, HRT, Citadel Securities, Optiver, IMC style), 2026–27 cycle. Score domain_fit for this domain.",
+  "seven_second_takeaway": "UMD CS '28, 3.5 GPA. C++17 IEX order book replaying 50.9M messages at 1.26M events/sec with perf work. AWS and Capital One internships.",
+  "scores": {"impact_clarity": 7, "quantification": 8, "technical_depth": 8, "concision_readability": 7,
+             "skim_test": 7, "credibility": 7, "ats_parseability": 8, "visual_layout": 8, "domain_fit": 7, "overall": 7},
+  "score_rationale": {
+    "impact_clarity": "Order book bullets are strong, but the B+/LSM and batch-sizing bullets lead with findings and lack the why. Cloud bullets mostly read as tasks.",
+    "concision_readability": "The project bullets are number-dense: bullets 3 and 4 stack 4–5 metrics each, so a reader has to parse them twice.",
+    "skim_test": "1.26M events/sec, the best HFT headline, is buried in bullet 4. A 3.5 GPA is the first number the eye hits.",
+    "credibility": "'Published ... as a negative result' invites the question 'published where?'. The event-log store benchmark reads like a tangent from the matching engine.",
+    "domain_fit": "The C++ project leading the page is right. Below it, the experience section is AWS/serverless/LLM work that is mostly irrelevant to HFT, and the GPA is under the usual bar.",
+    "overall": "One strong, defensible C++ systems project. The GPA is below most firms' screen and there are no other C++, low-latency or rigor signals on the page."
+  },
+  "competitive_for_domain": "stretch",
+  "must_fix": [
+    "Move the throughput/latency bullet (1.26M events/sec, 686.7 ns/event) to the top of the IEX project; it is the headline an HFT recruiter screens for.",
+    "clarify: what 'Published' means in the adaptive batch-sizing bullet (a writeup, a repo README, a paper?). Otherwise reword to 'Evaluated' or 'Documented'.",
+    "Clarify how the B+ tree vs LSM event-log benchmark relates to the matching engine; right now it reads like a separate storage side-project."
+  ],
+  "bullets": [
+    {"quote": "Engineered a C++17 order book and matching engine", "verdict": "keep"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores", "verdict": "add_context", "issue": "Doesn't say why the event log needed a store or what decision this benchmark drove.", "suggestion": "Chose a B+ tree over an LSM skip-list for the engine's event log after benchmarking both on identical 2M-record workloads: 12.8× read throughput, 22× faster range summaries, at 27% more disk"},
+    {"quote": "Published an adaptive batch-sizing policy as a negative", "verdict": "reframe", "issue": "'Published' is ambiguous, and four stacked metrics hide the insight.", "suggestion": "Evaluated an adaptive batch-sizing policy and documented it as a negative result: +71% disk, −32% append rate, no query win, because node lookup, not batch size, dominates cost"},
+    {"quote": "Sustained 1.26M events/sec end-to-end; the authoritative", "verdict": "tighten", "issue": "Strongest HFT signal on the page. Move it to the first bullet. The mirror-book comparison is hard to parse.", "suggestion": "Sustained 1.26M events/sec end-to-end; matching engine averages 686.7 ns/event at a 1.40 GHz base clock (passive mirror book: 485.6 ns)"},
+    {"quote": "Traced a 1.65× phantom regression to a", "verdict": "keep"},
+    {"quote": "Writing Java policies that tune upper/lower bounds", "verdict": "keep", "issue": "In-progress internship, honestly scoped; fine as-is."},
+    {"quote": "Precomputed a tree-style search index over popular", "verdict": "tighten", "issue": "Ends at intent with no result (accepted risk); trim the parenthetical tech list.", "suggestion": "Precomputed a tree-style search index over popular workflows in a 270K+ row PostgreSQL table, backed by Redis, to minimize DB queries under access limits"},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep"},
+    {"quote": "Automated fine-tuning of a Bedrock source-relevancy model", "verdict": "tighten", "issue": "Lists AWS services but shows no outcome; low value to a quant reader.", "suggestion": "Automated scheduled fine-tuning of a Bedrock source-relevancy model, gated to skip redundant retraining runs, with tracing and failure alerts"},
+    {"quote": "Built a Python pipeline for PhysTwin, a PhD-led", "verdict": "tighten", "issue": "Name-heavy; 'tuned its detection prompts' is a weak ending.", "suggestion": "Built a Python pipeline for PhysTwin (PhD-led digital twin targeting ICLR) that runs AnyGrasp on multi-camera images and renders grasps as Open3D overlays for a VLM"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep"}
+  ],
+  "structure": [
+    {"key": "reorder_iex_bullets", "change": "In the IEX project, order the bullets as correctness (50.9M replay), throughput/latency, perf-variance tracing, then the storage benchmarks.", "rationale": "Correctness and latency are what quant SWE screeners look for first; storage experiments come last."},
+    {"key": "merge_storage_bullets", "change": "Consider merging the B+/LSM and batch-sizing bullets into one storage-design bullet.", "rationale": "Frees a line, reduces metric overload, and keeps the focus on the matching engine."},
+    {"key": "skills_order", "change": "Lead with C++17 and C and keep Systems & Performance directly under Languages, which it already is. Fine as is.", "rationale": "Already well targeted; no change needed beyond confirming the order."}
+  ],
+  "top3": [
+    "Lead the IEX project with the 1.26M events/sec / 686.7 ns latency result alongside the 50.9M-message exact-replay correctness claim.",
+    "Cut the metric density in the storage bullets (merge or trim) and clarify what 'Published' means.",
+    "Tighten the cloud/ML experience bullets so they take less space. They don't help an HFT screen, and the C++ story should dominate the page."
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "persona": "bs_detector",
+  "target": "Software engineering intern roles at quantitative trading / HFT firms (Jane Street, HRT, Citadel Securities, Optiver, IMC style), 2026–27 cycle. Score domain_fit for this domain.",
+  "seven_second_takeaway": "UMD CS '28, C++17 IEX order book replaying 50.9M real messages with near-exact fills and perf-counter work; AWS and Capital One internships; heavy AWS/LLM tooling elsewhere.",
+  "scores": {"impact_clarity": 7, "quantification": 8, "technical_depth": 8, "concision_readability": 7,
+             "skim_test": 7, "credibility": 8, "ats_parseability": 8, "visual_layout": 8, "domain_fit": 7, "overall": 7},
+  "score_rationale": {
+    "impact_clarity": "Project bullets are number-dense but the why is thin; the '1.41x a passive mirror book' and batch-sizing bullets need re-reading to parse.",
+    "concision_readability": "Project section stacks 4-6 numbers per bullet; reads like a benchmark log. Batch-sizing bullet is jargon-heavy for its low payoff.",
+    "skim_test": "Order book is visible first, but the headline latency/throughput win is buried in bullet four behind storage benchmarks.",
+    "domain_fit": "Matching engine and perf methodology are exactly right; but 2 of 5 project bullets are disk-store benchmarks, and the experience half is AWS/LLM plumbing."
+  },
+  "competitive_for_domain": "stretch",
+  "must_fix": [
+    "Reorder the project bullets so correctness (fills/top-of-book) and latency/throughput plus the perf-governor investigation come first; storage benchmarks last.",
+    "Clarify: 'Published' the batch-sizing negative result — where (README, write-up, repo)? If just a README note, say 'Documented'; otherwise an interviewer will ask for the publication.",
+    "Rephrase '1.41x a passive mirror book (485.6 ns)' — reads ambiguous; state plainly that the matching engine costs 1.41x a passive book that only tracks state.",
+    "Be ready to defend 686.7 ns/event and 1.26M events/sec against HFT expectations; the 1.40 GHz base-clock context helps, keep it, but know your hot path breakdown."
+  ],
+  "bullets": [
+    {"quote": "Engineered a C++17 order book and matching engine", "verdict": "keep", "suggestion": "Built a C++17 order book and matching engine that replayed 50.9M real IEX DEEP+ messages with no resync, matching 99,122 of 99,123 fills exactly and 100% of top-of-book prices"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores", "verdict": "tighten", "issue": "Disk-store tradeoff is tangential for HFT; solid methodology but should sit below latency/perf bullets.", "suggestion": "Benchmarked B+ tree vs LSM skip-list event-log stores on identical 2M-record workloads: B+ tree gave 12.8x read throughput and 22x faster range summaries for 27% more disk"},
+    {"quote": "Published an adaptive batch-sizing policy as a negative", "verdict": "reframe", "issue": "'Published' overclaims unless there is a venue; four stacked deltas obscure the one-line lesson.", "suggestion": "Tested an adaptive batch-sizing policy and documented it as a negative result: +71% disk and no query win, since cost is dominated by node lookup, not batch size"},
+    {"quote": "Sustained 1.26M events/sec end-to-end; the authoritative", "verdict": "tighten", "issue": "Strongest HFT bullet but the mirror-book comparison is confusing; move to second position.", "suggestion": "Sustained 1.26M events/sec end-to-end; matching averages 686.7 ns/event at a 1.40 GHz base clock, 1.41x the cost of a passive mirror book (485.6 ns)"},
+    {"quote": "Traced a 1.65x phantom regression to a CPU-governor", "verdict": "keep"},
+    {"quote": "Writing Java policies that tune upper/lower bounds", "verdict": "keep", "issue": "Honestly scoped as in-progress; fine as is."},
+    {"quote": "Precomputed a tree-style search index over popular", "verdict": "tighten", "issue": "Ends at intent; acceptable but lowest-value bullet for this target.", "suggestion": "Precomputed a tree-style search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis) to cut DB queries under access limits"},
+    {"quote": "Cut LLM workflow generation time 65% to under", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep"},
+    {"quote": "Automated fine-tuning of a Bedrock source-relevancy model", "verdict": "tighten", "issue": "Reads as an AWS service list (EventBridge, X-Ray, SNS); no result; weak for quant.", "suggestion": "Automated scheduled Bedrock fine-tuning of a source-relevancy model, gated to skip redundant retraining runs, with tracing and failure alerts"},
+    {"quote": "Built a Python pipeline for PhysTwin, a PhD-led", "verdict": "add_context", "issue": "'targeting ICLR' is fine but your contribution vs the PhD's is unclear; 'tuned its detection prompts' is vague.", "suggestion": "Built the Python pipeline for PhysTwin (PhD-led digital twin, ICLR submission) that runs AnyGrasp on multi-camera images and renders grasps as Open3D overlays for a VLM"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "tighten", "issue": "Clarify your role in Tortuga beyond Redis caching; 20K visits is the team's metric.", "suggestion": "Co-founded a 110+ member campus product studio shipping 5 live products; built Redis caching for Prisma queries in Tortuga, a class scheduler with 20,000+ visits in 30 days"}
+  ],
+  "structure": [
+    {"key": "reorder_project_bullets", "change": "Order project bullets: fills correctness, throughput/latency, perf-governor trace, B+ vs LSM, batch-sizing (or cut batch-sizing).", "rationale": "Quant HMs hire on correctness and latency methodology; disk-store benchmarks are secondary evidence."},
+    {"key": "cut_or_merge_batch_sizing", "change": "Merge the batch-sizing negative result into the B+/LSM bullet or drop it to free a line.", "rationale": "Low domain value, dense jargon; freeing space improves readability."},
+    {"key": "skills_order", "change": "Lead Skills with C++17/C and Linux perf; demote AWS cloud line to last.", "rationale": "Signals systems-performance identity to HFT screeners first."}
+  ],
+  "top3": [
+    "Reorder the order-book bullets so correctness, 1.26M events/sec / 686.7 ns, and the perf-governor trace come first; storage benchmarks last.",
+    "Clarify: what 'Published' means for the batch-sizing result — change to 'Documented' unless there is a public write-up you can link.",
+    "Rewrite the '1.41x a passive mirror book' clause so a skimmer instantly understands the comparison, and trim AWS service-list bullets (Bedrock automation) for this target."
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "persona": "hft_engineer",
+  "target": "Software engineering intern roles at quantitative trading / HFT firms (Jane Street, HRT, Citadel Securities, Optiver, IMC style), 2026–27 cycle. Score domain_fit for this domain.",
+  "seven_second_takeaway": "UMD CS '28 who built a C++17 IEX order book replaying 50.9M real messages at ~687 ns/event, with real perf methodology; AWS and Capital One internships.",
+  "scores": {"impact_clarity": 8, "quantification": 7, "technical_depth": 8, "concision_readability": 7,
+             "skim_test": 8, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 8, "overall": 8},
+  "score_rationale": {
+    "quantification": "Latency is a mean only, no tail or distribution; '1.41× a passive mirror book' is a confusing baseline that makes me re-read.",
+    "concision_readability": "Project bullets pack too many numbers per line; the batch-sizing parenthetical is four metrics stacked together and hard to parse at a glance."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "clarify: whether 686.7 ns/event is a mean only; if you have p50/p99 or other tail numbers, a tail number is what an HFT reviewer looks for first",
+    "clarify: what '1.41× a passive mirror book (485.6 ns)' means; it reads like an overhead ratio but needs a plain explanation of what the mirror book skips",
+    "clarify: 'Published' a negative result—where? If it is a README or writeup in the repo, say 'Documented' to avoid implying a publication"
+  ],
+  "bullets": [
+    {"quote": "Engineered a C++17 order book and matching engine", "verdict": "tighten",
+     "issue": "Strong correctness claim; 'Engineered' is filler and C++17 repeats the header.",
+     "suggestion": "Built an order book and matching engine that replayed 50.9M real IEX DEEP+ messages with no resync, matching 99,122 of 99,123 fills exactly and 100% of top-of-book prices"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores", "verdict": "tighten",
+     "issue": "Solid trade-off, but event-log storage is off the hot path; keep it shorter so it doesn't outrank latency work.",
+     "suggestion": "Benchmarked B+ tree vs LSM skip-list event-log stores on identical 2M-record workloads: B+ tree gave 12.8× read throughput and 22× faster range summaries for 27% more disk"},
+    {"quote": "Published an adaptive batch-sizing policy as a negative", "verdict": "reframe",
+     "issue": "Honest and good, but the metric stack is hard to parse; the conclusion should come first.",
+     "suggestion": "Documented a negative result: adaptive batch sizing gave no query win (+71% disk, −32% append rate) because cost is dominated by node lookup, not batch size"},
+    {"quote": "Sustained 1.26M events/sec end-to-end; the authoritative", "verdict": "add_context",
+     "issue": "Most domain-relevant bullet, but it's buried fourth, gives only a mean, and the mirror-book comparison is unclear.",
+     "suggestion": "Move to second. Sustained 1.26M events/sec end-to-end; matching engine averages 686.7 ns/event at a fixed 1.40 GHz clock vs 485.6 ns for a passive mirror book with no matching"},
+    {"quote": "Traced a 1.65× phantom regression to a CPU-governor", "verdict": "keep"},
+    {"quote": "Writing Java policies that tune upper/lower bounds", "verdict": "keep"},
+    {"quote": "Precomputed a tree-style search index over popular", "verdict": "tighten",
+     "issue": "'tree-style' is vague; name the structure if you can, or drop the word.",
+     "suggestion": "Precomputed a search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to minimize DB queries under access limits"},
+    {"quote": "Cut LLM workflow generation time 65% to under", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep"},
+    {"quote": "Automated fine-tuning of a Bedrock source-relevancy model", "verdict": "tighten",
+     "issue": "Lists AWS services without an outcome; low signal for HFT.",
+     "suggestion": "Automated scheduled fine-tuning of a Bedrock source-relevancy model, gated to skip redundant retraining runs, with tracing and failure alerts"},
+    {"quote": "Built a Python pipeline for PhysTwin, a PhD-led", "verdict": "keep"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep"}
+  ],
+  "structure": [
+    {"key": "reorder_project_bullets", "change": "Order project bullets as correctness, latency/throughput, perf-variance debugging, storage benchmark, negative result.", "rationale": "An HFT reviewer hires on hot-path latency and measurement discipline; those should come before the event-log storage work."},
+    {"key": "merge_storage_bullets", "change": "Consider merging the B+ tree/LSM and batch-sizing bullets into one storage trade-off bullet.", "rationale": "Frees a line and makes the C++ latency story stand out; both bullets cover the same off-hot-path subsystem."},
+    {"key": "keep_projects_first", "change": "Keep Projects above Experience for this domain.", "rationale": "The order book is the only HFT-relevant evidence; the experience section is cloud/LLM work."}
+  ],
+  "top3": [
+    "Move the latency/throughput bullet up to second and explain the mirror-book comparison in plain words; clarify whether 686.7 ns is a mean and add tail latency if you measured it",
+    "Simplify the batch-sizing bullet: lead with the conclusion (lookup-dominated, no query win), cut half the metrics, and say 'Documented' unless it was actually published",
+    "Tighten the storage benchmark bullet so the order book's correctness, latency, and perf-methodology story leads the page"
+  ]
+}
