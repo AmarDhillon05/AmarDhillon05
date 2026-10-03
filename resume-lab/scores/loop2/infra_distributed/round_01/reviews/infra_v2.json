@@ -1,0 +1,106 @@
+{
+  "persona": "infra_v2",
+  "target": "Infrastructure / distributed systems / platform / SRE internships (cloud infra, data infra, platform teams), 2026-27 cycle",
+  "memory_skim": {"strongest_3": [], "engineer_type": "", "memorable_numbers": [], "confusing": [], "skipped": [], "interview_questions": []},
+  "plain_english": [],
+  "scores": {
+    "impact_clarity": 7,
+    "quantification": 7,
+    "technical_depth": 8,
+    "concision_readability": 8,
+    "skim_test": 7,
+    "credibility": 8,
+    "ats_parseability": 8,
+    "visual_layout": 8,
+    "domain_fit": 7,
+    "human_voice": 8,
+    "plain_language": 7,
+    "overall": 8
+  },
+  "competitive_for_domain": "Y",
+  "bullet_feedback": [
+    {
+      "bullet": "Building capacity planning for Amazon Redshift maintenance like patching: Java logic that sets upper and lower bounds on reserved EC2 capacity to balance availability against cost, validated by backtesting",
+      "problem": "This is the most on-target infra bullet on the page (capacity vs. availability vs. cost), but the mechanism is hidden. 'Java logic that sets upper and lower bounds' does not say what the bounds are computed from, and 'maintenance like patching' reads as a loose aside. ('Building' as an in-progress verb is fine.)",
+      "severity": 5,
+      "why_it_matters": "An infra interviewer hires on how capacity bounds get derived (forecast from historical demand? per cluster or per fleet?). 'Java logic' tells them only the language, so the bullet reads as a topic, not a technique.",
+      "missing_or_unclear": "clarify: what signal the bounds are computed from, and at what granularity (per cluster, region, or fleet)",
+      "suggested_direction": "Swap 'Java logic' for the input the bounds come from, and turn 'maintenance like patching' into a plain clause about why capacity is reserved (e.g. 'reserved EC2 capacity held for Redshift patching windows'). Leave the language to the Skills section."
+    },
+    {
+      "bullet": "Cut AI workflow generation time 65% to under 15s by replacing a Claude skill’s open-ended search with focused sub-skills that call Python tools for workflow search and validation, guided by CloudWatch and OpenSearch latency logs",
+      "problem": "'Workflow' isn't defined until the third Capital One bullet ('test-data workflows'), so here 'AI workflow generation' and 'workflow search' are opaque. 'Claude skill' and 'sub-skills' are LLM-tooling jargon an infra screener may not know.",
+      "severity": 5,
+      "why_it_matters": "A platform/SRE reader skimming the first Capital One bullet sees an LLM prompt-engineering story. The actual infra signal, latency diagnosed from CloudWatch/OpenSearch logs and a 65% cut to under 15s, is buried at the tail.",
+      "missing_or_unclear": "clarify: what a 'workflow' is (test-data generation workflow) the first time it appears",
+      "suggested_direction": "Say 'test-data workflow' at first mention, and move the latency-log diagnosis earlier so the bullet reads measure → change → result, e.g. 'Used CloudWatch and OpenSearch latency logs to find where test-data workflow generation stalled, then split a Claude skill's open-ended search into focused sub-skills..., cutting generation time 65% to under 15s'."
+    },
+    {
+      "bullet": "Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries",
+      "problem": "Opening with 'Because' delays the action. 'strict access limits' is ambiguous: rate/query limits, permissions, or connection quotas each imply a different design. This is a good read-path / caching-tier story, but it ends on 'to cut database queries' with no stated outcome.",
+      "severity": 4,
+      "why_it_matters": "Infra reviewers will ask exactly which constraint forced a precompute + cache tier. If 'access limits' means permissions, the caching rationale changes, and the reader can't tell which.",
+      "missing_or_unclear": "clarify: what kind of access limit (query rate, permissions, connection cap)",
+      "suggested_direction": "Lead with the verb and name the constraint precisely, e.g. 'Precomputed popular workflows into a category tree the Claude skill searches first, with Redis caching full workflows, to stay under the 270K+ row PostgreSQL table's [specific limit]'."
+    },
+    {
+      "bullet": "Cut end-to-end latency 34% on a data pipeline that sends 6,000+ scraped research documents to model inference by streaming them through Amazon Kinesis into AWS Lambda instead of staging each step in S3",
+      "problem": "Strong mechanism + result (batch-staging in S3 replaced with Kinesis streaming), but 'end-to-end latency' has no unit. Per-document latency and total time to process the 6,000+ corpus are different claims.",
+      "severity": 3,
+      "why_it_matters": "Streaming vs. staging is a classic data-infra interview topic. The first follow-up will be 'latency of what?', and the answer changes how impressive 34% is.",
+      "missing_or_unclear": "clarify: whether 34% is per-document latency or total batch completion time",
+      "suggested_direction": "Add the unit to the latency noun ('per-document latency' or 'time to process the full batch'). Keep the rest; it's one of the best infra bullets on the page."
+    },
+    {
+      "bullet": "Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio’s class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency",
+      "problem": "The only number (20,000+ visits) describes the product's traffic, not the cache's effect. 'to reduce database load and latency' states intent, not a result, so readers may wrongly attribute the number to the caching work.",
+      "severity": 4,
+      "why_it_matters": "An infra reader treats load figures as context for capacity decisions. Without a hit rate or load change, this reads as 'added Redis', which is common on intern resumes.",
+      "missing_or_unclear": "clarify: any observed effect of the cache (hit rate, query reduction, latency), if one exists",
+      "suggested_direction": "Frame the traffic number explicitly as the load the cache had to absorb ('to absorb 20,000+ visits in its first 30 days'), or state the measured effect if there is one. Otherwise keep the intent wording but put the traffic before the caching so cause and context read in order."
+    },
+    {
+      "bullet": "Implemented B+ tree and LSM-tree backends for the event log and benchmarked them on identical 2M-record workloads, where the B+ tree gave 12.8x the read throughput and 22x faster range queries at the cost of 27% more disk space",
+      "problem": "The comparison only reports the read side. An event log is append-heavy, and write throughput is the reason anyone picks an LSM tree, so leaving out writes makes the tradeoff look one-sided. '12.8x' and '22x' also use different precision.",
+      "severity": 4,
+      "why_it_matters": "This is the strongest storage-engine signal on the page. Any storage interviewer's first question will be 'and writes?'. If the LSM won on writes, showing that turns a benchmark into a real tradeoff analysis.",
+      "missing_or_unclear": "clarify: write/ingest throughput result of the comparison, and which backend was kept",
+      "suggested_direction": "If write results exist, state both sides of the tradeoff in one clause and name which backend was chosen and why. Use the same precision for both multipliers."
+    },
+    {
+      "bullet": "Sustained 1.26M events/sec end-to-end over the full replay, keeping each price level’s orders in a std::list FIFO inside a std::map and a hash map from order ID to list iterator for O(1) cancels",
+      "problem": "It's the headline throughput number, but it comes third in the project, and it doesn't say whether it's single-threaded or on what hardware. The data-structure clause is good but dense ('std::list FIFO inside a std::map and a hash map from order ID to list iterator').",
+      "severity": 3,
+      "why_it_matters": "A performance-engineering reader anchors on throughput first. Without thread count, 1.26M/s can't be put in context, and a reader stopping after two bullets misses it.",
+      "missing_or_unclear": "clarify: single-threaded or not, and machine class",
+      "suggested_direction": "Move this bullet up to second in the project (right after correctness), and add the threading context in a few words. Optionally split the data-structure clause with 'with' so it reads as two steps."
+    }
+  ],
+  "page_feedback": [
+    {
+      "problem": "The deepest infra and performance evidence (B+ tree vs. LSM benchmark, 1.26M events/sec, 50.9M-message replay) sits at the bottom of the page under Projects. Meanwhile the first two Capital One bullets lead with Claude-skill/LLM tooling.",
+      "severity": 5,
+      "why_it_matters": "An infra HM skimming top-down meets 'AI workflow generation' and 'Claude skill' before any storage-engine or throughput evidence. The 7-second read suggests 'AI tooling engineer', not 'systems engineer'.",
+      "suggested_direction": "Within Capital One, consider leading with the bullet whose mechanism is most infra-shaped (the latency-log diagnosis or the precompute + Redis tier) and phrasing the LLM part as the workload, not the headline. Keep Projects where it is but make sure its throughput bullet is near the top of the project."
+    },
+    {
+      "problem": "Infra evidence across the experience is mostly mechanism-only, with no result, in the AWS and TerpLabs entries and the Capital One caching bullet. The concrete mechanism + result pairs (Kinesis 34%, Capital One 65%, the IEX numbers) are spread across different sections.",
+      "severity": 3,
+      "why_it_matters": "A reader judging 'concrete infra evidence' tallies mechanism+result pairs. Three or four strong ones are there, but they aren't grouped, so the impression is weaker than the actual work.",
+      "suggested_direction": "Lead with the result-bearing bullet within each role where possible (UMD Contracting already does this well). No new metrics needed."
+    },
+    {
+      "problem": "About 10% of the page is empty at the bottom below Certification, while several bullets are compressed to fit two lines.",
+      "severity": 2,
+      "why_it_matters": "Minor. The page looks slightly top-heavy, and the space could hold a clarifying clause in a dense bullet (e.g. the AWS mechanism).",
+      "suggested_direction": "Use the spare vertical space for slightly more breathing room between sections, or for the clarifications above, rather than new content."
+    }
+  ],
+  "keep": [
+    "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange’s book, agreeing with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices",
+    "Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance: on an EventBridge schedule a larger LLM grades its ratings, and fine-tuning runs only when the grades shift past a threshold",
+    "Deployed a space-topic research tool for Amazon Leo’s public-policy team and set it up for handoff with AWS CDK infrastructure-as-code and GitHub Actions CI/CD, so Leo engineers new to the project now maintain it on AWS Fargate",
+    "Technical Skills section grouping (Cloud & Infrastructure line in particular)",
+    "Sparse single-bold-per-bullet anchoring on metrics"
+  ]
+}

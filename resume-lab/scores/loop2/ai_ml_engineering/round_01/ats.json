@@ -1,0 +1,206 @@
+{
+  "variant": "ai_ml_engineering",
+  "n_postings": 11,
+  "must_coverage": 0.9,
+  "nice_coverage": 0.8,
+  "missing_claimable": [
+    "PyTorch",
+    "NoSQL",
+    "CUDA"
+  ],
+  "not_claimable": [
+    "scalability",
+    "TensorFlow"
+  ],
+  "rows": [
+    {
+      "keyword": "Python",
+      "df": 0.82,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "Java",
+      "df": 0.18,
+      "tier": "nice",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "C++",
+      "df": 0.36,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "C",
+      "df": 0.27,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "TypeScript",
+      "df": 0.36,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "React",
+      "df": 0.45,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "REST APIs",
+      "df": 0.45,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "NoSQL",
+      "df": 0.27,
+      "tier": "must",
+      "claimable": true,
+      "present": false
+    },
+    {
+      "keyword": "AWS",
+      "df": 0.18,
+      "tier": "nice",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "data pipelines / ETL",
+      "df": 0.82,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "scalability",
+      "df": 0.82,
+      "tier": "must",
+      "claimable": false,
+      "present": false
+    },
+    {
+      "keyword": "performance optimization",
+      "df": 0.82,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "data structures & algorithms",
+      "df": 0.27,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "object-oriented design",
+      "df": 0.18,
+      "tier": "nice",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "unit testing",
+      "df": 0.27,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "monitoring / observability",
+      "df": 0.64,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "machine learning",
+      "df": 1.0,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "LLMs",
+      "df": 0.45,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "RAG / retrieval",
+      "df": 0.45,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "model fine-tuning / evaluation",
+      "df": 0.55,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "PyTorch",
+      "df": 0.55,
+      "tier": "must",
+      "claimable": true,
+      "present": false
+    },
+    {
+      "keyword": "TensorFlow",
+      "df": 0.45,
+      "tier": "must",
+      "claimable": false,
+      "present": false
+    },
+    {
+      "keyword": "CUDA",
+      "df": 0.18,
+      "tier": "nice",
+      "claimable": true,
+      "present": false
+    },
+    {
+      "keyword": "agents",
+      "df": 0.45,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "full stack",
+      "df": 0.36,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "probability / statistics",
+      "df": 0.55,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "trading / market data",
+      "df": 0.18,
+      "tier": "nice",
+      "claimable": true,
+      "present": true
+    }
+  ]
+}

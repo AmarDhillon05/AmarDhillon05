@@ -1,0 +1,11 @@
+[
+  {
+    "id": "g01",
+    "winner": "B",
+    "advantage": "marginal",
+    "decisive_wording": "B: \"using a larger LLM as a judge on an EventBridge schedule and fine-tuning only when its scores move past a threshold\" vs A: \"a larger LLM grades its ratings ... when the grades shift past a threshold\" vs C: \"Built LLM-as-a-judge gating for a production Amazon Bedrock document-importance classifier\"",
+    "info_preserved_or_lost": "A and B keep the same facts: automated retraining, production Bedrock classifier, research documents rated by importance, larger LLM evaluating on an EventBridge schedule, threshold-gated fine-tuning. B also names the recognized 'LLM as a judge' pattern in plain phrasing. C adds an action verb ('Built') and the judge term, but drops 'research documents' (compressed to 'document-importance') and the explicit 'automated retraining' framing, and 'scores it' leaves unclear what is being scored.",
+    "credibility_change": "All three describe a believable, interview-defensible mechanism. B and C use the standard 'LLM-as-a-judge' term, which a senior engineer will recognize at once. A's 'grades its ratings' is accurate but less idiomatic. C's 'gating' framing is precise but could be read as overclaiming a separate system.",
+    "readability_change": "B reads as one natural sentence a recruiter can restate ('retrains a classifier only when a bigger model's scores shift'). A is about as readable, but the 'grades/ratings' wordplay adds a small parsing step. C is the hardest to read: it opens with a noun stack ('LLM-as-a-judge gating for a production Amazon Bedrock document-importance classifier') before the colon. B wins only narrowly over A, so the advantage is marginal."
+  }
+]

@@ -1,0 +1,15 @@
+== /home/user/AmarDhillon05/resume-lab/scores/loop2/ai_ml_engineering/round_01/resume.tex
+[WARN] 'Cut LLM workflow generation time 65% to under 15s ': voice: noun stack of 5 words
+[WARN] 'Because the 270K+ row PostgreSQL workflow table ha': opening 'Because' may not be an action verb
+[WARN] 'Because the 270K+ row PostgreSQL workflow table ha': voice: noun stack of 8 words
+[WARN] 'Automated retraining for a production Amazon Bedro': no metric or explicit outcome
+[WARN] 'Deployed a space-topic research tool for Amazon Le': no metric or explicit outcome
+[WARN] 'Deployed a space-topic research tool for Amazon Le': voice: noun stack of 5 words
+[WARN] 'For a PhD-led robotics project aimed at ICLR, buil': opening 'For' may not be an action verb
+[WARN] 'Building a RAG meal-suggestion feature for the off': leading verb 'Building' repeats (also: Building capacity planning for Amazon Redshift mai)
+[WARN] 'Building a RAG meal-suggestion feature for the off': voice: noun stack of 5 words
+[WARN] 'Built a C++17 order book and matching engine and r': leading verb 'Built' repeats (also: Built Redis caching in front of the Prisma ORM que)
+[WARN] 'Built a C++17 order book and matching engine and r': voice: noun stack of 5 words
+[WARN] 'Built a C++17 order book and matching engine and r': voice: 5 numbers in one bullet (metric stacking)
+lint: 0 errors, 12 warnings, 11 bullets
+fact_check: 0 errors, 0 warnings, 11 facts used

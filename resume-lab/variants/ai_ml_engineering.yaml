@@ -2,14 +2,27 @@
 base: resume/resume.tex
 out: resume/ai_ml_engineering.tex
 order:
-  amazon_contract: [amazon_contract.bedrock_finetune, amazon_contract.kinesis_pipeline, amazon_contract.leo_deploy]
-  terplabs: [terplabs.rag_meal, terplabs.studio, terplabs.tortuga]
-drop: [iex.throughput+iex.data_structures, iex.storage_benchmark]
+  amazon_contract:
+  - amazon_contract.bedrock_finetune
+  - amazon_contract.kinesis_pipeline
+  - amazon_contract.leo_deploy
+  terplabs:
+  - terplabs.rag_meal
+  - terplabs.tortuga
+  capital_one:
+  - capital_one.claude_skill
+  - capital_one.search_index
+  - capital_one.ui_overhaul
+drop:
+- iex.throughput+iex.data_structures
+- iex.storage_benchmark
+- terplabs.studio
 text:
-  capital_one.claude_skill: 'Cut LLM workflow generation time \textbf{65\%} to under 15s by splitting one large Claude skill into smaller sub-skills that call Python tools for search and validation, and output quality held in repeated stress-test runs'
+  capital_one.claude_skill: Cut LLM workflow generation time \textbf{65\%} to under 15s by splitting one large Claude skill into smaller sub-skills that call Python tools for search and validation, and output quality held in repeated stress-test runs
+  aws_sde.redshift: 'Building capacity planning for Amazon Redshift maintenance like patching: Java logic that sets upper and lower bounds on reserved EC2 capacity to balance availability against cost, validated by backtesting'
 skills:
-  - '\textbf{AI/ML:} LLMs (Claude, Amazon Bedrock, GPT-4o mini), retrieval-augmented generation (RAG), vector search (ChromaDB, SentenceBERT), LLM agents and tool use (Claude skills), model fine-tuning and evaluation, vision-language models, prompt engineering, PyTorch, Open3D'
-  - '\textbf{Languages:} Python, Java, C++, C, TypeScript, JavaScript, SQL, CUDA'
-  - '\textbf{Cloud \& Data:} AWS (Lambda, Kinesis, EventBridge, Fargate, CloudWatch), AWS CDK, monitoring (CloudWatch, X-Ray), REST APIs, PostgreSQL, Redis, MongoDB (NoSQL), OpenSearch'
-  - '\textbf{Engineering:} full-stack apps (React, Electron), data structures and algorithms, object-oriented design, Docker, GitHub Actions (CI/CD), Linux, unit testing (Pytest, Jest), Git, uv'
-  - '\textbf{Certification:} \href{https://www.credly.com/badges/d2406a97-d937-47de-823b-724981159d3b/public_url}{\underline{AWS Certified Developer -- Associate}} (Nov 2024 -- Nov 2027)'
+- \textbf{AI/ML:} LLMs (Claude, Amazon Bedrock, GPT-4o mini), LLM agents and tool use (Claude skills), retrieval-augmented generation (RAG), embeddings and vector search (SentenceBERT, ChromaDB), LLM-as-a-judge evaluation, model fine-tuning, vision-language models, prompt engineering, Open3D
+- \textbf{Languages:} Python, Java, C++, C, TypeScript, JavaScript, SQL
+- \textbf{Cloud \& Data:} AWS (Lambda, Kinesis, EventBridge, Fargate), AWS CDK, monitoring (CloudWatch, X-Ray), REST APIs, PostgreSQL, Redis, OpenSearch
+- \textbf{Engineering:} full-stack apps (React, Electron), data structures and algorithms, object-oriented design, Docker, GitHub Actions (CI/CD), Linux, unit testing (Pytest, Jest), Git, uv
+- \textbf{Certification:} \href{https://www.credly.com/badges/d2406a97-d937-47de-823b-724981159d3b/public_url}{\underline{AWS Certified Developer -- Associate}} (Nov 2024 -- Nov 2027)

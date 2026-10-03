@@ -1,0 +1,11 @@
+[
+  {
+    "id": "g01",
+    "winner": "B",
+    "advantage": "marginal",
+    "decisive_wording": "B: \"Automated retraining for a production classifier on Amazon Bedrock that rates research documents by importance, using a larger LLM as a judge\" vs A: \"Built LLM-as-a-judge gating for a production Amazon Bedrock document-importance classifier\" and C: \"a larger LLM grades its ratings\"",
+    "info_preserved_or_lost": "All three keep the same facts: production Bedrock classifier, document importance, larger LLM evaluator, EventBridge schedule, threshold-gated fine-tuning. B and C add 'research documents' and frame the outcome as 'automated retraining', which A leaves implicit behind 'gating'. C drops the recognizable term 'LLM as a judge' (replaced by 'grades'), losing a keyword that matches job postings; A and B keep it.",
+    "credibility_change": "Roughly equal across versions; each describes a concrete, defensible mechanism (scheduled evaluation gating fine-tuning). B and C state the purpose (retraining) up front, so the interview story is easier to anchor. A's 'gating' is accurate but makes the reader infer what is gated until the end.",
+    "readability_change": "A opens with jargon and a noun stack ('LLM-as-a-judge gating', 'Amazon Bedrock document-importance classifier') and has an ambiguous 'scores it', so it is hardest for a recruiter. B reads as one natural sentence a recruiter can restate ('automated retraining for a classifier that rates documents by importance') while keeping the LLM-as-a-judge keyword. C is equally clear and splits the mechanism neatly after the colon, but 'grades its ratings' is slightly clumsy and it loses the standard term. Preference of B over C is mostly taste; B over A is a concrete comprehension gain."
+  }
+]

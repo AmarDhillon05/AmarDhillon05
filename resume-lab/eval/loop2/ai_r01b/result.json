@@ -1,0 +1,11 @@
+[
+  {
+    "fact": "amazon_contract.bedrock_finetune",
+    "winner": "cand1",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance: on an EventBridge schedule a larger LLM grades its ratings, and fine-tuning runs only when the grades shift past a threshold",
+    "decisive_wording": "B: \"using a larger LLM as a judge on an EventBridge schedule and fine-tuning only when its scores move past a threshold\" vs A: \"a larger LLM grades its ratings ... when the grades shift past a threshold\" vs C: \"Built LLM-as-a-judge gating for a production Amazon Bedrock document-importance classifier\"",
+    "info": "A and B keep the same facts: automated retraining, production Bedrock classifier, research documents rated by importance, larger LLM evaluating on an EventBridge schedule, threshold-gated fine-tuning. B also names the recognized 'LLM as a judge' pattern in plain phrasing. C adds an action verb ('Built') and the judge term, but drops 'research documents' (compressed to 'document-importance') and the explicit 'automated retraining' framing, and 'scores it' leaves unclear what is being scored."
+  }
+]

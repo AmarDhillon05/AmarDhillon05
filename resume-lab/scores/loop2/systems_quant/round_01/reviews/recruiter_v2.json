@@ -1,0 +1,167 @@
+{
+  "persona": "recruiter_v2",
+  "target": "Systems / quant-developer / low-latency C++ internships (HFT firms, trading-systems teams, performance engineering), 2026-27 cycle",
+  "memory_skim": {
+    "strongest_3": [
+      "IEX Order Book & Matching Engine project in C++ that replayed ~50.9M real exchange messages and matched the exchange almost exactly",
+      "Amazon Web Services SDE Intern (Redshift capacity planning)",
+      "Capital One Software Engineering Intern (sped up an AI workflow tool by 65%)"
+    ],
+    "engineer_type": "A C++ / performance-minded systems student who also has a lot of AWS cloud and AI-tooling internship work; reads more 'cloud + AI' in the Experience section and more 'low-latency systems' in the project",
+    "memorable_numbers": ["50.9M messages", "1.26M events/sec", "12.8x", "65%", "34%", "GPA 3.5", "May 2028"],
+    "confusing": [
+      "The second project bullet (std::map of std::list FIFOs ... list iterator) - I could not tell what it means beyond 'fast'",
+      "'do-nothing control book' in the regression bullet",
+      "What 'Amazon Leo' is and whether this is Amazon work or a student contracting group",
+      "Why a matching engine needs a B+ tree vs LSM-tree 'event log'"
+    ],
+    "skipped": [
+      "UMIACS robotics bullet",
+      "TerpLabs bullet",
+      "Most of the Technical Skills section beyond seeing C++17 first"
+    ],
+    "interview_questions": [
+      "Walk me through how you checked your engine against the exchange - what was the one fill that didn't match?",
+      "How did you figure out the slowdown was the CPU frequency setting and not your code?",
+      "What are you building at AWS and how will you know it works?",
+      "At Capital One, what is a 'workflow' and who uses the tool you sped up?"
+    ]
+  },
+  "plain_english": [
+    {"quote": "Built a C++17 order book and matching engine", "restatement": "He built his own version of a stock exchange's order-matching system and fed it 50.9 million real exchange messages; it matched the real exchange's trades on all but one of about 99,000 fills.", "understood": true},
+    {"quote": "Stored price levels in a std::map of", "restatement": "He organized the order data so it runs fast - over a million events a second - but I can't say what the design choice was or why it matters without guessing.", "understood": false},
+    {"quote": "Implemented B+ tree and LSM-tree backends for the", "restatement": "He built two different ways of storing the engine's history and tested them side by side; one was about 13x faster to read but used 27% more disk space.", "understood": true},
+    {"quote": "Traced an apparent 1.65x regression to the", "restatement": "When the engine seemed to get slower, he proved it was the computer's power settings and not his code, then made his speed tests consistent from run to run.", "understood": true},
+    {"quote": "Building capacity planning for Amazon Redshift maintenance like", "restatement": "At AWS he is building logic that decides how many reserved servers to hold for Redshift maintenance work so it stays reliable without overspending, and is checking it against past data.", "understood": true},
+    {"quote": "Cut AI workflow generation time 65% to", "restatement": "He made an internal AI tool at Capital One build workflows 65% faster (under 15 seconds) by splitting one broad search into smaller, focused steps.", "understood": true},
+    {"quote": "Because the 270K+ row PostgreSQL workflow table", "restatement": "Because the big workflow database was restricted, he pre-sorted popular workflows into categories for the AI to check first and cached full workflows so it hits the database less.", "understood": true},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "restatement": "He made a system that moves thousands of research documents to an AI model 34% faster by streaming them instead of saving and reloading them between steps.", "understood": true},
+    {"quote": "For a PhD-led robotics project aimed at ICLR", "restatement": "On a university robotics research project, he built a tool that draws possible grip points on camera images so an AI model can choose where a robot should grab, and improved how often it picks correctly.", "understood": true},
+    {"quote": "Built Redis caching in front of the Prisma", "restatement": "He added caching to his startup's class-scheduling site, which had 20,000+ visits in its first month, to make it faster and lighten the database load.", "understood": true}
+  ],
+  "scores": {
+    "impact_clarity": 7,
+    "quantification": 8,
+    "technical_depth": 8,
+    "concision_readability": 7,
+    "skim_test": 7,
+    "credibility": 8,
+    "ats_parseability": 8,
+    "visual_layout": 8,
+    "domain_fit": 8,
+    "human_voice": 7,
+    "plain_language": 7,
+    "overall": 8
+  },
+  "competitive_for_domain": "Y",
+  "bullet_feedback": [
+    {
+      "bullet": "Stored price levels in a std::map of std::list FIFOs with a hash map from order ID to list iterator for O(1) cancels, sustaining 1.26M events/sec over the full replay and a 1.2 µs per-update p99 on a separate 2M-event run",
+      "problem": "The first half is a chain of container names ('std::map of std::list FIFOs with a hash map from order ID to list iterator') that a non-engineer cannot parse, and the purpose ('O(1) cancels') is buried in the middle. The two speed results then come from two different runs ('over the full replay' vs 'on a separate 2M-event run'), which adds a qualifier I have to untangle.",
+      "severity": 7,
+      "why_it_matters": "This is the speed bullet - the thing HFT screeners care about most - and a recruiter skims past it because the opening words are unreadable; I cannot repeat to a hiring manager what design choice made it fast.",
+      "missing_or_unclear": "clarify in plain words what the design achieves (e.g. cancelling any order without searching) before naming the containers",
+      "suggested_direction": "Lead with the goal and result, then the structure in fewer nouns; consider trimming the 'separate 2M-event run' qualifier. Example: 'Designed the book so any order can be cancelled in constant time (price levels as FIFO queues in a std::map, indexed by order ID), sustaining 1.26M events/sec with a 1.2 µs p99 per update'"
+    },
+    {
+      "bullet": "Traced an apparent 1.65x regression to the CPU frequency governor, not a code change, using perf counters and a do-nothing control book, then cut run-to-run variance from about 6% to 0.06% by pinning cores and fixing the clock",
+      "problem": "'do-nothing control book' is insider shorthand I can't decode, and 'fixing the clock' reads like repairing the system time rather than locking the CPU speed.",
+      "severity": 5,
+      "why_it_matters": "This is a strong debugging story, but two phrases make a reader stop and guess, and 'fixing the clock' can be misread entirely.",
+      "missing_or_unclear": "clarify what the 'do-nothing control book' is (a baseline that does no work?) and that 'clock' means CPU frequency",
+      "suggested_direction": "Rephrase the two shorthand terms in plain words, e.g. 'a no-op baseline book' and 'locking the CPU frequency'"
+    },
+    {
+      "bullet": "Implemented B+ tree and LSM-tree backends for the event log and benchmarked them on identical 2M-record workloads, where the B+ tree gave 12.8x the read throughput and 22x faster range queries at the cost of 27% more disk space",
+      "problem": "'for the event log' gives no reason why the engine has an event log or why read speed matters for it, so the comparison has no stakes.",
+      "severity": 4,
+      "why_it_matters": "Without the why, the numbers look like a benchmark exercise rather than a design decision for the engine.",
+      "missing_or_unclear": "clarify what the event log is used for and which backend was chosen, if one was",
+      "suggested_direction": "Add a short phrase of context on what the log is for before the two backend names; keep the 12.8x / 27% tradeoff, which is a good honest framing"
+    },
+    {
+      "bullet": "Cut AI workflow generation time 65% to under 15s by replacing a Claude skill’s open-ended search with focused sub-skills that call Python tools for workflow search and validation, guided by CloudWatch and OpenSearch latency logs",
+      "problem": "'workflow' is never defined, so I don't know what the tool produces or for whom; 'Claude skill' / 'sub-skills' is niche vocabulary; the tail 'guided by CloudWatch and OpenSearch latency logs' is a tool list stitched onto a long sentence.",
+      "severity": 5,
+      "why_it_matters": "The 65% headline is clear, but a recruiter can't say what got faster or who benefited, and the bullet runs long because of the tool tail.",
+      "missing_or_unclear": "clarify what a 'workflow' is in this context and who uses the tool",
+      "suggested_direction": "Name what the workflows are in a few words up front; move CloudWatch/OpenSearch to Skills or cut 'guided by ... logs' to shorten the bullet"
+    },
+    {
+      "bullet": "Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries",
+      "problem": "Opening with a 'Because ...' clause delays the action; 'strict access limits' is vague (permissions? rate limits?); the sentence stitches three components (table, category tree, Redis) into one run-on.",
+      "severity": 5,
+      "why_it_matters": "A reader has to re-read to find what the candidate actually built, and 'access limits' leaves the real constraint unclear.",
+      "missing_or_unclear": "clarify what 'strict access limits' means (query rate limits vs permissions)",
+      "suggested_direction": "Lead with the verb and what was built, then the constraint; consider splitting the Redis clause off or trimming it"
+    },
+    {
+      "bullet": "Building capacity planning for Amazon Redshift maintenance like patching: Java logic that sets upper and lower bounds on reserved EC2 capacity to balance availability against cost, validated by backtesting",
+      "problem": "'capacity planning for Amazon Redshift maintenance like patching:' is a compressed, stitched phrase, and the colon followed by 'Java logic that...' reads like a noun fragment rather than a sentence a person would say.",
+      "severity": 4,
+      "why_it_matters": "This is the biggest brand on the page; a slightly awkward sentence here costs more than anywhere else.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Turn it into one verb-led sentence, e.g. 'Building Java logic that sets upper and lower bounds on reserved EC2 capacity for Redshift maintenance work such as patching, balancing availability against cost; validating it by backtesting'"
+    },
+    {
+      "bullet": "Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio’s class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency",
+      "problem": "Ends at intent ('to reduce database load and latency'); the only number (20,000+ visits) describes the product, not the effect of the caching. 'the studio's' is unclear since TerpLabs is never described.",
+      "severity": 4,
+      "why_it_matters": "Reads as a routine task on a co-founder role, which undersells the founding experience.",
+      "missing_or_unclear": "clarify whether any effect of the cache was observed; clarify what TerpLabs/the studio is",
+      "suggested_direction": "If a result exists, state it; otherwise lead with what Tortuga is and the scale, then the caching decision"
+    },
+    {
+      "bullet": "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange’s book, agreeing with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices",
+      "problem": "'without ever resyncing to the exchange's book' and 'top-of-book prices' are trading jargon a recruiter can't restate; the bullet is still understandable because the fills number carries it.",
+      "severity": 3,
+      "why_it_matters": "Minor - the HM will get it, but the screener loses part of why this is impressive.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Optionally rephrase 'without ever resyncing' as 'without ever needing to correct its state from the exchange's data'"
+    },
+    {
+      "bullet": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+      "problem": "'S3 staging hops' is jargon; the employer line 'UMD App Development Contracting (Client: Amazon Leo)' leaves me unsure whether this is Amazon work.",
+      "severity": 3,
+      "why_it_matters": "Small comprehension cost on an otherwise clear what-how-result bullet.",
+      "missing_or_unclear": "clarify what Amazon Leo is",
+      "suggested_direction": "Rephrase 'S3 staging hops' as 'intermediate saves to S3' or similar"
+    },
+    {
+      "bullet": "For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp’s candidate grasps on camera images in Open3D for a vision-language model, then tuned prompts so the model picks the right grasp more often",
+      "problem": "'more often' is unmeasured, and the bullet is the least relevant to systems/HFT, so it reads as filler for this target.",
+      "severity": 3,
+      "why_it_matters": "Low cost, but it takes two lines that don't support the systems story.",
+      "missing_or_unclear": "clarify how much more often, if it was measured",
+      "suggested_direction": "Keep it short; if a measured improvement exists, state it, otherwise consider trimming the tool names to fit one line"
+    }
+  ],
+  "page_feedback": [
+    {
+      "problem": "The Experience section (5 roles, all cloud/AI/web) visually outweighs the one C++ project, so the skim reads 'cloud + AI engineer' rather than 'low-latency systems engineer'.",
+      "severity": 5,
+      "why_it_matters": "For HFT/performance teams, the strongest evidence is the project; placing Projects first helps, but the rest of the page pulls the impression back toward cloud.",
+      "suggested_direction": "Keep Projects first; consider trimming the least relevant experience bullets (UMIACS, TerpLabs) to one line each so the project dominates"
+    },
+    {
+      "problem": "Roughly the bottom 15% of the page is empty while several bullets are dense two-liners.",
+      "severity": 3,
+      "why_it_matters": "The page looks slightly unfinished and the dense bullets could breathe with more spacing.",
+      "suggested_direction": "Slightly increase spacing between sections or entries to balance the page; do not fill it with new content"
+    },
+    {
+      "problem": "GPA 3.5 sits in the education line with no coursework; HFT screeners often filter on GPA and look for systems/math coursework.",
+      "severity": 2,
+      "why_it_matters": "Minor; not something wording can fix, but nothing else in Education helps offset it.",
+      "suggested_direction": "If relevant coursework exists (OS, architecture, algorithms), consider listing it in one line; otherwise leave as is"
+    }
+  ],
+  "keep": [
+    "Projects section placed above Experience with the IEX Order Book & Matching Engine first",
+    "agreeing with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices",
+    "where the B+ tree gave 12.8x the read throughput and 22x faster range queries at the cost of 27% more disk space",
+    "Traced an apparent 1.65x regression to the CPU frequency governor, not a code change (the story itself; only the two shorthand phrases need work)",
+    "Sparse bolding of one headline number per bullet",
+    "Clean one-page layout with standard section headings and right-aligned dates"
+  ]
+}

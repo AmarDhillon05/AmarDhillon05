@@ -1,0 +1,11 @@
+[
+  {
+    "fact": "amazon_contract.bedrock_finetune",
+    "winner": "cand1",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance: on an EventBridge schedule a larger LLM grades its ratings, and fine-tuning runs only when the grades shift past a threshold",
+    "decisive_wording": "B: \"Automated retraining for a production classifier on Amazon Bedrock that rates research documents by importance, using a larger LLM as a judge\" vs A: \"Built LLM-as-a-judge gating for a production Amazon Bedrock document-importance classifier\" and C: \"a larger LLM grades its ratings\"",
+    "info": "All three keep the same facts: production Bedrock classifier, document importance, larger LLM evaluator, EventBridge schedule, threshold-gated fine-tuning. B and C add 'research documents' and frame the outcome as 'automated retraining', which A leaves implicit behind 'gating'. C drops the recognizable term 'LLM as a judge' (replaced by 'grades'), losing a keyword that matches job postings; A and B keep it."
+  }
+]
