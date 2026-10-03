@@ -1,0 +1,66 @@
+Amar Dhillon
+
+NYC Area | amardhillon844@gmail.com | (XXX) XXX-XXXX | linkedin.com/in/amar-dhillon-917537261 | github.com/AmarDhillon05
+
+Education
+University of Maryland, College Park
+B.S. in Computer Science, Minor in Statistics; GPA: 3.5
+
+Expected May 2028
+College Park, MD
+
+Projects
+IEX Order Book & Matching Engine | C++17, STL, POSIX, Linux perf
+Jul 2026 – Aug 2026
+• Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without
+ever resyncing to the exchange’s book, agreeing with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices
+• Stored price levels in a std::map of std::list FIFOs with a hash map from order ID to list iterator for O(1) cancels,
+sustaining 1.26M events/sec over the full replay and a 1.2 µs per-update p99 on a separate 2M-event run
+• Implemented B+ tree and LSM-tree backends for the event log and benchmarked them on identical 2M-record workloads,
+where the B+ tree gave 12.8x the read throughput and 22x faster range queries at the cost of 27% more disk space
+• Traced an apparent 1.65x regression to the CPU frequency governor, not a code change, using perf counters and a
+do-nothing control book, then cut run-to-run variance from about 6% to 0.06% by pinning cores and fixing the clock
+
+Experience
+Amazon Web Services
+Sep 2026 – Dec 2026
+Software Development Engineer Intern
+Redmond, WA
+• Building capacity planning for Amazon Redshift maintenance like patching: Java logic that sets upper and lower bounds
+on reserved EC2 capacity to balance availability against cost, validated by backtesting
+Capital One
+Jun 2026 – Aug 2026
+Software Engineering Intern
+Richmond, VA
+• Cut AI workflow generation time 65% to under 15s by replacing a Claude skill’s open-ended search with focused
+sub-skills that call Python tools for workflow search and validation, guided by CloudWatch and OpenSearch latency logs
+• Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a
+category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries
+UMD App Development Contracting (Client: Amazon Leo)
+Jan 2026 – Present
+Software Engineer (Contract)
+College Park, MD
+• Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3
+staging hops with Kinesis streams feeding Lambda
+UMD Institute for Advanced Computer Studies (UMIACS)
+Dec 2025 – Present
+Machine Learning Research Intern
+College Park, MD
+• For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp’s candidate grasps on camera
+images in Open3D for a vision-language model, then tuned prompts so the model picks the right grasp more often
+TerpLabs
+Jun 2025 – Present
+Co-Founder, Software Engineer
+College Park, MD
+• Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio’s class scheduler with 20,000+ visits in
+its first 30 days, to reduce database load and latency
+
+Technical Skills
+Languages: C++17, C, Python, Java, Rust, SQL, TypeScript, Bash
+Systems & Performance: debugging and profiling with Linux perf (hardware counters, top-down analysis), POSIX, STL, B+
+trees, LSM trees, data structures and algorithms, benchmarking
+Cloud & Tools: AWS (Lambda, Kinesis, EC2, Fargate, CloudWatch monitoring), AWS CDK, PostgreSQL, Redis, Docker, GitHub
+Actions (CI/CD), Git, Pytest
+Certification: AWS Certified Developer – Associate (Nov 2024 – Nov 2027)
+
+
