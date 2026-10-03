@@ -14,8 +14,8 @@ IEX Order Book & Matching Engine | C++17, STL, POSIX, Linux perf
 Jul 2026 – Aug 2026
 • Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without
 ever resyncing to the exchange’s book, agreeing with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices
-• Stored price levels in a std::map of std::list FIFOs with a hash map from order ID to list iterator for O(1) cancels,
-sustaining 1.26M events/sec over the full replay and a 1.2 µs per-update p99 on a separate 2M-event run
+• Sustained 1.26M events/sec over the full replay and a 1.2 µs per-message p99 on a separate 2M-event run, keeping
+each price level as a FIFO queue (std::list) inside a std::map, with an order-ID hash map for O(1) cancels
 • Implemented B+ tree and LSM-tree backends for the event log and benchmarked them on identical 2M-record workloads,
 where the B+ tree gave 12.8x the read throughput and 22x faster range queries at the cost of 27% more disk space
 • Traced an apparent 1.65x regression to the CPU frequency governor, not a code change, using perf counters and a

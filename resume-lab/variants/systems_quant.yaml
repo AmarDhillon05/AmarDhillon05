@@ -11,7 +11,7 @@ drop:
 - terplabs.rag_meal
 - terplabs.studio
 text:
-  iex.throughput+iex.data_structures: Stored price levels in a std::map of std::list FIFOs with a hash map from order ID to list iterator for O(1) cancels, sustaining \textbf{1.26M events/sec} over the full replay and a 1.2 \textmu{}s per-update p99 on a separate 2M-event run
+  iex.throughput+iex.data_structures: Sustained \textbf{1.26M events/sec} over the full replay and a 1.2 \textmu{}s per-message p99 on a separate 2M-event run, keeping each price level as a FIFO queue (std::list) inside a std::map, with an order-ID hash map for O(1) cancels
   aws_sde.redshift: 'Building capacity planning for Amazon Redshift maintenance like patching: Java logic that sets upper and lower bounds on reserved EC2 capacity to balance availability against cost, validated by backtesting'
 retag:
   iex.throughput+iex.data_structures: iex.throughput+iex.data_structures+iex.latency_dist

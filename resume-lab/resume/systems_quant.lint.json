@@ -13,12 +13,12 @@
     },
     {
       "fact": "iex.throughput+iex.data_structures+iex.latency_dist",
-      "chars": 220,
-      "words": 40,
+      "chars": 218,
+      "words": 38,
       "n_bold": 1,
       "n_lines": 2,
-      "last_fill": 0.89,
-      "text": "Stored price levels in a std::map of std::list FIFOs with a hash map from order ID to list iterator for O(1) cancels, sustaining 1.26M events/sec over the full replay and a 1.2 s per-update p99 on a separate 2M-event run"
+      "last_fill": 0.88,
+      "text": "Sustained 1.26M events/sec over the full replay and a 1.2 s per-message p99 on a separate 2M-event run, keeping each price level as a FIFO queue (std::list) inside a std::map, with an order-ID hash map for O(1) cancels"
     },
     {
       "fact": "iex.storage_benchmark",
@@ -106,7 +106,12 @@
     },
     {
       "level": "WARN",
-      "where": "Stored price levels in a std::map of std::list FIF",
+      "where": "Sustained 1.26M events/sec over the full replay an",
+      "msg": "voice: 2 parentheticals (max 1)"
+    },
+    {
+      "level": "WARN",
+      "where": "Sustained 1.26M events/sec over the full replay an",
       "msg": "voice: 5 numbers in one bullet (metric stacking)"
     },
     {
@@ -146,5 +151,5 @@
     }
   ],
   "errors": 0,
-  "warnings": 10
+  "warnings": 11
 }
