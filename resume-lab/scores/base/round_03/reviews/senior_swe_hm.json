@@ -1,0 +1,129 @@
+{
+  "persona": "senior_swe_hm",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28; AWS SDE intern now, Capital One SWE intern prior, Amazon-client contract work; real backend/AWS depth, 65% LLM latency cut, C++ order-book project.",
+  "scores": {
+    "impact_clarity": 7,
+    "quantification": 7,
+    "technical_depth": 8,
+    "concision_readability": 8,
+    "skim_test": 8,
+    "credibility": 7,
+    "ats_parseability": 9,
+    "visual_layout": 8,
+    "domain_fit": 8,
+    "overall": 8
+  },
+  "score_rationale": {
+    "impact_clarity": "AWS, PhysTwin, TerpLabs co-founder and all three project bullets end at activity; result or purpose is missing or implied.",
+    "quantification": "Strong numbers at Capital One and Leo, but 30%/34% lack baselines and the C++ project benchmark reports no finding.",
+    "credibility": "A few phrases read as padded ('enforced correctness', 'checked for drift', 'run with Jira and GitHub') and would draw skeptical follow-ups."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "clarify: what the LSM vs B+ tree benchmark actually showed — a benchmark bullet with no finding reads as unfinished",
+    "clarify: what 'checked for drift against IEX historical book data' means concretely (replay reconciliation? per-tick book diff?)",
+    "PhysTwin bullet states a team goal (targeting ICLR) rather than what you built; clarify your piece of the automated training"
+  ],
+  "bullets": [
+    {
+      "quote": "Tuning Java-based upper/lower bounds on EC2 capacity",
+      "verdict": "tighten",
+      "issue": "Good problem framing, but 'Java-based bounds' is awkward; lead with the decision (backtesting policies) not the language.",
+      "suggestion": "Tuning upper/lower bounds on EC2 capacity reserved for Redshift operations (e.g., patching) in Java, backtesting policies to balance availability against cost"
+    },
+    {
+      "quote": "Rebuilt a legacy test-data workflow builder in React/TypeScript",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Built a precomputed tree-style search index over",
+      "verdict": "keep",
+      "issue": "Ends at intent; accepted risk. Design choice (precompute under access limits) is clear enough to ask about."
+    },
+    {
+      "quote": "Cut LLM workflow generation time 65% to",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Shipped a space-research tool used by Amazon",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Reduced end-to-end latency 34% for a pipeline",
+      "verdict": "tighten",
+      "issue": "34% lacks the prior architecture baseline; 'moving it onto' hides what it replaced.",
+      "suggestion": "Cut end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by moving it onto Kinesis streams feeding Lambda processors"
+    },
+    {
+      "quote": "Automated fine-tuning of an AWS Bedrock source-relevancy model",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Developing automated training for PhysTwin, a physics-based",
+      "verdict": "reframe",
+      "issue": "Describes the project, not your contribution or technique; weakest bullet in the section.",
+      "suggestion": "Building automated training for PhysTwin, a physics-based digital twin, on a PhD-led team targeting ICLR (state your specific component)"
+    },
+    {
+      "quote": "Engineered a Python pipeline rendering AnyGrasp multi-camera grasp",
+      "verdict": "tighten",
+      "issue": "'Engineered' is puffed; the purpose clause is good.",
+      "suggestion": "Built a Python pipeline rendering AnyGrasp multi-camera grasp candidates as Open3D overlays for Qwen3-VL-8B, letting researchers isolate scene components"
+    },
+    {
+      "quote": "Shortened research-environment setup time 30% with uv",
+      "verdict": "tighten",
+      "issue": "Two unrelated actions merged; profiling clause has no outcome.",
+      "suggestion": "Cut research-environment setup time 30% via uv dependency pinning and Docker; added psutil time/memory profiling and Pytest suites"
+    },
+    {
+      "quote": "Co-founded a 110+ member campus product studio",
+      "verdict": "tighten",
+      "issue": "'run with Jira and GitHub' is filler; every team uses these.",
+      "suggestion": "Co-founded a 110+ member campus product studio that has shipped 5 live products"
+    },
+    {
+      "quote": "Wrote Prisma SQL queries and Redis query caching",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Building a RAG meal-suggestion feature for the official",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Implemented a C++ order-book simulator replaying historical IEX",
+      "verdict": "tighten",
+      "issue": "'enforced correctness' is vague; say how (shared test harness? invariant checks?).",
+      "suggestion": "Implemented a C++ order-book simulator replaying historical IEX data, with a contract-based plug-in interface so alternative implementations swap in under the same correctness checks"
+    },
+    {
+      "quote": "Designed paginated hash-based order-book storage with an in-memory",
+      "verdict": "add_context",
+      "issue": "No reason LFU was chosen or what drift-checking found; reads as a feature list.",
+      "suggestion": "Designed paginated hash-based order-book storage with an LFU cache for hot tickers; validated replayed books against IEX historical book data"
+    },
+    {
+      "quote": "Benchmarked a time-based adaptive LSM store against",
+      "verdict": "add_context",
+      "issue": "Method is excellent but the bullet has no conclusion; HM will ask 'which won and why?'"
+    }
+  ],
+  "structure": [
+    {
+      "key": "aws_second_bullet_optional",
+      "change": "Leave AWS at one bullet; do not pad it. Consider tightening wording only.",
+      "rationale": "Brand carries it; a thin in-progress bullet is honest and better than invented scope."
+    },
+    {
+      "key": "trim_terplabs_to_two",
+      "change": "If space is needed, fold the co-founder bullet into the TerpLabs title line and keep the two technical bullets.",
+      "rationale": "Org size is a leadership signal but the line spends a full bullet on non-engineering content."
+    }
+  ],
+  "top3": [
+    "clarify: add the conclusion of the LSM vs B+ tree benchmark (which store won on what workload) — turns the best depth signal into a finished story",
+    "Reframe the PhysTwin bullet around your specific contribution instead of the team's ICLR target",
+    "Cut filler phrases ('run with Jira and GitHub', 'enforced correctness', 'Engineered') and make the project drift-check concrete"
+  ]
+}

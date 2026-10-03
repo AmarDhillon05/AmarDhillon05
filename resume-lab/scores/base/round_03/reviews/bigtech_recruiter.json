@@ -1,0 +1,53 @@
+{
+  "persona": "bigtech_recruiter",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28, current AWS SDE intern after Capital One SWE intern, Amazon contract work, AWS-heavy backend plus a C++ side project. Strong brand stack for a junior.",
+  "scores": {
+    "impact_clarity": 7,
+    "quantification": 7,
+    "technical_depth": 8,
+    "concision_readability": 8,
+    "skim_test": 8,
+    "credibility": 8,
+    "ats_parseability": 9,
+    "visual_layout": 8,
+    "domain_fit": 8,
+    "overall": 8
+  },
+  "score_rationale": {
+    "impact_clarity": "AWS bullet (the top brand) and several UMIACS/project bullets end at activity or intent with no stated outcome; reader must infer why it mattered.",
+    "quantification": "Strong numbers at Capital One and contract role, but AWS, UMIACS training, and all project bullets have none; 30% setup-time baseline unclear."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "The AWS bullet is the first thing I read under Experience and it is the weakest: one bullet, present-tense, no scope or outcome. clarify: what the tuning changes or targets, even qualitatively (e.g., which decision the backtests inform).",
+    "clarify: 'UMD App Development Contracting (Client: Amazon)' vs. 'Amazon Leo' vs. 'Amazon Web Services' reads as three Amazon entities; make the contract relationship unambiguous at a glance."
+  ],
+  "bullets": [
+    {"quote": "Tuning Java-based upper/lower bounds on EC2 capacity", "verdict": "reframe", "issue": "Top brand gets one vague bullet; 'Tuning bounds' is hard to parse; no purpose or outcome stated.", "suggestion": "Backtesting policies in Java to tune upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations (e.g., patching), balancing availability against cost"},
+    {"quote": "Rebuilt a legacy test-data workflow builder in React/TypeScript", "verdict": "keep"},
+    {"quote": "Built a precomputed tree-style search index over popular", "verdict": "keep", "issue": "Ends at intent, no result (accepted by candidate); wording is clear enough."},
+    {"quote": "Cut LLM workflow generation time 65% to under", "verdict": "keep"},
+    {"quote": "Shipped a space-research tool used by Amazon Leo's", "verdict": "tighten", "issue": "Deployment stack list dilutes the strong 'used by Amazon Leo, handed off to their engineers' story.", "suggestion": "Shipped a space-research tool used by Amazon Leo's public-policy team and handed off to Leo engineers; deployed on AWS Fargate via GitHub Actions + CDK (TypeScript)"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline routing", "verdict": "keep"},
+    {"quote": "Automated fine-tuning of an AWS Bedrock source-relevancy model", "verdict": "tighten", "issue": "Reads as a list of AWS services; outcome of the decision gates is implied, not stated.", "suggestion": "Automated Bedrock source-relevancy model fine-tuning on an EventBridge schedule, with decision gates that skip redundant retraining; added X-Ray tracing and SNS failure alerts"},
+    {"quote": "Developing automated training for PhysTwin, a physics-based", "verdict": "add_context", "issue": "Says the team's goal, not the candidate's contribution or what 'automated training' means.", "suggestion": "clarify which part of the PhysTwin training workflow you automated (e.g., what manual step it replaces)"},
+    {"quote": "Engineered a Python pipeline rendering AnyGrasp multi-camera grasp", "verdict": "keep"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "tighten", "issue": "Two unrelated wins in one bullet; 30% baseline is unclear to a skimmer.", "suggestion": "Cut research-environment setup time 30% via uv dependency pinning and Docker; added psutil time/memory profiling and Pytest suites to locate bottlenecks"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep"},
+    {"quote": "Wrote Prisma SQL queries and Redis query caching", "verdict": "tighten", "issue": "Lead with the product and traffic; 'Wrote queries' undersells it.", "suggestion": "Built the data layer for Tortuga, a class scheduler with 20,000+ visits in its first 30 days, using Prisma SQL queries and Redis caching to cut DB load and latency"},
+    {"quote": "Building a RAG meal-suggestion feature for the official", "verdict": "keep"},
+    {"quote": "Implemented a C++ order-book simulator replaying historical IEX", "verdict": "tighten", "issue": "'contract-based plug-in interface so alternative approaches swap in' is abstract for a skimmer.", "suggestion": "Implemented a C++ order-book simulator replaying historical IEX data, with a plug-in interface whose contracts enforce correctness when swapping strategies"},
+    {"quote": "Designed paginated hash-based order-book storage with an in-memory", "verdict": "keep"},
+    {"quote": "Benchmarked a time-based adaptive LSM store against a", "verdict": "add_context", "issue": "No finding stated; a benchmark bullet should say what you learned.", "suggestion": "clarify: which store won and on what axis, if a conclusion was reached"}
+  ],
+  "structure": [
+    {"key": "aws_bullet_strength", "change": "Give the AWS role at least a clearer single bullet (or two, if there is separable work) since it is the headline brand.", "rationale": "Recruiters read the first role hardest; it currently has the thinnest content on the page."},
+    {"key": "skills_trim", "change": "Move Node.js/React/Electron from 'Backend & Data' into a 'Frontend/Frameworks' slot or rename the row.", "rationale": "Minor label mismatch; small polish for a skimmer scanning skill categories."}
+  ],
+  "top3": [
+    "Strengthen the AWS bullet: clarify what the tuned bounds/backtests decide and for whom, so the top brand reads as impact, not a task.",
+    "Clarify the Amazon contract framing so 'Client: Amazon', 'Amazon Leo', and 'Amazon Web Services' don't blur together on a 7-second skim.",
+    "Close the loop on outcome-less bullets (PhysTwin training, LSM vs. B+ tree benchmark) by stating your contribution or finding."
+  ]
+}

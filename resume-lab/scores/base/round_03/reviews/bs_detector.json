@@ -1,0 +1,55 @@
+{
+  "persona": "bs_detector",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28, AWS SDE intern + Capital One SWE intern, Amazon contract work, ML research, campus studio co-founder; Capital One 65% LLM latency cut and 90% dev preference stand out.",
+  "scores": {
+    "impact_clarity": 7,
+    "quantification": 7,
+    "technical_depth": 8,
+    "concision_readability": 8,
+    "skim_test": 8,
+    "credibility": 7,
+    "ats_parseability": 9,
+    "visual_layout": 8,
+    "domain_fit": 8,
+    "overall": 8
+  },
+  "score_rationale": {
+    "impact_clarity": "AWS, Bedrock, PhysTwin, search-index and all three IEX bullets end at method or intent; no result or consequence stated.",
+    "quantification": "34% and 30% lack a baseline (34% vs what prior architecture? 30% from how long?); IEX benchmark names metrics but reports none.",
+    "credibility": "IEX bullets read as stacked design jargon ('contract-based plug-in', 'time-based adaptive LSM'); 'targeting ICLR' name-drops without stating own contribution."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "clarify: 34% Kinesis latency cut — what was the pipeline before (batch? synchronous calls?) and how was end-to-end latency measured; adding Kinesis usually adds hops, so an interviewer will probe this immediately",
+    "clarify: IEX project design — 'paginated hash-based order-book storage' and 'time-based adaptive LSM store' are unusual choices for an order book; reword in plain terms you can defend, and state what the benchmark found (if you have it) or cut the bullet",
+    "clarify: PhysTwin bullet — say what you personally built for 'automated training'; 'on a PhD-led team targeting ICLR' currently carries the bullet and invites 'what did you do?'"
+  ],
+  "bullets": [
+    {"quote": "Tuning Java-based upper/lower bounds on EC2 capacity", "verdict": "tighten", "issue": "Lone AWS bullet is in-progress and vague; 'tuning bounds' could mean editing config constants.", "suggestion": "Tuning Java-based upper/lower bounds on EC2 capacity reserved for Redshift maintenance (e.g. patching), backtesting policies against historical demand to balance availability and cost"},
+    {"quote": "Rebuilt a legacy test-data workflow builder in React/TypeScript", "verdict": "keep"},
+    {"quote": "Built a precomputed tree-style search index over popular", "verdict": "add_context", "issue": "Ends at intent ('to minimize DB queries'); no outcome. Accepted risk, but still the weakest Capital One bullet.", "suggestion": "Consider merging into the LLM-latency bullet as one of its search tools, so it borrows that bullet's outcome instead of standing alone without one"},
+    {"quote": "Cut LLM workflow generation time 65% to under", "verdict": "tighten", "issue": "'Claude skill' is jargon to a recruiter; otherwise strong with clear baseline implied.", "suggestion": "Cut LLM workflow generation time 65% to under 15s by splitting one monolithic Claude prompt/skill into sub-skills backed by Python search and validation tools, guided by CloudWatch + OpenSearch latency logs"},
+    {"quote": "Shipped a space-research tool used by Amazon Leo's", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "add_context", "issue": "Baseline architecture missing; 'moving onto Kinesis' reducing latency needs the 'from what' to be believable.", "suggestion": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing [prior approach] with Kinesis streams feeding Lambda processors"},
+    {"quote": "Automated fine-tuning of an AWS Bedrock source-relevancy model", "verdict": "tighten", "issue": "Tech list after the semicolon; no stated outcome of the decision gates.", "suggestion": "Automated scheduled fine-tuning of a Bedrock source-relevancy model (EventBridge cron) with decision gates that skip retraining when data hasn't meaningfully changed; added X-Ray tracing and SNS failure alerts"},
+    {"quote": "Developing automated training for PhysTwin, a physics-based digital", "verdict": "reframe", "issue": "Own contribution unclear; 'targeting ICLR' does the heavy lifting.", "suggestion": "Building [your specific component] that automates training runs for PhysTwin, a physics-based digital twin, on a PhD-led team preparing an ICLR submission"},
+    {"quote": "Engineered a Python pipeline rendering AnyGrasp multi-camera grasp", "verdict": "keep"},
+    {"quote": "Shortened research-environment setup time 30% with uv dependency", "verdict": "tighten", "issue": "30% lacks baseline; second clause (profiling, Pytest) is a separate unrelated task.", "suggestion": "Cut research-environment setup time 30% (state from X min) via uv dependency pinning and Docker; added psutil time/memory profiling and Pytest suites to locate pipeline bottlenecks"},
+    {"quote": "Co-founded a 110+ member campus product studio that", "verdict": "tighten", "issue": "'run with Jira and GitHub' is filler; what was your engineering role across the 5 products?", "suggestion": "Co-founded a 110+ member campus product studio that has shipped 5 live products"},
+    {"quote": "Wrote Prisma SQL queries and Redis query caching", "verdict": "tighten", "issue": "20,000+ visits is product traction, not your result; DB load reduction unquantified.", "suggestion": "Built the Prisma query layer and Redis caching for Tortuga, a class scheduler that drew 20,000+ visits in its first 30 days, cutting repeated DB reads under launch traffic"},
+    {"quote": "Building a RAG meal-suggestion feature for the official", "verdict": "keep", "issue": "Tester count unknown (accepted risk); 'internal testers' scoping is honest."},
+    {"quote": "Implemented a C++ order-book simulator replaying historical IEX", "verdict": "reframe", "issue": "'contract-based plug-in interface... enforced correctness' sounds LLM-polished; say plainly what's swappable and how correctness is checked.", "suggestion": "Implemented a C++ order-book simulator that replays historical IEX data, with a plug-in interface for swapping matching/storage strategies and invariant checks on every replayed event"},
+    {"quote": "Designed paginated hash-based order-book storage with an in-memory", "verdict": "add_context", "issue": "Unusual design for an order book; 'checked for drift' is the only result and is vague.", "suggestion": "Designed hash-based paged order-book storage with an LFU cache for hot tickers, validating reconstructed books against IEX historical snapshots"},
+    {"quote": "Benchmarked a time-based adaptive LSM store against a", "verdict": "add_context", "issue": "Benchmark with no finding; 'time-based adaptive LSM' is undefined jargon.", "suggestion": "If results exist, state which won and by how much; otherwise merge into the previous bullet or cut to save a line"}
+  ],
+  "structure": [
+    {"key": "ground_iex_project", "change": "Trim IEX project to two plainly-worded bullets, or cut the benchmark bullet if no result exists", "rationale": "Three jargon-dense, result-free bullets weaken an otherwise credible page; quant-style projects get grilled hardest."},
+    {"key": "reduce_bold", "change": "Drop bold on '270K+ row' and '110+ member'; keep bold only on outcome metrics", "rationale": "Bold should mark results; scale/context numbers dilute the headline wins."}
+  ],
+  "top3": [
+    "clarify: the 34% Kinesis latency baseline (what the pipeline replaced) so the number survives one follow-up question",
+    "Rewrite the IEX project in plain, defensible language and state benchmark findings or cut that bullet",
+    "Make PhysTwin and AWS bullets name your own concrete contribution instead of leaning on 'ICLR' and 'tuning bounds'"
+  ]
+}
