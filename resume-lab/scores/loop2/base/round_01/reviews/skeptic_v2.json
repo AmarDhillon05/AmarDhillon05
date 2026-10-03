@@ -1,0 +1,150 @@
+{
+  "persona": "skeptic_v2",
+  "target": "General SWE / backend software engineering internships (big tech + strong startups), 2026-27 cycle",
+  "memory_skim": {"strongest_3": [], "engineer_type": "", "memorable_numbers": [], "confusing": [], "skipped": [], "interview_questions": []},
+  "plain_english": [],
+  "scores": {
+    "impact_clarity": 7,
+    "quantification": 7,
+    "technical_depth": 8,
+    "concision_readability": 7,
+    "skim_test": 7,
+    "credibility": 7,
+    "ats_parseability": 8,
+    "visual_layout": 8,
+    "domain_fit": 8,
+    "human_voice": 6,
+    "plain_language": 6,
+    "overall": 8
+  },
+  "competitive_for_domain": "Y",
+  "bullet_feedback": [
+    {
+      "bullet": "Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries",
+      "problem": "Three ideas (access limits, a precomputed category tree, a Redis cache) are stitched into one sentence that opens with a subordinate clause and has no subject. 'the Claude skill' appears with a definite article before the reader knows any Claude skill exists; that context only comes in the next bullet. 'strict access limits' doesn't say whether this means rate limits, permissions, or query quotas.",
+      "severity": 6,
+      "why_it_matters": "A reader has to reread to work out what was built and why. A skeptical interviewer will ask 'what were the access limits?' and 'why a tree and not an index?', and the bullet gives no anchor for either answer.",
+      "missing_or_unclear": "clarify: what kind of 'access limits' (rate limit, query quota, read permissions); what 'the Claude skill' is the first time it is mentioned",
+      "suggested_direction": "Lead with what you built, then the constraint. Introduce the AI workflow generator before this bullet refers to it, or swap the order of bullets 2 and 3 so 'Claude skill' is defined first. Example shape: 'Built a precomputed category tree of popular workflows that the AI generator searches before querying a rate-limited 270K-row PostgreSQL table, and cached full workflows in Redis'."
+    },
+    {
+      "bullet": "Cut AI workflow generation time 65% to under 15s by splitting one large Claude skill into smaller sub-skills that call Python tools for search and validation, after CloudWatch and OpenSearch latency logs showed where time went",
+      "problem": "'AI workflow generation' never says what is generated, for whom, or from what input. 'Claude skill' and 'sub-skills' are vendor jargon a recruiter can't restate. The trailing 'after CloudWatch and OpenSearch latency logs showed where time went' reads as a keyword tail: OpenSearch is a search engine, so citing it as a latency-log source invites the question 'why were latency logs in OpenSearch?'",
+      "severity": 5,
+      "why_it_matters": "The 65% is a good number, but readers who don't know what the system does can't tell why it matters. Naming two observability tools in passing reads as padding unless you can explain how each one was used.",
+      "missing_or_unclear": "clarify: what the AI produces (e.g. test-data workflows from a developer's text request); what OpenSearch was doing in the latency analysis",
+      "suggested_direction": "Say in plain words what the generator does before naming the mechanism. Keep the profiling step only if it was a real decision, and name only the tool that actually pointed to the bottleneck. Put the diagnosis before the fix so the bullet reads cause, then change, then result."
+    },
+    {
+      "bullet": "Automated retraining for a production Amazon Bedrock model that sorts research documents by importance: on an EventBridge schedule a larger LLM grades it, and it is fine-tuned only when those grades shift past a threshold",
+      "problem": "The two uses of 'it' make it ambiguous whether the larger LLM grades the model itself, its outputs, or the documents. 'Bedrock model' is a vendor-noun stack: Bedrock hosts models; it isn't a model. The colon followed by a passive, inverted clause ('on an EventBridge schedule a larger LLM grades it') is hard to read aloud.",
+      "severity": 6,
+      "why_it_matters": "This is the most interesting ML-infra mechanism on the page (drift-triggered fine-tuning with an LLM judge), but a reader can't restate it on one pass. An interviewer will start by asking what exactly gets graded.",
+      "missing_or_unclear": "clarify: what the larger LLM grades (the classifier's predictions on a sample of new documents?); what 'grades shift' means (accuracy drop versus the last run?)",
+      "suggested_direction": "Replace each 'it' with its noun and use active voice in time order. Example shape: 'Automated retraining for a document-importance classifier hosted on Bedrock: a scheduled job has a larger LLM grade the classifier's recent predictions, and triggers fine-tuning only when agreement drops past a threshold'."
+    },
+    {
+      "bullet": "Building a RAG meal-suggestion feature for the official UMD app (GPT-4o mini, ChromaDB + SentenceBERT search); 93% of generated meals rated satisfactory by internal testers",
+      "problem": "This combines a parenthetical tech dump, a '+' inside the parenthesis, and a semicolon-stitched result fragment with no verb: the three patterns that make a line sound machine-written. The technologies don't explain any engineering choice; they only list components.",
+      "severity": 6,
+      "why_it_matters": "It is the least human-sounding line on the page, and it sits right before the strongest section (Projects). A reader can't tell what you designed versus what you wired together.",
+      "missing_or_unclear": "clarify: what is retrieved (dining-hall menu items? recipes?) and what the model generates from it",
+      "suggested_direction": "Drop the parenthesis. Write one sentence that says what is retrieved and from where, then what the model generates, and keep at most the one technology that explains the retrieval. Join the result with 'and' or start a new clause instead of using a semicolon."
+    },
+    {
+      "bullet": "Co-founded a 110+ member student product studio that has shipped 5 live products, and personally built Redis caching in front of the Prisma ORM queries for one, Tortuga, a class scheduler with 20,000+ visits in its first 30 days",
+      "problem": "Two achievements are joined with ', and'. The bold '20,000+ visits' belongs to the product, not to your Redis caching, so the bullet implies the caching caused or enabled the traffic without saying so. 'for one, Tortuga, a class scheduler' stacks three appositives in a row.",
+      "severity": 5,
+      "why_it_matters": "A skeptic will ask 'what did the cache change?' and the bullet has no answer. The bolded number gets credited to your engineering when it is really a product or org metric, which hurts trust.",
+      "missing_or_unclear": "clarify: why the cache was needed (load spike at registration? slow queries?) and whether it had any observed effect",
+      "suggested_direction": "Separate ownership. Present the co-founding and the 5 shipped products as the org claim, then say what you built for Tortuga and why, with the visit count framed as the load it handled. Break up the appositive chain, e.g. 'Tortuga, our class scheduler, ...'."
+    },
+    {
+      "bullet": "Deployed a space-topic research tool for Amazon Leo’s public-policy team and set it up for handoff with AWS CDK infrastructure-as-code and GitHub Actions CI/CD, so Leo engineers new to the project now maintain it on AWS Fargate",
+      "problem": "'Deployed' leaves ownership unclear: did you build the tool or only ship someone else's? 'space-topic research tool' is a vague noun stack that doesn't say what the tool does. The three AWS/CI names plus the spelled-out 'infrastructure-as-code' and 'CI/CD' glosses make the second half read like a keyword list.",
+      "severity": 5,
+      "why_it_matters": "This is the lead bullet for an Amazon client, and a reader can't tell what the product does or how much of it you wrote. The handoff outcome is real and good, but the tech names bury it.",
+      "missing_or_unclear": "clarify: whether you built the tool or deployed an existing one; what the tool does for the policy team in one phrase",
+      "suggested_direction": "Use a verb that states your actual ownership (e.g. 'Built and deployed' only if true). Replace 'space-topic research tool' with a short description of what it does. Drop the parenthetical-style glosses ('infrastructure-as-code', 'CI/CD'), since the Skills section already explains them."
+    },
+    {
+      "bullet": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+      "problem": "'routing ... to inference' is telegraphic: inference by what, and for what purpose? The 34% has no unit or baseline (per document? per batch? seconds or minutes?). '6,000+ documents' doesn't say whether that is a total, per day, or per run.",
+      "severity": 4,
+      "why_it_matters": "Backend interviewers will ask 'latency of what, from X to Y?' The mechanism (S3 staging to streaming) is a good design story, but the number can't be defended until its scope is clear.",
+      "missing_or_unclear": "clarify: whether latency is per document or per batch, and the time window for the 6,000+ documents",
+      "suggested_direction": "Say what is measured ('per-document time from scrape to classification') and connect it to the classifier described in the bullet below, so 'inference' has a referent. Keep the S3-to-Kinesis change as the main point."
+    },
+    {
+      "bullet": "For a PhD-led robotics project targeting ICLR, built a Python pipeline that draws AnyGrasp candidates from multi-camera images as Open3D overlays and tuned prompts so a vision-language model picks the right grasp more often",
+      "problem": "'draws AnyGrasp candidates ... as Open3D overlays' can't be parsed without knowing both libraries; 'draws' could mean 'samples' or 'renders'. 'more often' is soft next to the many hard numbers elsewhere. The bullet joins two separate contributions (a visualization pipeline and prompt tuning) with 'and'.",
+      "severity": 5,
+      "why_it_matters": "A non-robotics reader skips it, and a robotics reader can't tell whether you contributed the core method or the tooling around it.",
+      "missing_or_unclear": "clarify: whether 'draws' means renders or samples; what the overlays are for (giving the VLM visual candidates to choose from?)",
+      "suggested_direction": "Restate the mechanism in plain words first ('renders candidate grasps onto 3D views of the scene so a vision-language model can pick one'), then name AnyGrasp/Open3D once. Keep 'more often' unless a real figure exists; don't invent one."
+    },
+    {
+      "bullet": "Cut research-environment setup time 30% with uv dependency pinning and Docker, and added psutil time and memory profiling and Pytest unit tests to help the team find bottlenecks",
+      "problem": "'psutil time and memory profiling' is a noun stack. The sentence chains two 'and's across unrelated work. 'to help the team find bottlenecks' states intent, not whether any bottleneck was found.",
+      "severity": 3,
+      "why_it_matters": "It is a minor bullet, but it reads as a list of tools, which weakens the stronger bullets around it.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Split or trim. Keep the setup-time change as the main claim and mention the profiling and tests briefly as 'added memory and runtime profiling with psutil', or drop them if no finding came from them."
+    },
+    {
+      "bullet": "Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and 90% of 30+ surveyed developers preferred it",
+      "problem": "The middle names four technologies (React, TypeScript, Electron, React Flow, plus Jest) in a row, so the outcome is pushed to the end of a long line. 'Jest-tested validation' is a compressed modifier nobody would say out loud. 'preferred it' leaves the comparison implicit.",
+      "severity": 4,
+      "why_it_matters": "This is the top Capital One bullet, and the 90% result is clear. The tech run in the middle slows the skim and makes the bullet read as a stack list.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Keep what was built (a visual drag-and-drop workflow editor) and one platform word (Electron or React), and move the rest to Skills. Make the comparison explicit: 'preferred it over the legacy tool'."
+    },
+    {
+      "bullet": "Compared B+ tree and LSM skip-list storage for the engine’s event logs on identical 2M-record workloads: the B+ tree read 12.8x faster and answered range queries 22x faster, at the cost of 27% more disk",
+      "problem": "'LSM skip-list storage' is a noun stack: the skip-list is the memtable inside the LSM tree, so mixing the two terms invites a precision question. It isn't clear why an append-mostly event log needed read and range-query benchmarks. The 12.8x read gap is large for an LSM; an interviewer will ask whether compaction and bloom filters were implemented.",
+      "severity": 3,
+      "why_it_matters": "The bullet is credible and specific. The risk is a sharp interviewer who asks about the LSM design and the access pattern, so be ready to defend both.",
+      "missing_or_unclear": "clarify: what the event log is read for (replay? audit range lookups?)",
+      "suggested_direction": "Write 'an LSM tree' or 'a skip-list-based LSM' and add a few words on why reads matter for the log (e.g. 'for replay lookups' if true)."
+    },
+    {
+      "bullet": "Writing Java logic that decides how much EC2 capacity Amazon Redshift reserves for operations like patching, setting upper and lower bounds that keep availability high without overspending, and backtesting the policies",
+      "problem": "'keep availability high without overspending' is the generic goal language a reviewer skims past. The three-part participle chain ('Writing ..., setting ..., and backtesting ...') reads as a task list.",
+      "severity": 3,
+      "why_it_matters": "This is the top brand on the page, and the bullet is honest about being in progress. The generic phrase dilutes the concrete part (capacity reserved for patching).",
+      "missing_or_unclear": "",
+      "suggested_direction": "Cut 'that keep availability high without overspending', or replace it with the specific tradeoff the bounds encode (too little reserve vs idle capacity) using only facts you already have."
+    }
+  ],
+  "page_feedback": [
+    {
+      "problem": "The strongest systems evidence on the page (the IEX order book: 50.9M replayed messages, 99,122/99,123 fills, 1.26M events/sec) is at the bottom, below five experience entries and below the weakest bullet (the RAG parenthetical).",
+      "severity": 5,
+      "why_it_matters": "A 7-second skim gets brands (AWS, Capital One, Amazon Leo) but stops before the evidence that shows 'performance-sensitive systems' most clearly. The intended profile comes across only for a reader who gets to the end.",
+      "suggested_direction": "Consider tightening the TerpLabs/UMIACS entries so Projects sits higher, or reorder within Experience so infrastructure bullets lead. Don't add bold or content; the gain comes from cutting and ordering."
+    },
+    {
+      "problem": "The terms 'Claude skill', 'sub-skills', 'Bedrock model', 'AnyGrasp', 'Open3D', 'React Flow' and 'SentenceBERT' appear in bullets without saying what they do.",
+      "severity": 5,
+      "why_it_matters": "A recruiter or general SWE hiring manager can't restate about a third of the bullets, which lowers plain-language and human-voice scores. Several of these terms add nothing to understanding the engineering.",
+      "suggested_direction": "For each bullet, keep only the one tool that explains the design choice and describe the rest in plain words. Leave the full list to Skills."
+    },
+    {
+      "problem": "The Skills section has filler and keywords that no bullet supports: 'data structures and algorithms', 'Jira', 'Agile', 'SQLAlchemy', 'PyTorch', 'API Gateway', 'REST APIs'.",
+      "severity": 3,
+      "why_it_matters": "A skeptical interviewer may pick an unsupported item ('tell me about your PyTorch work') and find nothing on the page behind it. 'data structures and algorithms' as a skill reads as padding.",
+      "suggested_direction": "Cut 'data structures and algorithms', 'Jira' and 'Agile'. Keep the other items only if you can talk through real use of them."
+    },
+    {
+      "problem": "Several bullets use stitched structures: the 'Because ...' opener, the colon followed by an inverted clause, a semicolon after a parenthesis, and ', and personally built'. These put two or three ideas in one breath.",
+      "severity": 4,
+      "why_it_matters": "Read aloud, these lines sound like compressed resume-speak, not like someone explaining their own work, which is the main human-voice cost on the page.",
+      "suggested_direction": "Use one main clause per bullet with the subject implied, in the order what was built, how, then result. Move secondary facts into a separate short clause or cut them."
+    }
+  ],
+  "keep": [
+    "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange’s book, matching 99,122 of 99,123 fills and 100% of top-of-book prices",
+    "Sustained 1.26M events/sec end-to-end over the full replay, with price levels in a std::map of FIFO queues and a hash map from order ID to queue position for O(1) cancels",
+    "Clean single-column layout with consistent right-aligned dates and locations, standard section headings, and sparse one-per-bullet bolding"
+  ]
+}
