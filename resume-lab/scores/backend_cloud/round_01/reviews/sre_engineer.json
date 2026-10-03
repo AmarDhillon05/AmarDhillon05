@@ -1,0 +1,44 @@
+{
+  "persona": "sre_engineer",
+  "target": "Backend and cloud infrastructure SWE intern roles (distributed services, data layer, AWS, platform/SRE), 2026–27 cycle. Score domain_fit for this domain.",
+  "seven_second_takeaway": "UMD CS '28. AWS SDE intern doing EC2 capacity policies, Capital One intern, AWS contract work (Kinesis/Lambda/CDK), C++ matching engine at 1.26M events/sec.",
+  "scores": {"impact_clarity": 8, "quantification": 8, "technical_depth": 8, "concision_readability": 8,
+             "skim_test": 8, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 8, "overall": 8},
+  "score_rationale": {},
+  "competitive_for_domain": "Y",
+  "must_fix": [],
+  "bullets": [
+    {"quote": "Writing Java policies that tune upper/lower bounds", "verdict": "keep"},
+    {"quote": "Precomputed a tree-style search index over popular", "verdict": "tighten",
+     "issue": "Reads as an LLM-tool bullet; the data-layer decision (precompute under DB access limits) should lead.",
+     "suggestion": "Worked around DB access limits by precomputing a tree-style search index over popular workflows from a 270K+ row PostgreSQL table (SQLAlchemy, Redis cache), serving as the Claude skill's main search tool"},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "keep"},
+    {"quote": "Rebuilt a legacy test-data workflow builder in", "verdict": "tighten",
+     "issue": "Frontend/desktop work; weakest backend signal in the Capital One block. Fine as third bullet, keep it short.",
+     "suggestion": "Rebuilt a legacy test-data workflow builder (React/TypeScript, Electron) with a React-Flow editor and Jest-tested validation; 90% of 30+ surveyed developers preferred it"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep"},
+    {"quote": "Shipped a space-research tool used by Amazon", "verdict": "reframe",
+     "issue": "Strong ownership outcome, but the IaC/CI choice is listed rather than framed as making it maintainable for handoff.",
+     "suggestion": "Shipped a space-research tool for Amazon Leo's public-policy team on AWS Fargate (Docker), with CDK (TypeScript) IaC and GitHub Actions CI/CD so Leo engineers now maintain it"},
+    {"quote": "Automated EventBridge-scheduled fine-tuning of a Bedrock model", "verdict": "keep"},
+    {"quote": "Built a Python pipeline for PhysTwin (PhD-led", "verdict": "tighten",
+     "issue": "Dense ML/robotics detail with little relevance to backend/infra; consider trimming for this target.",
+     "suggestion": "Built a Python pipeline for PhysTwin (PhD-led digital twin, targeting ICLR) turning AnyGrasp multi-camera output into Open3D overlays for a VLM"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "keep"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "tighten",
+     "issue": "Redis caching tacked on at the end with no reason or effect; it's the only infra signal here.",
+     "suggestion": "Co-founded a 110+ member product studio shipping 5 live products, incl. Tortuga, a class scheduler with 20,000+ visits in 30 days, backed by Redis caching over Prisma ORM queries"},
+    {"quote": "Engineered a C++17 order book and matching", "verdict": "keep"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores", "verdict": "keep"},
+    {"quote": "Sustained 1.26M events/sec end-to-end over the", "verdict": "keep"}
+  ],
+  "structure": [
+    {"key": "skills_evidence_alignment", "change": "Drop or justify skills-line items not evidenced in bullets (X-Ray, SNS, API Gateway).", "rationale": "Infra interviewers probe every listed service; unbacked names invite questions the bullets can't answer."},
+    {"key": "umiacs_trim_for_target", "change": "For this target, consider cutting the PhysTwin bullet and keeping the reproducible-environment bullet.", "rationale": "Reclaims space and keeps the page focused on platform/backend evidence."}
+  ],
+  "top3": [
+    "Reframe the Fargate/CDK bullet around the decision: IaC + CI so the client team could take over and maintain it.",
+    "Lead the Capital One search-index bullet with the constraint (DB access limits) and the precompute decision.",
+    "Align the skills line with evidenced work; remove or substantiate X-Ray, SNS, and API Gateway."
+  ]
+}

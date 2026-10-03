@@ -1,0 +1,101 @@
+{
+  "persona": "infra_hm",
+  "target": "Backend and cloud infrastructure SWE intern roles (distributed services, data layer, AWS, platform/SRE), 2026–27 cycle. Score domain_fit for this domain.",
+  "seven_second_takeaway": "UMD '28, current AWS SDE intern (EC2/Redshift capacity), Capital One intern, real AWS serverless/streaming work for Amazon Leo, plus a fast C++ matching engine with storage benchmarks.",
+  "scores": {
+    "impact_clarity": 8,
+    "quantification": 8,
+    "technical_depth": 8,
+    "concision_readability": 8,
+    "skim_test": 8,
+    "credibility": 8,
+    "ats_parseability": 9,
+    "visual_layout": 8,
+    "domain_fit": 8,
+    "overall": 8
+  },
+  "score_rationale": {},
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "Capital One search-index bullet is hard to parse: 'as the Claude skill's main search tool under DB access limits' buries the why; restate the constraint and purpose up front.",
+    "UMIACS PhysTwin bullet is VLM/grasp-prompt work with no backend signal; it takes two lines of prime space an infra HM will skip."
+  ],
+  "bullets": [
+    {
+      "quote": "Writing Java policies that tune upper/lower bounds",
+      "verdict": "keep",
+      "suggestion": ""
+    },
+    {
+      "quote": "Precomputed a tree-style search index over popular",
+      "verdict": "reframe",
+      "issue": "Purpose and constraint come last; reads as tech list before the design reason.",
+      "suggestion": "Worked around DB access limits by precomputing a tree-style search index over popular workflows from a 270K+ row PostgreSQL table (SQLAlchemy, Redis cache), serving as the Claude skill's main search tool"
+    },
+    {
+      "quote": "Cut LLM workflow generation time 65% to",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Rebuilt a legacy test-data workflow builder in",
+      "verdict": "tighten",
+      "issue": "Frontend/Electron work; fine but least domain-relevant Capital One bullet. Shorten so it doesn't compete with backend bullets.",
+      "suggestion": "Rebuilt a legacy test-data workflow builder (React/TypeScript, Electron, React-Flow) with Jest-tested validation; 90% of 30+ surveyed developers preferred it"
+    },
+    {
+      "quote": "Reduced end-to-end latency 34% for a pipeline",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Shipped a space-research tool used by Amazon",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Automated EventBridge-scheduled fine-tuning of a Bedrock model",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Built a Python pipeline for PhysTwin (PhD-led",
+      "verdict": "tighten",
+      "issue": "ML/robotics detail with no backend signal; dense jargon (AnyGrasp, Open3D, VLM) for this audience.",
+      "suggestion": "Built a Python pipeline for PhysTwin (PhD-led digital twin, targeting ICLR) turning multi-camera grasp detections into Open3D overlays for a VLM"
+    },
+    {
+      "quote": "Shortened research-environment setup time 30% with uv",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Co-founded a 110+ member campus product studio",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Engineered a C++17 order book and matching",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Benchmarked B+ tree vs LSM skip-list stores",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Sustained 1.26M events/sec end-to-end over the",
+      "verdict": "keep"
+    }
+  ],
+  "structure": [
+    {
+      "key": "trim_umiacs",
+      "change": "For the backend/cloud variant, cut UMIACS to its single setup/profiling bullet (or compress PhysTwin to one line).",
+      "rationale": "Frees space and keeps the eye on AWS, Capital One, and Amazon Leo infra work, which is what this panel hires on."
+    },
+    {
+      "key": "skills_order",
+      "change": "Lead the skills block with Backend & Data and Cloud (AWS) before Languages, or keep as is; low priority.",
+      "rationale": "Minor; current order already parses fine and the AWS line is strong."
+    }
+  ],
+  "top3": [
+    "Reframe the Capital One search-index bullet so the constraint (DB access limits) and purpose read first, then the PostgreSQL/Redis design.",
+    "Compress or cut the PhysTwin/VLM bullet in this domain variant; it is off-target for a backend/infra HM.",
+    "Tighten the React/Electron bullet so Capital One reads as backend-first (search index, latency work) to an infra reader."
+  ]
+}
