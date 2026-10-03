@@ -14,20 +14,20 @@ IEX Order Book & Matching Engine | C++17, STL, POSIX, Linux perf
 Jul 2026 – Aug 2026
 • Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without
 ever resyncing to the exchange’s book, agreeing with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices
-• Implemented B+ tree and LSM-tree backends for the event log and benchmarked them on identical 2M-record workloads,
-where the B+ tree gave 12.8x the read throughput and 22x faster range queries at the cost of 27% more disk space
-• Traced an apparent 1.65x slowdown to the CPU frequency governor using perf counters and a null control book, then
-cut run-to-run variance from about 6% to 0.06% with core pinning and a fixed clock
 • Stored price levels in a std::map of std::list FIFOs with a hash map from order ID to list iterator for O(1) cancels,
 sustaining 1.26M events/sec over the full replay and a 1.2 µs per-update p99 on a separate 2M-event run
+• Implemented B+ tree and LSM-tree backends for the event log and benchmarked them on identical 2M-record workloads,
+where the B+ tree gave 12.8x the read throughput and 22x faster range queries at the cost of 27% more disk space
+• Traced an apparent 1.65x regression to the CPU frequency governor, not a code change, using perf counters and a
+do-nothing control book, then cut run-to-run variance from about 6% to 0.06% by pinning cores and fixing the clock
 
 Experience
 Amazon Web Services
 Sep 2026 – Dec 2026
 Software Development Engineer Intern
 Redmond, WA
-• Writing Java logic that sets the upper and lower bounds on EC2 capacity that Amazon Redshift reserves for operations
-like patching, balancing availability against cost, and backtesting it
+• Building capacity planning for Amazon Redshift maintenance like patching: Java logic that sets upper and lower bounds
+on reserved EC2 capacity to balance availability against cost, validated by backtesting
 Capital One
 Jun 2026 – Aug 2026
 Software Engineering Intern
@@ -52,14 +52,13 @@ TerpLabs
 Jun 2025 – Present
 Co-Founder, Software Engineer
 College Park, MD
-• Co-founded a 110+ member student product studio that has shipped 5 live products
 • Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio’s class scheduler with 20,000+ visits in
 its first 30 days, to reduce database load and latency
 
 Technical Skills
 Languages: C++17, C, Python, Java, Rust, SQL, TypeScript, Bash
-Systems & Performance: low-latency C++, debugging and profiling with Linux perf (hardware counters, top-down analysis),
-POSIX, STL, B+ trees, LSM trees, data structures and algorithms, benchmarking
+Systems & Performance: debugging and profiling with Linux perf (hardware counters, top-down analysis), POSIX, STL, B+
+trees, LSM trees, data structures and algorithms, benchmarking
 Cloud & Tools: AWS (Lambda, Kinesis, EC2, Fargate, CloudWatch monitoring), AWS CDK, PostgreSQL, Redis, Docker, GitHub
 Actions (CI/CD), Git, Pytest
 Certification: AWS Certified Developer – Associate (Nov 2024 – Nov 2027)

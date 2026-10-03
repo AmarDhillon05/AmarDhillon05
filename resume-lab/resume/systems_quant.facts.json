@@ -10,7 +10,6 @@
     "iex.replay_correctness",
     "iex.storage_benchmark",
     "iex.throughput",
-    "terplabs.studio",
     "terplabs.tortuga",
     "umiacs.grasp_vlm"
   ],

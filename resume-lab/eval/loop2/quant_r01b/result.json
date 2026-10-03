@@ -1,0 +1,20 @@
+[
+  {
+    "fact": "iex.throughput+iex.data_structures+iex.latency_dist",
+    "winner": "cand1",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Stored price levels in a std::map of std::list FIFOs with a hash map from order ID to list iterator for O(1) cancels, sustaining 1.26M events/sec over the full replay and a 1.2 \u00b5s per-update p99 on a separate 2M-event run",
+    "decisive_wording": "B opens with \"Sustained 1.26M events/sec ... 1.2 \u00b5s per-message p99\" and then gives the mechanism as \"keeping each price level as a FIFO queue (std::list) inside a std::map, with an order-ID hash map for O(1) cancels\"; A opens with \"Stored price levels in a std::map of std::list FIFOs with a hash map from order ID to list iterator\"; C ends with \"and a separate 2M-event run measured a 1.2 \u00b5s p99\"",
+    "info": "All three keep the throughput, the p99, the separate 2M-event run, std::map plus std::list FIFOs, and O(1) cancels. A and C say what the hash map points to (list iterator / list node), which is why cancels are O(1). B drops that detail and says only \"order-ID hash map\". B uses \"per-message\" where A says \"per-update\" and C gives no unit."
+  },
+  {
+    "fact": "iex.perf_rigor",
+    "winner": "cand1",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Traced an apparent 1.65x performance regression to the CPU frequency governor, not a code change, using perf counters and a do-nothing control book, then cut run-to-run variance from about 6% to 0.06% by pinning cores and fixing the clock",
+    "decisive_wording": "\"not a code change\" and \"do-nothing control book\" (A) vs. \"null control book\" (B)",
+    "info": "Both keep the 1.65x figure, the CPU frequency governor root cause, perf counters, the control book, the drop in variance from about 6% to 0.06%, core pinning, and the fixed clock. Only A says outright that the code was not at fault, and A calls the slowdown a \"regression\"."
+  }
+]
