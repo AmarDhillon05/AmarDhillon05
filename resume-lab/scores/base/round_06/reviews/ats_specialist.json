@@ -1,0 +1,37 @@
+{
+  "persona": "ats_specialist",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28; AWS SDE and Capital One SWE internships; shipped AWS tooling for Amazon Leo; C++ matching engine replaying 50.9M real IEX messages; strong AWS/Python/TS keywords.",
+  "scores": {"impact_clarity": 8, "quantification": 8, "technical_depth": 9, "concision_readability": 8,
+             "skim_test": 9, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 9, "overall": 9},
+  "score_rationale": {},
+  "competitive_for_domain": "Y",
+  "must_fix": [],
+  "bullets": [
+    {"quote": "Writing and backtesting Java policies that tune upper/lower", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Rebuilt a legacy test-data workflow builder in React/TypeScript", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Precomputed a tree-style search index over popular workflows", "verdict": "tighten", "issue": "Ends at intent; 'access limits' is vague to a screener.", "suggestion": "Precomputed a tree-style search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache), cutting repeat DB queries under access limits"},
+    {"quote": "Cut LLM workflow generation time 65% to under", "verdict": "tighten", "issue": "'Claude skill' is product jargon an LLM screener or recruiter may not parse.", "suggestion": "Cut LLM workflow generation time 65% to under 15s by splitting one Claude agent skill into sub-skills backed by Python search/validation tools, guided by CloudWatch + OpenSearch latency logs"},
+    {"quote": "Shipped a space-research tool used by Amazon Leo’s", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline routing", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Automated EventBridge-scheduled fine-tuning of a Bedrock source-relevancy model", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Built a Python pipeline for PhysTwin, a PhD-led", "verdict": "tighten", "issue": "Three clauses after a colon; 'tuned the VLM's prompts' trails off without result.", "suggestion": "Built a Python pipeline for PhysTwin (PhD-led digital-twin project targeting ICLR) that runs AnyGrasp on multi-camera images and renders grasps as Open3D overlays for VLM prompting"},
+    {"quote": "Shortened research-environment setup time 30% with uv dependency", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Co-founded a 110+ member campus product studio that", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Added Redis query caching over Tortuga’s Prisma SQL queries", "verdict": "add_context", "issue": "Only bullet with no measured or concrete outcome; reads as filler.", "suggestion": "Clarify any measured effect; otherwise merge into the Tortuga bullet: '...20,000+ visits in its first 30 days; added Redis caching over its Prisma SQL queries'"},
+    {"quote": "Building a RAG meal-suggestion feature for the official", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Engineered a C++17 order book and matching engine", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores for", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Sustained 1.26M events/sec end-to-end over the full", "verdict": "keep", "issue": "", "suggestion": ""}
+  ],
+  "structure": [
+    {"key": "skills_evidence_alignment", "change": "Drop or justify skills that never appear in a bullet (PyTorch, API Gateway, Node.js), or keep only if interview-defensible.", "rationale": "LLM screeners cross-check skills against bullets; unevidenced keywords read as padding and invite probing."},
+    {"key": "skills_category_split", "change": "Rename 'AI/ML & Tools' to 'ML & DevOps' or split Docker/GitHub Actions/Linux into a 'Tools' line.", "rationale": "Clearer category mapping for ATS skill taxonomies; Docker/CI are not AI/ML."},
+    {"key": "concurrent_roles_signal", "change": "Consider noting part-time status on the three 'Present' roles overlapping the Redmond internship.", "rationale": "Four simultaneous roles across two states can trigger a timeline flag in LLM screeners."}
+  ],
+  "top3": [
+    "Merge or give a concrete outcome to the TerpLabs Redis caching bullet (the only bullet with no result).",
+    "Clarify: replace 'Claude skill' with plainer wording (e.g., 'Claude agent skill') so screeners parse the LLM optimization bullet.",
+    "Align the skills section with bullet evidence (PyTorch, API Gateway, Node.js) and fix the 'AI/ML & Tools' grouping."
+  ]
+}

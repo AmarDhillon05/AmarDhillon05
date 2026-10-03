@@ -1,0 +1,41 @@
+{
+  "persona": "startup_quant_engineer",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28 with AWS and Capital One internships, shipped a tool Amazon Leo engineers now maintain, and a C++ IEX matching engine at 1.26M events/sec.",
+  "scores": {"impact_clarity": 8, "quantification": 7, "technical_depth": 8, "concision_readability": 8,
+             "skim_test": 8, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 8, "overall": 8},
+  "score_rationale": {
+    "quantification": "Strong numbers on most bullets, but the TerpLabs Redis bullet and AWS bullet end without any observed outcome; 686.7 ns/event lacks stated statistic (mean/median)."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "TerpLabs Redis caching bullet states intent ('to reduce database load and latency') with no outcome; tighten to what was actually observed, or merge into the Tortuga bullet.",
+    "clarify: is 686.7 ns/event a mean, median, or p50 from perf, and on what hardware? Methodology-minded interviewers will ask immediately."
+  ],
+  "bullets": [
+    {"quote": "Writing and backtesting Java policies that tune upper/lower", "verdict": "tighten", "issue": "Ongoing work, fine, but reads as task; lead with the decision being automated.", "suggestion": "Writing Java policies that tune upper/lower bounds on EC2 capacity reserved for Redshift operations (e.g., patching), backtested to balance availability against cost"},
+    {"quote": "Rebuilt a legacy test-data workflow builder in React/TypeScript", "verdict": "keep"},
+    {"quote": "Precomputed a tree-style search index over popular workflows", "verdict": "keep", "issue": "No measured result (accepted); the access-limit constraint is a good design rationale."},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "keep"},
+    {"quote": "Shipped a space-research tool used by Amazon Leo's", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep"},
+    {"quote": "Automated EventBridge-scheduled fine-tuning of a Bedrock source-relevancy", "verdict": "tighten", "issue": "Ends on an ops checklist (X-Ray, SNS); the decision gates are the interesting part.", "suggestion": "Automated EventBridge-scheduled fine-tuning of a Bedrock source-relevancy model with decision gates that skip redundant retraining; X-Ray tracing and SNS alerts on failure"},
+    {"quote": "Built a Python pipeline for PhysTwin, a PhD-led", "verdict": "tighten", "issue": "Dense chain of nouns; 'tuned the VLM's prompts' tacked on is weak.", "suggestion": "Built a Python pipeline for PhysTwin (PhD-led digital twin project targeting ICLR) that runs AnyGrasp on multi-camera images and renders grasps as Open3D overlays for VLM prompting"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "keep", "issue": "No baseline (accepted)."},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep"},
+    {"quote": "Added Redis query caching over Tortuga's Prisma SQL", "verdict": "cut", "issue": "Weakest bullet on the page: generic, intent-only, no outcome; dilutes the strong Tortuga line.", "suggestion": "Merge into bullet 1: '...including Tortuga, a class scheduler (Redis-cached Prisma queries) with 20,000+ visits in its first 30 days'"},
+    {"quote": "Building a RAG meal-suggestion feature for the official", "verdict": "keep", "issue": "Tester count unknown (accepted)."},
+    {"quote": "Engineered a C++17 order book and matching engine", "verdict": "keep"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores for", "verdict": "keep"},
+    {"quote": "Sustained 1.26M events/sec end-to-end over the full", "verdict": "tighten", "issue": "Strong but needs the statistic named so it survives a methodology question.", "suggestion": "Sustained 1.26M events/sec end-to-end over the full replay; 686.7 ns/event in the matching engine (state whether mean or median)"}
+  ],
+  "structure": [
+    {"key": "merge_terplabs_redis", "change": "Fold the Redis caching bullet into the Tortuga bullet, leaving TerpLabs at two bullets.", "rationale": "Removes the only vague bullet and frees a line of whitespace."},
+    {"key": "keep_project_placement", "change": "Keep Projects after Experience; do not promote above internships for general SWE.", "rationale": "AWS/Capital One brands carry the skim; the order book is a strong closer and differentiator."}
+  ],
+  "top3": [
+    "Cut or merge the TerpLabs Redis caching bullet; it is the one intent-only, generic line on an otherwise specific page.",
+    "clarify: name the statistic and measurement method behind 686.7 ns/event so the order-book numbers survive a perf-minded interviewer.",
+    "Tighten the AWS and PhysTwin bullets to lead with the engineering decision rather than a chain of nouns."
+  ]
+}
