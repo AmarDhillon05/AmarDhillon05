@@ -1,0 +1,47 @@
+{
+  "persona": "ai_hm",
+  "target": "AI/ML engineering intern roles (LLM applications, agents, RAG, ML platform) at AI-native startups and big-tech AI orgs, 2026–27 cycle. Score domain_fit for this domain.",
+  "seven_second_takeaway": "UMD CS '28; AWS + Capital One interns. Decomposed a Claude skill into tool-using sub-skills (65% faster), eval-gated Bedrock retraining, RAG feature. Real applied-LLM engineer.",
+  "scores": {
+    "impact_clarity": 8,
+    "quantification": 7,
+    "technical_depth": 8,
+    "concision_readability": 8,
+    "skim_test": 8,
+    "credibility": 8,
+    "ats_parseability": 9,
+    "visual_layout": 8,
+    "domain_fit": 8,
+    "overall": 8
+  },
+  "score_rationale": {
+    "quantification": "65% and 34% are well anchored; 'output quality held' has no eval metric, and PhysTwin/Leo tool bullets lack outcomes."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "clarify: how 'output quality held across multi-run stress tests' was judged (rubric, golden set, pass rate) — I will ask this first in an interview"
+  ],
+  "bullets": [
+    {"quote": "Writing Java policies that tune upper/lower bounds", "verdict": "keep"},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "keep"},
+    {"quote": "Precomputed a tree-style search index over popular", "verdict": "tighten", "issue": "Reads backwards; lead with the agent-tool purpose, then the design choice.", "suggestion": "Built the Claude skill's main search tool under DB access limits: a precomputed tree-style index over popular workflows from a 270K+ row PostgreSQL table (SQLAlchemy, Redis cache)"},
+    {"quote": "Rebuilt a legacy test-data workflow builder in", "verdict": "keep"},
+    {"quote": "Automated EventBridge-scheduled fine-tuning of a Bedrock", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a", "verdict": "keep"},
+    {"quote": "Shipped a space-research tool used by Amazon", "verdict": "add_context", "issue": "Doesn't say what the tool does; is it the LLM classification pipeline's front end?", "suggestion": "Clarify what the tool does for the public-policy team (e.g., surfaces classified documents) using only stated facts."},
+    {"quote": "Built a Python pipeline for PhysTwin (PhD-led", "verdict": "tighten", "issue": "Dense noun stack; the VLM grasp/depth prompting is the AI-relevant hook and is buried.", "suggestion": "Prompted a VLM to pick correct grasps and judge depth for PhysTwin (PhD-led, targeting ICLR), building the Python pipeline that renders AnyGrasp multi-camera output as Open3D overlays"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "keep"},
+    {"quote": "Building a RAG meal-suggestion feature for the", "verdict": "keep"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep"},
+    {"quote": "Built a C++17 order book and matching", "verdict": "keep"}
+  ],
+  "structure": [
+    {"key": "order_capital_one_bullets", "change": "Keep the Claude-skill bullets as the first two Capital One bullets (already done); consider merging the search-index bullet into the 65% bullet if space is needed.", "rationale": "The agent decomposition story is the strongest domain signal; keeping it adjacent and first maximizes skim value."},
+    {"key": "project_relevance", "change": "Keep the order-book project but recognize it adds little for AI roles; no AI project replaces it, so leave as-is.", "rationale": "Shows rigor and correctness testing, but an AI HM won't weight it; not worth restructuring."}
+  ],
+  "top3": [
+    "clarify: how output quality was judged in the 65% Claude-skill bullet (eval set, pass criterion) and state it in a few words",
+    "Front-load the VLM prompting in the PhysTwin bullet so the AI work is visible on skim",
+    "Say what the Amazon Leo space-research tool actually does so the shipping/ownership claim lands"
+  ]
+}

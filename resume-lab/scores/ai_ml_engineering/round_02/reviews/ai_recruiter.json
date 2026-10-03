@@ -1,0 +1,105 @@
+{
+  "persona": "ai_recruiter",
+  "target": "AI/ML engineering intern roles (LLM applications, agents, RAG, ML platform) at AI-native startups and big-tech AI orgs, 2026–27 cycle. Score domain_fit for this domain.",
+  "seven_second_takeaway": "UMD CS '28, AWS + Capital One interns; Capital One Claude agent-skill latency win, Bedrock fine-tuning with eval-gated retraining, RAG feature. Strong brands; AI story needs a beat to find.",
+  "scores": {
+    "impact_clarity": 8,
+    "quantification": 7,
+    "technical_depth": 8,
+    "concision_readability": 8,
+    "skim_test": 7,
+    "credibility": 8,
+    "ats_parseability": 8,
+    "visual_layout": 8,
+    "domain_fit": 7,
+    "overall": 8
+  },
+  "score_rationale": {
+    "quantification": "Good headline numbers (65%, 34%, 90%), but eval-gated retraining and VLM grasp work carry no measured outcome; several metrics lack baselines.",
+    "skim_test": "Top entry (AWS) is a non-AI capacity-policy bullet; the strongest LLM/agent wins sit second and third, below the fold of attention.",
+    "domain_fit": "Real LLM/agent/RAG/eval evidence exists, but ordering leads with non-AI AWS work and a C++ order-book project; AI story is not first."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "clarify: for the Bedrock eval-gated retraining, state what the cross-model eval measures (e.g., agreement with larger LLM labels) so an AI HM sees eval rigor rather than just orchestration",
+    "clarify: 'output quality held across multi-run stress tests' — name how quality was judged (rubric, validator pass rate, human check) if known"
+  ],
+  "bullets": [
+    {
+      "quote": "Writing Java policies that tune upper/lower bounds",
+      "verdict": "tighten",
+      "issue": "Off-domain for AI and ends on a weak status note; fine as brand anchor but keep it short.",
+      "suggestion": "Writing Java policies that tune EC2 capacity bounds reserved for Redshift operations (e.g., patching), trading availability against cost; validating via backtests"
+    },
+    {
+      "quote": "Cut LLM workflow generation time 65% to",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Precomputed a tree-style search index over popular",
+      "verdict": "tighten",
+      "issue": "Strong agent-tooling story; lead with its role as the agent's retrieval tool, then the method.",
+      "suggestion": "Built the Claude skill's main search tool under DB access limits: a precomputed tree-style index over popular workflows from a 270K+ row PostgreSQL table (SQLAlchemy, Redis cache)"
+    },
+    {
+      "quote": "Rebuilt a legacy test-data workflow builder in",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Automated EventBridge-scheduled fine-tuning of a Bedrock model",
+      "verdict": "add_context",
+      "issue": "Best ML-platform bullet on the page but no outcome; reader can't tell what eval signal gates retraining.",
+      "suggestion": "Built eval-gated fine-tuning for a Bedrock document-importance classifier: EventBridge retrains only when a larger LLM's cross-model eval scores cross a threshold"
+    },
+    {
+      "quote": "Reduced end-to-end latency 34% for a pipeline",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Shipped a space-research tool used by Amazon",
+      "verdict": "tighten",
+      "issue": "Unclear what the tool does or whether it's AI-powered; reads as deployment plumbing.",
+      "suggestion": "clarify: say in a few words what the tool does for the policy team (if it surfaces the classified documents, say so) before the Fargate/CDK deploy detail"
+    },
+    {
+      "quote": "Built a Python pipeline for PhysTwin (PhD-led",
+      "verdict": "tighten",
+      "issue": "Dense; the VLM prompting is the AI hook but buried at the end.",
+      "suggestion": "Prompt-tuned a VLM to pick correct grasps and judge depth for PhysTwin (PhD-led, targeting ICLR), feeding it Open3D overlays built from multi-camera AnyGrasp output"
+    },
+    {
+      "quote": "Shortened research-environment setup time 30% with uv",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Building a RAG meal-suggestion feature for the",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Co-founded a 110+ member campus product studio",
+      "verdict": "keep"
+    },
+    {
+      "quote": "Built a C++17 order book and matching engine",
+      "verdict": "keep",
+      "issue": "Strong but off-domain for AI roles; fine as a depth signal, not a lead item."
+    }
+  ],
+  "structure": [
+    {
+      "key": "ai_variant_project_swap",
+      "change": "For AI/ML applications, keep the order book but consider placing the AI/ML skills line first (already done) and making the Projects section lower-priority or shorter",
+      "rationale": "The only project is quant/C++; AI HMs skim for LLM work and this space currently signals a different domain."
+    },
+    {
+      "key": "aws_bullet_compact",
+      "change": "Keep AWS on top (chronology + brand) but hold it to one crisp line",
+      "rationale": "Brand helps the skim; the non-AI content shouldn't consume the first glance before Capital One's agent work."
+    }
+  ],
+  "top3": [
+    "Clarify the eval behind the Bedrock eval-gated retraining (what is scored, against what) — it's the best ML-platform signal and currently has no outcome",
+    "Front-load the AI hook in the PhysTwin and search-index bullets (VLM prompting; agent retrieval tool) so the LLM story reads on skim",
+    "Clarify what the Amazon Leo space-research tool does and its link to the classifier/pipeline, so the contract role reads as one shipped AI system"
+  ]
+}
