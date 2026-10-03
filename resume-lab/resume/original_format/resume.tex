@@ -191,14 +191,14 @@
     {Software Engineering Intern}{Jun 2026 -- Aug 2026}
     {Capital One}{Richmond, VA}
   \resumeItemListStart
-    % fact: capital_one.ui_overhaul
-    \resumeItem{Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and \textbf{90\%} of 30+ surveyed developers preferred it}
+    % fact: capital_one.claude_skill
+    \resumeItem{Cut AI workflow generation time \textbf{65\%} to under 15s by splitting one large Claude skill into smaller sub-skills that call Python tools for search and validation, after CloudWatch and OpenSearch latency logs showed where time went}
     \vspace{\gapItem}
     % fact: capital_one.search_index
     \resumeItem{Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries}
     \vspace{\gapItem}
-    % fact: capital_one.claude_skill
-    \resumeItem{Cut AI workflow generation time \textbf{65\%} to under 15s by splitting one large Claude skill into smaller sub-skills that call Python tools for search and validation, after CloudWatch and OpenSearch latency logs showed where time went}
+    % fact: capital_one.ui_overhaul
+    \resumeItem{Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and \textbf{90\%} of 30+ surveyed developers preferred it}
   \resumeItemListEnd
 
 \vspace{\gapRole}
@@ -213,7 +213,7 @@
     \resumeItem{Reduced end-to-end latency \textbf{34\%} for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda}
     \vspace{\gapItem}
     % fact: amazon_contract.bedrock_finetune
-    \resumeItem{Automated retraining for a production Amazon Bedrock model that sorts research documents by importance: on an EventBridge schedule a larger LLM grades it, and it is fine-tuned only when those grades shift past a threshold}
+    \resumeItem{Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance: on an EventBridge schedule a larger LLM grades its ratings, and fine-tuning runs only when the grades shift past a threshold}
   \resumeItemListEnd
 
 \vspace{\gapRole}
@@ -222,10 +222,7 @@
     {UMD Institute for Advanced Computer Studies (UMIACS)}{College Park, MD}
   \resumeItemListStart
     % fact: umiacs.grasp_vlm
-    \resumeItem{For a PhD-led robotics project targeting ICLR, built a Python pipeline that draws AnyGrasp candidates from multi-camera images as Open3D overlays and tuned prompts so a vision-language model picks the right grasp more often}
-    \vspace{\gapItem}
-    % fact: umiacs.env_setup
-    \resumeItem{Cut research-environment setup time \textbf{30\%} with uv dependency pinning and Docker, and added psutil time and memory profiling and Pytest unit tests to help the team find bottlenecks}
+    \resumeItem{For a PhD-led robotics project aimed at ICLR, built a Python pipeline that renders AnyGrasp's candidate grasps on multi-camera images as Open3D overlays for a vision-language model, and tuned its prompts so it picks right more often}
   \resumeItemListEnd
 
 \vspace{\gapRole}
@@ -237,7 +234,7 @@
     \resumeItem{Co-founded a 110+ member student product studio that has shipped 5 live products, and personally built Redis caching in front of the Prisma ORM queries for one, Tortuga, a class scheduler with \mbox{\textbf{20,000+ visits}} in its first 30 days}
     \vspace{\gapItem}
     % fact: terplabs.rag_meal
-    \resumeItem{Building a RAG meal-suggestion feature for the official UMD app (GPT-4o mini, ChromaDB + SentenceBERT search); \textbf{93\%} of generated meals rated satisfactory by internal testers}
+    \resumeItem{Building a RAG meal-suggestion feature for the official UMD app, in which GPT-4o mini writes suggestions from scraped recipes found by SentenceBERT vector search in ChromaDB, and internal testers rated \textbf{93\%} of meals satisfactory}
   \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -253,10 +250,10 @@
     \resumeItem{Built a C++17 order book and matching engine and replayed \textbf{50.9M} real IEX exchange messages through it without ever resyncing to the exchange's book, matching 99,122 of 99,123 fills and 100\% of top-of-book prices}
     \vspace{\gapItem}
     % fact: iex.storage_benchmark
-    \resumeItem{Compared B+ tree and LSM skip-list storage for the engine's event logs on identical 2M-record workloads: the B+ tree read \textbf{12.8x} faster and answered range queries 22x faster, at the cost of 27\% more disk}
+    \resumeItem{Implemented B+ tree and LSM-tree backends for the engine's event log and benchmarked them on identical 2M-record workloads: the B+ tree gave \textbf{12.8x} the read throughput and 22x faster range summaries for 27\% more disk}
     \vspace{\gapItem}
     % fact: iex.throughput+iex.data_structures
-    \resumeItem{Sustained \mbox{\textbf{1.26M events/sec}} end-to-end over the full replay, with price levels in a std::map of FIFO queues and a hash map from order ID to queue position for O(1) cancels}
+    \resumeItem{Sustained \mbox{\textbf{1.26M events/sec}} end-to-end over the full replay, keeping each price level's orders in a std::list FIFO inside a std::map and a hash map from order ID to list iterator for O(1) cancels}
   \resumeItemListEnd
 
 \resumeSubHeadingListEnd

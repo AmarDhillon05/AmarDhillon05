@@ -1,0 +1,74 @@
+[
+  {
+    "fact": "capital_one.search_index",
+    "winner": "incumbent",
+    "advantage": "concrete",
+    "adopt": false,
+    "text": "Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries",
+    "decisive_wording": "\"Because the 270K+ row PostgreSQL workflow table had strict access limits\" ... \"that the Claude skill searches first\"",
+    "info": "All three keep 270K+ rows, PostgreSQL, category tree, popular workflows, Redis caching of full workflows. B names the Claude skill explicitly; A and C rely on a dangling 'that skill' reference to a prior bullet. A says 'fewer queries', C 'without repeatedly querying', B 'cut database queries' (equivalent)."
+  },
+  {
+    "fact": "amazon_contract.bedrock_finetune",
+    "winner": "cand1",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance: on an EventBridge schedule, a larger LLM grades the classifier's ratings, and fine-tuning runs only when those grades shift past a threshold",
+    "decisive_wording": "\"a larger LLM grades the classifier's ratings, and fine-tuning runs only when those grades shift past a threshold\"",
+    "info": "All keep Bedrock, production, research-document importance, EventBridge schedule, larger-LLM grading, threshold-gated fine-tuning. A says 'model that sorts' and 'grades it' (ambiguous what is graded); C and B say 'classifier' and grades of its ratings."
+  },
+  {
+    "fact": "umiacs.grasp_vlm",
+    "winner": "cand2",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "For a PhD-led robotics project targeting ICLR, built a Python pipeline that renders candidate robot grasps (from AnyGrasp) as Open3D overlays on multi-camera images so a vision-language model can choose one, and tuned its prompts to choose correctly more often",
+    "decisive_wording": "\"renders candidate robot grasps (from AnyGrasp) as Open3D overlays on multi-camera images so a vision-language model can choose one\"",
+    "info": "A and B keep the PhD-led/ICLR context; C drops it. B and C explain what AnyGrasp produces (candidate robot grasps) in plain words; A's 'AnyGrasp candidates' is opaque to a recruiter."
+  },
+  {
+    "fact": "terplabs.studio+terplabs.tortuga",
+    "winner": "cand2",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Co-founded a 110+ member student product studio that has shipped 5 live products, and personally built Redis caching in front of the Prisma ORM queries for one of them, Tortuga, a class scheduler with 20,000+ visits in its first 30 days",
+    "decisive_wording": "\"Co-founded a 110+ member student product studio with 5 live products. For one, Tortuga, ...\"",
+    "info": "A and C keep all facts including 'to reduce database load'; B drops the purpose of the cache but adds 'personally' to clarify ownership."
+  },
+  {
+    "fact": "terplabs.rag_meal",
+    "winner": "cand2",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Building a retrieval-augmented (RAG) meal-suggestion feature for the official UMD app, in which GPT-4o mini writes suggestions from scraped recipes found by SentenceBERT vector search in ChromaDB, and internal testers rated 93% of meals satisfactory",
+    "decisive_wording": "\"GPT-4o mini writes suggestions from scraped recipes found by SentenceBERT vector search in ChromaDB\"",
+    "info": "A and B keep scraped recipes, SentenceBERT, ChromaDB, GPT-4o mini, RAG, 93%. C drops 'scraped recipes' and the roles of each component, listing tools in a parenthetical."
+  },
+  {
+    "fact": "capital_one.ui_overhaul",
+    "winner": "incumbent",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and 90% of 30+ surveyed developers preferred it",
+    "decisive_wording": "\"as a React and TypeScript Electron app\"",
+    "info": "A names React and TypeScript as the app stack; B ties TypeScript only to validation but adds 'desktop' and 'over the old tool'. Both keep React Flow, Jest, 90% of 30+ developers."
+  },
+  {
+    "fact": "iex.storage_benchmark",
+    "winner": "cand1",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Implemented B+ tree and LSM-tree backends for the engine's event-log store and benchmarked them on identical 2M-record workloads, where the B+ tree gave 12.8x the read throughput and 22x faster range summaries for 27% more disk",
+    "decisive_wording": "\"Implemented B+ tree and LSM-tree backends ... and benchmarked them\"",
+    "info": "Both keep 2M records, 12.8x reads, 22x range, 27% more disk. B states that both backends were built; A says only 'Compared'. A says 'range queries' (clearer) where B says 'range summaries'."
+  },
+  {
+    "fact": "iex.throughput",
+    "winner": "cand1",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Sustained 1.26M events/sec end-to-end over the full replay, with price levels in a std::map of FIFO queues and a hash map from order ID to queue position for O(1) cancels",
+    "decisive_wording": "\"keeping each price level's orders in a std::list FIFO inside a std::map and a hash map from order ID to list iterator for O(1) cancels\"",
+    "info": "A and C keep std::list and list iterator; B replaces them with 'FIFO queues' and 'queue position', losing the detail that makes O(1) cancel valid."
+  }
+]
