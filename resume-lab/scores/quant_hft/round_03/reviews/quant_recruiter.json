@@ -1,0 +1,50 @@
+{
+  "persona": "quant_recruiter",
+  "target": "Software engineering intern roles at quantitative trading / HFT firms (Jane Street, HRT, Citadel Securities, Optiver, IMC style), 2026–27 cycle. Score domain_fit for this domain.",
+  "seven_second_takeaway": "UMD CS '28, GPA 3.5. Leads with a C++17 IEX order book replaying 50.9M messages at 1.26M events/sec. AWS and Capital One internships.",
+  "scores": {"impact_clarity": 8, "quantification": 8, "technical_depth": 8, "concision_readability": 7,
+             "skim_test": 8, "credibility": 7, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 8, "overall": 7},
+  "score_rationale": {
+    "concision_readability": "Project bullets pack 3-4 numbers each; 686.7 ns, 1.41x mirror-only and B+/LSM ratios slow the read.",
+    "credibility": "Latency figures need reconciling: 120 ns p50 / 1.2 us p99, 686.7 ns mean, and 1.26M ev/s (~794 ns) look inconsistent.",
+    "overall": "Order book project is exactly what we screen for, but GPA 3.5 is below our usual bar and there are no competitive or rigor signals."
+  },
+  "competitive_for_domain": "stretch",
+  "must_fix": [
+    "clarify: the latency numbers across bullets 2 and 3 (p50 120 ns, p99 1.2 us, mean 686.7 ns/event, 1.26M events/sec = ~794 ns/event). Say which run and which scope (book op only vs. end-to-end with parsing/I/O) each one measures, or an interviewer will go after the gap first.",
+    "clarify: what 'full matching takes 1.41x the time of a mirror-only book' means. Most screeners won't know 'mirror-only'."
+  ],
+  "bullets": [
+    {"quote": "Built a C++17 order book and matching engine", "verdict": "keep"},
+    {"quote": "Indexed orders in a hash map holding iterators", "verdict": "tighten",
+     "issue": "Strong design detail, but the latency numbers conflict with the next bullet's mean and need their run and scope stated.",
+     "suggestion": "Indexed orders in a hash map of iterators into per-price FIFO queues (std::map levels) for O(1) cancels; 120 ns p50 / 1.2 µs p99 per book update on a 2M-event run"},
+    {"quote": "Sustained 1.26M events/sec end-to-end, averaging 686.7 ns/event", "verdict": "add_context",
+     "issue": "686.7 ns doesn't match 1.26M/s; the 'mirror-only' comparison is jargon.",
+     "suggestion": "Sustained 1.26M events/sec end-to-end at a fixed 1.40 GHz base clock; full matching costs 1.41x a book that only mirrors the feed"},
+    {"quote": "Traced a 1.65× phantom regression to a CPU-governor", "verdict": "keep"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores", "verdict": "tighten",
+     "issue": "Storage benchmarking is off the hot path for HFT; weakest of the five, so consider shortening it.",
+     "suggestion": "Benchmarked B+ tree vs LSM skip-list stores for the event log on 2M records: B+ tree gave 12.8x read throughput for 27% more disk"},
+    {"quote": "Writing Java policies that tune upper/lower bounds", "verdict": "keep"},
+    {"quote": "Precomputed a tree-style search index over popular workflows", "verdict": "tighten",
+     "issue": "Ends at intent; heavy on tool names with little low-latency relevance.",
+     "suggestion": "Precomputed a tree-style search index over a 270K+ row PostgreSQL table (Redis-cached) as the Claude skill's main search tool under DB access limits"},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a", "verdict": "keep"},
+    {"quote": "Built a Python pipeline for PhysTwin (PhD-led", "verdict": "tighten",
+     "issue": "Off-domain for quant; dense proper nouns for a recruiter.",
+     "suggestion": "Built a Python pipeline for PhysTwin (PhD-led digital twin, targeting ICLR) turning multi-camera grasp predictions into Open3D overlays for a VLM; tuned prompts for grasp choice and depth"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep"}
+  ],
+  "structure": [
+    {"key": "keep_project_first", "change": "Keep the IEX project above Experience for this target.", "rationale": "It is the single strongest HFT signal; leading with it is the right call."},
+    {"key": "gpa_placement", "change": "Keep GPA listed (omitting it reads worse at quant firms), and add relevant coursework only if it includes algorithms/OS/architecture.", "rationale": "Firms filter on GPA; rigorous coursework can partially offset a 3.5."},
+    {"key": "trim_offdomain_experience", "change": "Shorten the UMIACS bullet to one line, or drop it if space is needed for project detail.", "rationale": "ML/VLM research adds little for an HFT SWE screen and pushes systems signal down."}
+  ],
+  "top3": [
+    "clarify: make the order book latency/throughput figures consistent and state what each one measures (run size, scope, clock). This is the first thing a quant interviewer will probe.",
+    "clarify: replace or explain 'mirror-only book' so the 1.41x matching overhead reads at a glance.",
+    "Lighten the number density in the project bullets (shorten the B+/LSM bullet) so the three headline wins stand out: 50.9M messages exact, 1.26M ev/s, 6% to 0.06% variance."
+  ]
+}

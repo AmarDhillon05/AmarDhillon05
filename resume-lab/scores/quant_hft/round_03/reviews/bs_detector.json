@@ -1,0 +1,38 @@
+{
+  "persona": "bs_detector",
+  "target": "Software engineering intern roles at quantitative trading / HFT firms (Jane Street, HRT, Citadel Securities, Optiver, IMC style), 2026–27 cycle. Score domain_fit for this domain.",
+  "seven_second_takeaway": "UMD CS '28 with a C++ IEX order book replaying 50.9M real messages at 1.26M events/sec, plus AWS and Capital One SWE internships.",
+  "scores": {"impact_clarity": 8, "quantification": 7, "technical_depth": 9, "concision_readability": 8,
+             "skim_test": 8, "credibility": 7, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 8, "overall": 8},
+  "score_rationale": {
+    "quantification": "IEX numbers don't reconcile: 686.7 ns/event implies ~1.46M/s, not 1.26M/s; a 120 ns p50 with 1.2 µs p99 sits oddly beside a 687 ns mean.",
+    "credibility": "The order-book work reads as genuine, but an HFT interviewer will check the latency numbers against each other. Right now they disagree, which is the fastest way to lose trust."
+  },
+  "competitive_for_domain": "stretch",
+  "must_fix": [
+    "clarify: 1.26M events/sec and 686.7 ns/event don't match (1/686.7 ns ≈ 1.46M/s). State what each one measures (e.g. parse+match vs match only, or wall-clock vs per-event timer) or make them agree.",
+    "clarify: p50 120 ns / p99 1.2 µs (2M-event run) vs 686.7 ns mean (full run, 1.40 GHz). If they come from different runs, clock settings or scopes, say so. Otherwise the mean is far above p50 but below p99 in a way that needs a heavy p99.9 tail to explain."
+  ],
+  "bullets": [
+    {"quote": "Built a C++17 order book and matching engine", "verdict": "keep"},
+    {"quote": "Indexed orders in a hash map holding iterators", "verdict": "add_context", "issue": "Percentiles come from a 2M-event run whose setup isn't stated, so they clash with the 686.7 ns mean in the next bullet.", "suggestion": "Indexed orders in a hash map of iterators into per-price FIFO queues (std::map levels, O(1) cancels); matching-only latency 120 ns p50 / 1.2 µs p99 on a 2M-event run"},
+    {"quote": "Sustained 1.26M events/sec end-to-end, averaging 686.7 ns/event", "verdict": "reframe", "issue": "Throughput and ns/event in the same bullet disagree by ~15%. Unexplained, an interviewer will catch it immediately.", "suggestion": "Sustained 1.26M events/sec end-to-end (parse + match) at a fixed 1.40 GHz base clock; full matching costs 1.41× a mirror-only book"},
+    {"quote": "Traced a 1.65× phantom regression to a CPU-governor", "verdict": "keep"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores", "verdict": "tighten", "issue": "Storage-engine tangent with little HFT relevance. It weakens the latency story and is the cut candidate if space is needed.", "suggestion": "Benchmarked B+ tree vs LSM skip-list stores for the replay log (2M records): B+ tree gave 12.8× read throughput for 27% more disk"},
+    {"quote": "Writing Java policies that tune upper/lower bounds", "verdict": "keep", "issue": "Honestly scoped as in-progress, which is good."},
+    {"quote": "Precomputed a tree-style search index over popular", "verdict": "tighten", "issue": "'as the Claude skill's main search tool' is awkward phrasing, and the bullet stops at intent with no result (accepted risk).", "suggestion": "Precomputed a tree-style search index over popular workflows in a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to serve as the skill's main search tool under DB access limits"},
+    {"quote": "Cut LLM workflow generation time 65% to under", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep", "issue": "Baseline isn't stated, but the change (S3 hops replaced by Kinesis) is concrete and defensible."},
+    {"quote": "Built a Python pipeline for PhysTwin (PhD-led digital", "verdict": "tighten", "issue": "'targeting ICLR' is borrowed prestige that's fine if it's true. 'tuned its prompts' is a vague outcome.", "suggestion": "Built a Python pipeline for PhysTwin (PhD-led digital twin) turning AnyGrasp output on multi-camera images into Open3D overlays for a VLM; tuned prompts for grasp selection and depth judgment"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep", "issue": "The 20K visits belong to the team. Your own part (Redis caching) is correctly shown as smaller."}
+  ],
+  "structure": [
+    {"key": "keep_project_first", "change": "Keep the IEX project above Experience for quant/HFT submissions.", "rationale": "It's the only low-latency C++ evidence on the page, and HFT screeners hire on exactly that."},
+    {"key": "split_latency_metrics", "change": "Put all IEX performance numbers in one bullet with a single named methodology, or label each scope explicitly.", "rationale": "Three performance figures spread across two bullets, measured under different conditions, invite a credibility probe."}
+  ],
+  "top3": [
+    "clarify: reconcile 1.26M events/sec with 686.7 ns/event, or label what each measures",
+    "clarify: say whether the p50/p99 and the mean come from the same run, clock and scope; otherwise the distribution looks inconsistent",
+    "Trim or demote the B+ tree vs LSM bullet so the IEX block stays focused on latency and correctness"
+  ]
+}

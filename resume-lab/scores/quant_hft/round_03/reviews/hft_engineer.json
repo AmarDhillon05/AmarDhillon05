@@ -1,0 +1,46 @@
+{
+  "persona": "hft_engineer",
+  "target": "Software engineering intern roles at quantitative trading / HFT firms (Jane Street, HRT, Citadel Securities, Optiver, IMC style), 2026–27 cycle. Score domain_fit for this domain.",
+  "seven_second_takeaway": "UMD CS '28; C++17 IEX order book replaying 50.9M real messages with exact fill match, ns-level latency, perf-counter debugging; AWS and Capital One internships.",
+  "scores": {"impact_clarity": 8, "quantification": 7, "technical_depth": 8, "concision_readability": 8,
+             "skim_test": 8, "credibility": 7, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 8, "overall": 8},
+  "score_rationale": {
+    "quantification": "IEX latency figures don't obviously reconcile: 1.26M events/s implies ~794 ns/event, not 686.7 ns; 686.7 ns mean vs 120 ns p50 needs stated scope.",
+    "credibility": "Strong honest details (99,122/99,123, negative result), but unreconciled throughput/mean/percentile numbers would be the first thing I probe and could unravel."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "clarify: 1.26M events/sec and 686.7 ns/event average don't match (1/686.7 ns is ~1.46M/s); state whether they come from different runs or include different work (parse, I/O)",
+    "clarify: what the 120 ns p50 / 1.2 µs p99 measures (book update only vs end-to-end) and whether it was on the same fixed 1.40 GHz clock, so it reconciles with the 686.7 ns mean"
+  ],
+  "bullets": [
+    {"quote": "Built a C++17 order book and matching", "verdict": "keep"},
+    {"quote": "Indexed orders in a hash map holding", "verdict": "add_context",
+     "issue": "Percentile scope unclear relative to the 686.7 ns mean; reader can't tell what was timed.",
+     "suggestion": "Indexed orders in a hash map of iterators into per-price FIFO queues (std::map levels, O(1) cancels); book-update latency 120 ns p50 / 1.2 µs p99 on a 2M-event run (state scope as measured)"},
+    {"quote": "Sustained 1.26M events/sec end-to-end, averaging 686.7", "verdict": "tighten",
+     "issue": "Throughput and mean per-event time don't reconcile; drop false precision or explain the gap.",
+     "suggestion": "Sustained 1.26M events/sec end-to-end at a fixed 1.40 GHz base clock; full matching costs 1.41× a mirror-only book (keep the ns/event figure only if it matches the throughput run)"},
+    {"quote": "Traced a 1.65× phantom regression to a", "verdict": "keep"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores", "verdict": "keep"},
+    {"quote": "Writing Java policies that tune upper/lower bounds", "verdict": "keep"},
+    {"quote": "Precomputed a tree-style search index over popular", "verdict": "tighten",
+     "issue": "\"the Claude skill\" is undefined jargon to a trading-firm reader; ends at intent.",
+     "suggestion": "Precomputed a tree-style search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to serve an LLM agent's search under DB access limits"},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep"},
+    {"quote": "Built a Python pipeline for PhysTwin (PhD-led", "verdict": "tighten",
+     "issue": "Low relevance for HFT; dense proper nouns slow the read.",
+     "suggestion": "Built a Python pipeline turning AnyGrasp output on multi-camera images into Open3D overlays for a VLM in a PhD-led digital-twin project; tuned prompts for grasp selection and depth"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep"}
+  ],
+  "structure": [
+    {"key": "keep_project_first", "change": "Keep the IEX project above Experience for this domain version.", "rationale": "It is the only evidence I hire on; leading with it is exactly right for HFT screens."},
+    {"key": "skills_order", "change": "Keep 'Systems & Performance' directly under Languages; consider trimming Cloud & Tools to the items used in bullets.", "rationale": "Cloud tooling list dilutes the low-latency signal for a trading-firm reader."}
+  ],
+  "top3": [
+    "clarify: reconcile 1.26M events/s, 686.7 ns/event mean, and 120 ns p50 / 1.2 µs p99 by stating what each measures and on which run",
+    "Replace 'the Claude skill' with plain wording so non-LLM readers parse the Capital One bullets",
+    "Tighten the UMIACS bullet; it's least relevant to trading and its proper-noun density costs skim time"
+  ]
+}
