@@ -1,0 +1,106 @@
+{
+  "g01": {
+    "fact": "capital_one.ui_overhaul",
+    "labels": {
+      "A": "cand2",
+      "B": "cand1",
+      "C": "incumbent"
+    },
+    "texts": {
+      "cand2": "Replaced a legacy test-data workflow builder with a React, TypeScript and Electron app built around a visual React Flow editor, with Jest-tested validation; 90% of 30+ surveyed developers preferred the new tool",
+      "cand1": "Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and 90% of 30+ surveyed developers preferred it",
+      "incumbent": "Rebuilt a legacy test-data workflow builder in React/TypeScript + Electron, adding a React-Flow editor and Jest-tested validation; 90% of 30+ surveyed developers preferred it to the old tool"
+    }
+  },
+  "g02": {
+    "fact": "capital_one.search_index",
+    "labels": {
+      "A": "cand3",
+      "B": "cand2",
+      "C": "incumbent",
+      "D": "cand1"
+    },
+    "texts": {
+      "cand3": "Built a Python and SQLAlchemy job that distills popular workflows from a 270K+ row PostgreSQL table into a category tree index, the main search tool the Claude skill uses, so lookups avoid most queries to the access-limited database",
+      "cand2": "Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows, cutting the database queries each lookup needs",
+      "incumbent": "Precomputed a category-keyed tree index of popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to minimize DB queries under access limits",
+      "cand1": "Built the search index that the Claude skill calls first: a tree of popular workflows organized by category, precomputed with Python and SQLAlchemy from a 270K+ row PostgreSQL table so lookups need fewer queries to the access-limited database"
+    }
+  },
+  "g03": {
+    "fact": "amazon_contract.leo_deploy",
+    "labels": {
+      "A": "incumbent",
+      "B": "cand2",
+      "C": "cand1"
+    },
+    "texts": {
+      "incumbent": "Shipped a space-research tool used by Amazon Leo's public-policy team, now maintained by Leo engineers; deployed on AWS Fargate (Docker) via GitHub Actions and CDK (TypeScript)",
+      "cand2": "Shipped a space-topic research tool that Amazon Leo's public-policy team uses, running in Docker on AWS Fargate, and wrote its AWS CDK infrastructure-as-code and GitHub Actions CI/CD so Leo engineers could take it over",
+      "cand1": "Deployed a space-topic research tool for Amazon Leo's public-policy team and set it up for handoff with AWS CDK infrastructure-as-code and GitHub Actions CI/CD, so Leo engineers new to the project now maintain it on AWS Fargate"
+    }
+  },
+  "g04": {
+    "fact": "amazon_contract.kinesis_pipeline",
+    "labels": {
+      "A": "cand1",
+      "B": "cand2",
+      "C": "incumbent"
+    },
+    "texts": {
+      "cand1": "Cut end-to-end latency 34% on a pipeline that sends 6,000+ scraped research documents to model inference by replacing S3 staging between steps with Amazon Kinesis streams feeding AWS Lambda",
+      "cand2": "Reduced end-to-end latency 34% for the pipeline that moves 6,000+ scraped research documents into model inference, replacing scraper-to-S3-to-Lambda staging with Amazon Kinesis streams feeding AWS Lambda",
+      "incumbent": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda"
+    }
+  },
+  "g05": {
+    "fact": "umiacs.grasp_vlm",
+    "labels": {
+      "A": "cand1",
+      "B": "cand2",
+      "C": "incumbent"
+    },
+    "texts": {
+      "cand1": "Built a Python pipeline that helps a vision-language model pick robot grasps for PhysTwin, a PhD-led digital-twin project targeting ICLR: it draws AnyGrasp candidates from multi-camera images as Open3D overlays, and prompt tuning improved its picks",
+      "cand2": "For a PhD-led robotics project targeting ICLR, built a Python pipeline that draws AnyGrasp grasp candidates from multi-camera images as Open3D overlays and tuned prompts so a vision-language model picks the correct grasp more often",
+      "incumbent": "Built a Python pipeline for PhysTwin (PhD-led digital twin, targeting ICLR) turning AnyGrasp output on multi-camera images into Open3D overlays for a VLM; tuned its prompts to pick correct grasps and judge depth"
+    }
+  },
+  "g06": {
+    "fact": "terplabs.rag_meal",
+    "labels": {
+      "A": "cand1",
+      "B": "cand2",
+      "C": "incumbent"
+    },
+    "texts": {
+      "cand1": "Building a meal-suggestion feature for the official UMD app that finds matching scraped recipes with SentenceBERT and ChromaDB vector search and has GPT-4o mini write suggestions (RAG), and internal testers rated 93% of meals satisfactory",
+      "cand2": "Building retrieval-augmented generation (RAG) meal suggestions for the official UMD app, where GPT-4o mini writes from recipes found by SentenceBERT and ChromaDB vector search, and 93% of generated meals were rated satisfactory by internal testers",
+      "incumbent": "Building a RAG meal-suggestion feature for the official UMD app (GPT-4o mini, ChromaDB + SentenceBERT search); 93% of generated meals rated satisfactory by internal testers"
+    }
+  },
+  "g07": {
+    "fact": "iex.replay_correctness",
+    "labels": {
+      "A": "incumbent",
+      "B": "cand1"
+    },
+    "texts": {
+      "incumbent": "Engineered a C++17 order book and matching engine that replayed 50.9M real IEX DEEP+ messages with no resync, matching 99,122 of 99,123 fills exactly and 100% of top-of-book prices",
+      "cand1": "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange's book, matching 99,122 of 99,123 fills and 100% of top-of-book prices"
+    }
+  },
+  "g08": {
+    "fact": "iex.throughput",
+    "labels": {
+      "A": "cand1",
+      "B": "cand2",
+      "C": "incumbent"
+    },
+    "texts": {
+      "cand1": "Designed the book around std::map price levels holding FIFO order queues plus a hash map for O(1) cancels, and the full replay ran at 1.26M events/sec end-to-end",
+      "cand2": "Sustained 1.26M events/sec end-to-end over the full replay, with price levels in a std::map of FIFO queues and a hash map from order ID to queue position for O(1) cancels",
+      "incumbent": "Sustained 1.26M events/sec end-to-end over the full replay, averaging 686.7 ns/event in the matching engine"
+    }
+  }
+}

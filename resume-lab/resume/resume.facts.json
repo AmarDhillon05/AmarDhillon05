@@ -7,6 +7,7 @@
     "capital_one.claude_skill",
     "capital_one.search_index",
     "capital_one.ui_overhaul",
+    "iex.data_structures",
     "iex.replay_correctness",
     "iex.storage_benchmark",
     "iex.throughput",

@@ -1,0 +1,74 @@
+[
+  {
+    "fact": "capital_one.ui_overhaul",
+    "winner": "cand1",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and 90% of 30+ surveyed developers preferred it",
+    "decisive_wording": "the legacy tool developers use to create test-data workflows",
+    "info": "All three keep React, TypeScript, Electron, React Flow, Jest validation, and 90% of 30+ developers. B explains what the tool is for in plain words. A and C compress it to the noun stack 'test-data workflow builder'. C misspells React Flow as 'React-Flow' and uses slash/plus shorthand."
+  },
+  {
+    "fact": "capital_one.search_index",
+    "winner": "cand2",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows, cutting the database queries each lookup needs",
+    "decisive_wording": "Because the 270K+ row PostgreSQL workflow table had strict access limits ... with Redis caching full workflows",
+    "info": "B keeps the reason (access limits), the category tree, the Claude skill searching it first, Redis caching, and fewer queries, but drops the Python and SQLAlchemy names. A and D keep Python and SQLAlchemy but drop Redis. C keeps everything but drops the Claude skill and is a compressed noun stack."
+  },
+  {
+    "fact": "amazon_contract.leo_deploy",
+    "winner": "cand1",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Deployed a space-topic research tool for Amazon Leo's public-policy team and set it up for handoff with AWS CDK infrastructure-as-code and GitHub Actions CI/CD, so Leo engineers new to the project now maintain it on AWS Fargate",
+    "decisive_wording": "so Leo engineers new to the project now maintain it on AWS Fargate",
+    "info": "C states both the handoff work (CDK, GitHub Actions) and the confirmed result that engineers now maintain it. B only says they 'could take it over' and adds Docker. A has the maintenance result but ends on a parenthetical tech dump."
+  },
+  {
+    "fact": "amazon_contract.kinesis_pipeline",
+    "winner": "cand1",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+    "decisive_wording": "by replacing S3 staging between steps with Amazon Kinesis streams feeding AWS Lambda",
+    "info": "All three keep 34%, 6,000+ documents, and the swap from S3 to Kinesis and Lambda. A and B use the full Amazon/AWS service names, which help ATS matching. B's 'scraper-to-S3-to-Lambda' adds a little detail but is clunky. C is shortest but drops the vendor prefixes."
+  },
+  {
+    "fact": "umiacs.grasp_vlm",
+    "winner": "cand2",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "For a PhD-led robotics project targeting ICLR, built a Python pipeline that draws AnyGrasp grasp candidates from multi-camera images as Open3D overlays and tuned prompts so a vision-language model picks the correct grasp more often",
+    "decisive_wording": "tuned prompts so a vision-language model picks the correct grasp more often",
+    "info": "B drops the PhysTwin name and 'digital twin' but keeps ICLR, PhD-led, AnyGrasp, Open3D, multi-camera input, and the VLM outcome. A keeps PhysTwin but its outcome ('improved its picks') is vague and the colon structure is awkward. C adds 'judge depth' but is dense and abbreviated."
+  },
+  {
+    "fact": "terplabs.rag_meal",
+    "winner": "cand2",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Building a RAG meal-suggestion feature for the official UMD app (GPT-4o mini, ChromaDB + SentenceBERT search); 93% of generated meals rated satisfactory by internal testers",
+    "decisive_wording": "where GPT-4o mini writes from recipes found by SentenceBERT and ChromaDB vector search",
+    "info": "A and B both explain how the retrieval and generation fit together. A adds 'scraped'. B spells out RAG for both recruiters and ATS. C keeps all the tool names but drops the mechanism, putting them in a parenthetical list."
+  },
+  {
+    "fact": "iex.replay_correctness",
+    "winner": "cand1",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange's book, matching 99,122 of 99,123 fills and 100% of top-of-book prices",
+    "decisive_wording": "without ever resyncing to the exchange's book",
+    "info": "B explains what 'no resync' means, so non-specialists see why it matters. It drops the precise feed name 'DEEP+' and the word 'exactly'. A keeps both but leaves 'no resync' as unexplained jargon."
+  },
+  {
+    "fact": "iex.throughput",
+    "winner": "cand2",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Sustained 1.26M events/sec end-to-end over the full replay, with price levels in a std::map of FIFO queues and a hash map from order ID to queue position for O(1) cancels",
+    "decisive_wording": "a hash map from order ID to queue position for O(1) cancels",
+    "info": "B and A both keep 1.26M events/sec, std::map price levels, FIFO queues, and O(1) cancels. B states exactly what the hash map stores, while A says only 'a hash map'. C drops all data-structure design in favor of 686.7 ns/event."
+  }
+]

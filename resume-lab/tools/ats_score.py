@@ -10,6 +10,7 @@ usage: ats_score.py <resume.pdf|.txt> <variant> [--json out.json]
 2. Claimable = the term (or its evidence regex) appears in resume/facts.yaml, i.e. Amar can
    honestly list it. Missing non-claimable terms are reported but never count against him.
 3. The resume is read as plain pdftotext output (what an ATS ingests).
+Soft skills (communication, collaboration) are not scored: they are shown through content, not keywords.
 Target: >= 90% of claimable must-haves present.
 """
 import json
@@ -40,7 +41,10 @@ VOCAB = {
     "data pipelines / ETL": (r"data pipelines?|\betl\b|pipelines?", r"pipeline"),
     "distributed systems": (r"distributed (systems?|computing)", r"distributed"),
     "microservices": (r"microservices?", None), "serverless": (r"serverless|\blambda\b", r"lambda"),
-    "caching": (r"cach(e|ing)", r"redis|cach"), "scalability": (r"scal(able|ability|e)\b", r"\bscale|throughput"),
+    "caching": (r"cach(e|ing)", r"redis|cach"),
+    # stricter evidence (loop 2 review): "scaled a studio" is not technical scalability; nothing in the
+    # facts is a system-design claim. Both stay listed but not claimable.
+    "scalability": (r"scal(able|ability|e)\b", r"scalab"),
     "performance optimization": (r"performance|latency|throughput|optimi[sz]", r"latency|throughput|perf\b"),
     "low latency": (r"low.latency|latency.sensitive", r"latency|ns/event|µs"),
     "data structures & algorithms": (r"data structures?|algorithms?", r"order book|b\+ tree|skip list|hash map|std::map"),
@@ -50,7 +54,7 @@ VOCAB = {
     "unit testing": (r"unit test|testing|test.driven|\btdd\b", r"pytest|jest|test"),
     "debugging": (r"debug", r"profil|diagnos|bottleneck"),
     "monitoring / observability": (r"monitor|observab|logging|metrics", r"cloudwatch|x-ray|logs"),
-    "system design": (r"system design|design (and|&) (build|implement)|architect", r"architecture|design"),
+    "system design": (r"system design|design (and|&) (build|implement)|architect", r"system design"),
     "machine learning": (r"machine learning|\bml\b", r"model|fine-tun|classif"),
     "LLMs": (r"\bllms?\b|large language model|generative ai|genai", r"\bllm|claude|gpt"),
     "RAG / retrieval": (r"\brag\b|retrieval|vector (db|database|search)|embedding", r"\brag\b|chromadb|sentencebert"),
@@ -60,7 +64,6 @@ VOCAB = {
     "full stack": (r"full.?stack|front.?end", r"react|electron"), "backend": (r"back.?end|server.side", r"postgres|api|lambda"),
     "developer tools": (r"developer (tools|tooling|productivity|experience)|internal tools", r"developer|workflow builder|tool"),
     "agile": (r"\bagile\b|scrum", r"agile|jira"), "code review": (r"code review", None),
-    "communication / collaboration": (r"communicat|collaborat|cross.functional", None),
     "storage engines": (r"storage|database internals|query engine", r"b\+ tree|lsm"),
     "benchmarking / profiling": (r"benchmark|profil", r"benchmark|perf\b|psutil"),
     "probability / statistics": (r"statistic|probabilit", r"statistics"),

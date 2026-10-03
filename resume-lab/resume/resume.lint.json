@@ -4,48 +4,48 @@
   "bullets": [
     {
       "fact": "aws_sde.redshift",
-      "chars": 185,
-      "words": 24,
+      "chars": 218,
+      "words": 31,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.58,
-      "text": "Writing Java policies that tune upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations like patching, balancing availability against cost; initial backtests complete"
+      "last_fill": 0.85,
+      "text": "Writing Java logic that decides how much EC2 capacity Amazon Redshift reserves for operations like patching, setting upper and lower bounds that keep availability high without overspending, and backtesting the policies"
     },
     {
       "fact": "capital_one.ui_overhaul",
-      "chars": 190,
-      "words": 28,
+      "chars": 215,
+      "words": 34,
       "n_bold": 1,
       "n_lines": 2,
-      "last_fill": 0.59,
-      "text": "Rebuilt a legacy test-data workflow builder in React/TypeScript + Electron, adding a React-Flow editor and Jest-tested validation; 90% of 30+ surveyed developers preferred it to the old tool"
+      "last_fill": 0.84,
+      "text": "Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and 90% of 30+ surveyed developers preferred it"
     },
     {
       "fact": "capital_one.search_index",
-      "chars": 170,
-      "words": 24,
+      "chars": 220,
+      "words": 33,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.66,
-      "text": "Precomputed a category-keyed tree index of popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to minimize DB queries under access limits"
+      "last_fill": 0.88,
+      "text": "Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries"
     },
     {
       "fact": "capital_one.claude_skill",
-      "chars": 184,
-      "words": 28,
+      "chars": 226,
+      "words": 36,
       "n_bold": 1,
       "n_lines": 2,
-      "last_fill": 0.62,
-      "text": "Cut LLM workflow generation time 65% to under 15s by decomposing a Claude skill into sub-skills backed by Python search/validation tools, guided by CloudWatch + OpenSearch latency logs"
+      "last_fill": 0.93,
+      "text": "Cut AI workflow generation time 65% to under 15s by splitting one large Claude skill into smaller sub-skills that call Python tools for search and validation, after CloudWatch and OpenSearch latency logs showed where time went"
     },
     {
       "fact": "amazon_contract.leo_deploy",
-      "chars": 176,
-      "words": 26,
+      "chars": 227,
+      "words": 37,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.56,
-      "text": "Shipped a space-research tool used by Amazon Leo's public-policy team, now maintained by Leo engineers; deployed on AWS Fargate (Docker) via GitHub Actions and CDK (TypeScript)"
+      "last_fill": 1.0,
+      "text": "Deployed a space-topic research tool for Amazon Leo's public-policy team and set it up for handoff with AWS CDK infrastructure-as-code and GitHub Actions CI/CD, so Leo engineers new to the project now maintain it on AWS Fargate"
     },
     {
       "fact": "amazon_contract.kinesis_pipeline",
@@ -58,39 +58,39 @@
     },
     {
       "fact": "amazon_contract.bedrock_finetune",
-      "chars": 179,
-      "words": 24,
+      "chars": 221,
+      "words": 35,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.56,
-      "text": "Automated a production EventBridge fine-tuning loop for a Bedrock document-importance classifier, retraining only when a larger LLM's cross-model eval scores move past a threshold"
+      "last_fill": 0.92,
+      "text": "Automated retraining for a production Amazon Bedrock model that sorts research documents by importance: on an EventBridge schedule a larger LLM grades it, and it is fine-tuned only when those grades shift past a threshold"
     },
     {
       "fact": "umiacs.grasp_vlm",
-      "chars": 211,
-      "words": 33,
+      "chars": 223,
+      "words": 34,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.82,
-      "text": "Built a Python pipeline for PhysTwin (PhD-led digital twin, targeting ICLR) turning AnyGrasp output on multi-camera images into Open3D overlays for a VLM; tuned its prompts to pick correct grasps and judge depth"
+      "last_fill": 1.0,
+      "text": "For a PhD-led robotics project targeting ICLR, built a Python pipeline that draws AnyGrasp candidates from multi-camera images as Open3D overlays and tuned prompts so a vision-language model picks the right grasp more often"
     },
     {
       "fact": "umiacs.env_setup",
-      "chars": 157,
-      "words": 21,
+      "chars": 177,
+      "words": 28,
       "n_bold": 1,
       "n_lines": 2,
-      "last_fill": 0.38,
-      "text": "Shortened research-environment setup time 30% with uv dependency pinning and Docker; added psutil time/memory profiling and Pytest suites to find bottlenecks"
+      "last_fill": 0.53,
+      "text": "Cut research-environment setup time 30% with uv dependency pinning and Docker, and added psutil time and memory profiling and Pytest unit tests to help the team find bottlenecks"
     },
     {
       "fact": "terplabs.studio+terplabs.tortuga",
-      "chars": 206,
-      "words": 34,
+      "chars": 228,
+      "words": 39,
       "n_bold": 1,
       "n_lines": 2,
-      "last_fill": 0.82,
-      "text": "Co-founded a 110+ member campus product studio that has shipped 5 live products, including Tortuga, a class scheduler with 20,000+ visits in its first 30 days; built Redis caching for its Prisma ORM queries"
+      "last_fill": 0.92,
+      "text": "Co-founded a 110+ member student product studio that has shipped 5 live products, and personally built Redis caching in front of the Prisma ORM queries for one, Tortuga, a class scheduler with 20,000+ visits in its first 30 days"
     },
     {
       "fact": "terplabs.rag_meal",
@@ -103,39 +103,114 @@
     },
     {
       "fact": "iex.replay_correctness",
-      "chars": 180,
-      "words": 29,
+      "chars": 211,
+      "words": 34,
       "n_bold": 1,
       "n_lines": 2,
-      "last_fill": 0.58,
-      "text": "Engineered a C++17 order book and matching engine that replayed 50.9M real IEX DEEP+ messages with no resync, matching 99,122 of 99,123 fills exactly and 100% of top-of-book prices"
+      "last_fill": 0.84,
+      "text": "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange's book, matching 99,122 of 99,123 fills and 100% of top-of-book prices"
     },
     {
       "fact": "iex.storage_benchmark",
-      "chars": 197,
-      "words": 32,
+      "chars": 202,
+      "words": 35,
       "n_bold": 1,
       "n_lines": 2,
       "last_fill": 0.71,
-      "text": "Benchmarked B+ tree vs LSM skip-list stores for the simulation's event logs on identical 2M-record workloads; the B+ tree gave 12.8\u00d7 read throughput and 22\u00d7 faster range summaries for 27% more disk"
+      "text": "Compared B+ tree and LSM skip-list storage for the engine's event logs on identical 2M-record workloads: the B+ tree read 12.8x faster and answered range queries 22x faster, at the cost of 27% more disk"
     },
     {
-      "fact": "iex.throughput",
-      "chars": 107,
-      "words": 15,
+      "fact": "iex.throughput+iex.data_structures",
+      "chars": 170,
+      "words": 30,
       "n_bold": 1,
-      "n_lines": 1,
-      "last_fill": 1.0,
-      "text": "Sustained 1.26M events/sec end-to-end over the full replay, averaging 686.7 ns/event in the matching engine"
+      "n_lines": 2,
+      "last_fill": 0.44,
+      "text": "Sustained 1.26M events/sec end-to-end over the full replay, with price levels in a std::map of FIFO queues and a hash map from order ID to queue position for O(1) cancels"
     }
   ],
   "issues": [
     {
+      "level": "ERROR",
+      "where": "document",
+      "msg": "2 pages (want 1)"
+    },
+    {
       "level": "WARN",
-      "where": "Automated a production EventBridge fine-tuning loo",
+      "where": "Writing Java logic that decides how much EC2 capac",
+      "msg": "voice: noun stack of 8 words"
+    },
+    {
+      "level": "WARN",
+      "where": "Because the 270K+ row PostgreSQL workflow table ha",
+      "msg": "opening 'Because' may not be an action verb"
+    },
+    {
+      "level": "WARN",
+      "where": "Because the 270K+ row PostgreSQL workflow table ha",
+      "msg": "voice: noun stack of 8 words"
+    },
+    {
+      "level": "WARN",
+      "where": "Cut AI workflow generation time 65% to under 15s b",
+      "msg": "voice: noun stack of 5 words"
+    },
+    {
+      "level": "WARN",
+      "where": "Deployed a space-topic research tool for Amazon Le",
       "msg": "no metric or explicit outcome"
+    },
+    {
+      "level": "WARN",
+      "where": "Deployed a space-topic research tool for Amazon Le",
+      "msg": "voice: noun stack of 5 words"
+    },
+    {
+      "level": "WARN",
+      "where": "Automated retraining for a production Amazon Bedro",
+      "msg": "no metric or explicit outcome"
+    },
+    {
+      "level": "WARN",
+      "where": "For a PhD-led robotics project targeting ICLR, bui",
+      "msg": "opening 'For' may not be an action verb"
+    },
+    {
+      "level": "WARN",
+      "where": "Cut research-environment setup time 30% with uv de",
+      "msg": "leading verb 'Cut' repeats (also: Cut AI workflow generation time 65% to under 15s b)"
+    },
+    {
+      "level": "WARN",
+      "where": "Cut research-environment setup time 30% with uv de",
+      "msg": "voice: noun stack of 5 words"
+    },
+    {
+      "level": "WARN",
+      "where": "Co-founded a 110+ member student product studio th",
+      "msg": "voice: 4 numbers in one bullet (metric stacking)"
+    },
+    {
+      "level": "WARN",
+      "where": "Building a RAG meal-suggestion feature for the off",
+      "msg": "voice: semicolon joins clauses (split or use 'and')"
+    },
+    {
+      "level": "WARN",
+      "where": "Built a C++17 order book and matching engine and r",
+      "msg": "voice: noun stack of 5 words"
+    },
+    {
+      "level": "WARN",
+      "where": "Built a C++17 order book and matching engine and r",
+      "msg": "voice: 5 numbers in one bullet (metric stacking)"
+    },
+    {
+      "level": "WARN",
+      "where": "Compared B+ tree and LSM skip-list storage for the",
+      "msg": "voice: 4 numbers in one bullet (metric stacking)"
     }
   ],
-  "errors": 0,
-  "warnings": 1
+  "errors": 1,
+  "warnings": 15
 }

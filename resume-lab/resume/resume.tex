@@ -86,7 +86,7 @@
 \section{Education}
 \resumeSubHeadingListStart
   \resumeSubheading
-    {University of Maryland, College Park}{May 2028}
+    {University of Maryland, College Park}{Expected May 2028}
     {B.S. in Computer Science, Minor in Statistics; GPA: 3.5}{College Park, MD}
 \resumeSubHeadingListEnd
 
@@ -99,7 +99,7 @@
     {Software Development Engineer Intern}{Redmond, WA}
   \resumeItemListStart
     % fact: aws_sde.redshift
-    \resumeItem{Writing Java policies that tune upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations like patching, balancing availability against cost; initial backtests complete}
+    \resumeItem{Writing Java logic that decides how much EC2 capacity Amazon Redshift reserves for operations like patching, setting upper and lower bounds that keep availability high without overspending, and backtesting the policies}
   \resumeItemListEnd
 
   \resumeSubheading
@@ -107,11 +107,11 @@
     {Software Engineering Intern}{Richmond, VA}
   \resumeItemListStart
     % fact: capital_one.ui_overhaul
-    \resumeItem{Rebuilt a legacy test-data workflow builder in React/TypeScript + Electron, adding a React-Flow editor and Jest-tested validation; \textbf{90\%} of 30+ surveyed developers preferred it to the old tool}
+    \resumeItem{Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and \textbf{90\%} of 30+ surveyed developers preferred it}
     % fact: capital_one.search_index
-    \resumeItem{Precomputed a category-keyed tree index of popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to minimize DB queries under access limits}
+    \resumeItem{Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries}
     % fact: capital_one.claude_skill
-    \resumeItem{Cut LLM workflow generation time \textbf{65\%} to under 15s by decomposing a Claude skill into sub-skills backed by Python search/validation tools, guided by CloudWatch + OpenSearch latency logs}
+    \resumeItem{Cut AI workflow generation time \textbf{65\%} to under 15s by splitting one large Claude skill into smaller sub-skills that call Python tools for search and validation, after CloudWatch and OpenSearch latency logs showed where time went}
   \resumeItemListEnd
 
   \resumeSubheading
@@ -119,11 +119,11 @@
     {Software Engineer (Contract)}{College Park, MD}
   \resumeItemListStart
     % fact: amazon_contract.leo_deploy
-    \resumeItem{Shipped a space-research tool used by Amazon Leo's public-policy team, now maintained by Leo engineers; deployed on AWS Fargate (Docker) via GitHub Actions and CDK (TypeScript)}
+    \resumeItem{Deployed a space-topic research tool for Amazon Leo's public-policy team and set it up for handoff with AWS CDK infrastructure-as-code and GitHub Actions CI/CD, so Leo engineers new to the project now maintain it on AWS Fargate}
     % fact: amazon_contract.kinesis_pipeline
     \resumeItem{Reduced end-to-end latency \textbf{34\%} for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda}
     % fact: amazon_contract.bedrock_finetune
-    \resumeItem{Automated a production EventBridge fine-tuning loop for a Bedrock document-importance classifier, retraining only when a larger LLM's cross-model eval scores move past a threshold}
+    \resumeItem{Automated retraining for a production Amazon Bedrock model that sorts research documents by importance: on an EventBridge schedule a larger LLM grades it, and it is fine-tuned only when those grades shift past a threshold}
   \resumeItemListEnd
 
   \resumeSubheading
@@ -131,9 +131,9 @@
     {Machine Learning Research Intern}{College Park, MD}
   \resumeItemListStart
     % fact: umiacs.grasp_vlm
-    \resumeItem{Built a Python pipeline for PhysTwin (PhD-led digital twin, targeting ICLR) turning AnyGrasp output on multi-camera images into Open3D overlays for a VLM; tuned its prompts to pick correct grasps and judge depth}
+    \resumeItem{For a PhD-led robotics project targeting ICLR, built a Python pipeline that draws AnyGrasp candidates from multi-camera images as Open3D overlays and tuned prompts so a vision-language model picks the right grasp more often}
     % fact: umiacs.env_setup
-    \resumeItem{Shortened research-environment setup time \textbf{30\%} with uv dependency pinning and Docker; added psutil time/memory profiling and Pytest suites to find bottlenecks}
+    \resumeItem{Cut research-environment setup time \textbf{30\%} with uv dependency pinning and Docker, and added psutil time and memory profiling and Pytest unit tests to help the team find bottlenecks}
   \resumeItemListEnd
 
   \resumeSubheading
@@ -141,7 +141,7 @@
     {Co-Founder, Software Engineer}{College Park, MD}
   \resumeItemListStart
     % fact: terplabs.studio+terplabs.tortuga
-    \resumeItem{Co-founded a 110+ member campus product studio that has shipped 5 live products, including Tortuga, a class scheduler with \mbox{\textbf{20,000+ visits}} in its first 30 days; built Redis caching for its Prisma ORM queries}
+    \resumeItem{Co-founded a 110+ member student product studio that has shipped 5 live products, and personally built Redis caching in front of the Prisma ORM queries for one, Tortuga, a class scheduler with \mbox{\textbf{20,000+ visits}} in its first 30 days}
     % fact: terplabs.rag_meal
     \resumeItem{Building a RAG meal-suggestion feature for the official UMD app (GPT-4o mini, ChromaDB + SentenceBERT search); \textbf{93\%} of generated meals rated satisfactory by internal testers}
   \resumeItemListEnd
@@ -155,11 +155,11 @@
     {\textbf{IEX Order Book \& Matching Engine} $|$ \textit{C++17, STL, POSIX, Linux perf}}{Jul 2026 -- Aug 2026}
   \resumeItemListStart
     % fact: iex.replay_correctness
-    \resumeItem{Engineered a C++17 order book and matching engine that replayed \textbf{50.9M} real IEX DEEP+ messages with no resync, matching 99,122 of 99,123 fills exactly and 100\% of top-of-book prices}
+    \resumeItem{Built a C++17 order book and matching engine and replayed \textbf{50.9M} real IEX exchange messages through it without ever resyncing to the exchange's book, matching 99,122 of 99,123 fills and 100\% of top-of-book prices}
     % fact: iex.storage_benchmark
-    \resumeItem{Benchmarked B+ tree vs LSM skip-list stores for the simulation's event logs on identical 2M-record workloads; the B+ tree gave \textbf{12.8$\times$} read throughput and 22$\times$ faster range summaries for 27\% more disk}
-    % fact: iex.throughput
-    \resumeItem{Sustained \textbf{1.26M events/sec} end-to-end over the full replay, averaging 686.7 ns/event in the matching engine}
+    \resumeItem{Compared B+ tree and LSM skip-list storage for the engine's event logs on identical 2M-record workloads: the B+ tree read \textbf{12.8x} faster and answered range queries 22x faster, at the cost of 27\% more disk}
+    % fact: iex.throughput+iex.data_structures
+    \resumeItem{Sustained \mbox{\textbf{1.26M events/sec}} end-to-end over the full replay, with price levels in a std::map of FIFO queues and a hash map from order ID to queue position for O(1) cancels}
   \resumeItemListEnd
 \resumeSubHeadingListEnd
 
@@ -168,13 +168,15 @@
 \begin{itemize}[leftmargin=0in, label={}, itemsep=0pt, topsep=2pt]
   \small
   % fact: skills
-  \item{\textbf{Languages:} Python, Java, C++, C, TypeScript/JavaScript, SQL}
+  \item{\textbf{Languages:} Python, Java, C++, C, TypeScript, JavaScript, SQL, Bash}
   % fact: skills
-  \item{\textbf{Cloud (AWS):} Lambda, Kinesis, Fargate/ECS, API Gateway, EventBridge, Bedrock, CDK, CloudWatch, X-Ray, SNS}
+  \item{\textbf{Cloud \& DevOps:} AWS (Lambda, Kinesis, Fargate, EC2, API Gateway, EventBridge, CloudWatch), AWS CDK (infrastructure as code), Docker, GitHub Actions (CI/CD)}
   % fact: skills
-  \item{\textbf{Web \& Data:} React, Electron, Node.js, PostgreSQL, Redis, SQLAlchemy, Prisma, OpenSearch, ChromaDB}
+  \item{\textbf{Backend \\textbf{Full-Stack \& Data:} Full-Stack:} REST APIs, Node.js, React, Electron, PostgreSQL, Redis, SQLAlchemy, Prisma, OpenSearch, ChromaDB}
   % fact: skills
-  \item{\textbf{AI/ML \& Tools:} PyTorch, RAG, Open3D, Docker, GitHub Actions, Linux, Pytest, Jest, uv, perf}
+  \item{\textbf{AI/ML:} LLMs (Claude, Bedrock, GPT-4o mini), retrieval-augmented generation (RAG), fine-tuning and evaluation, PyTorch}
+  % fact: skills
+  \item{\textbf{Practices \& Tools:} data structures and algorithms, unit testing (Pytest, Jest), profiling (perf, psutil), Linux, Git, Jira, Agile}
   % fact: skills
   \item{\textbf{Certification:} \href{https://www.credly.com/badges/d2406a97-d937-47de-823b-724981159d3b/public_url}{\underline{AWS Certified Developer -- Associate}} (Nov 2024 -- Nov 2027)}
 \end{itemize}

@@ -59,8 +59,8 @@ roles:
         required_numbers: ["90%"]
       search_index:
         claim: Built a lightweight tree-style workflow search index (a tree keyed by workflow category/name; lookups walk the category tree to find an example workflow - Amar, Oct 2026) to minimize DB queries under access constraints; Python + SQLAlchemy pipeline distilled popular workflows from a 270,000+ row PostgreSQL table into a precomputed index; Redis caching for full workflow retrieval; exposed via a Node.js IPC module; the index is the main search tool the Claude skill (capital_one.claude_skill) calls, with wiki sources used afterward (Amar, Oct 2026)
-        core_techs: [Python, SQLAlchemy, PostgreSQL, Redis]
-        optional_techs: [Node.js, IPC]
+        core_techs: [PostgreSQL, Redis]
+        optional_techs: [Python, SQLAlchemy, Node.js, IPC]  # loop 2: Python/SQLAlchemy are supporting detail (spec §13); Skills carries them
         required_numbers: ["270,000+"]
       claude_skill:
         claim: Developed a Claude skill for workflow generation; constrained open-ended model search via sub-skill decomposition and Python functions for workflow search/validation; used AWS CloudWatch + OpenSearch latency logging to find bottlenecks; cut generation time 65% vs previous tooling to under 15 seconds; output quality held or improved, checked on stress-test examples, overall satisfaction (no pass rate or satisfaction number available), and a multi-run stress test confirming the usual errors no longer occurred (Amar, Oct 2026)
@@ -77,8 +77,8 @@ roles:
     bullets:
       leo_deploy:
         claim: Deployed an Amazon Leo space-topic research utility that was adopted into Leo's ecosystem (Amar, Oct 2026 - used by Leo's public-policy staff, maintained and rolled out by Leo engineers); Docker + AWS Fargate orchestration; GitHub Actions CI/CD; AWS CDK (TypeScript) infrastructure-as-code so engineers unfamiliar with the project could contribute
-        core_techs: [Docker, AWS Fargate, AWS CDK]
-        optional_techs: [GitHub Actions, TypeScript]
+        core_techs: [AWS Fargate, AWS CDK]
+        optional_techs: [Docker, GitHub Actions, TypeScript]  # loop 2: Docker moved to supporting (spec §12)
         required_numbers: []
       kinesis_pipeline:
         claim: 34% end-to-end latency reduction (clarified by Amar, Oct 2026) on a pipeline routing 6,000+ scraped research documents for inference (6,000+ is the total set of documents scraped, not per day/run - Amar, Oct 2026). Before - scraper output staged through S3 (scraper -> S3 -> Lambda -> S3), slower end to end; after - Kinesis streams feeding Lambda processors for processing/redirection; Lambda + API Gateway front it for app integration

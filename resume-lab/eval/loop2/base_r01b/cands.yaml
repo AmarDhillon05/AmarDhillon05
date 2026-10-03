@@ -1,0 +1,40 @@
+capital_one.ui_overhaul:
+  incumbent: Rebuilt a legacy test-data workflow builder in React/TypeScript + Electron, adding a React-Flow editor and Jest-tested validation; 90% of 30+ surveyed developers preferred it to the old tool
+  candidates:
+  - Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and 90% of 30+ surveyed developers preferred it
+  - Replaced a legacy test-data workflow builder with a React, TypeScript and Electron app built around a visual React Flow editor, with Jest-tested validation; 90% of 30+ surveyed developers preferred the new tool
+capital_one.search_index:
+  incumbent: Precomputed a category-keyed tree index of popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to minimize DB queries under access limits
+  candidates:
+  - 'Built the search index that the Claude skill calls first: a tree of popular workflows organized by category, precomputed with Python and SQLAlchemy from a 270K+ row PostgreSQL table so lookups need fewer queries to the access-limited database'
+  - Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows, cutting the database queries each lookup needs
+  - Built a Python and SQLAlchemy job that distills popular workflows from a 270K+ row PostgreSQL table into a category tree index, the main search tool the Claude skill uses, so lookups avoid most queries to the access-limited database
+amazon_contract.leo_deploy:
+  incumbent: Shipped a space-research tool used by Amazon Leo's public-policy team, now maintained by Leo engineers; deployed on AWS Fargate (Docker) via GitHub Actions and CDK (TypeScript)
+  candidates:
+  - Deployed a space-topic research tool for Amazon Leo's public-policy team and set it up for handoff with AWS CDK infrastructure-as-code and GitHub Actions CI/CD, so Leo engineers new to the project now maintain it on AWS Fargate
+  - Shipped a space-topic research tool that Amazon Leo's public-policy team uses, running in Docker on AWS Fargate, and wrote its AWS CDK infrastructure-as-code and GitHub Actions CI/CD so Leo engineers could take it over
+amazon_contract.kinesis_pipeline:
+  incumbent: Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda
+  candidates:
+  - Cut end-to-end latency 34% on a pipeline that sends 6,000+ scraped research documents to model inference by replacing S3 staging between steps with Amazon Kinesis streams feeding AWS Lambda
+  - Reduced end-to-end latency 34% for the pipeline that moves 6,000+ scraped research documents into model inference, replacing scraper-to-S3-to-Lambda staging with Amazon Kinesis streams feeding AWS Lambda
+umiacs.grasp_vlm:
+  incumbent: Built a Python pipeline for PhysTwin (PhD-led digital twin, targeting ICLR) turning AnyGrasp output on multi-camera images into Open3D overlays for a VLM; tuned its prompts to pick correct grasps and judge depth
+  candidates:
+  - 'Built a Python pipeline that helps a vision-language model pick robot grasps for PhysTwin, a PhD-led digital-twin project targeting ICLR: it draws AnyGrasp candidates from multi-camera images as Open3D overlays, and prompt tuning improved its picks'
+  - For a PhD-led robotics project targeting ICLR, built a Python pipeline that draws AnyGrasp grasp candidates from multi-camera images as Open3D overlays and tuned prompts so a vision-language model picks the correct grasp more often
+terplabs.rag_meal:
+  incumbent: Building a RAG meal-suggestion feature for the official UMD app (GPT-4o mini, ChromaDB + SentenceBERT search); 93% of generated meals rated satisfactory by internal testers
+  candidates:
+  - Building a meal-suggestion feature for the official UMD app that finds matching scraped recipes with SentenceBERT and ChromaDB vector search and has GPT-4o mini write suggestions (RAG), and internal testers rated 93% of meals satisfactory
+  - Building retrieval-augmented generation (RAG) meal suggestions for the official UMD app, where GPT-4o mini writes from recipes found by SentenceBERT and ChromaDB vector search, and 93% of generated meals were rated satisfactory by internal testers
+iex.replay_correctness:
+  incumbent: Engineered a C++17 order book and matching engine that replayed 50.9M real IEX DEEP+ messages with no resync, matching 99,122 of 99,123 fills exactly and 100% of top-of-book prices
+  candidates:
+  - Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange's book, matching 99,122 of 99,123 fills and 100% of top-of-book prices
+iex.throughput:
+  incumbent: Sustained 1.26M events/sec end-to-end over the full replay, averaging 686.7 ns/event in the matching engine
+  candidates:
+  - Designed the book around std::map price levels holding FIFO order queues plus a hash map for O(1) cancels, and the full replay ran at 1.26M events/sec end-to-end
+  - Sustained 1.26M events/sec end-to-end over the full replay, with price levels in a std::map of FIFO queues and a hash map from order ID to queue position for O(1) cancels

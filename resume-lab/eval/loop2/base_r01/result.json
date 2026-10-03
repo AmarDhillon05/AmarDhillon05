@@ -1,0 +1,128 @@
+[
+  {
+    "fact": "aws_sde.redshift",
+    "winner": "cand1",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Writing Java logic that decides how much EC2 capacity Amazon Redshift reserves for operations like patching, setting upper and lower bounds that keep availability high without overspending, and backtesting the policies",
+    "decisive_wording": "logic that decides how much EC2 capacity Amazon Redshift reserves ... keep availability high without overspending",
+    "info": "All three keep Java, EC2, Redshift, patching, bounds, availability/cost, backtesting. B adds 'initial backtests complete' (status detail). C keeps everything but buries the action behind a framing clause."
+  },
+  {
+    "fact": "capital_one.ui_overhaul",
+    "winner": "cand1",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Rebuilt a legacy test-data workflow builder in React/TypeScript + Electron, adding a React-Flow editor and Jest-tested validation; 90% of 30+ surveyed developers preferred it to the old tool",
+    "decisive_wording": "the legacy tool developers use to create test-data workflows",
+    "info": "All keep React, TypeScript, Electron, React Flow, Jest validation, 90% of 30+ developers. A additionally explains who used the tool and for what; B and C compress it into the noun stack 'test-data workflow builder'."
+  },
+  {
+    "fact": "capital_one.search_index",
+    "winner": "cand1",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Precomputed a category-keyed tree index of popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to minimize DB queries under access limits",
+    "decisive_wording": "the search index that the Claude skill calls first ... so lookups need fewer queries to the access-limited database",
+    "info": "B keeps role in the Claude skill, category tree, Python/SQLAlchemy, 270K+ rows, access limits; drops Redis. A keeps Redis and tech but drops the Claude skill context. C drops Redis. D keeps Redis, Claude skill, access limits but drops Python/SQLAlchemy keywords."
+  },
+  {
+    "fact": "capital_one.claude_skill",
+    "winner": "cand1",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Cut AI workflow generation time 65% to under 15s by splitting one large Claude skill into smaller sub-skills that call Python tools for search and validation, after CloudWatch and OpenSearch latency logs showed where time went",
+    "decisive_wording": "splitting one large Claude skill into smaller sub-skills ... after CloudWatch and OpenSearch latency logs showed where time went",
+    "info": "All keep 65%, under 15s, Claude skill decomposition, Python search/validation, CloudWatch and OpenSearch. Same information across versions."
+  },
+  {
+    "fact": "amazon_contract.leo_deploy",
+    "winner": "cand1",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Shipped a space-research tool used by Amazon Leo's public-policy team, now maintained by Leo engineers; deployed on AWS Fargate (Docker) via GitHub Actions and CDK (TypeScript)",
+    "decisive_wording": "so Leo engineers new to the project now maintain it on AWS Fargate",
+    "info": "A keeps tool, team, CDK, GitHub Actions, Fargate, and the realized handoff; drops Docker. B keeps everything including Docker and TypeScript CDK but as a tacked-on list. C keeps Docker and authorship of CDK/CI but states handoff as intent ('could take it over')."
+  },
+  {
+    "fact": "amazon_contract.kinesis_pipeline",
+    "winner": "cand1",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+    "decisive_wording": "replacing S3 staging between steps with Amazon Kinesis streams feeding AWS Lambda",
+    "info": "All keep 34%, 6,000+ documents, S3 to Kinesis/Lambda change. B spells out scraper-to-S3-to-Lambda; A shortest but uses 'S3 staging hops' jargon and unqualified service names."
+  },
+  {
+    "fact": "amazon_contract.bedrock_finetune",
+    "winner": "cand1",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Automated retraining for a production Amazon Bedrock model that sorts research documents by importance: on an EventBridge schedule, a larger LLM grades the model, and it is fine-tuned again only when those grades shift past a threshold",
+    "decisive_wording": "on an EventBridge schedule, a larger LLM grades the model, and it is fine-tuned again only when those grades shift past a threshold",
+    "info": "B keeps EventBridge, Bedrock, document importance, LLM grading, threshold. A drops EventBridge. C keeps all but compresses into a noun stack."
+  },
+  {
+    "fact": "umiacs.grasp_vlm",
+    "winner": "cand1",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Built a Python pipeline for PhysTwin (PhD-led digital twin, targeting ICLR) turning AnyGrasp output on multi-camera images into Open3D overlays for a VLM; tuned its prompts to pick correct grasps and judge depth",
+    "decisive_wording": "helps a vision-language model pick robot grasps for PhysTwin, a PhD-led digital-twin project targeting ICLR",
+    "info": "C keeps PhysTwin, digital twin, ICLR, AnyGrasp, multi-camera, Open3D, prompt tuning. B also adds 'judge depth'. A drops the PhysTwin name and digital-twin context."
+  },
+  {
+    "fact": "umiacs.env_setup",
+    "winner": "cand2",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Cut research-environment setup time 30% with uv dependency pinning and Docker, and added psutil time and memory profiling and Pytest unit tests to help the team find bottlenecks",
+    "decisive_wording": "added psutil time and memory profiling and Pytest unit tests to help the team find bottlenecks",
+    "info": "A and C keep uv, Docker, 30%, psutil profiling, Pytest. B drops profiling and tests but explains why Docker helps (identical setup)."
+  },
+  {
+    "fact": "terplabs.studio+terplabs.tortuga",
+    "winner": "cand1",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Co-founded a 110+ member student product studio that has shipped 5 live products, and personally built Redis caching in front of the Prisma ORM queries for one of them, Tortuga, a class scheduler with 20,000+ visits in its first 30 days",
+    "decisive_wording": "personally built Redis caching in front of the Prisma ORM queries for one of them, Tortuga",
+    "info": "Both keep 110+ members, 5 products, Tortuga, 20,000+ visits in 30 days, Redis/Prisma. B makes clear which product the caching was for and that it was the candidate's own work."
+  },
+  {
+    "fact": "terplabs.rag_meal",
+    "winner": "cand2",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Building a RAG meal-suggestion feature for the official UMD app (GPT-4o mini, ChromaDB + SentenceBERT search); 93% of generated meals rated satisfactory by internal testers",
+    "decisive_wording": "retrieval-augmented generation (RAG) ... where GPT-4o mini writes from recipes found by SentenceBERT and ChromaDB vector search",
+    "info": "All keep RAG, UMD app, GPT-4o mini, ChromaDB, SentenceBERT, 93%. A adds 'scraped' recipes. C spells out RAG for both ATS and recruiter."
+  },
+  {
+    "fact": "iex.replay_correctness",
+    "winner": "cand1",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Engineered a C++17 order book and matching engine that replayed 50.9M real IEX DEEP+ messages with no resync, matching 99,122 of 99,123 fills exactly and 100% of top-of-book prices",
+    "decisive_wording": "without ever resyncing to the exchange's book",
+    "info": "Both keep C++17, 50.9M messages, 99,122 of 99,123 fills, 100% top-of-book. A keeps the specific 'DEEP+' feed name and 'exactly'; B drops them."
+  },
+  {
+    "fact": "iex.storage_benchmark",
+    "winner": "cand2",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Compared B+ tree and LSM skip-list storage for the engine's event logs on identical 2M-record workloads: the B+ tree read 12.8x faster and answered range queries 22x faster, at the cost of 27% more disk",
+    "decisive_wording": "the B+ tree read 12.8x faster and answered range queries 22x faster, at the cost of 27% more disk",
+    "info": "A and B keep 2M records, 12.8x reads, 22x range, 27% disk. C drops the 22x range result but states both backends were built."
+  },
+  {
+    "fact": "iex.throughput",
+    "winner": "cand2",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Sustained 1.26M events/sec end-to-end over the full replay, averaging 686.7 ns/event in the matching engine",
+    "decisive_wording": "a hash map from order ID to queue position for O(1) cancels",
+    "info": "A and B keep 1.26M events/sec and the std::map + FIFO + hash map design; A specifies the hash map key/value. C drops the data-structure design entirely and adds 686.7 ns/event."
+  }
+]
