@@ -1,0 +1,46 @@
+{
+  "persona": "senior_swe_hm",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28 with AWS and Capital One SDE internships, an Amazon client contract, and a C++ matching engine replaying 50.9M real IEX messages at 1.26M events/sec.",
+  "scores": {
+    "impact_clarity": 8,
+    "quantification": 8,
+    "technical_depth": 8,
+    "concision_readability": 8,
+    "skim_test": 8,
+    "credibility": 8,
+    "ats_parseability": 9,
+    "visual_layout": 8,
+    "domain_fit": 8,
+    "overall": 8
+  },
+  "score_rationale": {},
+  "competitive_for_domain": "Y",
+  "must_fix": [],
+  "bullets": [
+    {"quote": "Writing and backtesting Java policies that tune upper/lower", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Rebuilt a legacy test-data workflow builder in React/TypeScript", "verdict": "keep"},
+    {"quote": "Precomputed a tree-style search index over popular workflows", "verdict": "tighten", "issue": "'Tree-style' is vague; the decision (precompute vs query live under access limits) should lead.", "suggestion": "To stay under DB access limits, precomputed a tree search index over popular workflows from a 270K+ row PostgreSQL table, served from a Redis cache (Python/SQLAlchemy)"},
+    {"quote": "Cut LLM workflow generation time 65% to under", "verdict": "keep"},
+    {"quote": "Shipped a space-research tool used by Amazon Leo's", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline routing", "verdict": "keep"},
+    {"quote": "Automated EventBridge-scheduled fine-tuning of a Bedrock source-relevancy model", "verdict": "keep"},
+    {"quote": "Built a Python pipeline for PhysTwin, a PhD-led", "verdict": "tighten", "issue": "Trailing 'tuned the VLM's prompts' is a weak tail clause that dilutes the pipeline work.", "suggestion": "Built a Python pipeline for PhysTwin, a PhD-led digital twin project targeting ICLR, running AnyGrasp on multi-camera images and rendering grasps as Open3D overlays for a VLM"},
+    {"quote": "Shortened research-environment setup time 30% with uv dependency", "verdict": "keep"},
+    {"quote": "Co-founded a 110+ member campus product studio that", "verdict": "keep"},
+    {"quote": "Added Redis query caching over Tortuga's Prisma SQL", "verdict": "add_context", "issue": "Only bullet with neither a metric nor a concrete outcome; 'reduce load and latency' is intent, not result.", "suggestion": "Merge into the Tortuga bullet above (e.g., '...20,000+ visits in its first 30 days, backed by Redis caching over Prisma SQL queries') or cut"},
+    {"quote": "Building a RAG meal-suggestion feature for the official", "verdict": "keep"},
+    {"quote": "Engineered a C++17 order book and matching engine", "verdict": "keep"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores for", "verdict": "keep"},
+    {"quote": "Sustained 1.26M events/sec end-to-end over the full", "verdict": "tighten", "issue": "Strong numbers but no hint of what made it fast; reads as a pure metric line.", "suggestion": "Consider merging into the first project bullet so throughput sits beside correctness, freeing a line"}
+  ],
+  "structure": [
+    {"key": "trim_terplabs_redis", "change": "Merge or cut the Tortuga Redis caching bullet", "rationale": "Weakest bullet on the page; no outcome. Freeing the line improves density and whitespace."},
+    {"key": "keep_project_placement", "change": "Keep Projects after Experience; do not promote above internships", "rationale": "AWS/Capital One brands should lead for general SWE; the C++ project already reads well at the bottom."}
+  ],
+  "top3": [
+    "Merge the Tortuga Redis caching bullet into the Tortuga line or cut it; it is the only bullet with no outcome.",
+    "Lead the Capital One search-index bullet with the constraint (DB access limits) so the design decision reads first.",
+    "Drop 'tuned the VLM's prompts' from the PhysTwin bullet so the pipeline engineering stands on its own."
+  ]
+}

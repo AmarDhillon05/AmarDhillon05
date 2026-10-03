@@ -1,0 +1,51 @@
+{
+  "persona": "bs_detector",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28; AWS SDE intern now, Capital One SWE intern prior; shipped AWS tool for Amazon Leo; C++ matching engine replaying 50.9M IEX messages.",
+  "scores": {
+    "impact_clarity": 8,
+    "quantification": 8,
+    "technical_depth": 8,
+    "concision_readability": 8,
+    "skim_test": 8,
+    "credibility": 7,
+    "ats_parseability": 9,
+    "visual_layout": 8,
+    "domain_fit": 8,
+    "overall": 8
+  },
+  "score_rationale": {
+    "credibility": "Three 'Present' roles in College Park while full-time AWS intern in Redmond invites a timeline question; Bedrock/EventBridge bullet stacks services without outcome."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "Timeline: Amazon Leo contract, UMIACS and TerpLabs all show 'Present' while the AWS internship is full-time in Redmond; be ready to state what is active (or mark part-time) since an interviewer will ask.",
+    "Bedrock fine-tuning bullet names EventBridge, Bedrock, X-Ray, SNS but ends with no outcome; it reads as AWS service listing. Lead with what the gates decide and why."
+  ],
+  "bullets": [
+    {"quote": "Writing and backtesting Java policies that tune upper/lower", "verdict": "keep"},
+    {"quote": "Rebuilt a legacy test-data workflow builder in React/TypeScript", "verdict": "keep"},
+    {"quote": "Precomputed a tree-style search index over popular workflows", "verdict": "tighten", "issue": "Ends at intent ('to minimize DB queries'); 'tree-style' is vague. Fine for interview but weakest Capital One bullet.", "suggestion": "Precomputed a search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) so lookups avoid DB queries under access limits"},
+    {"quote": "Cut LLM workflow generation time 65% to under", "verdict": "keep"},
+    {"quote": "Shipped a space-research tool used by Amazon Leo’s", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline routing", "verdict": "keep"},
+    {"quote": "Automated EventBridge-scheduled fine-tuning of a Bedrock source-relevancy model", "verdict": "reframe", "issue": "Four AWS service names, no stated outcome; sounds like a service checklist.", "suggestion": "Automated scheduled fine-tuning of a Bedrock source-relevancy model with gates that skip redundant retraining runs (EventBridge), plus X-Ray tracing and SNS failure alerts"},
+    {"quote": "Built a Python pipeline for PhysTwin, a PhD-led", "verdict": "tighten", "issue": "'targeting ICLR' and trailing 'tuned the VLM’s prompts' dilute the core contribution.", "suggestion": "Built a Python pipeline for PhysTwin (PhD-led digital twin project) that runs AnyGrasp on multi-camera images and renders grasps as Open3D overlays for a VLM"},
+    {"quote": "Shortened research-environment setup time 30% with uv dependency", "verdict": "add_context", "issue": "30% with no baseline; profiling/Pytest clause is a separate task tacked on.", "suggestion": "Shortened research-environment setup time 30% with uv dependency pinning and Docker; added psutil profiling and Pytest suites to locate bottlenecks"},
+    {"quote": "Co-founded a 110+ member campus product studio that", "verdict": "keep"},
+    {"quote": "Added Redis query caching over Tortuga’s Prisma SQL queries", "verdict": "tighten", "issue": "Generic purpose clause, no result; second Redis-cache bullet on the page. Consider merging or cutting.", "suggestion": "Added Redis caching over Tortuga’s Prisma SQL queries to cut repeated database reads during peak scheduling traffic"},
+    {"quote": "Building a RAG meal-suggestion feature for the official", "verdict": "keep"},
+    {"quote": "Engineered a C++17 order book and matching engine", "verdict": "keep"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores for", "verdict": "keep"},
+    {"quote": "Sustained 1.26M events/sec end-to-end over the full", "verdict": "keep"}
+  ],
+  "structure": [
+    {"key": "merge_tortuga_redis", "change": "Fold the Tortuga Redis caching bullet into the TerpLabs co-founder bullet or cut it", "rationale": "No outcome, duplicates the Redis story from Capital One; frees a line and raises average bullet strength."},
+    {"key": "skills_trim_unshown", "change": "Drop skills not evidenced in bullets (e.g., PyTorch, API Gateway) or ensure they map to real work", "rationale": "Unbacked keywords invite follow-up questions the candidate may not want to field."}
+  ],
+  "top3": [
+    "Clarify: which 'Present' roles are actually active during the full-time AWS internship; mark part-time or set end dates so the timeline survives a recruiter screen.",
+    "Reframe the Bedrock/EventBridge bullet around the decision-gate design rather than a list of four AWS services.",
+    "Cut or merge the outcome-less Tortuga Redis bullet and trim the PhysTwin bullet's trailing clauses to tighten the lower half of the page."
+  ]
+}

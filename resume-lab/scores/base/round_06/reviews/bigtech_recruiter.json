@@ -1,0 +1,42 @@
+{
+  "persona": "bigtech_recruiter",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28, AWS SDE intern now, Capital One SWE intern before, Amazon contract work, C++ matching engine at 1.26M events/sec. Strong sophomore/junior.",
+  "scores": {"impact_clarity": 7, "quantification": 7, "technical_depth": 8, "concision_readability": 8,
+             "skim_test": 8, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 8, "overall": 8},
+  "score_rationale": {
+    "impact_clarity": "AWS bullet, Redis caching, and Bedrock fine-tuning bullets end at the task; no outcome or stated effect a recruiter can repeat.",
+    "quantification": "Strong numbers in Capital One and project; AWS role and Redis caching have none, and matching-engine bullets stack many figures."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "The AWS role is the top brand but carries one task-only bullet; a skimmer gets no sense of what it achieved — reframe around purpose/scope already stated (availability vs cost for Redshift).",
+    "TerpLabs Redis caching bullet states intent ('to reduce database load') with no observed outcome; tighten or merge so it does not read as filler."
+  ],
+  "bullets": [
+    {"quote": "Writing and backtesting Java policies that tune upper/lower", "verdict": "reframe", "issue": "Only bullet for the top brand; task phrasing, outcome only implied.", "suggestion": "Building Java policies that tune EC2 capacity reserved for Amazon Redshift operations (e.g., patching), backtested to balance availability against cost"},
+    {"quote": "Rebuilt a legacy test-data workflow builder in React/TypeScript", "verdict": "keep"},
+    {"quote": "Precomputed a tree-style search index over popular workflows", "verdict": "tighten", "issue": "Ends at intent; 'tree-style' is vague to a skimmer.", "suggestion": "Built a precomputed search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to stay within DB access limits"},
+    {"quote": "Cut LLM workflow generation time 65% to under", "verdict": "keep"},
+    {"quote": "Shipped a space-research tool used by Amazon Leo's", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline routing", "verdict": "keep"},
+    {"quote": "Automated EventBridge-scheduled fine-tuning of a Bedrock source-relevancy model", "verdict": "tighten", "issue": "Service list; reads as tech checklist without a stated effect.", "suggestion": "Automated scheduled (EventBridge) fine-tuning of a Bedrock source-relevancy model, with decision gates that skip redundant retraining runs; added X-Ray tracing and SNS alerts"},
+    {"quote": "Built a Python pipeline for PhysTwin, a PhD-led", "verdict": "tighten", "issue": "Dense noun chain; 'tuned the VLM's prompts' tacked on.", "suggestion": "Built a Python pipeline for PhysTwin (PhD-led digital-twin project targeting ICLR) that runs AnyGrasp on multi-camera images and renders grasps as Open3D overlays for VLM input"},
+    {"quote": "Shortened research-environment setup time 30% with uv dependency", "verdict": "keep"},
+    {"quote": "Co-founded a 110+ member campus product studio that", "verdict": "keep"},
+    {"quote": "Added Redis query caching over Tortuga's Prisma SQL", "verdict": "cut", "issue": "Intent-only, no outcome; Redis already shown at Capital One. Frees a line.", "suggestion": "Alternatively merge into the Tortuga bullet: '...Tortuga, a class scheduler (Redis-cached Prisma queries) with 20,000+ visits in its first 30 days'"},
+    {"quote": "Building a RAG meal-suggestion feature for the official", "verdict": "keep"},
+    {"quote": "Engineered a C++17 order book and matching engine", "verdict": "keep"},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores for", "verdict": "tighten", "issue": "Two ratios plus a tradeoff percent is dense for a skim.", "suggestion": "Benchmarked B+ tree vs LSM skip-list event-log stores on identical 2M-record workloads; chose the B+ tree for 12.8x read throughput at 27% more disk"},
+    {"quote": "Sustained 1.26M events/sec end-to-end over the full", "verdict": "keep"}
+  ],
+  "structure": [
+    {"key": "aws_bullet_count", "change": "If possible, give the AWS role a second bullet from work already done (e.g., split backtesting from policy design) using only real facts.", "rationale": "Top brand gets the least space; recruiters weight the most recent big-tech role heavily."},
+    {"key": "keep_order", "change": "Keep Education at top and current Experience ordering (AWS, Capital One, Amazon Leo).", "rationale": "Brands are front-loaded; the 7-second skim already lands on the best signals."}
+  ],
+  "top3": [
+    "Reframe the AWS bullet so the purpose (Redshift availability vs cost) leads and it reads as owned work, not a task description.",
+    "Cut or merge the TerpLabs Redis caching bullet; it has no outcome and repeats a skill shown elsewhere.",
+    "Thin the number-dense matching-engine benchmark bullet and the Bedrock/EventBridge service list so bold metrics stand out on a skim."
+  ]
+}
