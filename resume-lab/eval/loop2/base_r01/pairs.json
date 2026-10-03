@@ -1,0 +1,113 @@
+[
+  {
+    "id": "g01",
+    "versions": {
+      "A": "Writing Java logic that decides how much EC2 capacity Amazon Redshift reserves for operations like patching, setting upper and lower bounds that keep availability high without overspending, and backtesting the policies",
+      "B": "Writing Java policies that tune upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations like patching, balancing availability against cost; initial backtests complete",
+      "C": "Reserving EC2 capacity for Amazon Redshift operations like patching is a tradeoff between availability and cost; writing the Java policies that set its upper and lower bounds and backtesting them"
+    }
+  },
+  {
+    "id": "g02",
+    "versions": {
+      "A": "Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and 90% of 30+ surveyed developers preferred it",
+      "B": "Rebuilt a legacy test-data workflow builder in React/TypeScript + Electron, adding a React-Flow editor and Jest-tested validation; 90% of 30+ surveyed developers preferred it to the old tool",
+      "C": "Replaced a legacy test-data workflow builder with a React, TypeScript and Electron app built around a visual React Flow editor, with Jest-tested validation; 90% of 30+ surveyed developers preferred the new tool"
+    }
+  },
+  {
+    "id": "g03",
+    "versions": {
+      "A": "Precomputed a category-keyed tree index of popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to minimize DB queries under access limits",
+      "B": "Built the search index that the Claude skill calls first: a tree of popular workflows organized by category, precomputed with Python and SQLAlchemy from a 270K+ row PostgreSQL table so lookups need fewer queries to the access-limited database",
+      "C": "Built a Python and SQLAlchemy job that distills popular workflows from a 270K+ row PostgreSQL table into a category tree index, the main search tool the Claude skill uses, so lookups avoid most queries to the access-limited database",
+      "D": "Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows, cutting the database queries each lookup needs"
+    }
+  },
+  {
+    "id": "g04",
+    "versions": {
+      "A": "Made LLM-generated workflows 65% faster, under 15s, by breaking a Claude skill into focused sub-skills that hand search and validation to Python functions, using CloudWatch and OpenSearch latency logs to find the slow steps",
+      "B": "Cut AI workflow generation time 65% to under 15s by splitting one large Claude skill into smaller sub-skills that call Python tools for search and validation, after CloudWatch and OpenSearch latency logs showed where time went",
+      "C": "Cut LLM workflow generation time 65% to under 15s by decomposing a Claude skill into sub-skills backed by Python search/validation tools, guided by CloudWatch + OpenSearch latency logs"
+    }
+  },
+  {
+    "id": "g05",
+    "versions": {
+      "A": "Deployed a space-topic research tool for Amazon Leo's public-policy team and set it up for handoff with AWS CDK infrastructure-as-code and GitHub Actions CI/CD, so Leo engineers new to the project now maintain it on AWS Fargate",
+      "B": "Shipped a space-research tool used by Amazon Leo's public-policy team, now maintained by Leo engineers; deployed on AWS Fargate (Docker) via GitHub Actions and CDK (TypeScript)",
+      "C": "Shipped a space-topic research tool that Amazon Leo's public-policy team uses, running in Docker on AWS Fargate, and wrote its AWS CDK infrastructure-as-code and GitHub Actions CI/CD so Leo engineers could take it over"
+    }
+  },
+  {
+    "id": "g06",
+    "versions": {
+      "A": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+      "B": "Reduced end-to-end latency 34% for the pipeline that moves 6,000+ scraped research documents into model inference, replacing scraper-to-S3-to-Lambda staging with Amazon Kinesis streams feeding AWS Lambda",
+      "C": "Cut end-to-end latency 34% on a pipeline that sends 6,000+ scraped research documents to model inference by replacing S3 staging between steps with Amazon Kinesis streams feeding AWS Lambda"
+    }
+  },
+  {
+    "id": "g07",
+    "versions": {
+      "A": "Built the production fine-tuning loop for an Amazon Bedrock model that classifies how important each research document is, skipping retraining unless a larger LLM's evaluation of the model changes past a set threshold",
+      "B": "Automated retraining for a production Amazon Bedrock model that sorts research documents by importance: on an EventBridge schedule, a larger LLM grades the model, and it is fine-tuned again only when those grades shift past a threshold",
+      "C": "Automated a production EventBridge fine-tuning loop for a Bedrock document-importance classifier, retraining only when a larger LLM's cross-model eval scores move past a threshold"
+    }
+  },
+  {
+    "id": "g08",
+    "versions": {
+      "A": "For a PhD-led robotics project targeting ICLR, built a Python pipeline that draws AnyGrasp grasp candidates from multi-camera images as Open3D overlays and tuned prompts so a vision-language model picks the correct grasp more often",
+      "B": "Built a Python pipeline for PhysTwin (PhD-led digital twin, targeting ICLR) turning AnyGrasp output on multi-camera images into Open3D overlays for a VLM; tuned its prompts to pick correct grasps and judge depth",
+      "C": "Built a Python pipeline that helps a vision-language model pick robot grasps for PhysTwin, a PhD-led digital-twin project targeting ICLR: it draws AnyGrasp candidates from multi-camera images as Open3D overlays, and prompt tuning improved its picks"
+    }
+  },
+  {
+    "id": "g09",
+    "versions": {
+      "A": "Cut research-environment setup time 30% with uv dependency pinning and Docker, and added psutil time and memory profiling and Pytest unit tests to help the team find bottlenecks",
+      "B": "Cut research-environment setup time 30% by pinning dependencies with uv and packaging the environment in Docker so every machine gets an identical setup",
+      "C": "Shortened research-environment setup time 30% with uv dependency pinning and Docker; added psutil time/memory profiling and Pytest suites to find bottlenecks"
+    }
+  },
+  {
+    "id": "g10",
+    "versions": {
+      "A": "Co-founded a 110+ member campus product studio that has shipped 5 live products, including Tortuga, a class scheduler with 20,000+ visits in its first 30 days; built Redis caching for its Prisma ORM queries",
+      "B": "Co-founded a 110+ member student product studio that has shipped 5 live products, and personally built Redis caching in front of the Prisma ORM queries for one of them, Tortuga, a class scheduler with 20,000+ visits in its first 30 days"
+    }
+  },
+  {
+    "id": "g11",
+    "versions": {
+      "A": "Building a meal-suggestion feature for the official UMD app that finds matching scraped recipes with SentenceBERT and ChromaDB vector search and has GPT-4o mini write suggestions (RAG), and internal testers rated 93% of meals satisfactory",
+      "B": "Building a RAG meal-suggestion feature for the official UMD app (GPT-4o mini, ChromaDB + SentenceBERT search); 93% of generated meals rated satisfactory by internal testers",
+      "C": "Building retrieval-augmented generation (RAG) meal suggestions for the official UMD app, where GPT-4o mini writes from recipes found by SentenceBERT and ChromaDB vector search, and 93% of generated meals were rated satisfactory by internal testers"
+    }
+  },
+  {
+    "id": "g12",
+    "versions": {
+      "A": "Engineered a C++17 order book and matching engine that replayed 50.9M real IEX DEEP+ messages with no resync, matching 99,122 of 99,123 fills exactly and 100% of top-of-book prices",
+      "B": "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange's book, matching 99,122 of 99,123 fills and 100% of top-of-book prices"
+    }
+  },
+  {
+    "id": "g13",
+    "versions": {
+      "A": "Benchmarked B+ tree vs LSM skip-list stores for the simulation's event logs on identical 2M-record workloads; the B+ tree gave 12.8x read throughput and 22x faster range summaries for 27% more disk",
+      "B": "Compared B+ tree and LSM skip-list storage for the engine's event logs on identical 2M-record workloads: the B+ tree read 12.8x faster and answered range queries 22x faster, at the cost of 27% more disk",
+      "C": "Built B+ tree and LSM (skip-list) storage backends for the engine's event logs and benchmarked them on identical 2M-record workloads, where the B+ tree delivered 12.8x the read throughput for 27% more disk"
+    }
+  },
+  {
+    "id": "g14",
+    "versions": {
+      "A": "Sustained 1.26M events/sec end-to-end over the full replay, with price levels in a std::map of FIFO queues and a hash map from order ID to queue position for O(1) cancels",
+      "B": "Designed the book around std::map price levels holding FIFO order queues plus a hash map for O(1) cancels, and the full replay ran at 1.26M events/sec end-to-end",
+      "C": "Sustained 1.26M events/sec end-to-end over the full replay, averaging 686.7 ns/event in the matching engine"
+    }
+  }
+]

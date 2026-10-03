@@ -1,0 +1,133 @@
+{
+  "persona": "ats_structure_v2",
+  "target": "General SWE / backend software engineering internships (big tech + strong startups), 2026-27 cycle",
+  "memory_skim": {"strongest_3": [], "engineer_type": "", "memorable_numbers": [], "confusing": [], "skipped": [], "interview_questions": []},
+  "plain_english": [],
+  "scores": {
+    "impact_clarity": 7,
+    "quantification": 8,
+    "technical_depth": 8,
+    "concision_readability": 7,
+    "skim_test": 8,
+    "credibility": 8,
+    "ats_parseability": 8,
+    "visual_layout": 8,
+    "domain_fit": 8,
+    "human_voice": 6,
+    "plain_language": 6,
+    "overall": 8
+  },
+  "competitive_for_domain": "Y",
+  "bullet_feedback": [
+    {
+      "bullet": "Writing Java policies that tune upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations like patching, balancing availability against cost; initial backtests complete",
+      "problem": "\"Java policies\" next to \"EC2\" reads to an AWS-trained screener (and to an LLM screener) as IAM/access policies, not capacity-allocation logic. The bullet is about a control/optimization algorithm, but the word chosen points to permissions config.",
+      "severity": 4,
+      "why_it_matters": "This is the top line under the strongest brand on the page; if it is misread as writing permission policies, the algorithmic work (bounding reserved capacity against cost) is lost.",
+      "missing_or_unclear": "clarify: what a 'policy' is here (the code module that decides how much capacity to reserve?)",
+      "suggested_direction": "Replace \"policies\" with a noun that names the decision logic, then keep the trade-off clause; e.g. \"Writing Java capacity-allocation logic that sets upper/lower bounds on EC2 capacity reserved for Amazon Redshift maintenance (e.g. patching), trading availability against cost; initial backtests complete\""
+    },
+    {
+      "bullet": "Precomputed a category-keyed tree index of popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to minimize DB queries under access limits",
+      "problem": "The parenthetical \"(Python/SQLAlchemy, Redis cache)\" is a tech dump wedged mid-sentence, and \"under access limits\" does not say whose limits or what kind (rate limits, read quotas, permissions).",
+      "severity": 4,
+      "why_it_matters": "The reason for the design (a constrained shared database) is the interesting engineering decision, but it is the vaguest phrase in the bullet; a reader can restate what was built but not why.",
+      "missing_or_unclear": "clarify: what 'access limits' were (e.g. query/rate limits on a shared PostgreSQL database)",
+      "suggested_direction": "Lead with the constraint, then the design, and fold Redis into the sentence as the mechanism rather than a parenthetical; leave SQLAlchemy to the Skills section. e.g. \"Because the shared 270K+ row PostgreSQL table was [clarify limit], precomputed a category-keyed tree index of popular workflows in Python and cached it in Redis so lookups rarely hit the database\""
+    },
+    {
+      "bullet": "Shipped a space-research tool used by Amazon Leo’s public-policy team, now maintained by Leo engineers; deployed on AWS Fargate (Docker) via GitHub Actions and CDK (TypeScript)",
+      "problem": "\"space-research tool\" does not say what the tool does. The deployment clause also uses bare \"CDK\" and \"GitHub Actions\" where screeners match \"AWS CDK\", \"infrastructure as code\" and \"CI/CD\".",
+      "severity": 5,
+      "why_it_matters": "The strongest ownership signal on the page (a tool handed off to and maintained by Amazon engineers) is attached to an unnamed function, and the CI/CD and IaC keywords that backend/cloud postings filter on are present only in forms some matchers miss.",
+      "missing_or_unclear": "clarify: what the tool lets the policy team do (search, summarize, track research documents?)",
+      "suggested_direction": "Name the tool's job in a few words, and write the deploy chain in matchable form; e.g. \"...deployed on AWS Fargate (Docker) with a GitHub Actions CI/CD pipeline and AWS CDK (TypeScript) infrastructure as code\""
+    },
+    {
+      "bullet": "Automated a production EventBridge fine-tuning loop for a Bedrock document-importance classifier, retraining only when a larger LLM’s cross-model eval scores move past a threshold",
+      "problem": "\"a larger LLM’s cross-model eval scores move past a threshold\" is hard to parse: it is unclear whether the larger model grades the classifier, disagrees with it, or is itself evaluated. \"Bedrock\" without \"Amazon\" also misses the exact product term.",
+      "severity": 5,
+      "why_it_matters": "The retraining trigger is the design decision an interviewer would ask about, and it is the part a reader cannot restate.",
+      "missing_or_unclear": "clarify: what the larger LLM's eval measures (e.g. agreement between its labels and the classifier's)",
+      "suggested_direction": "Spell the trigger as cause and effect, and write \"Amazon Bedrock\" once; e.g. \"...retraining only when a larger LLM, used as a grader, disagrees with the classifier's labels past a set threshold\" (adjust to what actually happens)"
+    },
+    {
+      "bullet": "Built a Python pipeline for PhysTwin (PhD-led digital twin, targeting ICLR) turning AnyGrasp output on multi-camera images into Open3D overlays for a VLM; tuned its prompts to pick correct grasps and judge depth",
+      "problem": "Four proper nouns/acronyms in one line (PhysTwin, AnyGrasp, Open3D, VLM) with \"VLM\" never expanded; the purpose (a robot choosing how to grasp objects) has to be inferred.",
+      "severity": 4,
+      "why_it_matters": "ATS and LLM screeners match \"vision-language model\" and \"robotics/computer vision\"; a recruiter cannot restate what the pipeline is for.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Expand VLM once and state the goal before the tool names; drop one parenthetical. e.g. \"Built a Python pipeline for PhysTwin, a PhD-led robotics digital twin targeting ICLR, that renders AnyGrasp grasp candidates from multi-camera images as Open3D overlays so a vision-language model (VLM) can pick the correct grasp; tuned its prompts for grasp choice and depth judgment\""
+    },
+    {
+      "bullet": "Co-founded a 110+ member campus product studio that has shipped 5 live products, including Tortuga, a class scheduler with 20,000+ visits in its first 30 days; built Redis caching for its Prisma ORM queries",
+      "problem": "Two unrelated claims joined by a semicolon; the candidate's own engineering (\"built Redis caching for its Prisma ORM queries\") is the tail fragment after the studio's org stats.",
+      "severity": 3,
+      "why_it_matters": "A skimming reader credits the 20,000+ visits to the studio, not to the candidate's technical work, and the only backend detail in this role is easy to skip.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Either split into the org fact and the engineering fact, or make the caching the subject: \"...including Tortuga, a class scheduler (20,000+ visits in its first 30 days) whose Prisma ORM queries I sped up with a Redis cache\""
+    },
+    {
+      "bullet": "Building a RAG meal-suggestion feature for the official UMD app (GPT-4o mini, ChromaDB + SentenceBERT search); 93% of generated meals rated satisfactory by internal testers",
+      "problem": "\"RAG\" is never expanded on the page (also bare in Skills), and the parenthetical is a stack of tool names joined with \"+\".",
+      "severity": 3,
+      "why_it_matters": "Screeners and non-technical recruiters match \"retrieval-augmented generation\"; the parenthetical hides how retrieval works (embedding search over a menu/recipe store).",
+      "missing_or_unclear": "",
+      "suggested_direction": "Expand once and turn the parenthetical into a short clause; e.g. \"Building a retrieval-augmented generation (RAG) meal-suggestion feature for the official UMD app that retrieves with SentenceBERT embeddings in ChromaDB and generates with GPT-4o mini; ...\""
+    },
+    {
+      "bullet": "Benchmarked B+ tree vs LSM skip-list stores for the simulation’s event logs on identical 2M-record workloads; the B+ tree gave 12.8× read throughput and 22× faster range summaries for 27% more disk",
+      "problem": "Uses the \"×\" multiplication glyph and a curly apostrophe; some ATS text pipelines (older Workday/Taleo ingest) render these as \"?\" or drop them, turning \"12.8×\" into \"12.8\".",
+      "severity": 2,
+      "why_it_matters": "Minor: the human reader is fine, but a mangled multiplier in the parsed profile reads as a nonsense number.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Use ASCII \"x\" (\"12.8x\", \"22x\") and a straight apostrophe in the source; otherwise keep the bullet as is."
+    }
+  ],
+  "page_feedback": [
+    {
+      "problem": "Education shows only \"May 2028\" with no \"Expected\"; parsers (Workday, Greenhouse) store this as a completed graduation date.",
+      "severity": 3,
+      "why_it_matters": "Internship postings filter on enrollment and graduation window (e.g. Robinhood: Winter 2027 or Spring 2028; Pinterest: by June 2029); a parsed 'graduated' flag can mis-route the application or trigger a knockout question mismatch.",
+      "suggested_direction": "Write \"Expected May 2028\"."
+    },
+    {
+      "problem": "Several screener-form terms the page already supports are absent in matchable form: \"CI/CD\" (supported by GitHub Actions deploys), \"AWS CDK\" / \"infrastructure as code\" (CDK appears bare), \"Amazon Bedrock\", \"retrieval-augmented generation\", \"vision-language model\", \"unit testing\" (Jest/Pytest suites), \"Git\" (GitHub, GitHub Actions).",
+      "severity": 3,
+      "why_it_matters": "Across the postings read (Pinterest, Robinhood backend/web, Lyft backend, Stripe, Notion, Affirm), recurring match terms are Python, Java, TypeScript, React, PostgreSQL, Redis, AWS, testing (unit/integration), CI/CD, data structures, performance and LLM/AI tooling. The resume covers most; the gaps above are wording, not missing experience.",
+      "suggested_direction": "Add them once each, preferably in Skills (e.g. Tools: \"Git, GitHub Actions (CI/CD), AWS CDK (infrastructure as code), Docker, Pytest/Jest (unit testing)\") and expand acronyms on first use in bullets. Do NOT add Go, Kafka, Kubernetes, Django or REST API design: they appear often in postings but nothing on the page shows that work."
+    },
+    {
+      "problem": "Skills lists items with no supporting bullet: X-Ray, SNS, API Gateway, Node.js, PyTorch, C.",
+      "severity": 3,
+      "why_it_matters": "LLM screeners increasingly cross-check skills against experience and down-weight unsupported lists; an interviewer may open with \"tell me about your PyTorch work\".",
+      "suggested_direction": "Keep each only if the candidate can speak to real use; otherwise cut. This is preferable to adding them to bullets."
+    },
+    {
+      "problem": "Extraction order puts the date and location lines between employer and title (\"Amazon Web Services / Sep 2026 – Dec 2026 / Software Development Engineer Intern / Redmond, WA\"). Order is consistent across every role, and dates use one format (Mon YYYY – Mon YYYY), so this parses correctly in most systems.",
+      "severity": 2,
+      "why_it_matters": "Low risk; noted only because older parsers occasionally attach the title to the wrong employer when a date line intervenes.",
+      "suggested_direction": "No change needed unless a specific ATS shows mis-parses; if so, keep employer and title on adjacent lines in the source order."
+    },
+    {
+      "problem": "Employer line \"UMD App Development Contracting (Client: Amazon Leo)\" can be parsed as employer = \"Amazon Leo\" or the whole string.",
+      "severity": 2,
+      "why_it_matters": "An Amazon recruiter's ATS may show two Amazon employers; harmless, but the contract relationship is the honest framing and should survive parsing.",
+      "suggested_direction": "Fine as is; optionally move the client into the title line (\"Software Engineer (Contract), client: Amazon Leo\") so the employer field is clean."
+    },
+    {
+      "problem": "Several bullets are compressed with \"+\", \"/\" and parentheticals (\"React/TypeScript + Electron\", \"CloudWatch + OpenSearch\", \"ChromaDB + SentenceBERT\", \"(Python/SQLAlchemy, Redis cache)\").",
+      "severity": 2,
+      "why_it_matters": "Reads as notes rather than sentences (hurts human_voice and plain_language); tokenizers handle it, but LLM screeners summarize these bullets less accurately.",
+      "suggested_direction": "Replace \"+\" with \"and\"/\"with\" and turn parentheticals into clauses where the tool explains the method; move the rest to Skills."
+    }
+  ],
+  "keep": [
+    "Engineered a C++17 order book and matching engine that replayed 50.9M real IEX DEEP+ messages with no resync, matching 99,122 of 99,123 fills exactly and 100% of top-of-book prices",
+    "Sustained 1.26M events/sec end-to-end over the full replay, averaging 686.7 ns/event in the matching engine",
+    "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+    "Cut LLM workflow generation time 65% to under 15s by decomposing a Claude skill into sub-skills backed by Python search/validation tools, guided by CloudWatch + OpenSearch latency logs",
+    "Rebuilt a legacy test-data workflow builder in React/TypeScript + Electron, adding a React-Flow editor and Jest-tested validation; 90% of 30+ surveyed developers preferred it to the old tool",
+    "Standard section headings (Education, Experience, Projects, Technical Skills), single-column layout, consistent Mon YYYY – Mon YYYY dates, and plain-text contact line"
+  ]
+}

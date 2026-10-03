@@ -1,0 +1,118 @@
+{
+  "persona": "hiring_manager_v2",
+  "target": "General SWE / backend software engineering internships (big tech + strong startups), 2026-27 cycle",
+  "memory_skim": {"strongest_3": [], "engineer_type": "", "memorable_numbers": [], "confusing": [], "skipped": [], "interview_questions": []},
+  "plain_english": [],
+  "scores": {"impact_clarity": 7, "quantification": 8, "technical_depth": 8, "concision_readability": 7, "skim_test": 8,
+             "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 7, "human_voice": 6,
+             "plain_language": 6, "overall": 8},
+  "competitive_for_domain": "Y",
+  "bullet_feedback": [
+    {
+      "bullet": "Writing Java policies that tune upper/lower bounds on EC2 capacity reserved for Amazon Redshift operations like patching, balancing availability against cost; initial backtests complete",
+      "problem": "This is the first bullet under the top brand on the page, and the word 'policies' doesn't say whether Amar owns the policy logic, one policy, or is implementing a design someone else specified. 'operations like patching, balancing availability against cost' also reads two ways: is the patching balancing cost, or are the policies?",
+      "severity": 5,
+      "why_it_matters": "A hiring manager reads the AWS line first and comes away knowing the problem area but not what this intern decides or builds. It's the weakest ownership signal on the page, in the most-read slot.",
+      "missing_or_unclear": "clarify: what part of the capacity policy Amar owns (e.g. the bound-setting logic vs. wiring) and what the bounds react to",
+      "suggested_direction": "Lead with the problem (reserved EC2 capacity for Redshift maintenance like patching is a cost-vs-availability trade-off), then say what Amar's Java code decides. Put the 'balancing' clause before 'operations' so it clearly attaches to the policies."
+    },
+    {
+      "bullet": "Precomputed a category-keyed tree index of popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) to minimize DB queries under access limits",
+      "problem": "The bullet says how the index is built but not who or what reads it. It isn't clear whether it serves the workflow builder in bullet 1, the LLM search tools in bullet 3, or something else. The '(Python/SQLAlchemy, Redis cache)' parenthetical is a tech list sitting in the middle of the design.",
+      "severity": 5,
+      "why_it_matters": "Without a consumer, a reader can't tell why 'popular workflows' needed indexing, so a reasonable design choice (precompute because DB access is rate-limited) reads as an isolated task.",
+      "missing_or_unclear": "clarify: what consumes the index (the builder UI, the Claude search tools, or both)",
+      "suggested_direction": "Name the consumer and the constraint first ('DB access was rate-limited, so...'), then the index. Keep Redis only if it's part of the design; move SQLAlchemy to Skills."
+    },
+    {
+      "bullet": "Cut LLM workflow generation time 65% to under 15s by decomposing a Claude skill into sub-skills backed by Python search/validation tools, guided by CloudWatch + OpenSearch latency logs",
+      "problem": "'LLM workflow generation' isn't tied to the tool in bullet 1, so the reader doesn't know what gets generated or for whom. 'Claude skill into sub-skills' is vendor jargon that a non-LLM engineer won't parse.",
+      "severity": 3,
+      "why_it_matters": "This is a strong measured win, but the reader has to guess that it's part of the same product as the rebuilt builder.",
+      "missing_or_unclear": "clarify: that this generates test-data workflows (if it does) inside the rebuilt builder",
+      "suggested_direction": "Add a short object ('generating test-data workflows from a prompt') and describe the decomposition in plain terms (one large prompt split into smaller steps that call Python search/validation tools)."
+    },
+    {
+      "bullet": "Automated a production EventBridge fine-tuning loop for a Bedrock document-importance classifier, retraining only when a larger LLM's cross-model eval scores move past a threshold",
+      "problem": "It's a noun stack ('production EventBridge fine-tuning loop for a Bedrock document-importance classifier') followed by a trigger condition that's hard to parse: 'a larger LLM's cross-model eval scores move past a threshold'. It doesn't say what the classifier decides or why retraining only on drift matters (cost? stability?).",
+      "severity": 6,
+      "why_it_matters": "This is probably the most interesting ML-infra design on the page (drift-gated retraining using a larger model as a judge), but most readers will skim past it because they can't restate it.",
+      "missing_or_unclear": "clarify: what the classifier decides (which documents are important for what), and what the threshold-gated retraining avoids",
+      "suggested_direction": "Split the bullet into what the classifier does, then the design (a larger LLM grades it, and retraining fires only when agreement drops), and name the AWS services last or move them to Skills."
+    },
+    {
+      "bullet": "Built a Python pipeline for PhysTwin (PhD-led digital twin, targeting ICLR) turning AnyGrasp output on multi-camera images into Open3D overlays for a VLM; tuned its prompts to pick correct grasps and judge depth",
+      "problem": "Four proper nouns (PhysTwin, AnyGrasp, Open3D, VLM) plus a parenthetical about the project's venue make this hard for anyone outside robotics to restate. The second clause ('tuned its prompts...') is stitched on with a semicolon and has no outcome.",
+      "severity": 6,
+      "why_it_matters": "For a backend/SWE hiring manager this reads as research-lab glue work whose purpose is unclear. The parenthetical spends space on the PhD's paper rather than on Amar's contribution.",
+      "missing_or_unclear": "clarify: what the pipeline enables in plain terms (e.g. letting a vision-language model choose where a robot should grasp)",
+      "suggested_direction": "Open with the purpose in plain words, keep AnyGrasp/Open3D only where they explain the step, and cut or shorten '(PhD-led digital twin, targeting ICLR)'."
+    },
+    {
+      "bullet": "Shortened research-environment setup time 30% with uv dependency pinning and Docker; added psutil time/memory profiling and Pytest suites to find bottlenecks",
+      "problem": "Two separate tasks are joined by a semicolon. The second half ends at intent ('to find bottlenecks') without saying whether any were found or fixed.",
+      "severity": 3,
+      "why_it_matters": "This reads as housekeeping and pads the role without adding a distinct engineering signal.",
+      "missing_or_unclear": "clarify: whether profiling surfaced a bottleneck that was then fixed",
+      "suggested_direction": "Keep the setup-time half. Cut the profiling half unless it led to a concrete fix, or merge the two into one cause-and-effect sentence."
+    },
+    {
+      "bullet": "Co-founded a 110+ member campus product studio that has shipped 5 live products, including Tortuga, a class scheduler with 20,000+ visits in its first 30 days; built Redis caching for its Prisma ORM queries",
+      "problem": "The ownership is ambiguous. The headline numbers (110+ members, 5 products, 20,000+ visits) belong to the studio and team, while Amar's own engineering is the short last clause ('built Redis caching for its Prisma ORM queries'), which has no outcome.",
+      "severity": 5,
+      "why_it_matters": "A hiring manager will credit the 20,000 visits to Amar and then, in the interview, find his part was a cache layer. That gap hurts credibility more than stating the scope honestly would.",
+      "missing_or_unclear": "clarify: Amar's role on Tortuga beyond the cache (founder/lead vs. one contributor) and what the cache fixed (load time, DB load during the launch spike)",
+      "suggested_direction": "Separate the founder/leadership claim from the engineering claim, and tie the cache to the traffic spike it served, if that's true."
+    },
+    {
+      "bullet": "Building a RAG meal-suggestion feature for the official UMD app (GPT-4o mini, ChromaDB + SentenceBERT search); 93% of generated meals rated satisfactory by internal testers",
+      "problem": "The parenthetical '(GPT-4o mini, ChromaDB + SentenceBERT search)' is a tech dump that doesn't explain the design, for example what gets retrieved (dining-hall menus?) and why.",
+      "severity": 3,
+      "why_it_matters": "'Official UMD app' is a strong distribution signal, but the reader can't tell what the retrieval step does.",
+      "missing_or_unclear": "clarify: what corpus is retrieved over (e.g. dining-hall menus/nutrition data)",
+      "suggested_direction": "Replace the parenthetical with one clause naming what's searched and what's generated, and leave the model and DB names in Skills."
+    },
+    {
+      "bullet": "Benchmarked B+ tree vs LSM skip-list stores for the simulation's event logs on identical 2M-record workloads; the B+ tree gave 12.8× read throughput and 22× faster range summaries for 27% more disk",
+      "problem": "This is a solid comparison, but it's the third dense number-heavy line in a project that already has two strong ones. 'range summaries' is undefined, and it's unclear whether the result changed the design (was the B+ tree adopted?).",
+      "severity": 3,
+      "why_it_matters": "Too many stacked figures blur together, and the reader may drop the more important correctness and throughput numbers.",
+      "missing_or_unclear": "clarify: which store the engine ended up using",
+      "suggested_direction": "End with the decision ('so the engine uses the B+ tree') and keep at most two of the three figures."
+    }
+  ],
+  "page_feedback": [
+    {
+      "problem": "Several roles are team settings (a contracting group for Amazon Leo, a 110+ member studio, a PhD-led research project), and the verbs ('Shipped', 'Reduced', 'Co-founded... that has shipped') don't separate Amar's work from the team's.",
+      "severity": 6,
+      "why_it_matters": "Ownership is the first thing a hiring manager probes. If interview answers shrink the claimed scope, the whole page loses credibility.",
+      "suggested_direction": "In each team role, make at least one bullet say exactly which piece Amar designed or wrote (e.g. 'I owned the Kinesis ingestion path'). This is wording only, with no new facts."
+    },
+    {
+      "problem": "The systems-engineer story (C++ matching engine at 1.26M events/sec, Kinesis latency cut, drift-gated retraining) is split between the bottom of the page and LLM/prompt-tuning bullets. Close to half of the experience bullets are LLM application work (Claude skill, Bedrock classifier, VLM prompts, RAG).",
+      "severity": 5,
+      "why_it_matters": "A backend hiring manager skimming the page may file this as an 'AI app builder' rather than the intended 'systems-oriented engineer'. The IEX project, the clearest systems evidence, comes last.",
+      "suggested_direction": "Lead each role with its most systems-flavored bullet (latency, data paths, indexing, deployment), and consider trimming the weakest LLM-glue bullet (UMIACS profiling or prompt tuning) to give the IEX project more prominence."
+    },
+    {
+      "problem": "Human voice: many bullets use semicolon stitching and tech parentheticals ('; built Redis caching...', '(Python/SQLAlchemy, Redis cache)', '(GPT-4o mini, ChromaDB + SentenceBERT search)', '(PhD-led digital twin, targeting ICLR)').",
+      "severity": 4,
+      "why_it_matters": "These read as compressed resume-speak rather than something said aloud, and they make bullets harder for a non-engineer screener to restate.",
+      "suggested_direction": "Turn each parenthetical into a clause that explains why the tech was used, or drop it to Skills. Split semicolon-joined halves into one cause-and-effect sentence."
+    },
+    {
+      "problem": "The AWS role, the most recognizable brand at the top of Experience, has a single present-tense bullet with no outcome, so the first strong number a reader hits is Capital One's 90%.",
+      "severity": 3,
+      "why_it_matters": "The 7-second skim registers 'AWS intern' but no win. This is acceptable given the role is only weeks old, but the bullet should at least show clear ownership.",
+      "suggested_direction": "Keep it to one bullet, but state the ownership and the problem crisply (see bullet feedback). Don't add results that don't exist yet."
+    }
+  ],
+  "keep": [
+    "Engineered a C++17 order book and matching engine that replayed 50.9M real IEX DEEP+ messages with no resync, matching 99,122 of 99,123 fills exactly and 100% of top-of-book prices",
+    "Sustained 1.26M events/sec end-to-end over the full replay, averaging 686.7 ns/event in the matching engine",
+    "Shipped a space-research tool used by Amazon Leo's public-policy team, now maintained by Leo engineers; deployed on AWS Fargate (Docker) via GitHub Actions and CDK (TypeScript)",
+    "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+    "Rebuilt a legacy test-data workflow builder in React/TypeScript + Electron, adding a React-Flow editor and Jest-tested validation; 90% of 30+ surveyed developers preferred it to the old tool",
+    "Overall structure: Education, Experience, Projects, Skills, with right-aligned dates and locations, on one clean page"
+  ]
+}
