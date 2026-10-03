@@ -1,0 +1,43 @@
+{
+  "persona": "ai_hm",
+  "target": "AI/ML engineering intern roles (LLM applications, agents, RAG, ML platform) at AI-native startups and big-tech AI orgs, 2026–27 cycle. Score domain_fit for this domain.",
+  "seven_second_takeaway": "UMD CS '28, AWS + Capital One interns; cut Claude workflow latency 65% via sub-skill decomposition; automated Bedrock retraining; RAG feature; plus an unrelated C++ order book project.",
+  "scores": {"impact_clarity": 8, "quantification": 7, "technical_depth": 8, "concision_readability": 8,
+             "skim_test": 7, "credibility": 8, "ats_parseability": 9, "visual_layout": 8, "domain_fit": 7, "overall": 8},
+  "score_rationale": {
+    "quantification": "Strong latency numbers, but no quality/eval metric on the Bedrock fine-tuning or Claude decomposition; did quality hold after the 65% speedup?",
+    "skim_test": "Brands pop, but the best LLM win sits second section down; the only bolded project is a C++ order book, off-domain for me.",
+    "domain_fit": "Real agent/RAG/retraining evidence exists, but it's scattered across four roles and the Projects slot is spent on HFT-style systems work."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "clarify: did output quality/accuracy hold (or how was it checked) after decomposing the Claude skill into sub-skills? Speed alone doesn't show eval discipline.",
+    "clarify: what does the Bedrock source-relevancy model do and how is a retraining run judged 'redundant' (data-change gate vs. metric gate)?",
+    "PhysTwin 'tuned its detection prompts' is vague; state what was tuned toward, or cut the clause."
+  ],
+  "bullets": [
+    {"quote": "Writing Java policies that tune upper/lower bounds", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "tighten", "issue": "Best agent bullet; lacks note on how correctness was preserved/validated after decomposition.", "suggestion": "Cut LLM workflow generation 65% to <15s by splitting a Claude skill into sub-skills with Python search/validation tools, prioritized from CloudWatch + OpenSearch latency logs"},
+    {"quote": "Precomputed a tree-style search index over popular", "verdict": "add_context", "issue": "Unclear this index serves the LLM tools; link it to the agent's retrieval step if true.", "suggestion": "Precomputed a tree-style search index over popular workflows (270K+ row PostgreSQL table, SQLAlchemy, Redis cache) for the sub-skills' search tool, minimizing DB queries under access limits"},
+    {"quote": "Rebuilt a legacy test-data workflow builder in", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Automated fine-tuning of a Bedrock source-relevancy model", "verdict": "add_context", "issue": "Great ML-platform signal; say what the gate checks and what the model scores.", "suggestion": ""},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Shipped a space-research tool used by Amazon", "verdict": "tighten", "issue": "Doesn't say what the tool does; the AI angle (relevancy ranking) is lost.", "suggestion": ""},
+    {"quote": "Built a Python pipeline for PhysTwin, a PhD-led", "verdict": "reframe", "issue": "Reads as research log; foreground the VLM grounding design, clarify or drop 'tuned prompts'.", "suggestion": "Built a Python pipeline feeding a VLM for PhysTwin (PhD-led digital twin, targeting ICLR): AnyGrasp on multi-camera images, grasps rendered as Open3D overlays"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Building a RAG meal-suggestion feature for the", "verdict": "tighten", "issue": "Retrieval design is the interesting part; 'satisfactory' eval is soft but honest.", "suggestion": "Building RAG meal suggestions for the official UMD app: SentenceBERT embeddings in ChromaDB retrieve dishes for GPT-4o mini; 93% of generated meals rated satisfactory by internal testers"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep", "issue": "", "suggestion": ""},
+    {"quote": "Engineered a C++17 order book and matching", "verdict": "keep", "issue": "Strong but off-domain for AI roles.", "suggestion": ""},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores", "verdict": "cut", "issue": "Off-domain for AI/ML panel; space better spent on AI evidence.", "suggestion": ""}
+  ],
+  "structure": [
+    {"key": "skills_ai_first", "change": "Move the AI/ML skills line to the top of Technical Skills and drop 'sub-skill decomposition' (it's an achievement, not a skill).", "rationale": "AI HMs and LLM screeners scan for the AI line first; parenthetical reads padded."},
+    {"key": "shrink_offdomain_project", "change": "In the AI variant, reduce the IEX project to one bullet (or a single line) to free space for AI context.", "rationale": "Strong systems work, but it occupies the only project slot without signaling LLM/ML skills."},
+    {"key": "bold_ai_wins", "change": "Keep bold anchors on the 65% Claude latency and Bedrock retraining automation rather than 50.9M/12.8x.", "rationale": "Bold should steer my 7-second skim to the agent/ML-platform wins."}
+  ],
+  "top3": [
+    "clarify: how quality was validated after the Claude sub-skill decomposition, and what the Bedrock retraining gate checks; add those if real",
+    "Re-weight emphasis toward AI: AI/ML skills line first, bold the LLM/ML-platform wins, trim the off-domain IEX benchmarking bullet",
+    "Reframe the PhysTwin and Amazon Leo tool bullets to state the AI design (VLM input pipeline, relevancy ranking) instead of research-log/deploy detail"
+  ]
+}

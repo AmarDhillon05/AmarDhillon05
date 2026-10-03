@@ -1,0 +1,44 @@
+{
+  "persona": "bs_detector",
+  "target": "AI/ML engineering intern roles (LLM applications, agents, RAG, ML platform) at AI-native startups and big-tech AI orgs, 2026–27 cycle. Score domain_fit for this domain.",
+  "seven_second_takeaway": "UMD CS '28; AWS and Capital One interns; Claude sub-skill decomposition cut LLM workflow time 65%; Bedrock retraining pipeline; RAG feature; but a C++ order-book project takes the slot an AI project should.",
+  "scores": {"impact_clarity": 7, "quantification": 7, "technical_depth": 8, "concision_readability": 8,
+             "skim_test": 7, "credibility": 8, "ats_parseability": 8, "visual_layout": 8, "domain_fit": 7, "overall": 8},
+  "score_rationale": {
+    "impact_clarity": "AWS bullet is in progress with no outcome; search-index and Leo tool bullets end at intent or adoption, with no measured effect.",
+    "quantification": "The 65% has an implied baseline, but the 93% has no count of testers and the 30% has no baseline. No model-quality or eval metric anywhere.",
+    "skim_test": "The top entry (AWS) is Redshift capacity policies, not AI. The best AI result is the second job's first bullet, and the strongest bold numbers are in the C++ project.",
+    "domain_fit": "LLM, agent, RAG and Bedrock evidence is real but spread out; the IEX project and the AWS bullet use prime space on non-AI work for this panel."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "clarify: what 'fine-tuning of a Bedrock source-relevancy model' means. Is it a Bedrock custom-model fine-tune or a classifier hosted near Bedrock, and what is the 'redundant' gate criterion? An AI interviewer will ask both first.",
+    "clarify: 'tuned its detection prompts' (UMIACS). Say what was tuned and what improved, or cut the clause; as written it is the vaguest AI claim on the page.",
+    "Skills line 'Claude (skills, sub-skill decomposition)' and 'VLM prompting' read as buzzword padding; list them as tools (Claude, Bedrock) and let the bullets show the technique."
+  ],
+  "bullets": [
+    {"quote": "Writing Java policies that tune upper/lower bounds", "verdict": "keep", "issue": "Honestly scoped as WIP; not AI, but it's the current internship and can't move."},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "keep", "issue": "Best AI/agent bullet on the page: concrete technique, baseline implied, measurement source named."},
+    {"quote": "Precomputed a tree-style search index over popular", "verdict": "tighten", "issue": "Ends at intent; tie it to the LLM workflow it serves so it reads as agent tooling, not generic DB work.", "suggestion": "Precomputed a tree-style search index over popular workflows from a 270K+ row PostgreSQL table (SQLAlchemy, Redis cache) for the LLM's search tool, minimizing DB queries under access limits"},
+    {"quote": "Rebuilt a legacy test-data workflow builder in", "verdict": "keep", "issue": "Credible, n stated; frontend work, lower relevance for this panel."},
+    {"quote": "Automated fine-tuning of a Bedrock source-relevancy model", "verdict": "add_context", "issue": "Collapses under 'what model, what data, how evaluated?' Name the gate criterion; avoid implying more ML than was done."},
+    {"quote": "Reduced end-to-end latency 34% for a", "verdict": "keep", "issue": "Specific, plausible, technique tied to result."},
+    {"quote": "Shipped a space-research tool used by Amazon", "verdict": "tighten", "issue": "'Space-research tool' is vague; for AI panel, say it's the app the relevancy/inference pipeline serves, if true.", "suggestion": "Shipped the space-research tool these pipelines feed, used by Amazon Leo's public-policy team and now maintained by Leo engineers; deployed on Fargate via GitHub Actions + CDK"},
+    {"quote": "Built a Python pipeline for PhysTwin, a", "verdict": "reframe", "issue": "Name-drops ICLR and a PhD lead; candidate's own contribution and the 'tuned prompts' outcome are unclear.", "suggestion": "Built a Python pipeline for PhysTwin (PhD-led digital twin) that runs AnyGrasp on multi-camera images and renders grasps as Open3D overlays used as VLM input"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "tighten", "issue": "Unbaselined 30% (accepted risk); low AI signal. Candidate to cut if space is needed for AI content."},
+    {"quote": "Building a RAG meal-suggestion feature for the", "verdict": "keep", "issue": "Real RAG stack named; 93% sample size is an accepted risk, so be ready to give n verbally."},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep", "issue": "Concrete, verifiable traction; the Redis clause is filler but harmless."},
+    {"quote": "Engineered a C++17 order book and matching", "verdict": "keep", "issue": "Exact, verifiable numbers, which is rare; but zero AI relevance for this panel."},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores", "verdict": "cut", "issue": "For AI/ML targeting, this second systems bullet uses space better spent on AI evidence; keep it for the quant/backend variants."}
+  ],
+  "structure": [
+    {"key": "trim_iex_project", "change": "Cut the IEX project to one bullet (or remove it) in the AI/ML variant", "rationale": "Its bold numbers pull the eye away from the LLM, agent and RAG work this panel hires on."},
+    {"key": "skills_ai_first", "change": "Lead Technical Skills with an AI/ML row of concrete tools: Claude, Bedrock, GPT-4o mini, ChromaDB, SentenceBERT, PyTorch", "rationale": "Drop technique-phrases like 'sub-skill decomposition' that read as keyword stuffing."},
+    {"key": "bold_ai_wins", "change": "Keep bold only on AI metrics (65%, 34%, 93%) plus one traction number", "rationale": "Right now 50.9M and 12.8x are the loudest bold numbers on the page."}
+  ],
+  "top3": [
+    "Shrink or remove the IEX project in this variant so the Capital One Claude result and the Bedrock and RAG work dominate the skim.",
+    "clarify: the Bedrock 'fine-tuning' claim (model type, gate criterion) and the UMIACS 'tuned detection prompts' clause; these are the two bullets an AI interviewer will probe and that could collapse.",
+    "Clean the AI/ML skills row down to concrete tools; drop 'sub-skill decomposition' and 'VLM prompting' phrasing."
+  ]
+}

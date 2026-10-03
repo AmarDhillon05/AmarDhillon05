@@ -1,0 +1,41 @@
+{
+  "persona": "ai_recruiter",
+  "target": "AI/ML engineering intern roles (LLM applications, agents, RAG, ML platform) at AI-native startups and big-tech AI orgs, 2026–27 cycle. Score domain_fit for this domain.",
+  "seven_second_takeaway": "UMD CS '28 with AWS and Capital One internships; cut Claude-based workflow generation 65%; Bedrock fine-tuning pipeline and a RAG feature. Strong builder, AI signal is real but secondary.",
+  "scores": {"impact_clarity": 8, "quantification": 7, "technical_depth": 8, "concision_readability": 8,
+             "skim_test": 7, "credibility": 8, "ats_parseability": 8, "visual_layout": 8, "domain_fit": 7, "overall": 8},
+  "score_rationale": {
+    "quantification": "LLM metrics are latency or tester satisfaction; no eval set, accuracy, or cost numbers on model quality. Several percentages lack baselines.",
+    "skim_test": "Top line is a non-AI AWS capacity bullet; the best AI win (Claude 65%) sits second and IEX project draws the eye with bold numbers.",
+    "domain_fit": "Real LLM/RAG/Bedrock work is present, but a C++ trading project takes prime space and AI evidence is scattered rather than led."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "The IEX order book project is the only Projects entry and is unrelated to LLM/ML; for this domain it competes with the AI story instead of supporting it.",
+    "clarify: what 'source-relevancy model' fine-tuning on Bedrock means (which base model, what task) so an AI HM can probe it."
+  ],
+  "bullets": [
+    {"quote": "Writing Java policies that tune upper/lower bounds", "verdict": "keep", "issue": "Not AI-related but honest WIP scoping; fine as current-role line."},
+    {"quote": "Cut LLM workflow generation time 65% to", "verdict": "keep"},
+    {"quote": "Precomputed a tree-style search index over popular", "verdict": "tighten", "issue": "Reads as backend work; link to the LLM workflow it serves.", "suggestion": "Precomputed a tree-style search index over popular workflows from a 270K+ row PostgreSQL table (SQLAlchemy, Redis cache) to cut DB queries from the LLM workflow tools under access limits"},
+    {"quote": "Rebuilt a legacy test-data workflow builder in", "verdict": "keep"},
+    {"quote": "Automated fine-tuning of a Bedrock source-relevancy model", "verdict": "add_context", "issue": "Strongest ML-platform bullet but the model and task are vague; no result.", "suggestion": "Lead with purpose: 'Automated scheduled fine-tuning of a Bedrock model that ranks source relevancy...' and keep the gating/X-Ray/SNS detail."},
+    {"quote": "Reduced end-to-end latency 34% for a", "verdict": "keep"},
+    {"quote": "Shipped a space-research tool used by Amazon", "verdict": "tighten", "issue": "Doesn't say what the tool does or that it's the consumer of the inference pipeline.", "suggestion": "Shipped the space-research tool built on this pipeline to Amazon Leo's public-policy team, now maintained by Leo engineers; deployed on Fargate (Docker) via GitHub Actions and CDK"},
+    {"quote": "Built a Python pipeline for PhysTwin, a", "verdict": "tighten", "issue": "'Targeting ICLR' and 'tuned its detection prompts' dilute; VLM role is the AI hook.", "suggestion": "Built a Python pipeline for PhysTwin (PhD-led digital twin, ICLR submission) feeding AnyGrasp multi-camera grasps to a VLM as Open3D overlays; tuned the VLM's detection prompts"},
+    {"quote": "Shortened research-environment setup time 30% with uv", "verdict": "keep", "issue": "Low AI signal; acceptable as supporting MLOps hygiene."},
+    {"quote": "Building a RAG meal-suggestion feature for the", "verdict": "keep"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "keep"},
+    {"quote": "Engineered a C++17 order book and matching", "verdict": "keep", "issue": "Strong engineering, but off-domain for AI/ML.", "suggestion": "Consider demoting or condensing the project to one bullet for this target."},
+    {"quote": "Benchmarked B+ tree vs LSM skip-list stores", "verdict": "cut", "issue": "Off-domain for AI/ML roles; frees space to expand AI bullets.", "suggestion": "Drop for the AI/ML version; keep the matching-engine bullet as evidence of systems rigor."}
+  ],
+  "structure": [
+    {"key": "condense_iex_project", "change": "Reduce the IEX project to one bullet (or drop) in the AI/ML-targeted version.", "rationale": "Its bolded numbers pull the 7-second skim toward trading systems rather than LLM work."},
+    {"key": "skills_ai_first", "change": "Rephrase AI/ML skills line to standard keywords (LLM agents/tool use, RAG, embeddings, fine-tuning, Bedrock, PyTorch) instead of 'Claude (skills, sub-skill decomposition)'.", "rationale": "ATS and recruiters match on standard terms; current phrasing reads idiosyncratic."}
+  ],
+  "top3": [
+    "Condense or drop the off-domain IEX project so the LLM/RAG/Bedrock evidence dominates the page.",
+    "clarify: the Bedrock source-relevancy fine-tuning bullet (what model, what task) and connect the Leo tool bullet to that pipeline so it reads as one shipped ML system.",
+    "Normalize the AI/ML skills line to standard keywords (agents/tool use, RAG, embeddings, fine-tuning) for ATS and recruiter matching."
+  ]
+}
