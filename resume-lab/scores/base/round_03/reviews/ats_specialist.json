@@ -1,0 +1,63 @@
+{
+  "persona": "ats_specialist",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28; AWS SDE intern now, Capital One SWE intern; Amazon contract work on AWS serverless; strong AWS/Python/TypeScript keywords; C++ order-book project.",
+  "scores": {"impact_clarity": 7, "quantification": 7, "technical_depth": 8, "concision_readability": 7,
+             "skim_test": 8, "credibility": 8, "ats_parseability": 8, "visual_layout": 8, "domain_fit": 8, "overall": 8},
+  "score_rationale": {
+    "impact_clarity": "Several bullets end at the method (AWS, PhysTwin, AnyGrasp, IEX benchmark, TerpLabs co-found) with no stated outcome or purpose.",
+    "quantification": "Metrics are solid where present, but the 34%/30%/65% baselines are implicit, and half the bullets carry no concrete outcome.",
+    "concision_readability": "Nearly every bullet runs a full two lines; AnyGrasp and Bedrock bullets are dense with proper nouns, slowing a skim."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "Skills taxonomy: React and Electron are listed under 'Backend & Data'; move them to a Frontend group (or rename the row) so LLM screeners classify them correctly.",
+    "Extracted text inserts a blank line inside every wrapped bullet; confirm the submitted PDF wraps without hard paragraph breaks so Workday/Greenhouse don't split bullets into separate fragments.",
+    "Clarify: is the AWS bullet's work deployed or still in design? The only bullet under your top brand currently has no result or scope."
+  ],
+  "bullets": [
+    {"quote": "Tuning Java-based upper/lower bounds on EC2 capacity", "verdict": "add_context",
+     "issue": "Top-brand role has one bullet ending at intent; 'upper/lower bounds' reads awkwardly to a screener.",
+     "suggestion": "Tuning Java-based EC2 capacity reservation bounds for Amazon Redshift maintenance (e.g., patching), backtesting policies to balance availability against cost"},
+    {"quote": "Rebuilt a legacy test-data workflow builder in React/TypeScript", "verdict": "keep"},
+    {"quote": "Built a precomputed tree-style search index over popular", "verdict": "tighten",
+     "issue": "'to minimize DB queries under access limits' is vague; lead with the constraint.",
+     "suggestion": "Under strict DB access limits, built a precomputed tree-style search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache)"},
+    {"quote": "Cut LLM workflow generation time 65% to under", "verdict": "keep"},
+    {"quote": "Shipped a space-research tool used by Amazon Leo's", "verdict": "tighten",
+     "issue": "Deployment stack crowds the outcome.",
+     "suggestion": "Shipped a space-research tool to Amazon Leo's public-policy team, now maintained by Leo engineers; deployed on Docker + AWS Fargate with CDK (TypeScript) IaC and GitHub Actions"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline routing", "verdict": "keep"},
+    {"quote": "Automated fine-tuning of an AWS Bedrock source-relevancy model", "verdict": "tighten",
+     "issue": "Tech-dense; the why (skipping redundant retraining) is buried mid-sentence.",
+     "suggestion": "Automated AWS Bedrock source-relevancy model fine-tuning on an EventBridge schedule, with decision gates to skip redundant retraining; added X-Ray tracing and SNS failure alerts"},
+    {"quote": "Developing automated training for PhysTwin, a physics-based digital", "verdict": "add_context",
+     "issue": "No method or outcome; reads as a role description, not a contribution.",
+     "suggestion": "Clarify what you specifically build in the training automation (e.g., which component) rather than adding results you don't have."},
+    {"quote": "Engineered a Python pipeline rendering AnyGrasp multi-camera grasp", "verdict": "tighten",
+     "issue": "Proper-noun heavy; general SWE screeners won't parse AnyGrasp/Qwen3-VL-8B value quickly.",
+     "suggestion": "Built a Python pipeline overlaying AnyGrasp multi-camera grasp candidates in Open3D for a vision-language model (Qwen3-VL-8B), letting researchers isolate scene components"},
+    {"quote": "Shortened research-environment setup time 30% with uv dependency", "verdict": "keep"},
+    {"quote": "Co-founded a 110+ member campus product studio that", "verdict": "tighten",
+     "issue": "'run with Jira and GitHub' is filler; doesn't show your engineering role.",
+     "suggestion": "Co-founded a 110+ member campus product studio that has shipped 5 live products"},
+    {"quote": "Wrote Prisma SQL queries and Redis query caching to", "verdict": "keep"},
+    {"quote": "Building a RAG meal-suggestion feature for the official UMD", "verdict": "keep"},
+    {"quote": "Implemented a C++ order-book simulator replaying historical IEX data", "verdict": "tighten",
+     "issue": "IEX unexpanded for non-finance screeners.",
+     "suggestion": "Implemented a C++ order-book simulator replaying historical IEX (Investors Exchange) data, with a contract-based plug-in interface so alternative approaches swap in with enforced correctness"},
+    {"quote": "Designed paginated hash-based order-book storage with an in-memory", "verdict": "keep"},
+    {"quote": "Benchmarked a time-based adaptive LSM store against a", "verdict": "add_context",
+     "issue": "Ends at measurement; no finding or decision stated.",
+     "suggestion": "Clarify which store won and what it informed, if known; otherwise keep as is."}
+  ],
+  "structure": [
+    {"key": "skills_regroup", "change": "Split 'Backend & Data' into 'Frontend' (React, Electron) and 'Backend & Data' (Node.js, PostgreSQL, Redis, SQLAlchemy, Prisma, OpenSearch, ChromaDB).", "rationale": "Correct categorization helps LLM screeners and keyword-matching map skills to frontend vs backend requirements."},
+    {"key": "aws_section_label", "change": "Rename the 'AWS' skills row to 'Cloud (AWS)'.", "rationale": "Matches the generic 'cloud' keyword many SWE job descriptions and screener prompts search for."}
+  ],
+  "top3": [
+    "Clarify the AWS internship bullet's scope/status so your top brand has a concrete, outcome-oriented line.",
+    "Regroup skills (React/Electron out of 'Backend & Data'; 'Cloud (AWS)' label) for cleaner screener classification.",
+    "Tighten the outcome-less bullets (PhysTwin, TerpLabs co-found, IEX benchmark) so each ends on a result or purpose instead of a tool list."
+  ]
+}

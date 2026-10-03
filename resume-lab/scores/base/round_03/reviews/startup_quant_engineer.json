@@ -1,0 +1,61 @@
+{
+  "persona": "startup_quant_engineer",
+  "target": "SWE intern / new-grad roles (general software engineering, 2026–27 recruiting cycle)",
+  "seven_second_takeaway": "UMD CS '28 with AWS and Capital One internships, an Amazon client contract, a co-founded studio, and a C++ IEX order-book sim. Shipped things that are actually used.",
+  "scores": {"impact_clarity": 7, "quantification": 7, "technical_depth": 8, "concision_readability": 8,
+             "skim_test": 8, "credibility": 8, "ats_parseability": 8, "visual_layout": 8, "domain_fit": 8, "overall": 8},
+  "score_rationale": {
+    "impact_clarity": "AWS bullet reads as a task with no outcome; IEX bullets describe design but stop before what the design achieved; PhysTwin bullet is pure activity.",
+    "quantification": "Industry bullets are well quantified, but the IEX project measures throughput/latency with rdtscp and reports no numbers, which draws attention to the gap."
+  },
+  "competitive_for_domain": "Y",
+  "must_fix": [
+    "AWS bullet is muddled: 'Java-based upper/lower bounds' makes the bounds sound like they are Java. Say what you built in Java and what it does to the bounds.",
+    "clarify: the IEX benchmark measured throughput/latency, so report the result (which store won, by roughly how much). As written it invites 'so what did you find?'"
+  ],
+  "bullets": [
+    {"quote": "Tuning Java-based upper/lower bounds on EC2 capacity", "verdict": "reframe",
+     "issue": "Awkward 'Java-based bounds'; no outcome; reads as a task statement for your current top-brand role.",
+     "suggestion": "Building a Java service that tunes upper/lower bounds on EC2 capacity reserved for Redshift operations (e.g., patching), backtesting policies to balance availability against cost"},
+    {"quote": "Rebuilt a legacy test-data workflow builder in React/TypeScript", "verdict": "keep"},
+    {"quote": "Built a precomputed tree-style search index over popular", "verdict": "tighten",
+     "issue": "Strong design choice, but 'to minimize DB queries under access limits' ends at intent.",
+     "suggestion": "Precomputed a tree-style search index over popular workflows from a 270K+ row PostgreSQL table (Python/SQLAlchemy, Redis cache) so lookups avoid DB queries under access limits"},
+    {"quote": "Cut LLM workflow generation time 65% to under", "verdict": "keep"},
+    {"quote": "Shipped a space-research tool used by Amazon Leo's", "verdict": "keep"},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline routing", "verdict": "tighten",
+     "issue": "Baseline unclear: moved onto Kinesis from what? One word of 'from' context would make it defensible.",
+     "suggestion": "Cut end-to-end latency 34% on a pipeline routing 6,000+ scraped research documents to inference by moving it from [prior setup] onto Kinesis streams feeding Lambda processors"},
+    {"quote": "Automated fine-tuning of an AWS Bedrock source-relevancy model", "verdict": "keep"},
+    {"quote": "Developing automated training for PhysTwin, a physics-based", "verdict": "add_context",
+     "issue": "Activity only; 'targeting ICLR' carries it. What you build for the training is unclear.",
+     "suggestion": "Merge into the next bullet, or say what the automation does (e.g., the pipeline stage you own) for PhysTwin, a physics-based digital twin, on a PhD-led team targeting ICLR"},
+    {"quote": "Engineered a Python pipeline rendering AnyGrasp multi-camera grasp", "verdict": "keep"},
+    {"quote": "Shortened research-environment setup time 30% with uv dependency", "verdict": "tighten",
+     "issue": "Two unrelated things in one bullet; profiling/tests half lacks a finding.",
+     "suggestion": "Cut research-environment setup time 30% with uv dependency pinning and Docker; added psutil time/memory profiling and Pytest suites"},
+    {"quote": "Co-founded a 110+ member campus product studio", "verdict": "tighten",
+     "issue": "'run with Jira and GitHub' is filler; nobody hires on Jira.",
+     "suggestion": "Co-founded a 110+ member campus product studio that has shipped 5 live products"},
+    {"quote": "Wrote Prisma SQL queries and Redis query caching", "verdict": "keep"},
+    {"quote": "Building a RAG meal-suggestion feature for the official", "verdict": "keep"},
+    {"quote": "Implemented a C++ order-book simulator replaying historical IEX", "verdict": "tighten",
+     "issue": "'contract-based plug-in interface... enforced correctness' is vague; say what is pluggable.",
+     "suggestion": "Implemented a C++ order-book simulator replaying historical IEX data, with a plug-in interface whose contracts let alternative matching/storage approaches swap in with enforced correctness"},
+    {"quote": "Designed paginated hash-based order-book storage with an in-memory", "verdict": "add_context",
+     "issue": "'checked for drift' doesn't say the outcome. Did it match IEX book state?",
+     "suggestion": "Designed paginated hash-based order-book storage with an in-memory LFU cache for hot tickers, validated for drift against IEX historical book data"},
+    {"quote": "Benchmarked a time-based adaptive LSM store against a", "verdict": "add_context",
+     "issue": "Methodology is great (rdtscp, perf counters); result missing. A quant interviewer asks immediately.",
+     "suggestion": "Benchmarked a time-based adaptive LSM store vs. a B+ tree for simulation logs (rdtscp latency, perf counters); state which won and on what workload"}
+  ],
+  "structure": [
+    {"key": "keep_reverse_chron", "change": "Keep current ordering: Education, then AWS, Capital One, Amazon contract, research, TerpLabs, then Projects.", "rationale": "Brands lead and the skim lands on them first; no reshuffle needed for general SWE."},
+    {"key": "trim_skills_line", "change": "Drop low-signal items from Skills (e.g., uv, Jest, Jira-tier tools) if space is needed for IEX results.", "rationale": "Skills block is long; results in bullets beat tool lists."}
+  ],
+  "top3": [
+    "Rewrite the AWS bullet so it states what you build and what it does; it is your top brand and currently the weakest bullet.",
+    "clarify: add the actual IEX benchmark finding (LSM vs. B+ tree) and the drift-check outcome; the methodology is already strong.",
+    "Make the PhysTwin bullet concrete or merge it, and cut 'run with Jira and GitHub' from TerpLabs."
+  ]
+}
