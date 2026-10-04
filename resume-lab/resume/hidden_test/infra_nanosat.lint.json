@@ -1,5 +1,5 @@
 {
-  "tex": "/home/user/AmarDhillon05/resume-lab/resume/infra_distributed.tex",
+  "tex": "/home/user/AmarDhillon05/resume-lab/resume/hidden_test/infra_nanosat.tex",
   "n_bullets": 12,
   "bullets": [
     {
@@ -28,15 +28,6 @@
       "n_lines": 2,
       "last_fill": 0.93,
       "text": "Precomputed popular workflows from a 270K+ row PostgreSQL table into a category tree that the Claude skill searches first, with Redis caching full workflows, so lookups rarely touch a database gated by permissions and rate limits"
-    },
-    {
-      "fact": "capital_one.ui_overhaul",
-      "chars": 215,
-      "words": 34,
-      "n_bold": 1,
-      "n_lines": 2,
-      "last_fill": 0.84,
-      "text": "Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and 90% of 30+ surveyed developers preferred it"
     },
     {
       "fact": "amazon_contract.kinesis_pipeline",
@@ -73,6 +64,15 @@
       "n_lines": 2,
       "last_fill": 0.33,
       "text": "Cut research-environment setup time 30% by pinning dependencies with uv and packaging the environment in Docker so every machine gets an identical setup"
+    },
+    {
+      "fact": "nanosat.graphql_telemetry",
+      "chars": 149,
+      "words": 20,
+      "n_bold": 1,
+      "n_lines": 2,
+      "last_fill": 0.37,
+      "text": "Cut communication latency 23% by building GraphQL interfaces to KubOS services that stream real-time health telemetry (CPU, memory, subsystem status)"
     },
     {
       "fact": "terplabs.tortuga",
@@ -164,6 +164,16 @@
     },
     {
       "level": "WARN",
+      "where": "Cut communication latency 23% by building GraphQL ",
+      "msg": "leading verb 'Cut' repeats (also: Cut AI workflow generation time 65% to under 15s b)"
+    },
+    {
+      "level": "WARN",
+      "where": "Cut communication latency 23% by building GraphQL ",
+      "msg": "voice: noun stack of 5 words"
+    },
+    {
+      "level": "WARN",
       "where": "Built a C++17 order book and matching engine and r",
       "msg": "leading verb 'Built' repeats (also: Built Redis caching in front of the Prisma ORM que)"
     },
@@ -184,5 +194,5 @@
     }
   ],
   "errors": 0,
-  "warnings": 14
+  "warnings": 16
 }

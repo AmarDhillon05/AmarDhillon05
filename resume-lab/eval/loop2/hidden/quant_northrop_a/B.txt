@@ -54,6 +54,12 @@ Co-Founder, Software Engineer
 College Park, MD
 • Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio’s class scheduler with 20,000+ visits in
 its first 30 days, to reduce database load and latency
+Northrop Grumman Innovation Lab
+Jan 2025 – Jun 2025
+Robotics Researcher
+College Park, MD
+• Built an OpenCV (C++) vision pipeline that detects ocean mines in real time on drone-mounted microcontrollers,
+reaching 74% detection accuracy on test footage
 
 Technical Skills
 Languages: C++17, C, Python, Java, Rust, SQL, TypeScript, Bash

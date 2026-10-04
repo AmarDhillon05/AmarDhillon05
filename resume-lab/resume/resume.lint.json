@@ -31,21 +31,21 @@
     },
     {
       "fact": "capital_one.search_index",
-      "chars": 220,
-      "words": 33,
+      "chars": 229,
+      "words": 36,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.88,
-      "text": "Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries"
+      "last_fill": 0.93,
+      "text": "Precomputed popular workflows from a 270K+ row PostgreSQL table into a category tree that the Claude skill searches first, with Redis caching full workflows, so lookups rarely touch a database gated by permissions and rate limits"
     },
     {
       "fact": "amazon_contract.leo_deploy",
-      "chars": 227,
-      "words": 37,
+      "chars": 230,
+      "words": 35,
       "n_bold": 0,
       "n_lines": 2,
       "last_fill": 1.0,
-      "text": "Deployed a space-topic research tool for Amazon Leo's public-policy team and set it up for handoff with AWS CDK infrastructure-as-code and GitHub Actions CI/CD, so Leo engineers new to the project now maintain it on AWS Fargate"
+      "text": "Co-built a research tool that scores and aggregates topics so Amazon Leo's public-policy staff can see what's popular, running in dev on AWS Fargate with GitHub Actions CI/CD and AWS CDK infrastructure-as-code ready for production"
     },
     {
       "fact": "amazon_contract.kinesis_pipeline",
@@ -67,12 +67,12 @@
     },
     {
       "fact": "umiacs.grasp_vlm",
-      "chars": 225,
+      "chars": 228,
       "words": 37,
       "n_bold": 0,
       "n_lines": 2,
       "last_fill": 0.95,
-      "text": "For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D for a vision-language model, then tuned prompts so the model picks the right grasp more often"
+      "text": "For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D for a vision-language model, then tuned prompts so it favors grasps that avoid hitting the table"
     },
     {
       "fact": "terplabs.studio",
@@ -137,23 +137,23 @@
     },
     {
       "level": "WARN",
-      "where": "Because the 270K+ row PostgreSQL workflow table ha",
-      "msg": "opening 'Because' may not be an action verb"
+      "where": "Co-built a research tool that scores and aggregate",
+      "msg": "opening 'Co-built' may not be an action verb"
     },
     {
       "level": "WARN",
-      "where": "Because the 270K+ row PostgreSQL workflow table ha",
-      "msg": "voice: noun stack of 8 words"
-    },
-    {
-      "level": "WARN",
-      "where": "Deployed a space-topic research tool for Amazon Le",
+      "where": "Co-built a research tool that scores and aggregate",
       "msg": "no metric or explicit outcome"
     },
     {
       "level": "WARN",
-      "where": "Deployed a space-topic research tool for Amazon Le",
-      "msg": "voice: noun stack of 5 words"
+      "where": "Co-built a research tool that scores and aggregate",
+      "msg": "voice: noun stack of 6 words"
+    },
+    {
+      "level": "WARN",
+      "where": "Co-built a research tool that scores and aggregate",
+      "msg": "voice: tool inventory: 4 techs in a row"
     },
     {
       "level": "WARN",

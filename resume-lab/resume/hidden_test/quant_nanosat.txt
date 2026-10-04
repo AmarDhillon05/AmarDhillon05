@@ -48,6 +48,14 @@ Machine Learning Research Intern
 College Park, MD
 • For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp’s candidate grasps on camera
 images in Open3D for a vision-language model, then tuned prompts so it favors grasps that avoid hitting the table
+UMD Nano-Satellite Development Program
+Dec 2025 – Present
+Systems Engineer
+College Park, MD
+• Writing flight software in Rust on the KubOS stack for a student nanosatellite, covering command execution, payload
+control and fault-tolerant onboard operations
+• Cut communication latency 23% by building GraphQL interfaces to KubOS services that stream real-time health
+telemetry (CPU, memory, subsystem status)
 TerpLabs
 Jun 2025 – Present
 Co-Founder, Software Engineer

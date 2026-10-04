@@ -1,0 +1,20 @@
+{
+  "infra_nanosat_a": {
+    "new_is": "B"
+  },
+  "infra_nanosat_b": {
+    "new_is": "B"
+  },
+  "quant_nanosat_a": {
+    "new_is": "B"
+  },
+  "quant_nanosat_b": {
+    "new_is": "A"
+  },
+  "quant_northrop_a": {
+    "new_is": "B"
+  },
+  "quant_northrop_b": {
+    "new_is": "B"
+  }
+}

@@ -1,6 +1,6 @@
 {
-  "tex": "/home/user/AmarDhillon05/resume-lab/resume/systems_quant.tex",
-  "n_bullets": 10,
+  "tex": "/home/user/AmarDhillon05/resume-lab/resume/hidden_test/quant_nanosat.tex",
+  "n_bullets": 12,
   "bullets": [
     {
       "fact": "iex.replay_correctness",
@@ -84,6 +84,24 @@
       "text": "For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D for a vision-language model, then tuned prompts so it favors grasps that avoid hitting the table"
     },
     {
+      "fact": "nanosat.flight_apps",
+      "chars": 161,
+      "words": 22,
+      "n_bold": 0,
+      "n_lines": 2,
+      "last_fill": 0.38,
+      "text": "Writing flight software in Rust on the KubOS stack for a student nanosatellite, covering command execution, payload control and fault-tolerant onboard operations"
+    },
+    {
+      "fact": "nanosat.graphql_telemetry",
+      "chars": 149,
+      "words": 20,
+      "n_bold": 1,
+      "n_lines": 2,
+      "last_fill": 0.37,
+      "text": "Cut communication latency 23% by building GraphQL interfaces to KubOS services that stream real-time health telemetry (CPU, memory, subsystem status)"
+    },
+    {
       "fact": "terplabs.tortuga",
       "chars": 174,
       "words": 30,
@@ -136,10 +154,25 @@
     },
     {
       "level": "WARN",
+      "where": "Writing flight software in Rust on the KubOS stack",
+      "msg": "no metric or explicit outcome"
+    },
+    {
+      "level": "WARN",
+      "where": "Cut communication latency 23% by building GraphQL ",
+      "msg": "leading verb 'Cut' repeats (also: Cut AI workflow generation time 65% to under 15s b)"
+    },
+    {
+      "level": "WARN",
+      "where": "Cut communication latency 23% by building GraphQL ",
+      "msg": "voice: noun stack of 5 words"
+    },
+    {
+      "level": "WARN",
       "where": "Built Redis caching in front of the Prisma ORM que",
       "msg": "leading verb 'Built' repeats (also: Built a C++17 order book and matching engine and r)"
     }
   ],
   "errors": 0,
-  "warnings": 9
+  "warnings": 12
 }

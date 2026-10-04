@@ -1,6 +1,6 @@
 {
-  "tex": "/home/user/AmarDhillon05/resume-lab/resume/systems_quant.tex",
-  "n_bullets": 10,
+  "tex": "/home/user/AmarDhillon05/resume-lab/resume/hidden_test/quant_northrop.tex",
+  "n_bullets": 11,
   "bullets": [
     {
       "fact": "iex.replay_correctness",
@@ -91,6 +91,15 @@
       "n_lines": 2,
       "last_fill": 0.44,
       "text": "Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio's class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency"
+    },
+    {
+      "fact": "northrop.mine_detection",
+      "chars": 158,
+      "words": 23,
+      "n_bold": 1,
+      "n_lines": 2,
+      "last_fill": 0.4,
+      "text": "Built an OpenCV (C++) vision pipeline that detects ocean mines in real time on drone-mounted microcontrollers, reaching 74% detection accuracy on test footage"
     }
   ],
   "issues": [
@@ -138,8 +147,13 @@
       "level": "WARN",
       "where": "Built Redis caching in front of the Prisma ORM que",
       "msg": "leading verb 'Built' repeats (also: Built a C++17 order book and matching engine and r)"
+    },
+    {
+      "level": "WARN",
+      "where": "Built an OpenCV (C++) vision pipeline that detects",
+      "msg": "leading verb 'Built' repeats (also: Built a C++17 order book and matching engine and r)"
     }
   ],
   "errors": 0,
-  "warnings": 9
+  "warnings": 10
 }

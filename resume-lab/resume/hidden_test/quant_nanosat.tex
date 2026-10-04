@@ -90,6 +90,23 @@
     {B.S. in Computer Science, Minor in Statistics; GPA: 3.5}{College Park, MD}
 \resumeSubHeadingListEnd
 
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{IEX Order Book \& Matching Engine} $|$ \textit{C++17, STL, POSIX, Linux perf}}{Jul 2026 -- Aug 2026}
+  \resumeItemListStart
+    % fact: iex.replay_correctness
+    \resumeItem{Built a C++17 order book and matching engine and replayed \textbf{50.9M} real IEX exchange messages through it without ever resyncing to the exchange's book, agreeing with the exchange on 99,122 of 99,123 fills and 100\% of top-of-book prices}
+    % fact: iex.throughput+iex.data_structures+iex.latency_dist
+    \resumeItem{Sustained \textbf{1.26M events/sec} over the full replay and a 1.2 \textmu{}s per-message p99 on a separate 2M-event run, keeping each price level as a FIFO queue (std::list) inside a std::map, with an order-ID hash map for O(1) cancels}
+    % fact: iex.storage_benchmark
+    \resumeItem{Implemented B+ tree and LSM-tree backends for the event log and benchmarked them on identical 2M-record workloads, where the B+ tree gave \textbf{12.8x} the read throughput and 22x faster range queries at the cost of 27\% more disk space}
+    % fact: iex.perf_rigor
+    \resumeItem{Traced an apparent 1.65x regression to the CPU frequency governor, not a code change, using perf counters and a do-nothing control book, then cut run-to-run variance from about 6\% to 0.06\% by pinning cores and fixing the clock}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
 %-----------EXPERIENCE-----------
 \section{Experience}
 \resumeSubHeadingListStart
@@ -107,23 +124,17 @@
     {Software Engineering Intern}{Richmond, VA}
   \resumeItemListStart
     % fact: capital_one.claude_skill
-    \resumeItem{Cut LLM workflow generation time \textbf{65\%} to under 15s by splitting one large Claude skill into smaller sub-skills that call Python tools for search and validation, and output quality held in repeated stress-test runs}
+    \resumeItem{Cut AI workflow generation time \textbf{65\%} to under 15s by replacing a Claude skill's open-ended search with focused sub-skills that call Python tools for workflow search and validation, guided by CloudWatch and OpenSearch latency logs}
     % fact: capital_one.search_index
     \resumeItem{Precomputed popular workflows from a 270K+ row PostgreSQL table into a category tree that the Claude skill searches first, with Redis caching full workflows, so lookups rarely touch a database gated by permissions and rate limits}
-    % fact: capital_one.ui_overhaul
-    \resumeItem{Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and \textbf{90\%} of 30+ surveyed developers preferred it}
   \resumeItemListEnd
 
   \resumeSubheading
     {UMD App Development Contracting (Client: Amazon Leo)}{Jan 2026 -- Present}
     {Software Engineer (Contract)}{College Park, MD}
   \resumeItemListStart
-    % fact: amazon_contract.bedrock_finetune
-    \resumeItem{Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance: on an EventBridge schedule a larger LLM grades its ratings, and fine-tuning runs only when the grades shift past a threshold}
     % fact: amazon_contract.kinesis_pipeline
     \resumeItem{Reduced end-to-end latency \textbf{34\%} for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda}
-    % fact: amazon_contract.leo_deploy
-    \resumeItem{Co-built a research tool that scores and aggregates topics so Amazon Leo's public-policy staff can see what's popular, running in dev on AWS Fargate with GitHub Actions CI/CD and AWS CDK infrastructure-as-code ready for production}
   \resumeItemListEnd
 
   \resumeSubheading
@@ -135,26 +146,23 @@
   \resumeItemListEnd
 
   \resumeSubheading
+    {UMD Nano-Satellite Development Program}{Dec 2025 -- Present}
+    {Systems Engineer}{College Park, MD}
+  \resumeItemListStart
+    % fact: nanosat.flight_apps
+    \resumeItem{Writing flight software in Rust on the KubOS stack for a student nanosatellite, covering command execution, payload control and fault-tolerant onboard operations}
+    % fact: nanosat.graphql_telemetry
+    \resumeItem{Cut communication latency \textbf{23\%} by building GraphQL interfaces to KubOS services that stream real-time health telemetry (CPU, memory, subsystem status)}
+  \resumeItemListEnd
+
+  \resumeSubheading
     {TerpLabs}{Jun 2025 -- Present}
     {Co-Founder, Software Engineer}{College Park, MD}
   \resumeItemListStart
-    % fact: terplabs.rag_meal
-    \resumeItem{Building a RAG meal-suggestion feature for the official UMD app, in which GPT-4o mini writes suggestions from scraped recipes found by SentenceBERT vector search in ChromaDB, and internal testers rated \textbf{93\%} of meals satisfactory}
     % fact: terplabs.tortuga
     \resumeItem{Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio's class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency}
   \resumeItemListEnd
 
-\resumeSubHeadingListEnd
-
-%-----------PROJECTS-----------
-\section{Projects}
-\resumeSubHeadingListStart
-  \resumeProjectHeading
-    {\textbf{IEX Order Book \& Matching Engine} $|$ \textit{C++17, STL, POSIX, Linux perf}}{Jul 2026 -- Aug 2026}
-  \resumeItemListStart
-    % fact: iex.replay_correctness
-    \resumeItem{Built a C++17 order book and matching engine and replayed \textbf{50.9M} real IEX exchange messages through it without ever resyncing to the exchange's book, agreeing with the exchange on 99,122 of 99,123 fills and 100\% of top-of-book prices}
-  \resumeItemListEnd
 \resumeSubHeadingListEnd
 
 %-----------SKILLS-----------
@@ -162,13 +170,11 @@
 \begin{itemize}[leftmargin=0in, label={}, itemsep=0pt, topsep=2pt]
   \small
   % fact: skills
-  \item{\textbf{AI/ML:} LLMs (Claude, Amazon Bedrock, GPT-4o mini), LLM agents and tool use (Claude skills), retrieval-augmented generation (RAG), embeddings and vector search (SentenceBERT, ChromaDB), LLM-as-a-judge evaluation, model fine-tuning, vision-language models, prompt engineering, Open3D}
+  \item{\textbf{Languages:} C++17, C, Python, Java, Rust, SQL, TypeScript, Bash}
   % fact: skills
-  \item{\textbf{Languages:} Python, Java, C++, C, TypeScript, JavaScript, SQL}
+  \item{\textbf{Systems \& Performance:} debugging and profiling with Linux perf (hardware counters, top-down analysis), POSIX, STL, B+ trees, LSM trees, data structures and algorithms, benchmarking}
   % fact: skills
-  \item{\textbf{Cloud \& Data:} AWS (Lambda, Kinesis, EventBridge, Fargate), AWS CDK, monitoring (CloudWatch, X-Ray), REST APIs, PostgreSQL, Redis, OpenSearch}
-  % fact: skills
-  \item{\textbf{Engineering:} full-stack apps (React, Electron), data structures and algorithms, object-oriented design, Docker, GitHub Actions (CI/CD), Linux, unit testing (Pytest, Jest), Git, uv}
+  \item{\textbf{Cloud \& Tools:} AWS (Lambda, Kinesis, EC2, Fargate, CloudWatch monitoring), AWS CDK, PostgreSQL, Redis, Docker, GitHub Actions (CI/CD), Git, Pytest}
   % fact: skills
   \item{\textbf{Certification:} \href{https://www.credly.com/badges/d2406a97-d937-47de-823b-724981159d3b/public_url}{\underline{AWS Certified Developer -- Associate}} (Nov 2024 -- Nov 2027)}
 \end{itemize}

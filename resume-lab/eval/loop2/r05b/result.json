@@ -1,0 +1,38 @@
+[
+  {
+    "fact": "capital_one.search_index",
+    "winner": "cand2",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries",
+    "decisive_wording": "Precomputed popular workflows from a 270K+ row PostgreSQL table ... so lookups rarely touch a database gated by permissions and rate limits",
+    "info": "All three keep 270K+ rows, PostgreSQL, category tree searched first by the Claude skill, and Redis caching. A states the constraint up front ('strict access limits') and the outcome as 'cut database queries'. B names both constraints (permissions and rate limits) and the outcome (lookups rarely hit the DB). C names the same constraints but says lookups 'stay within' limits, which is a weaker outcome, and 'Built the category tree' hides that the tree is precomputed until mid-sentence."
+  },
+  {
+    "fact": "amazon_contract.leo_deploy",
+    "winner": "incumbent",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Deployed a space-topic research tool for Amazon Leo's public-policy team and set it up for handoff with AWS CDK infrastructure-as-code and GitHub Actions CI/CD, so Leo engineers new to the project now maintain it on AWS Fargate",
+    "decisive_wording": "set it up for handoff ... so Leo engineers new to the project now maintain it on AWS Fargate",
+    "info": "B keeps Amazon Leo, public-policy team, AWS CDK, GitHub Actions CI/CD and Fargate, and adds an ownership-transfer outcome. It drops 'co-built', the scoring/aggregation function, and the dev-vs-production status. A keeps every keyword and the function, but its outcome ('ready for production') is vague. C keeps the function and states the deploy and IaC steps clearly, but drops GitHub Actions."
+  },
+  {
+    "fact": "amazon_contract.kinesis_pipeline",
+    "winner": "incumbent",
+    "advantage": "concrete",
+    "adopt": false,
+    "text": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+    "decisive_wording": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+    "info": "B keeps the 34% figure, 6,000+ documents, S3 to Kinesis to Lambda mechanism and inference target, and drops the 'averaged over multi-day runs' qualifier. A and C keep that qualifier. C also spells out 'Amazon Kinesis' and 'AWS Lambda' for ATS matching."
+  },
+  {
+    "fact": "umiacs.grasp_vlm",
+    "winner": "cand1",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D for a vision-language model, then tuned prompts so it more often picks grasps that avoid hitting the table",
+    "decisive_wording": "then tuned prompts so it more often picks grasps that avoid hitting the table",
+    "info": "All three keep the PhD-led ICLR project, AnyGrasp, Open3D overlays and the VLM. B and A both keep the specific goal (avoiding table collisions). C replaces it with the generic 'picks the right grasp', which loses the actual objective. A adds the term 'occlusion avoidance' in parentheses."
+  }
+]

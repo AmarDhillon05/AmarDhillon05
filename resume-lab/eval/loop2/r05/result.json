@@ -1,0 +1,38 @@
+[
+  {
+    "fact": "capital_one.search_index",
+    "winner": "cand2",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Precomputed popular workflows from a 270K+ row PostgreSQL table into a category tree that the Claude skill searches first, with Redis caching full workflows, so lookups rarely touch a database gated by permissions and rate limits",
+    "decisive_wording": "so lookups rarely touch a database gated by permissions and rate limits",
+    "info": "All three keep 270K+ rows, PostgreSQL, the category tree searched first by the Claude skill, and Redis caching. A swaps the specific constraint for the vague 'strict access limits' and states the goal only as 'cut database queries'. B and C both name permissions and rate limits. C's 'stay within the database's permission and rate limits' implies the mechanism without saying it, where B says lookups rarely touch the database at all."
+  },
+  {
+    "fact": "amazon_contract.leo_deploy",
+    "winner": "cand2",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Co-built a research tool that scores and aggregates topics so Amazon Leo's public-policy staff can see what's popular, running in dev on AWS Fargate with GitHub Actions CI/CD and AWS CDK infrastructure-as-code ready for production",
+    "decisive_wording": "scores and aggregates topics so Amazon Leo's public-policy staff can see what's popular ... with GitHub Actions CI/CD and AWS CDK infrastructure-as-code",
+    "info": "C keeps what the tool does, who uses it, the dev deployment on Fargate, GitHub Actions CI/CD and CDK. B drops GitHub Actions CI/CD. A drops what the tool does ('space-topic research tool' is vague) and the dev vs production status. A also adds a handoff claim ('Leo engineers ... now maintain it') that the other versions do not make."
+  },
+  {
+    "fact": "amazon_contract.kinesis_pipeline",
+    "winner": "cand1",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+    "decisive_wording": "averaged over multi-day pipeline runs ... model inference ... S3 staging between steps with Amazon Kinesis streams feeding AWS Lambda",
+    "info": "A and C keep the 'averaged over multi-day runs' qualifier on the 34% figure, and B drops it. C spells out 'model inference', 'between steps', and the full service names Amazon Kinesis and AWS Lambda for ATS matching. B is the shortest and keeps the core mechanism and the 6,000+ scale."
+  },
+  {
+    "fact": "umiacs.grasp_vlm",
+    "winner": "cand1",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D for a vision-language model, then tuned prompts so it more often picks grasps that avoid hitting the table",
+    "decisive_wording": "so it more often picks grasps that avoid hitting the table",
+    "info": "All three keep the ICLR/PhD context, AnyGrasp, Open3D overlays and the VLM. A and B state the concrete goal of avoiding table collisions. C replaces it with the vague 'picks the right grasp'. B adds '(occlusion avoidance)'."
+  }
+]
