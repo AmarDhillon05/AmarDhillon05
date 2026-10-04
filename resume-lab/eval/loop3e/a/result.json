@@ -1,0 +1,29 @@
+[
+  {
+    "fact": "capital_one.search_index",
+    "winner": "incumbent",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Precomputed popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to keep lookups within the database's permission and rate limits, which became the Claude skill's main search tool",
+    "decisive_wording": "B: \"..., which became the Claude skill's main search tool\" vs A: \"Built the Claude skill's main search tool by precomputing ... to keep lookups within\" and C: \"to give the Claude skill a search tool that stays within\"",
+    "info": "All three keep 270K+ rows, PostgreSQL, Redis, category tree, and permission/rate limits. A and B keep 'main' search tool; C drops 'main', which downgrades the tool's importance. A packs two purpose clauses (by ... to ...) around the outcome."
+  },
+  {
+    "fact": "amazon_contract.bedrock_finetune",
+    "winner": "cand2",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Set up a larger LLM to grade a production Amazon Bedrock document classifier on an EventBridge schedule to trigger fine-tuning only when its grades shift past a threshold, which avoids redundant retraining",
+    "decisive_wording": "B: \"Set up a larger LLM to grade a production Amazon Bedrock document classifier ... which avoids redundant retraining\" vs A: \"EventBridge-scheduled LLM-as-judge check\" and C: \"to fine-tune only when a larger LLM's scheduled grades of its output shift past a threshold\"",
+    "info": "A keeps EventBridge, LLM-as-judge, Bedrock, and what the classifier does (rates research documents by importance), but leaves the motivation unstated. B keeps EventBridge, Bedrock, the larger-LLM grader and the threshold trigger, and adds the benefit (avoids redundant retraining), but drops 'rates research documents by importance'. C keeps the document-rating detail but drops EventBridge and never says plainly what was built."
+  },
+  {
+    "fact": "aws_sde.redshift",
+    "winner": "cand2",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Writing and backtesting Java logic that decides how much EC2 capacity Amazon Redshift reserves for maintenance like patching to keep it available without overspending",
+    "decisive_wording": "B: \"Writing and backtesting Java logic that decides how much EC2 capacity Amazon Redshift reserves for maintenance like patching to keep it available without overspending\" vs A: \"backtested Java capacity-planning logic\" and C: \"..., which backtests are now validating\"",
+    "info": "A and C keep 'upper and lower bounds'; B drops that detail but keeps Java, EC2, Redshift, patching, backtesting, and the availability/cost tradeoff in plain words. C turns backtesting into a clause tacked on at the end and changes its meaning to 'now validating', which suggests the work is unproven."
+  }
+]

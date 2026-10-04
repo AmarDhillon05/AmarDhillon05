@@ -58,12 +58,12 @@
     },
     {
       "fact": "capital_one.search_index",
-      "chars": 212,
+      "chars": 208,
       "words": 32,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.82,
-      "text": "Precomputed popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to keep lookups within the database's permission and rate limits, which became the Claude skill's main search tool"
+      "last_fill": 0.76,
+      "text": "Built the Claude skill's main search tool by precomputing popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to keep lookups within the database's permission and rate limits"
     },
     {
       "fact": "amazon_contract.kinesis_pipeline",
@@ -131,6 +131,11 @@
     },
     {
       "level": "WARN",
+      "where": "Built the Claude skill's main search tool by preco",
+      "msg": "leading verb 'Built' repeats (also: Built a C++17 order book and matching engine to re)"
+    },
+    {
+      "level": "WARN",
       "where": "Built and prompt-tuned a pipeline for a PhD-led ro",
       "msg": "leading verb 'Built' repeats (also: Built a C++17 order book and matching engine to re)"
     },
@@ -146,5 +151,5 @@
     }
   ],
   "errors": 0,
-  "warnings": 10
+  "warnings": 11
 }

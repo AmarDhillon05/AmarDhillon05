@@ -22,8 +22,8 @@ Software Engineering Intern
 Richmond, VA
 • Split a Claude skill into sub-skills backed by Python search and validation tools to stop open-ended model search, which
 cut LLM workflow generation time 65% to under 15s with no quality loss in stress tests
-• Precomputed popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to keep lookups
-within the database’s permission and rate limits, which became the Claude skill’s main search tool
+• Built the Claude skill’s main search tool by precomputing popular workflows from a 270K+ row PostgreSQL table into a
+Redis-cached category tree to keep lookups within the database’s permission and rate limits
 • Rebuilt a legacy test-data workflow tool as a React and TypeScript Electron app with a visual React Flow editor and
 Jest-tested validation to make editing smoother, which 90% of 30+ surveyed developers preferred
 UMD App Development Contracting (Client: Amazon Leo)
