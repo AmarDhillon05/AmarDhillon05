@@ -1,0 +1,29 @@
+[
+  {
+    "id": "g01",
+    "winner": "B",
+    "advantage": "marginal",
+    "decisive_wording": "\"Built the Claude skill's main search tool by precomputing ...\" leads with the outcome, then gives the mechanism in a single 'did X by doing Y to keep Z' line",
+    "info_preserved_or_lost": "All three keep 270K+ rows, PostgreSQL, Redis-cached category tree, and permission/rate limits. B and C say it was the 'main' search tool; A drops 'main'. A's 'search tool that stays within' blurs what is constrained, while B and C say 'lookups'.",
+    "credibility_change": "About the same. B and C claim slightly more scope ('main search tool'), and the mechanism backs that up.",
+    "readability_change": "B is easiest for a recruiter because the deliverable comes first. C tacks the payoff on at the end with 'which became ...', which reads as an afterthought. A's 'to give the Claude skill a search tool that stays within' is the clunkiest of the three."
+  },
+  {
+    "id": "g02",
+    "winner": "B",
+    "advantage": "concrete",
+    "decisive_wording": "\"Built an EventBridge-scheduled LLM-as-judge check ... to trigger fine-tuning only when its grades shift past a threshold\"",
+    "info_preserved_or_lost": "B keeps EventBridge, adds the recognizable term 'LLM-as-judge', and keeps 'rates research documents by importance'; it drops 'larger'. A keeps 'larger LLM' but drops EventBridge and LLM-as-judge, and its 'scheduled grades of its output' is hard to parse. C keeps EventBridge and 'larger LLM' but cuts the task to 'document classifier' and adds 'avoids redundant retraining', which is already implied by 'only when'.",
+    "credibility_change": "B is strongest: 'LLM-as-judge' plus EventBridge names a real, checkable mechanism an interviewer can probe. A reads vaguer. C's closing clause is redundant but harmless.",
+    "readability_change": "B is one clean sentence that matches job-posting keywords (EventBridge, LLM-as-judge, Bedrock, fine-tuning). In A, the 'Automated retraining ... to fine-tune' chain is confusing. C runs long, ends on a tacked-on 'which' clause, and its 'its grades' is ambiguous."
+  },
+  {
+    "id": "g03",
+    "winner": "C",
+    "advantage": "marginal",
+    "decisive_wording": "\"Writing backtested Java capacity-planning logic that sets upper and lower bounds on the EC2 capacity ... to balance availability against cost\"",
+    "info_preserved_or_lost": "B and C keep the upper/lower bounds mechanism and the availability-vs-cost tradeoff; A drops the bounds and turns the tradeoff into 'without overspending'. A and B say the backtesting is ongoing, while C's 'backtested' suggests it is finished. B adds 'which backtests are now validating' as a tacked-on clause. C adds the keyword 'capacity-planning'.",
+    "credibility_change": "C shows the most mechanism, but 'backtested' could overstate things if validation is still in progress. A's 'Writing and backtesting' is the most accurate on status. B is accurate but awkward.",
+    "readability_change": "A is the easiest for a recruiter to restate, but it is thinner for an engineer. C is one structure with no trailing clause. B breaks the Loop 3 rule with its trailing 'which backtests are now validating'."
+  }
+]

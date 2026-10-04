@@ -1,0 +1,29 @@
+[
+  {
+    "id": "g01",
+    "winner": "B",
+    "advantage": "marginal",
+    "decisive_wording": "B: \"..., which became the Claude skill's main search tool\" vs A: \"Built the Claude skill's main search tool by precomputing ... to keep lookups within\" and C: \"to give the Claude skill a search tool that stays within\"",
+    "info_preserved_or_lost": "All three keep 270K+ rows, PostgreSQL, Redis, category tree, and permission/rate limits. A and B keep 'main' search tool; C drops 'main', which downgrades the tool's importance. A packs two purpose clauses (by ... to ...) around the outcome.",
+    "credibility_change": "Equal on mechanism; B and A say it was the main tool, which is a stronger and still defensible claim. C is slightly weaker.",
+    "readability_change": "B follows the 'did X to accomplish Y, which did Z' shape exactly: action first, constraint, then outcome. A front-loads the outcome then stacks 'by' and 'to' clauses, so it takes longer to parse. C reads smoothly and is close, but loses 'main'."
+  },
+  {
+    "id": "g02",
+    "winner": "B",
+    "advantage": "concrete",
+    "decisive_wording": "B: \"Set up a larger LLM to grade a production Amazon Bedrock document classifier ... which avoids redundant retraining\" vs A: \"EventBridge-scheduled LLM-as-judge check\" and C: \"to fine-tune only when a larger LLM's scheduled grades of its output shift past a threshold\"",
+    "info_preserved_or_lost": "A keeps EventBridge, LLM-as-judge, Bedrock, and what the classifier does (rates research documents by importance), but leaves the motivation unstated. B keeps EventBridge, Bedrock, the larger-LLM grader and the threshold trigger, and adds the benefit (avoids redundant retraining), but drops 'rates research documents by importance'. C keeps the document-rating detail but drops EventBridge and never says plainly what was built.",
+    "credibility_change": "B states a clear mechanism (a bigger model grades the smaller one on a schedule, and retraining triggers on drift) that an interviewer can probe and a recruiter can restate. A's 'rates research documents by importance to trigger fine-tuning' reads as if the classifier triggers its own fine-tuning, which is confusing.",
+    "readability_change": "B is one plain sentence in the preferred structure. A opens with a noun stack ('EventBridge-scheduled LLM-as-judge check'), and C nests possessives ('a larger LLM's scheduled grades of its output'), so both are harder to read."
+  },
+  {
+    "id": "g03",
+    "winner": "B",
+    "advantage": "concrete",
+    "decisive_wording": "B: \"Writing and backtesting Java logic that decides how much EC2 capacity Amazon Redshift reserves for maintenance like patching to keep it available without overspending\" vs A: \"backtested Java capacity-planning logic\" and C: \"..., which backtests are now validating\"",
+    "info_preserved_or_lost": "A and C keep 'upper and lower bounds'; B drops that detail but keeps Java, EC2, Redshift, patching, backtesting, and the availability/cost tradeoff in plain words. C turns backtesting into a clause tacked on at the end and changes its meaning to 'now validating', which suggests the work is unproven.",
+    "credibility_change": "B and A both present backtesting as part of the work. C's 'which backtests are now validating' makes the result sound unproven. B's 'decides how much' is easy to defend, and the bounds can come up in the interview.",
+    "readability_change": "B avoids A's noun stack ('backtested Java capacity-planning logic') and C's tacked-on trailing clause, and replaces 'balance availability against cost' with the plainer 'keep it available without overspending' that a recruiter can restate."
+  }
+]
