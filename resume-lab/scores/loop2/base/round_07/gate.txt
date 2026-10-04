@@ -1,0 +1,18 @@
+== /home/user/AmarDhillon05/resume-lab/scores/loop2/base/round_07/resume.tex
+[WARN] 'Writing backtested Java capacity-planning logic th': voice: noun stack of 5 words
+[WARN] 'Rebuilt a legacy test-data workflow tool as a Reac': voice: noun stack of 5 words
+[WARN] 'Cut AI workflow generation time 65% to under 15s b': voice: noun stack of 5 words
+[WARN] 'Co-built a topic-scoring research tool and deploye': opening 'Co-built' may not be an action verb
+[WARN] 'Co-built a topic-scoring research tool and deploye': no metric or explicit outcome
+[WARN] 'Co-built a topic-scoring research tool and deploye': voice: tool inventory: 4 techs in a row
+[WARN] 'Built an EventBridge-scheduled LLM-as-judge check ': no metric or explicit outcome
+[WARN] 'Built and prompt-tuned a pipeline that overlays An': leading verb 'Built' repeats (also: Built an EventBridge-scheduled LLM-as-judge check )
+[WARN] 'Built and prompt-tuned a pipeline that overlays An': voice: noun stack of 6 words
+[WARN] 'Co-founded a 110+ member student product studio th': no visible technology
+[WARN] "Built Redis caching in front of Tortuga's Prisma O": leading verb 'Built' repeats (also: Built an EventBridge-scheduled LLM-as-judge check )
+[WARN] 'Built a C++17 order book and matching engine to re': leading verb 'Built' repeats (also: Built an EventBridge-scheduled LLM-as-judge check )
+[WARN] 'Built a C++17 order book and matching engine to re': voice: noun stack of 6 words
+[WARN] 'Built a C++17 order book and matching engine to re': voice: 5 numbers in one bullet (metric stacking)
+[WARN] 'Implemented B+ tree and LSM-tree backends for the ': voice: 4 numbers in one bullet (metric stacking)
+lint: 0 errors, 15 warnings, 14 bullets
+fact_check: 0 errors, 0 warnings, 15 facts used

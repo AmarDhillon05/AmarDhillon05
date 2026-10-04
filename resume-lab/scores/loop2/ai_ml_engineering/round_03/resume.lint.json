@@ -1,0 +1,174 @@
+{
+  "tex": "/home/user/AmarDhillon05/resume-lab/scores/loop2/ai_ml_engineering/round_03/resume.tex",
+  "n_bullets": 11,
+  "bullets": [
+    {
+      "fact": "aws_sde.redshift",
+      "chars": 175,
+      "words": 25,
+      "n_bold": 0,
+      "n_lines": 2,
+      "last_fill": 0.46,
+      "text": "Writing backtested Java capacity-planning logic that sets upper and lower bounds on the EC2 capacity Amazon Redshift reserves for patching to balance availability against cost"
+    },
+    {
+      "fact": "capital_one.claude_skill",
+      "chars": 207,
+      "words": 35,
+      "n_bold": 1,
+      "n_lines": 2,
+      "last_fill": 0.73,
+      "text": "Split a Claude skill into sub-skills backed by Python search and validation tools to stop open-ended model search, which cut LLM workflow generation time 65% to under 15s with no quality loss in stress tests"
+    },
+    {
+      "fact": "capital_one.search_index",
+      "chars": 212,
+      "words": 32,
+      "n_bold": 0,
+      "n_lines": 2,
+      "last_fill": 0.82,
+      "text": "Precomputed popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to keep lookups within the database's permission and rate limits, which became the Claude skill's main search tool"
+    },
+    {
+      "fact": "capital_one.ui_overhaul",
+      "chars": 211,
+      "words": 33,
+      "n_bold": 1,
+      "n_lines": 2,
+      "last_fill": 0.81,
+      "text": "Rebuilt a legacy test-data workflow tool as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation to make editing smoother, which 90% of 30+ surveyed developers preferred"
+    },
+    {
+      "fact": "amazon_contract.bedrock_finetune",
+      "chars": 203,
+      "words": 28,
+      "n_bold": 0,
+      "n_lines": 2,
+      "last_fill": 0.75,
+      "text": "Built an EventBridge-scheduled LLM-as-judge check for a production Amazon Bedrock classifier that rates research documents by importance to trigger fine-tuning only when its grades shift past a threshold"
+    },
+    {
+      "fact": "amazon_contract.kinesis_pipeline",
+      "chars": 165,
+      "words": 24,
+      "n_bold": 1,
+      "n_lines": 2,
+      "last_fill": 0.42,
+      "text": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda"
+    },
+    {
+      "fact": "amazon_contract.leo_deploy",
+      "chars": 189,
+      "words": 31,
+      "n_bold": 0,
+      "n_lines": 2,
+      "last_fill": 0.67,
+      "text": "Co-built a topic-scoring research tool and deployed it to dev on AWS Fargate with GitHub Actions CI/CD and AWS CDK to show Amazon Leo's public-policy staff which research topics are popular"
+    },
+    {
+      "fact": "umiacs.grasp_vlm",
+      "chars": 218,
+      "words": 34,
+      "n_bold": 0,
+      "n_lines": 2,
+      "last_fill": 0.88,
+      "text": "Built and prompt-tuned a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D to help a vision-language model pick robot grasps that avoid hitting the table for a PhD-led project targeting ICLR"
+    },
+    {
+      "fact": "terplabs.rag_meal",
+      "chars": 199,
+      "words": 31,
+      "n_bold": 1,
+      "n_lines": 2,
+      "last_fill": 0.77,
+      "text": "Building RAG meal suggestions for the official UMD app with SentenceBERT vector search in ChromaDB to feed GPT-4o mini real scraped recipes, which internal testers rated satisfactory for 93% of meals"
+    },
+    {
+      "fact": "terplabs.tortuga",
+      "chars": 164,
+      "words": 29,
+      "n_bold": 0,
+      "n_lines": 2,
+      "last_fill": 0.36,
+      "text": "Built Redis caching in front of Tortuga's Prisma ORM queries to reduce database load and latency for a class scheduler that drew 20,000+ visits in its first 30 days"
+    },
+    {
+      "fact": "iex.replay_correctness",
+      "chars": 199,
+      "words": 33,
+      "n_bold": 1,
+      "n_lines": 2,
+      "last_fill": 0.73,
+      "text": "Built a C++17 order book and matching engine to replay 50.9M real IEX exchange messages without ever resyncing, which agreed with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices"
+    }
+  ],
+  "issues": [
+    {
+      "level": "WARN",
+      "where": "Writing backtested Java capacity-planning logic th",
+      "msg": "voice: noun stack of 5 words"
+    },
+    {
+      "level": "WARN",
+      "where": "Split a Claude skill into sub-skills backed by Pyt",
+      "msg": "voice: noun stack of 5 words"
+    },
+    {
+      "level": "WARN",
+      "where": "Rebuilt a legacy test-data workflow tool as a Reac",
+      "msg": "voice: noun stack of 5 words"
+    },
+    {
+      "level": "WARN",
+      "where": "Built an EventBridge-scheduled LLM-as-judge check ",
+      "msg": "no metric or explicit outcome"
+    },
+    {
+      "level": "WARN",
+      "where": "Co-built a topic-scoring research tool and deploye",
+      "msg": "opening 'Co-built' may not be an action verb"
+    },
+    {
+      "level": "WARN",
+      "where": "Co-built a topic-scoring research tool and deploye",
+      "msg": "no metric or explicit outcome"
+    },
+    {
+      "level": "WARN",
+      "where": "Co-built a topic-scoring research tool and deploye",
+      "msg": "voice: tool inventory: 4 techs in a row"
+    },
+    {
+      "level": "WARN",
+      "where": "Built and prompt-tuned a pipeline that overlays An",
+      "msg": "leading verb 'Built' repeats (also: Built an EventBridge-scheduled LLM-as-judge check )"
+    },
+    {
+      "level": "WARN",
+      "where": "Built and prompt-tuned a pipeline that overlays An",
+      "msg": "voice: noun stack of 6 words"
+    },
+    {
+      "level": "WARN",
+      "where": "Built Redis caching in front of Tortuga's Prisma O",
+      "msg": "leading verb 'Built' repeats (also: Built an EventBridge-scheduled LLM-as-judge check )"
+    },
+    {
+      "level": "WARN",
+      "where": "Built a C++17 order book and matching engine to re",
+      "msg": "leading verb 'Built' repeats (also: Built an EventBridge-scheduled LLM-as-judge check )"
+    },
+    {
+      "level": "WARN",
+      "where": "Built a C++17 order book and matching engine to re",
+      "msg": "voice: noun stack of 6 words"
+    },
+    {
+      "level": "WARN",
+      "where": "Built a C++17 order book and matching engine to re",
+      "msg": "voice: 5 numbers in one bullet (metric stacking)"
+    }
+  ],
+  "errors": 0,
+  "warnings": 13
+}
