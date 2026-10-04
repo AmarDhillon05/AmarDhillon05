@@ -1,0 +1,154 @@
+{
+  "persona": "recruiter_v2",
+  "target": "Infrastructure / distributed systems / platform / SRE internships, 2026-27 cycle",
+  "memory_skim": {
+    "strongest_3": [
+      "AWS SDE Intern (Redmond, Sep-Dec 2026): capacity planning for Amazon Redshift / EC2",
+      "Capital One Software Engineering Intern: made an AI workflow tool 65% faster",
+      "IEX Order Book & Matching Engine in C++: replayed 50.9M real exchange messages at 1.26M events/sec"
+    ],
+    "engineer_type": "Cloud/backend engineer who lives on AWS, with a side of AI tooling and one serious C++ performance project. Reads as 'backend + cloud' more than pure distributed systems.",
+    "memorable_numbers": ["65%", "90% of developers preferred", "34% latency cut", "50.9M messages", "1.26M events/sec", "12.8x", "30%", "20,000+ visits"],
+    "confusing": [
+      "'UMD App Development Contracting (Client: Amazon Leo)': is this Amazon work or a student club? What is Amazon Leo?",
+      "'Claude skill' / 'sub-skills': what a skill is and what 'AI workflow generation' produces",
+      "'LLM-as-judge' check for a Bedrock classifier",
+      "'Tortuga' in the TerpLabs bullet: never introduced",
+      "The 'std::list FIFOs ... std::map ... O(1)' line"
+    ],
+    "skipped": [
+      "Technical Skills section beyond the AWS line",
+      "Third order-book bullet (the data-structure detail)",
+      "TerpLabs and UMIACS details",
+      "Certification dates"
+    ],
+    "interview_questions": [
+      "At AWS, how do you decide the upper and lower bounds on Redshift's patching capacity, and what does 'backtested' mean here?",
+      "At Capital One, what was the AI tool generating, and why did splitting it into smaller pieces make it faster?",
+      "What is the Amazon Leo engagement, and what part of the Kinesis/Lambda pipeline did you own?",
+      "In the order book project, why did the B+ tree beat the LSM-tree on reads, and when would you pick the LSM-tree instead?"
+    ]
+  },
+  "plain_english": [
+    {"quote": "Writing backtested Java capacity-planning logic that sets upper", "restatement": "At AWS he is writing code, tested against past data, that decides how much spare server capacity Redshift keeps for maintenance, so it stays up without wasting money.", "understood": true},
+    {"quote": "Cut AI workflow generation time 65% to", "restatement": "He made an internal AI assistant produce something called a 'workflow' about 65% faster, under 15 seconds, by splitting it into smaller pieces that use search and checking tools.", "understood": false},
+    {"quote": "Precomputed popular workflows from a 270K+ row", "restatement": "He built a fast, pre-sorted copy of the most-used workflows from a big database so the AI tool could look them up without hitting the database's access limits, and it became the tool's main way to search.", "understood": true},
+    {"quote": "Rebuilt a legacy test-data workflow tool as", "restatement": "He rebuilt an old internal tool for editing test data as a desktop app with a visual editor, and 90% of 30+ developers surveyed liked it better.", "understood": true},
+    {"quote": "Cut end-to-end latency 34% on a data", "restatement": "He made a pipeline that feeds 6,000+ research documents into an AI model 34% faster by streaming the data instead of saving it to storage between every step.", "understood": true},
+    {"quote": "Co-built a topic-scoring research tool and deployed", "restatement": "He helped build a tool that shows Amazon Leo's policy team which research topics are popular, and set up its automated deployment to a test environment on AWS.", "understood": true},
+    {"quote": "Built an EventBridge-scheduled LLM-as-judge check for a", "restatement": "I think he built a scheduled check that uses one AI to grade another AI classifier's output and only retrains it when its grades drift, but I would be guessing at what 'LLM-as-judge' means and what the threshold protects.", "understood": false},
+    {"quote": "Cut research-environment setup time 30% by pinning", "restatement": "He made it 30% faster for researchers to set up their computing environment by locking software versions and packaging everything in containers.", "understood": true},
+    {"quote": "Built Redis caching in front of Tortuga's", "restatement": "He added a caching layer to a class-scheduling app he co-founded to lighten the load on its database; the app got 20,000+ visits in its first month.", "understood": true},
+    {"quote": "Built a C++17 order book and matching", "restatement": "He built a stock-exchange simulator in C++ that replayed 50.9M real exchange messages and matched the real exchange's trades on all but one of 99,123.", "understood": true},
+    {"quote": "Implemented B+ tree and LSM-tree backends for", "restatement": "He built two different storage designs for the simulator's log and tested them head to head; one read data 12.8x faster but used 27% more disk.", "understood": true},
+    {"quote": "Ran the full replay at 1.26M events/sec", "restatement": "The simulator processes 1.26 million events per second; the rest is about the internal data structures that make cancelling orders fast, which I could not explain.", "understood": false}
+  ],
+  "scores": {
+    "impact_clarity": 7,
+    "quantification": 8,
+    "technical_depth": 8,
+    "concision_readability": 7,
+    "skim_test": 8,
+    "credibility": 8,
+    "ats_parseability": 8,
+    "visual_layout": 8,
+    "domain_fit": 8,
+    "human_voice": 7,
+    "plain_language": 6,
+    "overall": 8
+  },
+  "competitive_for_domain": "Y",
+  "bullet_feedback": [
+    {
+      "bullet": "Cut AI workflow generation time 65% to under 15s by splitting a Claude skill into focused sub-skills that call Python search and validation tools instead of relying on open-ended model search",
+      "problem": "'AI workflow generation' and 'Claude skill' / 'sub-skills' are never defined. I can repeat the 65% but not what the tool generates, who uses it, or what a 'skill' is. The only hint of what a workflow is ('test-data workflow') comes two bullets later.",
+      "severity": 7,
+      "why_it_matters": "This is the lead bullet under the second-biggest brand. If I can't say what was built in one sentence, I pass the hiring manager a number with nothing behind it.",
+      "missing_or_unclear": "clarify: what a 'workflow' is here (test-data workflows?), and who asks the AI to generate it",
+      "suggested_direction": "Open with what the tool does for whom in plain words ('an internal AI assistant that drafts test-data workflows for developers'), then the 65%, then the method. Replace 'Claude skill into focused sub-skills' with plainer wording such as 'splitting one large Claude prompt-tool into smaller steps' if that is accurate."
+    },
+    {
+      "bullet": "Built an EventBridge-scheduled LLM-as-judge check for a production Amazon Bedrock classifier that rates research documents by importance to trigger fine-tuning only when its grades shift past a threshold",
+      "problem": "Four jargon terms stacked before the reader learns the purpose: 'EventBridge-scheduled', 'LLM-as-judge', 'Amazon Bedrock classifier', 'fine-tuning'. The sentence is also ambiguous: 'that rates research documents' could attach to the check or the classifier, and 'its grades' could be either.",
+      "severity": 7,
+      "why_it_matters": "A recruiter can't restate it and will skip it. An infra hiring manager might value the 'retrain only on drift' design, but it is buried at the end of a noun chain.",
+      "missing_or_unclear": "clarify: which component grades which, and what the payoff of 'only when grades shift' is (avoiding unnecessary retraining runs?)",
+      "suggested_direction": "Lead with the purpose: 'Built a scheduled check that has a second model grade a production document classifier and triggers retraining only when its grades drift past a threshold'. Move EventBridge/Bedrock to the end or to Skills."
+    },
+    {
+      "bullet": "Ran the full replay at 1.26M events/sec end-to-end on an order book that keeps std::list FIFOs per price level in a std::map with an order-ID hash map to make cancels O(1)",
+      "problem": "The first half (1.26M events/sec) is clear; the second half 'std::list FIFOs per price level in a std::map with an order-ID hash map' is a type-signature read aloud. Nobody would say it this way in an interview, and 'O(1)' means nothing to a recruiter.",
+      "severity": 7,
+      "why_it_matters": "The speed number is one of the best headline wins on the page and it is tied to a sentence I stop reading halfway. Hurts human_voice and plain_language.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Keep the 1.26M events/sec first, then say the design choice in words: 'keeping orders in a first-in-first-out queue per price and indexing them by order ID so cancels take constant time'. The std:: type names can go or move to a parenthetical."
+    },
+    {
+      "bullet": "Rebuilt a legacy test-data workflow tool as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation to make editing smoother, which 90% of 30+ surveyed developers preferred",
+      "problem": "Five tech names (React, TypeScript, Electron, React Flow, Jest) sit between what was rebuilt and why; the purpose 'to make editing smoother' is vague. For an infra target this is also the least relevant Capital One bullet.",
+      "severity": 4,
+      "why_it_matters": "Reads like a stack list; the 90% result is good but arrives after the reader has waded through tools.",
+      "missing_or_unclear": "clarify: what was hard about editing in the old tool",
+      "suggested_direction": "Name the change in plain terms (a desktop app with a drag-and-drop editor and automatic validation), drop the redundant 'React and TypeScript' since Skills carries them, and end on the 90% result."
+    },
+    {
+      "bullet": "Co-built a topic-scoring research tool and deployed it to dev on AWS Fargate with GitHub Actions CI/CD and AWS CDK to show Amazon Leo's public-policy staff which research topics are popular",
+      "problem": "The purpose ('to show ... staff which research topics are popular') comes after a three-tool deployment chain; 'deployed it to dev' will be read by a non-engineer as either 'shipped' or nothing.",
+      "severity": 5,
+      "why_it_matters": "The reader can't tell whether the candidate's piece was the tool or the deployment setup, which is the part an infra team cares about.",
+      "missing_or_unclear": "clarify: which part he personally built in a co-built project (the deployment pipeline?)",
+      "suggested_direction": "Put who it is for first, then say his part: 'Co-built a tool that shows Amazon Leo's policy staff which research topics are popular, and set up its automated deployment to a dev environment on AWS Fargate using CDK and GitHub Actions'."
+    },
+    {
+      "bullet": "Built Redis caching in front of Tortuga's Prisma ORM queries to reduce database load and latency for a class scheduler that drew 20,000+ visits in its first 30 days",
+      "problem": "'Tortuga' is never introduced (the reader has to infer it is the class-scheduler product). 'to reduce database load and latency' is intent, so the only number (20,000+ visits) describes the app's popularity, not the caching work.",
+      "severity": 4,
+      "why_it_matters": "The 20,000+ number reads as if the caching produced it, which a sharp interviewer will ask about.",
+      "missing_or_unclear": "clarify: what Tortuga is, in two words",
+      "suggested_direction": "Introduce the product first ('Tortuga, a class scheduler that drew 20,000+ visits in its first 30 days'), then the caching. Drop 'Prisma ORM' if space is tight."
+    },
+    {
+      "bullet": "Implemented B+ tree and LSM-tree backends for the engine's event log to compare them on identical 2M-record workloads, which showed the B+ tree giving 12.8x the read throughput and 22x faster range queries for 27% more disk",
+      "problem": "Three comparative numbers (12.8x, 22x, 27%) in one clause; 'for 27% more disk' is compressed and reads as a cost only after a second pass.",
+      "severity": 3,
+      "why_it_matters": "Minor: the tradeoff is the interesting part and it is the hardest bit to parse.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Split the tradeoff explicitly ('... 12.8x the read throughput and 22x faster range queries, at the cost of 27% more disk'). Consider whether both read numbers are needed."
+    },
+    {
+      "bullet": "Precomputed popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to keep lookups within the database's permission and rate limits, which became the Claude skill's main search tool",
+      "problem": "'permission and rate limits' is unclear (permission limits are not something caching usually solves), and the payoff 'became the Claude skill's main search tool' depends on the reader having decoded 'Claude skill' in the previous bullet.",
+      "severity": 4,
+      "why_it_matters": "This is the most infra-flavored Capital One bullet (caching to respect database limits) but it sits second and reads as tooling.",
+      "missing_or_unclear": "clarify: what 'permission' limits means here",
+      "suggested_direction": "Consider moving it first under Capital One for this target, and rephrase the why in plain words ('so the AI assistant could search them without exceeding the database's rate limits')."
+    }
+  ],
+  "page_feedback": [
+    {
+      "problem": "The employer line 'UMD App Development Contracting (Client: Amazon Leo)' is ambiguous: a recruiter can't tell whether this is Amazon work, a student organization, or freelance, and 'Amazon Leo' is not a widely known name.",
+      "severity": 5,
+      "why_it_matters": "This role holds the strongest infra evidence (Kinesis/Lambda, Fargate, CDK, CI/CD) and I may discount it or confuse it with the AWS internship.",
+      "suggested_direction": "Clarify the relationship in the header in plain words (e.g. a university contracting program doing client work for Amazon Leo, Amazon's satellite internet project, if accurate)."
+    },
+    {
+      "problem": "The 'systems engineer' thread isn't the first impression. The Capital One block leads with AI-assistant and Electron front-end work, so the middle of the page reads as 'AI tooling / full-stack', and the strongest systems evidence (Kinesis pipeline, order book speed) is spread out.",
+      "severity": 4,
+      "why_it_matters": "On a 10-second skim for an infra/SRE req I filed this as 'cloud/backend with AI tools', not 'distributed systems'.",
+      "suggested_direction": "Within each role, order bullets so the infra/performance one comes first (e.g. the caching/rate-limit bullet at Capital One). No new content needed."
+    },
+    {
+      "problem": "Jargon density: about a quarter of the bullets (Claude sub-skills, LLM-as-judge, std::list FIFOs) can't be restated by a non-engineer.",
+      "severity": 5,
+      "why_it_matters": "Recruiters forward resumes with a one-line summary; bullets I can't summarize get no credit at the first gate.",
+      "suggested_direction": "Rephrase those three bullets purpose-first, keeping one distinctive technical noun each and moving secondary tool names to Skills."
+    }
+  ],
+  "keep": [
+    "Cut end-to-end latency 34% on a data pipeline that sends 6,000+ scraped research documents to model inference by streaming them through Amazon Kinesis into AWS Lambda instead of staging each step in S3",
+    "Built a C++17 order book and matching engine to replay 50.9M real IEX exchange messages without ever resyncing, which agreed with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices",
+    "Writing backtested Java capacity-planning logic that sets upper and lower bounds on the EC2 capacity Amazon Redshift reserves for patching to balance availability against cost",
+    "Cut research-environment setup time 30% by pinning dependencies with uv and packaging environments in Docker",
+    "Bolded metrics as sparse anchors (one per bullet) and the clean single-column layout"
+  ]
+}
