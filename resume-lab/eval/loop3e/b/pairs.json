@@ -1,0 +1,26 @@
+[
+  {
+    "id": "g01",
+    "versions": {
+      "A": "Precomputed popular workflows from a 270K+ row PostgreSQL table into a category tree cached in Redis to give the Claude skill a search tool that stays within database permission and rate limits",
+      "B": "Built the Claude skill's main search tool by precomputing popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to keep lookups within the database's permission and rate limits",
+      "C": "Precomputed popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to keep lookups within the database's permission and rate limits, which became the Claude skill's main search tool"
+    }
+  },
+  {
+    "id": "g02",
+    "versions": {
+      "A": "Automated retraining of a production Amazon Bedrock model that rates research documents by importance to fine-tune only when a larger LLM's scheduled grades of its output shift past a threshold",
+      "B": "Built an EventBridge-scheduled LLM-as-judge check for a production Amazon Bedrock classifier that rates research documents by importance to trigger fine-tuning only when its grades shift past a threshold",
+      "C": "Set up a larger LLM to grade a production Amazon Bedrock document classifier on an EventBridge schedule to trigger fine-tuning only when its grades shift past a threshold, which avoids redundant retraining"
+    }
+  },
+  {
+    "id": "g03",
+    "versions": {
+      "A": "Writing and backtesting Java logic that decides how much EC2 capacity Amazon Redshift reserves for maintenance like patching to keep it available without overspending",
+      "B": "Writing Java logic that sets upper and lower bounds on reserved EC2 capacity for Amazon Redshift maintenance like patching to balance availability against cost, which backtests are now validating",
+      "C": "Writing backtested Java capacity-planning logic that sets upper and lower bounds on the EC2 capacity Amazon Redshift reserves for patching to balance availability against cost"
+    }
+  }
+]
