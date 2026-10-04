@@ -18,8 +18,7 @@ drop:
 - iex.storage_benchmark
 - terplabs.studio
 text:
-  capital_one.claude_skill: Cut LLM workflow generation time \textbf{65\%} to under 15s by splitting one large Claude skill into smaller sub-skills that call Python tools for search and validation, and output quality held in repeated stress-test runs
-  aws_sde.redshift: 'Building capacity planning for Amazon Redshift maintenance like patching: Java logic that sets upper and lower bounds on reserved EC2 capacity to balance availability against cost, validated by backtesting'
+  capital_one.claude_skill: Split a Claude skill into sub-skills backed by Python search and validation tools to stop open-ended model search, which cut LLM workflow generation time \textbf{65\%} to under 15s with no quality loss in stress tests
 skills:
 - \textbf{AI/ML:} LLMs (Claude, Amazon Bedrock, GPT-4o mini), LLM agents and tool use (Claude skills), retrieval-augmented generation (RAG), embeddings and vector search (SentenceBERT, ChromaDB), LLM-as-a-judge evaluation, model fine-tuning, vision-language models, prompt engineering, Open3D
 - \textbf{Languages:} Python, Java, C++, C, TypeScript, JavaScript, SQL

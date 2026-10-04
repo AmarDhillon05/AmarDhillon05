@@ -4,66 +4,66 @@
   "bullets": [
     {
       "fact": "iex.replay_correctness",
-      "chars": 232,
-      "words": 38,
+      "chars": 199,
+      "words": 33,
       "n_bold": 1,
       "n_lines": 2,
-      "last_fill": 1.0,
-      "text": "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange's book, agreeing with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices"
+      "last_fill": 0.73,
+      "text": "Built a C++17 order book and matching engine to replay 50.9M real IEX exchange messages without ever resyncing, which agreed with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices"
     },
     {
       "fact": "iex.throughput+iex.data_structures+iex.latency_dist",
-      "chars": 218,
-      "words": 38,
+      "chars": 227,
+      "words": 40,
       "n_bold": 1,
       "n_lines": 2,
-      "last_fill": 0.88,
-      "text": "Sustained 1.26M events/sec over the full replay and a 1.2 s per-message p99 on a separate 2M-event run, keeping each price level as a FIFO queue (std::list) inside a std::map, with an order-ID hash map for O(1) cancels"
+      "last_fill": 0.95,
+      "text": "Designed the book as std::list FIFOs per price level inside a std::map with an order-ID hash map to make cancels O(1), which sustained 1.26M events/sec over the full replay and a 1.2 s per-message p99 on a separate 2M-event run"
     },
     {
       "fact": "iex.storage_benchmark",
-      "chars": 227,
-      "words": 39,
+      "chars": 223,
+      "words": 37,
       "n_bold": 1,
       "n_lines": 2,
-      "last_fill": 0.96,
-      "text": "Implemented B+ tree and LSM-tree backends for the event log and benchmarked them on identical 2M-record workloads, where the B+ tree gave 12.8x the read throughput and 22x faster range queries at the cost of 27% more disk space"
+      "last_fill": 0.99,
+      "text": "Implemented B+ tree and LSM-tree backends for the engine's event log to compare them on identical 2M-record workloads, which showed the B+ tree giving 12.8x the read throughput and 22x faster range queries for 27% more disk"
     },
     {
       "fact": "iex.perf_rigor",
-      "chars": 226,
-      "words": 38,
+      "chars": 213,
+      "words": 37,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.97,
-      "text": "Traced an apparent 1.65x regression to the CPU frequency governor, not a code change, using perf counters and a do-nothing control book, then cut run-to-run variance from about 6% to 0.06% by pinning cores and fixing the clock"
+      "last_fill": 0.8,
+      "text": "Traced an apparent 1.65x regression to the CPU frequency governor with perf counters and a do-nothing control book to rule out a code change, which led to core pinning that cut run-to-run variance from 6% to 0.06%"
     },
     {
       "fact": "aws_sde.redshift",
-      "chars": 205,
-      "words": 29,
+      "chars": 175,
+      "words": 25,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.72,
-      "text": "Building capacity planning for Amazon Redshift maintenance like patching: Java logic that sets upper and lower bounds on reserved EC2 capacity to balance availability against cost, validated by backtesting"
+      "last_fill": 0.46,
+      "text": "Writing backtested Java capacity-planning logic that sets upper and lower bounds on the EC2 capacity Amazon Redshift reserves for patching to balance availability against cost"
     },
     {
       "fact": "capital_one.claude_skill",
-      "chars": 228,
-      "words": 35,
+      "chars": 177,
+      "words": 28,
       "n_bold": 1,
       "n_lines": 2,
-      "last_fill": 1.0,
-      "text": "Cut AI workflow generation time 65% to under 15s by replacing a Claude skill's open-ended search with focused sub-skills that call Python tools for workflow search and validation, guided by CloudWatch and OpenSearch latency logs"
+      "last_fill": 0.49,
+      "text": "Cut AI workflow generation time 65% to under 15s by splitting a Claude skill into focused sub-skills that call Python search and validation tools instead of searching open-ended"
     },
     {
       "fact": "capital_one.search_index",
-      "chars": 229,
-      "words": 36,
+      "chars": 212,
+      "words": 32,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.93,
-      "text": "Precomputed popular workflows from a 270K+ row PostgreSQL table into a category tree that the Claude skill searches first, with Redis caching full workflows, so lookups rarely touch a database gated by permissions and rate limits"
+      "last_fill": 0.82,
+      "text": "Precomputed popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to keep lookups within the database's permission and rate limits, which became the Claude skill's main search tool"
     },
     {
       "fact": "amazon_contract.kinesis_pipeline",
@@ -76,12 +76,12 @@
     },
     {
       "fact": "umiacs.grasp_vlm",
-      "chars": 228,
-      "words": 37,
+      "chars": 229,
+      "words": 38,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.95,
-      "text": "For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D for a vision-language model, then tuned prompts so it favors grasps that avoid hitting the table"
+      "last_fill": 0.94,
+      "text": "Built a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D to let a vision-language model pick robot grasps for a PhD-led ICLR project, and tuned its prompts to favor grasps that avoid hitting the table"
     },
     {
       "fact": "terplabs.tortuga",
@@ -96,22 +96,17 @@
   "issues": [
     {
       "level": "WARN",
-      "where": "Built a C++17 order book and matching engine and r",
-      "msg": "voice: noun stack of 5 words"
+      "where": "Built a C++17 order book and matching engine to re",
+      "msg": "voice: noun stack of 6 words"
     },
     {
       "level": "WARN",
-      "where": "Built a C++17 order book and matching engine and r",
+      "where": "Built a C++17 order book and matching engine to re",
       "msg": "voice: 5 numbers in one bullet (metric stacking)"
     },
     {
       "level": "WARN",
-      "where": "Sustained 1.26M events/sec over the full replay an",
-      "msg": "voice: 2 parentheticals (max 1)"
-    },
-    {
-      "level": "WARN",
-      "where": "Sustained 1.26M events/sec over the full replay an",
+      "where": "Designed the book as std::list FIFOs per price lev",
       "msg": "voice: 5 numbers in one bullet (metric stacking)"
     },
     {
@@ -122,7 +117,12 @@
     {
       "level": "WARN",
       "where": "Traced an apparent 1.65x regression to the CPU fre",
-      "msg": "voice: noun stack of 6 words"
+      "msg": "voice: noun stack of 5 words"
+    },
+    {
+      "level": "WARN",
+      "where": "Writing backtested Java capacity-planning logic th",
+      "msg": "voice: noun stack of 5 words"
     },
     {
       "level": "WARN",
@@ -131,15 +131,20 @@
     },
     {
       "level": "WARN",
-      "where": "For a PhD-led robotics project aimed at ICLR, buil",
-      "msg": "opening 'For' may not be an action verb"
+      "where": "Built a pipeline that overlays AnyGrasp's candidat",
+      "msg": "leading verb 'Built' repeats (also: Built a C++17 order book and matching engine to re)"
+    },
+    {
+      "level": "WARN",
+      "where": "Built a pipeline that overlays AnyGrasp's candidat",
+      "msg": "voice: noun stack of 6 words"
     },
     {
       "level": "WARN",
       "where": "Built Redis caching in front of the Prisma ORM que",
-      "msg": "leading verb 'Built' repeats (also: Built a C++17 order book and matching engine and r)"
+      "msg": "leading verb 'Built' repeats (also: Built a C++17 order book and matching engine to re)"
     }
   ],
   "errors": 0,
-  "warnings": 9
+  "warnings": 10
 }

@@ -1,0 +1,164 @@
+[
+  {
+    "fact": "aws_sde.redshift",
+    "winner": "cand2",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Writing Java logic that sets the upper and lower bounds on EC2 capacity that Amazon Redshift reserves for operations like patching, balancing availability against cost, and backtesting it",
+    "decisive_wording": "which backtests are now validating",
+    "info": "C keeps maintenance-generalization ('maintenance like patching') and the ongoing status of backtesting; B compresses to 'backtested' (implies done) and narrows to patching only; A keeps 'operations like patching' but tacks 'and backtesting it' on the end"
+  },
+  {
+    "fact": "capital_one.ui_overhaul",
+    "winner": "cand1",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Rebuilt a legacy test-data workflow tool as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation to make editing smoother, which 90% of 30+ surveyed developers preferred",
+    "decisive_wording": "to make editing smoother, which 90% of 30+ surveyed developers preferred",
+    "info": "C and B keep 'legacy' and 'Jest-tested validation'; A drops Jest and legacy framing"
+  },
+  {
+    "fact": "capital_one.claude_skill",
+    "winner": "cand1",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Cut AI workflow generation time 65% to under 15s by replacing a Claude skill's open-ended search with focused sub-skills that call Python tools for workflow search and validation, guided by CloudWatch and OpenSearch latency logs",
+    "decisive_wording": "Cut AI workflow generation time 65% to under 15s by splitting a Claude skill into focused sub-skills",
+    "info": "A and C carry the same facts; B adds CloudWatch/OpenSearch logs but only as a tacked 'guided by' clause"
+  },
+  {
+    "fact": "capital_one.claude_skill@ai",
+    "winner": "cand1",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Cut LLM workflow generation time 65% to under 15s by splitting one large Claude skill into smaller sub-skills that call Python tools for search and validation, and output quality held in repeated stress-test runs",
+    "decisive_wording": "which cut LLM workflow generation time 65% to under 15s with no quality loss in stress tests",
+    "info": "All keep metric, mechanism and quality claim; C adds 'repeated' runs"
+  },
+  {
+    "fact": "capital_one.search_index",
+    "winner": "cand1",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Precomputed popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to keep lookups within the database's permission and rate limits, which became the Claude skill's main search tool",
+    "decisive_wording": "Precomputed ... to keep lookups within the database's permission and rate limits",
+    "info": "A and B carry same facts; C adds that Redis caches full workflows and the tree is searched first"
+  },
+  {
+    "fact": "amazon_contract.leo_deploy",
+    "winner": "incumbent",
+    "advantage": "concrete",
+    "adopt": false,
+    "text": "Co-built a research tool that scores and aggregates topics so Amazon Leo's public-policy staff can see what's popular, running in dev on AWS Fargate with GitHub Actions CI/CD and AWS CDK infrastructure-as-code ready for production",
+    "decisive_wording": "with GitHub Actions CI/CD and AWS CDK infrastructure-as-code ready for production",
+    "info": "B drops GitHub Actions CI/CD; A and C keep everything"
+  },
+  {
+    "fact": "amazon_contract.kinesis_pipeline",
+    "winner": "incumbent",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+    "decisive_wording": "Reduced end-to-end latency 34% ... by replacing S3 staging hops with Kinesis streams feeding Lambda",
+    "info": "B drops 'average' and 'across multi-day runs' qualifiers that A keeps"
+  },
+  {
+    "fact": "amazon_contract.kinesis_pipeline@infra",
+    "winner": "incumbent",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Cut end-to-end latency 34% on a data pipeline that sends 6,000+ scraped research documents to model inference by streaming them through Amazon Kinesis into AWS Lambda instead of staging each step in S3",
+    "decisive_wording": "by streaming them through Amazon Kinesis into AWS Lambda instead of staging each step in S3",
+    "info": "B drops 'average ... across multi-day runs'; B adds 'model' to inference for clarity"
+  },
+  {
+    "fact": "amazon_contract.bedrock_finetune",
+    "winner": "cand2",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance: on an EventBridge schedule a larger LLM grades its ratings, and fine-tuning runs only when the grades shift past a threshold",
+    "decisive_wording": "EventBridge-scheduled LLM-as-judge check ... to trigger fine-tuning only when its grades shift past a threshold",
+    "info": "B adds 'avoids redundant retraining runs'; all keep Bedrock, EventBridge, threshold"
+  },
+  {
+    "fact": "umiacs.grasp_vlm",
+    "winner": "cand1",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D for a vision-language model, then tuned prompts so it favors grasps that avoid hitting the table",
+    "decisive_wording": "Built a pipeline that overlays AnyGrasp's candidate grasps ... to let a vision-language model pick robot grasps",
+    "info": "All keep the same facts"
+  },
+  {
+    "fact": "terplabs.studio",
+    "winner": "incumbent",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Co-founded a 110+ member student product studio that has shipped 5 live products",
+    "decisive_wording": "that has shipped 5 live products",
+    "info": "A adds 'to build campus products' (minor scope info)"
+  },
+  {
+    "fact": "terplabs.tortuga",
+    "winner": "incumbent",
+    "advantage": "concrete",
+    "adopt": false,
+    "text": "Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio's class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency",
+    "decisive_wording": "the studio's class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency",
+    "info": "Identical facts"
+  },
+  {
+    "fact": "terplabs.rag_meal",
+    "winner": "cand1",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Building a RAG meal-suggestion feature for the official UMD app, in which GPT-4o mini writes suggestions from scraped recipes found by SentenceBERT vector search in ChromaDB, and internal testers rated 93% of meals satisfactory",
+    "decisive_wording": "retrieves scraped recipes with SentenceBERT search in ChromaDB to ground GPT-4o mini's suggestions",
+    "info": "All keep same facts"
+  },
+  {
+    "fact": "iex.replay_correctness",
+    "winner": "cand1",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Built a C++17 order book and matching engine to replay 50.9M real IEX exchange messages without ever resyncing, which agreed with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices",
+    "decisive_wording": "to replay 50.9M real IEX exchange messages without ever resyncing, which agreed with the exchange",
+    "info": "B adds 'to the exchange's book' after resyncing; otherwise identical"
+  },
+  {
+    "fact": "iex.storage_benchmark",
+    "winner": "cand1",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Implemented B+ tree and LSM-tree backends for the event log and benchmarked them on identical 2M-record workloads, where the B+ tree gave 12.8x the read throughput and 22x faster range queries at the cost of 27% more disk space",
+    "decisive_wording": "to compare them on identical 2M-record workloads, which showed",
+    "info": "A keeps 'engine's' context; B says 'disk space' and 'at the cost of' which frames the tradeoff a bit more explicitly"
+  },
+  {
+    "fact": "iex.throughput+iex.data_structures",
+    "winner": "cand1",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Sustained 1.26M events/sec end-to-end over the full replay, keeping each price level's orders in a std::list FIFO inside a std::map and a hash map from order ID to list iterator for O(1) cancels",
+    "decisive_wording": "Designed the book as std::list FIFOs ... to make cancels O(1), which sustained 1.26M events/sec",
+    "info": "A adds the 'to list iterator' detail that explains O(1) cancel"
+  },
+  {
+    "fact": "iex.throughput+iex.data_structures+iex.latency_dist@quant",
+    "winner": "incumbent",
+    "advantage": "concrete",
+    "adopt": false,
+    "text": "Sustained 1.26M events/sec over the full replay and a 1.2 \u00b5s per-message p99 on a separate 2M-event run, keeping each price level as a FIFO queue (std::list) inside a std::map, with an order-ID hash map for O(1) cancels",
+    "decisive_wording": "Sustained 1.26M events/sec over the full replay and a 1.2 \u00b5s per-message p99 on a separate 2M-event run",
+    "info": "A drops 'over the full replay' and 'per-message', so both numbers read as coming from the separate 2M-event run"
+  },
+  {
+    "fact": "iex.perf_rigor@quant",
+    "winner": "cand1",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Traced an apparent 1.65x regression to the CPU frequency governor, not a code change, using perf counters and a do-nothing control book, then cut run-to-run variance from about 6% to 0.06% by pinning cores and fixing the clock",
+    "decisive_wording": "with perf counters and a do-nothing control book to rule out a code change, which led to core pinning",
+    "info": "A drops 'fixing the clock' and 'about'; B drops the control book and the ruling-out of a code change; C keeps all"
+  }
+]

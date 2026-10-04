@@ -11,18 +11,17 @@ drop:
 - terplabs.rag_meal
 - terplabs.studio
 text:
-  iex.throughput+iex.data_structures: Sustained \textbf{1.26M events/sec} over the full replay and a 1.2 \textmu{}s per-message p99 on a separate 2M-event run, keeping each price level as a FIFO queue (std::list) inside a std::map, with an order-ID hash map for O(1) cancels
-  aws_sde.redshift: 'Building capacity planning for Amazon Redshift maintenance like patching: Java logic that sets upper and lower bounds on reserved EC2 capacity to balance availability against cost, validated by backtesting'
+  iex.throughput+iex.data_structures: Designed the book as std::list FIFOs per price level inside a std::map with an order-ID hash map to make cancels O(1), which sustained \mbox{\textbf{1.26M events/sec}} over the full replay and a 1.2 \textmu{}s per-message p99 on a separate 2M-event run
 retag:
   iex.throughput+iex.data_structures: iex.throughput+iex.data_structures+iex.latency_dist
 add_after:
   iex.storage_benchmark:
   - fact: iex.perf_rigor
-    text: Traced an apparent 1.65x regression to the CPU frequency governor, not a code change, using perf counters and a do-nothing control book, then cut run-to-run variance from about 6\% to 0.06\% by pinning cores and fixing the clock
+    text: Traced an apparent 1.65x regression to the CPU frequency governor with perf counters and a do-nothing control book to rule out a code change, which led to core pinning that cut run-to-run variance from 6\% to 0.06\%
 skills:
 - \textbf{Languages:} C++17, C, Python, Java, Rust, SQL, TypeScript, Bash
 - \textbf{Systems \& Performance:} debugging and profiling with Linux perf (hardware counters, top-down analysis), POSIX, STL, B+ trees, LSM trees, data structures and algorithms, benchmarking
-- \textbf{Cloud \& Tools:} AWS (Lambda, Kinesis, EC2, Fargate, CloudWatch monitoring), AWS CDK, PostgreSQL, Redis, Docker, GitHub Actions (CI/CD), Git, Pytest
+- \textbf{Cloud \& Tools:} AWS (Lambda, Kinesis, EC2, Fargate, CloudWatch monitoring), AWS CDK, PostgreSQL, Redis, Docker, GitHub Actions (CI/CD), Git, unit testing (Pytest)
 - \textbf{Certification:} \href{https://www.credly.com/badges/d2406a97-d937-47de-823b-724981159d3b/public_url}{\underline{AWS Certified Developer -- Associate}} (Nov 2024 -- Nov 2027)
 order:
   iex:

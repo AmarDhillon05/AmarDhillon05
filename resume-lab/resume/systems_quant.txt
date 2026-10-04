@@ -12,30 +12,30 @@ College Park, MD
 Projects
 IEX Order Book & Matching Engine | C++17, STL, POSIX, Linux perf
 Jul 2026 – Aug 2026
-• Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without
-ever resyncing to the exchange’s book, agreeing with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices
-• Sustained 1.26M events/sec over the full replay and a 1.2 µs per-message p99 on a separate 2M-event run, keeping
-each price level as a FIFO queue (std::list) inside a std::map, with an order-ID hash map for O(1) cancels
-• Implemented B+ tree and LSM-tree backends for the event log and benchmarked them on identical 2M-record workloads,
-where the B+ tree gave 12.8x the read throughput and 22x faster range queries at the cost of 27% more disk space
-• Traced an apparent 1.65x regression to the CPU frequency governor, not a code change, using perf counters and a
-do-nothing control book, then cut run-to-run variance from about 6% to 0.06% by pinning cores and fixing the clock
+• Built a C++17 order book and matching engine to replay 50.9M real IEX exchange messages without ever resyncing,
+which agreed with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices
+• Designed the book as std::list FIFOs per price level inside a std::map with an order-ID hash map to make cancels O(1),
+which sustained 1.26M events/sec over the full replay and a 1.2 µs per-message p99 on a separate 2M-event run
+• Implemented B+ tree and LSM-tree backends for the engine’s event log to compare them on identical 2M-record
+workloads, which showed the B+ tree giving 12.8x the read throughput and 22x faster range queries for 27% more disk
+• Traced an apparent 1.65x regression to the CPU frequency governor with perf counters and a do-nothing control book to
+rule out a code change, which led to core pinning that cut run-to-run variance from 6% to 0.06%
 
 Experience
 Amazon Web Services
 Sep 2026 – Dec 2026
 Software Development Engineer Intern
 Redmond, WA
-• Building capacity planning for Amazon Redshift maintenance like patching: Java logic that sets upper and lower bounds
-on reserved EC2 capacity to balance availability against cost, validated by backtesting
+• Writing backtested Java capacity-planning logic that sets upper and lower bounds on the EC2 capacity Amazon Redshift
+reserves for patching to balance availability against cost
 Capital One
 Jun 2026 – Aug 2026
 Software Engineering Intern
 Richmond, VA
-• Cut AI workflow generation time 65% to under 15s by replacing a Claude skill’s open-ended search with focused
-sub-skills that call Python tools for workflow search and validation, guided by CloudWatch and OpenSearch latency logs
-• Precomputed popular workflows from a 270K+ row PostgreSQL table into a category tree that the Claude skill searches
-first, with Redis caching full workflows, so lookups rarely touch a database gated by permissions and rate limits
+• Cut AI workflow generation time 65% to under 15s by splitting a Claude skill into focused sub-skills that call Python
+search and validation tools instead of searching open-ended
+• Precomputed popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to keep lookups
+within the database’s permission and rate limits, which became the Claude skill’s main search tool
 UMD App Development Contracting (Client: Amazon Leo)
 Jan 2026 – Present
 Software Engineer (Contract)
@@ -46,8 +46,8 @@ UMD Institute for Advanced Computer Studies (UMIACS)
 Dec 2025 – Present
 Machine Learning Research Intern
 College Park, MD
-• For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp’s candidate grasps on camera
-images in Open3D for a vision-language model, then tuned prompts so it favors grasps that avoid hitting the table
+• Built a pipeline that overlays AnyGrasp’s candidate grasps on camera images in Open3D to let a vision-language model
+pick robot grasps for a PhD-led ICLR project, and tuned its prompts to favor grasps that avoid hitting the table
 TerpLabs
 Jun 2025 – Present
 Co-Founder, Software Engineer
@@ -60,7 +60,7 @@ Languages: C++17, C, Python, Java, Rust, SQL, TypeScript, Bash
 Systems & Performance: debugging and profiling with Linux perf (hardware counters, top-down analysis), POSIX, STL, B+
 trees, LSM trees, data structures and algorithms, benchmarking
 Cloud & Tools: AWS (Lambda, Kinesis, EC2, Fargate, CloudWatch monitoring), AWS CDK, PostgreSQL, Redis, Docker, GitHub
-Actions (CI/CD), Git, Pytest
+Actions (CI/CD), Git, unit testing (Pytest)
 Certification: AWS Certified Developer – Associate (Nov 2024 – Nov 2027)
 
 

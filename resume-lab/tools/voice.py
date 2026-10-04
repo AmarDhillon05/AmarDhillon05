@@ -130,9 +130,10 @@ def structure_errors(text):
         out.append("dash used to join clauses")
     if PREAMBLE.match(t):
         out.append(f"preamble opener '{PREAMBLE.match(t).group(1)}' (start with the action verb)")
-    if not (SHAPE_A.search(t) or SHAPE_B.search(t)):
+    simple = "," not in t and len(t) <= 140  # one plain clause is already one structure
+    if not simple and not (SHAPE_A.search(t) or SHAPE_B.search(t)):
         out.append("not in 'did X to Y, which Z' or 'cut N% by doing X' shape")
-    tail = re.search(r",\s+(guided by|using|backed by|with)\b[^,]*$", t)
+    tail = re.search(r",\s+(guided by|using|backed by|with|keeping|running|agreeing)\b[^,]*$", t)
     if tail and not re.search(r",\s+which\b", t):
         out.append(f"tacked-on trailing clause ', {tail.group(1)} …'")
     return out

@@ -97,13 +97,13 @@
     {\textbf{IEX Order Book \& Matching Engine} $|$ \textit{C++17, STL, POSIX, Linux perf}}{Jul 2026 -- Aug 2026}
   \resumeItemListStart
     % fact: iex.replay_correctness
-    \resumeItem{Built a C++17 order book and matching engine and replayed \textbf{50.9M} real IEX exchange messages through it without ever resyncing to the exchange's book, agreeing with the exchange on 99,122 of 99,123 fills and 100\% of top-of-book prices}
+    \resumeItem{Built a C++17 order book and matching engine to replay \textbf{50.9M} real IEX exchange messages without ever resyncing, which agreed with the exchange on 99,122 of 99,123 fills and 100\% of top-of-book prices}
     % fact: iex.throughput+iex.data_structures+iex.latency_dist
-    \resumeItem{Sustained \textbf{1.26M events/sec} over the full replay and a 1.2 \textmu{}s per-message p99 on a separate 2M-event run, keeping each price level as a FIFO queue (std::list) inside a std::map, with an order-ID hash map for O(1) cancels}
+    \resumeItem{Designed the book as std::list FIFOs per price level inside a std::map with an order-ID hash map to make cancels O(1), which sustained \mbox{\textbf{1.26M events/sec}} over the full replay and a 1.2 \textmu{}s per-message p99 on a separate 2M-event run}
     % fact: iex.storage_benchmark
-    \resumeItem{Implemented B+ tree and LSM-tree backends for the event log and benchmarked them on identical 2M-record workloads, where the B+ tree gave \textbf{12.8x} the read throughput and 22x faster range queries at the cost of 27\% more disk space}
+    \resumeItem{Implemented B+ tree and LSM-tree backends for the engine's event log to compare them on identical 2M-record workloads, which showed the B+ tree giving \textbf{12.8x} the read throughput and 22x faster range queries for 27\% more disk}
     % fact: iex.perf_rigor
-    \resumeItem{Traced an apparent 1.65x regression to the CPU frequency governor, not a code change, using perf counters and a do-nothing control book, then cut run-to-run variance from about 6\% to 0.06\% by pinning cores and fixing the clock}
+    \resumeItem{Traced an apparent 1.65x regression to the CPU frequency governor with perf counters and a do-nothing control book to rule out a code change, which led to core pinning that cut run-to-run variance from 6\% to 0.06\%}
   \resumeItemListEnd
 \resumeSubHeadingListEnd
 
@@ -116,7 +116,7 @@
     {Software Development Engineer Intern}{Redmond, WA}
   \resumeItemListStart
     % fact: aws_sde.redshift
-    \resumeItem{Building capacity planning for Amazon Redshift maintenance like patching: Java logic that sets upper and lower bounds on reserved EC2 capacity to balance availability against cost, validated by backtesting}
+    \resumeItem{Writing backtested Java capacity-planning logic that sets upper and lower bounds on the EC2 capacity Amazon Redshift reserves for patching to balance availability against cost}
   \resumeItemListEnd
 
   \resumeSubheading
@@ -124,9 +124,9 @@
     {Software Engineering Intern}{Richmond, VA}
   \resumeItemListStart
     % fact: capital_one.claude_skill
-    \resumeItem{Cut AI workflow generation time \textbf{65\%} to under 15s by replacing a Claude skill's open-ended search with focused sub-skills that call Python tools for workflow search and validation, guided by CloudWatch and OpenSearch latency logs}
+    \resumeItem{Cut AI workflow generation time \textbf{65\%} to under 15s by splitting a Claude skill into focused sub-skills that call Python search and validation tools instead of searching open-ended}
     % fact: capital_one.search_index
-    \resumeItem{Precomputed popular workflows from a 270K+ row PostgreSQL table into a category tree that the Claude skill searches first, with Redis caching full workflows, so lookups rarely touch a database gated by permissions and rate limits}
+    \resumeItem{Precomputed popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to keep lookups within the database's permission and rate limits, which became the Claude skill's main search tool}
   \resumeItemListEnd
 
   \resumeSubheading
@@ -142,7 +142,7 @@
     {Machine Learning Research Intern}{College Park, MD}
   \resumeItemListStart
     % fact: umiacs.grasp_vlm
-    \resumeItem{For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D for a vision-language model, then tuned prompts so it favors grasps that avoid hitting the table}
+    \resumeItem{Built a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D to let a vision-language model pick robot grasps for a PhD-led ICLR project, and tuned its prompts to favor grasps that avoid hitting the table}
   \resumeItemListEnd
 
   \resumeSubheading
@@ -164,7 +164,7 @@
   % fact: skills
   \item{\textbf{Systems \& Performance:} debugging and profiling with Linux perf (hardware counters, top-down analysis), POSIX, STL, B+ trees, LSM trees, data structures and algorithms, benchmarking}
   % fact: skills
-  \item{\textbf{Cloud \& Tools:} AWS (Lambda, Kinesis, EC2, Fargate, CloudWatch monitoring), AWS CDK, PostgreSQL, Redis, Docker, GitHub Actions (CI/CD), Git, Pytest}
+  \item{\textbf{Cloud \& Tools:} AWS (Lambda, Kinesis, EC2, Fargate, CloudWatch monitoring), AWS CDK, PostgreSQL, Redis, Docker, GitHub Actions (CI/CD), Git, unit testing (Pytest)}
   % fact: skills
   \item{\textbf{Certification:} \href{https://www.credly.com/badges/d2406a97-d937-47de-823b-724981159d3b/public_url}{\underline{AWS Certified Developer -- Associate}} (Nov 2024 -- Nov 2027)}
 \end{itemize}
