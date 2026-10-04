@@ -1,0 +1,38 @@
+[
+  {
+    "id": "g01",
+    "winner": "B",
+    "advantage": "concrete",
+    "decisive_wording": "so lookups rarely touch a database gated by permissions and rate limits",
+    "info_preserved_or_lost": "All three keep 270K+ rows, PostgreSQL, the category tree searched first by the Claude skill, and Redis caching. A swaps the specific constraint for the vague 'strict access limits' and states the goal only as 'cut database queries'. B and C both name permissions and rate limits. C's 'stay within the database's permission and rate limits' implies the mechanism without saying it, where B says lookups rarely touch the database at all.",
+    "credibility_change": "B gives the clearest cause and effect an interviewer can probe: precompute plus cache, so the gated DB is rarely hit. A's opening 'Because...' clause reads as justification before showing the action.",
+    "readability_change": "B opens with an action verb and saves the reason for the end, so it reads in one pass. A front-loads a subordinate clause. C's 'Built the category tree... precomputed from... with Redis caching' piles up participles and is harder to parse."
+  },
+  {
+    "id": "g02",
+    "winner": "C",
+    "advantage": "concrete",
+    "decisive_wording": "scores and aggregates topics so Amazon Leo's public-policy staff can see what's popular ... with GitHub Actions CI/CD and AWS CDK infrastructure-as-code",
+    "info_preserved_or_lost": "C keeps what the tool does, who uses it, the dev deployment on Fargate, GitHub Actions CI/CD and CDK. B drops GitHub Actions CI/CD. A drops what the tool does ('space-topic research tool' is vague) and the dev vs production status. A also adds a handoff claim ('Leo engineers ... now maintain it') that the other versions do not make.",
+    "credibility_change": "B and C honestly say 'Co-built' and 'dev' / 'ready for production', which hold up in an interview. A's 'Deployed' and 'now maintain it' could overstate both individual ownership and production status.",
+    "readability_change": "C and B both let a recruiter restate the tool's purpose. C fits in more tech keywords naturally without becoming a tech dump. Its trailing 'running in dev...' clause is a little loose but still clear."
+  },
+  {
+    "id": "g03",
+    "winner": "C",
+    "advantage": "marginal",
+    "decisive_wording": "averaged over multi-day pipeline runs ... model inference ... S3 staging between steps with Amazon Kinesis streams feeding AWS Lambda",
+    "info_preserved_or_lost": "A and C keep the 'averaged over multi-day runs' qualifier on the 34% figure, and B drops it. C spells out 'model inference', 'between steps', and the full service names Amazon Kinesis and AWS Lambda for ATS matching. B is the shortest and keeps the core mechanism and the 6,000+ scale.",
+    "credibility_change": "The averaging qualifier tells an interviewer how the 34% was measured, which makes the number more defensible. B loses this. A keeps it but buries it.",
+    "readability_change": "C is clearer for a recruiter ('staging between steps', 'model inference') but longer. B is the most compact and easy to read. A's ordering ('...feeding Lambda in the pipeline that routes...') is the most awkward. Preferring C over B is close: credibility versus brevity."
+  },
+  {
+    "id": "g04",
+    "winner": "A",
+    "advantage": "concrete",
+    "decisive_wording": "so it more often picks grasps that avoid hitting the table",
+    "info_preserved_or_lost": "All three keep the ICLR/PhD context, AnyGrasp, Open3D overlays and the VLM. A and B state the concrete goal of avoiding table collisions. C replaces it with the vague 'picks the right grasp'. B adds '(occlusion avoidance)'.",
+    "credibility_change": "B's '(occlusion avoidance)' mislabels what is really collision avoidance, and a robotics interviewer would catch it. C's 'right grasp' gives an interviewer nothing concrete to ask about. A is accurate and specific.",
+    "readability_change": "A reads as a clean action and outcome that a recruiter can restate. B's parenthetical jargon adds words without making it clearer."
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "g01",
+    "winner": "B",
+    "advantage": "marginal",
+    "decisive_wording": "Precomputed popular workflows from a 270K+ row PostgreSQL table ... so lookups rarely touch a database gated by permissions and rate limits",
+    "info_preserved_or_lost": "All three keep 270K+ rows, PostgreSQL, category tree searched first by the Claude skill, and Redis caching. A states the constraint up front ('strict access limits') and the outcome as 'cut database queries'. B names both constraints (permissions and rate limits) and the outcome (lookups rarely hit the DB). C names the same constraints but says lookups 'stay within' limits, which is a weaker outcome, and 'Built the category tree' hides that the tree is precomputed until mid-sentence.",
+    "credibility_change": "B's 'rarely touch' is a specific, defensible design claim in an interview. A's 'cut database queries' is vaguer. C's 'stay within limits' sounds like compliance rather than a design gain.",
+    "readability_change": "B starts with the action verb and ends with the reason, which reads naturally. A's opening 'Because ...' clause delays the action. C fits several clauses into one sentence ('Built ... precomputed from ... with ... so ...'), which takes more effort to parse."
+  },
+  {
+    "id": "g02",
+    "winner": "B",
+    "advantage": "marginal",
+    "decisive_wording": "set it up for handoff ... so Leo engineers new to the project now maintain it on AWS Fargate",
+    "info_preserved_or_lost": "B keeps Amazon Leo, public-policy team, AWS CDK, GitHub Actions CI/CD and Fargate, and adds an ownership-transfer outcome. It drops 'co-built', the scoring/aggregation function, and the dev-vs-production status. A keeps every keyword and the function, but its outcome ('ready for production') is vague. C keeps the function and states the deploy and IaC steps clearly, but drops GitHub Actions.",
+    "credibility_change": "B's handoff outcome is a real, checkable impact: other engineers maintain it. Dropping 'co-built' slightly overstates ownership. In A and C the tool is only in dev, so the impact is weaker.",
+    "readability_change": "B is easy for a recruiter to restate (built it, handed it off, the team now runs it). C is clear but has three clauses. A ends in a stack of tech terms ('GitHub Actions CI/CD and AWS CDK infrastructure-as-code ready for production')."
+  },
+  {
+    "id": "g03",
+    "winner": "B",
+    "advantage": "concrete",
+    "decisive_wording": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+    "info_preserved_or_lost": "B keeps the 34% figure, 6,000+ documents, S3 to Kinesis to Lambda mechanism and inference target, and drops the 'averaged over multi-day runs' qualifier. A and C keep that qualifier. C also spells out 'Amazon Kinesis' and 'AWS Lambda' for ATS matching.",
+    "credibility_change": "The averaging qualifier in A and C adds a little measurement rigor. Without it, B is still credible because the mechanism is specific.",
+    "readability_change": "B delivers nearly the same information in far fewer words, in a clean order: metric, then context, then mechanism. A puts the qualifier before the context and buries 'the pipeline that routes...' at the end. C is the longest and repeats 'pipeline'."
+  },
+  {
+    "id": "g04",
+    "winner": "B",
+    "advantage": "concrete",
+    "decisive_wording": "then tuned prompts so it more often picks grasps that avoid hitting the table",
+    "info_preserved_or_lost": "All three keep the PhD-led ICLR project, AnyGrasp, Open3D overlays and the VLM. B and A both keep the specific goal (avoiding table collisions). C replaces it with the generic 'picks the right grasp', which loses the actual objective. A adds the term 'occlusion avoidance' in parentheses.",
+    "credibility_change": "B states a concrete, testable behavior change. C's 'right grasp' is unfalsifiable. A's parenthetical label is arguably imprecise, since table collision is not really occlusion, and an interviewer could press on it.",
+    "readability_change": "B reads as a plain sentence with an outcome. A's 'tuned its prompts toward grasps' plus the parenthetical jargon is clunkier. C is smooth but empty at the end."
+  }
+]
