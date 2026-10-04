@@ -1,0 +1,107 @@
+{
+  "persona": "infra_v2",
+  "target": "Infrastructure / distributed systems / platform / SRE internships, 2026-27 cycle",
+  "memory_skim": {"strongest_3": [], "engineer_type": "", "memorable_numbers": [], "confusing": [], "skipped": [], "interview_questions": []},
+  "plain_english": [],
+  "scores": {
+    "impact_clarity": 8,
+    "quantification": 8,
+    "technical_depth": 8,
+    "concision_readability": 8,
+    "skim_test": 7,
+    "credibility": 9,
+    "ats_parseability": 9,
+    "visual_layout": 8,
+    "domain_fit": 8,
+    "human_voice": 8,
+    "plain_language": 7,
+    "overall": 8
+  },
+  "competitive_for_domain": "Y",
+  "bullet_feedback": [
+    {
+      "bullet": "Built an EventBridge-scheduled LLM-as-judge check for a production Amazon Bedrock classifier that rates research documents by importance to trigger fine-tuning only when its grades shift past a threshold",
+      "problem": "The clause 'that rates research documents by importance to trigger fine-tuning' attaches the purpose to the classifier rather than to the check, so on first read it sounds like the classifier triggers fine-tuning. 'its grades' is also ambiguous: the judge's grades or the classifier's.",
+      "severity": 5,
+      "why_it_matters": "This is the one bullet showing scheduled monitoring and drift gating, which is real platform thinking. A reader who has to re-parse it to find which component does what will skip the design idea: retrain only on measured drift instead of on a timer.",
+      "missing_or_unclear": "clarify: whose grades are compared to the threshold (the judge's scores of the classifier's output?)",
+      "suggested_direction": "Put the actor and the trigger next to each other, then describe the classifier in its own clause. Example: 'Built an EventBridge-scheduled LLM-as-judge check that grades a production Amazon Bedrock classifier (which ranks research documents by importance) and triggers fine-tuning only when the grades shift past a threshold'"
+    },
+    {
+      "bullet": "Precomputed popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to keep lookups within the database’s permission and rate limits, which became the Claude skill’s main search tool",
+      "problem": "'to keep lookups within the database’s permission and rate limits' doesn't say what the constraint was. Permission limits and rate limits are different problems, and a cache only solves the rate one in an obvious way.",
+      "severity": 4,
+      "why_it_matters": "An infra interviewer reads this as a caching and read-offload decision and will ask what was being throttled. If the bullet hints at the constraint (for example, the skill could not query the table directly), the design choice reads as deliberate.",
+      "missing_or_unclear": "clarify: what 'permission limits' means here (read access the skill lacked? per-caller quotas?)",
+      "suggested_direction": "Name the constraint in plain words before naming the mechanism. Example: 'Because the Claude skill couldn’t query a 270K+ row PostgreSQL table directly under its permission and rate limits, precomputed popular workflows into a Redis-cached category tree, which became the skill’s main search tool'"
+    },
+    {
+      "bullet": "Rebuilt a legacy test-data workflow tool as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation to make editing smoother, which 90% of 30+ surveyed developers preferred",
+      "problem": "This is a frontend/desktop app bullet with four framework names (React, TypeScript, Electron, React Flow, Jest) and no infrastructure angle. 'to make editing smoother' is vague.",
+      "severity": 3,
+      "why_it_matters": "For an infra/SRE screen it takes a third of the Capital One block and pulls the role toward front-end. The developer-preference result is fine, but the tech list costs more than it adds here.",
+      "missing_or_unclear": "",
+      "suggested_direction": "For this target, trim the framework list to what explains the work (e.g. 'an Electron app with a visual flow editor and tested validation') and leave React/Jest to Skills, or move this bullet last in a version tailored to infra."
+    },
+    {
+      "bullet": "Built Redis caching in front of Tortuga’s Prisma ORM queries to reduce database load and latency for a class scheduler that drew 20,000+ visits in its first 30 days",
+      "problem": "'Tortuga’s' is an unexplained proper noun; a reader can't tell whether Tortuga is the class scheduler, a separate product, or a company. 'to reduce database load and latency' states intent with no observed effect, and the 20,000+ visits measures the product's traffic, not the cache.",
+      "severity": 4,
+      "why_it_matters": "The reader may credit the cache with the 20K number or discount the bullet for mixing two unrelated facts. The name lookup costs a re-read.",
+      "missing_or_unclear": "clarify: is Tortuga the class scheduler? Was any effect of the cache observed (hit rate, query count, page latency)?",
+      "suggested_direction": "Lead with the product so the name resolves itself, then the mechanism. Example: 'Built Redis caching in front of the Prisma ORM queries for Tortuga, a class scheduler that drew 20,000+ visits in its first 30 days, to cut database load and latency'. Add a measured effect only if one exists."
+    },
+    {
+      "bullet": "Implemented B+ tree and LSM-tree backends for the engine’s event log to compare them on identical 2M-record workloads, which showed the B+ tree giving 12.8x the read throughput and 22x faster range queries for 27% more disk",
+      "problem": "The comparison reports only the read side. An LSM tree is chosen for write throughput, so a storage-engine comparison that only shows the B+ tree winning on reads and losing on disk invites the question of what happened on writes.",
+      "severity": 3,
+      "why_it_matters": "This is the most storage-engine-specific evidence on the page and the first thing an infra interviewer will probe. Reporting the write result (if measured), even if it is small or unfavorable, makes the tradeoff look understood rather than one-sided.",
+      "missing_or_unclear": "clarify: was write/ingest throughput measured, and what was the workload mix (read-heavy, append-only)?",
+      "suggested_direction": "If a write number exists, swap it in for one of the read figures so the bullet shows both sides of the tradeoff. If not, naming the workload shape ('on an append-then-query workload') explains why the B+ tree won."
+    },
+    {
+      "bullet": "Ran the full replay at 1.26M events/sec end-to-end on an order book that keeps std::list FIFOs per price level in a std::map with an order-ID hash map to make cancels O(1)",
+      "problem": "The throughput number has no setting (single thread? what machine?), and the second half is a data-structure description stacked behind it. 'Ran the full replay at' frames the number as a run, not as the result of the design described next.",
+      "severity": 3,
+      "why_it_matters": "Performance engineers judge events/sec only against a setup. Without it, 1.26M/sec is memorable but not comparable. The O(1) cancel design is the interesting part and arrives last.",
+      "missing_or_unclear": "clarify: single-threaded or not, and the hardware it ran on",
+      "suggested_direction": "Lead with the design choice and land on the number as its result. Example: 'Kept per-price-level FIFO lists in a std::map plus an order-ID hash map so cancels are O(1), sustaining 1.26M events/sec end-to-end on a single thread' (only if single-threaded is true)."
+    },
+    {
+      "bullet": "Cut end-to-end latency 34% on a data pipeline that sends 6,000+ scraped research documents to model inference by streaming them through Amazon Kinesis into AWS Lambda instead of staging each step in S3",
+      "problem": "'end-to-end latency' doesn't say per document or per batch run, and the 6,000+ figure reads as a total, not a rate.",
+      "severity": 2,
+      "why_it_matters": "Minor: an interviewer will ask, and the answer changes whether this was a throughput or a freshness win. The mechanism-plus-result structure is already strong.",
+      "missing_or_unclear": "clarify: whether 34% is per-document latency or total batch time",
+      "suggested_direction": "Add one word of scope if it fits, e.g. 'per-document end-to-end latency' or 'batch run time'."
+    }
+  ],
+  "page_feedback": [
+    {
+      "problem": "The strongest infra and performance evidence (1.26M events/sec, B+ tree vs LSM-tree comparison, 50.9M-message replay) is in the last section above Skills. The top of the page shows an AWS bullet with no result (by design) and Capital One bullets about splitting a Claude skill.",
+      "severity": 5,
+      "why_it_matters": "In a 7-second skim an infra reviewer sees AWS/Capital One brand names but leaves with 'AI workflow tooling' as the headline. The storage-engine and throughput numbers, which are exactly what this panel hires on, only show up if they read to the bottom.",
+      "suggested_direction": "Keep Experience first, but within the Amazon Leo contract lead with the Kinesis latency bullet (already done) and consider ordering Capital One so the caching/rate-limit bullet comes before the sub-skill bullet in an infra-targeted version. Alternatively, a one-line project mention is not needed; the reorder within roles is enough."
+    },
+    {
+      "problem": "Skills lists API Gateway, SNS, OpenSearch, CloudWatch and X-Ray, none of which appear in any bullet. 'B+ tree and LSM-tree storage' under 'Backend, Full-Stack & Data' and 'data structures and algorithms' under Practices are concepts, not tools.",
+      "severity": 3,
+      "why_it_matters": "Observability tools listed with no bullet behind them are the first thing an SRE interviewer probes ('where did you use X-Ray?'). Concept entries make Skills look padded.",
+      "suggested_direction": "Keep only tools you can point to in a bullet or defend in an interview. Drop 'data structures and algorithms' and let the order book project carry B+/LSM-tree storage."
+    },
+    {
+      "problem": "Around 10% of the page is empty below the Certification line while several bullets are tightly compressed.",
+      "severity": 2,
+      "why_it_matters": "Slightly more space between sections or roles would make the role boundaries easier to scan, at no cost.",
+      "suggested_direction": "Use the spare space for a little more vertical spacing between roles rather than adding content."
+    }
+  ],
+  "keep": [
+    "Writing backtested Java capacity-planning logic that sets upper and lower bounds on the EC2 capacity Amazon Redshift reserves for patching to balance availability against cost",
+    "Cut AI workflow generation time 65% to under 15s by splitting a Claude skill into focused sub-skills that call Python search and validation tools instead of relying on open-ended model search",
+    "Co-built a topic-scoring research tool and deployed it to dev on AWS Fargate with GitHub Actions CI/CD and AWS CDK to show Amazon Leo’s public-policy staff which research topics are popular",
+    "Built a C++17 order book and matching engine to replay 50.9M real IEX exchange messages without ever resyncing, which agreed with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices",
+    "Honest scoping words: 'Co-built', 'deployed it to dev', '(Contract)', 'Client: Amazon Leo'",
+    "Single-column layout with right-aligned dates and locations and clean text extraction order"
+  ]
+}
