@@ -1,0 +1,138 @@
+[
+  {
+    "id": "g01",
+    "versions": {
+      "A": "Writing backtested Java capacity-planning logic that sets upper and lower bounds on the EC2 capacity Amazon Redshift reserves for patching to balance availability against cost",
+      "B": "Writing Java logic that sets upper and lower bounds on the EC2 capacity Amazon Redshift reserves for maintenance like patching to keep maintenance available without overspending, which backtests are now validating",
+      "C": "Writing Java logic that sets the upper and lower bounds on EC2 capacity that Amazon Redshift reserves for operations like patching, balancing availability against cost, and backtesting it"
+    }
+  },
+  {
+    "id": "g02",
+    "versions": {
+      "A": "Rebuilt the UI developers use to create test-data workflows in React, TypeScript and Electron with a React Flow editor to make the editor more fluid, which 90% of 30+ surveyed developers preferred over the old tool",
+      "B": "Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and 90% of 30+ surveyed developers preferred it",
+      "C": "Rebuilt a legacy test-data workflow tool as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation to make editing smoother, which 90% of 30+ surveyed developers preferred"
+    }
+  },
+  {
+    "id": "g03",
+    "versions": {
+      "A": "Cut AI workflow generation time 65% to under 15s by splitting a Claude skill into focused sub-skills that call Python search and validation tools instead of searching open-ended",
+      "B": "Split a Claude skill into sub-skills backed by Python search and validation tools to stop open-ended model search, which cut AI workflow generation time 65% to under 15s",
+      "C": "Cut AI workflow generation time 65% to under 15s by replacing a Claude skill's open-ended search with focused sub-skills that call Python tools for workflow search and validation, guided by CloudWatch and OpenSearch latency logs"
+    }
+  },
+  {
+    "id": "g04",
+    "versions": {
+      "A": "Cut LLM workflow generation time 65% to under 15s by splitting one large Claude skill into smaller sub-skills that call Python tools for search and validation, and output quality held in repeated stress-test runs",
+      "B": "Cut LLM workflow generation time 65% to under 15s by splitting a Claude skill into sub-skills that call Python search and validation tools, keeping output quality steady across stress tests",
+      "C": "Split a Claude skill into sub-skills backed by Python search and validation tools to stop open-ended model search, which cut LLM workflow generation time 65% to under 15s with no quality loss in stress tests"
+    }
+  },
+  {
+    "id": "g05",
+    "versions": {
+      "A": "Precomputed popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to keep lookups within the database's permission and rate limits, which became the Claude skill's main search tool",
+      "B": "Precomputed popular workflows from a 270K+ row PostgreSQL table into a category tree that the Claude skill searches first, with Redis caching full workflows, so lookups rarely touch a database gated by permissions and rate limits",
+      "C": "Built a Redis-cached category tree of popular workflows from a 270K+ row PostgreSQL table to work around database permission and rate limits, which the Claude skill used as its main search tool"
+    }
+  },
+  {
+    "id": "g06",
+    "versions": {
+      "A": "Co-built and deployed to dev a topic-scoring research tool on AWS Fargate to show Amazon Leo's policy staff which topics are popular, which ships through GitHub Actions CI/CD and AWS CDK that can also deploy it to production",
+      "B": "Co-built a research tool that scores and aggregates topics so Amazon Leo's public-policy staff can see what's popular, running in dev on AWS Fargate with GitHub Actions CI/CD and AWS CDK infrastructure-as-code ready for production",
+      "C": "Co-built a tool that scores and aggregates research topics to show Amazon Leo's public-policy staff what's popular, which runs in dev on AWS Fargate with AWS CDK infrastructure-as-code ready to ship it to production"
+    }
+  },
+  {
+    "id": "g07",
+    "versions": {
+      "A": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+      "B": "Replaced S3 staging hops with Kinesis streams feeding Lambda to speed up a pipeline routing 6,000+ scraped research documents to inference, which cut average end-to-end latency 34% across multi-day runs"
+    }
+  },
+  {
+    "id": "g08",
+    "versions": {
+      "A": "Cut end-to-end latency 34% on a data pipeline that sends 6,000+ scraped research documents to model inference by streaming them through Amazon Kinesis into AWS Lambda instead of staging each step in S3",
+      "B": "Replaced S3 staging between steps with Amazon Kinesis streams feeding AWS Lambda to speed up a data pipeline sending 6,000+ scraped research documents to inference, which cut average end-to-end latency 34% across multi-day runs"
+    }
+  },
+  {
+    "id": "g09",
+    "versions": {
+      "A": "Built an EventBridge-scheduled LLM-as-judge check for a production Amazon Bedrock classifier that rates research documents by importance to trigger fine-tuning only when its grades shift past a threshold",
+      "B": "Automated fine-tuning of a production Amazon Bedrock document-importance classifier to retrain only when a larger LLM's EventBridge-scheduled grades shift past a threshold, which avoids redundant retraining runs",
+      "C": "Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance: on an EventBridge schedule a larger LLM grades its ratings, and fine-tuning runs only when the grades shift past a threshold"
+    }
+  },
+  {
+    "id": "g10",
+    "versions": {
+      "A": "Built a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D to let a vision-language model pick robot grasps for a PhD-led ICLR project, and tuned its prompts to favor grasps that avoid hitting the table",
+      "B": "Tuned a vision-language model's prompts to favor robot grasps that avoid hitting the table, building the pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D for a PhD-led ICLR project",
+      "C": "For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D for a vision-language model, then tuned prompts so it favors grasps that avoid hitting the table"
+    }
+  },
+  {
+    "id": "g11",
+    "versions": {
+      "A": "Co-founded a 110+ member student product studio to build campus products, which has shipped 5 live products",
+      "B": "Co-founded a 110+ member student product studio that has shipped 5 live products"
+    }
+  },
+  {
+    "id": "g12",
+    "versions": {
+      "A": "Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio's class scheduler, to reduce database load and latency for a scheduler that drew 20,000+ visits in its first 30 days",
+      "B": "Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio's class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency"
+    }
+  },
+  {
+    "id": "g13",
+    "versions": {
+      "A": "Building a RAG meal-suggestion feature for the official UMD app, in which GPT-4o mini writes suggestions from scraped recipes found by SentenceBERT vector search in ChromaDB, and internal testers rated 93% of meals satisfactory",
+      "B": "Building a RAG meal-suggestion feature for the official UMD app that retrieves scraped recipes with SentenceBERT search in ChromaDB to ground GPT-4o mini's suggestions, which internal testers rated satisfactory 93% of the time",
+      "C": "Building RAG meal suggestions for the official UMD app with SentenceBERT vector search in ChromaDB to feed GPT-4o mini real scraped recipes, which internal testers rated satisfactory for 93% of meals"
+    }
+  },
+  {
+    "id": "g14",
+    "versions": {
+      "A": "Built a C++17 order book and matching engine to replay 50.9M real IEX exchange messages without ever resyncing, which agreed with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices",
+      "B": "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange's book, agreeing with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices"
+    }
+  },
+  {
+    "id": "g15",
+    "versions": {
+      "A": "Implemented B+ tree and LSM-tree backends for the engine's event log to compare them on identical 2M-record workloads, which showed the B+ tree giving 12.8x the read throughput and 22x faster range queries for 27% more disk",
+      "B": "Implemented B+ tree and LSM-tree backends for the event log and benchmarked them on identical 2M-record workloads, where the B+ tree gave 12.8x the read throughput and 22x faster range queries at the cost of 27% more disk space"
+    }
+  },
+  {
+    "id": "g16",
+    "versions": {
+      "A": "Sustained 1.26M events/sec end-to-end over the full replay, keeping each price level's orders in a std::list FIFO inside a std::map and a hash map from order ID to list iterator for O(1) cancels",
+      "B": "Designed the book as std::list FIFOs per price level inside a std::map with an order-ID hash map to make cancels O(1), which sustained 1.26M events/sec end-to-end over the full replay"
+    }
+  },
+  {
+    "id": "g17",
+    "versions": {
+      "A": "Sustained 1.26M events/sec over the full replay and a 1.2 \u00b5s per-message p99 on a separate 2M-event run, keeping each price level as a FIFO queue (std::list) inside a std::map, with an order-ID hash map for O(1) cancels",
+      "B": "Designed the book as std::list FIFOs per price level inside a std::map with an order-ID hash map to make cancels O(1), which sustained 1.26M events/sec and a 1.2 \u00b5s p99 on a separate 2M-event run"
+    }
+  },
+  {
+    "id": "g18",
+    "versions": {
+      "A": "Traced an apparent 1.65x regression to the CPU frequency governor, not a code change, using perf counters and a do-nothing control book, then cut run-to-run variance from about 6% to 0.06% by pinning cores and fixing the clock",
+      "B": "Traced an apparent 1.65x regression to the CPU frequency governor with perf counters and a do-nothing control book to rule out a code change, which led to core pinning that cut run-to-run variance from 6% to 0.06%",
+      "C": "Cut run-to-run benchmark variance from about 6% to 0.06% by pinning cores and fixing the clock after tracing an apparent 1.65x regression to the CPU frequency governor with perf counters"
+    }
+  }
+]

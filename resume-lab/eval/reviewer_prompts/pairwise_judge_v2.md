@@ -17,6 +17,8 @@ Write ONLY a JSON file to {OUT}: a list with one entry per group:
  "info_preserved_or_lost": "what each version keeps or drops",
  "credibility_change": "...", "readability_change": "..."}
 
+**Loop 3 rule (candidate's own instruction, overrides style preferences):** prefer the version a person would actually write on a resume, meaning ONE continuous sentence with ONE structure, either "did X to accomplish Y, which did Z" or "cut <metric> N% by doing X". Penalize colons, semicolons, multiple sentences, preamble openers ("For a ...", "Because ..."), and clauses tacked on at the end ("guided by ...", "..., and testers rated ..."). A version that breaks this rule should lose unless the other version drops or distorts a fact.
+
 Rules:
 - Use "advantage": "concrete" only when you can name a specific gain: information, comprehension, credibility, or the same information in fewer words.
 - Use "marginal" for a preference that is mostly taste.

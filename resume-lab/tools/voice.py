@@ -106,3 +106,33 @@ if __name__ == "__main__" and "--calibrate" in sys.argv:
     mt = sorted(metrics(r["text"]) for r in rows)
     q = lambda a, p: a[int(p * (len(a) - 1))]
     print(f"noun_stack p50/p90/p95: {q(ns,.5)}/{q(ns,.9)}/{q(ns,.95)}; tool_run p50/p90/p95: {q(tr,.5)}/{q(tr,.9)}/{q(tr,.95)}; numbers p50/p90/p95: {q(mt,.5)}/{q(mt,.9)}/{q(mt,.95)}")
+
+
+# ---- Loop 3 hard structure gate (Amar, Oct 4): one continuous sentence, one structure.
+# Shape A: "<Verb> X to <verb> Y[, which <verb> Z]"   Shape B: "<Cut|Reduced|...> <metric> N% by <verb>ing X"
+PREAMBLE = re.compile(r"^(For|Because|On|After|With|To|As|While|Using|Through|In)\b")
+SHAPE_B_VERBS = r"(Cut|Reduced|Grew|Raised|Increased|Lowered|Improved|Sped|Shortened|Sustained|Doubled|Halved)"
+SHAPE_A = re.compile(r"\bto (?!the\b|a\b|an\b|\d)[a-z]+")
+SHAPE_B = re.compile(rf"^{SHAPE_B_VERBS}\b.*?(\d[\d.,]*\s?(%|x|×)|\d[\d.,]*[KM]\b).*?\bby [a-z]+ing\b")
+
+
+def structure_errors(text):
+    """Hard errors: anything that breaks 'one sentence, one structure'."""
+    t = text.strip()
+    out = []
+    if re.search(r"(?<!:):(?!:)", t):
+        out.append("colon in bullet (one sentence, one structure)")
+    if ";" in t:
+        out.append("semicolon in bullet")
+    if re.search(r"[.!?]\s+[A-Z]", t):
+        out.append("more than one sentence")
+    if re.search(r"\s[—–]\s|—", t):
+        out.append("dash used to join clauses")
+    if PREAMBLE.match(t):
+        out.append(f"preamble opener '{PREAMBLE.match(t).group(1)}' (start with the action verb)")
+    if not (SHAPE_A.search(t) or SHAPE_B.search(t)):
+        out.append("not in 'did X to Y, which Z' or 'cut N% by doing X' shape")
+    tail = re.search(r",\s+(guided by|using|backed by|with)\b[^,]*$", t)
+    if tail and not re.search(r",\s+which\b", t):
+        out.append(f"tacked-on trailing clause ', {tail.group(1)} …'")
+    return out

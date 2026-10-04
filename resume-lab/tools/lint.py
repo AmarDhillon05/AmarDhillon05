@@ -195,6 +195,8 @@ def main():
             add("WARN", where, "no visible technology")
         for msg in voice.issues(b.text):
             add("WARN", where, f"voice: {msg}")
+        for msg in voice.structure_errors(b.text):
+            add("ERROR", where, f"structure: {msg}")
 
     # ---- structure
     per_role = {}
