@@ -1,0 +1,156 @@
+{
+  "persona": "recruiter_v2",
+  "target": "General SWE / backend software engineering internships (big tech + strong startups), 2026-27 cycle",
+  "memory_skim": {
+    "strongest_3": [
+      "Amazon Web Services SDE Intern (Fall 2026) - something about EC2 capacity for Redshift",
+      "Capital One Software Engineering Intern (Summer 2026) - rebuilt a developer tool, made an AI workflow tool faster",
+      "C++ order book / matching engine project replaying real IEX exchange data at over a million events per second"
+    ],
+    "engineer_type": "Backend / cloud engineer who also does a lot of AI/LLM tooling; has a performance-heavy C++ side project. Reads as a strong generalist with two big-name internships already.",
+    "memorable_numbers": ["90% of developers preferred it", "65% faster", "34% latency reduction", "50.9M messages", "12.8x", "1.26M events/sec", "110+ member studio", "93% satisfactory"],
+    "confusing": [
+      "What 'Amazon Leo' is and whether this is a real Amazon job or a student contract",
+      "The Capital One bullet with the category tree and Redis - couldn't tell what it achieved",
+      "The robotics research bullet (AnyGrasp, Open3D) - no idea what was actually built",
+      "B+ tree vs LSM-tree line"
+    ],
+    "skipped": ["Most of the Technical Skills section beyond the first two lines", "Second half of most Capital One and Amazon Leo bullets", "Certification line"],
+    "interview_questions": [
+      "What exactly are you building at AWS and how far along is it?",
+      "What did the 'Claude skill' at Capital One do, and how did you get it 65% faster?",
+      "Is the Amazon Leo work in production or still in dev?",
+      "How did you verify the order book matched the real exchange?"
+    ]
+  },
+  "plain_english": [
+    {"quote": "Writing Java logic that sets the upper and lower", "restatement": "At AWS he is writing code that decides how much spare server capacity Redshift holds back for maintenance, trading off reliability against cost, and testing it against past data.", "understood": true},
+    {"quote": "Rebuilt the legacy tool developers use to create", "restatement": "He rebuilt an old internal tool for creating test data as a new desktop app with a visual drag-and-drop editor, and 90% of surveyed developers preferred it.", "understood": true},
+    {"quote": "Cut AI workflow generation time 65% to under", "restatement": "He made an AI assistant that builds workflows 65% faster (under 15 seconds) by splitting its broad search into smaller, targeted steps.", "understood": true},
+    {"quote": "Precomputed popular workflows from a 270K+ row PostgreSQL", "restatement": "He organized popular workflows ahead of time and cached them so the AI tool usually doesn't have to query a slow, restricted database - but I can't say what this improved.", "understood": false},
+    {"quote": "Co-built a research tool that scores and aggregates", "restatement": "He co-built a tool that shows Amazon Leo's policy team which topics are trending; it runs in a test environment and is set up to go to production.", "understood": true},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "restatement": "He made a system that processes 6,000+ research documents 34% faster by passing data directly between steps instead of saving it to storage in between.", "understood": true},
+    {"quote": "Automated retraining for a production Amazon Bedrock classifier", "restatement": "He automated keeping an AI document-rater accurate: a bigger AI checks its ratings on a schedule and it only gets retrained when quality drifts.", "understood": true},
+    {"quote": "For a PhD-led robotics project aimed at ICLR", "restatement": "On a research project, he built something that shows a vision AI the possible ways a robot could grab an object so it picks grasps that don't hit the table - I'd be guessing at what he personally built versus tuned.", "understood": false},
+    {"quote": "Co-founded a 110+ member student product studio", "restatement": "He co-founded a 110+ person student group that has launched 5 live apps.", "understood": true},
+    {"quote": "Built Redis caching in front of the Prisma", "restatement": "He added caching to the studio's class-scheduler app, which had 20,000+ visits in its first month, so it loads faster and puts less strain on the database.", "understood": true},
+    {"quote": "Building a RAG meal-suggestion feature for the official", "restatement": "He is building an AI meal-suggestion feature for the official UMD app that finds recipes and writes suggestions, and testers rated 93% of meals satisfactory.", "understood": true},
+    {"quote": "Built a C++17 order book and matching engine", "restatement": "He built his own stock-exchange matching engine and ran 50.9M real exchange messages through it, matching the real exchange's results almost perfectly.", "understood": true},
+    {"quote": "Implemented B+ tree and LSM-tree backends for the", "restatement": "He built two different ways to store the engine's history and compared them; one was about 13x faster to read but used more disk - I can't say why the comparison mattered.", "understood": false},
+    {"quote": "Sustained 1.26M events/sec end-to-end over the full", "restatement": "His engine handled 1.26 million events per second across the whole replay, thanks to how he organized orders in memory.", "understood": true}
+  ],
+  "scores": {
+    "impact_clarity": 7,
+    "quantification": 8,
+    "technical_depth": 8,
+    "concision_readability": 7,
+    "skim_test": 8,
+    "credibility": 7,
+    "ats_parseability": 8,
+    "visual_layout": 8,
+    "domain_fit": 8,
+    "human_voice": 7,
+    "plain_language": 6,
+    "overall": 8
+  },
+  "competitive_for_domain": "Y",
+  "bullet_feedback": [
+    {
+      "bullet": "Precomputed popular workflows from a 270K+ row PostgreSQL table into a category tree that the Claude skill searches first, with Redis caching full workflows, so lookups rarely touch a database gated by permissions and rate limits",
+      "problem": "Four mechanisms in one sentence (precompute, category tree, Redis cache, gated database) and the payoff is only 'rarely touch a database'. 'Category tree that the Claude skill searches first' and 'database gated by permissions and rate limits' are not restatable by a non-engineer.",
+      "severity": 7,
+      "why_it_matters": "I can't tell a hiring manager what this achieved for users, so in a screen this bullet contributes nothing; it reads as a continuation of the 65% bullet above it.",
+      "missing_or_unclear": "clarify: what problem the slow/gated database caused (failed lookups? slow answers?) and why avoiding it mattered to the developers using the tool",
+      "suggested_direction": "Lead with the problem the gated database caused, then the fix in one clause (pre-sorted popular workflows + cache); drop one of the two mechanisms from the sentence or merge this into the 65% bullet if it was part of the same speedup."
+    },
+    {
+      "bullet": "For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D for a vision-language model, then tuned prompts so it favors grasps that avoid hitting the table",
+      "problem": "'AnyGrasp's candidate grasps', 'Open3D' and 'vision-language model' arrive before any plain statement of the goal (helping a robot choose how to pick things up). 'Aimed at ICLR' also invites the question of whether it was submitted or accepted.",
+      "severity": 7,
+      "why_it_matters": "A recruiter can't restate this role, so a whole experience entry reads as filler; the 'aimed at ICLR' phrasing may be read as overclaiming a publication.",
+      "missing_or_unclear": "clarify: the plain goal (robot picking objects) up front, and whether the paper is in progress/submitted",
+      "suggested_direction": "Open with the plain goal ('helping a robot arm choose how to grab objects'), then what he built, then the tool names; state the paper status honestly (e.g. 'in preparation for ICLR') if that is accurate."
+    },
+    {
+      "bullet": "Implemented B+ tree and LSM-tree backends for the event log and benchmarked them on identical 2M-record workloads, where the B+ tree gave 12.8x the read throughput and 22x faster range queries at the cost of 27% more disk space",
+      "problem": "'B+ tree and LSM-tree backends' and 'range queries' mean nothing to a non-engineer, and the bullet never says why the comparison mattered or what he chose. Three stacked numbers (12.8x, 22x, 27%) compete with each other.",
+      "severity": 7,
+      "why_it_matters": "I skip it as 'deep tech I can't evaluate'; the engineering judgement (picking a design for a reason) is invisible to the screener.",
+      "missing_or_unclear": "clarify: which design he kept and why",
+      "suggested_direction": "Frame as a decision: 'compared two storage designs for the event log and chose X because ...', keep one headline number (12.8x reads), move the rest to interview material."
+    },
+    {
+      "bullet": "Co-built a research tool that scores and aggregates topics so Amazon Leo's public-policy staff can see what's popular, running in dev on AWS Fargate with GitHub Actions CI/CD and AWS CDK infrastructure-as-code ready for production",
+      "problem": "'Scores and aggregates topics' is vague (topics of what?), and the second half is a tech list (Fargate, GitHub Actions, CDK) ending in 'running in dev ... ready for production', which tells me it isn't live. 'Amazon Leo' is unexplained, and 'UMD App Development Contracting (Client: Amazon Leo)' makes me unsure whether this is Amazon work or a student club project.",
+      "severity": 5,
+      "why_it_matters": "This is the entry that carries an Amazon name; if I can't tell what it is, I may either over- or under-credit it, and a follow-up question could deflate it.",
+      "missing_or_unclear": "clarify: what is being scored (news? policy documents?) and the relationship between UMD contracting and Amazon Leo",
+      "suggested_direction": "Say what the topics come from in plain words, and move the deployment tech list to Skills or cut it to one clause; keep the honest 'in dev' scoping but put it in plain words."
+    },
+    {
+      "bullet": "Cut AI workflow generation time 65% to under 15s by replacing a Claude skill's open-ended search with focused sub-skills that call Python tools for workflow search and validation, guided by CloudWatch and OpenSearch latency logs",
+      "problem": "Strong result up front, but 'Claude skill's open-ended search with focused sub-skills' is insider vocabulary, and 'guided by CloudWatch and OpenSearch latency logs' is a tech tail that adds length without adding meaning for me.",
+      "severity": 4,
+      "why_it_matters": "I keep the 65% but can't explain how he did it; the trailing clause makes the bullet a full two lines of reading.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Rephrase 'Claude skill' as 'AI assistant' (or 'Claude-based assistant') and cut or shorten the latency-logs clause, e.g. '... after profiling showed where time was spent'."
+    },
+    {
+      "bullet": "Writing Java logic that sets the upper and lower bounds on EC2 capacity that Amazon Redshift reserves for operations like patching, balancing availability against cost, and backtesting it",
+      "problem": "'and backtesting it' dangles at the end, and 'it' is ambiguous (the logic? the bounds?). The core idea is clear but the sentence is built in a way that makes me re-read.",
+      "severity": 3,
+      "why_it_matters": "This is the top line of the page and the biggest brand; a re-read here costs skim time.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Move the backtesting into the main verb chain, e.g. 'Writing and backtesting Java logic that ...'."
+    },
+    {
+      "bullet": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+      "problem": "'routing ... to inference' and 'S3 staging hops with Kinesis streams feeding Lambda' are jargon; the result is clear but the how is not restatable.",
+      "severity": 3,
+      "why_it_matters": "Minor: I still get '34% faster document pipeline', which is what I pass on.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Replace 'to inference' with 'to the AI model' and describe the change plainly before naming services ('streaming data straight between steps (Kinesis -> Lambda) instead of staging it in S3')."
+    },
+    {
+      "bullet": "Sustained 1.26M events/sec end-to-end over the full replay, keeping each price level's orders in a std::list FIFO inside a std::map and a hash map from order ID to list iterator for O(1) cancels",
+      "problem": "The second half ('std::list FIFO inside a std::map ... list iterator for O(1) cancels') is pure engineer detail; to me it reads as a string of nouns.",
+      "severity": 3,
+      "why_it_matters": "Engineers will like it, but I lose the thread after the number; the 1.26M figure still lands.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Keep the design detail (it is the technique an HM will ask about) but lead the clause with the plain reason, e.g. '... by designing order storage so cancels take constant time (std::list FIFO per price level ...)'."
+    }
+  ],
+  "page_feedback": [
+    {
+      "problem": "The intended 'systems-oriented' story is diluted: the page alternates between cloud pipelines, AI/LLM tooling (Claude skill, Bedrock, RAG, GPT-4o mini, VLM prompts), and the C++ engine, so on a skim it reads as a strong AI-tools/cloud generalist rather than a systems engineer.",
+      "severity": 5,
+      "why_it_matters": "The most systems-flavored evidence (the order book) sits at the bottom and the bolded numbers above it are mostly about AI tooling and preference surveys, so the takeaway isn't the profile the candidate wants.",
+      "suggested_direction": "Reorder within roles so the infrastructure/performance bullets come first, and consider whether the bold anchors (90%, 65%, 34%, 93%) are the wins that best support the systems story versus 50.9M/1.26M."
+    },
+    {
+      "problem": "Bold metrics are spread across 8 bullets, including softer ones ('90% of 30+ surveyed developers preferred it', '93% of meals satisfactory'), so bold no longer singles out the 2-3 headline wins.",
+      "severity": 3,
+      "why_it_matters": "In a 7-second skim my eye lands on survey percentages before the exchange-replay accuracy or throughput.",
+      "suggested_direction": "Reserve bold for the 3-4 strongest, hardest numbers and un-bold the survey/preference ones."
+    },
+    {
+      "problem": "Experience header 'UMD App Development Contracting (Client: Amazon Leo)' doesn't tell a recruiter whether this is a company, a university program, or a club.",
+      "severity": 4,
+      "why_it_matters": "It carries an Amazon name, so I'll either over-credit it or ask about it; ambiguity here costs credibility.",
+      "suggested_direction": "clarify in the header or title what UMD App Development Contracting is (e.g. university-run contracting program) without adding new scope."
+    },
+    {
+      "problem": "The Technical Skills section is six dense lines, partly repeating names already in bullets (Redis, PostgreSQL, Kinesis, Fargate, EventBridge).",
+      "severity": 2,
+      "why_it_matters": "Minor: it's fine for ATS, but I skip it; it doesn't hurt much.",
+      "suggested_direction": "Optional: trim duplicates if space is needed for clarifying words elsewhere."
+    }
+  ],
+  "keep": [
+    "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange's book, agreeing with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices",
+    "Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and 90% of 30+ surveyed developers preferred it",
+    "Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio's class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency",
+    "Co-founded a 110+ member student product studio that has shipped 5 live products",
+    "Education placed first with school, expected May 2028 graduation, and GPA on one line"
+  ]
+}
