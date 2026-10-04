@@ -1,0 +1,6 @@
+{
+  "winner": "B",
+  "advantage": "marginal",
+  "reason": "The deciding factor is the UMD Nano-Satellite Development Program (Systems Engineer) role, which appears only in A. Its Rust/KubOS flight-software bullet is real systems work, but the second bullet ('Cut communication latency 23% by building GraphQL interfaces') reads as web-API work, and an HFT engineer will not count GraphQL telemetry latency as low-latency evidence next to the IEX order book's 1.2 µs p99 and the perf/core-pinning bullets. B keeps the page focused on the C++ matching engine, and the only thing it loses is the one role that backs up the Rust skill listing, which is a weak signal for a C++ quant-dev target.",
+  "risk_noted": "A lists five concurrent 'Present' roles: the Amazon Leo contract, UMIACS, Nano-Satellite and TerpLabs are all in College Park, while the Sep-Dec 2026 AWS internship is in Redmond. A skeptic will doubt how deep any one of them is and whether they really overlap. The 23% latency claim comes from adding GraphQL interfaces, which is an odd causal story that invites questions. Without this role, Rust in Skills has no backing anywhere on the page, but that matters little for C++ HFT roles."
+}
