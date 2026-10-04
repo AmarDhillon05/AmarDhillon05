@@ -1,0 +1,128 @@
+{
+  "persona": "systems_quant_v2",
+  "target": "Systems / quant-developer / low-latency C++ internships (HFT firms, trading-systems teams, performance engineering), 2026-27 cycle",
+  "memory_skim": {"strongest_3": [], "engineer_type": "", "memorable_numbers": [], "confusing": [], "skipped": [], "interview_questions": []},
+  "plain_english": [],
+  "scores": {
+    "impact_clarity": 7,
+    "quantification": 7,
+    "technical_depth": 7,
+    "concision_readability": 7,
+    "skim_test": 7,
+    "credibility": 7,
+    "ats_parseability": 8,
+    "visual_layout": 8,
+    "domain_fit": 6,
+    "human_voice": 8,
+    "plain_language": 6,
+    "overall": 7
+  },
+  "competitive_for_domain": "stretch",
+  "bullet_feedback": [
+    {
+      "bullet": "Sustained 1.26M events/sec over the full replay and a 1.2 µs per-message p99 on a separate 2M-event run, keeping each price level as a FIFO queue (std::list) inside a std::map, with an order-ID hash map for O(1) cancels",
+      "problem": "The two headline performance numbers don't say what they measure or under what conditions. '1.26M events/sec' doesn't say whether feed parsing or file I/O is included, or whether it is single-threaded. '1.2 µs per-message p99' doesn't say what interval is timed or why it comes from 'a separate 2M-event run' and not the full 50.9M replay. Neither says whether it was measured before or after the core pinning and clock fixing in the fourth bullet. The unit also changes across the project, from 'messages' (bullet 1) to 'events' (bullet 2) to 'records' (bullet 3), so the reader can't tell whether 1.26M events/sec equals 1.26M IEX messages/sec.",
+      "severity": 6,
+      "why_it_matters": "An HFT screener checks every latency number against its measurement method. 1.26M/s works out to about 0.8 µs mean per event, which fits a 1.2 µs p99. But because the run isn't stated and the unit changes between bullets, the reader can't confirm that, and the first follow-up question is 'p99 of what, measured how, on which run?'",
+      "missing_or_unclear": "clarify: what the p99 interval covers (e.g. decode-to-book-update vs. book update only); whether events = IEX messages; whether both numbers come from the pinned/fixed-frequency setup; why the p99 run is separate from the full replay",
+      "suggested_direction": "Use one unit ('messages') throughout the project. Attach a short scope phrase to each number saying what was timed and on which run. If the line gets too long, move the data-structure clause into its own short sentence or into the first bullet, so this bullet is purely about measurement."
+    },
+    {
+      "bullet": "Implemented B+ tree and LSM-tree backends for the event log and benchmarked them on identical 2M-record workloads, where the B+ tree gave 12.8x the read throughput and 22x faster range queries at the cost of 27% more disk space",
+      "problem": "The comparison reports only the axes where the B+ tree wins (reads, range queries) plus disk space. It leaves out write/ingest performance, which is the reason anyone builds an LSM tree. It also doesn't say why an order book needs an 'event log' backend, or whether '22x faster range queries' means throughput or latency.",
+      "severity": 6,
+      "why_it_matters": "A storage-literate interviewer reads a B+ tree vs LSM comparison with no write numbers as either one-sided or a gap in benchmarking rigor. Showing the tradeoff is the point of the bullet. Without the event log's role, the bullet also looks bolted onto the matching engine.",
+      "missing_or_unclear": "clarify: the write/append result of the same benchmark if it was measured; what the event log is used for (replay, recovery, audit); whether 22x is latency or throughput",
+      "suggested_direction": "Name what the event log is for in a few words before the tech. Then give the tradeoff in both directions using numbers that already exist. If write results weren't measured, say the workload was read-heavy so the omission reads as deliberate."
+    },
+    {
+      "bullet": "Traced an apparent 1.65x regression to the CPU frequency governor, not a code change, using perf counters and a do-nothing control book, then cut run-to-run variance from about 6% to 0.06% by pinning cores and fixing the clock",
+      "problem": "'run-to-run variance' doesn't say which metric varied: throughput, p99, or total replay time. A 100x reduction to 0.06% is believable for throughput on a deterministic replay but surprising for a tail-latency percentile, so the missing metric matters.",
+      "severity": 4,
+      "why_it_matters": "This is the strongest HFT signal on the page because it shows the candidate distrusts their own numbers. Leaving the metric unnamed weakens the exact rigor the bullet is meant to show.",
+      "missing_or_unclear": "clarify: which metric's run-to-run spread went from ~6% to 0.06%, and how spread was computed (CV, max-min)",
+      "suggested_direction": "Insert the metric name directly before 'variance' (e.g. 'run-to-run throughput variance'). Change nothing else; the diagnosis story and control-book detail are excellent."
+    },
+    {
+      "bullet": "Built an OpenCV (C++) vision pipeline that detects ocean mines in real time on drone-mounted microcontrollers, reaching 74% detection accuracy on test footage",
+      "problem": "Full OpenCV normally needs an OS and an application-class CPU, so 'microcontrollers' reads like a misnomer for a single-board computer. 'real time' has no frame rate or latency, and '74% detection accuracy' doesn't say whether it is precision, recall, or per-frame accuracy.",
+      "severity": 6,
+      "why_it_matters": "This is the only C++ item outside the project, so a low-latency reviewer will probe it. Being wrong about the hardware class is a credibility hit with an embedded- or performance-minded interviewer, and an unqualified 'real time' is the kind of claim this persona discounts.",
+      "missing_or_unclear": "clarify: the actual board/hardware class; what 'real time' meant (frame rate or per-frame latency); which accuracy metric",
+      "suggested_direction": "Name the hardware class accurately (e.g. 'single-board computer' if that is what it was). If no frame-rate number exists, drop 'in real time'. Name the accuracy metric."
+    },
+    {
+      "bullet": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+      "problem": "'end-to-end latency 34%' doesn't say whether it is mean, median, or tail latency, or what the absolute before/after values were (seconds? minutes per document?). '6,000+ scraped research documents' doesn't say whether that is a total, per day, or per batch.",
+      "severity": 5,
+      "why_it_matters": "To a latency-focused reviewer, a percentage reduction with no statistic and no absolute scale can't be evaluated. Cutting 34% off minutes of batch staging is a very different achievement from cutting 34% off sub-second latency.",
+      "missing_or_unclear": "clarify: which latency statistic, the absolute baseline or result, and the time window for 6,000+ documents",
+      "suggested_direction": "Add the statistic name (median/p95/mean) and either the before or after absolute value next to 34%, using numbers that already exist. Add the time window to the document count."
+    },
+    {
+      "bullet": "Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio’s class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency",
+      "problem": "The bullet ends at intent ('to reduce database load and latency'), with no outcome. The only scale number, 20,000+ visits in 30 days, averages under one request per minute, which undercuts the reason for adding a cache.",
+      "severity": 4,
+      "why_it_matters": "A performance-minded reader does that arithmetic immediately and may conclude the candidate added caching without a measured need. That works against the measurement discipline the order-book project establishes.",
+      "missing_or_unclear": "clarify: whether there was a measured hot path, peak load (e.g. registration-window bursts), or observed improvement",
+      "suggested_direction": "If the cache addressed a specific burst or slow query, name that instead of the monthly visit total. If not, shorten this bullet or deprioritize it for HFT-targeted versions so its space goes to the C++ evidence."
+    },
+    {
+      "bullet": "Cut AI workflow generation time 65% to under 15s by replacing a Claude skill’s open-ended search with focused sub-skills that call Python tools for workflow search and validation, guided by CloudWatch and OpenSearch latency logs",
+      "problem": "The ending 'guided by CloudWatch and OpenSearch latency logs' names tools without saying what the logs revealed. 'Claude skill' and 'sub-skills' are product-specific terms a trading-firm screener won't know.",
+      "severity": 3,
+      "why_it_matters": "The bullet itself is clear and measured (65%, under 15s), but the tool-name tail adds length without adding engineering. An HFT reader skims past LLM-tooling vocabulary.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Cut the 'guided by ...' clause or replace it with what the logs showed (e.g. which step dominated latency), if known. Keep CloudWatch/OpenSearch in Skills."
+    },
+    {
+      "bullet": "Precomputed popular workflows from a 270K+ row PostgreSQL table into a category tree that the Claude skill searches first, with Redis caching full workflows, so lookups rarely touch a database gated by permissions and rate limits",
+      "problem": "This is a dense two-line bullet with three mechanisms (precomputed category tree, Redis cache, gated database). 'rarely' is the only outcome, and it is unquantified.",
+      "severity": 3,
+      "why_it_matters": "The design reasoning (avoid a rate-limited DB) is good, but the reader has to parse the whole sentence to find it, and no result is reported.",
+      "missing_or_unclear": "clarify: cache/tree hit rate, if known",
+      "suggested_direction": "Lead with the constraint (the database is permission-gated and rate-limited), then the two-tier lookup. If there's no hit rate, end on the design choice instead of 'rarely'."
+    },
+    {
+      "bullet": "Building capacity planning for Amazon Redshift maintenance like patching: Java logic that sets upper and lower bounds on reserved EC2 capacity to balance availability against cost, validated by backtesting",
+      "problem": "'Building capacity planning for ... maintenance like patching' is an awkward noun phrase, and the colon splits the bullet into a heading and a fragment.",
+      "severity": 3,
+      "why_it_matters": "This is the most prestigious brand on the page, and the reader has to re-read to understand that the work is a bounds-setting algorithm for reserved capacity.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Rephrase as one sentence with a verb: what is being built (Java logic that sets upper/lower bounds on reserved EC2 capacity), what it serves (Redshift maintenance such as patching), and how it is checked (backtesting)."
+    },
+    {
+      "bullet": "For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp’s candidate grasps on camera images in Open3D for a vision-language model, then tuned prompts so it favors grasps that avoid hitting the table",
+      "problem": "There is no outcome, and the work (visualization overlay plus prompt tuning) has no connection to systems or performance.",
+      "severity": 2,
+      "why_it_matters": "For this target, the bullet takes two lines without supporting the low-latency story. It's fine as breadth.",
+      "missing_or_unclear": "",
+      "suggested_direction": "In an HFT-targeted version, shorten this to one line if space is needed for the project's measurement details."
+    }
+  ],
+  "page_feedback": [
+    {
+      "problem": "All of the low-latency/C++ evidence sits in one two-month side project. Every Experience entry except Northrop is cloud, AI-tooling, or web, and the Skills line 'data structures and algorithms, benchmarking' is generic filler next to the specific perf items.",
+      "severity": 6,
+      "why_it_matters": "An HFT screener weighs depth of C++ systems work. Putting the project first was the right call, but after it the page reads as an AWS/LLM-tooling generalist. The 'repeatedly built performance-sensitive software' message rests on one project.",
+      "suggested_direction": "Keep the project at the top. In the HFT version, keep each cloud/AI experience to one tight line so the performance numbers there (34% latency, 65% time) stay but take less space. Cut 'data structures and algorithms, benchmarking' from Skills; the project already demonstrates both."
+    },
+    {
+      "problem": "Measurement vocabulary is inconsistent across the page: 'messages', 'events', 'records', 'end-to-end latency', 'generation time', 'latency' (TerpLabs). Only the project states a percentile (p99).",
+      "severity": 4,
+      "why_it_matters": "This persona checks that each number says what it measures. Consistent units and named statistics across the page signal the rigor HFT teams hire for. Inconsistent ones make the reader wonder whether the numbers are comparable.",
+      "suggested_direction": "Use one unit per system, and name the statistic (mean/median/p99) wherever a latency is quoted."
+    },
+    {
+      "problem": "Bold is applied to the largest numbers (50.9M, 1.26M, 12.8x) but not to the most distinctive HFT signals (1.2 µs p99, 99,122 of 99,123 fills, 6% to 0.06%).",
+      "severity": 2,
+      "why_it_matters": "A 7-second skim picks up throughput and scale but misses the correctness and tail-latency evidence that sets this project apart from a typical student order book.",
+      "suggested_direction": "Consider moving the bold in bullets 1-2 to the correctness figure and the p99, keeping one bold per bullet."
+    }
+  ],
+  "keep": [
+    "Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange’s book, agreeing with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices",
+    "Projects section placed above Experience, with the IEX order book as the first item",
+    "Diagnosis story in the regression bullet (frequency governor, perf counters, do-nothing control book): keep it, only name the metric"
+  ]
+}
