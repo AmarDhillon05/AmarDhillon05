@@ -1,0 +1,125 @@
+{
+  "persona": "systems_quant_v2",
+  "target": "Systems / quant-developer / low-latency C++ internships (HFT firms, trading-systems teams), 2026-27 cycle",
+  "memory_skim": {"strongest_3": [], "engineer_type": "", "memorable_numbers": [], "confusing": [], "skipped": [], "interview_questions": []},
+  "plain_english": [],
+  "scores": {
+    "impact_clarity": 8,
+    "quantification": 7,
+    "technical_depth": 8,
+    "concision_readability": 8,
+    "skim_test": 8,
+    "credibility": 7,
+    "ats_parseability": 8,
+    "visual_layout": 8,
+    "domain_fit": 7,
+    "human_voice": 8,
+    "plain_language": 7,
+    "overall": 7
+  },
+  "competitive_for_domain": "Y",
+  "bullet_feedback": [
+    {
+      "bullet": "Designed the order book with std::list FIFOs per price level in a std::map and an order-ID hash map to make cancels O(1), which ran the full replay at 1.26M events/sec and hit a 1.2 µs p99 on a separate 2M-event run",
+      "problem": "The p99 does not say what it is the 99th percentile of (per-message processing in the book? per add/cancel/execute? including parsing?), and the bullet switches units from 'messages' (bullet 1: 50.9M messages) to 'events' (here: 1.26M events/sec) without saying whether they are the same thing. It also does not say whether these numbers were taken before or after the core-pinning fix described in bullet 4.",
+      "severity": 6,
+      "why_it_matters": "A low-latency reader's first question is 'p99 of what, measured where, on which setup'. 1.26M/sec implies a ~0.8 µs mean per event, so a 1.2 µs p99 is plausible only if both cover the same unit of work; if the reader can't confirm that, the two numbers look like they came from different benchmarks stitched together.",
+      "missing_or_unclear": "clarify: what operation the 1.2 µs p99 times (and whether it includes feed parsing); whether 'events' = the IEX messages from bullet 1; whether the runs were core-pinned",
+      "suggested_direction": "Name the timed operation next to the percentile and use one noun (messages or events) across bullets 1-2, e.g. '...1.2 µs p99 per-message book update on a separate 2M-message run'. If the runs were pinned, a two-word 'pinned core' tag removes the ambiguity with bullet 4."
+    },
+    {
+      "bullet": "Implemented B+ tree and LSM-tree backends for the engine’s event log to compare them on identical 2M-record workloads, which showed the B+ tree giving 12.8x the read throughput and 22x faster range queries for 27% more disk",
+      "problem": "Only the read-side results are reported; write/ingest throughput, which is the LSM tree's main reason to exist and the dominant operation for an append-heavy event log, is absent, and the workload mix ('identical 2M-record workloads') is not described.",
+      "severity": 6,
+      "why_it_matters": "A storage-literate reader sees a comparison that reports only the dimensions where the B+ tree wins and suspects cherry-picking or a read-heavy workload that was never stated. It also invites 'why would you put an event log in a B+ tree?', which the bullet doesn't answer.",
+      "missing_or_unclear": "clarify: read/write mix of the workload; whether write throughput was measured and how the two compared",
+      "suggested_direction": "State the workload shape in a few words before the result (e.g. 'on identical read-heavy 2M-record workloads') or, if write numbers exist, give the trade-off in both directions instead of '27% more disk' alone."
+    },
+    {
+      "bullet": "Traced an apparent 1.65x regression to the CPU frequency governor with perf counters and a do-nothing control book to rule out a code change, which led to core pinning that cut run-to-run variance from 6% to 0.06%",
+      "problem": "'run-to-run variance from 6% to 0.06%' does not say which metric varied (throughput? p99?), how it is computed (coefficient of variation? max-min spread?), or over how many runs. The cause is the frequency governor but the fix named is core pinning; a reader expects the governor to be fixed (performance mode / fixed frequency) and wonders whether pinning alone explains a 100x drop.",
+      "severity": 6,
+      "why_it_matters": "A 100x variance reduction is the most striking number on the page and the easiest to challenge; without the metric and run count it reads as a possibly lucky small sample. The cause/fix mismatch makes the diagnosis look less rigorous than the control-book method suggests.",
+      "missing_or_unclear": "clarify: which measurement's variance, how computed, number of runs; whether the governor was also set as part of the fix",
+      "suggested_direction": "Name the measured quantity and run count in place of the bare word 'variance' (e.g. 'cut throughput spread across N runs from 6% to 0.06%'), and make the fix match the cause ('...led to pinning cores and [the governor change, if one was made]')."
+    },
+    {
+      "bullet": "Built a C++17 order book and matching engine to replay 50.9M real IEX exchange messages without ever resyncing, which agreed with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices",
+      "problem": "The single mismatched fill is reported but not explained, and '100% of top-of-book prices' does not say how often top of book was compared (every message? every BBO update?).",
+      "severity": 3,
+      "why_it_matters": "This is the strongest correctness claim on the page and an HFT interviewer will ask about the one miss immediately; that's fine if the candidate knows, but the page gives no hint the miss was investigated.",
+      "missing_or_unclear": "clarify (for the interview, not necessarily the page): cause of the 1 mismatched fill; granularity of the top-of-book comparison",
+      "suggested_direction": "Keep as is unless space allows a short '(checked at every BBO update)'-style qualifier; be ready to explain the one miss."
+    },
+    {
+      "bullet": "Cut AI workflow generation time 65% to under 15s by splitting a Claude skill into focused sub-skills that call Python search and validation tools instead of relying on open-ended model search",
+      "problem": "'under 15s' does not say whether it is a typical, average, or worst-case generation time, or over how many requests; for this persona every latency should name its statistic. The bold on '65%' pulls the eye to a non-domain metric.",
+      "severity": 4,
+      "why_it_matters": "The trading-firm reader discounts latency claims without a stated statistic, and the bolded 65% competes with the order-book numbers that should own the skim.",
+      "missing_or_unclear": "clarify: whether 'under 15s' is median, mean, or max",
+      "suggested_direction": "Add the statistic in one word ('median generation time ...') and drop the bold here so bold stays on the C++ project."
+    },
+    {
+      "bullet": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+      "problem": "'end-to-end latency 34%' does not say per-document or whole-batch, nor mean vs a percentile, and gives no baseline magnitude.",
+      "severity": 4,
+      "why_it_matters": "For this reader a latency percentage with no unit and no statistic is unverifiable; it signals the candidate's measurement discipline outside the C++ project is looser.",
+      "missing_or_unclear": "clarify: per-document or per-batch latency; mean or percentile",
+      "suggested_direction": "Name what is timed ('per-document end-to-end latency') and the statistic; consider removing the bold on 34% for the same reason as above."
+    },
+    {
+      "bullet": "Built Redis caching in front of Tortuga’s Prisma ORM queries to reduce database load and latency for a class scheduler that drew 20,000+ visits in its first 30 days",
+      "problem": "'Tortuga' is undefined (product name? company?), and 'to reduce database load and latency' states an intent with no result.",
+      "severity": 3,
+      "why_it_matters": "A reader can't tell what Tortuga is and the bullet ends on an aim rather than an outcome, so it reads as filler next to the measured project bullets.",
+      "missing_or_unclear": "clarify: what Tortuga is; whether any load or latency change was observed",
+      "suggested_direction": "Introduce Tortuga in two words where it first appears (e.g. 'our class scheduler, Tortuga') and either state an observed effect or rephrase the ending so it doesn't promise a result it doesn't give."
+    },
+    {
+      "bullet": "Built and prompt-tuned a pipeline for a PhD-led robotics project aimed at ICLR that overlays AnyGrasp’s candidate grasps on camera images in Open3D to help a vision-language model pick grasps that avoid hitting the table",
+      "problem": "No outcome, and the content (prompt-tuning, VLM grasp selection) is unrelated to low-latency systems; it takes two lines of a page whose strength is the C++ project.",
+      "severity": 2,
+      "why_it_matters": "For a trading-systems screen this bullet adds breadth but no hiring signal; it is low cost but dilutes the systems story.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Acceptable to keep; if space is needed for clarifications in the project bullets, this is the first candidate to shorten to one line."
+    }
+  ],
+  "page_feedback": [
+    {
+      "problem": "All low-latency/C++ evidence lives in one two-month side project; every Experience entry is cloud, Java, or LLM work, and there is no evidence of concurrency, threading, memory layout/allocation, or networking anywhere on the page.",
+      "severity": 5,
+      "why_it_matters": "An HFT screener will read this as 'strong cloud/AI intern with one excellent C++ project' rather than 'systems engineer who repeatedly builds performance-sensitive software', which is the intended profile. The project carries the whole application.",
+      "suggested_direction": "Keep the project first (correct choice). If any experience bullet involved real performance trade-offs, lead with the performance mechanism rather than the AI/cloud framing; otherwise accept the gap and be ready to discuss threading/cache behavior of the engine in interviews."
+    },
+    {
+      "problem": "Project dates (Jul 2026 – Aug 2026) overlap completely with the Capital One internship (Jun 2026 – Aug 2026).",
+      "severity": 3,
+      "why_it_matters": "A 50.9M-message replay engine with two storage backends and a perf investigation built during a full-time internship invites a 'how much of this did you actually do?' question.",
+      "suggested_direction": "No change required; be ready to explain the timeline. If the work started earlier, the dates could reflect that."
+    },
+    {
+      "problem": "Bold is applied to 65% (Capital One) and 34% (Amazon Leo) as well as to the order-book numbers, giving five bold anchors of equal weight.",
+      "severity": 2,
+      "why_it_matters": "The skim splits attention between AI-workflow percentages and the C++ throughput numbers this target hires on.",
+      "suggested_direction": "Limit bold to the project's numbers (e.g. 50.9M, 1.26M events/sec, the p99) so the 7-second read lands on the systems story."
+    },
+    {
+      "problem": "Roughly the bottom sixth of the page is empty while several project bullets need a few more words to define their measurements.",
+      "severity": 2,
+      "why_it_matters": "The clarifications requested above (what the p99 times, workload mix, variance metric) can be added without crowding the page.",
+      "suggested_direction": "Spend the slack on the project bullets' measurement qualifiers rather than on new content."
+    },
+    {
+      "problem": "Skills lists C and Rust, and generic entries 'data structures and algorithms, benchmarking', none of which are backed by a bullet.",
+      "severity": 2,
+      "why_it_matters": "A systems interviewer may probe Rust or C directly; generic entries read as filler.",
+      "suggested_direction": "Keep only languages you are comfortable being quizzed on; consider dropping the generic 'data structures and algorithms' phrase."
+    }
+  ],
+  "keep": [
+    "IEX Order Book & Matching Engine project placed first, above Experience",
+    "The fill-level correctness check against the exchange ('agreed with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices')",
+    "The use of a do-nothing control book and perf counters to rule out a code change in the regression bullet",
+    "Reporting a p99 rather than only a mean, and stating that it came from a separate 2M-event run"
+  ]
+}

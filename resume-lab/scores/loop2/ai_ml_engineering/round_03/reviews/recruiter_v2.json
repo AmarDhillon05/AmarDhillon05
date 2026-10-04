@@ -1,0 +1,135 @@
+{
+  "persona": "recruiter_v2",
+  "target": "AI/ML engineering internships (ML infrastructure, LLM applications), 2026-27 cycle",
+  "memory_skim": {
+    "strongest_3": [
+      "Amazon Web Services SDE intern (fall 2026), something about EC2/Redshift capacity",
+      "Capital One SWE intern: made an LLM/Claude workflow generator 65% faster",
+      "Contract work for Amazon Leo on AWS (Bedrock, Kinesis, 34% latency cut), plus a C++ order book project with 50.9M messages"
+    ],
+    "engineer_type": "Backend/cloud engineer who builds LLM-powered apps and pipelines on AWS; some C++ systems work on the side",
+    "memorable_numbers": ["65%", "90%", "34%", "93%", "50.9M", "20,000+", "GPA 3.5", "May 2028"],
+    "confusing": [
+      "What a 'Claude skill' and 'sub-skills' are",
+      "What Amazon Leo is (and why a UMD contracting group has it as a client)",
+      "The robotics bullet: AnyGrasp, Open3D, 'aimed at ICLR'",
+      "'Tortuga' in the TerpLabs section"
+    ],
+    "skipped": [
+      "Technical Skills section beyond the AI/ML line",
+      "Most of the UMIACS and TerpLabs bullets",
+      "Certification line"
+    ],
+    "interview_questions": [
+      "What did the Claude workflow generator do, and how did you measure that quality didn't drop?",
+      "What is Amazon Leo and what was your role versus the rest of the contracting team?",
+      "How did you validate your order book against the exchange, and what was the one mismatched fill?",
+      "What are you building at AWS right now?"
+    ]
+  },
+  "plain_english": [
+    {"quote": "Writing backtested Java capacity-planning logic that sets upper", "restatement": "At AWS he is writing code, tested against past data, that decides how much spare server capacity Redshift holds back for maintenance so it stays available without wasting money.", "understood": true},
+    {"quote": "Split a Claude skill into sub-skills backed", "restatement": "At Capital One he broke an AI assistant's task into smaller steps with helper tools so it stopped wandering, making it generate workflows 65% faster (under 15 seconds) without getting worse.", "understood": true},
+    {"quote": "Precomputed popular workflows from a 270K+ row", "restatement": "He pre-built a cached, organized list of commonly used workflows from a big database so the AI tool could search them without hitting the database's limits; this became the tool's main search.", "understood": false},
+    {"quote": "Rebuilt a legacy test-data workflow tool as", "restatement": "He rebuilt an old internal tool for creating test data as a desktop app with a drag-and-drop visual editor, and 90% of 30+ developers surveyed preferred it.", "understood": true},
+    {"quote": "Built an EventBridge-scheduled LLM-as-judge check for a", "restatement": "He built a scheduled automatic check where one AI grades a production AI classifier's work, so the classifier only gets retrained when its grading quality drifts too far.", "understood": true},
+    {"quote": "Reduced end-to-end latency 34% for a pipeline", "restatement": "He made a pipeline that sends 6,000+ scraped research documents to an AI model 34% faster by replacing intermediate file-storage steps with streaming.", "understood": true},
+    {"quote": "Co-built a topic-scoring research tool and deployed", "restatement": "He helped build and deploy (to a development environment) a tool that shows Amazon Leo's public-policy team which research topics are popular.", "understood": true},
+    {"quote": "Built and prompt-tuned a pipeline for a", "restatement": "For a PhD-led robotics research project, he built a pipeline that draws possible robot grip positions onto camera images so an AI vision model can choose grips that won't hit the table.", "understood": true},
+    {"quote": "Building RAG meal suggestions for the official", "restatement": "He is building AI meal recommendations for the official UMD app that pull from real recipes, and internal testers rated 93% of suggested meals satisfactory.", "understood": true},
+    {"quote": "Built Redis caching in front of Tortuga's", "restatement": "He added caching to a class-scheduling app (Tortuga) to make it faster and lighten database load; the app got 20,000+ visits in its first month.", "understood": true},
+    {"quote": "Built a C++17 order book and matching", "restatement": "He built a stock-exchange order-matching engine in C++ that replayed 50.9 million real exchange messages and matched the real exchange's results on all but one of 99,123 trades.", "understood": true}
+  ],
+  "scores": {
+    "impact_clarity": 8,
+    "quantification": 8,
+    "technical_depth": 8,
+    "concision_readability": 8,
+    "skim_test": 8,
+    "credibility": 8,
+    "ats_parseability": 9,
+    "visual_layout": 8,
+    "domain_fit": 8,
+    "human_voice": 8,
+    "plain_language": 7,
+    "overall": 8
+  },
+  "competitive_for_domain": "Y",
+  "bullet_feedback": [
+    {
+      "bullet": "Precomputed popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to keep lookups within the database’s permission and rate limits, which became the Claude skill’s main search tool",
+      "problem": "Three abstract nouns in a row ('popular workflows', 'category tree', 'permission and rate limits') with no plain statement of what the user or the AI was looking up and why the database alone could not serve it. 'Permission and rate limits' reads as a constraint I cannot interpret.",
+      "severity": 7,
+      "why_it_matters": "I cannot repeat this to a hiring manager without guessing what a 'workflow' is or what problem the cache solved, so the bullet reads as filler between two clearer ones.",
+      "missing_or_unclear": "clarify: what a 'workflow' is here and what the AI tool needed to search for; what 'permission limits' means for the lookup",
+      "suggested_direction": "Lead with the problem in plain words (the AI tool needed to search X but the database limited how often/what it could query), then the fix (a cached, categorized index of the most-used workflows), then the outcome (became the tool's main search). Drop 'popular' or say what made a workflow popular."
+    },
+    {
+      "bullet": "Split a Claude skill into sub-skills backed by Python search and validation tools to stop open-ended model search, which cut LLM workflow generation time 65% to under 15s with no quality loss in stress tests",
+      "problem": "'Claude skill' and 'open-ended model search' are insider terms; the bullet never says what the generated 'workflow' is for or who uses it.",
+      "severity": 5,
+      "why_it_matters": "The 65% number is the headline win of the page, but a non-engineer only remembers 'something with Claude got faster' rather than what the system does for Capital One.",
+      "missing_or_unclear": "clarify: what the generated workflows are (e.g. test-data workflows from the Electron tool?) and who requested them",
+      "suggested_direction": "Replace 'to stop open-ended model search' with a plain phrase like 'so the model stopped searching aimlessly', and add a few words naming what the generated workflows are for."
+    },
+    {
+      "bullet": "Built Redis caching in front of Tortuga’s Prisma ORM queries to reduce database load and latency for a class scheduler that drew 20,000+ visits in its first 30 days",
+      "problem": "'Tortuga' is never introduced; I don't know whether it is TerpLabs' product, a client, or a library. 'Prisma ORM queries' adds a tech name that doesn't help the reader.",
+      "severity": 5,
+      "why_it_matters": "The 20,000+ visits number is a strong real-user signal, but the reader has to work out that Tortuga is the class scheduler before it lands.",
+      "missing_or_unclear": "clarify: that Tortuga is the class scheduler (and whether TerpLabs built it)",
+      "suggested_direction": "Open with the product: 'For Tortuga, our class scheduler that drew 20,000+ visits in its first 30 days, added Redis caching...'. Prisma can move to Skills."
+    },
+    {
+      "bullet": "Built and prompt-tuned a pipeline for a PhD-led robotics project aimed at ICLR that overlays AnyGrasp’s candidate grasps on camera images in Open3D to help a vision-language model pick grasps that avoid hitting the table",
+      "problem": "Long single sentence with four proper nouns (ICLR, AnyGrasp, Open3D, vision-language model) before the plain goal arrives at the very end; 'aimed at ICLR' means nothing to most recruiters.",
+      "severity": 4,
+      "why_it_matters": "This is the only research/ML-modeling bullet on a page targeting ML roles, and it is the one I skipped on the skim.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Put the goal first (help a robot's vision-language model choose grasps that avoid the table), then the method (overlaying candidate grasps on camera images). Consider 'targeting a paper at ICLR' so a recruiter recognizes it as a publication effort."
+    },
+    {
+      "bullet": "Built an EventBridge-scheduled LLM-as-judge check for a production Amazon Bedrock classifier that rates research documents by importance to trigger fine-tuning only when its grades shift past a threshold",
+      "problem": "'its grades' is ambiguous (the judge's or the classifier's), and 'EventBridge-scheduled' leads the sentence with a service name instead of the purpose.",
+      "severity": 4,
+      "why_it_matters": "This is the most ML-infrastructure bullet on the page (evaluation-gated retraining), but a recruiter has to read it twice to get that the point is retraining only when quality drifts.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Say 'a scheduled check' and let EventBridge sit in Skills or later in the sentence; replace 'its grades' with 'the classifier's ratings' so the trigger is clear."
+    },
+    {
+      "bullet": "Rebuilt a legacy test-data workflow tool as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation to make editing smoother, which 90% of 30+ surveyed developers preferred",
+      "problem": "Four tech names (React, TypeScript, Electron, React Flow, Jest) packed into the middle push the purpose and result to the end; 'make editing smoother' is vague.",
+      "severity": 3,
+      "why_it_matters": "Reads closer to a tech list than the other Capital One bullets; the 90% result is easy to miss.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Cut to the techs that explain the design (Electron app, visual flow editor) and let Skills carry TypeScript/Jest."
+    }
+  ],
+  "page_feedback": [
+    {
+      "problem": "The top entry (AWS) is a single bullet about Redshift capacity planning, which is not ML work; the strongest LLM/ML-infrastructure evidence (Capital One Claude bullets, Amazon Leo LLM-as-judge and Bedrock pipeline) sits second and third.",
+      "severity": 3,
+      "why_it_matters": "For an AI/ML screener, the first thing read after the brand is non-ML. The brand still helps a lot, so this is a minor cost, but the 7-second takeaway is 'AWS backend' more than 'ML infrastructure'.",
+      "suggested_direction": "Keep chronological order, but make sure the Capital One and Amazon Leo bullets lead with the LLM/ML purpose so the eye picks it up on the second entry."
+    },
+    {
+      "problem": "Several entities are never explained: 'Amazon Leo', 'Tortuga', 'Claude skill'.",
+      "severity": 4,
+      "why_it_matters": "A non-engineer recruiter skims past unexplained names, and these sit on the bullets that carry the candidate's LLM-application story.",
+      "suggested_direction": "Add a few plain words where each first appears (what the client/product is), without adding new claims."
+    },
+    {
+      "problem": "Noticeable empty space at the bottom of the page while some bullets run two dense lines.",
+      "severity": 2,
+      "why_it_matters": "Minor: the page could breathe more between sections instead of leaving a gap at the bottom.",
+      "suggested_direction": "Slightly increase section spacing or use the room to loosen the densest bullets rather than adding content."
+    }
+  ],
+  "keep": [
+    "Built a C++17 order book and matching engine to replay 50.9M real IEX exchange messages without ever resyncing, which agreed with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices",
+    "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+    "Co-built a topic-scoring research tool and deployed it to dev on AWS Fargate with GitHub Actions CI/CD and AWS CDK to show Amazon Leo’s public-policy staff which research topics are popular",
+    "Header and Education block: name, school, degree, grad date and GPA readable in under two seconds",
+    "Sparse bolding limited to one metric per bullet"
+  ]
+}
