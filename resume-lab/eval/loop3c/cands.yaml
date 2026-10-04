@@ -1,0 +1,12 @@
+capital_one.search_index:
+  incumbent: Precomputed popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to keep lookups within the database's permission and rate limits, which became the Claude skill's main search tool
+  candidates:
+  - Precomputed popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to give the Claude skill a main search tool that stays within the database's permission and rate limits
+terplabs.tortuga:
+  incumbent: Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio's class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency
+  candidates:
+  - Built Redis caching in front of Tortuga's Prisma ORM queries to reduce database load and latency for a class scheduler that drew 20,000+ visits in its first 30 days
+umiacs.env_setup@infra:
+  incumbent: Cut research-environment setup time 30% by pinning dependencies with uv and packaging the environment in Docker so every machine gets an identical setup
+  candidates:
+  - Cut research-environment setup time 30% by pinning dependencies with uv and packaging identical environments in Docker

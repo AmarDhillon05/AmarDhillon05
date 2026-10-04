@@ -1,0 +1,35 @@
+{
+  "g01": {
+    "fact": "capital_one.search_index",
+    "labels": {
+      "A": "cand1",
+      "B": "incumbent"
+    },
+    "texts": {
+      "cand1": "Precomputed popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to give the Claude skill a main search tool that stays within the database's permission and rate limits",
+      "incumbent": "Precomputed popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to keep lookups within the database's permission and rate limits, which became the Claude skill's main search tool"
+    }
+  },
+  "g02": {
+    "fact": "terplabs.tortuga",
+    "labels": {
+      "A": "cand1",
+      "B": "incumbent"
+    },
+    "texts": {
+      "cand1": "Built Redis caching in front of Tortuga's Prisma ORM queries to reduce database load and latency for a class scheduler that drew 20,000+ visits in its first 30 days",
+      "incumbent": "Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio's class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency"
+    }
+  },
+  "g03": {
+    "fact": "umiacs.env_setup@infra",
+    "labels": {
+      "A": "incumbent",
+      "B": "cand1"
+    },
+    "texts": {
+      "incumbent": "Cut research-environment setup time 30% by pinning dependencies with uv and packaging the environment in Docker so every machine gets an identical setup",
+      "cand1": "Cut research-environment setup time 30% by pinning dependencies with uv and packaging identical environments in Docker"
+    }
+  }
+}

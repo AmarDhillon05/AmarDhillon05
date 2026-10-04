@@ -1,0 +1,23 @@
+[
+  {
+    "id": "g01",
+    "versions": {
+      "A": "Precomputed popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to give the Claude skill a main search tool that stays within the database's permission and rate limits",
+      "B": "Precomputed popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to keep lookups within the database's permission and rate limits, which became the Claude skill's main search tool"
+    }
+  },
+  {
+    "id": "g02",
+    "versions": {
+      "A": "Built Redis caching in front of Tortuga's Prisma ORM queries to reduce database load and latency for a class scheduler that drew 20,000+ visits in its first 30 days",
+      "B": "Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio's class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency"
+    }
+  },
+  {
+    "id": "g03",
+    "versions": {
+      "A": "Cut research-environment setup time 30% by pinning dependencies with uv and packaging the environment in Docker so every machine gets an identical setup",
+      "B": "Cut research-environment setup time 30% by pinning dependencies with uv and packaging identical environments in Docker"
+    }
+  }
+]

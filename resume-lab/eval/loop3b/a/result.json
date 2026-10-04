@@ -1,0 +1,92 @@
+[
+  {
+    "fact": "amazon_contract.leo_deploy",
+    "winner": "cand1",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Co-built a research tool that scores and aggregates topics to show Amazon Leo's public-policy staff what's popular, which runs in dev on AWS Fargate with GitHub Actions CI/CD and AWS CDK infrastructure-as-code ready for production",
+    "decisive_wording": "B: \"deployed it to dev on AWS Fargate ... to show Amazon Leo's public-policy staff which research topics are popular\" vs A: \"..., which runs in dev on AWS Fargate ... ready for production\"",
+    "info": "A keeps 'aggregates' and 'ready for production'; B drops both but keeps tool, audience, Fargate, GitHub Actions CI/CD, AWS CDK and dev deployment."
+  },
+  {
+    "fact": "amazon_contract.bedrock_finetune",
+    "winner": "incumbent",
+    "advantage": "concrete",
+    "adopt": false,
+    "text": "Built an EventBridge-scheduled LLM-as-judge check for a production Amazon Bedrock classifier that rates research documents by importance to trigger fine-tuning only when its grades shift past a threshold",
+    "decisive_wording": "A: \"Built an EventBridge-scheduled LLM-as-judge check ... to trigger fine-tuning only when its grades shift past a threshold\" vs B: \"to run only when a larger LLM's EventBridge-scheduled grades of its output shift\"",
+    "info": "Both keep Bedrock, production, importance rating, EventBridge, threshold-gated retraining. A names the pattern 'LLM-as-judge'; B instead says 'a larger LLM' grades output."
+  },
+  {
+    "fact": "capital_one.ui_overhaul",
+    "winner": "incumbent",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Rebuilt a legacy test-data workflow tool as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation to make editing smoother, which 90% of 30+ surveyed developers preferred",
+    "decisive_wording": "A: \"and Jest-tested validation\"",
+    "info": "A keeps the Jest-tested validation fact; B drops it. Everything else (React, TypeScript, Electron, React Flow, 90% of 30+ devs) is identical."
+  },
+  {
+    "fact": "capital_one.search_index",
+    "winner": "cand1",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Precomputed popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to keep lookups within the database's permission and rate limits, which became the Claude skill's main search tool",
+    "decisive_wording": "B: \"to cut queries against a database with strict permission and rate limits\" vs A: \"to keep lookups within the database's permission and rate limits\"",
+    "info": "Same facts; B states the mechanism (fewer queries) and that limits were strict; A is shorter."
+  },
+  {
+    "fact": "umiacs.grasp_vlm",
+    "winner": "cand1",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Built and prompt-tuned a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D to help a vision-language model pick robot grasps that avoid hitting the table for a PhD-led project targeting ICLR",
+    "decisive_wording": "B: \"..., and tuned its prompts to favor grasps that avoid hitting the table\" (tacked-on second clause) vs A: \"Built and prompt-tuned a pipeline ...\"; A: \"targeting ICLR\" vs B: \"ICLR project\"",
+    "info": "Both keep pipeline, AnyGrasp, Open3D, VLM grasp selection, prompt tuning, table-collision avoidance, PhD-led, ICLR. A says 'targeting ICLR'; B's 'ICLR project' could read as an accepted paper."
+  },
+  {
+    "fact": "terplabs.rag_meal",
+    "winner": "cand1",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Building RAG meal suggestions for the official UMD app with SentenceBERT vector search in ChromaDB to feed GPT-4o mini real scraped recipes, which internal testers rated satisfactory for 93% of meals",
+    "decisive_wording": "A: \"to ground GPT-4o mini's meal suggestions in scraped recipes\" vs B: \"to feed GPT-4o mini real scraped recipes\"",
+    "info": "Same facts. B adds the 'vector search' keyword; A says 'RAG feature' and '93% of the time' vs B's '93% of meals'."
+  },
+  {
+    "fact": "aws_sde.redshift",
+    "winner": "cand1",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Writing backtested Java capacity-planning logic that sets upper and lower bounds on the EC2 capacity Amazon Redshift reserves for patching to balance availability against cost",
+    "decisive_wording": "A: \"Writing and backtesting Java logic ... for Amazon Redshift maintenance like patching\" vs B: \"Writing backtested Java capacity-planning logic ... the EC2 capacity Amazon Redshift reserves for patching\"",
+    "info": "A keeps the broader 'maintenance like patching' scope; B narrows to patching but adds 'capacity-planning'."
+  },
+  {
+    "fact": "capital_one.claude_skill",
+    "winner": "cand1",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Cut AI workflow generation time 65% to under 15s by splitting a Claude skill into focused sub-skills that call Python search and validation tools instead of relying on open-ended model search",
+    "decisive_wording": "B: \"instead of relying on open-ended model search\" vs A: \"instead of searching open-ended\"",
+    "info": "Same facts; B clarifies that the model was doing the open-ended search before."
+  },
+  {
+    "fact": "iex.throughput+iex.data_structures",
+    "winner": "incumbent",
+    "advantage": "concrete",
+    "adopt": false,
+    "text": "Designed the book as std::list FIFOs per price level inside a std::map with an order-ID hash map to make cancels O(1), which sustained 1.26M events/sec end-to-end over the full replay",
+    "decisive_wording": "B: \"Designed the book as ... to make cancels O(1), which sustained 1.26M events/sec\" vs A: \"Ran the full replay at 1.26M events/sec ... on an order book that ...\"",
+    "info": "Identical facts (std::list FIFOs, std::map, order-ID hash map, O(1) cancels, 1.26M events/sec end-to-end over full replay). A says 'end-to-end' explicitly, B keeps it too."
+  },
+  {
+    "fact": "iex.throughput+iex.data_structures+iex.latency_dist@quant",
+    "winner": "cand1",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Ran the full replay at 1.26M events/sec and a separate 2M-event run at a 1.2 \u00b5s per-message p99 on an order book that keeps std::list FIFOs per price level in a std::map with an order-ID hash map to make cancels O(1)",
+    "decisive_wording": "B: \"a 1.2 s per-message p99\" vs A: \"a 1.2 \u00b5s per-message p99\"",
+    "info": "B distorts the latency by a factor of a million (1.2 s instead of 1.2 \u00b5s); A preserves it correctly. Otherwise identical facts."
+  }
+]

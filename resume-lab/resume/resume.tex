@@ -109,7 +109,7 @@
     % fact: capital_one.ui_overhaul
     \resumeItem{Rebuilt a legacy test-data workflow tool as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation to make editing smoother, which \textbf{90\%} of 30+ surveyed developers preferred}
     % fact: capital_one.claude_skill
-    \resumeItem{Cut AI workflow generation time \textbf{65\%} to under 15s by splitting a Claude skill into focused sub-skills that call Python search and validation tools instead of searching open-ended}
+    \resumeItem{Cut AI workflow generation time \textbf{65\%} to under 15s by splitting a Claude skill into focused sub-skills that call Python search and validation tools instead of relying on open-ended model search}
     % fact: capital_one.search_index
     \resumeItem{Precomputed popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to keep lookups within the database's permission and rate limits, which became the Claude skill's main search tool}
   \resumeItemListEnd
@@ -119,7 +119,7 @@
     {Software Engineer (Contract)}{College Park, MD}
   \resumeItemListStart
     % fact: amazon_contract.leo_deploy
-    \resumeItem{Co-built a research tool that scores and aggregates topics to show Amazon Leo's public-policy staff what's popular, which runs in dev on AWS Fargate with GitHub Actions CI/CD and AWS CDK infrastructure-as-code ready for production}
+    \resumeItem{Co-built a topic-scoring research tool and deployed it to dev on AWS Fargate with GitHub Actions CI/CD and AWS CDK to show Amazon Leo's public-policy staff which research topics are popular}
     % fact: amazon_contract.kinesis_pipeline
     \resumeItem{Reduced end-to-end latency \textbf{34\%} for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda}
     % fact: amazon_contract.bedrock_finetune
@@ -131,7 +131,7 @@
     {Machine Learning Research Intern}{College Park, MD}
   \resumeItemListStart
     % fact: umiacs.grasp_vlm
-    \resumeItem{Built a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D to let a vision-language model pick robot grasps for a PhD-led ICLR project, and tuned its prompts to favor grasps that avoid hitting the table}
+    \resumeItem{Built and prompt-tuned a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D to help a vision-language model pick robot grasps that avoid hitting the table for a PhD-led project targeting ICLR}
   \resumeItemListEnd
 
   \resumeSubheading
@@ -159,7 +159,7 @@
     % fact: iex.storage_benchmark
     \resumeItem{Implemented B+ tree and LSM-tree backends for the engine's event log to compare them on identical 2M-record workloads, which showed the B+ tree giving \textbf{12.8x} the read throughput and 22x faster range queries for 27\% more disk}
     % fact: iex.throughput+iex.data_structures
-    \resumeItem{Designed the book as std::list FIFOs per price level inside a std::map with an order-ID hash map to make cancels O(1), which sustained \mbox{\textbf{1.26M events/sec}} end-to-end over the full replay}
+    \resumeItem{Ran the full replay at \mbox{\textbf{1.26M events/sec}} end-to-end on an order book that keeps std::list FIFOs per price level in a std::map with an order-ID hash map to make cancels O(1)}
   \resumeItemListEnd
 \resumeSubHeadingListEnd
 

@@ -1,0 +1,92 @@
+[
+  {
+    "fact": "amazon_contract.leo_deploy",
+    "winner": "cand1",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Co-built a topic-scoring research tool and deployed it to dev on AWS Fargate with GitHub Actions CI/CD and AWS CDK to show Amazon Leo's public-policy staff which research topics are popular",
+    "decisive_wording": "A: 'deployed it to dev on AWS Fargate ... to show Amazon Leo's public-policy staff which research topics are popular' vs B: '..., which runs in dev on AWS Fargate with GitHub Actions CI/CD and AWS CDK infrastructure-as-code ready for production'",
+    "info": "Both keep co-built, topic scoring, Fargate, GitHub Actions, CDK, dev deployment, audience. B adds 'aggregates' and 'ready for production'; A drops those but they add little."
+  },
+  {
+    "fact": "amazon_contract.bedrock_finetune",
+    "winner": "incumbent",
+    "advantage": "concrete",
+    "adopt": false,
+    "text": "Built an EventBridge-scheduled LLM-as-judge check for a production Amazon Bedrock classifier that rates research documents by importance to trigger fine-tuning only when its grades shift past a threshold",
+    "decisive_wording": "B: 'Built an EventBridge-scheduled LLM-as-judge check ... to trigger fine-tuning only when its grades shift past a threshold' vs A: 'Automated retraining ... to run only when a larger LLM's EventBridge-scheduled grades of its output shift past a threshold'",
+    "info": "Both keep Bedrock, production, document-importance rating, EventBridge, threshold trigger. A specifies the judge is a 'larger LLM'; B names the recognized 'LLM-as-judge' pattern instead."
+  },
+  {
+    "fact": "capital_one.ui_overhaul",
+    "winner": "incumbent",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Rebuilt a legacy test-data workflow tool as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation to make editing smoother, which 90% of 30+ surveyed developers preferred",
+    "decisive_wording": "A: 'and Jest-tested validation'",
+    "info": "A keeps Jest testing of validation logic; B drops it. Everything else (React, TypeScript, Electron, React Flow, 90% of 30+ developers) is identical."
+  },
+  {
+    "fact": "capital_one.search_index",
+    "winner": "incumbent",
+    "advantage": "concrete",
+    "adopt": false,
+    "text": "Precomputed popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to keep lookups within the database's permission and rate limits, which became the Claude skill's main search tool",
+    "decisive_wording": "B: 'Redis-cached category tree to keep lookups within the database's permission and rate limits' vs A: 'category tree cached in Redis to cut queries against a database with strict permission and rate limits'",
+    "info": "Same facts: 270K+ rows, PostgreSQL, Redis, category tree, permission and rate limits, became the main search tool. A's 'cut queries' and 'strict' add slight emphasis."
+  },
+  {
+    "fact": "umiacs.grasp_vlm",
+    "winner": "cand1",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Built and prompt-tuned a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D to help a vision-language model pick robot grasps that avoid hitting the table for a PhD-led project targeting ICLR",
+    "decisive_wording": "B: ', and tuned its prompts to favor grasps that avoid hitting the table' (tacked-on clause) vs A: 'Built and prompt-tuned a pipeline ... to help a vision-language model pick robot grasps that avoid hitting the table'",
+    "info": "Both keep AnyGrasp, Open3D, VLM, table avoidance, prompt tuning, PhD-led, ICLR. A says 'targeting ICLR', which is more accurate than B's 'ICLR project'."
+  },
+  {
+    "fact": "terplabs.rag_meal",
+    "winner": "incumbent",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Building RAG meal suggestions for the official UMD app with SentenceBERT vector search in ChromaDB to feed GPT-4o mini real scraped recipes, which internal testers rated satisfactory for 93% of meals",
+    "decisive_wording": "A: 'SentenceBERT vector search ... to feed GPT-4o mini real scraped recipes ... satisfactory for 93% of meals' vs B: 'satisfactory 93% of the time'",
+    "info": "Same facts. A keeps the 'vector search' keyword and a more specific metric unit ('of meals'); B uses the term 'ground', which is a precise RAG word."
+  },
+  {
+    "fact": "aws_sde.redshift",
+    "winner": "cand1",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Writing backtested Java capacity-planning logic that sets upper and lower bounds on the EC2 capacity Amazon Redshift reserves for patching to balance availability against cost",
+    "decisive_wording": "A: 'for Amazon Redshift maintenance like patching' vs B: 'the EC2 capacity Amazon Redshift reserves for patching' and 'Writing backtested'",
+    "info": "A keeps the broader scope (maintenance, with patching as an example); B narrows it to patching only but adds 'capacity-planning'."
+  },
+  {
+    "fact": "capital_one.claude_skill",
+    "winner": "cand1",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Cut AI workflow generation time 65% to under 15s by splitting a Claude skill into focused sub-skills that call Python search and validation tools instead of relying on open-ended model search",
+    "decisive_wording": "A: 'instead of relying on open-ended model search' vs B: 'instead of searching open-ended'",
+    "info": "A says the model was doing the open-ended search; B leaves out who searched."
+  },
+  {
+    "fact": "iex.throughput+iex.data_structures",
+    "winner": "cand1",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Designed the book as std::list FIFOs per price level inside a std::map with an order-ID hash map to make cancels O(1), which sustained 1.26M events/sec end-to-end over the full replay",
+    "decisive_wording": "A: 'on an order book that keeps' vs B: 'Designed the book as'",
+    "info": "Same metrics and data structures. A names it an 'order book'; B says only 'the book', which loses context for a recruiter. B makes design ownership explicit with 'Designed'."
+  },
+  {
+    "fact": "iex.throughput+iex.data_structures+iex.latency_dist@quant",
+    "winner": "cand1",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Ran the full replay at 1.26M events/sec and a separate 2M-event run at a 1.2 \u00b5s per-message p99 on an order book that keeps std::list FIFOs per price level in a std::map with an order-ID hash map to make cancels O(1)",
+    "decisive_wording": "B: 'a 1.2 s per-message p99' vs A: 'a 1.2 \u00b5s per-message p99'",
+    "info": "B distorts the latency unit (seconds instead of microseconds), which makes the figure a million times worse. A keeps it correct. B also drops 'order book' for 'the book'."
+  }
+]
