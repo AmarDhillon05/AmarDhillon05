@@ -1,0 +1,47 @@
+[
+  {
+    "id": "g01",
+    "winner": "A",
+    "advantage": "marginal",
+    "decisive_wording": "\"Designed the order book with ... to make cancels O(1), which ran the full replay at 1.26M events/sec\" vs \"Ran the full replay ... on an order book that keeps ...\"",
+    "info_preserved_or_lost": "Identical facts in both: std::list FIFOs per price level, std::map, order-ID hash map, O(1) cancels, 1.26M events/sec end-to-end replay.",
+    "credibility_change": "A makes the candidate the designer of the data structure, so the throughput reads as a result of that design choice. B's 'Ran the replay' credits the candidate with running a benchmark more than with building something.",
+    "readability_change": "A follows the 'did X to accomplish Y, which did Z' order in a single sentence. B opens with the metric and then stacks a long noun phrase after 'on an order book that keeps', which makes the reader hold more at once."
+  },
+  {
+    "id": "g02",
+    "winner": "A",
+    "advantage": "marginal",
+    "decisive_wording": "B ends with the tacked-on \"for a PhD-led project targeting ICLR\"; A places \"for a PhD-led robotics project aimed at ICLR\" up front",
+    "info_preserved_or_lost": "Both keep: built and prompt-tuned a pipeline, AnyGrasp candidate grasps, Open3D overlays on camera images, VLM picks grasps that avoid hitting the table, PhD-led project, ICLR target. A says 'robotics project' and B says 'robot grasps', so the robotics context survives in both.",
+    "credibility_change": "Neutral. The same facts and the same claims of ownership.",
+    "readability_change": "B adds the project context as a trailing clause, which the Loop 3 rule penalizes. A puts the context early, though the 'project ... that overlays' attachment is a little ambiguous. Overall A follows the rule better."
+  },
+  {
+    "id": "g03",
+    "winner": "A",
+    "advantage": "concrete",
+    "decisive_wording": "A: \"Built an EventBridge-scheduled LLM-as-judge check ... to trigger fine-tuning only when its grades shift past a threshold\" vs B: \"to run only when a larger LLM's EventBridge-scheduled grades of the model shift past a threshold\"",
+    "info_preserved_or_lost": "A keeps the LLM-as-judge term (a recognizable keyword), 'classifier that rates research documents by importance', fine-tuning, and the threshold trigger. B keeps that the judge is a 'larger LLM' and frames the result as automated retraining, but it drops the LLM-as-judge term and the 'by importance' criterion.",
+    "credibility_change": "A names a concrete mechanism an engineer recognizes right away (a scheduled LLM-as-judge drift check that gates fine-tuning). B's mechanism is buried inside a possessive chain.",
+    "readability_change": "A reads as one clear action with its purpose. B's \"a larger LLM's EventBridge-scheduled grades of the model shift\" is a noun stack that is hard to parse in one pass."
+  },
+  {
+    "id": "g04",
+    "winner": "B",
+    "advantage": "marginal",
+    "decisive_wording": "B: \"Building a RAG meal-suggestion feature ... to ground GPT-4o mini in scraped recipes\" vs A: \"Building RAG meal suggestions ... to feed GPT-4o mini real scraped recipes\"",
+    "info_preserved_or_lost": "Both keep: RAG, official UMD app, SentenceBERT, ChromaDB, GPT-4o mini, scraped recipes, 93% tester satisfaction. A adds 'vector search' and 'real'. B adds 'feature'. Both end with the same tacked-on 'which internal testers rated ...' clause, so the rule penalty cancels out.",
+    "credibility_change": "B's 'ground ... in' is the standard term for what RAG does. A's 'feed ... real recipes' is plainer but slightly more casual.",
+    "readability_change": "'Building a ... feature for the official UMD app' is easier for a recruiter to restate than 'Building RAG meal suggestions'. A's 'vector search' is a small keyword gain. The difference is mostly taste."
+  },
+  {
+    "id": "g05",
+    "winner": "B",
+    "advantage": "concrete",
+    "decisive_wording": "A: \"a 1.2 s per-message p99\" vs B: \"hit a 1.2 µs p99\"",
+    "info_preserved_or_lost": "Both keep the data-structure design, O(1) cancels, 1.26M events/sec, and the separate 2M-event run. A distorts the latency unit: 1.2 seconds instead of 1.2 microseconds, which is a factor of a million and contradicts the throughput. A does add 'per-message', but that does not offset the wrong unit.",
+    "credibility_change": "A's 1.2 s p99 would look absurd to any interviewer next to 1.26M events/sec and would damage credibility. B's 1.2 µs is consistent and impressive.",
+    "readability_change": "B follows 'Designed X to make cancels O(1), which ran ... and hit ...' in one structure. A opens with two metrics before the long description of the design."
+  }
+]
