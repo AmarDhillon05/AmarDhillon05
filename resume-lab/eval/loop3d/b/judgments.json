@@ -1,0 +1,47 @@
+[
+  {
+    "id": "g01",
+    "winner": "A",
+    "advantage": "marginal",
+    "decisive_wording": "A: \"Designed the order book with ... to make cancels O(1), which ran the full replay at 1.26M events/sec\" vs B: \"Ran the full replay ... on an order book that keeps ...\"",
+    "info_preserved_or_lost": "Identical facts in both: std::list FIFOs per price level, std::map, order-ID hash map, O(1) cancels, 1.26M events/sec end-to-end replay.",
+    "credibility_change": "A credits the candidate with the design, which is what an interviewer will probe; B's verb 'Ran' credits only the benchmark run and leaves design ownership implied.",
+    "readability_change": "Both are one sentence. A follows the 'did X, which did Z' cause-then-result order. B puts the metric first but then trails a long data-structure clause. A slight edge to A."
+  },
+  {
+    "id": "g02",
+    "winner": "B",
+    "advantage": "concrete",
+    "decisive_wording": "A ends with \"...avoid hitting the table for a PhD-led project targeting ICLR\"; B puts \"for a PhD-led robotics project aimed at ICLR\" right after \"pipeline\"",
+    "info_preserved_or_lost": "Both keep AnyGrasp, Open3D, the overlay on camera images, the VLM, collision avoidance, PhD-led and ICLR. B moves 'robot' into 'robotics project', so nothing is lost.",
+    "credibility_change": "Neutral. Both describe the same role and venue.",
+    "readability_change": "A tacks the context clause onto the end, where 'the table for a PhD-led project' can be misread. B states the context up front and ends on the mechanism and goal, giving one clean structure."
+  },
+  {
+    "id": "g03",
+    "winner": "A",
+    "advantage": "concrete",
+    "decisive_wording": "A: \"Built an EventBridge-scheduled LLM-as-judge check ... to trigger fine-tuning only when its grades shift past a threshold\" vs B: \"to run only when a larger LLM's EventBridge-scheduled grades of the model shift past a threshold\"",
+    "info_preserved_or_lost": "A keeps the 'LLM-as-judge' term, 'classifier' and 'rates ... by importance'. B drops 'LLM-as-judge' (an ATS/posting keyword), says 'ranks' instead of 'rates by importance', and changes 'fine-tuning' to the vaguer 'retraining'. B adds 'larger LLM', which A only implies.",
+    "credibility_change": "A names a recognizable pattern (an LLM-as-judge drift check) that an interviewer can probe right away. In B the mechanism is buried in a possessive chain.",
+    "readability_change": "A reads 'built X for Y to do Z'. B's 'a larger LLM's EventBridge-scheduled grades of the model' is a stacked noun phrase that a recruiter cannot restate."
+  },
+  {
+    "id": "g04",
+    "winner": "A",
+    "advantage": "marginal",
+    "decisive_wording": "A: \"SentenceBERT vector search in ChromaDB to feed GPT-4o mini real scraped recipes\" vs B: \"SentenceBERT search in ChromaDB to ground GPT-4o mini in scraped recipes\"",
+    "info_preserved_or_lost": "Same facts in both, including the 93% satisfaction figure. A keeps 'vector search', which matches job postings. B adds the word 'feature' and uses 'ground', a precise term for engineers.",
+    "credibility_change": "About equal. 'Ground' signals the hallucination-reduction intent to engineers, while 'real scraped recipes' gets the same idea across to a recruiter.",
+    "readability_change": "A is slightly shorter and plainer ('feed ... real recipes'). Both share the same tacked-on tester clause, so neither gains on the Loop 3 rule."
+  },
+  {
+    "id": "g05",
+    "winner": "B",
+    "advantage": "concrete",
+    "decisive_wording": "A: \"a 1.2 s per-message p99\" vs B: \"hit a 1.2 µs p99\"",
+    "info_preserved_or_lost": "A distorts the latency unit (1.2 s instead of 1.2 µs), turning a strong number into a disastrous one. B keeps every fact correctly and attributes the design to the candidate.",
+    "credibility_change": "A's 1.2-second p99 would discredit the whole bullet in an interview. B's microsecond figure is credible and impressive.",
+    "readability_change": "B uses the 'Designed X, which ran ... and hit ...' structure. A front-loads two metrics and then a long data-structure clause, which is harder to parse."
+  }
+]
