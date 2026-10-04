@@ -1,0 +1,99 @@
+{
+  "persona": "infra_v2",
+  "target": "Infrastructure / distributed systems / platform / SRE internships, 2026-27 cycle",
+  "memory_skim": {"strongest_3": [], "engineer_type": "", "memorable_numbers": [], "confusing": [], "skipped": [], "interview_questions": []},
+  "plain_english": [],
+  "scores": {
+    "impact_clarity": 8,
+    "quantification": 8,
+    "technical_depth": 8,
+    "concision_readability": 8,
+    "skim_test": 7,
+    "credibility": 8,
+    "ats_parseability": 9,
+    "visual_layout": 8,
+    "domain_fit": 8,
+    "human_voice": 8,
+    "plain_language": 7,
+    "overall": 8
+  },
+  "competitive_for_domain": "Y",
+  "bullet_feedback": [
+    {
+      "bullet": "Precomputed popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to keep lookups within the database’s permission and rate limits, which became the Claude skill’s main search tool",
+      "problem": "The reason clause 'to keep lookups within the database’s permission and rate limits' is ambiguous: 'permission limits' is not a standard capacity concept, so an infra reader can't tell whether the constraint was read QPS, row-level access control, or both. The tail 'which became the Claude skill’s main search tool' then switches the subject to the AI feature, so the caching decision (the infra-relevant part) ends without a mechanism-level outcome.",
+      "severity": 5,
+      "why_it_matters": "This is the most capacity-flavored bullet in the Capital One block; if the constraint reads as vague, the reader files it as 'added a cache' rather than 'designed around a rate-limited datastore'.",
+      "missing_or_unclear": "clarify: what 'permission limits' means here (access-scoped queries vs. a query quota), and what 'popular' was based on.",
+      "suggested_direction": "Name the constraint concretely first (e.g., the shared table's per-client query limit), then the precompute-and-cache design, then that it became the skill's main search path. Drop 'permission' if it isn't a throughput constraint."
+    },
+    {
+      "bullet": "Co-built a research tool that scores and aggregates topics to show Amazon Leo’s public-policy staff what’s popular, which runs in dev on AWS Fargate with GitHub Actions CI/CD and AWS CDK infrastructure-as-code ready for production",
+      "problem": "The second half is a deployment-stack list (Fargate, GitHub Actions, CDK) with no decision or result attached, and 'runs in dev ... ready for production' tells the reader it isn't in production. 'Co-built' plus 'scores and aggregates topics' leaves the candidate's own piece undefined.",
+      "severity": 5,
+      "why_it_matters": "For platform/SRE readers, IaC and CI/CD are only interesting when tied to what they enabled (repeatable environments, gated deploys); as written it reads as name-dropping and is the weakest of the three Amazon Leo bullets.",
+      "missing_or_unclear": "clarify: which part the candidate owned (the CDK stack? the pipeline? the scoring service?) and what the CDK/CI setup bought (e.g., one-command environment creation, deploy gating).",
+      "suggested_direction": "Lead with the infra piece the candidate personally owned and what the IaC/CI setup made possible; shorten the product description to a short clause. Keep the honest 'in dev' scoping."
+    },
+    {
+      "bullet": "Cut end-to-end latency 34% on a data pipeline that sends 6,000+ scraped research documents to model inference by streaming them through Amazon Kinesis into AWS Lambda instead of staging each step in S3",
+      "problem": "Strong mechanism-plus-result, but the 34% has no absolute baseline or unit (per-document latency? batch completion time for 6,000 docs?).",
+      "severity": 3,
+      "why_it_matters": "Interviewers on streaming teams will immediately ask whether this is p50 per record or wall-clock for the batch; the answer changes how impressive it is.",
+      "missing_or_unclear": "clarify: what latency was measured (per-document vs. whole run) and, if known, the before/after values.",
+      "suggested_direction": "Add a two-to-three-word qualifier on what latency means (e.g., 'per-document' or 'batch'); no other change needed."
+    },
+    {
+      "bullet": "Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio’s class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency",
+      "problem": "Ends at intent ('to reduce database load and latency') with no observed effect, and the only number (20,000+ visits) describes the product's traffic, not the cache.",
+      "severity": 4,
+      "why_it_matters": "A reader can't tell whether the cache mattered at that load; 20,000 visits over 30 days is low QPS, so without a result an infra interviewer may wonder why caching was needed.",
+      "missing_or_unclear": "clarify: what was cached (which queries, invalidation approach) and any observed effect on DB load or response time.",
+      "suggested_direction": "Name what the cache was keyed on or how it was invalidated, which adds depth without a new metric; if an observed effect exists, state it instead of the intent clause."
+    },
+    {
+      "bullet": "Implemented B+ tree and LSM-tree backends for the engine’s event log to compare them on identical 2M-record workloads, which showed the B+ tree giving 12.8x the read throughput and 22x faster range queries for 27% more disk",
+      "problem": "Only the read side of the tradeoff is reported. The classic reason to pick an LSM-tree is write throughput, so a storage-engine reader will notice that write performance is missing from the comparison.",
+      "severity": 3,
+      "why_it_matters": "This is the most storage-engine-specific bullet on the page; a one-sided comparison invites the 'what about writes?' question and slightly weakens the tradeoff framing.",
+      "missing_or_unclear": "clarify: how the two backends compared on write/ingest throughput, if that was measured.",
+      "suggested_direction": "If write numbers exist, swap one read figure for the write result so the bullet shows both sides; otherwise leave as is."
+    },
+    {
+      "bullet": "Cut AI workflow generation time 65% to under 15s by splitting a Claude skill into focused sub-skills that call Python search and validation tools instead of searching open-ended",
+      "problem": "'instead of searching open-ended' is a compressed phrase that a non-ML reader won't parse, and 'Claude skill' / 'sub-skills' is product-specific jargon.",
+      "severity": 2,
+      "why_it_matters": "Minor: the 65% and 'under 15s' carry the bullet, but the contrast clause is what explains the mechanism.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Rephrase the tail as a plain contrast, e.g. 'instead of letting the model search freely'."
+    }
+  ],
+  "page_feedback": [
+    {
+      "problem": "The strongest infra/performance evidence on the page (the IEX order book: 50.9M-message replay, 1.26M events/sec, B+ tree vs LSM-tree comparison) sits in Projects at the bottom, below four experience blocks, three of which are mostly AI-tooling or app work.",
+      "severity": 6,
+      "why_it_matters": "A 7-second skim for an infra/SRE role sees AWS + Capital One AI workflow bullets first; the throughput, storage-engine and correctness numbers an infra HM hires on are found only if they read to the end.",
+      "suggested_direction": "Consider moving Projects above the shorter UMIACS/TerpLabs entries, or above Experience entirely for infra-targeted versions; AWS can stay first."
+    },
+    {
+      "problem": "The AWS bullet (EC2 capacity bounds for Redshift patching, availability vs. cost) is the single most domain-relevant line, but it is the only bullet under the most recognizable brand and uses present-progressive 'Writing', which reads as in-progress task description.",
+      "severity": 3,
+      "why_it_matters": "Capacity-vs-availability tradeoffs are exactly what this domain screens for; the bullet is good but a reader may skim past it as a placeholder.",
+      "suggested_direction": "Keep the content; consider an active present-tense verb ('Build'/'Designing') and front-loading 'capacity planning for Redshift patching' so the domain keyword lands first."
+    },
+    {
+      "problem": "Skills lists services that never appear in any bullet (API Gateway, SNS, X-Ray, OpenSearch, SQLAlchemy).",
+      "severity": 2,
+      "why_it_matters": "Not a problem on its own, but an infra interviewer may probe one of these and find thinner experience than implied.",
+      "suggested_direction": "Keep only items the candidate can discuss in depth, or be ready to back each one up."
+    }
+  ],
+  "keep": [
+    "Built a C++17 order book and matching engine to replay 50.9M real IEX exchange messages without ever resyncing, which agreed with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices",
+    "Designed the book as std::list FIFOs per price level inside a std::map with an order-ID hash map to make cancels O(1), which sustained 1.26M events/sec end-to-end over the full replay",
+    "Writing backtested Java capacity-planning logic that sets upper and lower bounds on the EC2 capacity Amazon Redshift reserves for patching to balance availability against cost",
+    "Built an EventBridge-scheduled LLM-as-judge check for a production Amazon Bedrock classifier that rates research documents by importance to trigger fine-tuning only when its grades shift past a threshold",
+    "Cut research-environment setup time 30% by pinning dependencies with uv and packaging the environment in Docker so every machine gets an identical setup",
+    "Section structure, single-column layout, and right-aligned dates/locations"
+  ]
+}

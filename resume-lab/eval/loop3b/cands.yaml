@@ -21,7 +21,7 @@ umiacs.grasp_vlm:
 terplabs.rag_meal:
   incumbent: Building RAG meal suggestions for the official UMD app with SentenceBERT vector search in ChromaDB to feed GPT-4o mini real scraped recipes, which internal testers rated satisfactory for 93% of meals
   candidates:
-  - Building a RAG meal-suggestion feature for the official UMD app that grounds GPT-4o mini in scraped recipes found with SentenceBERT search in ChromaDB, which internal testers rated satisfactory for 93% of meals
+  - Building a RAG feature for the official UMD app that uses SentenceBERT search in ChromaDB to ground GPT-4o mini's meal suggestions in scraped recipes, which internal testers rated satisfactory 93% of the time
 aws_sde.redshift:
   incumbent: Writing backtested Java capacity-planning logic that sets upper and lower bounds on the EC2 capacity Amazon Redshift reserves for patching to balance availability against cost
   candidates:
