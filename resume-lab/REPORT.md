@@ -28,6 +28,17 @@
 
 These are slightly below loop 2's 8.0 for the base. The template makes bullets longer and denser, and reviewers still mark down the most technical ones (B+ tree vs LSM, PhysTwin, the search index) and the noun stacks in Bedrock and Redshift. The judges kept those two wordings over the alternatives.
 
+
+**Post-loop-3 polish (Oct 4):**
+- **Search-index grammar fixed.** The bullet now reads "Built the Claude skill's main search tool by precomputing…". Before, "which" pointed at the limits.
+- **Bedrock and Redshift unchanged.** I tried rewrites to cut their noun stacks, but the judges split, so the incumbent stays.
+- **Base confirmation round 08.** This round reviewed the final wording, including the PhysTwin and order-book fixes:
+  - overall **8.0**, every reviewer ≥ 8;
+  - domain fit 8.3, technical depth 8.3;
+  - recruiter restated 12/14 bullets;
+  - competitive 3/3;
+  - the skeptic raised no structure issue above severity 4.
+
 ## Every bullet that changed (loop 2.1 → loop 3)
 | version | before (Loop 2.1) | after (Loop 3) |
 |---|---|---|
