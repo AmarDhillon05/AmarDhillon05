@@ -1,3 +1,31 @@
+# Loop 2.1: your Oct 4 answers (current)
+
+**Facts applied** (recorded in `resume/facts.yaml`, judged by two blind judges each, logged in `eval/loop2/decisions.jsonl`):
+
+| bullet | change | result |
+|---|---|---|
+| Capital One search index | names the constraint plainly ("…so lookups rarely touch a database gated by permissions and rate limits") instead of opening with "Because…" | adopted: both judges agreed |
+| Amazon Leo | says what the tool does (scores and aggregates topics so policy staff see what's popular), "co-built", "running in dev", CDK "ready for production" | adopted: judges split, but the old wording was flagged in every panel. It does **not** claim production. |
+| PhysTwin | ends on your real criterion: "…tuned prompts so it favors grasps that avoid hitting the table" | adopted: both judges rated it a concrete win |
+| Kinesis 34% | adding "averaged over multi-day runs" | **rejected**: one judge rated it worse. The fact is recorded, so you can say it in an interview. |
+
+**Write throughput:** your repo (`order-book-playground` README, `src/bench/metrics.h`, run reports) has no B+ tree vs LSM write or append-throughput result. The only append number is the adaptive-batching −32% (a negative result). The storage bullet still reports reads only. If you run a write benchmark, it can go in.
+
+**Hidden roles:**
+
+| test | judges / panel | decision |
+|---|---|---|
+| Nanosat (GraphQL telemetry, 23%) in infra | 2/2 blind page judges preferred the page without it | **not used**: a 4th concurrent "Present" role alongside the AWS internship costs more credibility than the bullet adds |
+| Nanosat (Rust flight software + telemetry) in systems/quant | 2/2 preferred without | **not used**: same reason (a 5th concurrent role) |
+| Northrop (OpenCV C++ mine detection, 74%) in systems/quant | 2/2 page judges marginally preferred **with** it; the 3-evaluator confirmation panel then scored the page 7.33 vs 7.67 without, and flagged the bullet severity 7 (full OpenCV "on microcontrollers" invites doubt; 74% has no latency figure) | **reverted**: not strong enough as written. If you can name the hardware (e.g. a Jetson/companion computer rather than an MCU) and a frame rate or latency, it is worth retesting. |
+
+**Confirmation rounds** (3 evaluators: recruiter, skeptic, domain specialist):
+- **Base round 05:** overall 8.0, with every evaluator at 8 or above; domain fit 8.0.
+- **Systems/quant:** final version is the one without Northrop; round 01 scored 7.67.
+
+The remaining recurring flags are distinctive technical bullets that a non-engineer can't restate: the B+ tree vs LSM benchmark, PhysTwin, and the search index. Your spec keeps those nouns on purpose.
+
+---
 # Loop 2: ATS breadth + human voice (Oct 3, current)
 
 Your feedback on loop 1 was that the bullets were concise but didn't sound human and had lost ATS breadth. Your 22-section spec then governed this loop. **These are the current deliverables. Loop 1 is kept below for history.**
