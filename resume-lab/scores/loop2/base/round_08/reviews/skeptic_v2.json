@@ -1,0 +1,157 @@
+{
+  "persona": "skeptic_v2",
+  "target": "General SWE / backend software engineering internships (big tech + strong startups), 2026-27 cycle",
+  "memory_skim": {
+    "strongest_3": [],
+    "engineer_type": "",
+    "memorable_numbers": [],
+    "confusing": [],
+    "skipped": [],
+    "interview_questions": []
+  },
+  "plain_english": [],
+  "scores": {
+    "impact_clarity": 7,
+    "quantification": 7,
+    "technical_depth": 8,
+    "concision_readability": 6,
+    "skim_test": 8,
+    "credibility": 7,
+    "ats_parseability": 8,
+    "visual_layout": 8,
+    "domain_fit": 8,
+    "human_voice": 6,
+    "plain_language": 6,
+    "overall": 8
+  },
+  "competitive_for_domain": "Y",
+  "bullet_feedback": [
+    {
+      "bullet": "Built an EventBridge-scheduled LLM-as-judge check for a production Amazon Bedrock classifier that rates research documents by importance to trigger fine-tuning only when its grades shift past a threshold",
+      "problem": "Two stacked noun phrases ('EventBridge-scheduled LLM-as-judge check', 'production Amazon Bedrock classifier') that nobody says out loud. The tail is also ambiguous: 'to trigger fine-tuning' could attach to the classifier ('rates documents ... to trigger fine-tuning') or to the check, and 'its grades' could be the judge's or the classifier's.",
+      "severity": 7,
+      "why_it_matters": "A reader has to re-read to work out which model judges which and what crosses the threshold. That is exactly the mechanism an interviewer will probe, and the bullet blurs it.",
+      "missing_or_unclear": "clarify: whose grades are compared against the threshold (the judge's scores of the classifier, or drift in the classifier's own outputs), and what the scheduled check compares them to",
+      "suggested_direction": "Lead with the plain job in verb form, then the trigger, then the scheduler. Move 'EventBridge' to the end or to Skills. Example shape: 'Built a scheduled check that has an LLM grade our Bedrock document-ranking model and kicks off fine-tuning only when its grades drift past a threshold'."
+    },
+    {
+      "bullet": "Co-built a topic-scoring research tool and deployed it to dev on AWS Fargate with GitHub Actions CI/CD and AWS CDK to show Amazon Leo's public-policy staff which research topics are popular",
+      "problem": "'Co-built' makes ownership unclear: what did Amar build versus a teammate? The middle is a tech list ('AWS Fargate with GitHub Actions CI/CD and AWS CDK') that reads as keywords rather than a decision. 'deployed it to dev' honestly says it isn't in prod, but it lands as an anticlimax after the deployment stack. 'topic-scoring research tool' is a noun stack.",
+      "severity": 6,
+      "why_it_matters": "A skeptical reader assumes 'co-' means a minor role and reads the three infra names as padding. The bullet never says what Amar engineered.",
+      "missing_or_unclear": "clarify: which part Amar owned (scoring logic, infra-as-code, CI pipeline); how a topic's 'popularity' is scored",
+      "suggested_direction": "Name Amar's own slice first, keep one infra tool only if it explains a choice, and let Skills carry the rest. Put the audience/purpose before the deployment detail."
+    },
+    {
+      "bullet": "Built Redis caching in front of Tortuga's Prisma ORM queries to reduce database load and latency for a class scheduler that drew 20,000+ visits in its first 30 days",
+      "problem": "The only number (20,000+ visits) measures the product's traffic, not the caching work, so it reads as borrowed impact. 'to reduce database load and latency' states an intent with no result. 'Tortuga' is never explained, so the reader has to infer it's the class scheduler.",
+      "severity": 6,
+      "why_it_matters": "A skeptic sees a team-level traffic metric attached to one person's cache layer and discounts it. An interviewer will ask 'how much did load drop?', and the page has no answer.",
+      "missing_or_unclear": "clarify: whether any before/after load or latency measurement exists; that Tortuga is the scheduler's name",
+      "suggested_direction": "Name the product once ('Tortuga, a class scheduler with 20,000+ visits in its first month') so the visits are framed as context, not as the cache's result. If no measurement exists, say what the cache keyed on or what it invalidated on instead of an unmeasured 'reduce'."
+    },
+    {
+      "bullet": "Built and prompt-tuned a pipeline for a PhD-led robotics project aimed at ICLR that overlays AnyGrasp's candidate grasps on camera images in Open3D to help a vision-language model pick grasps that avoid hitting the table",
+      "problem": "One long chain of relative clauses ('for a project aimed at ICLR that overlays ... to help ... that avoid'). 'that overlays' grammatically attaches to the project or to ICLR, not to the pipeline. 'aimed at ICLR' is a venue name-drop with unclear status (submitted? planned?), and an interviewer will ask. There is no outcome.",
+      "severity": 6,
+      "why_it_matters": "Reads like a stitched paragraph, not a sentence a person would say. 'aimed at ICLR' invites the credibility question 'was it submitted, and what's your authorship?'",
+      "missing_or_unclear": "clarify: submission status and Amar's role on the paper; what 'prompt-tuned' changed",
+      "suggested_direction": "Split purpose from venue: put the pipeline's job first (draw candidate grasps onto camera images so a VLM can pick collision-free ones), then 'for a PhD-led project targeting ICLR'. Consider cutting 'in Open3D' to Skills."
+    },
+    {
+      "bullet": "Rebuilt a legacy test-data workflow tool as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation to make editing smoother, which 90% of 30+ surveyed developers preferred",
+      "problem": "Five technologies packed into the middle (React, TypeScript, Electron, React Flow, Jest) read as a parenthetical tech dump without the parentheses. 'to make editing smoother' is vague, and 'preferred' doesn't say over what. 'legacy test-data workflow tool' is a noun stack.",
+      "severity": 6,
+      "why_it_matters": "The reader loses what was actually wrong with the old tool and what the rebuild changed. The 90% reads as a satisfaction poll with no stated comparison.",
+      "missing_or_unclear": "clarify: preferred over the legacy tool (presumably); what was painful about editing before",
+      "suggested_direction": "Keep at most 'Electron app with a visual React Flow editor' and move React/TypeScript/Jest to Skills. Say 'preferred it over the old tool'. Replace 'smoother' with the concrete change (e.g. visual editing instead of hand-edited files, if that's the case)."
+    },
+    {
+      "bullet": "Building RAG meal suggestions for the official UMD app with SentenceBERT vector search in ChromaDB to feed GPT-4o mini real scraped recipes, which internal testers rated satisfactory for 93% of meals",
+      "problem": "'to feed GPT-4o mini real scraped recipes' is a garden-path phrase (double object, reads as 'feed GPT-4o mini' then 'real scraped recipes'). 'RAG meal suggestions' is a noun stack. 'for 93% of meals' is unclear: meals the model suggested, or dining-hall meals?",
+      "severity": 5,
+      "why_it_matters": "A non-engineer can't restate it, and an engineer has to re-parse the middle to see that retrieval grounds the model in real recipes.",
+      "missing_or_unclear": "clarify: what a 'meal' is in the 93% (suggested meals rated by testers)",
+      "suggested_direction": "Say the purpose in plain words first (suggest meals grounded in real recipes so the model doesn't invent dishes), then the mechanism (SentenceBERT search over scraped recipes), then the 93%. Move ChromaDB to Skills."
+    },
+    {
+      "bullet": "Built the Claude skill's main search tool by precomputing popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to keep lookups within the database's permission and rate limits",
+      "problem": "The mechanism is unclear. 'precomputing popular workflows ... into a category tree' doesn't say what the tree is keyed on, and how a cache keeps lookups 'within the database's permission ... limits' isn't obvious. A cache explains rate limits, not permissions. 'Redis-cached category tree' is a noun stack.",
+      "severity": 5,
+      "why_it_matters": "'permission limits' is the phrase an interviewer will poke at first. If the answer isn't crisp, it undercuts the strong Capital One bullet above it.",
+      "missing_or_unclear": "clarify: what 'permission limits' means here (e.g. the skill couldn't query the table directly) and what categories the tree groups workflows by",
+      "suggested_direction": "Name the constraint and the design in one sentence without a 'Because ...' preamble, e.g. 'Built ... by precomputing ... so the skill never queried the table directly, keeping it within its access and rate limits'."
+    },
+    {
+      "bullet": "Writing backtested Java capacity-planning logic that sets upper and lower bounds on the EC2 capacity Amazon Redshift reserves for patching to balance availability against cost",
+      "problem": "'backtested Java capacity-planning logic' is a noun stack, and 'the EC2 capacity Amazon Redshift reserves for patching' is a reduced relative clause that reads at first as 'EC2 capacity Amazon Redshift' as a compound. 'logic' is vague about what Amar owns (a model? a service? a formula?).",
+      "severity": 5,
+      "why_it_matters": "This is the top brand on the page and the first bullet read. A garden-path sentence here costs the skim.",
+      "missing_or_unclear": "clarify: what form the 'logic' takes (a service, a model, a library within an existing service)",
+      "suggested_direction": "Lead with the problem in plain words: Redshift holds spare EC2 capacity for patching; Amar is writing the Java code that decides how much (upper/lower bounds) and backtesting it on history. Add 'that' in 'the EC2 capacity that Redshift reserves'."
+    },
+    {
+      "bullet": "Designed the order book with std::list FIFOs per price level in a std::map and an order-ID hash map to make cancels O(1), which ran the full replay at 1.26M events/sec end-to-end",
+      "problem": "'which ran the full replay' has no sensible antecedent: the design, or the cancels, doesn't run a replay; the engine does. The tacked-on 'which' clause links throughput to the cancel design without showing the two are causally connected. 'std::list FIFOs per price level in a std::map' is a dense stack.",
+      "severity": 6,
+      "why_it_matters": "Structure rule violation (extra clause tacked on). A skeptic reads it as implying O(1) cancels produced 1.26M events/sec, which an HFT-literate interviewer will challenge.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Either make throughput the subject ('Replayed the full feed at 1.26M events/sec by ...') or keep the design sentence and drop the dangling 'which'. Spell the structure out in words: 'a FIFO queue per price level, kept in a sorted map, plus a hash map from order ID to its queue position so cancels are O(1)'."
+    },
+    {
+      "bullet": "Implemented B+ tree and LSM-tree backends for the engine's event log to compare them on identical 2M-record workloads, which showed the B+ tree giving 12.8x the read throughput and 22x faster range queries for 27% more disk",
+      "problem": "Mixes ratio styles ('12.8x the read throughput' vs '22x faster range queries'), and the comparison only reports reads. An LSM tree's main advantage is writes, so a reader wonders whether write results were left out. Why an order-book event log needs either structure isn't stated.",
+      "severity": 4,
+      "why_it_matters": "A systems interviewer will immediately ask 'and writes?'. A one-sided benchmark looks selected rather than reported.",
+      "missing_or_unclear": "clarify: write-side result of the comparison, if measured; what reads the event log (replay? queries?)",
+      "suggested_direction": "Use one ratio phrasing for both numbers. If write results exist, state the trade-off honestly in place of one of the read numbers; if not, frame it as a read-path comparison."
+    },
+    {
+      "bullet": "Cut AI workflow generation time 65% to under 15s by splitting a Claude skill into focused sub-skills that call Python search and validation tools instead of relying on open-ended model search",
+      "problem": "'AI workflow generation' doesn't say what a workflow is (it's only explained by the bullet above). 'open-ended model search' is jargon a non-engineer can't restate.",
+      "severity": 3,
+      "why_it_matters": "Good form and a real mechanism, but a recruiter can't say what got faster.",
+      "missing_or_unclear": "",
+      "suggested_direction": "Tie it to the tool above with a few words ('generating test-data workflows with Claude') and replace 'open-ended model search' with 'letting the model search on its own'."
+    },
+    {
+      "bullet": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+      "problem": "'6,000+ scraped research documents' has no time unit (total, per day, per run), so the scale is unanchored. 'S3 staging hops' is jargon.",
+      "severity": 3,
+      "why_it_matters": "Minor. The bullet is well-formed, but the scale number can't be interpreted.",
+      "missing_or_unclear": "clarify: 6,000+ per what period",
+      "suggested_direction": "Add the period if known; say 'intermediate S3 writes' instead of 'staging hops'."
+    }
+  ],
+  "page_feedback": [
+    {
+      "problem": "Skills lists tools with no supporting bullet: OpenSearch, SQLAlchemy, API Gateway, CloudWatch, PyTorch, Node.js, Jira, Agile, psutil. 'data structures and algorithms' as a skill is filler.",
+      "severity": 4,
+      "why_it_matters": "A skeptical reader treats unsupported entries as keyword padding and starts discounting the rest of the list.",
+      "suggested_direction": "Cut entries that you can't point to on the page or discuss in depth; drop 'data structures and algorithms' and 'Agile'."
+    },
+    {
+      "problem": "Human voice across the page: about half the bullets lead with a compound noun stack ('backtested Java capacity-planning logic', 'legacy test-data workflow tool', 'topic-scoring research tool', 'EventBridge-scheduled LLM-as-judge check', 'RAG meal suggestions').",
+      "severity": 5,
+      "why_it_matters": "Each stack forces a re-parse, and together they make the page read machine-compressed rather than spoken.",
+      "suggested_direction": "Unpack each stack into a verb phrase or a 'that' clause; keep one distinctive noun per bullet."
+    },
+    {
+      "problem": "Bolding is inconsistent: 90%, 65%, 93%, 50.9M, 12.8x and 1.26M events/sec are bold, but 34% (Kinesis) and 99,122 of 99,123 are not.",
+      "severity": 2,
+      "why_it_matters": "The 99,122/99,123 fill-accuracy result, arguably the most convincing number on the page, gets less visual weight than a survey percentage.",
+      "suggested_direction": "Pick one rule (one bold per bullet on the headline result) and apply it consistently. Consider bolding the fill-match instead of 50.9M."
+    },
+    {
+      "problem": "Three concurrent college-year roles plus a co-founder role, with one bullet at UMIACS and one at AWS, spread thin evidence across many headers.",
+      "severity": 3,
+      "why_it_matters": "A skeptic wonders how deep each commitment is. Thin single-bullet entries reinforce that doubt.",
+      "suggested_direction": "No new facts needed; make sure each single-bullet role's bullet states Amar's own deliverable clearly (see AWS and UMIACS bullet feedback)."
+    }
+  ],
+  "keep": [
+    "Built a C++17 order book and matching engine to replay 50.9M real IEX exchange messages without ever resyncing, which agreed with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices",
+    "Co-founded a 110+ member student product studio that has shipped 5 live products",
+    "Education block and header layout"
+  ]
+}
