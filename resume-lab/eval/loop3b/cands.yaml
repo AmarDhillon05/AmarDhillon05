@@ -1,0 +1,40 @@
+amazon_contract.leo_deploy:
+  incumbent: Co-built a research tool that scores and aggregates topics to show Amazon Leo's public-policy staff what's popular, which runs in dev on AWS Fargate with GitHub Actions CI/CD and AWS CDK infrastructure-as-code ready for production
+  candidates:
+  - Co-built a topic-scoring research tool and deployed it to dev on AWS Fargate with GitHub Actions CI/CD and AWS CDK to show Amazon Leo's public-policy staff which research topics are popular
+amazon_contract.bedrock_finetune:
+  incumbent: Built an EventBridge-scheduled LLM-as-judge check for a production Amazon Bedrock classifier that rates research documents by importance to trigger fine-tuning only when its grades shift past a threshold
+  candidates:
+  - Automated retraining of a production Amazon Bedrock model that rates research documents by importance to run only when a larger LLM's EventBridge-scheduled grades of its output shift past a threshold
+capital_one.ui_overhaul:
+  incumbent: Rebuilt a legacy test-data workflow tool as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation to make editing smoother, which 90% of 30+ surveyed developers preferred
+  candidates:
+  - Rebuilt a legacy test-data workflow tool in React, TypeScript and Electron with a visual React Flow editor to make editing smoother, which 90% of 30+ surveyed developers preferred
+capital_one.search_index:
+  incumbent: Precomputed popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to keep lookups within the database's permission and rate limits, which became the Claude skill's main search tool
+  candidates:
+  - Precomputed popular workflows from a 270K+ row PostgreSQL table into a category tree cached in Redis to cut queries against a database with strict permission and rate limits, which became the Claude skill's main search tool
+umiacs.grasp_vlm:
+  incumbent: Built a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D to let a vision-language model pick robot grasps for a PhD-led ICLR project, and tuned its prompts to favor grasps that avoid hitting the table
+  candidates:
+  - Built and prompt-tuned a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D to help a vision-language model pick robot grasps that avoid hitting the table for a PhD-led project targeting ICLR
+terplabs.rag_meal:
+  incumbent: Building RAG meal suggestions for the official UMD app with SentenceBERT vector search in ChromaDB to feed GPT-4o mini real scraped recipes, which internal testers rated satisfactory for 93% of meals
+  candidates:
+  - Building a RAG meal-suggestion feature for the official UMD app that grounds GPT-4o mini in scraped recipes found with SentenceBERT search in ChromaDB, which internal testers rated satisfactory for 93% of meals
+aws_sde.redshift:
+  incumbent: Writing backtested Java capacity-planning logic that sets upper and lower bounds on the EC2 capacity Amazon Redshift reserves for patching to balance availability against cost
+  candidates:
+  - Writing and backtesting Java logic that sets upper and lower bounds on reserved EC2 capacity for Amazon Redshift maintenance like patching to balance availability against cost
+capital_one.claude_skill:
+  incumbent: Cut AI workflow generation time 65% to under 15s by splitting a Claude skill into focused sub-skills that call Python search and validation tools instead of searching open-ended
+  candidates:
+  - Cut AI workflow generation time 65% to under 15s by splitting a Claude skill into focused sub-skills that call Python search and validation tools instead of relying on open-ended model search
+iex.throughput+iex.data_structures:
+  incumbent: Designed the book as std::list FIFOs per price level inside a std::map with an order-ID hash map to make cancels O(1), which sustained 1.26M events/sec end-to-end over the full replay
+  candidates:
+  - Ran the full replay at 1.26M events/sec end-to-end on an order book that keeps std::list FIFOs per price level in a std::map with an order-ID hash map to make cancels O(1)
+iex.throughput+iex.data_structures+iex.latency_dist@quant:
+  incumbent: Designed the book as std::list FIFOs per price level inside a std::map with an order-ID hash map to make cancels O(1), which sustained 1.26M events/sec over the full replay and a 1.2 s per-message p99 on a separate 2M-event run
+  candidates:
+  - Ran the full replay at 1.26M events/sec and a separate 2M-event run at a 1.2 µs per-message p99 on an order book that keeps std::list FIFOs per price level in a std::map with an order-ID hash map to make cancels O(1)
