@@ -1,0 +1,453 @@
+{
+  "variant": "ai_ml_engineering",
+  "round": 3,
+  "n_reviews": 3,
+  "mean": {
+    "impact_clarity": 7.67,
+    "quantification": 7.67,
+    "technical_depth": 7.67,
+    "concision_readability": 7.67,
+    "skim_test": 7.67,
+    "credibility": 7.67,
+    "ats_parseability": 8.67,
+    "visual_layout": 8.0,
+    "domain_fit": 7.67,
+    "human_voice": 7.33,
+    "plain_language": 6.67,
+    "overall": 7.67
+  },
+  "min": {
+    "impact_clarity": 7,
+    "quantification": 7,
+    "technical_depth": 7,
+    "concision_readability": 7,
+    "skim_test": 7,
+    "credibility": 7,
+    "ats_parseability": 8,
+    "visual_layout": 8,
+    "domain_fit": 7,
+    "human_voice": 6,
+    "plain_language": 6,
+    "overall": 7
+  },
+  "plain_english": "10/11",
+  "memory_skim": {
+    "strongest_3": [
+      "Amazon Web Services SDE intern (fall 2026), something about EC2/Redshift capacity",
+      "Capital One SWE intern: made an LLM/Claude workflow generator 65% faster",
+      "Contract work for Amazon Leo on AWS (Bedrock, Kinesis, 34% latency cut), plus a C++ order book project with 50.9M messages"
+    ],
+    "engineer_type": "Backend/cloud engineer who builds LLM-powered apps and pipelines on AWS; some C++ systems work on the side",
+    "memorable_numbers": [
+      "65%",
+      "90%",
+      "34%",
+      "93%",
+      "50.9M",
+      "20,000+",
+      "GPA 3.5",
+      "May 2028"
+    ],
+    "confusing": [
+      "What a 'Claude skill' and 'sub-skills' are",
+      "What Amazon Leo is (and why a UMD contracting group has it as a client)",
+      "The robotics bullet: AnyGrasp, Open3D, 'aimed at ICLR'",
+      "'Tortuga' in the TerpLabs section"
+    ],
+    "skipped": [
+      "Technical Skills section beyond the AI/ML line",
+      "Most of the UMIACS and TerpLabs bullets",
+      "Certification line"
+    ],
+    "interview_questions": [
+      "What did the Claude workflow generator do, and how did you measure that quality didn't drop?",
+      "What is Amazon Leo and what was your role versus the rest of the contracting team?",
+      "How did you validate your order book against the exchange, and what was the one mismatched fill?",
+      "What are you building at AWS right now?"
+    ]
+  },
+  "bullet_groups": [
+    {
+      "bullet": "Built an EventBridge-scheduled LLM-as-judge check for a production Amazon Bedrock classifier that rates research documents by importance to trigger fine-tuning only when its grades shift past a threshold",
+      "n_evaluators": 3,
+      "max_severity": 7,
+      "priority": true,
+      "feedback": [
+        {
+          "bullet": "Built an EventBridge-scheduled LLM-as-judge check for a production Amazon Bedrock classifier that rates research documents by importance to trigger fine-tuning only when its grades shift past a threshold",
+          "problem": "This is the strongest ML-infra bullet on the page (scheduled eval gating a retrain), but the sentence has three nested clauses and an ambiguous 'its': it is unclear whether 'its grades' are the judge's grades or the classifier's grades, and 'that rates research documents' could attach to the judge or the classifier. The judge itself is also unvalidated on the page: nothing says what it is compared against.",
+          "severity": 5,
+          "why_it_matters": "An ML-infra interviewer reads 'LLM-as-judge' and immediately asks 'how do you know the judge is right, and what does the threshold compare?' If the page can't be parsed in one pass, the eval-gating mechanism - the exact thing this persona hires on - reads as a buzzword chain instead of a design.",
+          "missing_or_unclear": "clarify: what the judge's output is compared against to detect a 'shift' (the classifier's labels? a previous baseline window?), and whose grades cross the threshold.",
+          "suggested_direction": "Split subject and mechanism: state what the classifier does first, then what the judge checks and what crossing the threshold triggers. E.g. 'A production Bedrock classifier rates research documents by importance; built an EventBridge-scheduled LLM-as-judge check that re-grades its outputs and triggers fine-tuning only when [judge vs. classifier disagreement] passes a threshold'.",
+          "persona": "ml_infra_v2"
+        },
+        {
+          "bullet": "Built an EventBridge-scheduled LLM-as-judge check for a production Amazon Bedrock classifier that rates research documents by importance to trigger fine-tuning only when its grades shift past a threshold",
+          "problem": "'its grades' is ambiguous (the judge's or the classifier's), and 'EventBridge-scheduled' leads the sentence with a service name instead of the purpose.",
+          "severity": 4,
+          "why_it_matters": "This is the most ML-infrastructure bullet on the page (evaluation-gated retraining), but a recruiter has to read it twice to get that the point is retraining only when quality drifts.",
+          "missing_or_unclear": "",
+          "suggested_direction": "Say 'a scheduled check' and let EventBridge sit in Skills or later in the sentence; replace 'its grades' with 'the classifier's ratings' so the trigger is clear.",
+          "persona": "recruiter_v2"
+        },
+        {
+          "bullet": "Built an EventBridge-scheduled LLM-as-judge check for a production Amazon Bedrock classifier that rates research documents by importance to trigger fine-tuning only when its grades shift past a threshold",
+          "problem": "The bullet opens on a noun stack, 'EventBridge-scheduled LLM-as-judge check', and the purpose clause 'to trigger fine-tuning' grammatically attaches to the classifier ('a classifier that rates documents ... to trigger fine-tuning'), not to the check he built. 'its grades' could mean the judge's grades or the classifier's grades. There is no outcome, so it reads as a task.",
+          "severity": 7,
+          "why_it_matters": "This is the most ML-infrastructure-relevant bullet on the page, but a reader has to parse it twice to work out that he built a drift monitor that gates retraining. Most skimmers will skip it.",
+          "missing_or_unclear": "clarify: whose grades shift (the judge scoring the classifier's outputs, or the classifier's own score distribution), and what the check replaced (fixed-schedule fine-tuning?)",
+          "suggested_direction": "Lead with what the check does in plain words, then the mechanism, and move the scheduler to the end or into Skills. Example shape: 'Built a scheduled LLM-as-judge check that re-grades a production Bedrock document classifier and triggers fine-tuning only when its grades drift past a threshold'",
+          "persona": "skeptic_v2"
+        }
+      ]
+    },
+    {
+      "bullet": "Built and prompt-tuned a pipeline for a PhD-led robotics project aimed at ICLR that overlays AnyGrasp's candidate grasps on camera images in Open3D to help a vision-language model pick grasps that avoid hitting the table",
+      "n_evaluators": 3,
+      "max_severity": 6,
+      "priority": true,
+      "feedback": [
+        {
+          "bullet": "Built and prompt-tuned a pipeline for a PhD-led robotics project aimed at ICLR that overlays AnyGrasp's candidate grasps on camera images in Open3D to help a vision-language model pick grasps that avoid hitting the table",
+          "problem": "'prompt-tuned' is ambiguous (in ML it usually means learned soft prompts, not hand-iterating prompt text), and the bullet has no evaluation or outcome: nothing says whether grasp selection improved or how it was measured. It ends at intent ('to help ... pick grasps').",
+          "severity": 5,
+          "why_it_matters": "This is the one research-ML bullet, and without a mechanism for judging success it reads as prompt-only work - exactly the pattern an ML-infra reviewer discounts. An interviewer who reads 'prompt-tuned' literally may ask about soft-prompt training the candidate did not do.",
+          "missing_or_unclear": "clarify: whether 'prompt-tuned' means prompt engineering or learned prompt tuning; clarify: how grasp choices were evaluated (collision rate, success on a held-out scene set) if any such check exists.",
+          "suggested_direction": "Replace 'prompt-tuned' with the plain verb that matches what was done (e.g. 'iterated the VLM prompt'); if any evaluation exists, end with it, otherwise state the honest status (e.g. in progress). Consider cutting 'aimed at ICLR' if space is needed - it signals ambition, not result.",
+          "persona": "ml_infra_v2"
+        },
+        {
+          "bullet": "Built and prompt-tuned a pipeline for a PhD-led robotics project aimed at ICLR that overlays AnyGrasp\u2019s candidate grasps on camera images in Open3D to help a vision-language model pick grasps that avoid hitting the table",
+          "problem": "Long single sentence with four proper nouns (ICLR, AnyGrasp, Open3D, vision-language model) before the plain goal arrives at the very end; 'aimed at ICLR' means nothing to most recruiters.",
+          "severity": 4,
+          "why_it_matters": "This is the only research/ML-modeling bullet on a page targeting ML roles, and it is the one I skipped on the skim.",
+          "missing_or_unclear": "",
+          "suggested_direction": "Put the goal first (help a robot's vision-language model choose grasps that avoid the table), then the method (overlaying candidate grasps on camera images). Consider 'targeting a paper at ICLR' so a recruiter recognizes it as a publication effort.",
+          "persona": "recruiter_v2"
+        },
+        {
+          "bullet": "Built and prompt-tuned a pipeline for a PhD-led robotics project aimed at ICLR that overlays AnyGrasp's candidate grasps on camera images in Open3D to help a vision-language model pick grasps that avoid hitting the table",
+          "problem": "Garden path: 'a robotics project aimed at ICLR that overlays ...' makes the project, not the pipeline, the thing that overlays. 'aimed at ICLR' name-drops a venue with no submission status. There is no result, and 'Built and prompt-tuned' is two verbs for an unclear split of work.",
+          "severity": 6,
+          "why_it_matters": "A research reader will ask 'did it get submitted, and did the overlay improve grasp success?' With nothing on the page, the ICLR mention reads as borrowed prestige.",
+          "missing_or_unclear": "clarify: submission status, or drop the venue; whether any grasp-selection improvement was observed",
+          "suggested_direction": "Put the pipeline's action right after 'pipeline' and move the project context to the end (or into the role line). Cut 'aimed at ICLR' unless a status can be stated.",
+          "persona": "skeptic_v2"
+        }
+      ]
+    },
+    {
+      "bullet": "Built Redis caching in front of Tortuga's Prisma ORM queries to reduce database load and latency for a class scheduler that drew 20,000+ visits in its first 30 days",
+      "n_evaluators": 3,
+      "max_severity": 6,
+      "priority": true,
+      "feedback": [
+        {
+          "bullet": "Built Redis caching in front of Tortuga's Prisma ORM queries to reduce database load and latency for a class scheduler that drew 20,000+ visits in its first 30 days",
+          "problem": "'Tortuga' is never introduced, so the reader can't tell whether it is the class scheduler, a client, or a separate product. The 20,000+ visits number measures the product's traffic, not the caching work; 'reduce database load and latency' is stated as intent with no result.",
+          "severity": 4,
+          "why_it_matters": "A reader will attribute the 20K number to the caching and then a follow-up question exposes that it isn't - a small credibility cost. The proper noun costs a re-read.",
+          "missing_or_unclear": "clarify: what Tortuga is (name of the class scheduler?).",
+          "suggested_direction": "Name the product once in plain words before the tech (e.g. 'for Tortuga, TerpLabs' class scheduler (20,000+ visits in its first 30 days), put Redis caching in front of Prisma ORM queries to cut database load'), so the traffic number reads as scale context rather than the result.",
+          "persona": "ml_infra_v2"
+        },
+        {
+          "bullet": "Built Redis caching in front of Tortuga\u2019s Prisma ORM queries to reduce database load and latency for a class scheduler that drew 20,000+ visits in its first 30 days",
+          "problem": "'Tortuga' is never introduced; I don't know whether it is TerpLabs' product, a client, or a library. 'Prisma ORM queries' adds a tech name that doesn't help the reader.",
+          "severity": 5,
+          "why_it_matters": "The 20,000+ visits number is a strong real-user signal, but the reader has to work out that Tortuga is the class scheduler before it lands.",
+          "missing_or_unclear": "clarify: that Tortuga is the class scheduler (and whether TerpLabs built it)",
+          "suggested_direction": "Open with the product: 'For Tortuga, our class scheduler that drew 20,000+ visits in its first 30 days, added Redis caching...'. Prisma can move to Skills.",
+          "persona": "recruiter_v2"
+        },
+        {
+          "bullet": "Built Redis caching in front of Tortuga's Prisma ORM queries to reduce database load and latency for a class scheduler that drew 20,000+ visits in its first 30 days",
+          "problem": "'Tortuga' is never explained (is it the scheduler's name?). The only number, 20,000+ visits, measures the product's traffic, not the caching work, so 'reduce database load and latency' is an unmeasured intent.",
+          "severity": 6,
+          "why_it_matters": "A reader may credit the 20,000 visits to the caching, and an interviewer who asks 'how much did load drop?' exposes the gap.",
+          "missing_or_unclear": "clarify: that Tortuga is the class scheduler",
+          "suggested_direction": "Name the product once, plainly, so the visit count reads as context for scale rather than as a result of the caching. Example shape: 'Added Redis caching in front of the Prisma queries for Tortuga, a class scheduler that drew 20,000+ visits in its first 30 days, to cut database load'",
+          "persona": "skeptic_v2"
+        }
+      ]
+    },
+    {
+      "bullet": "Rebuilt a legacy test-data workflow tool as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation to make editing smoother, which 90% of 30+ surveyed developers preferred",
+      "n_evaluators": 3,
+      "max_severity": 6,
+      "priority": true,
+      "feedback": [
+        {
+          "bullet": "Rebuilt a legacy test-data workflow tool as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation to make editing smoother, which 90% of 30+ surveyed developers preferred",
+          "problem": "Four framework names in one clause ('React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation'), and 'to make editing smoother' is vague about what was painful before. It is also the least relevant Capital One bullet for an ML-infra target.",
+          "severity": 2,
+          "why_it_matters": "For this domain the bullet is filler next to two strong LLM-tooling bullets; the tech stack crowds out what was actually wrong with the legacy tool.",
+          "missing_or_unclear": "clarify: what about editing in the legacy tool was hard (hand-edited JSON? no validation?).",
+          "suggested_direction": "Name the old pain in plain words and keep one or two technologies; React Flow and Jest can live in Skills. Fine to keep as the third bullet.",
+          "persona": "ml_infra_v2"
+        },
+        {
+          "bullet": "Rebuilt a legacy test-data workflow tool as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation to make editing smoother, which 90% of 30+ surveyed developers preferred",
+          "problem": "Four tech names (React, TypeScript, Electron, React Flow, Jest) packed into the middle push the purpose and result to the end; 'make editing smoother' is vague.",
+          "severity": 3,
+          "why_it_matters": "Reads closer to a tech list than the other Capital One bullets; the 90% result is easy to miss.",
+          "missing_or_unclear": "",
+          "suggested_direction": "Cut to the techs that explain the design (Electron app, visual flow editor) and let Skills carry TypeScript/Jest.",
+          "persona": "recruiter_v2"
+        },
+        {
+          "bullet": "Rebuilt a legacy test-data workflow tool as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation to make editing smoother, which 90% of 30+ surveyed developers preferred",
+          "problem": "Five technologies in the middle of the sentence (React, TypeScript, Electron, React Flow, Jest) read as a keyword dump. 'to make editing smoother' is vague. 'which ... preferred' attaches to 'editing smoother' and never says preferred over what.",
+          "severity": 6,
+          "why_it_matters": "The 90% figure is bolded, so it draws the eye, but without a comparison it is a satisfaction poll, not an outcome. The tech list buries the actual design choice, a visual editor replacing hand-edited configs.",
+          "missing_or_unclear": "clarify: 'preferred over the legacy tool' (if that was the survey question)",
+          "suggested_direction": "Keep one or two technologies that explain the design (Electron, the visual flow editor), move the rest to Skills, and state the comparison the 90% refers to.",
+          "persona": "skeptic_v2"
+        }
+      ]
+    },
+    {
+      "bullet": "Precomputed popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to keep lookups within the database\u2019s permission and rate limits, which became the Claude skill\u2019s main search tool",
+      "n_evaluators": 2,
+      "max_severity": 7,
+      "priority": true,
+      "feedback": [
+        {
+          "bullet": "Precomputed popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to keep lookups within the database\u2019s permission and rate limits, which became the Claude skill\u2019s main search tool",
+          "problem": "Three abstract nouns in a row ('popular workflows', 'category tree', 'permission and rate limits') with no plain statement of what the user or the AI was looking up and why the database alone could not serve it. 'Permission and rate limits' reads as a constraint I cannot interpret.",
+          "severity": 7,
+          "why_it_matters": "I cannot repeat this to a hiring manager without guessing what a 'workflow' is or what problem the cache solved, so the bullet reads as filler between two clearer ones.",
+          "missing_or_unclear": "clarify: what a 'workflow' is here and what the AI tool needed to search for; what 'permission limits' means for the lookup",
+          "suggested_direction": "Lead with the problem in plain words (the AI tool needed to search X but the database limited how often/what it could query), then the fix (a cached, categorized index of the most-used workflows), then the outcome (became the tool's main search). Drop 'popular' or say what made a workflow popular.",
+          "persona": "recruiter_v2"
+        },
+        {
+          "bullet": "Precomputed popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to keep lookups within the database's permission and rate limits, which became the Claude skill's main search tool",
+          "problem": "'which became' grammatically points to 'permission and rate limits', the nearest noun, not to the category tree. 'Redis-cached category tree' is a noun stack. It is also unclear how precomputing keeps lookups within *permission* limits: rate limits make sense, permissions do not.",
+          "severity": 6,
+          "why_it_matters": "An interviewer will ask 'how does caching solve a permissions problem?' If the answer is not crisp, this claim looks padded.",
+          "missing_or_unclear": "clarify: what the permission constraint was (e.g., the skill could not query the table directly at runtime)",
+          "suggested_direction": "Reorder so the result follows its subject directly ('built a cached category tree ... that became the skill's main search tool'), and either explain or drop 'permission'.",
+          "persona": "skeptic_v2"
+        }
+      ]
+    },
+    {
+      "bullet": "Co-built a topic-scoring research tool and deployed it to dev on AWS Fargate with GitHub Actions CI/CD and AWS CDK to show Amazon Leo's public-policy staff which research topics are popular",
+      "n_evaluators": 2,
+      "max_severity": 6,
+      "priority": true,
+      "feedback": [
+        {
+          "bullet": "Co-built a topic-scoring research tool and deployed it to dev on AWS Fargate with GitHub Actions CI/CD and AWS CDK to show Amazon Leo's public-policy staff which research topics are popular",
+          "problem": "The middle of the bullet is a deployment tech list ('AWS Fargate with GitHub Actions CI/CD and AWS CDK') with no decision attached, and 'topic-scoring' is undefined - it is unclear how it relates to the importance classifier in the first bullet of this role.",
+          "severity": 3,
+          "why_it_matters": "Readers skim this as the weakest of the three Amazon Leo bullets; 'deployed to dev' (honest) plus 'co-built' leaves little that was owned, and the stack names do the talking instead of the engineering.",
+          "missing_or_unclear": "clarify: what 'topic-scoring' is based on (the classifier's grades? popularity counts?).",
+          "suggested_direction": "Lead with what the tool tells policy staff, then the one infra choice the candidate owned; move CDK/GitHub Actions to Skills if they don't explain a decision. Alternatively cut this bullet to give the LLM-as-judge bullet room to breathe.",
+          "persona": "ml_infra_v2"
+        },
+        {
+          "bullet": "Co-built a topic-scoring research tool and deployed it to dev on AWS Fargate with GitHub Actions CI/CD and AWS CDK to show Amazon Leo's public-policy staff which research topics are popular",
+          "problem": "Ambiguous ownership: 'Co-built' with no indication of which part was his. The middle is a deployment-stack list (Fargate, GitHub Actions, CI/CD, CDK) that does not explain any engineering decision. 'deployed it to dev' is honest but signals the tool never reached users, and the purpose clause comes last, after the tech dump.",
+          "severity": 6,
+          "why_it_matters": "A skeptical reader sees keywords plus 'co-' plus 'dev' and discounts the whole bullet. It is the weakest of the three Amazon Leo bullets.",
+          "missing_or_unclear": "clarify: which piece he owned (the scoring logic, or the infra/deploy)",
+          "suggested_direction": "State his piece first and the purpose second. Keep only the deployment tech that matches the part he owned, or cut this bullet so the stronger two Leo bullets stand out.",
+          "persona": "skeptic_v2"
+        }
+      ]
+    },
+    {
+      "bullet": "Split a Claude skill into sub-skills backed by Python search and validation tools to stop open-ended model search, which cut LLM workflow generation time 65% to under 15s with no quality loss in stress tests",
+      "n_evaluators": 2,
+      "max_severity": 6,
+      "priority": true,
+      "feedback": [
+        {
+          "bullet": "Split a Claude skill into sub-skills backed by Python search and validation tools to stop open-ended model search, which cut LLM workflow generation time 65% to under 15s with no quality loss in stress tests",
+          "problem": "'Claude skill' and 'open-ended model search' are insider terms; the bullet never says what the generated 'workflow' is for or who uses it.",
+          "severity": 5,
+          "why_it_matters": "The 65% number is the headline win of the page, but a non-engineer only remembers 'something with Claude got faster' rather than what the system does for Capital One.",
+          "missing_or_unclear": "clarify: what the generated workflows are (e.g. test-data workflows from the Electron tool?) and who requested them",
+          "suggested_direction": "Replace 'to stop open-ended model search' with a plain phrase like 'so the model stopped searching aimlessly', and add a few words naming what the generated workflows are for.",
+          "persona": "recruiter_v2"
+        },
+        {
+          "bullet": "Split a Claude skill into sub-skills backed by Python search and validation tools to stop open-ended model search, which cut LLM workflow generation time 65% to under 15s with no quality loss in stress tests",
+          "problem": "Structure rule: 'with no quality loss in stress tests' is an extra clause tacked onto the end after the 'which' result. 'Claude skill', 'sub-skills' and 'LLM workflow generation' are not defined, so a non-engineer cannot say what a workflow is or who generates it.",
+          "severity": 6,
+          "why_it_matters": "This is the headline LLM-applications win. A recruiter keeps '65%' but loses what got faster and for whom.",
+          "missing_or_unclear": "clarify: what a 'workflow' is here (a test-data workflow for developers?) in a few plain words",
+          "suggested_direction": "Cut the trailing quality clause, or fold it into the main result so the bullet ends on the metric. Replace 'LLM workflow generation' with a short plain noun for what the model produces.",
+          "persona": "skeptic_v2"
+        }
+      ]
+    },
+    {
+      "bullet": "Building RAG meal suggestions for the official UMD app with SentenceBERT vector search in ChromaDB to feed GPT-4o mini real scraped recipes, which internal testers rated satisfactory for 93% of meals",
+      "n_evaluators": 2,
+      "max_severity": 5,
+      "priority": true,
+      "feedback": [
+        {
+          "bullet": "Building RAG meal suggestions for the official UMD app with SentenceBERT vector search in ChromaDB to feed GPT-4o mini real scraped recipes, which internal testers rated satisfactory for 93% of meals",
+          "problem": "The evaluation is end-to-end human satisfaction only; the retrieval step itself has no stated check, and 'feed GPT-4o mini real scraped recipes' does not say why grounding was needed (e.g. to stop invented recipes). The why is implied, not said.",
+          "severity": 2,
+          "why_it_matters": "Minor: an ML-infra reader will ask what failure RAG was fixing; stating it in a few words turns a standard RAG stack into a design choice.",
+          "missing_or_unclear": "clarify: the problem grounding solved (hallucinated recipes? menu-only items?).",
+          "suggested_direction": "Add the reason in a short clause after 'real scraped recipes' if it is true; do not add retrieval metrics that don't exist.",
+          "persona": "ml_infra_v2"
+        },
+        {
+          "bullet": "Building RAG meal suggestions for the official UMD app with SentenceBERT vector search in ChromaDB to feed GPT-4o mini real scraped recipes, which internal testers rated satisfactory for 93% of meals",
+          "problem": "'to feed GPT-4o mini real scraped recipes' is an awkward double object that is hard to say aloud. '93% of meals' is ambiguous (meals, or suggested meals?). 'official UMD app' leaves the relationship unclear: is this a contract, and is it live?",
+          "severity": 5,
+          "why_it_matters": "This is one of the cleanest RAG examples for an LLM-applications reader, but the clumsy middle hides the design point: grounding the LLM in real recipes.",
+          "missing_or_unclear": "clarify: whether the feature is shipped or in testing (the 'Building' tense suggests testing)",
+          "suggested_direction": "Rephrase the grounding clause as a purpose ('so GPT-4o mini suggests only real scraped recipes') and say '93% of suggestions'.",
+          "persona": "skeptic_v2"
+        }
+      ]
+    },
+    {
+      "bullet": "Writing backtested Java capacity-planning logic that sets upper and lower bounds on the EC2 capacity Amazon Redshift reserves for patching to balance availability against cost",
+      "n_evaluators": 1,
+      "max_severity": 5,
+      "priority": false,
+      "feedback": [
+        {
+          "bullet": "Writing backtested Java capacity-planning logic that sets upper and lower bounds on the EC2 capacity Amazon Redshift reserves for patching to balance availability against cost",
+          "problem": "'backtested Java capacity-planning logic' is a noun stack. 'the EC2 capacity Amazon Redshift reserves for patching' is a garden path: 'Redshift reserves' reads as a noun pair until the reader backtracks.",
+          "severity": 5,
+          "why_it_matters": "This is the first bullet under the top brand, and it needs a second read to see that Redshift reserves spare EC2 capacity during patching.",
+          "missing_or_unclear": "",
+          "suggested_direction": "Add the relative pronoun and unstack the adjectives. Example shape: 'Writing Java capacity-planning logic, backtested on past data, that sets bounds on how much EC2 capacity Amazon Redshift holds in reserve for patching, to balance availability against cost'",
+          "persona": "skeptic_v2"
+        }
+      ]
+    },
+    {
+      "bullet": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+      "n_evaluators": 1,
+      "max_severity": 3,
+      "priority": false,
+      "feedback": [
+        {
+          "bullet": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+          "problem": "Close to the ideal form. The only gaps are the unclear baseline (34% of per-document or per-batch latency?) and whether 6,000+ is a total or a rate.",
+          "severity": 3,
+          "why_it_matters": "This is an easy interview follow-up, and it is fine as long as he has the answer ready.",
+          "missing_or_unclear": "clarify: whether 6,000+ is total documents or per run/day",
+          "suggested_direction": "Optional: add 'per run' or 'per day' if accurate. Otherwise leave as is.",
+          "persona": "skeptic_v2"
+        }
+      ]
+    }
+  ],
+  "page_feedback": [
+    {
+      "problem": "Skills lists 'model fine-tuning' under AI/ML, but no bullet shows the candidate fine-tuning a model - the Amazon Leo bullet only triggers fine-tuning.",
+      "severity": 5,
+      "why_it_matters": "ML-infra interviewers probe Skills lines; 'walk me through a fine-tune you ran' with no supporting experience is a credibility hit on an otherwise honest page.",
+      "suggested_direction": "Cut 'model fine-tuning' from Skills or replace it with what is shown (e.g. fine-tuning triggers / eval gating) unless the candidate actually ran fine-tuning jobs.",
+      "persona": "ml_infra_v2"
+    },
+    {
+      "problem": "The AI/ML Skills line lists 'model fine-tuning' and 'vision-language models', but no bullet shows him fine-tuning a model (the Leo bullet only triggers fine-tuning) or doing more than prompting a VLM. 'Open3D' is a library, not an AI/ML skill.",
+      "severity": 5,
+      "why_it_matters": "For an ML-infra screen, 'model fine-tuning' is exactly what an interviewer will probe. If he did not run the fine-tuning himself, this reads as keyword padding.",
+      "suggested_direction": "Keep only skills the bullets back up, or reword to what he did (e.g., 'fine-tuning triggers/evaluation'). Move Open3D to another line.",
+      "persona": "skeptic_v2"
+    },
+    {
+      "problem": "Across the page, three Capital One bullets and two Leo bullets use the 'X to do Y, which Z' frame where 'which' attaches to the nearest noun instead of the intended subject, so the result reads as describing the wrong thing.",
+      "severity": 5,
+      "why_it_matters": "This is a repeated comprehension tax. The required sentence form only reads naturally when the 'which' clause sits right after the thing it describes.",
+      "suggested_direction": "On each bullet, check that the noun just before 'which' is the thing that produced the result, and reorder the clauses where it is not.",
+      "persona": "skeptic_v2"
+    },
+    {
+      "problem": "Several entities are never explained: 'Amazon Leo', 'Tortuga', 'Claude skill'.",
+      "severity": 4,
+      "why_it_matters": "A non-engineer recruiter skims past unexplained names, and these sit on the bullets that carry the candidate's LLM-application story.",
+      "suggested_direction": "Add a few plain words where each first appears (what the client/product is), without adding new claims.",
+      "persona": "recruiter_v2"
+    },
+    {
+      "problem": "The strongest ML-infra evidence (eval-gated retraining and the 34% Kinesis/Lambda latency cut at Amazon Leo, plus the 65% Claude skill speedup) sits under the 2nd and 3rd roles; the first role is a non-ML Redshift capacity bullet.",
+      "severity": 3,
+      "why_it_matters": "In a 7-second skim the ML hiring manager sees AWS, then an ML-adjacent Capital One block, and must read to the middle of the page to find pipeline/eval/latency work. Chronological order is correct, so this is a cost to accept, not a bug.",
+      "suggested_direction": "Keep reverse-chronological order; make sure the first bullet in each ML-relevant role is the pipeline/eval/latency one (already true at Capital One and Amazon Leo) and keep those bullets the cleanest-reading on the page.",
+      "persona": "ml_infra_v2"
+    },
+    {
+      "problem": "The top entry (AWS) is a single bullet about Redshift capacity planning, which is not ML work; the strongest LLM/ML-infrastructure evidence (Capital One Claude bullets, Amazon Leo LLM-as-judge and Bedrock pipeline) sits second and third.",
+      "severity": 3,
+      "why_it_matters": "For an AI/ML screener, the first thing read after the brand is non-ML. The brand still helps a lot, so this is a minor cost, but the 7-second takeaway is 'AWS backend' more than 'ML infrastructure'.",
+      "suggested_direction": "Keep chronological order, but make sure the Capital One and Amazon Leo bullets lead with the LLM/ML purpose so the eye picks it up on the second entry.",
+      "persona": "recruiter_v2"
+    },
+    {
+      "problem": "Skills list technologies that appear in no bullet: OpenSearch, CloudWatch, X-Ray, Docker, uv. The project header also lists 'Linux perf', but the bullet makes no performance claim.",
+      "severity": 3,
+      "why_it_matters": "Each unused keyword is a possible interview question with no story behind it. 'Linux perf' next to a bullet with no throughput or latency number invites 'what did perf show?'",
+      "suggested_direction": "Trim unevidenced items, or make sure he has a one-sentence story ready for each. Consider dropping 'Linux perf' from the project header.",
+      "persona": "skeptic_v2"
+    },
+    {
+      "problem": "Noticeable empty space at the bottom of the page while some bullets run two dense lines.",
+      "severity": 2,
+      "why_it_matters": "Minor: the page could breathe more between sections instead of leaving a gap at the bottom.",
+      "suggested_direction": "Slightly increase section spacing or use the room to loosen the densest bullets rather than adding content.",
+      "persona": "recruiter_v2"
+    },
+    {
+      "problem": "The bold on '90%' (a developer-preference survey) gives it the same visual weight as the engineering results 65%, 34% and 50.9M.",
+      "severity": 2,
+      "why_it_matters": "Bold should point a skimmer to the strongest wins, and a preference poll is the weakest metric on the page.",
+      "suggested_direction": "Consider removing bold from the 90%.",
+      "persona": "skeptic_v2"
+    },
+    {
+      "problem": "'Open3D' is listed under AI/ML skills alongside LLMs and RAG; it is a 3D point-cloud/geometry library.",
+      "severity": 1,
+      "why_it_matters": "Small categorization slip that an ML reader notices.",
+      "suggested_direction": "Move Open3D to Engineering or drop it from Skills (it already appears in the UMIACS bullet).",
+      "persona": "ml_infra_v2"
+    },
+    {
+      "problem": "About a tenth of the page is empty below the Certification line while several bullets wrap tightly.",
+      "severity": 1,
+      "why_it_matters": "Not a problem for readability; the space is available if the LLM-as-judge bullet needs a clearer two-line rewrite.",
+      "suggested_direction": "Use the slack for clarity rather than new content.",
+      "persona": "ml_infra_v2"
+    }
+  ],
+  "keep": {
+    "ml_infra_v2": [
+      "Split a Claude skill into sub-skills backed by Python search and validation tools to stop open-ended model search, which cut LLM workflow generation time 65% to under 15s with no quality loss in stress tests",
+      "Precomputed popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to keep lookups within the database's permission and rate limits, which became the Claude skill's main search tool",
+      "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+      "Built a C++17 order book and matching engine to replay 50.9M real IEX exchange messages without ever resyncing, which agreed with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices",
+      "Writing backtested Java capacity-planning logic that sets upper and lower bounds on the EC2 capacity Amazon Redshift reserves for patching to balance availability against cost"
+    ],
+    "recruiter_v2": [
+      "Built a C++17 order book and matching engine to replay 50.9M real IEX exchange messages without ever resyncing, which agreed with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices",
+      "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+      "Co-built a topic-scoring research tool and deployed it to dev on AWS Fargate with GitHub Actions CI/CD and AWS CDK to show Amazon Leo\u2019s public-policy staff which research topics are popular",
+      "Header and Education block: name, school, degree, grad date and GPA readable in under two seconds",
+      "Sparse bolding limited to one metric per bullet"
+    ],
+    "skeptic_v2": [
+      "Built a C++17 order book and matching engine to replay 50.9M real IEX exchange messages without ever resyncing, which agreed with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices",
+      "Header, Education and section ordering: clean single-column layout with consistent right-aligned dates"
+    ]
+  },
+  "competitive": {
+    "ml_infra_v2": "Y",
+    "recruiter_v2": "Y",
+    "skeptic_v2": "Y"
+  }
+}

@@ -1,3 +1,56 @@
+# Loop 3: one sentence, one structure (Oct 4, current)
+
+**Your rule:** every bullet is one continuous sentence in one structure. The default is "did X to accomplish Y, which did Z", and "cut <metric> N% by doing X" is also allowed. No colons, semicolons, second sentences, preambles ("For a…", "Because…") or tacked-on endings.
+
+**Why loop 2 failed this:** the voice check only banned semicolons, so rewrites dodged it with colons, periods and appended clauses. Nothing tested for "one natural sentence".
+
+**What changed in the process:**
+- `tools/voice.py` now has `structure_errors()`, and `tools/lint.py` treats its findings as **build errors**, not warnings. It catches:
+  - colons (but not C++ `::`), semicolons, multiple sentences and dash joins;
+  - preamble openers;
+  - tacked-on endings: ", guided by / using / with / keeping / running …";
+  - multi-clause bullets that aren't in shape A or B. A short single-clause bullet like "Co-founded a 110+ member student product studio that has shipped 5 live products" passes as is.
+- The blind judges and the skeptic reviewer were both given the rule. Four judge rounds ran (`eval/loop3`, `loop3b`, `loop3c`, `loop3d`). Any bullet that broke the rule was replaced even when the judges liked it. Otherwise a rewrite went in only when both judges preferred it.
+
+**Result:**
+- 0 structure errors across all 4 versions and their original-format twins.
+- Every version fits one page, and `fact_check` is clean.
+- ATS coverage held: 100% / 92% / 88% / 90%.
+
+**Final review rounds** (recruiter, skeptic with the structure check, domain specialist):
+
+| version | overall | human voice | recruiter restates | competitive |
+|---|---|---|---|---|
+| General SWE / backend | 7.67 | 7.0 | 11/14 | 3/3 |
+| Infra / distributed | 7.67 | 7.0 | 9/12 | 3/3 |
+| Systems / quant | 7.0 | 7.0 | 9/10 | 2/3 (skeptic: "stretch", since one C++ project) |
+| AI / ML | 7.67 | 7.33 | 10/11 | 3/3 |
+
+These are slightly below loop 2's 8.0 for the base. The template makes bullets longer and denser, and reviewers still mark down the most technical ones (B+ tree vs LSM, PhysTwin, the search index) and the noun stacks in Bedrock and Redshift. The judges kept those two wordings over the alternatives.
+
+## Every bullet that changed (loop 2.1 → loop 3)
+| version | before (Loop 2.1) | after (Loop 3) |
+|---|---|---|
+| main | Writing Java logic that sets the upper and lower bounds on EC2 capacity that Amazon Redshift reserves for operations like patching, balancing availability against cost, and backtesting it | Writing backtested Java capacity-planning logic that sets upper and lower bounds on the EC2 capacity Amazon Redshift reserves for patching to balance availability against cost |
+| main | Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and 90% of 30+ surveyed developers preferred it | Rebuilt a legacy test-data workflow tool as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation to make editing smoother, which 90% of 30+ surveyed developers preferred |
+| main | Cut AI workflow generation time 65% to under 15s by replacing a Claude skill's open-ended search with focused sub-skills that call Python tools for workflow search and validation, guided by CloudWatch and OpenSearch latency logs | Cut AI workflow generation time 65% to under 15s by splitting a Claude skill into focused sub-skills that call Python search and validation tools instead of relying on open-ended model search |
+| main | Precomputed popular workflows from a 270K+ row PostgreSQL table into a category tree that the Claude skill searches first, with Redis caching full workflows, so lookups rarely touch a database gated by permissions and rate limits | Precomputed popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to keep lookups within the database's permission and rate limits, which became the Claude skill's main search tool |
+| main | Co-built a research tool that scores and aggregates topics so Amazon Leo's public-policy staff can see what's popular, running in dev on AWS Fargate with GitHub Actions CI/CD and AWS CDK infrastructure-as-code ready for production | Co-built a topic-scoring research tool and deployed it to dev on AWS Fargate with GitHub Actions CI/CD and AWS CDK to show Amazon Leo's public-policy staff which research topics are popular |
+| main | Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance: on an EventBridge schedule a larger LLM grades its ratings, and fine-tuning runs only when the grades shift past a threshold | Built an EventBridge-scheduled LLM-as-judge check for a production Amazon Bedrock classifier that rates research documents by importance to trigger fine-tuning only when its grades shift past a threshold |
+| main | For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D for a vision-language model, then tuned prompts so it favors grasps that avoid hitting the table | Built and prompt-tuned a pipeline for a PhD-led robotics project aimed at ICLR that overlays AnyGrasp's candidate grasps on camera images in Open3D to help a vision-language model pick grasps that avoid hitting the table |
+| main | Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio's class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency | Built Redis caching in front of Tortuga's Prisma ORM queries to reduce database load and latency for a class scheduler that drew 20,000+ visits in its first 30 days |
+| main | Building a RAG meal-suggestion feature for the official UMD app, in which GPT-4o mini writes suggestions from scraped recipes found by SentenceBERT vector search in ChromaDB, and internal testers rated 93% of meals satisfactory | Building RAG meal suggestions for the official UMD app with SentenceBERT vector search in ChromaDB to feed GPT-4o mini real scraped recipes, which internal testers rated satisfactory for 93% of meals |
+| main | Built a C++17 order book and matching engine and replayed 50.9M real IEX exchange messages through it without ever resyncing to the exchange's book, agreeing with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices | Built a C++17 order book and matching engine to replay 50.9M real IEX exchange messages without ever resyncing, which agreed with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices |
+| main | Implemented B+ tree and LSM-tree backends for the event log and benchmarked them on identical 2M-record workloads, where the B+ tree gave 12.8x the read throughput and 22x faster range queries at the cost of 27% more disk space | Implemented B+ tree and LSM-tree backends for the engine's event log to compare them on identical 2M-record workloads, which showed the B+ tree giving 12.8x the read throughput and 22x faster range queries for 27% more disk |
+| main | Sustained 1.26M events/sec end-to-end over the full replay, keeping each price level's orders in a std::list FIFO inside a std::map and a hash map from order ID to list iterator for O(1) cancels | Designed the order book with std::list FIFOs per price level in a std::map and an order-ID hash map to make cancels O(1), which ran the full replay at 1.26M events/sec end-to-end |
+| systems/quant | Sustained 1.26M events/sec over the full replay and a 1.2 s per-message p99 on a separate 2M-event run, keeping each price level as a FIFO queue (std::list) inside a std::map, with an order-ID hash map for O(1) cancels | Designed the order book with std::list FIFOs per price level in a std::map and an order-ID hash map to make cancels O(1), which ran the full replay at 1.26M events/sec and hit a 1.2 s p99 on a separate 2M-event run |
+| systems/quant | Traced an apparent 1.65x regression to the CPU frequency governor, not a code change, using perf counters and a do-nothing control book, then cut run-to-run variance from about 6% to 0.06% by pinning cores and fixing the clock | Traced an apparent 1.65x regression to the CPU frequency governor with perf counters and a do-nothing control book to rule out a code change, which led to core pinning that cut run-to-run variance from 6% to 0.06% |
+| infra | Cut research-environment setup time 30% by pinning dependencies with uv and packaging the environment in Docker so every machine gets an identical setup | Cut research-environment setup time 30% by pinning dependencies with uv and packaging environments in Docker |
+| AI/ML | Cut LLM workflow generation time 65% to under 15s by splitting one large Claude skill into smaller sub-skills that call Python tools for search and validation, and output quality held in repeated stress-test runs | Split a Claude skill into sub-skills backed by Python search and validation tools to stop open-ended model search, which cut LLM workflow generation time 65% to under 15s with no quality loss in stress tests |
+
+Unchanged and already one sentence: Kinesis (both judges kept it) and Co-founded studio (short single clause). Base Bedrock and the UI rebuild stayed in their first loop-3 template form, since the judges kept them.
+
+---
 # Loop 2.1: your Oct 4 answers (current)
 
 **Facts applied** (recorded in `resume/facts.yaml`, judged by two blind judges each, logged in `eval/loop2/decisions.jsonl`):
