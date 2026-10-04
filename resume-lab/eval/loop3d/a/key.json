@@ -1,0 +1,57 @@
+{
+  "g01": {
+    "fact": "iex.throughput+iex.data_structures",
+    "labels": {
+      "A": "cand1",
+      "B": "incumbent"
+    },
+    "texts": {
+      "cand1": "Designed the order book with std::list FIFOs per price level in a std::map and an order-ID hash map to make cancels O(1), which ran the full replay at 1.26M events/sec end-to-end",
+      "incumbent": "Ran the full replay at 1.26M events/sec end-to-end on an order book that keeps std::list FIFOs per price level in a std::map with an order-ID hash map to make cancels O(1)"
+    }
+  },
+  "g02": {
+    "fact": "umiacs.grasp_vlm",
+    "labels": {
+      "A": "cand1",
+      "B": "incumbent"
+    },
+    "texts": {
+      "cand1": "Built and prompt-tuned a pipeline for a PhD-led robotics project aimed at ICLR that overlays AnyGrasp's candidate grasps on camera images in Open3D to help a vision-language model pick grasps that avoid hitting the table",
+      "incumbent": "Built and prompt-tuned a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D to help a vision-language model pick robot grasps that avoid hitting the table for a PhD-led project targeting ICLR"
+    }
+  },
+  "g03": {
+    "fact": "amazon_contract.bedrock_finetune",
+    "labels": {
+      "A": "incumbent",
+      "B": "cand1"
+    },
+    "texts": {
+      "incumbent": "Built an EventBridge-scheduled LLM-as-judge check for a production Amazon Bedrock classifier that rates research documents by importance to trigger fine-tuning only when its grades shift past a threshold",
+      "cand1": "Automated retraining of a production Amazon Bedrock model that ranks research documents to run only when a larger LLM's EventBridge-scheduled grades of the model shift past a threshold"
+    }
+  },
+  "g04": {
+    "fact": "terplabs.rag_meal",
+    "labels": {
+      "A": "incumbent",
+      "B": "cand1"
+    },
+    "texts": {
+      "incumbent": "Building RAG meal suggestions for the official UMD app with SentenceBERT vector search in ChromaDB to feed GPT-4o mini real scraped recipes, which internal testers rated satisfactory for 93% of meals",
+      "cand1": "Building a RAG meal-suggestion feature for the official UMD app that uses SentenceBERT search in ChromaDB to ground GPT-4o mini in scraped recipes, which internal testers rated satisfactory for 93% of meals"
+    }
+  },
+  "g05": {
+    "fact": "iex.throughput+iex.data_structures+iex.latency_dist@quant",
+    "labels": {
+      "A": "incumbent",
+      "B": "cand1"
+    },
+    "texts": {
+      "incumbent": "Ran the full replay at 1.26M events/sec and a separate 2M-event run at a 1.2 s per-message p99 on an order book that keeps std::list FIFOs per price level in a std::map with an order-ID hash map to make cancels O(1)",
+      "cand1": "Designed the order book with std::list FIFOs per price level in a std::map and an order-ID hash map to make cancels O(1), which ran the full replay at 1.26M events/sec and hit a 1.2 \u00b5s p99 on a separate 2M-event run"
+    }
+  }
+}
