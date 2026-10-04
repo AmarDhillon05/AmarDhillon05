@@ -1,0 +1,29 @@
+[
+  {
+    "id": "g01",
+    "winner": "B",
+    "advantage": "marginal",
+    "decisive_wording": "B: \"to keep lookups within the database's permission and rate limits, which became the Claude skill's main search tool\" vs A: \"to give the Claude skill a main search tool that stays within the database's permission and rate limits\"",
+    "info_preserved_or_lost": "Both keep 270K+ rows, PostgreSQL, Redis-cached category tree, permission/rate limits, and the Claude skill's main search tool. B attaches the limits to lookups, which is the actual mechanism; A attaches them to the 'search tool', which is vaguer.",
+    "credibility_change": "B is slightly more credible because a senior engineer sees why the precompute exists (bounded lookups against a limited DB) before seeing the outcome.",
+    "readability_change": "B follows the 'did X to accomplish Y, which did Z' structure cleanly. A's 'a main search tool that stays within...' is a slightly awkward relative clause. Both are a single sentence with no colons or semicolons."
+  },
+  {
+    "id": "g02",
+    "winner": "A",
+    "advantage": "marginal",
+    "decisive_wording": "A: \"to reduce database load and latency for a class scheduler that drew 20,000+ visits in its first 30 days\" vs B's mid-sentence appositive \", the studio's class scheduler with 20,000+ visits in its first 30 days,\"",
+    "info_preserved_or_lost": "Both keep Redis, Prisma ORM, Tortuga, reduced load/latency, and 20,000+ visits in 30 days. B adds 'the studio's', a small bit of context; A drops it.",
+    "credibility_change": "About the same. A ties the traffic number directly to the reason for caching, which reads as motivation rather than an aside.",
+    "readability_change": "A reads straight through as 'did X to accomplish Y for Z'. B's appositive interrupts the sentence and pushes the purpose ('to reduce database load and latency') to the end, so the reader has to hold the clause in mind."
+  },
+  {
+    "id": "g03",
+    "winner": "B",
+    "advantage": "concrete",
+    "decisive_wording": "B: \"packaging identical environments in Docker\" vs A: \"packaging the environment in Docker so every machine gets an identical setup\"",
+    "info_preserved_or_lost": "Both keep the 30% setup-time cut, uv dependency pinning, Docker, and the identical-environment result. A's 'every machine' only spells out what 'identical environments' already implies.",
+    "credibility_change": "No change. The mechanism and metric are the same.",
+    "readability_change": "B gives the same information in fewer words and is a clean 'cut <metric> N% by doing X' sentence. A ends with a tacked-on 'so ...' clause, which the Loop 3 rule penalizes."
+  }
+]

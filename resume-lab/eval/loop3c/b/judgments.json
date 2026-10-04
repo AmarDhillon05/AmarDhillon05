@@ -1,0 +1,29 @@
+[
+  {
+    "id": "g01",
+    "winner": "B",
+    "advantage": "marginal",
+    "decisive_wording": "B: \"to keep lookups within the database's permission and rate limits, which became the Claude skill's main search tool\" vs A: \"to give the Claude skill a main search tool that stays within the database's permission and rate limits\"",
+    "info_preserved_or_lost": "Both keep 270K+ rows, PostgreSQL, Redis-cached category tree, Claude skill, main search tool, and permission/rate limits. Neither drops a fact.",
+    "credibility_change": "B ties the limits to lookups, which is the real mechanism (cached lookups avoid hitting the DB). A says the tool 'stays within' limits, which is vaguer about why caching matters.",
+    "readability_change": "B follows the 'did X to accomplish Y, which did Z' structure cleanly. A's 'a main search tool that stays within...' is a slightly awkward relative clause. The difference is small."
+  },
+  {
+    "id": "g02",
+    "winner": "A",
+    "advantage": "marginal",
+    "decisive_wording": "A: \"to reduce database load and latency for a class scheduler that drew 20,000+ visits in its first 30 days\" vs B's mid-sentence appositive \"for Tortuga, the studio's class scheduler with 20,000+ visits in its first 30 days, to reduce...\"",
+    "info_preserved_or_lost": "Both keep Redis, Prisma ORM, Tortuga, class scheduler, 20,000+ visits in 30 days, and reduced load/latency. B also adds 'the studio's', a minor bit of context. A drops it.",
+    "credibility_change": "Equivalent. Both describe the same mechanism and the same traffic figure.",
+    "readability_change": "A reads straight through: action, purpose, scale. B puts a long appositive between the object and the purpose, so the reader has to hold 'Built Redis caching' until the end."
+  },
+  {
+    "id": "g03",
+    "winner": "B",
+    "advantage": "concrete",
+    "decisive_wording": "B: \"packaging identical environments in Docker\" vs A: \"packaging the environment in Docker so every machine gets an identical setup\"",
+    "info_preserved_or_lost": "Both keep the 30% metric, uv dependency pinning, Docker, and reproducibility across machines. A spells out 'every machine', which B implies with 'identical environments'.",
+    "credibility_change": "Equivalent. The mechanism is the same.",
+    "readability_change": "B gives the same information in fewer words, with no trailing 'so...' clause, and fits the 'cut <metric> N% by doing X' form exactly."
+  }
+]
