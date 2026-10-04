@@ -10,7 +10,6 @@
     "iex.replay_correctness",
     "iex.storage_benchmark",
     "iex.throughput",
-    "northrop.mine_detection",
     "terplabs.tortuga",
     "umiacs.grasp_vlm"
   ],

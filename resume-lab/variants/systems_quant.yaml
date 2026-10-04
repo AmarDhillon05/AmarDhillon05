@@ -30,5 +30,3 @@ order:
   - iex.throughput+iex.data_structures
   - iex.storage_benchmark
   - iex.perf_rigor
-extra_roles:
-- "  \\resumeSubheading\n    {Northrop Grumman Innovation Lab}{Jan 2025 -- Jun 2025}\n    {Robotics Researcher}{College Park, MD}\n  \\resumeItemListStart\n    % fact: northrop.mine_detection\n    \\resumeItem{Built an OpenCV (C++) vision pipeline that detects ocean mines in real time on drone-mounted microcontrollers, reaching \\textbf{74\\%} detection accuracy on test footage}\n  \\resumeItemListEnd\n"
