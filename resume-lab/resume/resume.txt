@@ -47,8 +47,8 @@ Jun 2025 – Present
 Co-Founder, Software Engineer
 College Park, MD
 • Co-founded a 110+ member student product studio that has shipped 5 live products
-• Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio’s class scheduler with 20,000+ visits in
-its first 30 days, to reduce database load and latency
+• Built Redis caching in front of Tortuga’s Prisma ORM queries to reduce database load and latency for a class scheduler
+that drew 20,000+ visits in its first 30 days
 • Building RAG meal suggestions for the official UMD app with SentenceBERT vector search in ChromaDB to feed
 GPT-4o mini real scraped recipes, which internal testers rated satisfactory for 93% of meals
 

@@ -1,0 +1,29 @@
+[
+  {
+    "fact": "capital_one.search_index",
+    "winner": "incumbent",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Precomputed popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to keep lookups within the database's permission and rate limits, which became the Claude skill's main search tool",
+    "decisive_wording": "B: \"to keep lookups within the database's permission and rate limits, which became the Claude skill's main search tool\" vs A: \"to give the Claude skill a main search tool that stays within the database's permission and rate limits\"",
+    "info": "Both keep 270K+ rows, PostgreSQL, Redis-cached category tree, permission/rate limits, and the Claude skill's main search tool. B attaches the limits to lookups, which is the actual mechanism; A attaches them to the 'search tool', which is vaguer."
+  },
+  {
+    "fact": "terplabs.tortuga",
+    "winner": "cand1",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio's class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency",
+    "decisive_wording": "A: \"to reduce database load and latency for a class scheduler that drew 20,000+ visits in its first 30 days\" vs B's mid-sentence appositive \", the studio's class scheduler with 20,000+ visits in its first 30 days,\"",
+    "info": "Both keep Redis, Prisma ORM, Tortuga, reduced load/latency, and 20,000+ visits in 30 days. B adds 'the studio's', a small bit of context; A drops it."
+  },
+  {
+    "fact": "umiacs.env_setup@infra",
+    "winner": "cand1",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Cut research-environment setup time 30% by pinning dependencies with uv and packaging identical environments in Docker",
+    "decisive_wording": "B: \"packaging identical environments in Docker\" vs A: \"packaging the environment in Docker so every machine gets an identical setup\"",
+    "info": "Both keep the 30% setup-time cut, uv dependency pinning, Docker, and the identical-environment result. A's 'every machine' only spells out what 'identical environments' already implies."
+  }
+]

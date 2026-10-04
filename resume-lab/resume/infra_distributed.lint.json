@@ -13,12 +13,12 @@
     },
     {
       "fact": "capital_one.claude_skill",
-      "chars": 177,
-      "words": 28,
+      "chars": 191,
+      "words": 31,
       "n_bold": 1,
       "n_lines": 2,
-      "last_fill": 0.49,
-      "text": "Cut AI workflow generation time 65% to under 15s by splitting a Claude skill into focused sub-skills that call Python search and validation tools instead of searching open-ended"
+      "last_fill": 0.61,
+      "text": "Cut AI workflow generation time 65% to under 15s by splitting a Claude skill into focused sub-skills that call Python search and validation tools instead of relying on open-ended model search"
     },
     {
       "fact": "capital_one.search_index",
@@ -49,12 +49,12 @@
     },
     {
       "fact": "amazon_contract.leo_deploy",
-      "chars": 230,
-      "words": 35,
+      "chars": 189,
+      "words": 31,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.98,
-      "text": "Co-built a research tool that scores and aggregates topics to show Amazon Leo's public-policy staff what's popular, which runs in dev on AWS Fargate with GitHub Actions CI/CD and AWS CDK infrastructure-as-code ready for production"
+      "last_fill": 0.67,
+      "text": "Co-built a topic-scoring research tool and deployed it to dev on AWS Fargate with GitHub Actions CI/CD and AWS CDK to show Amazon Leo's public-policy staff which research topics are popular"
     },
     {
       "fact": "amazon_contract.bedrock_finetune",
@@ -67,21 +67,21 @@
     },
     {
       "fact": "umiacs.env_setup",
-      "chars": 152,
-      "words": 23,
+      "chars": 108,
+      "words": 15,
       "n_bold": 1,
-      "n_lines": 2,
-      "last_fill": 0.33,
-      "text": "Cut research-environment setup time 30% by pinning dependencies with uv and packaging the environment in Docker so every machine gets an identical setup"
+      "n_lines": 1,
+      "last_fill": 1.0,
+      "text": "Cut research-environment setup time 30% by pinning dependencies with uv and packaging environments in Docker"
     },
     {
       "fact": "terplabs.tortuga",
-      "chars": 174,
-      "words": 30,
+      "chars": 164,
+      "words": 29,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.44,
-      "text": "Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio's class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency"
+      "last_fill": 0.36,
+      "text": "Built Redis caching in front of Tortuga's Prisma ORM queries to reduce database load and latency for a class scheduler that drew 20,000+ visits in its first 30 days"
     },
     {
       "fact": "iex.replay_correctness",
@@ -103,12 +103,12 @@
     },
     {
       "fact": "iex.throughput+iex.data_structures",
-      "chars": 183,
-      "words": 30,
+      "chars": 171,
+      "words": 31,
       "n_bold": 1,
       "n_lines": 2,
-      "last_fill": 0.56,
-      "text": "Designed the book as std::list FIFOs per price level inside a std::map with an order-ID hash map to make cancels O(1), which sustained 1.26M events/sec end-to-end over the full replay"
+      "last_fill": 0.49,
+      "text": "Ran the full replay at 1.26M events/sec end-to-end on an order book that keeps std::list FIFOs per price level in a std::map with an order-ID hash map to make cancels O(1)"
     }
   ],
   "issues": [
@@ -139,22 +139,17 @@
     },
     {
       "level": "WARN",
-      "where": "Co-built a research tool that scores and aggregate",
+      "where": "Co-built a topic-scoring research tool and deploye",
       "msg": "opening 'Co-built' may not be an action verb"
     },
     {
       "level": "WARN",
-      "where": "Co-built a research tool that scores and aggregate",
+      "where": "Co-built a topic-scoring research tool and deploye",
       "msg": "no metric or explicit outcome"
     },
     {
       "level": "WARN",
-      "where": "Co-built a research tool that scores and aggregate",
-      "msg": "voice: noun stack of 6 words"
-    },
-    {
-      "level": "WARN",
-      "where": "Co-built a research tool that scores and aggregate",
+      "where": "Co-built a topic-scoring research tool and deploye",
       "msg": "voice: tool inventory: 4 techs in a row"
     },
     {
@@ -174,7 +169,7 @@
     },
     {
       "level": "WARN",
-      "where": "Built Redis caching in front of the Prisma ORM que",
+      "where": "Built Redis caching in front of Tortuga's Prisma O",
       "msg": "leading verb 'Built' repeats (also: Built an EventBridge-scheduled LLM-as-judge check )"
     },
     {
@@ -199,5 +194,5 @@
     }
   ],
   "errors": 0,
-  "warnings": 17
+  "warnings": 16
 }

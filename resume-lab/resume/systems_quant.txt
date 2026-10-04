@@ -14,8 +14,8 @@ IEX Order Book & Matching Engine | C++17, STL, POSIX, Linux perf
 Jul 2026 – Aug 2026
 • Built a C++17 order book and matching engine to replay 50.9M real IEX exchange messages without ever resyncing,
 which agreed with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices
-• Designed the book as std::list FIFOs per price level inside a std::map with an order-ID hash map to make cancels O(1),
-which sustained 1.26M events/sec over the full replay and a 1.2 µs per-message p99 on a separate 2M-event run
+• Ran the full replay at 1.26M events/sec and a separate 2M-event run at a 1.2 µs per-message p99 on an order book
+that keeps std::list FIFOs per price level in a std::map with an order-ID hash map to make cancels O(1)
 • Implemented B+ tree and LSM-tree backends for the engine’s event log to compare them on identical 2M-record
 workloads, which showed the B+ tree giving 12.8x the read throughput and 22x faster range queries for 27% more disk
 • Traced an apparent 1.65x regression to the CPU frequency governor with perf counters and a do-nothing control book to
@@ -33,7 +33,7 @@ Jun 2026 – Aug 2026
 Software Engineering Intern
 Richmond, VA
 • Cut AI workflow generation time 65% to under 15s by splitting a Claude skill into focused sub-skills that call Python
-search and validation tools instead of searching open-ended
+search and validation tools instead of relying on open-ended model search
 • Precomputed popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to keep lookups
 within the database’s permission and rate limits, which became the Claude skill’s main search tool
 UMD App Development Contracting (Client: Amazon Leo)
@@ -46,14 +46,14 @@ UMD Institute for Advanced Computer Studies (UMIACS)
 Dec 2025 – Present
 Machine Learning Research Intern
 College Park, MD
-• Built a pipeline that overlays AnyGrasp’s candidate grasps on camera images in Open3D to let a vision-language model
-pick robot grasps for a PhD-led ICLR project, and tuned its prompts to favor grasps that avoid hitting the table
+• Built and prompt-tuned a pipeline that overlays AnyGrasp’s candidate grasps on camera images in Open3D to help a
+vision-language model pick robot grasps that avoid hitting the table for a PhD-led project targeting ICLR
 TerpLabs
 Jun 2025 – Present
 Co-Founder, Software Engineer
 College Park, MD
-• Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio’s class scheduler with 20,000+ visits in
-its first 30 days, to reduce database load and latency
+• Built Redis caching in front of Tortuga’s Prisma ORM queries to reduce database load and latency for a class scheduler
+that drew 20,000+ visits in its first 30 days
 
 Technical Skills
 Languages: C++17, C, Python, Java, Rust, SQL, TypeScript, Bash

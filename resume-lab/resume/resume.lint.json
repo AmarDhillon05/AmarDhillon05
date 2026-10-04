@@ -85,12 +85,12 @@
     },
     {
       "fact": "terplabs.tortuga",
-      "chars": 174,
-      "words": 30,
+      "chars": 164,
+      "words": 29,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.44,
-      "text": "Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio's class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency"
+      "last_fill": 0.36,
+      "text": "Built Redis caching in front of Tortuga's Prisma ORM queries to reduce database load and latency for a class scheduler that drew 20,000+ visits in its first 30 days"
     },
     {
       "fact": "terplabs.rag_meal",
@@ -182,7 +182,7 @@
     },
     {
       "level": "WARN",
-      "where": "Built Redis caching in front of the Prisma ORM que",
+      "where": "Built Redis caching in front of Tortuga's Prisma O",
       "msg": "leading verb 'Built' repeats (also: Built an EventBridge-scheduled LLM-as-judge check )"
     },
     {

@@ -58,21 +58,21 @@
     },
     {
       "fact": "amazon_contract.leo_deploy",
-      "chars": 230,
-      "words": 35,
+      "chars": 189,
+      "words": 31,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.98,
-      "text": "Co-built a research tool that scores and aggregates topics to show Amazon Leo's public-policy staff what's popular, which runs in dev on AWS Fargate with GitHub Actions CI/CD and AWS CDK infrastructure-as-code ready for production"
+      "last_fill": 0.67,
+      "text": "Co-built a topic-scoring research tool and deployed it to dev on AWS Fargate with GitHub Actions CI/CD and AWS CDK to show Amazon Leo's public-policy staff which research topics are popular"
     },
     {
       "fact": "umiacs.grasp_vlm",
-      "chars": 229,
-      "words": 38,
+      "chars": 218,
+      "words": 34,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.94,
-      "text": "Built a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D to let a vision-language model pick robot grasps for a PhD-led ICLR project, and tuned its prompts to favor grasps that avoid hitting the table"
+      "last_fill": 0.88,
+      "text": "Built and prompt-tuned a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D to help a vision-language model pick robot grasps that avoid hitting the table for a PhD-led project targeting ICLR"
     },
     {
       "fact": "terplabs.rag_meal",
@@ -85,12 +85,12 @@
     },
     {
       "fact": "terplabs.tortuga",
-      "chars": 174,
-      "words": 30,
+      "chars": 164,
+      "words": 29,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.44,
-      "text": "Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio's class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency"
+      "last_fill": 0.36,
+      "text": "Built Redis caching in front of Tortuga's Prisma ORM queries to reduce database load and latency for a class scheduler that drew 20,000+ visits in its first 30 days"
     },
     {
       "fact": "iex.replay_correctness",
@@ -125,37 +125,32 @@
     },
     {
       "level": "WARN",
-      "where": "Co-built a research tool that scores and aggregate",
+      "where": "Co-built a topic-scoring research tool and deploye",
       "msg": "opening 'Co-built' may not be an action verb"
     },
     {
       "level": "WARN",
-      "where": "Co-built a research tool that scores and aggregate",
+      "where": "Co-built a topic-scoring research tool and deploye",
       "msg": "no metric or explicit outcome"
     },
     {
       "level": "WARN",
-      "where": "Co-built a research tool that scores and aggregate",
-      "msg": "voice: noun stack of 6 words"
-    },
-    {
-      "level": "WARN",
-      "where": "Co-built a research tool that scores and aggregate",
+      "where": "Co-built a topic-scoring research tool and deploye",
       "msg": "voice: tool inventory: 4 techs in a row"
     },
     {
       "level": "WARN",
-      "where": "Built a pipeline that overlays AnyGrasp's candidat",
+      "where": "Built and prompt-tuned a pipeline that overlays An",
       "msg": "leading verb 'Built' repeats (also: Built an EventBridge-scheduled LLM-as-judge check )"
     },
     {
       "level": "WARN",
-      "where": "Built a pipeline that overlays AnyGrasp's candidat",
+      "where": "Built and prompt-tuned a pipeline that overlays An",
       "msg": "voice: noun stack of 6 words"
     },
     {
       "level": "WARN",
-      "where": "Built Redis caching in front of the Prisma ORM que",
+      "where": "Built Redis caching in front of Tortuga's Prisma O",
       "msg": "leading verb 'Built' repeats (also: Built an EventBridge-scheduled LLM-as-judge check )"
     },
     {
@@ -175,5 +170,5 @@
     }
   ],
   "errors": 0,
-  "warnings": 14
+  "warnings": 13
 }

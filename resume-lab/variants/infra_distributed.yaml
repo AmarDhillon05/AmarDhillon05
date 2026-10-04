@@ -16,7 +16,7 @@ drop:
 - terplabs.studio
 text:
   amazon_contract.kinesis_pipeline: Cut end-to-end latency \textbf{34\%} on a data pipeline that sends 6,000+ scraped research documents to model inference by streaming them through Amazon Kinesis into AWS Lambda instead of staging each step in S3
-  umiacs.grasp_vlm: Cut research-environment setup time \textbf{30\%} by pinning dependencies with uv and packaging the environment in Docker so every machine gets an identical setup
+  umiacs.grasp_vlm: Cut research-environment setup time \textbf{30\%} by pinning dependencies with uv and packaging environments in Docker
 retag:
   umiacs.grasp_vlm: umiacs.env_setup
 skills:
