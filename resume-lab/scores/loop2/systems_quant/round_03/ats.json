@@ -1,0 +1,226 @@
+{
+  "variant": "systems_quant",
+  "n_postings": 16,
+  "must_coverage": 0.875,
+  "nice_coverage": 0.571,
+  "missing_claimable": [
+    "low latency",
+    "model fine-tuning / evaluation",
+    "Kubernetes",
+    "full stack",
+    "agile"
+  ],
+  "not_claimable": [
+    "Go",
+    "scalability",
+    "concurrency / multithreading",
+    "networking",
+    "operating systems",
+    "system design"
+  ],
+  "rows": [
+    {
+      "keyword": "Python",
+      "df": 0.81,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "Java",
+      "df": 0.38,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "C++",
+      "df": 0.75,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "Go",
+      "df": 0.25,
+      "tier": "must",
+      "claimable": false,
+      "present": false
+    },
+    {
+      "keyword": "Rust",
+      "df": 0.12,
+      "tier": "nice",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "databases",
+      "df": 0.25,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "Kubernetes",
+      "df": 0.12,
+      "tier": "nice",
+      "claimable": true,
+      "present": false
+    },
+    {
+      "keyword": "Linux",
+      "df": 0.38,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "Git",
+      "df": 0.19,
+      "tier": "nice",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "Kafka / streaming",
+      "df": 0.12,
+      "tier": "nice",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "data pipelines / ETL",
+      "df": 0.31,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "scalability",
+      "df": 0.38,
+      "tier": "must",
+      "claimable": false,
+      "present": false
+    },
+    {
+      "keyword": "performance optimization",
+      "df": 0.62,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "low latency",
+      "df": 0.25,
+      "tier": "must",
+      "claimable": true,
+      "present": false
+    },
+    {
+      "keyword": "data structures & algorithms",
+      "df": 0.81,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "concurrency / multithreading",
+      "df": 0.19,
+      "tier": "nice",
+      "claimable": false,
+      "present": false
+    },
+    {
+      "keyword": "networking",
+      "df": 0.5,
+      "tier": "must",
+      "claimable": false,
+      "present": false
+    },
+    {
+      "keyword": "operating systems",
+      "df": 0.19,
+      "tier": "nice",
+      "claimable": false,
+      "present": false
+    },
+    {
+      "keyword": "unit testing",
+      "df": 0.25,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "debugging",
+      "df": 0.25,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "monitoring / observability",
+      "df": 0.12,
+      "tier": "nice",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "system design",
+      "df": 0.5,
+      "tier": "must",
+      "claimable": false,
+      "present": false
+    },
+    {
+      "keyword": "machine learning",
+      "df": 0.44,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "model fine-tuning / evaluation",
+      "df": 0.25,
+      "tier": "must",
+      "claimable": true,
+      "present": false
+    },
+    {
+      "keyword": "full stack",
+      "df": 0.12,
+      "tier": "nice",
+      "claimable": true,
+      "present": false
+    },
+    {
+      "keyword": "agile",
+      "df": 0.12,
+      "tier": "nice",
+      "claimable": true,
+      "present": false
+    },
+    {
+      "keyword": "benchmarking / profiling",
+      "df": 0.25,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "probability / statistics",
+      "df": 0.31,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    },
+    {
+      "keyword": "trading / market data",
+      "df": 1.0,
+      "tier": "must",
+      "claimable": true,
+      "present": true
+    }
+  ]
+}

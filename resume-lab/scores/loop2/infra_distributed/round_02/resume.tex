@@ -1,0 +1,178 @@
+%-------------------------
+% Resume in LaTeX — based on Jake Gutierrez's template (MIT), via sb2nov/resume
+% Overleaf-ready: pdfLaTeX, standard packages only.
+% Every experience/project bullet carries a `% fact:` id checked by
+% resume-lab/tools/fact_check.py against resume-lab/resume/facts.yaml.
+%-------------------------
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\pdfgentounicode=1 % machine-readable / ATS-parsable PDF text
+
+\definecolor{accent}{RGB}{5,50,120}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% 0.5in margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{%
+  \vspace{-5pt}\scshape\bfseries\raggedright\large\color{accent}%
+}{}{0em}{}[\color{accent}\titlerule\vspace{-4pt}]
+
+%-------------------------
+% Commands
+\newcommand{\resumeItem}[1]{\item{#1}\vspace{-1pt}}
+
+% {Company}{Dates}{Title}{Location}
+\newcommand{\resumeSubheading}[4]{%
+  \vspace{-1pt}\item
+  \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{#3} & \textit{#4} \\
+  \end{tabular*}\vspace{-6pt}%
+}
+
+\newcommand{\resumeProjectHeading}[2]{%
+  \item
+  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+    #1 & #2 \\
+  \end{tabular*}\vspace{-6pt}%
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}, itemsep=0pt, topsep=2pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.18in, itemsep=0pt, topsep=1pt, parsep=0pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{0pt}}
+
+%-------------------------------------------
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+  {\Huge\scshape\textcolor{accent}{Amar Dhillon}} \\ \vspace{3pt}
+  \footnotesize
+  NYC Area $|$
+  \href{mailto:amardhillon844@gmail.com}{\underline{amardhillon844@gmail.com}} $|$
+  (XXX) XXX-XXXX $|$
+  \href{https://linkedin.com/in/amar-dhillon-917537261}{\underline{linkedin.com/in/amar-dhillon-917537261}} $|$
+  \href{https://github.com/AmarDhillon05}{\underline{github.com/AmarDhillon05}}
+\end{center}
+\vspace{-6pt}
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {University of Maryland, College Park}{Expected May 2028}
+    {B.S. in Computer Science, Minor in Statistics; GPA: 3.5}{College Park, MD}
+\resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Amazon Web Services}{Sep 2026 -- Dec 2026}
+    {Software Development Engineer Intern}{Redmond, WA}
+  \resumeItemListStart
+    % fact: aws_sde.redshift
+    \resumeItem{Writing backtested Java capacity-planning logic that sets upper and lower bounds on the EC2 capacity Amazon Redshift reserves for patching to balance availability against cost}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Capital One}{Jun 2026 -- Aug 2026}
+    {Software Engineering Intern}{Richmond, VA}
+  \resumeItemListStart
+    % fact: capital_one.claude_skill
+    \resumeItem{Cut AI workflow generation time \textbf{65\%} to under 15s by splitting a Claude skill into focused sub-skills that call Python search and validation tools instead of searching open-ended}
+    % fact: capital_one.search_index
+    \resumeItem{Precomputed popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to keep lookups within the database's permission and rate limits, which became the Claude skill's main search tool}
+    % fact: capital_one.ui_overhaul
+    \resumeItem{Rebuilt a legacy test-data workflow tool as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation to make editing smoother, which \textbf{90\%} of 30+ surveyed developers preferred}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {UMD App Development Contracting (Client: Amazon Leo)}{Jan 2026 -- Present}
+    {Software Engineer (Contract)}{College Park, MD}
+  \resumeItemListStart
+    % fact: amazon_contract.kinesis_pipeline
+    \resumeItem{Cut end-to-end latency \textbf{34\%} on a data pipeline that sends 6,000+ scraped research documents to model inference by streaming them through Amazon Kinesis into AWS Lambda instead of staging each step in S3}
+    % fact: amazon_contract.leo_deploy
+    \resumeItem{Co-built a research tool that scores and aggregates topics to show Amazon Leo's public-policy staff what's popular, which runs in dev on AWS Fargate with GitHub Actions CI/CD and AWS CDK infrastructure-as-code ready for production}
+    % fact: amazon_contract.bedrock_finetune
+    \resumeItem{Built an EventBridge-scheduled LLM-as-judge check for a production Amazon Bedrock classifier that rates research documents by importance to trigger fine-tuning only when its grades shift past a threshold}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {UMD Institute for Advanced Computer Studies (UMIACS)}{Dec 2025 -- Present}
+    {Machine Learning Research Intern}{College Park, MD}
+  \resumeItemListStart
+    % fact: umiacs.env_setup
+    \resumeItem{Cut research-environment setup time \textbf{30\%} by pinning dependencies with uv and packaging the environment in Docker so every machine gets an identical setup}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {TerpLabs}{Jun 2025 -- Present}
+    {Co-Founder, Software Engineer}{College Park, MD}
+  \resumeItemListStart
+    % fact: terplabs.tortuga
+    \resumeItem{Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio's class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency}
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{IEX Order Book \& Matching Engine} $|$ \textit{C++17, STL, POSIX, Linux perf}}{Jul 2026 -- Aug 2026}
+  \resumeItemListStart
+    % fact: iex.replay_correctness
+    \resumeItem{Built a C++17 order book and matching engine to replay \textbf{50.9M} real IEX exchange messages without ever resyncing, which agreed with the exchange on 99,122 of 99,123 fills and 100\% of top-of-book prices}
+    % fact: iex.storage_benchmark
+    \resumeItem{Implemented B+ tree and LSM-tree backends for the engine's event log to compare them on identical 2M-record workloads, which showed the B+ tree giving \textbf{12.8x} the read throughput and 22x faster range queries for 27\% more disk}
+    % fact: iex.throughput+iex.data_structures
+    \resumeItem{Designed the book as std::list FIFOs per price level inside a std::map with an order-ID hash map to make cancels O(1), which sustained \mbox{\textbf{1.26M events/sec}} end-to-end over the full replay}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0in, label={}, itemsep=0pt, topsep=2pt]
+  \small
+  % fact: skills
+  \item{\textbf{Languages:} Java, Python, C++, TypeScript, JavaScript, SQL, Bash}
+  % fact: skills
+  \item{\textbf{Cloud \& Infrastructure:} AWS (EC2, Lambda, Kinesis, Fargate/ECS, API Gateway, EventBridge, SNS), observability (CloudWatch, X-Ray), AWS CDK (infrastructure as code), Docker, GitHub Actions (CI/CD), Linux}
+  % fact: skills
+  \item{\textbf{Backend, Full-Stack \& Data:} PostgreSQL, Redis, SQLAlchemy, Prisma, OpenSearch, REST APIs, Node.js, B+ tree and LSM-tree storage}
+  % fact: skills
+  \item{\textbf{Practices \& Tools:} debugging and performance profiling (perf, psutil), benchmarking, unit testing (Pytest, Jest), data structures and algorithms, Git, uv}
+  % fact: skills
+  \item{\textbf{Certification:} \href{https://www.credly.com/badges/d2406a97-d937-47de-823b-724981159d3b/public_url}{\underline{AWS Certified Developer -- Associate}} (Nov 2024 -- Nov 2027)}
+\end{itemize}
+
+\end{document}

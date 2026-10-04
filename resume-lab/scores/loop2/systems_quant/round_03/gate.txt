@@ -1,0 +1,13 @@
+== /home/user/AmarDhillon05/resume-lab/scores/loop2/systems_quant/round_03/resume.tex
+[WARN] 'Built a C++17 order book and matching engine to re': voice: noun stack of 6 words
+[WARN] 'Built a C++17 order book and matching engine to re': voice: 5 numbers in one bullet (metric stacking)
+[WARN] 'Designed the book as std::list FIFOs per price lev': voice: 5 numbers in one bullet (metric stacking)
+[WARN] 'Implemented B+ tree and LSM-tree backends for the ': voice: 4 numbers in one bullet (metric stacking)
+[WARN] 'Traced an apparent 1.65x regression to the CPU fre': voice: noun stack of 5 words
+[WARN] 'Writing backtested Java capacity-planning logic th': voice: noun stack of 5 words
+[WARN] 'Cut AI workflow generation time 65% to under 15s b': voice: noun stack of 5 words
+[WARN] "Built a pipeline that overlays AnyGrasp's candidat": leading verb 'Built' repeats (also: Built a C++17 order book and matching engine to re)
+[WARN] "Built a pipeline that overlays AnyGrasp's candidat": voice: noun stack of 6 words
+[WARN] 'Built Redis caching in front of the Prisma ORM que': leading verb 'Built' repeats (also: Built a C++17 order book and matching engine to re)
+lint: 0 errors, 10 warnings, 10 bullets
+fact_check: 0 errors, 0 warnings, 12 facts used

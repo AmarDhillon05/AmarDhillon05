@@ -1,0 +1,74 @@
+Amar Dhillon
+
+NYC Area | amardhillon844@gmail.com | (XXX) XXX-XXXX | linkedin.com/in/amar-dhillon-917537261 | github.com/AmarDhillon05
+
+Education
+University of Maryland, College Park
+B.S. in Computer Science, Minor in Statistics; GPA: 3.5
+
+Expected May 2028
+College Park, MD
+
+Experience
+Amazon Web Services
+Sep 2026 – Dec 2026
+Software Development Engineer Intern
+Redmond, WA
+• Writing backtested Java capacity-planning logic that sets upper and lower bounds on the EC2 capacity Amazon Redshift
+reserves for patching to balance availability against cost
+Capital One
+Jun 2026 – Aug 2026
+Software Engineering Intern
+Richmond, VA
+• Rebuilt a legacy test-data workflow tool as a React and TypeScript Electron app with a visual React Flow editor and
+Jest-tested validation to make editing smoother, which 90% of 30+ surveyed developers preferred
+• Cut AI workflow generation time 65% to under 15s by splitting a Claude skill into focused sub-skills that call Python
+search and validation tools instead of searching open-ended
+• Precomputed popular workflows from a 270K+ row PostgreSQL table into a Redis-cached category tree to keep lookups
+within the database’s permission and rate limits, which became the Claude skill’s main search tool
+UMD App Development Contracting (Client: Amazon Leo)
+Jan 2026 – Present
+Software Engineer (Contract)
+College Park, MD
+• Co-built a research tool that scores and aggregates topics to show Amazon Leo’s public-policy staff what’s popular, which
+runs in dev on AWS Fargate with GitHub Actions CI/CD and AWS CDK infrastructure-as-code ready for production
+• Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3
+staging hops with Kinesis streams feeding Lambda
+• Built an EventBridge-scheduled LLM-as-judge check for a production Amazon Bedrock classifier that rates research
+documents by importance to trigger fine-tuning only when its grades shift past a threshold
+UMD Institute for Advanced Computer Studies (UMIACS)
+Dec 2025 – Present
+Machine Learning Research Intern
+College Park, MD
+• Built a pipeline that overlays AnyGrasp’s candidate grasps on camera images in Open3D to let a vision-language model
+pick robot grasps for a PhD-led ICLR project, and tuned its prompts to favor grasps that avoid hitting the table
+TerpLabs
+Jun 2025 – Present
+Co-Founder, Software Engineer
+College Park, MD
+• Co-founded a 110+ member student product studio that has shipped 5 live products
+• Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio’s class scheduler with 20,000+ visits in
+its first 30 days, to reduce database load and latency
+• Building RAG meal suggestions for the official UMD app with SentenceBERT vector search in ChromaDB to feed
+GPT-4o mini real scraped recipes, which internal testers rated satisfactory for 93% of meals
+
+Projects
+IEX Order Book & Matching Engine | C++17, STL, POSIX, Linux perf
+Jul 2026 – Aug 2026
+• Built a C++17 order book and matching engine to replay 50.9M real IEX exchange messages without ever resyncing,
+which agreed with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices
+• Implemented B+ tree and LSM-tree backends for the engine’s event log to compare them on identical 2M-record
+workloads, which showed the B+ tree giving 12.8x the read throughput and 22x faster range queries for 27% more disk
+• Designed the book as std::list FIFOs per price level inside a std::map with an order-ID hash map to make cancels O(1),
+which sustained 1.26M events/sec end-to-end over the full replay
+
+Technical Skills
+Languages: Python, Java, C++, C, TypeScript, JavaScript, SQL, Bash
+Cloud & DevOps: AWS (Lambda, Kinesis, Fargate, EC2, API Gateway, EventBridge, CloudWatch), AWS CDK (infrastructure as
+code), Docker, GitHub Actions (CI/CD)
+Backend & Full-Stack: REST APIs, Node.js, React, Electron, PostgreSQL, Redis, SQLAlchemy, Prisma, OpenSearch, ChromaDB
+AI/ML: LLMs (Claude, Bedrock, GPT-4o mini), retrieval-augmented generation (RAG), fine-tuning and evaluation, PyTorch
+Practices & Tools: data structures and algorithms, unit testing (Pytest, Jest), profiling (perf, psutil), Linux, Git, Jira, Agile
+Certification: AWS Certified Developer – Associate (Nov 2024 – Nov 2027)
+
+
