@@ -48,10 +48,10 @@ experiences:
 
   amazon_contract.leo_deploy:
     purpose: A space-topic research tool for Amazon Leo's public-policy staff that Leo engineers could own (Amar, Oct 2026)
-    core: Shipped the tool; Leo engineers now maintain and roll it out
+    core: Team-built tool that aggregates and scores research topics so Leo's policy staff see which topics are popular; deployed to dev, prod-ready via the same CDK (Amar, Oct 2026)
     evidence: Docker on AWS Fargate, GitHub Actions CI/CD, AWS CDK (TypeScript) infrastructure-as-code written so engineers new to the project could contribute
     supporting: []
-    do_not_imply: [a user count, that Amar still owns it, Amazon employment (it is a contract via UMD)]
+    do_not_imply: [production deployment (it is deployed to dev; the same CDK can deploy to prod), a user count, that Amar still owns it, Amazon employment (it is a contract via UMD), sole authorship (team-built)]
     interview_story: UNCONFIRMED
 
   amazon_contract.kinesis_pipeline:

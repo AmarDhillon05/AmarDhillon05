@@ -1,0 +1,34 @@
+[
+  {
+    "id": "g01",
+    "versions": {
+      "A": "Because the 270K+ row PostgreSQL workflow table had strict access limits, precomputed popular workflows into a category tree that the Claude skill searches first, with Redis caching full workflows to cut database queries",
+      "B": "Precomputed popular workflows from a 270K+ row PostgreSQL table into a category tree that the Claude skill searches first, with Redis caching full workflows, so lookups rarely touch a database gated by permissions and rate limits",
+      "C": "Built the category tree of popular workflows that the Claude skill searches first, precomputed from a 270K+ row PostgreSQL table with Redis caching full workflows, so lookups stay within the database's permission and rate limits"
+    }
+  },
+  {
+    "id": "g02",
+    "versions": {
+      "A": "Deployed a space-topic research tool for Amazon Leo's public-policy team and set it up for handoff with AWS CDK infrastructure-as-code and GitHub Actions CI/CD, so Leo engineers new to the project now maintain it on AWS Fargate",
+      "B": "Co-built a tool that aggregates and scores research topics so Amazon Leo's public-policy team can see which are popular, deployed it to dev on AWS Fargate, and wrote AWS CDK infrastructure-as-code so the same stack can ship to production",
+      "C": "Co-built a research tool that scores and aggregates topics so Amazon Leo's public-policy staff can see what's popular, running in dev on AWS Fargate with GitHub Actions CI/CD and AWS CDK infrastructure-as-code ready for production"
+    }
+  },
+  {
+    "id": "g03",
+    "versions": {
+      "A": "Reduced average end-to-end latency 34% across multi-day pipeline runs by replacing S3 staging hops with Kinesis streams feeding Lambda in the pipeline that routes 6,000+ scraped research documents to inference",
+      "B": "Reduced end-to-end latency 34% for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda",
+      "C": "Cut end-to-end latency 34%, averaged over multi-day pipeline runs, on a pipeline that sends 6,000+ scraped research documents to model inference by replacing S3 staging between steps with Amazon Kinesis streams feeding AWS Lambda"
+    }
+  },
+  {
+    "id": "g04",
+    "versions": {
+      "A": "For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D for a vision-language model, then tuned prompts so it more often picks grasps that avoid hitting the table",
+      "B": "For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D for a vision-language model, and tuned its prompts toward grasps that avoid hitting the table (occlusion avoidance)",
+      "C": "For a PhD-led robotics project aimed at ICLR, built a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D for a vision-language model, then tuned prompts so the model picks the right grasp more often"
+    }
+  }
+]

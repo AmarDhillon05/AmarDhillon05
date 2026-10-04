@@ -58,7 +58,7 @@ roles:
         optional_techs: [Jest, React-Flow]
         required_numbers: ["90%"]
       search_index:
-        claim: Built a lightweight tree-style workflow search index (a tree keyed by workflow category/name; lookups walk the category tree to find an example workflow - Amar, Oct 2026) to minimize DB queries under access constraints; Python + SQLAlchemy pipeline distilled popular workflows from a 270,000+ row PostgreSQL table into a precomputed index; Redis caching for full workflow retrieval; exposed via a Node.js IPC module; the index is the main search tool the Claude skill (capital_one.claude_skill) calls, with wiki sources used afterward (Amar, Oct 2026)
+        claim: Built a lightweight tree-style workflow search index (a tree keyed by workflow category/name; lookups walk the category tree to find an example workflow - Amar, Oct 2026) to minimize DB queries under access constraints; Python + SQLAlchemy pipeline distilled popular workflows from a 270,000+ row PostgreSQL table into a precomputed index; Redis caching for full workflow retrieval; exposed via a Node.js IPC module; the index is the main search tool the Claude skill (capital_one.claude_skill) calls, with wiki sources used afterward (Amar, Oct 2026); the access limits were DB permissions and rate limits (Amar, Oct 2026)
         core_techs: [PostgreSQL, Redis]
         optional_techs: [Python, SQLAlchemy, Node.js, IPC]  # loop 2: Python/SQLAlchemy are supporting detail (spec §13); Skills carries them
         required_numbers: ["270,000+"]
@@ -76,12 +76,12 @@ roles:
     status: in_progress
     bullets:
       leo_deploy:
-        claim: Deployed an Amazon Leo space-topic research utility that was adopted into Leo's ecosystem (Amar, Oct 2026 - used by Leo's public-policy staff, maintained and rolled out by Leo engineers); Docker + AWS Fargate orchestration; GitHub Actions CI/CD; AWS CDK (TypeScript) infrastructure-as-code so engineers unfamiliar with the project could contribute
+        claim: Deployed an Amazon Leo space-topic research utility that was adopted into Leo's ecosystem (Amar, Oct 2026 - used by Leo's public-policy staff, maintained and rolled out by Leo engineers); Docker + AWS Fargate orchestration; GitHub Actions CI/CD; AWS CDK (TypeScript) infrastructure-as-code so engineers unfamiliar with the project could contribute; CORRECTION (Amar, Oct 2026) - the tool aggregates and scores research topics so Leo's public-policy staff can see which topics are popular (for advertising and other Leo efforts); the team built it (Amar was part of the team) and deployed it to a dev environment; the same CDK can deploy it to prod - do NOT imply it is in production
         core_techs: [AWS Fargate, AWS CDK]
         optional_techs: [Docker, GitHub Actions, TypeScript]  # loop 2: Docker moved to supporting (spec §12)
         required_numbers: []
       kinesis_pipeline:
-        claim: 34% end-to-end latency reduction (clarified by Amar, Oct 2026) on a pipeline routing 6,000+ scraped research documents for inference (6,000+ is the total set of documents scraped, not per day/run - Amar, Oct 2026). Before - scraper output staged through S3 (scraper -> S3 -> Lambda -> S3), slower end to end; after - Kinesis streams feeding Lambda processors for processing/redirection; Lambda + API Gateway front it for app integration
+        claim: 34% end-to-end latency reduction (clarified by Amar, Oct 2026) on a pipeline routing 6,000+ scraped research documents for inference (6,000+ is the total set of documents scraped, not per day/run - Amar, Oct 2026). Before - scraper output staged through S3 (scraper -> S3 -> Lambda -> S3), slower end to end; after - Kinesis streams feeding Lambda processors for processing/redirection; Lambda + API Gateway front it for app integration; the 34% is an average over multiple pipeline runs across multiple days (Amar, Oct 2026)
         core_techs: [Kinesis, Lambda]
         optional_techs: [API Gateway]
         required_numbers: ["34%", "6,000+"]
@@ -104,7 +104,7 @@ roles:
         core_techs: [PhysTwin]
         required_numbers: []
       grasp_vlm:
-        claim: "For PhysTwin (physics-based digital twin; PhD-led team targeting ICLR). Built a Python pipeline that takes multi-camera images, runs AnyGrasp on them, and renders grasp candidates as clear Open3D visual overlays; built the pipeline feeding those renders into a Qwen3-VL-8B-Instruct-FP8 VLM for detection; did prompt optimization for the VLM, which made it pick the correct grasp more often and better handle depth in the image (Amar, Oct 2026); did NOT work on the VLM output (Amar, Oct 2026). Lets researchers iterate faster by isolating scene components"
+        claim: "For PhysTwin (physics-based digital twin; PhD-led team targeting ICLR). Built a Python pipeline that takes multi-camera images, runs AnyGrasp on them, and renders grasp candidates as clear Open3D visual overlays; built the pipeline feeding those renders into a Qwen3-VL-8B-Instruct-FP8 VLM for detection; did prompt optimization for the VLM, which made it pick the correct grasp more often and better handle depth in the image (Amar, Oct 2026); did NOT work on the VLM output (Amar, Oct 2026). Lets researchers iterate faster by isolating scene components; evaluation was largely objective, a main criterion being grasps that avoid hitting the table (occlusion avoidance) (Amar, Oct 2026)"
         core_techs: [AnyGrasp, Open3D]
         optional_techs: [Python, PhysTwin, ICLR, Qwen3-VL-8B-Instruct-FP8, VLM, prompt optimization]
         required_numbers: []   # "8B" / "FP8" / "Qwen3" are model-name tokens, whitelisted below
