@@ -90,23 +90,6 @@
     {B.S. in Computer Science, Minor in Statistics; GPA: 3.5}{College Park, MD}
 \resumeSubHeadingListEnd
 
-%-----------PROJECTS-----------
-\section{Projects}
-\resumeSubHeadingListStart
-  \resumeProjectHeading
-    {\textbf{IEX Order Book \& Matching Engine} $|$ \textit{C++17, STL, POSIX, Linux perf}}{Jul 2026 -- Aug 2026}
-  \resumeItemListStart
-    % fact: iex.replay_correctness
-    \resumeItem{Built a C++17 order book and matching engine and replayed \textbf{50.9M} real IEX exchange messages through it without ever resyncing to the exchange's book, agreeing with the exchange on 99,122 of 99,123 fills and 100\% of top-of-book prices}
-    % fact: iex.throughput+iex.data_structures+iex.latency_dist
-    \resumeItem{Sustained \textbf{1.26M events/sec} over the full replay and a 1.2 \textmu{}s per-message p99 on a separate 2M-event run, keeping each price level as a FIFO queue (std::list) inside a std::map, with an order-ID hash map for O(1) cancels}
-    % fact: iex.storage_benchmark
-    \resumeItem{Implemented B+ tree and LSM-tree backends for the event log and benchmarked them on identical 2M-record workloads, where the B+ tree gave \textbf{12.8x} the read throughput and 22x faster range queries at the cost of 27\% more disk space}
-    % fact: iex.perf_rigor
-    \resumeItem{Traced an apparent 1.65x regression to the CPU frequency governor, not a code change, using perf counters and a do-nothing control book, then cut run-to-run variance from about 6\% to 0.06\% by pinning cores and fixing the clock}
-  \resumeItemListEnd
-\resumeSubHeadingListEnd
-
 %-----------EXPERIENCE-----------
 \section{Experience}
 \resumeSubHeadingListStart
@@ -116,13 +99,15 @@
     {Software Development Engineer Intern}{Redmond, WA}
   \resumeItemListStart
     % fact: aws_sde.redshift
-    \resumeItem{Building capacity planning for Amazon Redshift maintenance like patching: Java logic that sets upper and lower bounds on reserved EC2 capacity to balance availability against cost, validated by backtesting}
+    \resumeItem{Writing Java logic that sets the upper and lower bounds on EC2 capacity that Amazon Redshift reserves for operations like patching, balancing availability against cost, and backtesting it}
   \resumeItemListEnd
 
   \resumeSubheading
     {Capital One}{Jun 2026 -- Aug 2026}
     {Software Engineering Intern}{Richmond, VA}
   \resumeItemListStart
+    % fact: capital_one.ui_overhaul
+    \resumeItem{Rebuilt the legacy tool developers use to create test-data workflows as a React and TypeScript Electron app with a visual React Flow editor and Jest-tested validation, and \textbf{90\%} of 30+ surveyed developers preferred it}
     % fact: capital_one.claude_skill
     \resumeItem{Cut AI workflow generation time \textbf{65\%} to under 15s by replacing a Claude skill's open-ended search with focused sub-skills that call Python tools for workflow search and validation, guided by CloudWatch and OpenSearch latency logs}
     % fact: capital_one.search_index
@@ -133,8 +118,12 @@
     {UMD App Development Contracting (Client: Amazon Leo)}{Jan 2026 -- Present}
     {Software Engineer (Contract)}{College Park, MD}
   \resumeItemListStart
+    % fact: amazon_contract.leo_deploy
+    \resumeItem{Co-built a research tool that scores and aggregates topics so Amazon Leo's public-policy staff can see what's popular, running in dev on AWS Fargate with GitHub Actions CI/CD and AWS CDK infrastructure-as-code ready for production}
     % fact: amazon_contract.kinesis_pipeline
     \resumeItem{Reduced end-to-end latency \textbf{34\%} for a pipeline routing 6,000+ scraped research documents to inference by replacing S3 staging hops with Kinesis streams feeding Lambda}
+    % fact: amazon_contract.bedrock_finetune
+    \resumeItem{Automated retraining for a production Amazon Bedrock classifier that rates research documents by importance: on an EventBridge schedule a larger LLM grades its ratings, and fine-tuning runs only when the grades shift past a threshold}
   \resumeItemListEnd
 
   \resumeSubheading
@@ -149,18 +138,29 @@
     {TerpLabs}{Jun 2025 -- Present}
     {Co-Founder, Software Engineer}{College Park, MD}
   \resumeItemListStart
+    % fact: terplabs.studio
+    \resumeItem{Co-founded a 110+ member student product studio that has shipped 5 live products}
     % fact: terplabs.tortuga
     \resumeItem{Built Redis caching in front of the Prisma ORM queries for Tortuga, the studio's class scheduler with 20,000+ visits in its first 30 days, to reduce database load and latency}
+    % fact: terplabs.rag_meal
+    \resumeItem{Building a RAG meal-suggestion feature for the official UMD app, in which GPT-4o mini writes suggestions from scraped recipes found by SentenceBERT vector search in ChromaDB, and internal testers rated \textbf{93\%} of meals satisfactory}
   \resumeItemListEnd
 
-  \resumeSubheading
-    {Northrop Grumman Innovation Lab}{Jan 2025 -- Jun 2025}
-    {Robotics Researcher}{College Park, MD}
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{IEX Order Book \& Matching Engine} $|$ \textit{C++17, STL, POSIX, Linux perf}}{Jul 2026 -- Aug 2026}
   \resumeItemListStart
-    % fact: northrop.mine_detection
-    \resumeItem{Built an OpenCV (C++) vision pipeline that detects ocean mines in real time on drone-mounted microcontrollers, reaching \textbf{74\%} detection accuracy on test footage}
+    % fact: iex.replay_correctness
+    \resumeItem{Built a C++17 order book and matching engine and replayed \textbf{50.9M} real IEX exchange messages through it without ever resyncing to the exchange's book, agreeing with the exchange on 99,122 of 99,123 fills and 100\% of top-of-book prices}
+    % fact: iex.storage_benchmark
+    \resumeItem{Implemented B+ tree and LSM-tree backends for the event log and benchmarked them on identical 2M-record workloads, where the B+ tree gave \textbf{12.8x} the read throughput and 22x faster range queries at the cost of 27\% more disk space}
+    % fact: iex.throughput+iex.data_structures
+    \resumeItem{Sustained \mbox{\textbf{1.26M events/sec}} end-to-end over the full replay, keeping each price level's orders in a std::list FIFO inside a std::map and a hash map from order ID to list iterator for O(1) cancels}
   \resumeItemListEnd
-
 \resumeSubHeadingListEnd
 
 %-----------SKILLS-----------
@@ -168,11 +168,15 @@
 \begin{itemize}[leftmargin=0in, label={}, itemsep=0pt, topsep=2pt]
   \small
   % fact: skills
-  \item{\textbf{Languages:} C++17, C, Python, Java, Rust, SQL, TypeScript, Bash}
+  \item{\textbf{Languages:} Python, Java, C++, C, TypeScript, JavaScript, SQL, Bash}
   % fact: skills
-  \item{\textbf{Systems \& Performance:} debugging and profiling with Linux perf (hardware counters, top-down analysis), POSIX, STL, B+ trees, LSM trees, data structures and algorithms, benchmarking}
+  \item{\textbf{Cloud \& DevOps:} AWS (Lambda, Kinesis, Fargate, EC2, API Gateway, EventBridge, CloudWatch), AWS CDK (infrastructure as code), Docker, GitHub Actions (CI/CD)}
   % fact: skills
-  \item{\textbf{Cloud \& Tools:} AWS (Lambda, Kinesis, EC2, Fargate, CloudWatch monitoring), AWS CDK, PostgreSQL, Redis, Docker, GitHub Actions (CI/CD), Git, Pytest}
+  \item{\textbf{Backend \& Full-Stack:} REST APIs, Node.js, React, Electron, PostgreSQL, Redis, SQLAlchemy, Prisma, OpenSearch, ChromaDB}
+  % fact: skills
+  \item{\textbf{AI/ML:} LLMs (Claude, Bedrock, GPT-4o mini), retrieval-augmented generation (RAG), fine-tuning and evaluation, PyTorch}
+  % fact: skills
+  \item{\textbf{Practices \& Tools:} data structures and algorithms, unit testing (Pytest, Jest), profiling (perf, psutil), Linux, Git, Jira, Agile}
   % fact: skills
   \item{\textbf{Certification:} \href{https://www.credly.com/badges/d2406a97-d937-47de-823b-724981159d3b/public_url}{\underline{AWS Certified Developer -- Associate}} (Nov 2024 -- Nov 2027)}
 \end{itemize}

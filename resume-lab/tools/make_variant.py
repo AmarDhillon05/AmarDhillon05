@@ -13,6 +13,7 @@ spec keys (all optional except base/out):
   add_after: {existing.fact.id: [{fact: new.id, text: "..."}]}
   retag: {old.id: "a.b+c.d"}    # change a bullet's fact annotation (e.g. after merging)
   skills: ["\\textbf{Row:} a, b", ...]   # replace the skills rows
+  extra_roles: ["<raw \\resumeSubheading ... \\resumeItemListEnd block>"]  # appended at the end of Experience
 Every bullet keeps its `% fact:` annotation, so tools/fact_check.py still applies.
 """
 import re
@@ -56,6 +57,11 @@ def main():
     for old, new in (spec.get("retag") or {}).items():
         assert f"% fact: {old}\n" in s, f"retag: {old} not found"
         s = s.replace(f"% fact: {old}\n", f"% fact: {new}\n")
+
+    for block in spec.get("extra_roles") or []:
+        exp = s.index("\\section{Experience}")
+        end = s.index("\\resumeSubHeadingListEnd", exp)
+        s = s[:end] + block.rstrip("\n") + "\n\n" + s[end:]
 
     if spec.get("projects_first"):
         pm = re.search(r"%-----------PROJECTS-----------\n.*?(?=%-----------SKILLS)", s, re.S)
