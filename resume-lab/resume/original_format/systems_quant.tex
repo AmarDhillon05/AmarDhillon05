@@ -184,7 +184,7 @@
     \resumeItem{Built a C++17 order book and matching engine to replay \textbf{50.9M} real IEX exchange messages without ever resyncing, which agreed with the exchange on 99,122 of 99,123 fills and 100\% of top-of-book prices}
     \vspace{\gapItem}
     % fact: iex.throughput+iex.data_structures+iex.latency_dist
-    \resumeItem{Ran the full replay at \mbox{\textbf{1.26M events/sec}} and a separate 2M-event run at a 1.2 \textmu{}s per-message p99 on an order book that keeps std::list FIFOs per price level in a std::map with an order-ID hash map to make cancels O(1)}
+    \resumeItem{Designed the order book with std::list FIFOs per price level in a std::map and an order-ID hash map to make cancels O(1), which ran the full replay at \mbox{\textbf{1.26M events/sec}} and hit a 1.2 \textmu{}s p99 on a separate 2M-event run}
     \vspace{\gapItem}
     % fact: iex.storage_benchmark
     \resumeItem{Implemented B+ tree and LSM-tree backends for the engine's event log to compare them on identical 2M-record workloads, which showed the B+ tree giving \textbf{12.8x} the read throughput and 22x faster range queries for 27\% more disk}
@@ -235,7 +235,7 @@
     {UMD Institute for Advanced Computer Studies (UMIACS)}{College Park, MD}
   \resumeItemListStart
     % fact: umiacs.grasp_vlm
-    \resumeItem{Built and prompt-tuned a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D to help a vision-language model pick robot grasps that avoid hitting the table for a PhD-led project targeting ICLR}
+    \resumeItem{Built and prompt-tuned a pipeline for a PhD-led robotics project aimed at ICLR that overlays AnyGrasp's candidate grasps on camera images in Open3D to help a vision-language model pick grasps that avoid hitting the table}
   \resumeItemListEnd
 
 \vspace{\gapRole}

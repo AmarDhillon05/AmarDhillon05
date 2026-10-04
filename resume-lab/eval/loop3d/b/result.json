@@ -1,0 +1,47 @@
+[
+  {
+    "fact": "iex.throughput+iex.data_structures",
+    "winner": "cand1",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Ran the full replay at 1.26M events/sec end-to-end on an order book that keeps std::list FIFOs per price level in a std::map with an order-ID hash map to make cancels O(1)",
+    "decisive_wording": "A: \"Designed the order book with ... to make cancels O(1), which ran the full replay at 1.26M events/sec\" vs B: \"Ran the full replay ... on an order book that keeps ...\"",
+    "info": "Identical facts in both: std::list FIFOs per price level, std::map, order-ID hash map, O(1) cancels, 1.26M events/sec end-to-end replay."
+  },
+  {
+    "fact": "umiacs.grasp_vlm",
+    "winner": "cand1",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Built and prompt-tuned a pipeline for a PhD-led robotics project aimed at ICLR that overlays AnyGrasp's candidate grasps on camera images in Open3D to help a vision-language model pick grasps that avoid hitting the table",
+    "decisive_wording": "A ends with \"...avoid hitting the table for a PhD-led project targeting ICLR\"; B puts \"for a PhD-led robotics project aimed at ICLR\" right after \"pipeline\"",
+    "info": "Both keep AnyGrasp, Open3D, the overlay on camera images, the VLM, collision avoidance, PhD-led and ICLR. B moves 'robot' into 'robotics project', so nothing is lost."
+  },
+  {
+    "fact": "amazon_contract.bedrock_finetune",
+    "winner": "incumbent",
+    "advantage": "concrete",
+    "adopt": false,
+    "text": "Built an EventBridge-scheduled LLM-as-judge check for a production Amazon Bedrock classifier that rates research documents by importance to trigger fine-tuning only when its grades shift past a threshold",
+    "decisive_wording": "A: \"Built an EventBridge-scheduled LLM-as-judge check ... to trigger fine-tuning only when its grades shift past a threshold\" vs B: \"to run only when a larger LLM's EventBridge-scheduled grades of the model shift past a threshold\"",
+    "info": "A keeps the 'LLM-as-judge' term, 'classifier' and 'rates ... by importance'. B drops 'LLM-as-judge' (an ATS/posting keyword), says 'ranks' instead of 'rates by importance', and changes 'fine-tuning' to the vaguer 'retraining'. B adds 'larger LLM', which A only implies."
+  },
+  {
+    "fact": "terplabs.rag_meal",
+    "winner": "incumbent",
+    "advantage": "marginal",
+    "adopt": false,
+    "text": "Building RAG meal suggestions for the official UMD app with SentenceBERT vector search in ChromaDB to feed GPT-4o mini real scraped recipes, which internal testers rated satisfactory for 93% of meals",
+    "decisive_wording": "A: \"SentenceBERT vector search in ChromaDB to feed GPT-4o mini real scraped recipes\" vs B: \"SentenceBERT search in ChromaDB to ground GPT-4o mini in scraped recipes\"",
+    "info": "Same facts in both, including the 93% satisfaction figure. A keeps 'vector search', which matches job postings. B adds the word 'feature' and uses 'ground', a precise term for engineers."
+  },
+  {
+    "fact": "iex.throughput+iex.data_structures+iex.latency_dist@quant",
+    "winner": "cand1",
+    "advantage": "concrete",
+    "adopt": true,
+    "text": "Designed the order book with std::list FIFOs per price level in a std::map and an order-ID hash map to make cancels O(1), which ran the full replay at 1.26M events/sec and hit a 1.2 \u00b5s p99 on a separate 2M-event run",
+    "decisive_wording": "A: \"a 1.2 s per-message p99\" vs B: \"hit a 1.2 \u00b5s p99\"",
+    "info": "A distorts the latency unit (1.2 s instead of 1.2 \u00b5s), turning a strong number into a disastrous one. B keeps every fact correctly and attributes the design to the candidate."
+  }
+]

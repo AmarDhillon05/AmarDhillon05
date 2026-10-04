@@ -250,7 +250,7 @@
     \resumeItem{Implemented B+ tree and LSM-tree backends for the engine's event log to compare them on identical 2M-record workloads, which showed the B+ tree giving \textbf{12.8x} the read throughput and 22x faster range queries for 27\% more disk}
     \vspace{\gapItem}
     % fact: iex.throughput+iex.data_structures
-    \resumeItem{Ran the full replay at \mbox{\textbf{1.26M events/sec}} end-to-end on an order book that keeps std::list FIFOs per price level in a std::map with an order-ID hash map to make cancels O(1)}
+    \resumeItem{Designed the order book with std::list FIFOs per price level in a std::map and an order-ID hash map to make cancels O(1), which ran the full replay at \mbox{\textbf{1.26M events/sec}} end-to-end}
   \resumeItemListEnd
 
 \resumeSubHeadingListEnd

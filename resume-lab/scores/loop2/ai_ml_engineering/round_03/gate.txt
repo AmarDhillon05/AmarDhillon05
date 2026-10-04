@@ -6,8 +6,8 @@
 [WARN] 'Co-built a topic-scoring research tool and deploye': opening 'Co-built' may not be an action verb
 [WARN] 'Co-built a topic-scoring research tool and deploye': no metric or explicit outcome
 [WARN] 'Co-built a topic-scoring research tool and deploye': voice: tool inventory: 4 techs in a row
-[WARN] 'Built and prompt-tuned a pipeline that overlays An': leading verb 'Built' repeats (also: Built an EventBridge-scheduled LLM-as-judge check )
-[WARN] 'Built and prompt-tuned a pipeline that overlays An': voice: noun stack of 6 words
+[WARN] 'Built and prompt-tuned a pipeline for a PhD-led ro': leading verb 'Built' repeats (also: Built an EventBridge-scheduled LLM-as-judge check )
+[WARN] 'Built and prompt-tuned a pipeline for a PhD-led ro': voice: noun stack of 5 words
 [WARN] "Built Redis caching in front of Tortuga's Prisma O": leading verb 'Built' repeats (also: Built an EventBridge-scheduled LLM-as-judge check )
 [WARN] 'Built a C++17 order book and matching engine to re': leading verb 'Built' repeats (also: Built an EventBridge-scheduled LLM-as-judge check )
 [WARN] 'Built a C++17 order book and matching engine to re': voice: noun stack of 6 words

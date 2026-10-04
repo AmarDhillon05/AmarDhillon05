@@ -40,8 +40,8 @@ UMD Institute for Advanced Computer Studies (UMIACS)
 Dec 2025 – Present
 Machine Learning Research Intern
 College Park, MD
-• Built and prompt-tuned a pipeline that overlays AnyGrasp’s candidate grasps on camera images in Open3D to help a
-vision-language model pick robot grasps that avoid hitting the table for a PhD-led project targeting ICLR
+• Built and prompt-tuned a pipeline for a PhD-led robotics project aimed at ICLR that overlays AnyGrasp’s candidate
+grasps on camera images in Open3D to help a vision-language model pick grasps that avoid hitting the table
 TerpLabs
 Jun 2025 – Present
 Co-Founder, Software Engineer
@@ -59,8 +59,8 @@ Jul 2026 – Aug 2026
 which agreed with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices
 • Implemented B+ tree and LSM-tree backends for the engine’s event log to compare them on identical 2M-record
 workloads, which showed the B+ tree giving 12.8x the read throughput and 22x faster range queries for 27% more disk
-• Ran the full replay at 1.26M events/sec end-to-end on an order book that keeps std::list FIFOs per price level in a
-std::map with an order-ID hash map to make cancels O(1)
+• Designed the order book with std::list FIFOs per price level in a std::map and an order-ID hash map to make cancels
+O(1), which ran the full replay at 1.26M events/sec end-to-end
 
 Technical Skills
 Languages: Python, Java, C++, C, TypeScript, JavaScript, SQL, Bash

@@ -13,12 +13,12 @@
     },
     {
       "fact": "iex.throughput+iex.data_structures+iex.latency_dist",
-      "chars": 215,
+      "chars": 214,
       "words": 41,
       "n_bold": 1,
       "n_lines": 2,
       "last_fill": 0.86,
-      "text": "Ran the full replay at 1.26M events/sec and a separate 2M-event run at a 1.2 s per-message p99 on an order book that keeps std::list FIFOs per price level in a std::map with an order-ID hash map to make cancels O(1)"
+      "text": "Designed the order book with std::list FIFOs per price level in a std::map and an order-ID hash map to make cancels O(1), which ran the full replay at 1.26M events/sec and hit a 1.2 s p99 on a separate 2M-event run"
     },
     {
       "fact": "iex.storage_benchmark",
@@ -76,12 +76,12 @@
     },
     {
       "fact": "umiacs.grasp_vlm",
-      "chars": 218,
-      "words": 34,
+      "chars": 220,
+      "words": 35,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.88,
-      "text": "Built and prompt-tuned a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D to help a vision-language model pick robot grasps that avoid hitting the table for a PhD-led project targeting ICLR"
+      "last_fill": 0.9,
+      "text": "Built and prompt-tuned a pipeline for a PhD-led robotics project aimed at ICLR that overlays AnyGrasp's candidate grasps on camera images in Open3D to help a vision-language model pick grasps that avoid hitting the table"
     },
     {
       "fact": "terplabs.tortuga",
@@ -106,7 +106,7 @@
     },
     {
       "level": "WARN",
-      "where": "Ran the full replay at 1.26M events/sec and a sepa",
+      "where": "Designed the order book with std::list FIFOs per p",
       "msg": "voice: 5 numbers in one bullet (metric stacking)"
     },
     {
@@ -131,13 +131,13 @@
     },
     {
       "level": "WARN",
-      "where": "Built and prompt-tuned a pipeline that overlays An",
+      "where": "Built and prompt-tuned a pipeline for a PhD-led ro",
       "msg": "leading verb 'Built' repeats (also: Built a C++17 order book and matching engine to re)"
     },
     {
       "level": "WARN",
-      "where": "Built and prompt-tuned a pipeline that overlays An",
-      "msg": "voice: noun stack of 6 words"
+      "where": "Built and prompt-tuned a pipeline for a PhD-led ro",
+      "msg": "voice: noun stack of 5 words"
     },
     {
       "level": "WARN",

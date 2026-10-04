@@ -103,12 +103,12 @@
     },
     {
       "fact": "iex.throughput+iex.data_structures",
-      "chars": 171,
+      "chars": 178,
       "words": 31,
       "n_bold": 1,
       "n_lines": 2,
-      "last_fill": 0.49,
-      "text": "Ran the full replay at 1.26M events/sec end-to-end on an order book that keeps std::list FIFOs per price level in a std::map with an order-ID hash map to make cancels O(1)"
+      "last_fill": 0.54,
+      "text": "Designed the order book with std::list FIFOs per price level in a std::map and an order-ID hash map to make cancels O(1), which ran the full replay at 1.26M events/sec end-to-end"
     }
   ],
   "issues": [

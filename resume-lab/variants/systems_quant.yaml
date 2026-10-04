@@ -11,7 +11,7 @@ drop:
 - terplabs.rag_meal
 - terplabs.studio
 text:
-  iex.throughput+iex.data_structures: Ran the full replay at \mbox{\textbf{1.26M events/sec}} and a separate 2M-event run at a 1.2 \textmu{}s per-message p99 on an order book that keeps std::list FIFOs per price level in a std::map with an order-ID hash map to make cancels O(1)
+  iex.throughput+iex.data_structures: Designed the order book with std::list FIFOs per price level in a std::map and an order-ID hash map to make cancels O(1), which ran the full replay at \mbox{\textbf{1.26M events/sec}} and hit a 1.2 \textmu{}s p99 on a separate 2M-event run
 retag:
   iex.throughput+iex.data_structures: iex.throughput+iex.data_structures+iex.latency_dist
 add_after:

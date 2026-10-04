@@ -67,12 +67,12 @@
     },
     {
       "fact": "umiacs.grasp_vlm",
-      "chars": 218,
-      "words": 34,
+      "chars": 220,
+      "words": 35,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.88,
-      "text": "Built and prompt-tuned a pipeline that overlays AnyGrasp's candidate grasps on camera images in Open3D to help a vision-language model pick robot grasps that avoid hitting the table for a PhD-led project targeting ICLR"
+      "last_fill": 0.9,
+      "text": "Built and prompt-tuned a pipeline for a PhD-led robotics project aimed at ICLR that overlays AnyGrasp's candidate grasps on camera images in Open3D to help a vision-language model pick grasps that avoid hitting the table"
     },
     {
       "fact": "terplabs.rag_meal",
@@ -140,13 +140,13 @@
     },
     {
       "level": "WARN",
-      "where": "Built and prompt-tuned a pipeline that overlays An",
+      "where": "Built and prompt-tuned a pipeline for a PhD-led ro",
       "msg": "leading verb 'Built' repeats (also: Built an EventBridge-scheduled LLM-as-judge check )"
     },
     {
       "level": "WARN",
-      "where": "Built and prompt-tuned a pipeline that overlays An",
-      "msg": "voice: noun stack of 6 words"
+      "where": "Built and prompt-tuned a pipeline for a PhD-led ro",
+      "msg": "voice: noun stack of 5 words"
     },
     {
       "level": "WARN",

@@ -14,8 +14,8 @@ IEX Order Book & Matching Engine | C++17, STL, POSIX, Linux perf
 Jul 2026 – Aug 2026
 • Built a C++17 order book and matching engine to replay 50.9M real IEX exchange messages without ever resyncing,
 which agreed with the exchange on 99,122 of 99,123 fills and 100% of top-of-book prices
-• Ran the full replay at 1.26M events/sec and a separate 2M-event run at a 1.2 µs per-message p99 on an order book
-that keeps std::list FIFOs per price level in a std::map with an order-ID hash map to make cancels O(1)
+• Designed the order book with std::list FIFOs per price level in a std::map and an order-ID hash map to make cancels
+O(1), which ran the full replay at 1.26M events/sec and hit a 1.2 µs p99 on a separate 2M-event run
 • Implemented B+ tree and LSM-tree backends for the engine’s event log to compare them on identical 2M-record
 workloads, which showed the B+ tree giving 12.8x the read throughput and 22x faster range queries for 27% more disk
 • Traced an apparent 1.65x regression to the CPU frequency governor with perf counters and a do-nothing control book to
@@ -46,8 +46,8 @@ UMD Institute for Advanced Computer Studies (UMIACS)
 Dec 2025 – Present
 Machine Learning Research Intern
 College Park, MD
-• Built and prompt-tuned a pipeline that overlays AnyGrasp’s candidate grasps on camera images in Open3D to help a
-vision-language model pick robot grasps that avoid hitting the table for a PhD-led project targeting ICLR
+• Built and prompt-tuned a pipeline for a PhD-led robotics project aimed at ICLR that overlays AnyGrasp’s candidate
+grasps on camera images in Open3D to help a vision-language model pick grasps that avoid hitting the table
 TerpLabs
 Jun 2025 – Present
 Co-Founder, Software Engineer

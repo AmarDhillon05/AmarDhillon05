@@ -40,8 +40,8 @@ UMD Institute for Advanced Computer Studies (UMIACS)
 Dec 2025 – Present
 Machine Learning Research Intern
 College Park, MD
-• Built and prompt-tuned a pipeline that overlays AnyGrasp’s candidate grasps on camera images in Open3D to help a
-vision-language model pick robot grasps that avoid hitting the table for a PhD-led project targeting ICLR
+• Built and prompt-tuned a pipeline for a PhD-led robotics project aimed at ICLR that overlays AnyGrasp’s candidate
+grasps on camera images in Open3D to help a vision-language model pick grasps that avoid hitting the table
 TerpLabs
 Jun 2025 – Present
 Co-Founder, Software Engineer
