@@ -76,7 +76,7 @@ roles:
     status: in_progress
     bullets:
       leo_deploy:
-        claim: Deployed an Amazon Leo space-topic research utility that was adopted into Leo's ecosystem (Amar, Oct 2026 - used by Leo's public-policy staff, maintained and rolled out by Leo engineers); Docker + AWS Fargate orchestration; GitHub Actions CI/CD; AWS CDK (TypeScript) infrastructure-as-code so engineers unfamiliar with the project could contribute; CORRECTION (Amar, Oct 2026) - the tool aggregates and scores research topics so Leo's public-policy staff can see which topics are popular (for advertising and other Leo efforts); the team built it (Amar was part of the team) and deployed it to a dev environment; the same CDK can deploy it to prod - do NOT imply it is in production
+        claim: Deployed an Amazon Leo space-topic research utility that was adopted into Leo's ecosystem (Amar, Oct 2026 - used by Leo's public-policy staff, maintained and rolled out by Leo engineers); Docker + AWS Fargate orchestration; GitHub Actions CI/CD; AWS CDK (TypeScript) infrastructure-as-code so engineers unfamiliar with the project could contribute; CORRECTION (Amar, Oct 2026) - the tool aggregates and scores research topics so Leo's public-policy staff can see which topics are popular (for advertising and other Leo efforts); the team built it (Amar was part of the team) and deployed it to a dev environment; the same CDK can deploy it to prod; UPDATE (Amar, Oct 5 2026) - it IS in production - the team built the production infrastructure (AWS CDK) and Leo engineers ran the prod deploy themselves - do not claim the team ran the prod deploy
         core_techs: [AWS Fargate, AWS CDK]
         optional_techs: [Docker, GitHub Actions, TypeScript]  # loop 2: Docker moved to supporting (spec §12)
         required_numbers: []
@@ -127,7 +127,7 @@ roles:
         optional_techs: [Jira, GitHub, agile]
         required_numbers: ["110+", "5"]
       tortuga:
-        claim: Tortuga (enhanced class scheduler) sustained 20,000+ site visits in its first 30 days after launch; built Prisma-based SQL querying with Redis query caching to reduce DB load and latency
+        claim: Tortuga (enhanced class scheduler) sustained 20,000+ site visits in its first 30 days after launch; built Prisma-based SQL querying with Redis query caching to reduce DB load and latency; UPDATE (Amar, Oct 5 2026) - the point is that the app handled the 20,000+ visits without crashing, which came from rewriting the queries and adding caching to take load off compute
         core_techs: [Prisma, Redis]
         optional_techs: [SQL]   # Prisma is an ORM over SQL; 'Prisma SQL' flagged as inaccurate (round 08)
         required_numbers: []   # traffic (20,000+ / 30 days) may be shown here OR on terplabs.studio; reviewers flagged it as misattributed to caching (round 05)

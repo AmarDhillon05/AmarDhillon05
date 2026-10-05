@@ -52,8 +52,8 @@ TerpLabs
 Jun 2025 – Present
 Co-Founder, Software Engineer
 College Park, MD
-• Built Redis caching in front of Tortuga’s Prisma ORM queries to reduce database load and latency for a class scheduler
-that drew 20,000+ visits in its first 30 days
+• Rewrote Tortuga’s Prisma ORM queries and added Redis caching to take load off compute, which kept the class
+scheduler from crashing through 20,000+ visits in its first 30 days
 
 Technical Skills
 Languages: C++17, C, Python, Java, Rust, SQL, TypeScript, Bash

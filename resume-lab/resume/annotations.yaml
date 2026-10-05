@@ -51,7 +51,7 @@ experiences:
     core: Team-built tool that aggregates and scores research topics so Leo's policy staff see which topics are popular; deployed to dev, prod-ready via the same CDK (Amar, Oct 2026)
     evidence: Docker on AWS Fargate, GitHub Actions CI/CD, AWS CDK (TypeScript) infrastructure-as-code written so engineers new to the project could contribute
     supporting: []
-    do_not_imply: [production deployment (it is deployed to dev; the same CDK can deploy to prod), a user count, that Amar still owns it, Amazon employment (it is a contract via UMD), sole authorship (team-built)]
+    do_not_imply: [that the team ran the prod deploy itself (Leo engineers did, with the team's CDK; it is in production - Amar, Oct 5 2026), a user count, that Amar still owns it, Amazon employment (it is a contract via UMD), sole authorship (team-built)]
     interview_story: UNCONFIRMED
 
   amazon_contract.kinesis_pipeline:
@@ -91,7 +91,7 @@ experiences:
     core: Co-founded a 110+ member studio that has shipped 5 live products
     evidence: Tortuga, a class scheduler, had 20,000+ visits in its first 30 days; Amar built Redis caching for its Prisma ORM queries
     supporting: [Jira/GitHub, agile practices]
-    do_not_imply: [that the caching caused the traffic]
+    do_not_imply: [that the caching caused the traffic (it kept the app from crashing under it - Amar, Oct 5 2026)]
     interview_story: UNCONFIRMED
 
   terplabs.rag_meal:

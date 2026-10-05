@@ -85,12 +85,12 @@
     },
     {
       "fact": "terplabs.tortuga",
-      "chars": 164,
+      "chars": 175,
       "words": 29,
       "n_bold": 0,
       "n_lines": 2,
-      "last_fill": 0.36,
-      "text": "Built Redis caching in front of Tortuga's Prisma ORM queries to reduce database load and latency for a class scheduler that drew 20,000+ visits in its first 30 days"
+      "last_fill": 0.55,
+      "text": "Rewrote Tortuga's Prisma ORM queries and added Redis caching to take load off compute, which kept the class scheduler from crashing through 20,000+ visits in its first 30 days"
     }
   ],
   "issues": [
@@ -146,8 +146,8 @@
     },
     {
       "level": "WARN",
-      "where": "Built Redis caching in front of Tortuga's Prisma O",
-      "msg": "leading verb 'Built' repeats (also: Built a C++17 order book and matching engine to re)"
+      "where": "Rewrote Tortuga's Prisma ORM queries and added Red",
+      "msg": "opening 'Rewrote' may not be an action verb"
     }
   ],
   "errors": 0,
