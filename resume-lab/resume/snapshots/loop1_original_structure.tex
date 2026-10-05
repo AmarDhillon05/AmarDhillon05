@@ -1,0 +1,289 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+% NOTE (resume-lab): baseline = original.tex with only the compile errors fixed,
+% reproducing what Overleaf renders after recovering from those errors:
+%  - duplicate \newcommand{\resumeItem}/{\resumeSubheading}: Overleaf keeps the
+%    FIRST definition, so the second pair is removed
+%  - \vspace{1pt} (no unit) -> Overleaf inserts pt, so \vspace{1pt}
+%  - 9.5pt is not an extarticle option (ignored -> 10pt)
+
+\documentclass[letterpaper,10pt]{extarticle}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{comment}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{xcolor}
+
+
+\definecolor{lightblue}{RGB}{30,64,175}
+
+
+\input{glyphtounicode}
+
+\newcommand{\resumeItem}[1]{\item\footnotesize{#1\vspace{-2pt}}}
+
+\newcommand{\resumeSubheading}[4]{%
+  \vspace{-2pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{\small#1} & \small#2 \\
+    \textit{\small#3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{-7pt}%
+}
+
+
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting'
+\definecolor{myblue}{RGB}{5,50,120}  % darker techy blue
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\bfseries\raggedright\fontsize{12}{14}\selectfont\color{myblue}
+}{}{0em}{\MakeUppercase}[\color{myblue}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+
+
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{setspace}
+\newcommand{\fitStretch}{1.020}
+\setstretch{\fitStretch}   % try 1.05–1.12 range
+\setlength{\parskip}{0pt}
+
+\newcommand{\gapItem}{3.50pt}
+\newcommand{\gapRole}{6.00pt}
+\begin{document}
+\fontsize{8.5pt}{10pt}\selectfont
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+
+
+\begin{center}
+    \textcolor{myblue}{\textbf{\fontsize{22}{26}\selectfont \scshape Amar Dhillon}} \\ \vspace{1pt}
+    \footnotesize
+    NYC-Metropolitan Area $|$
+    \href{mailto:amardhillon844@gmail.com}{\underline{amardhillon844@gmail.com}} $|$
+    (XXX) XXX-XXXX $|$
+    \href{https://linkedin.com/in/amar-dhillon-917537261}{\underline{linkedin.com/in/amar-dhillon-917537261}} $|$
+    \href{https://github.com/AmarDhillon05}{\underline{github.com/AmarDhillon05}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+\vspace{3pt}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Maryland, College Park}{College Park, MD}
+      {B.S. in Computer Science, Minor in Statistics; GPA: 3.5}{May 2028}
+      %\resumeItemListStart
+      %\resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%-----------CERTIFICATIONS-----------
+\section{Certifications}
+\vspace{3pt}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Amazon Web Services (AWS) Certified Developer - Associate}{Nov 2024 -- Nov 2027}
+    {Amazon Web Services}{{\href{https://www.credly.com/badges/d2406a97-d937-47de-823b-724981159d3b/public_url}
+{\textcolor{lightblue}{Digital Badge}}}}
+\resumeSubHeadingListEnd
+
+
+
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\vspace{3pt}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Software Development Engineer Intern}{Sep 2026 -- Dec 2026}
+    {Amazon Web Services}{Redmond, WA}
+  \resumeItemListStart
+    % fact: aws_sde.redshift
+    \resumeItem{Researching and implementing Java-based utilization optimizations for Amazon Redshift}
+  \resumeItemListEnd
+
+\vspace{\gapRole}
+  \resumeSubheading
+    {Software Engineering Intern}{Jun 2026 -- Aug 2026}
+    {Capital One}{Richmond, VA}
+  \resumeItemListStart
+    % fact: capital_one.ui_overhaul
+    \resumeItem{Overhauled the legacy UI of a test data workflow creator using React + Electron with TypeScript workflow validation backed by Jest testing and a React-Flow editor, receiving \textbf{90\%} satisfaction compared to the legacy tool}
+    \vspace{\gapItem}
+    % fact: capital_one.search_index
+    \resumeItem{Engineered a precomputed tree-style workflow search index to minimize database queries under access constraints, distilling popular workflows from a \textbf{270K+ row} PostgreSQL table with Python + SQLAlchemy, backed by Redis caching}
+    \vspace{\gapItem}
+    % fact: capital_one.claude_skill
+    \resumeItem{Developed a Claude skill for workflow generation using sub-skill decomposition and Python functions for workflow search and validation, guided by CloudWatch + OpenSearch latency logs, cutting generation time \textbf{65\%} to under 15 seconds}
+  \resumeItemListEnd
+
+\vspace{\gapRole}
+  \resumeSubheading
+    {Software Engineer (Contract)}{Jan 2026 -- Present}
+    {Amazon (via UMD App Development Contracting)}{College Park, MD}
+  \resumeItemListStart
+    % fact: amazon_contract.leo_deploy
+    \resumeItem{Deployed an Amazon Leo space topic research utility adopted into Leo's ecosystem through Docker + AWS Fargate and GitHub Actions CI/CD, with AWS CDK (TypeScript) infrastructure so new engineers can contribute}
+    \vspace{\gapItem}
+    % fact: amazon_contract.kinesis_pipeline
+    \resumeItem{Achieved a \textbf{34\%} speedup on a pipeline routing 6,000+ scraped research documents for inference by implementing Kinesis streams feeding Lambda processors, with API Gateway fronting for app integration}
+    \vspace{\gapItem}
+    % fact: amazon_contract.bedrock_finetune
+    \resumeItem{Integrated automated fine-tuning of an AWS Bedrock source relevancy model through EventBridge cron triggers with decision gates to avoid redundant retraining, with X-Ray tracing and SNS failure alerts}
+  \resumeItemListEnd
+
+\vspace{\gapRole}
+  \resumeSubheading
+    {Machine Learning Research Intern}{Dec 2025 -- Present}
+    {UMD Institute for Advanced Computer Studies (UMIACS)}{College Park, MD}
+  \resumeItemListStart
+    % fact: umiacs.phystwin
+    \resumeItem{Developing automated training for PhysTwin, a physics-based digital twin, with a PhD research team targeting an ICLR submission}
+    \vspace{\gapItem}
+    % fact: umiacs.grasp_vlm
+    \resumeItem{Built a Python pipeline linking AnyGrasp multi-camera grasp candidates to Open3D overlay views consumed by a Qwen3-VL-8B VLM, enabling researchers to isolate scene components}
+    \vspace{\gapItem}
+    % fact: umiacs.env_setup
+    \resumeItem{Cut research-environment setup time \textbf{30\%} via uv dependency pinning and Docker, with psutil timing and memory monitoring and Pytest unit testing for identifying bottlenecks}
+  \resumeItemListEnd
+
+\vspace{\gapRole}
+  \resumeSubheading
+    {Co-Founder, Software Engineer}{Jun 2025 -- Present}
+    {TerpLabs}{College Park, MD}
+  \resumeItemListStart
+    % fact: terplabs.studio
+    \resumeItem{Co-founded and scaled a \textbf{110+ member} campus product studio shipping 5 live products, organizing teams through agile practices}
+    \vspace{\gapItem}
+    % fact: terplabs.tortuga
+    \resumeItem{Sustained \textbf{20,000+ visits} in the first 30 days of Tortuga, a class scheduler, through developing Prisma-based SQL querying with Redis query caching to reduce database load and latency}
+    \vspace{\gapItem}
+    % fact: terplabs.rag_meal
+    \resumeItem{Building a RAG meal suggestion feature for the official UMD app using GPT-4o mini over ChromaDB + SentenceBERT vector search on scraped recipes, achieving \textbf{93\%} meal satisfaction on internal test users}
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+\vspace{3pt}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading {\textbf{IEX Matching Engine Simulation} $|$ \textit{C++, STL, POSIX}}{Jul 2026 -- Aug 2026}
+  \resumeItemListStart
+    % fact: iex.order_book
+    \resumeItem{Implemented a C++ order book simulation on historical IEX data, with a contract-based plug-and-play design for evaluating multiple approaches with enforced correctness}
+    \vspace{\gapItem}
+    % fact: iex.lfu_storage
+    \resumeItem{Wrote paginated hash-based storage for live order book data with in-memory LFU caching for frequently requested tickers, evaluated for drift against IEX's historical book data}
+    \vspace{\gapItem}
+    % fact: iex.lsm_vs_btree
+    \resumeItem{Designed and benchmarked a time-based adaptive LSM storage against B+ tree storage for simulation logs, testing throughput and latency via rdtscp timing and hardware utilization via Linux perf}
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+\vspace{3pt}
+\resumeSubHeadingListStart
+
+% fact: skills
+\resumeItem{\textbf{Languages:} Python, Java, C++, C, TypeScript/JavaScript, SQL\vspace{-5pt}}
+
+% fact: skills
+\resumeItem{\textbf{AWS:} Lambda, Kinesis, Fargate/ECS, API Gateway, EventBridge, Bedrock, CDK, CloudWatch, X-Ray, SNS, IAM\vspace{-5pt}}
+
+% fact: skills
+\resumeItem{\textbf{Backend \& Data:} Node.js, React, Electron, PostgreSQL, Redis, SQLAlchemy, Prisma, OpenSearch, ChromaDB\vspace{-5pt}}
+
+% fact: skills
+\resumeItem{\textbf{AI/ML \& Tools:} PyTorch, Hugging Face, RAG, Open3D, Docker, GitHub Actions, Linux, Pytest, Jest, uv, perf\vspace{-5pt}}
+
+\resumeSubHeadingListEnd
+
+\end{document}
