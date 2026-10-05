@@ -37,4 +37,5 @@ tools/build.sh resume/resume.tex
 python3 tools/make_variant.py variants/infra_distributed.yaml && tools/build.sh resume/infra_distributed.tex
 LINT_ARGS="--max-per-role 4" tools/build.sh resume/systems_quant.tex   # IEX project carries 4 bullets
 python3 tools/to_original_format.py resume/resume.tex
+python3 tools/check_twins.py      # fails if any twin's words or PDF lag its Jake version
 ```

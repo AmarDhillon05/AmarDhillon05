@@ -16,5 +16,8 @@ for tex in "$@"; do
   echo "== $tex"
   python3 "$here/lint.py" "$dir/$base.tex" --json "$dir/$base.lint.json" ${LINT_ARGS:-} || status=1
   python3 "$here/fact_check.py" "$dir/$base.tex" --json "$dir/$base.facts.json" || status=1
+  # Jake-format resume with an original-format twin: warn until to_original_format.py is rerun
+  [ -f "$dir/original_format/$base.tex" ] && { python3 "$here/check_twins.py" "$dir/$base.tex" \
+    || echo "[WARN] twin out of date: python3 tools/to_original_format.py $tex"; }
 done
 exit $status
