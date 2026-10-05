@@ -99,8 +99,7 @@ roles:
     status: in_progress
     bullets:
       phystwin:
-        claim: "CORRECTED by Amar, Oct 2026: NOT a training pipeline. Context only: PhysTwin, a physics-based digital twin, PhD research team targeting an ICLR submission. Do not use standalone; context is folded into umiacs.grasp_vlm"
-        superseded: true
+        claim: "CORRECTED by Amar, Oct 2026: NOT a training pipeline. Context - PhysTwin, a physics-based digital twin, PhD research team targeting an ICLR submission. Amar's part is VLM-based robot grasp selection (the pipeline and prompt tuning in umiacs.grasp_vlm); a context bullet saying so is accurate (Amar, Oct 5 2026)"
         core_techs: [PhysTwin]
         required_numbers: []
       grasp_vlm:

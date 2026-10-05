@@ -183,7 +183,7 @@
     {Amazon Web Services}{Redmond, WA}
   \resumeItemListStart
     % fact: aws_sde.redshift
-    \resumeItem{Researching and implementing Java-based utilization optimizations for Amazon Redshift}
+    \resumeItem{Researching and implementing Java-based capacity optimizations for Amazon Redshift, backtesting upper and lower bounds on the EC2 capacity reserved for patching to balance availability against cost}
   \resumeItemListEnd
 
 \vspace{\gapRole}
@@ -192,10 +192,10 @@
     {Capital One}{Richmond, VA}
   \resumeItemListStart
     % fact: capital_one.ui_overhaul
-    \resumeItem{Overhauled the legacy UI of a test data workflow creator using React + Electron with TypeScript workflow validation backed by Jest testing and a React-Flow editor, receiving \textbf{90\%} satisfaction compared to the legacy tool}
+    \resumeItem{Overhauled the legacy UI of a test data workflow creator using React + Electron with TypeScript workflow validation backed by Jest testing and a React-Flow editor, preferred over the legacy tool by \textbf{90\%} of 30+ surveyed developers}
     \vspace{\gapItem}
     % fact: capital_one.search_index
-    \resumeItem{Engineered a precomputed tree-style workflow search index to minimize database queries under access constraints, distilling popular workflows from a \textbf{270K+ row} PostgreSQL table with Python + SQLAlchemy, backed by Redis caching}
+    \resumeItem{Engineered a precomputed tree-style workflow search index as the Claude skill's main search tool, distilling popular workflows from a \textbf{270K+ row} PostgreSQL table with Python + SQLAlchemy and Redis caching to stay within database permission and rate limits}
     \vspace{\gapItem}
     % fact: capital_one.claude_skill
     \resumeItem{Developed a Claude skill for workflow generation using sub-skill decomposition and Python functions for workflow search and validation, guided by CloudWatch + OpenSearch latency logs, cutting generation time \textbf{65\%} to under 15 seconds}
@@ -207,13 +207,13 @@
     {Amazon (via UMD App Development Contracting)}{College Park, MD}
   \resumeItemListStart
     % fact: amazon_contract.leo_deploy
-    \resumeItem{Deployed an Amazon Leo space topic research utility adopted into Leo's ecosystem through Docker + AWS Fargate and GitHub Actions CI/CD, with AWS CDK (TypeScript) infrastructure so new engineers can contribute}
+    \resumeItem{Deployed an Amazon Leo topic-scoring research utility that shows public-policy staff which space topics are popular, through Docker + AWS Fargate and GitHub Actions CI/CD with AWS CDK (TypeScript) production infrastructure}
     \vspace{\gapItem}
     % fact: amazon_contract.kinesis_pipeline
-    \resumeItem{Achieved a \textbf{34\%} end-to-end latency reduction on a pipeline routing 6,000+ scraped research documents for inference by implementing Kinesis streams feeding Lambda processors, with API Gateway fronting for app integration}
+    \resumeItem{Achieved a \textbf{34\%} end-to-end latency reduction on a pipeline routing 6,000+ scraped research documents for inference by replacing S3 staging hops with Kinesis streams feeding Lambda processors, with API Gateway fronting for app integration}
     \vspace{\gapItem}
     % fact: amazon_contract.bedrock_finetune
-    \resumeItem{Integrated automated fine-tuning of an AWS Bedrock source relevancy model through EventBridge cron triggers with decision gates to avoid redundant retraining, with X-Ray tracing and SNS failure alerts}
+    \resumeItem{Integrated production fine-tuning of an AWS Bedrock document-importance model through EventBridge cron triggers with an LLM-as-judge decision gate to avoid redundant retraining, with X-Ray tracing and SNS failure alerts}
   \resumeItemListEnd
 
 \vspace{\gapRole}
@@ -225,7 +225,7 @@
     \resumeItem{Developing VLM-based robot grasp selection for PhysTwin, a physics-based digital twin, with a PhD research team targeting ICLR}
     \vspace{\gapItem}
     % fact: umiacs.grasp_vlm
-    \resumeItem{Built a Python pipeline linking AnyGrasp multi-camera grasp candidates to Open3D overlay views consumed by a Qwen3-VL-8B VLM, enabling researchers to isolate scene components}
+    \resumeItem{Built a Python pipeline linking AnyGrasp multi-camera grasp candidates to Open3D overlay views consumed by a Qwen3-VL-8B VLM, isolating scene components, and tuned its prompts to pick grasps that avoid hitting the table}
     \vspace{\gapItem}
     % fact: umiacs.env_setup
     \resumeItem{Cut research-environment setup time \textbf{30\%} via uv dependency pinning and Docker, with psutil timing and memory monitoring and Pytest unit testing for identifying bottlenecks}
@@ -237,7 +237,7 @@
     {TerpLabs}{College Park, MD}
   \resumeItemListStart
     % fact: terplabs.studio
-    \resumeItem{Co-founded and scaled a \textbf{110+ member} campus product studio shipping 5 live products, organizing teams through agile practices}
+    \resumeItem{Co-founded and scaled a \textbf{110+ member} campus product studio shipping 5 live products, organizing teams with Jira and GitHub through agile practices}
     \vspace{\gapItem}
     % fact: terplabs.tortuga
     \resumeItem{Sustained \textbf{20,000+ visits} without crashing in the first 30 days of Tortuga, a class scheduler, through rewriting Prisma-based SQL queries with Redis query caching to take load off compute}
@@ -253,16 +253,16 @@
 \vspace{3pt}
 \resumeSubHeadingListStart
 
-\resumeProjectHeading {\textbf{IEX Matching Engine Simulation} $|$ \textit{C++, STL, POSIX}}{Jul 2026 -- Aug 2026}
+\resumeProjectHeading {\textbf{IEX Order Book \& Matching Engine} $|$ \textit{C++17, STL, POSIX, Linux perf}}{Jul 2026 -- Aug 2026}
   \resumeItemListStart
-    % fact: iex.order_book
-    \resumeItem{Implemented a C++ order book simulation on historical IEX data, with a contract-based plug-and-play design for evaluating multiple approaches with enforced correctness}
+    % fact: iex.replay_correctness
+    \resumeItem{Implemented a C++17 order book and matching engine on historical IEX data, replaying \textbf{50.9M} real exchange messages with no resync and matching 99,122 of 99,123 fills and 100\% of top-of-book prices}
     \vspace{\gapItem}
-    % fact: iex.lfu_storage
-    \resumeItem{Wrote paginated hash-based storage for live order book data with in-memory LFU caching for frequently requested tickers, evaluated for drift against IEX's historical book data}
+    % fact: iex.throughput+iex.data_structures
+    \resumeItem{Designed the order book with std::map price levels of FIFO queues and an order-ID hash map for O(1) cancels, sustaining \textbf{1.26M} events/sec end-to-end over the full replay}
     \vspace{\gapItem}
-    % fact: iex.lsm_vs_btree
-    \resumeItem{Designed and benchmarked a time-based adaptive LSM storage against B+ tree storage for simulation logs, testing throughput and latency via rdtscp timing and hardware utilization via Linux perf}
+    % fact: iex.storage_benchmark
+    \resumeItem{Designed and benchmarked LSM-tree and B+ tree storage for simulation logs on identical 2M-record workloads, with the B+ tree giving \textbf{12.8x} read throughput and 22x faster range queries for 27\% more disk}
   \resumeItemListEnd
 
 \resumeSubHeadingListEnd
