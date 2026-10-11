@@ -1,9 +1,6 @@
 ## Amar Dhillon
 
-CS + Statistics @ University of Maryland ('28). I build systems and then measure whether they're right: market microstructure, cloud infrastructure, applied ML.
-
-Looking for **Summer 2027** internships in **software engineering** and **quant development**.
-
+CS + Statistics @ University of Maryland ('28)
 [Website](https://site.adh05.com) · [LinkedIn](https://www.linkedin.com/in/amar-dhillon-917537261)
 
 ### Now
@@ -35,4 +32,4 @@ Looking for **Summer 2027** internships in **software engineering** and **quant 
 
 C++ · Python · TypeScript · OCaml · AWS (CDK, Lambda, DynamoDB) · PyTorch · FastAPI · React / Expo
 
-Off the clock: drums (funk, jazz fusion, metal), lifting, golf.
+Off the clock: drums, lifting, golf.
