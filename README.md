@@ -9,10 +9,14 @@
 ||                                                              ||
 ||  --[ NOW ]--                                                 ||
 ||                                                              ||
-||   [>] SWE Intern @ Capital One                               ||
-||   [>] ML Research @ UMIACS: physics-based digital twins      ||
-||   [>] Contract Engineer @ Amazon research project            ||
-||   [>] Co-founder @ TerpLabs, a UMD student product studio    ||
+||   [>] SDE Intern @ AWS, Amazon Redshift                      ||
+||   [>] ML Research @ UMIACS: VLM grasp selection in PhysTwin  ||
+||   [>] Contract SWE @ Amazon, via UMD App Dev Contracting     ||
+||   [>] Co-founder @ TerpLabs, a 110+ member product studio    ||
+||                                                              ||
+||  --[ PREVIOUSLY ]--                                          ||
+||                                                              ||
+||   [>] SWE Intern @ Capital One (Summer 2026)                 ||
 ||                                                              ||
 ||  --[ SELECTED WORK ]--                                       ||
 ||                                                              ||
@@ -42,9 +46,11 @@
 ||                                                              ||
 ||  --[ TOOLBOX ]--                                             ||
 ||                                                              ||
-||   lang ........ C++ / Python / TypeScript / OCaml            ||
+||   lang ........ C++ / Python / Java / Rust                   ||
+||                 TypeScript / OCaml                           ||
+||   backend ..... Spring Boot / PostgreSQL / Redis             ||
 ||   infra ....... AWS (Lambda, SQS, SNS, DynamoDB, CDK)        ||
-||                 GitHub Actions                               ||
+||                 Docker / Kubernetes / GitHub Actions         ||
 ||   ml/data ..... PyTorch / Hugging Face / FastAPI / pandas    ||
 ||   frontend .... React / Next.js / Expo / Electron            ||
 ||                                                              ||
