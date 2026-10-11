@@ -4,7 +4,7 @@ CS + Statistics @ University of Maryland ('28). I build systems and then measure
 
 Looking for **Summer 2027** internships in **software engineering** and **quant development**.
 
-[Website](https://site.adh05.com) · [LinkedIn](https://www.linkedin.com/in/amar-dhillon-917537261) · [Resume](RESUME_LINK) · EMAIL
+[Website](https://site.adh05.com) · [LinkedIn](https://www.linkedin.com/in/amar-dhillon-917537261)
 
 ### Now
 
