@@ -18,32 +18,32 @@
 ||                                                              ||
 ||   [&gt;] SWE Intern @ Capital One (Summer 2026)                 ||
 ||                                                              ||
-||  --[ SELECTED WORK ]--                                       ||
+||  --[ STUFF I&#x27;VE BUILT ]--                                    ||
 ||                                                              ||
 ||  +-------------+-------------+-------------+-------------+   ||
 ||  | <a href="https://github.com/AmarDhillon05/order-book-playground">order-book</a>  | <a href="https://github.com/AmarDhillon05/jobs">jobs</a>        | <a href="https://github.com/AmarDhillon05/Lumber">lumber</a>      | <a href="https://github.com/AmarDhillon05/timber">timber</a>      |   ||
-||  | C++17 / IEX | Python/AWS  | TS / ONNX   | TS / Expo   |   ||
-||  | ----------- | ----------  | ---------   | ---------   |   ||
-||  | order book  | internship  | drum-along  | multi-track |   ||
-||  | + matcher   | alert bot   | iOS app     | A/V editor  |   ||
+||  |             |             |             |             |   ||
+||  | replays the | pings me    | drum along  | a home-made |   ||
+||  | real stock  | about new   | to any song | audio/video |   ||
+||  | market      | internships | on my phone | editor      |   ||
 ||  +-------------+-------------+-------------+-------------+   ||
 ||  | <a href="https://github.com/AmarDhillon05/Re.Sell">Re.Sell</a>     | <a href="https://github.com/Terrapin-Rocket-Team/Astra">astra</a>       | <a href="https://github.com/Terrapin-Rocket-Team/SRAD-Avionics">avionics</a>    | <a href="https://github.com/AmarDhillon05/echelon">echelon</a>     |   ||
-||  | C++17 / HMC | C++ / MCU   | Teensy/PCB  | JS/Pinecone |   ||
-||  | ----------- | ---------   | ----------  | ----------- |   ||
-||  | sneaker     | rocket      | flight      | hackathon   |   ||
-||  | price model | flight sw   | computer    | matchmaking |   ||
+||  |             |             |             |             |   ||
+||  | guesses     | flight code | boards that | hackathon   |   ||
+||  | what kicks  | for our     | fly on our  | projects,   |   ||
+||  | resell for  | rockets     | rockets     | ranked 1v1  |   ||
 ||  +-------------+-------------+-------------+-------------+   ||
 ||  | <a href="https://github.com/AmarDhillon05/PianoAI">pianoai</a>     | <a href="https://github.com/TerpLabs/TerpMeals">terpmeals</a>   | <a href="https://github.com/AmarDhillon05/cf_ai_shoe_assist">shoe-assist</a> | <a href="https://github.com/AmarDhillon05/Shoes">shoes</a>       |   ||
-||  | Next / ML   | Expo/Mongo  | React/CF AI | sklearn     |   ||
-||  | ---------   | ----------  | ----------- | -------     |   ||
-||  | sheet music | UMD dining  | shoe lookup | drop finder |   ||
-||  | + AI notes  | tracker     | + images    | + resale ML |   ||
+||  |             |             |             |             |   ||
+||  | write piano | what&#x27;s for  | snap a shoe | new drops + |   ||
+||  | music, AI   | dinner at   | and ask     | will they   |   ||
+||  | helps out   | UMD         | about it    | resell?     |   ||
 ||  +-------------+-------------+-------------+-------------+   ||
 ||  | <a href="https://github.com/AmarDhillon05/CapNet">capnet</a>      | <a href="https://github.com/AmarDhillon05/Vision-transformer-on-CIFAR-100">vit-cifar</a>   | <a href="https://github.com/AmarDhillon05/ocaml-c-interpreter">c-interp</a>    | <a href="https://github.com/AmarDhillon05/English-to-French-transformer">en-fr</a>       |   ||
-||  | PyTorch     | PyTorch     | OCaml       | PyTorch     |   ||
-||  | -------     | -------     | -----       | -------     |   ||
-||  | image       | ViT + CvT   | C subset    | translation |   ||
-||  | captioning  | CIFAR-100   | interpreter | transformer |   ||
+||  |             |             |             |             |   ||
+||  | describes   | teaching a  | runs C      | English to  |   ||
+||  | photos in   | transformer | code, in    | French, the |   ||
+||  | words       | to see      | OCaml       | hard way    |   ||
 ||  +-------------+-------------+-------------+-------------+   ||
 ||                                                              ||
 ||  --[ TOOLBOX ]--                                             ||
